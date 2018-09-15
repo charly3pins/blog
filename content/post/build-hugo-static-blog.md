@@ -1,6 +1,6 @@
 +++
 title = "Build Hugo static blog"
-date = "2018-09-13"
+date = "2018-09-15"
 author = "charly3pins"
 cover = "hugo-logo.png"
 description = "Quick steps to create and deploy your own static blog with Hugo in GitHub Pages"
