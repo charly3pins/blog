@@ -1,0 +1,46 @@
+
+/*
+ * main green: #19bfad
+ * second green: #99cc66
+ * pink: #db2d8d
+ * dark white text and general links: #dbdbdb
+ * light gray links in post: #a9a9b3
+ * dark black: #1D1F21
+ * light black: #292a2d
+ * */
+
+body { background: #292a2d; color: #dbdbdb; }
+a { color: #dbdbdb; }
+pre { background: #1D1F21; border: 1px solid #5C5C5C; border-radius: 5px; }
+.highlight pre { border: 1px solid #99cc66; }
+code { color: #99cc66; padding: 2px 4px; border: 1px solid #99cc66; border-radius: 3px; }
+.language-vim, .language-shell { color: #dbdbdb; background: #1D1F21; border: none; }
+blockquote { background: #1D1F21; border-left: 3px solid #19bfad; }
+table { margin: 1em auto; border-collapse: collapse; }
+table, th, td { border: 1px solid #5C5C5C; }
+tr:hover { background: #1D1F21; }
+th { background: #1D1F21; }
+.siteTitle a { color: #99cc66; }
+.post .title { color: #19bfad; }
+.post .content h1 { color: #db2d8d; }
+.post .content h2 { color: #db2d8d; }
+.post .content h3 { color: #db2d8d; }
+.post .content h4 { color: #db2d8d; }
+.post .content h5 { color: #db2d8d; }
+.post .content h6 { color: #db2d8d; }
+.post .content a { color: #a9a9b3; }
+.post .content a:hover { color: #19bfad; }
+.social-link { color: #99cc66; }
+.social-link:hover { color: #19bfad; }
+.nav-item-title:hover { color: #19bfad; }
+.tag a:hover { color: #19bfad; }
+.copyright { color: #dbdbdb; }
+.copyright a:hover{ color: #19bfad; }
+.poweredby { color: #404040; }
+.poweredby a { color: #404040; }
+.post-preview .title a { color: #19bfad; }
+.content-item a:hover { text-decoration: underline; color: #19bfad; }
+.post-list .title { color: #19bfad; }
+.rmore { color: #dbdbdb; }
+.rmore:hover { color: #19bfad; }
+.terms .term a:hover { text-decoration: underline; color: #19bfad; }

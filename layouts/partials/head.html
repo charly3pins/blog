@@ -1,0 +1,23 @@
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="{{ .Site.Author.name }}" />
+<meta name="description" content="{{ .Site.Params.meta.description }}" />
+<meta name="keywords" content="{{ .Site.Params.meta.keywords }}" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+{{ .Hugo.Generator }}
+
+<link rel="canonical" href="{{ .Permalink }}">
+
+<link rel="stylesheet" href="/css/layout.css" />
+<link rel="stylesheet" href="/css/color-dark.css" />
+
+<title>
+{{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
+{{ if eq $url "/" }}
+    {{ .Site.Title }}
+{{ else }}
+    {{ if .Params.heading }} {{ .Params.heading }} {{ else }} {{ .Title }} {{ end }}
+{{ end }}
+</title>
+
+</head>

@@ -1,0 +1,21 @@
+{{ partial "header.html" . }}
+
+<article class="post">
+    <h1 class="title"> {{ .Title }} </h1>
+    
+    <div class="meta">
+        {{ .Date.Format "2006-01-02" }} - {{ .ReadingTime }} minutes
+    </div>
+    
+    {{ with .Params.Cover }}
+        <img src="/img/{{ . }}" class="cover" />
+    {{ end }}
+
+    <div class="content">
+        {{ .Content }}
+    </div>
+    
+    {{ partial "tags.html" . }}
+</article>
+
+{{ partial "footer.html" . }}

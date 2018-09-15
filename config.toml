@@ -1,0 +1,40 @@
+baseUrl = "/"
+title = "charly3pins"
+languageCode = "en-US"
+canonifyurls = true
+paginate = 5
+enableRobotsTXT = true
+
+googleAnalytics = ""
+disqusShortname = ""
+
+SectionPagesMenu = "main"
+
+# use Chroma for syntax highlight
+pygmentsStyle = "native" # other dark style options: native, vim, fruity, monokai
+# enable syntax highlight for code blocks
+pygmentsCodeFences = true
+
+[[menu.main]]
+  name = "POSTS"
+  weight = 1
+  identifier = "post"
+  url = "/post/"
+
+[[menu.main]]
+  name = "TAGS"
+  weight = 2
+  identifier = "tag"
+  url = "/tags/"
+
+[author]
+  name = "charly3pins"
+
+[params.meta]
+  keywords = "blog, developer, code, personal"
+  description = "Personal blog"
+
+[params]
+  email = "charlyfb90@gmail.com"
+  github = "charly3pins"
+  twitter = "charly3pins"

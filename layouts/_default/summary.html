@@ -1,0 +1,22 @@
+<article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='{{ .Permalink }}'> {{ .Title }}</a> </h2>
+    <div class="meta">
+      {{ .Date.Format "2006-01-02" }} - {{ .ReadingTime }} minutes
+    </div>
+    {{ partial "tags.html" . }}
+  </header>
+
+  <div class="summary">
+    {{ .Summary }}
+  </div>
+
+  <div>
+    <a href='{{ .Permalink }}' class="rmore">Read more →</a>
+  </div>
+
+  <div class="rmore">
+  </div>
+
+</article>
