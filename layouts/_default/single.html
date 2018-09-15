@@ -1,7 +1,7 @@
 {{ partial "header.html" . }}
 
 <article class="post">
-    <h1 class="title"> {{ .Title }} </h1>
+    <h1 class="title"> {{ .Title | markdownify }} </h1>
     
     <div class="meta">
         {{ .Date.Format "2006-01-02" }} - {{ .ReadingTime }} minutes
@@ -12,7 +12,7 @@
     {{ end }}
 
     <div class="content">
-        {{ .Content }}
+        {{ .Content | markdownify }}
     </div>
     
     {{ partial "tags.html" . }}
