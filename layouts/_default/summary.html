@@ -1,22 +1,24 @@
 <article class="post-preview">
 
   <header>
-    <h2 class="title"> <a href='{{ .Permalink }}'> {{ .Title }}</a> </h2>
+    <h2 class="title"> <a href='{{ .Permalink }}'> {{ .Title | markdownify }}</a> </h2>
     <div class="meta">
       {{ .Date.Format "2006-01-02" }} - {{ .ReadingTime }} minutes
     </div>
-    {{ partial "tags.html" . }}
   </header>
 
+  {{ with .Params.Cover }}
+    <img src="/img/{{ . }}" class="post-cover" />
+  {{ end }}
+
   <div class="summary">
-    {{ .Summary }}
+    {{ .Summary | markdownify }}
   </div>
+
+  {{ partial "tags.html" . }}
 
   <div>
     <a href='{{ .Permalink }}' class="rmore">Read more →</a>
-  </div>
-
-  <div class="rmore">
   </div>
 
 </article>
