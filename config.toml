@@ -27,11 +27,17 @@ pygmentsCodeFences = true
   identifier = "tag"
   url = "/tags/"
 
+[[menu.main]]
+  name = "ABOUT"
+  weight = 3
+  identifier = "about"
+  url = "/about/"
+
 [author]
   name = "charly3pins"
 
 [params.meta]
-  keywords = "blog, developer, code, personal"
+  keywords = "blog, developer, code, development, tutorials, tips"
   description = "Personal blog"
 
 [params]
