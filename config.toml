@@ -41,6 +41,5 @@ pygmentsCodeFences = true
   description = "Personal blog"
 
 [params]
-  email = "charlyfb90@gmail.com"
   github = "charly3pins"
   twitter = "charly3pins"
