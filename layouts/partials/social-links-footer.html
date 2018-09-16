@@ -1,25 +1,13 @@
 <div class="social-links-footer">
 
-  {{with .Site.Params.email}}
-  <a href="mailto:{{.}}"><div class="social-link">Email</div></a>
-  {{end}}
-
   {{with .Site.Params.github}}
-  <a href="https://github.com/{{.}}" target="_blank"><div class="social-link">GitHub</div></a>
-  {{end}}
-
-  {{with .Site.Params.gitlab}}
-  <a href="https://gitlab.com/{{.}}" target="_blank"><div class="social-link">GitLab</div></a>
+  <a href="https://github.com/{{.}}" target="_blank" class="github"><i class="fa fa-github"></i></a>
   {{end}}
 
   {{with .Site.Params.twitter}}
-  <a href="https://twitter.com/{{.}}" target="_blank"><div class="social-link">Twitter</div></a>
+  <a href="https://twitter.com/{{.}}" target="_blank" class="twitter"><i class="fa fa-twitter"></i></a> 
   {{end}}
 
-  {{with .Site.Params.linkedin}}
-  <a href="https://www.linkedin.com/in/{{.}}" target="_blank"><div class="social-link">LinkedIn</div></a>
-  {{end}}
-
-  <a href="{{ .Site.RSSLink }}" target="_blank"><div class="social-link">RSS</div></a>
+  <a href="{{ .Site.RSSLink }}" target="_blank" class="rss"><i class="fa fa-rss"></i></a>
 
 </div>
