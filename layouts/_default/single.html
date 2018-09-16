@@ -4,8 +4,10 @@
     <h1 class="title"> {{ .Title | markdownify }} </h1>
     
     <div class="meta">
-        {{ .Date.Format "2006-01-02" }} - {{ .ReadingTime }} minutes
+        <i class="fa fa-calendar-o"></i> {{ .Date.Format "2006-01-02" }} <span class="separator">•</span> <i class="fa fa-clock-o"></i> {{ .ReadingTime }} minutes
     </div>
+
+    {{ partial "tags.html" . }}
     
     {{ with .Params.Cover }}
         <img src="/img/{{ . }}" class="cover" />
@@ -14,8 +16,7 @@
     <div class="content">
         {{ .Content | markdownify }}
     </div>
-    
-    {{ partial "tags.html" . }}
+
 </article>
 
 {{ partial "footer.html" . }}
