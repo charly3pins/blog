@@ -73,8 +73,8 @@ Once you have created the post you can build your site using the `hugo server` c
 ```vim
 hugo server -D
 ```
-And it will appear the rendering logs and at the end message similar to 
-```
+And it will appear the rendering logs and at the end message similar to:
+```vim
 Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
 ```
 Copy the URL to your browser and you will see your site up and running!
