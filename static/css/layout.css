@@ -11,25 +11,11 @@ body {
 }
 
 img {
-  max-width: 42em;
   display: block;
 }
 
-figure {
-  margin: 0em;
-}
-
-figcaption {
-  text-align: center;
-  font-size: 0.9em;
-  font-weight: bold;
-}
-
-iframe {
-  max-width: 42em;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+.cover {
+  width: -webkit-fill-available;
 }
 
 li {
@@ -105,7 +91,6 @@ code {
   white-space: -pre-wrap;      /* Opera 4-6 */
   white-space: -o-pre-wrap;    /* Opera 7 */
   word-wrap: break-word;       /* Internet Explorer 5.5+ */
-
   line-height: 1.4em;
 }
 
@@ -117,7 +102,6 @@ blockquote {
 th, td {
   padding: 0.5em;
 }
-
 
 /* site title  */
 .siteTitle {
@@ -213,7 +197,6 @@ th, td {
   -webkit-justify-content: space-between;
   display: flex;
   justify-content: space-between;
-
   font-size: 0.8em;
   margin: 0.5em 4em;
 }
@@ -275,12 +258,12 @@ th, td {
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
-
   margin-top: 0.5em;
 }
 
 .social-links-footer a {
   text-decoration: none;
+  padding: 5px;
 }
 
 .social-link {
@@ -326,7 +309,6 @@ th, td {
 }
 
 /* summary list on main page  */
-
 .post-preview {
   text-decoration: none;
 }
@@ -339,28 +321,29 @@ th, td {
   text-decoration: none;
 }
 
-.post-preview .summary {
-  margin-top: 0.2em;
-  line-height: 1.4em;
-}
-
 .post-preview .meta {
-  font-size: 0.8em;
+  font-size: 0.9em;
   font-weight: bold;
-  padding-bottom: 0.3em;
   padding-top: 0.3em;
   text-align: left;
 }
 
+.post-preview .summary {
+  font-size: 0.9em;
+  margin-top: 0.7em;
+  line-height: 1.4em;
+}
+
 .post-preview .tags {
-  font-size: 0.8em;
+  font-size: 0.9em;
+  margin-top: 0.7em;
   font-weight: bold;
   text-align: left;
 }
 
 .rmore {
-  white-space:nowrap; 
-  padding: 0 0 0 0.3em;
+  display: inline-block;
+  font-weight: bold;
 }
 
 /* terms list */
@@ -418,7 +401,6 @@ th, td {
 }
 
 @media only screen and (min-width: 400px) {
-
   nav {
     flex-flow: row wrap;
   }
@@ -452,6 +434,6 @@ th, td {
     -webkit-flex-flow: row wrap;
     justify-content: center;
     flex-flow: row wrap;
-    font-size: 0.75em;
+    font-size: 1.5em;
   }
 }
