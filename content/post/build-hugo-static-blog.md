@@ -1,10 +1,13 @@
 +++
+layout = "post"
 title = "Build Hugo static blog"
 date = "2018-09-15"
 author = "charly3pins"
 cover = "hugo-logo.png"
-description = "Quick steps to create and deploy your own static blog with Hugo in GitHub Pages"
-tags = ["go", "hugo", "github"]
+description = "Quick steps to create your onw static blog with Hugo and install a theme from the catalogue. After that, push your site to GitHub and deploy it with GitHub Pages"
+tags = ["go", "hugo", "github", "cms"]
+categories = [ "Tech"]
+image = "/img/build-hugo-static-blog/old-school-developer-bg.jpg"
 +++
 
 If you want to create a fast static website I recommend you [Hugo](https://gohugo.io/). It's written in Go and it's really use to configure and adapt to your needs. In addition, you can choose through different [themes](https://themes.gohugo.io/) created by the team and others by the community or even create your own one.
@@ -29,7 +32,7 @@ hugo new site your-blog-name
 ```
 
 After that, you'll see a new folder called `your-blog-name` and if you look inside you'll see the following tree:
-<img src="/img/folder-tree-your-blog-name.png" />
+<img src="/img/build-hugo-static-blog/folder-tree-your-blog-name.png" />
 
 * Archetypes are content template files for your project, used when you run `hugo new` command.
 * Content is where all posts and pages are stored. The same structure in this folder will be used for organize the URLs in your rendered site.
@@ -64,7 +67,7 @@ For generate your first blog post you can use the command `hugo new` and set the
 hugo new posts/my-first-post.md
 ```
 You will obtain the following file:
-<img src="/img/example-post.png" />
+<img src="/img/build-hugo-static-blog/example-post.png" />
 
 The first section is for parameters and the second one is for the content in this case in markdown. Check this [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) a quick reference and showcase.
 

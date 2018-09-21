@@ -1,15 +1,3 @@
-
-{{ partial "header.html" . }}
-
-<main>
-
-{{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
-{{ range $paginator.Pages }}
-  {{ .Render "summary" }}
+{{ define "main" }}
+  {{ partial "portfolio.html" . }}
 {{ end }}
-
-{{ partial "paginator-menu.html" . }}
-
-</main>
-
-{{ partial "footer.html" . }}

@@ -1,45 +1,86 @@
-baseUrl = "/"
-title = "charly3pins"
-languageCode = "en-US"
-canonifyurls = true
-paginate = 5
-enableRobotsTXT = true
-
-googleAnalytics = ""
+baseurl = ""
+title = "Charly3Pins Blog"
+languageCode = "en-us"
+# Enable comments by entering your Disqus shortname
 disqusShortname = ""
+googleAnalytics = ""
+preserveTaxonomyNames = true
+paginate = 5 #frontpage pagination
+hasCJKLanguage = true
 
-SectionPagesMenu = "main"
-
-# use Chroma for syntax highlight
-pygmentsStyle = "native" # other dark style options: native, vim, fruity, monokai
-# enable syntax highlight for code blocks
-pygmentsCodeFences = true
-
-[[menu.main]]
-  name = "POSTS"
-  weight = 1
-  identifier = "post"
-  url = "/post/"
-
-[[menu.main]]
-  name = "TAGS"
-  weight = 2
-  identifier = "tag"
-  url = "/tags/"
-
-[[menu.main]]
-  name = "ABOUT"
-  weight = 3
-  identifier = "about"
-  url = "/about/"
-
-[author]
-  name = "charly3pins"
-
-[params.meta]
-  keywords = "blog, developer, code, development, tutorials, tips"
-  description = "Personal blog"
+[outputs]
+  home = ["HTML", "RSS", "Algolia"]
 
 [params]
-  github = "charly3pins"
-  twitter = "charly3pins"
+  header_image = "img/mrrobot-elliot-wallpaper.jpg"
+  SEOTitle = "Charly3Pins Blog"
+  description = "Charly3Pins Blog"
+  keyword = "blog, developer, coding, tutorial, review, code"
+
+  image_404 = "img/404-bg.jpg"
+  title_404 = "Page not found"
+
+  # leancloud storage for page view counter
+  page_view_conter = false
+  leancloud_app_id = ""
+  leancloud_app_key = ""
+
+  # algolia site search
+  algolia_search = false 
+  algolia_appId = ""
+  algolia_indexName = ""
+  algolia_apiKey = ""
+
+  # Sidebar settings
+  sidebar_about_description = "I’m a developer interested in all related about programming, passionate of the newest technologies and willing to learn new things everyday. I’m focused in good practices and I try to improve the systems and code of the projects that I’m involved everyday. I believe in testing as the main thing of development and the CI/CD is a good ally for it."
+  sidebar_avatar = "img/avatar-law.png"      # use absolute URL, seeing it's used in both `/` and `/about/`
+
+  featured_tags = true 
+  featured_condition_size = 2 
+
+  # Baidu Analytics
+  ba_track_id = ""
+  
+  # We need a proxy to access Disqus api in China
+  disqus_proxy = ""
+  disqus_site = ""
+
+  [params.social]
+  rss            = true 
+  #email          = "youemail@gmail.com"
+  #facebook      = "full profile url in facebook"
+  #googleplus    = "full profile url in googleplus"
+  twitter       = "https://twitter.com/charly3pins"
+  linkedin       = "https://www.linkedin.com/in/carlesfuste/"
+  #stackoverflow  = "full profile url in stackoverflow"
+  #instagram     = "full profile url in instagram"
+  github         = "https://github.com/charly3pins"
+  #wechat         = "link of wechat QR code image"
+  #pinterest     = "full profile url in pinterest"
+  
+  #[[params.friend_link]]
+  #title = "Linda的博客"
+  #href =  "https://zhaozhihan.com"
+
+  #[[params.bookmark_link]]
+  #title =  "Martin Fowler"
+  #href =  "https://martinfowler.com"
+  #[[params.bookmark_link]]
+  #title = "ServiceMesh中文网"
+  #href =  "http://www.servicemesh.cn"
+  #[[params.bookmark_link]]
+  #title = "Awesome Service Mesh"
+  #href = "https://servicemesh.gitbooks.io/awesome-servicemesh"
+  #[[params.bookmark_link]]
+  #title =  "Image Compression"
+  #href = "https://tinypng.com"
+  
+[outputFormats.Algolia]
+baseName = "algolia"
+isPlainText = true
+mediaType = "application/json"
+notAlternative = true
+
+[params.algolia]
+vars = ["title", "summary", "date", "publishdate", "expirydate", "permalink"]
+params = ["categories", "tags"] 

@@ -1,27 +1,19 @@
-{{ partial "header.html" . }}
+{{ define "main" }}
+<!-- Page Header -->
+<header class="intro-header" style="background-image: url('{{ .Site.Params.image_404 | absURL }}')">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+				<div class="site-heading" id="tag-heading">
+					<h1>404</h1>
+					<span class="subheading">{{ .Site.Params.title_404 }}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
 
-<div class="err-404" >
-    <h1 id="title">{{ .Title }}</h1>
-</div>
-
-<div class="sitemap" >
-  <h2>Pages</h2>
-  <ul>
-  {{ range (where .Site.Pages.ByTitle ".Type" "page") }}
-      <li><article itemscope itemtype="http://schema.org/Blog">
-          <a href="{{ .Permalink }}">{{ .Title }}</a>
-      </article></li>
-  {{ end }}
-  </ul>
-
-  <h2>Posts</h2>
-  <ul>
-  {{ range (where .Site.Pages.ByTitle ".Type" "post") }}
-      <li><article itemscope itemtype="http://schema.org/Blog">
-          <a href="{{ .Permalink }}">{{ .Title }}</a>
-      </article></li>
-  {{ end }}
-  </ul>
-
-</div> <!-- sitemap -->
-{{ partial "footer.html" . }}
+<script>
+	document.body.classList.add('page-fullscreen');
+</script>
+{{ end }}
