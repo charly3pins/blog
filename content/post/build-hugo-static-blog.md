@@ -102,6 +102,12 @@ Finally you need to add the `<USERNAME>.github.io` repo inside the `public` fold
 git submodule add -b master git@github.com:<USERNAME>/<USERNAME>.github.io.git public
 ```
 
+If you don't have the RSA pair key configured you'll need to add the submodule via HTTP:
+
+```vim
+git submodule add -b master https://github.com/<USERNAME>/<USERNAME>.github.io.git public
+```
+
 To automate these steps you can save it to `deploy.sh`. Remember to make it executable with:
 ```vim
 chmod +x deploy.sh
