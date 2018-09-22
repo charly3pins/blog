@@ -2,8 +2,8 @@ baseurl = "https://charly3pins.github.io/"
 title = "Charly3Pins Blog"
 languageCode = "en-us"
 # Enable comments by entering your Disqus shortname
-disqusShortname = ""
-googleAnalytics = ""
+disqusShortname = "charly3pins"
+googleAnalytics = "UA-126216319-1"
 preserveTaxonomyNames = true
 paginate = 5 #frontpage pagination
 hasCJKLanguage = true
@@ -38,9 +38,7 @@ hasCJKLanguage = true
   featured_tags = true 
   featured_condition_size = 2 
 
-  # Baidu Analytics
-  ba_track_id = ""
-  
+
   # We need a proxy to access Disqus api in China
   disqus_proxy = ""
   disqus_site = ""
