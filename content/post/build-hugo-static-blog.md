@@ -108,7 +108,7 @@ If you don't have the RSA pair key configured you'll need to add the submodule v
 git submodule add -b master https://github.com/<USERNAME>/<USERNAME>.github.io.git public
 ```
 
-To automate these steps you can save it to `deploy.sh`. Remember to make it executable with:
+To automate the next steps you can save it to `deploy.sh`. Remember to make it executable with:
 ```vim
 chmod +x deploy.sh
 ```
