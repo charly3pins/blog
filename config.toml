@@ -9,7 +9,7 @@ paginate = 5 #frontpage pagination
 hasCJKLanguage = true
 
 [outputs]
-  home = ["HTML", "RSS", "Algolia"]
+  home = ["HTML", "RSS"]
 
 [params]
   header_image = "img/mrrobot-elliot-wallpaper.jpg"
@@ -20,28 +20,12 @@ hasCJKLanguage = true
   image_404 = "img/404-bg.jpg"
   title_404 = "Page not found"
 
-  # leancloud storage for page view counter
-  page_view_conter = false
-  leancloud_app_id = ""
-  leancloud_app_key = ""
-
-  # algolia site search
-  algolia_search = false 
-  algolia_appId = ""
-  algolia_indexName = ""
-  algolia_apiKey = ""
-
   # Sidebar settings
   sidebar_about_description = "I’m a developer interested in all related about programming, passionate of the newest technologies and willing to learn new things everyday. I’m focused in good practices and I try to improve the systems and code of the projects that I’m involved everyday. I believe in testing as the main thing of development and the CI/CD is a good ally for it."
   sidebar_avatar = "img/avatar-law.png"      # use absolute URL, seeing it's used in both `/` and `/about/`
 
   featured_tags = true 
-  featured_condition_size = 2 
-
-
-  # We need a proxy to access Disqus api in China
-  disqus_proxy = ""
-  disqus_site = ""
+  featured_condition_size = 1
 
   [params.social]
   rss            = true 
@@ -72,13 +56,3 @@ hasCJKLanguage = true
   #[[params.bookmark_link]]
   #title =  "Image Compression"
   #href = "https://tinypng.com"
-  
-[outputFormats.Algolia]
-baseName = "algolia"
-isPlainText = true
-mediaType = "application/json"
-notAlternative = true
-
-[params.algolia]
-vars = ["title", "summary", "date", "publishdate", "expirydate", "permalink"]
-params = ["categories", "tags"] 
