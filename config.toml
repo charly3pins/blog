@@ -15,7 +15,7 @@ hasCJKLanguage = true
   header_image = "img/mrrobot-elliot-wallpaper.jpg"
   SEOTitle = "Charly3Pins Blog"
   description = "Charly3Pins Blog"
-  keyword = "blog, developer, coding, tutorial, review, code"
+  keyword = "blog, developer, coding, tutorial, review, code, code review"
 
   image_404 = "img/404-bg.jpg"
   title_404 = "Page not found"
