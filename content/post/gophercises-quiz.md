@@ -2,7 +2,7 @@
 layout = "post"
 title = "Gophercises - Code Review"
 subtitle = "Quiz game"
-date = "2018-09-22"
+date = "2018-09-24"
 author = "charly3pins"
 description = "Quick steps to create your onw static blog with Hugo and install a theme from the catalogue. After that, push your site to GitHub and deploy it with GitHub Pages"
 tags = ["go", "code review"]
