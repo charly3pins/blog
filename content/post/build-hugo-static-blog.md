@@ -3,10 +3,9 @@ layout = "post"
 title = "Build Hugo static blog"
 date = "2018-09-15"
 author = "charly3pins"
-cover = "hugo-logo.png"
 description = "Quick steps to create your onw static blog with Hugo and install a theme from the catalogue. After that, push your site to GitHub and deploy it with GitHub Pages"
-tags = ["go", "hugo", "github", "cms"]
-categories = [ "Tech"]
+tags = ["go", "hugo", "github", "cms", "static-site-generator"]
+categories = [ "Tutorial"]
 image = "/img/build-hugo-static-blog/old-school-developer-bg.jpg"
 +++
 
