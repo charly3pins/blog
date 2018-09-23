@@ -14,7 +14,7 @@ hasCJKLanguage = true
 [params]
   header_image = "img/mrrobot-elliot-wallpaper.jpg"
   SEOTitle = "Charly3Pins Blog"
-  description = "Charly3Pins Blog"
+  description = "Tutorials, code reviews, opinions and more"
   keyword = "blog, developer, coding, tutorial, review, code, code review"
 
   image_404 = "img/404-bg.jpg"
