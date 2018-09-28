@@ -14,17 +14,6 @@
                        </a>
                    </li>
                    {{ end }}
-                    {{ with .Site.Params.social.email }}
-                    <li>
-                        <a href="mailto:{{ . }}">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-		    {{ end }}
-                    
                     {{ with .Site.Params.social.twitter }}
                     <li>
                         <a href="{{ . }}">
@@ -35,49 +24,8 @@
                         </a>
                     </li>
                     {{ end }}
-                    {{ with .Site.Params.social.zhihu }}
-                    <li>
-                        <a target="_blank" href="{{ . }}">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa  fa-stack-1x fa-inverse">知</i>
-                            </span>
-                        </a>
-                    </li>
-		    {{ end }}
-                    {{ with .Site.Params.social.weibo }}
-                    <li>
-                        <a target="_blank" href="{{ . }}">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-		    {{ end }}
 
-                    {{ with .Site.Params.social.facebook }}
-                    <li>
-                        <a target="_blank" href="{{ . }}">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-		    {{ end }}
-
-		    <!-- Huabing: add wechat QR code link -->
-                    {{ with .Site.Params.social.wechat }}
-                    <li>
-                        <a target="_blank" href="{{ . | absURL }}">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-wechat fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-		    {{ end }}
+                    
                     {{ with .Site.Params.social.github }}
                     <li>
                         <a target="_blank" href="{{ . }}">
@@ -87,17 +35,17 @@
                             </span>
                         </a>
                     </li>
-		    {{ end }}
-                    {{ with .Site.Params.social.linkedin }}
+		            {{ end }}
+                    {{ with .Site.Params.social.stackoverflow }}
                     <li>
                         <a target="_blank" href="{{ . }}">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                                <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
                             </span>
                         </a>
                     </li>
-		    {{ end }}
+		            {{ end }}
                 </ul>
 		<p class="copyright text-muted">
                     &copy; {{ .Site.Title }} {{ .Date.Format ", 2006" }}

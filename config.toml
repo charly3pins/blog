@@ -21,7 +21,7 @@ hasCJKLanguage = true
   title_404 = "Page not found"
 
   # Sidebar settings
-  sidebar_about_description = "I’m a developer interested in all related about programming, passionate of the newest technologies and willing to learn new things everyday. I’m focused in good practices and I try to improve the systems and code of the projects that I’m involved everyday. I believe in testing as the main thing of development and the CI/CD is a good ally for it."
+  sidebar_about_description = "Hungry for challenges and willing to learn new things everyday. Focused in best practices. Currently in Go."
   sidebar_avatar = "img/avatar-law.png"      # use absolute URL, seeing it's used in both `/` and `/about/`
 
   featured_tags = true 
@@ -29,16 +29,10 @@ hasCJKLanguage = true
 
   [params.social]
   rss            = true 
-  #email          = "youemail@gmail.com"
-  #facebook      = "full profile url in facebook"
-  #googleplus    = "full profile url in googleplus"
   twitter       = "https://twitter.com/charly3pins"
-  linkedin       = "https://www.linkedin.com/in/carlesfuste/"
-  #stackoverflow  = "full profile url in stackoverflow"
-  #instagram     = "full profile url in instagram"
+  #linkedin       = "https://www.linkedin.com/in/carlesfuste/"
+  stackoverflow  = "https://stackoverflow.com/users/4948631/carles/"
   github         = "https://github.com/charly3pins"
-  #wechat         = "link of wechat QR code image"
-  #pinterest     = "full profile url in pinterest"
   
   #[[params.friend_link]]
   #title = "Linda的博客"
