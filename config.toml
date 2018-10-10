@@ -25,7 +25,7 @@ hasCJKLanguage = true
   sidebar_avatar = "img/avatar-law.png"      # use absolute URL, seeing it's used in both `/` and `/about/`
 
   featured_tags = true 
-  featured_condition_size = 1
+  featured_condition_size = 0
 
   [params.social]
   rss            = true 
