@@ -9,6 +9,8 @@ categories = [ "Tutorial"]
 image = "/img/build-hugo-static-blog/old-school-developer-bg.jpg"
 +++
 
+# Intro
+
 If you want to create a fast static website I recommend you [Hugo](https://gohugo.io/). It's written in Go and it's really use to configure and adapt to your needs. In addition, you can choose through different [themes](https://themes.gohugo.io/) created by the team and others by the community or even create your own one.
 
 Here I'll explain in some steps how to create one blog with Hugo and how to be hosted & deployed in GitHub and GitHub Pages. If you need more detail visit the official [Hugo docs](https://gohugo.io/documentation/).

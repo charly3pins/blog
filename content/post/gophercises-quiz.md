@@ -11,6 +11,8 @@ image = "/img/puzzle.jpg"
 #showtoc = false
 +++
 
+# Intro
+
 This is the first of a several articles I'm planning to write commenting the different exercises that I'm doing in [Gophercises](https://gophercises.com/) page.
 
 > It's a FREE course that will help you become more familiar with Go while developing your skills as a programmer. In the course we will build roughly 20 different mini-applications, packages, and tools that are each designed to teach you something different.
