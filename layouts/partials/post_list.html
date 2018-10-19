@@ -5,17 +5,18 @@
         <h2 class="post-title">
             {{ .Title }}
         </h2>
-	{{with .Params.subtitle }}
+	    {{with .Params.subtitle }}
         <h3 class="post-subtitle">
             {{ . }}
         </h3>
-	{{ end }}
+	    {{ end }}
+        
         <div class="post-content-preview">
-	{{ with .Description }}
+	    {{ with .Description }}
             {{ . }}
         {{ else }}
             {{ .Summary}}
-       {{ end }}
+        {{ end }}
         </div>
     </a>
     <p class="post-meta">

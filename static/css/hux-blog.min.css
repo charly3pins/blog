@@ -11,12 +11,12 @@
 }
 
 .sidebar-container {
-    color: #bfbfbf;
+    color: #DDDDDD;
     font-size: 14px
 }
 
 .sidebar-container h5 {
-    color: gray;
+    color: white;
     padding-bottom: 1em
 }
 
@@ -26,7 +26,7 @@
 }
 
 .sidebar-container a {
-    color: #bfbfbf!important
+    color: #DDDDDD!important
 }
 
 .sidebar-container a:hover,.sidebar-container a:active {
@@ -34,7 +34,7 @@
 }
 
 .sidebar-container .tags a {
-    border-color: #bfbfbf
+    border-color: #DDDDDD
 }
 
 .sidebar-container .tags a:hover,.sidebar-container .tags a:active {
@@ -61,7 +61,7 @@ body {
     font-family: -apple-system,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB",STHeiti,"Microsoft YaHei","Microsoft JhengHei","Source Han Sans SC","Noto Sans CJK SC","Source Han Sans CN","Noto Sans SC","Source Han Sans TC","Noto Sans CJK TC","WenQuanYi Micro Hei",SimSun,sans-serif;
     line-height: 1.7;
     font-size: 16px;
-    color: #404040;
+    color: #DDDDDD;
     overflow-x: hidden
 }
 
@@ -393,42 +393,9 @@ pre code {
     }
 }
 
-.intro-header {
-    background: no-repeat center center;
-    background-color: gray;
-    background-attachment: scroll;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-    margin-bottom: 0
-}
-
-@media only screen and (min-width: 768px) {
-    .intro-header {
-        margin-bottom:20px
-    }
-}
-
 .intro-header .site-heading,.intro-header .post-heading,.intro-header .page-heading {
-    padding: 85px 0 55px;
+    padding: 85px 0 25px;
     color: #fff
-}
-
-@media only screen and (min-width: 768px) {
-    .intro-header .site-heading,.intro-header .post-heading,.intro-header .page-heading {
-        padding:150px 0
-    }
-}
-
-.intro-header .site-heading {
-    padding: 95px 0 70px
-}
-
-@media only screen and (min-width: 768px) {
-    .intro-header .site-heading {
-        padding:150px 0
-    }
 }
 
 .intro-header .site-heading,.intro-header .page-heading {
@@ -502,12 +469,12 @@ pre code {
 }
 
 .post-preview>a {
-    color: #404040
+    color: #0085a1
 }
 
 .post-preview>a:hover,.post-preview>a:focus {
     text-decoration: none;
-    color: #0085a1
+    color: #03ca56
 }
 
 .post-preview>a>.post-title {
@@ -527,7 +494,7 @@ pre code {
 
 .post-preview>.post-meta {
     font-family: Lora,'Times New Roman',serif;
-    color: gray;
+    color: #DDDDDD;
     font-size: 16px;
     font-style: italic;
     margin-top: 0
@@ -562,11 +529,11 @@ pre code {
 .post-content-preview {
     font-size: 13px;
     /* font-style: italic; */
-    color: #a3a3a3
+    color: #DDDDDD
 }
 
 .post-content-preview:hover {
-    color: #0085a1
+    color: #03ca56
 }
 
 @media only screen and (min-width: 768px) {
