@@ -1,28 +1,44 @@
-<div id="title-info" class="title-info">
-  <div id='site-title' class='site-title'>
-    {{ if ( ne .Site.Title "" ) }}
-    <a href="{{ .Site.BaseURL | relLangURL }}"> {{ .Site.Title }} </a>
-    {{ end }}</div>
-  </div>
-  <button id="toggle-navigation" class="toggle-navigation">
-    <i class="fa fa-bars"></i>
-  </button>
-
-  <div id="menu-primary-tracks" class="menu-primary-tracks"></div>
-  <div id="menu-primary" class="menu-container menu-primary" role="navigation">
-    {{ with .Site.Params.Slogan }}
-    <p class="site-description">{{ . | default "" | safeHTML }}</p>
-    {{ end }}
-
-    <div class="menu">
-      <ul id="menu-primary-items" class="menu-primary-items">
-        {{ $page := . }}
-        {{ range .Site.Menus.main }}
-        <li id="menu-item" class='menu-item {{ if eq ("/") (.URL) }}menu-item-type-custom menu-item-object-custom{{ else }}menu-item-type-post_type menu-item-object-page{{ end }} {{ if $page.IsMenuCurrent "main" . }}current-menu-item current_page_item{{ end }}'>
-          <a href="{{ .URL | absURL }}">{{ .Name }}</a>
-        </li>
-        {{ end }}
-      </ul>
+{{- /* Desktop header */ -}}
+<header class="desktop">
+    <div class="header-wrapper">
+        <div class="header-title animated bounceIn">
+            <a href="{{ .Site.BaseURL }}">
+                {{- .Site.Title -}}
+            </a>
+        </div>
+        <div class="menu">
+            {{- $currentPage := . }}
+            {{- range .Site.Menus.main -}}
+                <a class="menu-item{{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) | or (eq $currentPage.RelPermalink .URL) }} active{{ end }}" href="{{ .URL | absLangURL }}" title="{{ .Title }}">
+                    {{- .Pre | safeHTML }}{{ .Name -}}
+                </a>
+            {{- end -}}
+            <a href="javascript:void(0);" class="theme-switch"><i class="fas fa-adjust fa-rotate-180 fa-fw" title="{{ T "switchTheme" }}"></i></a>
+        </div>
     </div>
+</header>
 
-  </div>
+{{- /* Mobile header */ -}}
+<header class="mobile">
+    <div class="header-wrapper">
+        <div class="header-container">
+            <div class="header-title animated bounceIn">
+                <a href="{{ .Site.BaseURL }}">
+                    {{- .Site.Title -}}
+                </a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile">
+            {{- $currentPage := . -}}
+            {{- range .Site.Menus.main -}}
+                <a class="menu-item" href="{{ .URL | absLangURL }}" title="{{ .Title }}">
+                    {{- .Name | safeHTML -}}
+                </a>
+            {{- end -}}
+            <a href="javascript:void(0);" class="theme-switch"><i class="fas fa-adjust fa-rotate-180 fa-fw" title="{{ T "switchTheme" }}"></i></a>
+        </div>
+    </div>
+</header>

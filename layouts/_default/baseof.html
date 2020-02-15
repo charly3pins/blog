@@ -1,25 +1,62 @@
+{{- /* LoveIt theme version detection */ -}}
+{{- if ne .Site.Params.version "0.1.X" -}}
+  {{- errorf "\n\nThere are two possible situations that led to this error:\n  1. You haven't copied the config.toml yet. See https://github.com/dillonzq/LoveIt#installation \n  2. You have an incompatible update. See https://github.com//dillonzq/LoveIt/blob/master/CHANGELOG.md \n\n有两种可能的情况会导致这个错误发生:\n  1. 你还没有复制 config.toml 参考 https://github.com/dillonzq/LoveIt#installation \n  2. 你进行了一次不兼容的更新 参考 https://github.com//dillonzq/LoveIt/blob/master/CHANGELOG.md \n" -}}
+{{- end -}}
+
+{{- if eq (getenv "HUGO_ENV") "production" -}}
+    {{- .Scratch.Set "production" true -}}
+    {{- .Scratch.Set "CDN" .Site.Params.cdn -}}
+{{- end -}}
+
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
-<head>{{ partial "head.html" . }}</head>
-{{ partial "nav.html" . }}
-<!-- Page Header -->
-{{ block "header" .}}
-<header class="intro-header" style="background-image: url('{{ .Site.Params.header_image | absURL }}')">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>{{ .Site.Title}} </h1>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>
+            {{- block "title" . }}{{ .Site.Title }}{{ end -}}
+        </title>
+        <meta name="Description" content="{{ .Params.description | default .Site.Params.description }}">
+
+        {{- partial "head/meta.html" . -}}
+        {{- partial "head/link.html" . -}}
+        {{- partial "head/seo.html" . -}}
+    </head>
+    <body>
+        {{- /* Check theme isDark before body rendering */ -}}
+        <script>
+            if (!window.localStorage || !window.localStorage.getItem('theme')) {
+                {{- $theme := .Site.Params.defaultTheme -}}
+                {{- if eq $theme "auto" -}}
+                    window.isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                {{- else -}}
+                    window.isDark = '{{ $theme }}' === 'dark';
+                {{- end -}}
+            } else {
+                window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
+            }
+            window.isDark && document.body.classList.add('dark-theme');
+        </script>
+
+        {{- /* Body wrapper */ -}}
+        <div class="wrapper">
+            {{- partial "header.html" . -}}
+            <main class="main">
+                <div class="container">
+                    {{- block "content" . }}{{ end -}}
                 </div>
-            </div>
+            </main>
+            {{- partial "footer.html" . -}}
         </div>
-    </div>
-</header>
-{{ end }}
 
-{{ block "main" . }}
-{{ end }}
+        {{- /* Dynamic to top button */ -}}
+        <a href="#" class="dynamic-to-top" id="dynamic-to-top" data-scroll>
+            <span>&nbsp;</span>
+        </a>
 
-{{ partial "footer.html" . }}
-</body>
+        {{- /* Load script */ -}}
+        {{- partial "script.html" . -}}
+    </body>
 </html>

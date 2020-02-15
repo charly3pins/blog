@@ -1,52 +1,220 @@
-baseurl = "https://charly3pins.github.io/"
+baseURL = "https://charly3pins.github.io/"
+# website language
+languageCode = "en"
+# [en, zh, ...] determines which i18n file to use
+defaultContentLanguage = "en"
+# website title
 title = "Charly3Pins Blog"
-languageCode = "en-us"
-# Enable comments by entering your Disqus shortname
-disqusShortname = "charly3pins-github-io-1"
+# whether to use git commit log to generate lastmod record
+enableGitInfo = false
+# whether to include chinese/japanese/korean
+hasCJKLanguage = false
+# default amount of posts in each pages
+paginate = 12
+# whether to use emoji code
+enableEmoji = true
+# whether to use robots.txt
+enableRobotsTXT = true
+# [UA-XXXXXXXX-X] google analytics code
 googleAnalytics = "UA-126216319-1"
-preserveTaxonomyNames = true
-paginate = 5 #frontpage pagination
-hasCJKLanguage = true
+# copyright description used only for seo schema
+copyright = "Tutorials, code reviews, opinions and more."
+# date format
+dateFormatToUse = "2006-01-02"
 
-[outputs]
-  home = ["HTML", "RSS"]
+# Markup related configuration in Hugo
+[markup]
+  # Syntax Highlighting (https://gohugo.io/content-management/syntax-highlighting)
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNoStart = 1
+    lineNos = true
+    lineNumbersInTable = true
+    noClasses = false
+    style = "monokai"
+    tabWidth = 4
+  # Goldmark is from Hugo 0.60 the default library used for Markdown
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+      linkify = true
+      strikethrough = true
+      table = true
+      taskList = true
+      typographer = true
+    [markup.goldmark.renderer]
+      # whether to use HTML tags directly in the document
+      unsafe = true
+  # Table Of Contents settings
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 6
+
+# Author Info
+[author]
+  name = "Charly3Pins"
+  link = ""
+
+# Sitemap Info
+[sitemap]
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+  priority = 0.5
+
+# Permalinks Info (https://gohugo.io/content-management/urls/#permalinks)
+[Permalinks]
+  posts = ":year/:month/:filename"
+
+# Menu Info
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    name = "Posts"
+    url = "posts"
+    weight = 1
+
+  [[menu.main]]
+    identifier = "tags"
+    name = "Tags"
+    url = "tags"
+    weight = 2
+
+  [[menu.main]]
+    identifier = "categories"
+    name = "Categories"
+    url = "categories"
+    weight = 3
+
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "about"
+    weight = 4
 
 [params]
-  header_image = "img/mrrobot-elliot-wallpaper.jpg"
-  SEOTitle = "Charly3Pins Blog"
-  description = "Tutorials, code reviews, opinions and more"
-  keyword = "blog, developer, coding, tutorial, review, code, code review"
+  # LoveIt theme version
+  version = "0.1.X"
+  # site description
+  description = "Charly3Pins Blog"
+  # site keywords
+  keywords = ["blog", "developer", "coding", "tutorial", "review", "code", "code review"]
+  # site default theme ("light", "dark", "auto")
+  defaultTheme = "dark"
 
-  image_404 = "img/404-bg.jpg"
-  title_404 = "Page not found"
+  # Home Page Info
+  ##home mode ("post", "other")
+  home_mode = "post"
+  ## special amount of posts in each home post page
+  home_paginate = 6
+  ## URL of avatar shown in home page
+  avatar = "/images/avatar-law.png"
+  ## subtitle shown in home page
+  subtitle = "Tutorials, code reviews, opinions and more!"
+  # whether to show social share links in post page
+  socialShare = true
 
-  # Sidebar settings
-  sidebar_about_description = "Hungry for challenges and willing to learn new things everyday. Focused in best practices. Currently in Go."
-  sidebar_avatar = "img/avatar-law.png"      # use absolute URL, seeing it's used in both `/` and `/about/`
+  # Footer CopyRight Info
+  ## Site creation time
+  since = 2018
+  ## license info (HTML format is allowed)
+  license= '<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
 
-  featured_tags = true 
-  featured_condition_size = 0
+  # public git repo url to link lastmod git commit only then enableGitInfo is true
+  gitRepo = ""
 
+    # whether to show link to Raw Markdown content of the post
+  linkToMarkdown = true
+
+  # CSS and JS Files CDN
+  [params.cdn]
+    ## for example '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css" integrity="sha256-fdcFNFiBMrNfWL6OcAGQz6jDgNTRxnrLEd4vJYFWScE=" crossorigin="anonymous">'
+    fontawesome_free_css = ''
+    animate_css = ''
+    gitalk_css = ''
+    gitalk_js = ''
+    valine_js = ''
+    jquery_js = ''
+    lazysizes_js = ''
+    smooth_scroll_js = ''
+    katex_css = ''
+    katex_js = ''
+    katex_auto_render_js = ''
+    katex_copy_tex_css = ''
+    katex_copy_tex_js = ''
+    katex_mhchem_js = ''
+    mermaid_js = ''
+    echarts_js = ''
+    echarts_macarons_js = ''
+    typeit_js = ''
+    jquery_countdown_js = ''
+    aplayer_css = ''
+    aplayer_js = ''
+    meting_js = ''
+
+  # Social Info in home page
   [params.social]
-  rss            = true 
-  twitter       = "https://twitter.com/charly3pins"
-  #linkedin       = "https://www.linkedin.com/in/carlesfuste/"
-  stackoverflow  = "https://stackoverflow.com/users/4948631/carles/"
-  github         = "https://github.com/charly3pins"
-  
-  #[[params.friend_link]]
-  #title = "Linda的博客"
-  #href =  "https://zhaozhihan.com"
+    GitHub = "charly3pins"
+    Twitter = "charly3pins"
 
-  #[[params.bookmark_link]]
-  #title =  "Martin Fowler"
-  #href =  "https://martinfowler.com"
-  #[[params.bookmark_link]]
-  #title = "ServiceMesh中文网"
-  #href =  "http://www.servicemesh.cn"
-  #[[params.bookmark_link]]
-  #title = "Awesome Service Mesh"
-  #href = "https://servicemesh.gitbooks.io/awesome-servicemesh"
-  #[[params.bookmark_link]]
-  #title =  "Image Compression"
-  #href = "https://tinypng.com"
+  # Social Share Links in post page
+  [params.share]
+    enable = true
+    Twitter = true
+    Facebook = true
+    Reddit = true
+    Linkedin = true
+    Pinterest = true
+
+  # Publisher Info just for SEO
+  [params.publisher]
+    name = "xxxx"
+    [params.publisher.logo]
+      url = "logo.png"
+      width = 127
+      height = 40
+
+  # Website Log Info just for SEO
+  [params.logo]
+    url = "logo.png"
+    width = 127
+    height = 40
+
+  # Website Image Info just for SEO
+  [params.image]
+    url = "cover.png"
+    width = 800
+    height = 600
+
+  # Disqus Comment Config (https://disqus.com/)
+  [params.disqus]
+    # Disqus shortname to use Disqus in posts
+    shortname = "charly3pins-github-io-1"
+
+# Privacy Info (https://gohugo.io/about/hugo-and-gdpr/)
+[privacy]
+  [privacy.googleAnalytics]
+    anonymizeIP = true
+
+  [privacy.youtube]
+    privacyEnhanced = true
+
+# Options to make output .md files
+[mediaTypes]
+  [mediaTypes."text/plain"]
+    suffixes = ["md"]
+
+# Options to make output .md files
+[outputFormats.MarkDown]
+  mediaType = "text/plain"
+  isPlainText = true
+  isHTML = false
+
+# Options to make hugo output files
+[outputs]
+  home = ["HTML", "RSS"]
+  page = ["HTML", "MarkDown"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML", "RSS"]
+  taxonomyTerm = ["HTML"]
