@@ -1,11 +1,11 @@
 +++
 layout = "post"
-title = "Installing Drone on Ubuntu"
+title = "Installing Drone 0.8 on Ubuntu 16.04"
 date = "2018-10-10"
 author = "charly3pins"
 description = "Simple post explaining how to install Drone on Ubuntu 16.04 server."
 
-tags = ["go", "drone", "ci/cd", "devops"]
+tags = ["drone", "CI", "devops"]
 
 categories = [ "Tutorial"]
 
