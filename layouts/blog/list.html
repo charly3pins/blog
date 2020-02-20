@@ -11,31 +11,42 @@
 					<span class="bar"></span><span class="bar"></span><span class="bar"></span>
 					<div id="mobile-menu">
 						<span class="menu-item"><a href="/">🏠 home</a></span>
-						<span class="menu-item"><a href="/blog/">📰 blog</a></span>
+						<span class="menu-item"><span href="/blog/">📰 blog</span></span>
 						<span class="menu-item"><a href="/about/">👨‍💻 about</a></span>
 						<span class="menu-item"><a id="rss" href="/index.xml" rel="alternate" type="application/rss+xml" title="RSS for charly3pins, software engineer">📡 rss</a></span>
 					</div>
 				</div>
 				<div id="menu">
 					<span class="menu-item"><a href="/">🏠 home</a></span>
-					<span class="menu-item"><a href="/blog/">📰 blog</a></span>
-					<span class="menu-item"><span href="/about/">👨‍💻 about</span></span>
+					<span class="menu-item"><span href="/blog/">📰 blog</span></span>
+					<span class="menu-item"><a href="/about/">👨‍💻 about</a></span>
 					<span class="menu-item"><a id="rss" href="/index.xml" rel="alternate" type="application/rss+xml" title="RSS for charly3pins, software engineer">📡 rss</a></span>
 				</div>
 			</div>
 
 			<div class="container">
-				<h1>{{ .Title }}</h1>
-
+				<h1>Topics you can find on this blog:</h1>
+				
+				<article>
+					<div class="markdown">
+						<div id="all-tags">
+							<p>
+								{{ range .Site.Taxonomies.tags }}
+									<a class="tag" href="{{ .Page.Permalink }}">{{ .Page.Title }} ({{ .Count }})</a>
+								{{ end }}
+							</p>
+						</div>
+					</div>
+				</article>
+				
 				<div class="page-separator"><hr></div>
 
-				<div class="markdown">
-					{{ .Content | safeHTML }}
-				</div>
-			
-			</div>
+				{{ partial "post_list.html" . }}
 
-			<div class="container">&nbsp;</div>
+			</div>
+			
+			{{ partial "footer.html" . }}
+			
 		</section>
 	</body>
 </html>

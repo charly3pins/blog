@@ -19,23 +19,30 @@
 				<div id="menu">
 					<span class="menu-item"><a href="/">🏠 home</a></span>
 					<span class="menu-item"><a href="/blog/">📰 blog</a></span>
-					<span class="menu-item"><span href="/about/">👨‍💻 about</span></span>
+					<span class="menu-item"><a href="/about/">👨‍💻 about</a></span>
 					<span class="menu-item"><a id="rss" href="/index.xml" rel="alternate" type="application/rss+xml" title="RSS for charly3pins, software engineer">📡 rss</a></span>
 				</div>
 			</div>
 
 			<div class="container">
-				<h1>{{ .Title }}</h1>
+				<h1>Filtering posts by tag:{{ .Title | safeHTML }}</h1>
+				
+				<article>
+					<div class="markdown">
+						<p>Posts with tags including: 
+							<a class="tag" href="/tags/{{ .Title | safeHTML }}/">{{ .Title | safeHTML }}</a>
+						</p>
+					</div>
+				</article>
 
 				<div class="page-separator"><hr></div>
 
-				<div class="markdown">
-					{{ .Content | safeHTML }}
-				</div>
-			
+				{{ partial "post_list.html" . }}
+				
 			</div>
-
-			<div class="container">&nbsp;</div>
+			
+			{{ partial "footer.html" . }}
+			
 		</section>
 	</body>
 </html>
