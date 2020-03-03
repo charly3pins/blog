@@ -1,18 +1,16 @@
 +++
 layout = "post"
 title = "Gophercises - Quiz game"
-subtitle = "Code Review"
 date = "2018-09-24"
 author = "charly3pins"
 description = "Code review of my first exercise in the Gophercises page. It's focused in the CSV and time packages in addition to an introduction for the goroutines and channels."
+
 tags = ["go", "code review"]
-categories = ["Code"]
-image = "/img/puzzle.jpg"
-#showtoc = false
+
+categories = [ "Coding" ]
+
+image = "/images/puzzle.jpg"
 +++
-
-# Intro
-
 This is the first of a several articles I'm planning to write commenting the different exercises that I'm doing in [Gophercises](https://gophercises.com/) page.
 
 > It's a FREE course that will help you become more familiar with Go while developing your skills as a programmer. In the course we will build roughly 20 different mini-applications, packages, and tools that are each designed to teach you something different.

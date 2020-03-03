@@ -1,3 +1,75 @@
-{{ define "main" }}
-  {{ partial "portfolio.html" . }}
-{{ end }}
+<!DOCTYPE html>
+<html lang="{{ .Lang }}">
+	
+	{{ partial "head.html" . }}
+
+	<body>
+		<section id="main">
+
+			<div class="header">
+				<div class="toggle"><input type="checkbox">
+					<span class="bar"></span><span class="bar"></span><span class="bar"></span>
+					<div id="mobile-menu">
+						<span class="menu-item"><span href="/">🏠 home</span></span>
+						<span class="menu-item"><a href="/blog/">📰 blog</a></span>
+						<span class="menu-item"><a href="/about/">👨‍💻 about</a></span>
+						<span class="menu-item"><a id="rss" href="/index.xml" rel="alternate" type="application/rss+xml" title="RSS for charly3pins, software engineer">📡 rss</a></span>
+					</div>
+				</div>
+				<div id="menu">
+					<span class="menu-item"><span href="/">🏠 home</span></span>
+					<span class="menu-item"><a href="/blog/">📰 blog</a></span>
+					<span class="menu-item"><a href="/about/">👨‍💻 about</a></span>
+					<span class="menu-item"><a id="rss" href="/index.xml" rel="alternate" type="application/rss+xml" title="RSS for charly3pins, software engineer">📡 rss</a></span>
+				</div>
+			</div>
+
+			<div class="container">
+				<div class="row index-content">
+					<div id="avatar-box">
+						<img id="avatar" src="/images/avatar-law.png" alt="site author photo">
+					</div>
+					<div class="markdown index-content">
+						<p>Charly3Pins is who recently wrote these articles.</p>
+					</div>
+				</div>
+				
+				<div class="markdown">
+					<ul id="list-items">
+						<li></li>
+						{{range first 10 (where .Paginator.Pages ".Dir" "blog/")}}
+							<li>
+								<a class="li-link" href="{{ .Permalink }}">
+									{{ .Title }}
+									
+									{{with .Params.subtitle }}
+										{{ . }}
+									{{ end }} 
+								</a>
+								<p class="li-brief">    
+									{{ .Description }}
+								</p>
+								<p class="metadata">
+									{{ with .Params.tags }}
+										{{ range . }}
+											<a class="li-tag" href="{{ "tags/" | absURL }}{{ . | urlize }}/">{{ . }}</a>
+										{{ end }}
+									{{ end }}
+									{{ .ReadingTime }} min read | Posted on {{ .Date.Format "2006-01-02" }}
+								</p>
+							</li>
+						{{ end }}
+					</ul>
+				</div>
+
+				<div class="page-separator centered"><hr></div>
+
+				<div class="centered blog-cta-box"><a href="/blog" class="blog-cta">browse all posts</a></div>
+			</div>
+			
+			{{ partial "footer.html" . }}
+			
+		</section>
+	</body>
+</html>
+

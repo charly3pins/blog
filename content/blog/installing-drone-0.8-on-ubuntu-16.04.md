@@ -1,16 +1,16 @@
 +++
 layout = "post"
-title = "Installing Drone on Ubuntu"
+title = "Installing Drone 0.8 on Ubuntu 16.04"
 date = "2018-10-10"
 author = "charly3pins"
 description = "Simple post explaining how to install Drone on Ubuntu 16.04 server."
-tags = ["go", "drone", "ci/cd", "devops"]
+
+tags = ["drone", "CI", "devops"]
+
 categories = [ "Tutorial"]
-image = "/img/droneio.png"
+
+image = "/images/droneio-0.8.png"
 +++
-
-# Intro
-
 I have to admit that I never liked the systems part of the development process. I always though that it was a job in a dark and creppy place, full of freaks doing a rare things. This vision completely changed when I started using [Docker](https://www.docker.com/). On this point I realized that all the magic done in the sysadmin part was better than I though and then, I started intereseting more an more on this side. 
 
 Also, at my job we've started using [Jenkins](https://jenkins.io/) for [CI/CD](https://www.atlassian.com/continuous-delivery/ci-vs-ci-vs-cd), chaning our manual packing-testing-deploying manual task for an automatic process. It was super cool!!! I've feel very happy because it saves a lot of time and allows you to concentrate in your development tasks not wasting time in the deployment phase. I've use to spend a lot of time generating my wars, deploying them to sandbox, testing the new features added, deploying again if something need to fix it again and finally releasing a new version of code and deploying to production. All these steps were simiplified with just comitting to a branch and then mergin to master (after testing of course). At this pont I profundized in how the things are being build and deployed, where (in our case in AWS) and how to do that things. 
