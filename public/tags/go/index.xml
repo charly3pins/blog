@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>go on Charly3Pins, software engineer</title>
+    <link>https://charly3pins.github.io/tags/go/</link>
+    <description>Recent content in go on Charly3Pins, software engineer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 24 Sep 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://charly3pins.github.io/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Gophercises - Quiz game</title>
+      <link>https://charly3pins.github.io/blog/gophercises-quiz/</link>
+      <pubDate>Mon, 24 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://charly3pins.github.io/blog/gophercises-quiz/</guid>
+      <description>This is the first of a several articles I&amp;rsquo;m planning to write commenting the different exercises that I&amp;rsquo;m doing in Gophercises page.
+ It&amp;rsquo;s a FREE course that will help you become more familiar with Go while developing your skills as a programmer. In the course we will build roughly 20 different mini-applications, packages, and tools that are each designed to teach you something different.
+Gophercises I like playing with Go on this site because each exercise is focused in a set of packages of the language and the way of they are presented is really clear and easy to understand.</description>
+    </item>
+    
+    <item>
+      <title>Building static blog with Hugo</title>
+      <link>https://charly3pins.github.io/blog/building-static-blog-with-hugo/</link>
+      <pubDate>Sat, 22 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://charly3pins.github.io/blog/building-static-blog-with-hugo/</guid>
+      <description>If you want to create a fast static website I recommend you Hugo. It&amp;rsquo;s written in Go and it&amp;rsquo;s really use to configure and adapt to your needs. In addition, you can choose through different themes created by the team and others by the community or even create your own one.
+Here I&amp;rsquo;ll explain in some steps how to create one blog with Hugo and how to be hosted &amp;amp; deployed in GitHub and GitHub Pages.</description>
+    </item>
+    
+  </channel>
+</rss>

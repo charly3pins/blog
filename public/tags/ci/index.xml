@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CI on Charly3Pins, software engineer</title>
+    <link>https://charly3pins.github.io/tags/ci/</link>
+    <description>Recent content in CI on Charly3Pins, software engineer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 10 Oct 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://charly3pins.github.io/tags/ci/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Installing Drone 0.8 on Ubuntu 16.04</title>
+      <link>https://charly3pins.github.io/blog/installing-drone-0.8-on-ubuntu-16.04/</link>
+      <pubDate>Wed, 10 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://charly3pins.github.io/blog/installing-drone-0.8-on-ubuntu-16.04/</guid>
+      <description>I have to admit that I never liked the systems part of the development process. I always though that it was a job in a dark and creppy place, full of freaks doing a rare things. This vision completely changed when I started using Docker. On this point I realized that all the magic done in the sysadmin part was better than I though and then, I started intereseting more an more on this side.</description>
+    </item>
+    
+  </channel>
+</rss>

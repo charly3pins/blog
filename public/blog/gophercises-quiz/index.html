@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+	<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+
+  <title>Gophercises - Quiz game</title>
+  <meta property="og:title" content="Gophercises - Quiz game" />
+  <meta name="twitter:title" content="Gophercises - Quiz game" />
+
+  <link rel="stylesheet" href="https://charly3pins.github.io/css/main.css" />
+</head>
+
+	<body>
+		<section id="main">
+
+			<div class="header">
+				<div class="toggle"><input type="checkbox">
+					<span class="bar"></span><span class="bar"></span><span class="bar"></span>
+					<div id="mobile-menu">
+						<span class="menu-item"><a href="/">🏠 home</a></span>
+						<span class="menu-item"><a href="/blog/">📰 blog</a></span>
+						<span class="menu-item"><a href="/about/">👨‍💻 about</a></span>
+						<span class="menu-item"><a id="rss" href="/index.xml" rel="alternate" type="application/rss+xml" title="RSS for charly3pins, software engineer">📡 rss</a></span>
+					</div>
+				</div>
+				<div id="menu">
+					<span class="menu-item"><a href="/">🏠 home</a></span>
+					<span class="menu-item"><a href="/blog/">📰 blog</a></span>
+					<span class="menu-item"><a href="/about/">👨‍💻 about</a></span>
+					<span class="menu-item"><a id="rss" href="/index.xml" rel="alternate" type="application/rss+xml" title="RSS for charly3pins, software engineer">📡 rss</a></span>
+				</div>
+			</div>
+
+			<div class="container">
+				<div id="images">
+					<img src="https://charly3pins.github.io/images/puzzle.jpg" alt="cover image">
+				</div>
+				
+				<div class="markdown">
+					<h1>Gophercises - Quiz game</h1>
+					<p class="subtitle">Code review of my first exercise in the Gophercises page. It&#39;s focused in the CSV and time packages in addition to an introduction for the goroutines and channels.</p>
+					<p class="metadata">
+						
+							
+								<a class="li-tag" href="https://charly3pins.github.io/tags/go/">go</a>
+							
+								<a class="li-tag" href="https://charly3pins.github.io/tags/code-review/">code review</a>
+							
+						
+						8 min read | Posted on 2018-09-24
+					</p>
+				</div>
+
+				<div class="page-separator"><hr></div>
+
+				<div class="markdown">
+					<p><p>This is the first of a several articles I&rsquo;m planning to write commenting the different exercises that I&rsquo;m doing in <a href="https://gophercises.com/">Gophercises</a> page.</p>
+<blockquote>
+<p>It&rsquo;s a FREE course that will help you become more familiar with Go while developing your skills as a programmer. In the course we will build roughly 20 different mini-applications, packages, and tools that are each designed to teach you something different.</p>
+<p><!-- raw HTML omitted -->Gophercises<!-- raw HTML omitted --></p>
+</blockquote>
+<p>I like playing with Go on this site because each exercise is focused in a set of packages of the language and the way of they are presented is really clear and easy to understand. Also, the explanations in video are very helpful to see the final code once you&rsquo;ve yours done.</p>
+<h1 id="quiz-game">Quiz game</h1>
+<p><a href="https://gophercises.com/exercises/quiz">Exercise 1</a> is about creating a program that reads a quiz provided via CSV file, then give the quiz to a user keeping track of how many questions they get right and how many they get incorrect. Second part is about adding a timer to make the game more interesting to play ending the execution when the timer is expired. At the end of the quiz the program shall output the total number of questions correct and how many questions there were in total. Questions given invalid answers or unanswered are considered incorrect.</p>
+<p>On the first part the most exciting task is to work with <code>encoding/csv</code> and <code>flag</code> packages. First one is obviously for work with the CSV file where we&rsquo;ll have our quiz stored. Second one implements command-line flag parsing which we&rsquo;ll use it for injecting the name of the file when we execute the program. What I always do in this cases is go to the <a href="https://golang.org/pkg/">official documentation</a> and check the <code>#pkg-index</code> anchor of the package that I&rsquo;m intereseted. There are a list of all methods and types that the package contains. Then the <code>#pkg-examples</code> one is very helpful to clarify sometimes the method usage.</p>
+<h2 id="flag-parse">Flag parse</h2>
+<p>First of all, we want to know the filename where is stored the quiz using flags. If we check the <a href="https://golang.org/pkg/flag/#pkg-index">flag package</a> we see that there are a lot of types supported, in this case we need the <a href="https://golang.org/pkg/flag/#String">String</a>. So, for obtaining the filename we&rsquo;ll need to use the method like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">filename</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">flag</span>.<span style="color:#a6e22e">String</span>(<span style="color:#e6db74">&#34;csv&#34;</span>, <span style="color:#e6db74">&#34;problems.csv&#34;</span>, <span style="color:#e6db74">&#34;csv filename&#34;</span>)
+<span style="color:#a6e22e">flag</span>.<span style="color:#a6e22e">Parse</span>()
+</code></pre></div><h2 id="process-csv">Process CSV</h2>
+<p>Once we have the filename it&rsquo;s time to read it from the system. In my case I&rsquo;ve used the <code>os</code> package to open the file.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">f</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Open</span>(<span style="color:#f92672">*</span><span style="color:#a6e22e">filename</span>)
+</code></pre></div><p><!-- raw HTML omitted -->Note that I&rsquo;m using a pointer to filename because the String method returns a <code>*string</code>.<!-- raw HTML omitted --></p>
+<p>Then it&rsquo;s time to use the <code>encoding/csv</code> package for reading the CSV.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">r</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">csv</span>.<span style="color:#a6e22e">NewReader</span>(<span style="color:#a6e22e">f</span>)
+<span style="color:#a6e22e">rows</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">ReadAll</span>()
+</code></pre></div><p>With method <a href="https://golang.org/pkg/encoding/csv/#Reader.ReadAll">ReadAll</a> we obtain a <code>[][]string</code>, so we just need to loop over the slice obtained and parse it to the types we need. In the quiz game, we know that CSV file contains two strings, first one is the question and the second one is the answer. I&rsquo;ve created a custom type called <code>problem</code> with two strings for manipulate the rows of the file:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">problem</span> <span style="color:#66d9ef">struct</span> {
+	<span style="color:#a6e22e">question</span> <span style="color:#66d9ef">string</span>
+	<span style="color:#a6e22e">answer</span>   <span style="color:#66d9ef">string</span>
+}
+</code></pre></div><p>Now it&rsquo;s time to convert each row read from the file to a <code>problem</code> struct. The easiest way is to loop over the map of rows and declare a slice of problems <code>[]problem</code> and initialize them with the values of the row that we are obtaining:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">parseCSV</span>(<span style="color:#a6e22e">rows</span> [][]<span style="color:#66d9ef">string</span>) []<span style="color:#a6e22e">problem</span> {
+	<span style="color:#a6e22e">problems</span> <span style="color:#f92672">:=</span> make([]<span style="color:#a6e22e">problem</span>, len(<span style="color:#a6e22e">rows</span>))
+ 	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">row</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">rows</span> {
+		<span style="color:#a6e22e">problems</span>[<span style="color:#a6e22e">i</span>] = <span style="color:#a6e22e">problem</span>{
+			<span style="color:#a6e22e">question</span>: <span style="color:#a6e22e">row</span>[<span style="color:#ae81ff">0</span>],
+			<span style="color:#a6e22e">answer</span>:   <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">TrimSpace</span>(<span style="color:#a6e22e">row</span>[<span style="color:#ae81ff">1</span>]),
+		}
+	}
+ 	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">problems</span>
+}
+</code></pre></div><p><!-- raw HTML omitted -->I&rsquo;ve initialized the problems var with the <code>len(rows)</code> because I knew the exact length and will not change during the execution. Being strict with the nomenclature, the type of our var problems is <code>[len(rows)]problem</code>. In Go when a slice have the length fixed is called array. You can read further on <a href="https://blog.golang.org/go-slices-usage-and-internals">this post</a>.<!-- raw HTML omitted --></p>
+<p>Finally it only remains to display the questions on the screen and request the user for the answers. For achieve this I&rsquo;ve used the <a href="https://golang.org/pkg/fmt/#Scanf">fmt.Scanf()</a>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">problems</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">parseCSV</span>(<span style="color:#a6e22e">rows</span>)
+<span style="color:#a6e22e">correct</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">problem</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">problems</span> {
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;Problem #%d: %s = &#34;</span>, <span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">problem</span>.<span style="color:#a6e22e">question</span>)
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">answer</span> <span style="color:#66d9ef">string</span>
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Scanf</span>(<span style="color:#e6db74">&#34;%s\n&#34;</span>, <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">answer</span>)
+    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">answer</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">problem</span>.<span style="color:#a6e22e">answer</span> {
+        <span style="color:#a6e22e">correct</span><span style="color:#f92672">++</span>
+    }
+}
+<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;%d answers correct of %d questions.&#34;</span>, <span style="color:#a6e22e">correct</span>, len(<span style="color:#a6e22e">problems</span>))
+</code></pre></div><p>Check the entire solution for this part on <a href="https://github.com/charly3pins/gophercises/commit/3a841b67c154fbbb7749eb61612989be8c1127a9#diff-eef4eb636e863480b77d87bc3000e0d1">this commit</a>.</p>
+<h2 id="adding-timers">Adding timers</h2>
+<p>On the second part we are asked to add a timer with a default value of 30s customizable via flags. We need to refactor the code to stop the execution when the time is expired.</p>
+<p>On this part is introduced the <code>time</code> package used for measuring and displaying time. For do the task, we&rsquo;ll need to create a <a href="https://golang.org/pkg/time/#Timer">Timer</a>. The package provides <a href="https://golang.org/pkg/time/#NewTimer">NewTimer</a> method which need a <a href="https://golang.org/pkg/time/#Duration">Duration</a> as a parameter. Not casual the package provide a set of constants to convert time to nanosecond and then convert them to Duration. All togheter looks like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">timer</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">NewTimer</span>(<span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Duration</span>(<span style="color:#f92672">*</span><span style="color:#a6e22e">limit</span>) <span style="color:#f92672">*</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Second</span>)
+</code></pre></div><p><!-- raw HTML omitted --><code>*limit</code> is obtained via flag in same way we&rsquo;ve obtained the filename in the first section.<!-- raw HTML omitted --></p>
+<p>At this point we have the timer created and if we analyze it we see that it contains a channel inside. Let&rsquo;s see what it&rsquo;s a channel first of all and why it&rsquo;s useful in this case.</p>
+<blockquote>
+<p>Channels are the pipes that connect concurrent goroutines. You can send values into channels from one goroutine and receive those values into another goroutine</p>
+<p><!-- raw HTML omitted --><a href="https://gobyexample.com/channels">https://gobyexample.com/channels</a><!-- raw HTML omitted --></p>
+</blockquote>
+<p>You can send value to channel <code>ch &lt;- v</code> and you can receive from a channel and assign it to a var <code>v := &lt;-ch</code>. Sends and receives block until the other side is ready.</p>
+<p>If you&rsquo;ve checked the documentation for Timer, you&rsquo;ll see that says:</p>
+<blockquote>
+<p>When the Timer expires, the current time will be sent on C</p>
+<p><!-- raw HTML omitted --><a href="https://golang.org/pkg/time/#Timer">https://golang.org/pkg/time/#Timer</a><!-- raw HTML omitted --></p>
+</blockquote>
+<p>So this means that we can use the Timer&rsquo;s channel to know when the timer is expired just checking if it contains any value or not. For this we can use a <code>select</code> (switch in other languages) inside our <code>for</code> loop and checking it. If we&rsquo;re in this case, we&rsquo;ll need to stop the quiz so we&rsquo;ll need to print the final result:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">select</span> {
+<span style="color:#66d9ef">case</span> <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">timer</span>.<span style="color:#a6e22e">C</span>:
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;\n%d answers correct of %d questions.\n&#34;</span>, <span style="color:#a6e22e">correct</span>, len(<span style="color:#a6e22e">problems</span>))
+	<span style="color:#66d9ef">return</span>
+}
+</code></pre></div><p><!-- raw HTML omitted -->The <code>return</code> is because I want to break the loop and I don&rsquo;t want to use labels and gotos on this code.<!-- raw HTML omitted --></p>
+<p>On the other hand, we need to cover the case when the timer is not expired, so we can add a <code>default</code> case printing the question and waiting for the answer. For achieve this, we just need to move our previous code inside the <code>select</code> block. The complete code for the loop:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">problem</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">problems</span> {
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;Problem #%d: %s = &#34;</span>, <span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">problem</span>.<span style="color:#a6e22e">question</span>)
+	<span style="color:#66d9ef">select</span> {
+	<span style="color:#66d9ef">case</span> <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">timer</span>.<span style="color:#a6e22e">C</span>:
+		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;\n%d answers correct of %d questions.\n&#34;</span>, <span style="color:#a6e22e">correct</span>, len(<span style="color:#a6e22e">problems</span>))
+		<span style="color:#66d9ef">return</span>
+	<span style="color:#66d9ef">default</span>:
+		<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">answer</span> <span style="color:#66d9ef">string</span>
+		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Scanf</span>(<span style="color:#e6db74">&#34;%s\n&#34;</span>, <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">answer</span>)
+		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">answer</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">problem</span>.<span style="color:#a6e22e">answer</span> {
+			<span style="color:#a6e22e">correct</span><span style="color:#f92672">++</span>
+		}
+	}
+}
+</code></pre></div><p>At this point you could think that we have the program finished but if you execute it you&rsquo;ll see what happens. Yes! the <code>fmt.Scanf(&quot;%s\n&quot;, &amp;answer)</code> is blocking and the program doesn&rsquo;t continues execution until the function receives a value. To solve this, we&rsquo;ll need to use a <code>goroutine</code> and move the blocking part inside. However, before that let&rsquo;s talk a bit about what are and how to integrate with our code.</p>
+<blockquote>
+<p>A goroutine is a lightweight thread managed by the Go runtime.</p>
+<p><!-- raw HTML omitted --><a href="https://tour.golang.org/concurrency/1">https://tour.golang.org/concurrency/1</a><!-- raw HTML omitted --></p>
+</blockquote>
+<p>So in Go the threads are called <!-- raw HTML omitted -->goroutine<!-- raw HTML omitted --> and they are easy to recognise because they are calls to a function preceeded by the keyword <code>go</code>. Using the golang tour example below, we see the goroutine is executing the <code>say</code> function concurrently passing the parameter &ldquo;world&rdquo; and in main thread we have the exeuction of <code>say</code> with parameter &ldquo;hello&rdquo;.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> (
+	<span style="color:#e6db74">&#34;fmt&#34;</span>
+	<span style="color:#e6db74">&#34;time&#34;</span>
+)
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">say</span>(<span style="color:#a6e22e">s</span> <span style="color:#66d9ef">string</span>) {
+	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#ae81ff">5</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+		<span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Sleep</span>(<span style="color:#ae81ff">100</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Millisecond</span>)
+		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">s</span>)
+	}
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#66d9ef">go</span> <span style="color:#a6e22e">say</span>(<span style="color:#e6db74">&#34;world&#34;</span>)
+	<span style="color:#a6e22e">say</span>(<span style="color:#e6db74">&#34;hello&#34;</span>)
+}
+</code></pre></div><p>As we expected, the output of the program is not sequential and we obtain the 5x <code>hello world</code> sentences mixed.</p>
+<pre><code>world
+hello
+hello
+world
+world
+hello
+hello
+world
+world
+hello
+</code></pre><p>Knowing what is a channel and how to work with them and knowing the powerful of the goroutines, we can mix them to achieve our goal in this task. The channels allows goroutines to synchronize without explicit locks or condition variables between them. Let&rsquo;s do it!</p>
+<p>First we move the question outside the <code>select</code> block and extract the <code>default</code> case in a goroutine like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;Problem #%d: %s = &#34;</span>, <span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">problem</span>.<span style="color:#a6e22e">question</span>)
+<span style="color:#a6e22e">answerChannel</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">string</span>)
+<span style="color:#66d9ef">go</span> <span style="color:#66d9ef">func</span>() {
+	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">answer</span> <span style="color:#66d9ef">string</span>
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Scanf</span>(<span style="color:#e6db74">&#34;%s&#34;</span>, <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">answer</span>)
+	<span style="color:#a6e22e">answerChannel</span> <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">answer</span>
+}()
+</code></pre></div><p><!-- raw HTML omitted -->As we read, we need a channel to talk between the goroutines (remember that the main thread is a goroutine in itself) so we have to create a new channel <code>answerChannel</code> and pass the user&rsquo;s response. <!-- raw HTML omitted --></p>
+<p>Last but not least, we need to do is read the channel we&rsquo;ve created. For this I&rsquo;ve created a new <code>case</code> block:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">select</span> {
+<span style="color:#66d9ef">case</span> <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">timer</span>.<span style="color:#a6e22e">C</span>:
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;\n%d answers correct of %d questions.\n&#34;</span>, <span style="color:#a6e22e">correct</span>, len(<span style="color:#a6e22e">problems</span>))
+	<span style="color:#66d9ef">return</span>
+<span style="color:#66d9ef">case</span> <span style="color:#a6e22e">answer</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">answerChannel</span>:
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">answer</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">problem</span>.<span style="color:#a6e22e">answer</span> {
+		<span style="color:#a6e22e">correct</span><span style="color:#f92672">++</span>
+	}
+}
+</code></pre></div><p>Now we have all done, checking on the first case the Timer&rsquo;s channel to know if the time is expired and the second case receiving the user&rsquo;s answer every time he types on the screen, but without blocking the execution because we&rsquo;ve moved this task to a <code>goroutine</code>.</p>
+<p>The full code for the second part is available <a href="https://github.com/charly3pins/gophercises/commit/2b821d0a9821cd6de93985a963e2a24350b34b7b">here</a>.</p>
+<h1 id="in-summary">In summary</h1>
+<p>To sum up, I think this is a very good exercise to do because it introduces you a few useful packages like <code>encoding/csv</code> that I&rsquo;m sure you&rsquo;ll need to use sometimes. There a lot of information that is stored in <code>.csv</code> and it&rsquo;s always useful know how to deal with it. Also it&rsquo;s a good starting point for the <code>channels</code> and <code>goroutines</code> (probably I&rsquo;ll dedicate an entire post to them). Here you can see how to work with them together and why are useful in a real case.</p>
+<p>You can check the <a href="https://github.com/charly3pins/gophercises/tree/master/quiz">complete repo</a> that I&rsquo;ve created for this exercise.</p>
+</p>
+				</div>
+				
+				<div class="page-separator"><hr></div>
+
+				<div class="related">
+					
+					
+					<div class="markdown highlight"><pre class="chroma">See also the related articles</pre></div>
+					<ul id="list-items">
+						
+						<li>
+							<a class="li-link" href="https://charly3pins.github.io/blog/building-static-blog-with-hugo/">Building static blog with Hugo</a>
+							<p class="li-brief">Quick steps to create your onw static blog with Hugo and install a theme from the catalogue. After that, push your site to GitHub and deploy it with GitHub Pages</p>
+							<p class="metadata">
+								
+									
+										<a class="li-tag" href="https://charly3pins.github.io/tags/go/">go</a>
+									
+										<a class="li-tag" href="https://charly3pins.github.io/tags/hugo/">hugo</a>
+									
+										<a class="li-tag" href="https://charly3pins.github.io/tags/github/">github</a>
+									
+										<a class="li-tag" href="https://charly3pins.github.io/tags/cms/">cms</a>
+									
+								
+								4 min read | Posted on 2018-09-22
+							</p>
+						</li>
+						
+					</ul>
+					
+				</div>
+
+			</div>
+			
+			<div class="container">
+  <div class="centered" id="index-footer">
+    <p>Last change 2018-10-10</p>
+    <p>© 2018 - 2020 Charly3Pins</p>
+  </div>
+</div>
+			
+		</section>
+	</body>
+</html>
+
