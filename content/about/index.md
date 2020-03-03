@@ -2,4 +2,8 @@
 title = "About me"
 +++
 
-I am a Software engineer. 
+Hungry for challenges and willing to learn new things every day.
+
+Focused in best practices.
+
+Currently in Go.
