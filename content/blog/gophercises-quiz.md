@@ -1,5 +1,4 @@
 +++
-layout = "post"
 title = "Gophercises - Quiz game"
 date = "2018-09-24"
 author = "charly3pins"

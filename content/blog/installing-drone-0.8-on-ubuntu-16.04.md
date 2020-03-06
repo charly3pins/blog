@@ -1,5 +1,4 @@
 +++
-layout = "post"
 title = "Installing Drone 0.8 on Ubuntu 16.04"
 date = "2018-10-10"
 author = "charly3pins"

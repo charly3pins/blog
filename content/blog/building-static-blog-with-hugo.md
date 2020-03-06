@@ -1,5 +1,4 @@
 +++
-layout = "post"
 title = "Building static blog with Hugo"
 date = "2018-09-22"
 author = "charly3pins"
