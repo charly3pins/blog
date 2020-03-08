@@ -3,7 +3,7 @@ title = "Hugo's content and templates managing"
 date = "2020-03-08"
 author = "charly3pins"
 description = "How organize your content and create your templates to get maximum value from Hugo"
-tito = "hehe"
+
 tags = ["hugo", "cms"]
 
 image = "/images/hugo-content-templates-managing/hugo-logo-wide.svg"
@@ -46,7 +46,7 @@ Also there is a possibility to specify the URL using the property `slug` like sl
 
 ## Templates management
 
-Now you know how to organize your content, it's time to talk about the [templates](TODO_LINK). They are the HTML code that generates the pages of your site. There are a few tricks and tips that I want to share with you like I did with the content on the previous section.
+Now you know how to organize your content, it's time to talk about the [templates](https://gohugo.io/templates/). They are the HTML code that generates the pages of your site. There are a few tricks and tips that I want to share with you like I did with the content on the previous section.
 
 The different templates have to be placed inside the `layouts/` directory. On the root must be the main template called `index.html` used to render the homepage. Same way as the content, the templates can be organized in folders if you want to display in different ways the content depending on the route. Like the content, the templates can be organized between unique and multi. Taking the content organization described before, considering that you want to specify different templates for each content folder, one of the possible template organization can be:
 
@@ -72,7 +72,7 @@ The answer is depending on the URL and the content there. Using again the exampl
 
 On the other hand, inside the `posts` there are three posts but no `index.md` one, so that indicates Hugo that it's a "multi" page, so you will use both templates, the `list.html` one like an "index" of your posts, and the `single.html` for each post. To render the `list.html` one you have to go to the URL of the directory (https://mysite.com/posts/). For the posts (https://mysite.com/posts/first-post) and (https://mysite.com/posts/second-post) the template used will be `single.html`.
 
-### Page variables (TODO CHECK NAME OF THIS SECTION)
+### Page variables
 
 The Pages have a set of useful variables that are good to know:
 - Title: the title of the post
@@ -84,7 +84,7 @@ For accessing to the custom parameters that you can create on each post you shou
 
 You can display a related posts reading the results of the `.Site.RegularPages.Related`.
 
-See the full list on the [documentation](TODO - LINK).
+See the full list on the [documentation](https://gohugo.io/variables/page/) page.
 
 The `list.html` template is used to display a short description of the posts like a book index with the links to the actual post. For doing that, you have to access to the `$.Paginator.Pages` variable and loop over the results. The variables are the same described above with a one more `Permalink`, the one you need to use for access the post (and call the `single.html` template) for that content.
 
@@ -92,4 +92,4 @@ Also there are the `PrevInSection` and `NextInSection` variables for paginate th
 
 ### Partial templates
 
-The last tip I want to explain you is that you don't need to repeat all time all the parts of the templates, you can extract the common part in a template and then reuse it anywhere you want. The particularity of that is you need to place that part inside a `partials/` directory and call it like `{{ partial "name.html" . }}`. More details [here](TODO link).
+The last tip I want to explain you is that you don't need to repeat all time all the parts of the templates, you can extract the common part in a template and then reuse it anywhere you want. These are the [partial templates](https://gohugo.io/templates/partials/). Its particularity is you need to place that part inside a `partials/` directory and call it like `{{ partial "name.html" . }}`. They are useful for the `header`, `footer`, `navbar` and other generic parts as well as for a list template that you wanna reuse for your posts and for your trips for example.
