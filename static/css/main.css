@@ -349,7 +349,6 @@ img{
     display:flex;
     margin:0 1em 0 0;
     justify-content:center;
-    align-items:center
 }
 @media screen and (max-width:868px){
     #avatar-box{
