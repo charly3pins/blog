@@ -1,0 +1,17 @@
+<div class="markdown">
+    <ul id="list-items"> 
+        <!-- Sort by rank bigger first -->
+        {{ range  sort $.Paginator.Pages "Params.rank" "desc" }}
+        <li class="li-anime" >
+            <a class="li-link" href="{{ .Permalink }}">
+                <p>{{ .Title }}</p>
+                <img src="{{ .Params.image | absURL }}" />
+            </a>
+            <p style="float:left;">Status: {{ .Params.status }}</p>
+            <p style="float:right;">{{ .Params.rank }} ⭐</p>
+        </li>
+        {{ end }}
+    </ul>
+</div>
+
+<div class="page-separator centered"><hr></div>

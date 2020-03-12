@@ -11,7 +11,7 @@
 					<span class="bar"></span><span class="bar"></span><span class="bar"></span>
 					<div id="mobile-menu">
 						<span class="menu-item"><a href="/">🏠 home</a></span>
-						<span class="menu-item"><span href="/blog/">📰 blog</span></span>
+						<span class="menu-item"><a href="/blog/">📰 blog</a></span>
 						<span class="menu-item"><a href="/anime/">📺 anime</a></span>
 						<span class="menu-item"><a href="/about/">👨‍💻 about</a></span>
 						<span class="menu-item"><a id="rss" href="/index.xml" rel="alternate" type="application/rss+xml" title="RSS for charly3pins, software engineer">📡 rss</a></span>
@@ -19,7 +19,7 @@
 				</div>
 				<div id="menu">
 					<span class="menu-item"><a href="/">🏠 home</a></span>
-					<span class="menu-item"><span href="/blog/">📰 blog</span></span>
+					<span class="menu-item"><a href="/blog/">📰 blog</a></span>
 					<span class="menu-item"><a href="/anime/">📺 anime</a></span>
 					<span class="menu-item"><a href="/about/">👨‍💻 about</a></span>
 					<span class="menu-item"><a id="rss" href="/index.xml" rel="alternate" type="application/rss+xml" title="RSS for charly3pins, software engineer">📡 rss</a></span>
@@ -27,23 +27,29 @@
 			</div>
 
 			<div class="container">
-				<h1>Topics you can find on this blog:</h1>
+				<div id="images">
+					<img src="{{ .Params.image | absURL }}" alt="cover image">
+				</div>
 				
-				<article>
-					<div class="markdown">
-						<div id="all-tags">
-							<p>
-								{{ range .Site.Taxonomies.tags }}
-									<a class="tag" href="{{ .Page.Permalink }}">{{ .Page.Title }} ({{ .Count }})</a>
-								{{ end }}
-							</p>
-						</div>
-					</div>
-				</article>
-				
+				<div class="markdown">
+					<h1>{{ .Title }}</h1>
+					<p class="subtitle">{{ .Description }}</p>
+					<p class="metadata">
+						{{ with .Params.tags }}
+							{{ range . }}
+								<a class="li-tag" href="{{ "tags/" | absURL }}{{ . | urlize }}/">{{ . }}</a>
+							{{ end }}
+						{{ end }}
+					</p>
+				</div>
+
 				<div class="page-separator"><hr></div>
 
-				{{ partial "post_list.html" . }}
+				<div class="markdown">
+					<p>{{ .Content | safeHTML }}</p>
+				</div>
+				
+				<div class="page-separator"><hr></div>
 
 			</div>
 			
