@@ -1,13 +1,10 @@
 +++
-layout = "post"
 title = "Building static blog with Hugo"
 date = "2018-09-22"
 author = "charly3pins"
-description = "Quick steps to create your onw static blog with Hugo and install a theme from the catalogue. After that, push your site to GitHub and deploy it with GitHub Pages"
+description = "Quick steps to create your own static blog with Hugo and install a theme from the catalogue. After that, push your site to GitHub and deploy it with GitHub Pages"
 
-tags = ["go", "hugo", "github", "cms"]
-
-categories = [ "Tutorial"]
+tags = ["hugo", "cms", "github"]
 
 image = "/images/build-hugo-static-blog/old-school-developer-bg.jpg"
 +++
@@ -33,7 +30,7 @@ hugo new site your-blog-name
 ```
 
 After that, you'll see a new folder called `your-blog-name` and if you look inside you'll see the following tree:
-<img src="/images/build-hugo-static-blog/folder-tree-your-blog-name.png" />
+![Folder tree](/images/build-hugo-static-blog/folder-tree-your-blog-name.png)
 
 * Archetypes are content template files for your project, used when you run `hugo new` command.
 * Content is where all posts and pages are stored. The same structure in this folder will be used for organize the URLs in your rendered site.
@@ -68,7 +65,7 @@ For generate your first blog post you can use the command `hugo new` and set the
 hugo new posts/my-first-post.md
 ```
 You will obtain the following file:
-<img src="/images/build-hugo-static-blog/example-post.png" />
+![Example post](/images/build-hugo-static-blog/example-post.png)
 
 The first section is for parameters and the second one is for the content in this case in markdown. Check this [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) a quick reference and showcase.
 

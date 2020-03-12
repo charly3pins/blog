@@ -1,13 +1,10 @@
 +++
-layout = "post"
 title = "Gophercises - Quiz game"
 date = "2018-09-24"
 author = "charly3pins"
 description = "Code review of my first exercise in the Gophercises page. It's focused in the CSV and time packages in addition to an introduction for the goroutines and channels."
 
 tags = ["go", "code review"]
-
-categories = [ "Coding" ]
 
 image = "/images/puzzle.jpg"
 +++
