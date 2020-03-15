@@ -12,7 +12,7 @@
 					<div id="mobile-menu">
 						<span class="menu-item"><a href="/">🏠 home</a></span>
 						<span class="menu-item"><a href="/blog/">📰 blog</a></span>
-						<span class="menu-item"><a href="/anime/">📺 anime</a></span>
+						<span class="menu-item"><span href="/anime/">📺 anime</span></span>
 						<span class="menu-item"><a href="/about/">👨‍💻 about</a></span>
 						<span class="menu-item"><a id="rss" href="/index.xml" rel="alternate" type="application/rss+xml" title="RSS for charly3pins, software engineer">📡 rss</a></span>
 					</div>
@@ -20,36 +20,29 @@
 				<div id="menu">
 					<span class="menu-item"><a href="/">🏠 home</a></span>
 					<span class="menu-item"><a href="/blog/">📰 blog</a></span>
-					<span class="menu-item"><a href="/anime/">📺 anime</a></span>
+					<span class="menu-item"><span href="/anime/">📺 anime</span></span>
 					<span class="menu-item"><a href="/about/">👨‍💻 about</a></span>
 					<span class="menu-item"><a id="rss" href="/index.xml" rel="alternate" type="application/rss+xml" title="RSS for charly3pins, software engineer">📡 rss</a></span>
 				</div>
 			</div>
 
 			<div class="container">
-				<div id="images">
-					<img src="{{ .Params.image | absURL }}" alt="cover image">
-				</div>
-				
-				<div class="markdown">
-					<h1>{{ .Title }}</h1>
-					<p class="subtitle">{{ .Description }}</p>
-					<p class="metadata">
-						{{ with .Params.tags }}
-							{{ range . }}
-								<a class="li-tag" href="{{ "tags/" | absURL }}{{ . | urlize }}/">{{ . }}</a>
-							{{ end }}
-						{{ end }}
-					</p>
-				</div>
+				<h1>My animes:</h1>
 
 				<div class="page-separator"><hr></div>
 
-				<div class="markdown">
-					<p>{{ .Content | safeHTML }}</p>
-				</div>
-				
-				<div class="page-separator"><hr></div>
+				{{ .Scratch.Set "status" "Finished" }}
+                {{ partial "anime_list.html" . }}
+                <div class="page-separator"><hr></div>
+
+                {{ .Scratch.Set "status" "Watching" }}
+                {{ partial "anime_list.html" . }}
+                <div class="page-separator"><hr></div>
+
+                {{ .Scratch.Set "status" "Pending" }}
+                {{ partial "anime_list.html" . }}
+                
+                <div class="page-separator centered"><hr></div>
 
 			</div>
 			
@@ -58,4 +51,3 @@
 		</section>
 	</body>
 </html>
-

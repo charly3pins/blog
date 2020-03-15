@@ -1,17 +1,84 @@
+{{ $statusScrtch := .Scratch.Get "status" }}
 <div class="markdown">
+    <h2>{{ $statusScrtch }}</h2>
     <ul id="list-items"> 
-        <!-- Sort by rank bigger first -->
-        {{ range  sort $.Paginator.Pages "Params.rank" "desc" }}
-        <li class="li-anime" >
-            <a class="li-link" href="{{ .Permalink }}">
-                <p>{{ .Title }}</p>
-                <img src="{{ .Params.image | absURL }}" />
-            </a>
-            <p style="float:left;">Status: {{ .Params.status }}</p>
-            <p style="float:right;">{{ .Params.rank }} ⭐</p>
+    {{ range sort .Site.Data.animes.animes "rank" "desc" }}
+        {{ if eq .status $statusScrtch }}
+        <li class="li-anime" title="{{ .title }}">
+            <h3 class="anime-title">{{ .title }}</h3>
+            <img class="anime-img" src="{{ .image | absURL }}" />
+            <div title="Rank: {{.rank}}/10">
+                {{ if eq .rank 0 }}
+                <img class="anime-rank" src="/images/animes/empty-heart.png" />
+                <img class="anime-rank" src="/images/animes/empty-heart.png" />
+                <img class="anime-rank" src="/images/animes/empty-heart.png" />
+                <img class="anime-rank" src="/images/animes/empty-heart.png" />
+                <img class="anime-rank" src="/images/animes/empty-heart.png" />
+                {{ else if eq .rank 1 }}
+                <img class="anime-rank" src="/images/animes/half-heart.png" />
+                <img class="anime-rank" src="/images/animes/empty-heart.png" />
+                <img class="anime-rank" src="/images/animes/empty-heart.png" />
+                <img class="anime-rank" src="/images/animes/empty-heart.png" />
+                <img class="anime-rank" src="/images/animes/empty-heart.png" />
+                {{ else if eq .rank 2 }}
+                <img class="anime-rank" src="/images/animes/full-heart.png" />
+                <img class="anime-rank" src="/images/animes/empty-heart.png" />
+                <img class="anime-rank" src="/images/animes/empty-heart.png" />
+                <img class="anime-rank" src="/images/animes/empty-heart.png" />
+                <img class="anime-rank" src="/images/animes/empty-heart.png" />
+                {{ else if eq .rank 3 }}
+                <img class="anime-rank" src="/images/animes/full-heart.png" />
+                <img class="anime-rank" src="/images/animes/half-heart.png" />
+                <img class="anime-rank" src="/images/animes/empty-heart.png" />
+                <img class="anime-rank" src="/images/animes/empty-heart.png" />
+                <img class="anime-rank" src="/images/animes/empty-heart.png" />
+                {{ else if eq .rank 4 }}
+                <img class="anime-rank" src="/images/animes/full-heart.png" />
+                <img class="anime-rank" src="/images/animes/full-heart.png" />
+                <img class="anime-rank" src="/images/animes/empty-heart.png" />
+                <img class="anime-rank" src="/images/animes/empty-heart.png" />
+                <img class="anime-rank" src="/images/animes/empty-heart.png" />
+                {{ else if eq .rank 5 }}
+                <img class="anime-rank" src="/images/animes/full-heart.png" />
+                <img class="anime-rank" src="/images/animes/full-heart.png" />
+                <img class="anime-rank" src="/images/animes/half-heart.png" />
+                <img class="anime-rank" src="/images/animes/empty-heart.png" />
+                <img class="anime-rank" src="/images/animes/empty-heart.png" />
+                {{ else if eq .rank 6 }}
+                <img class="anime-rank" src="/images/animes/full-heart.png" />
+                <img class="anime-rank" src="/images/animes/full-heart.png" />
+                <img class="anime-rank" src="/images/animes/full-heart.png" />
+                <img class="anime-rank" src="/images/animes/empty-heart.png" />
+                <img class="anime-rank" src="/images/animes/empty-heart.png" />
+                {{ else if eq .rank 7 }}
+                <img class="anime-rank" src="/images/animes/full-heart.png" />
+                <img class="anime-rank" src="/images/animes/full-heart.png" />
+                <img class="anime-rank" src="/images/animes/full-heart.png" />
+                <img class="anime-rank" src="/images/animes/half-heart.png" />
+                <img class="anime-rank" src="/images/animes/empty-heart.png" />
+                {{ else if eq .rank 8 }}
+                <img class="anime-rank" src="/images/animes/full-heart.png" />
+                <img class="anime-rank" src="/images/animes/full-heart.png" />
+                <img class="anime-rank" src="/images/animes/full-heart.png" />
+                <img class="anime-rank" src="/images/animes/full-heart.png" />
+                <img class="anime-rank" src="/images/animes/empty-heart.png" />
+                {{ else if eq .rank 9 }}
+                <img class="anime-rank" src="/images/animes/full-heart.png" />
+                <img class="anime-rank" src="/images/animes/full-heart.png" />
+                <img class="anime-rank" src="/images/animes/full-heart.png" />
+                <img class="anime-rank" src="/images/animes/full-heart.png" />
+                <img class="anime-rank" src="/images/animes/half-heart.png" />
+                {{ else if eq .rank 10 }}
+                <img class="anime-rank" src="/images/animes/full-heart.png" />
+                <img class="anime-rank" src="/images/animes/full-heart.png" />
+                <img class="anime-rank" src="/images/animes/full-heart.png" />
+                <img class="anime-rank" src="/images/animes/full-heart.png" />
+                <img class="anime-rank" src="/images/animes/full-heart.png" />
+                {{ end }}
+            </div>
+            {{ if .nextEp }}<p class="anime-next-ep">Next episode: {{ .nextEp }}</p>{{ end }}
         </li>
         {{ end }}
+    {{ end }}
     </ul>
 </div>
-
-<div class="page-separator centered"><hr></div>

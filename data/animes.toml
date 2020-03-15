@@ -1,0 +1,144 @@
+[[animes]]
+title = "Attack on Titan"
+rank = 10
+status = "Finished"
+image = "/images/animes/attack-on-titan.jpg"
+
+[[animes]]
+title = "Bleach"
+rank = 9
+status = "Finished"
+image = "/images/animes/bleach.jpg"
+
+[[animes]]
+title = "My Hero Academia"
+rank = 10
+status = "Watching"
+image = "/images/animes/my-hero-academia.jpg"
+nextEp = 79
+
+[[animes]]
+title = "One Piece"
+rank = 10
+status = "Watching"
+image = "/images/animes/one-piece.jpg"
+nextEp = 910
+
+[[animes]]
+title = "Neon Genesis Evangelion"
+rank = 8
+status = "Finished"
+image = "/images/animes/neon-genesis-evangelion.jpg"
+
+[[animes]]
+title = "Tokyo Ghoul"
+rank = 7
+status = "Watching"
+image = "/images/animes/tokyo-ghoul.jpg"
+nextEp = 27
+
+[[animes]]
+title = "Dragon Ball"
+rank = 0
+status = "Watching"
+image = "/images/animes/dragon-ball.jpg"
+nextEp = 59
+
+[[animes]]
+title = "Hajime no Ippo: The Fighting!"
+rank = 8
+status = "Finished"
+image = "/images/animes/hajime-no-ippo-the-fighting.jpg"
+
+[[animes]]
+title = "Naruto"
+rank = 9
+status = "Finished"
+image = "/images/animes/naruto.jpg"
+
+[[animes]]
+title = "Soul Eater"
+rank = 7
+status = "Finished"
+image = "/images/animes/soul-eater.jpg"
+
+[[animes]]
+title = "Trigun"
+rank = 9
+status = "Finished"
+image = "/images/animes/trigun.jpg"
+
+[[animes]]
+title = "Blue Exorcist"
+rank = 8
+status = "Watching"
+image = "/images/animes/blue-exorcist.jpg"
+nextEp = 27
+
+[[animes]]
+title = "Pokémon"
+rank = 0
+status = "Watching"
+image = "/images/animes/pokemon.jpg"
+nextEp = 28
+
+[[animes]]
+title = "Assassination Classroom"
+rank = 0
+status = "Watching"
+image = "/images/animes/assassination-classroom.jpg"
+nextEp = 12
+
+[[animes]]
+title = "Dororo"
+rank = 0
+status = "Watching"
+image = "/images/animes/dororo.jpg"
+nextEp = 11
+
+[[animes]]
+title = "Castlevania"
+rank = 7
+status = "Watching"
+image = "/images/animes/castlevania.jpg"
+nextEp = 15
+
+[[animes]]
+title = "Haikyu!!"
+rank = 7
+status = "Watching"
+image = "/images/animes/haikyu.jpg"
+nextEp = 25
+
+[[animes]]
+title = "Death Note"
+rank = 9
+status = "Finished"
+image = "/images/animes/death-note.jpg"
+
+[[animes]]
+title = "Aggretsuko"
+rank = 6
+status = "Watching"
+image = "/images/animes/aggretsuko.jpg"
+nextEp = 13
+
+[[animes]]
+title = "JoJo's Bizarre Adventure"
+rank = 0
+status = "Watching"
+image = "/images/animes/jojos-bizarre-adventure.jpg"
+nextEp = 3
+
+[[animes]]
+title = "One-Punch Man"
+rank = 10
+status = "Finished"
+image = "/images/animes/one-punch-man.jpg"
+
+[[animes]]
+title = "Sword Art Online"
+rank = 0
+status = "Watching"
+image = "/images/animes/sword-art-online.jpg"
+nextEp = 4
