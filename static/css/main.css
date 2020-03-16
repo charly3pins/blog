@@ -411,7 +411,8 @@ img{
 }
 #list-items{
     margin-left:0!important;
-    float:left
+    float:left;
+    width:100%;
 }
 #list-items li{
     margin:0 0 3em;
