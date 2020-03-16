@@ -14,7 +14,6 @@
 						<span class="menu-item"><a href="/blog/">📰 blog</a></span>
 						<span class="menu-item"><span href="/anime/">📺 anime</span></span>
 						<span class="menu-item"><a href="/about/">👨‍💻 about</a></span>
-						<span class="menu-item"><a id="rss" href="/index.xml" rel="alternate" type="application/rss+xml" title="RSS for charly3pins, software engineer">📡 rss</a></span>
 					</div>
 				</div>
 				<div id="menu">
@@ -22,26 +21,32 @@
 					<span class="menu-item"><a href="/blog/">📰 blog</a></span>
 					<span class="menu-item"><span href="/anime/">📺 anime</span></span>
 					<span class="menu-item"><a href="/about/">👨‍💻 about</a></span>
-					<span class="menu-item"><a id="rss" href="/index.xml" rel="alternate" type="application/rss+xml" title="RSS for charly3pins, software engineer">📡 rss</a></span>
 				</div>
 			</div>
 
 			<div class="container">
-				<h1>My animes:</h1>
+				<h1>My Anime List</h1>
 
 				<div class="page-separator"><hr></div>
-
-				{{ .Scratch.Set "status" "Finished" }}
-                {{ partial "anime_list.html" . }}
-                <div class="page-separator"><hr></div>
-
-                {{ .Scratch.Set "status" "Watching" }}
-                {{ partial "anime_list.html" . }}
-                <div class="page-separator"><hr></div>
-
-                {{ .Scratch.Set "status" "Pending" }}
-                {{ partial "anime_list.html" . }}
                 
+				{{ .Scratch.Set "status" "Currently Watching" }}
+                {{ partial "anime_list.html" . }}
+                <div class="page-separator"><hr></div>
+
+                {{ .Scratch.Set "status" "Completed" }}
+                {{ partial "anime_list.html" . }}
+                <div class="page-separator"><hr></div>
+
+                {{ .Scratch.Set "status" "On Hold" }}
+                {{ partial "anime_list.html" . }}
+                <div class="page-separator"><hr></div>
+
+                {{ .Scratch.Set "status" "Dropped" }}
+                {{ partial "anime_list.html" . }}
+                <div class="page-separator"><hr></div>
+
+                {{ .Scratch.Set "status" "Plan to Watch" }}
+                {{ partial "anime_list.html" . }}
                 <div class="page-separator centered"><hr></div>
 
 			</div>

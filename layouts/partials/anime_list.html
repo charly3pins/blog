@@ -5,7 +5,7 @@
     {{ range sort .Site.Data.animes.animes "rank" "desc" }}
         {{ if eq .status $statusScrtch }}
         <li class="li-anime" title="{{ .title }}">
-            <h3 class="anime-title">{{ .title }}</h3>
+            <h4 class="anime-title">{{ .title }}</h4>
             <img class="anime-img" src="{{ .image | absURL }}" />
             <div title="Rank: {{.rank}}/10">
                 {{ if eq .rank 0 }}
