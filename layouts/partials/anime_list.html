@@ -1,12 +1,19 @@
 {{ $statusScrtch := .Scratch.Get "status" }}
+{{ $filterBy := "rank" }}
+{{ $orderBy := "desc" }}
+{{ if eq $statusScrtch "Plan to Watch"}}
+    {{ $filterBy = "title" }}
+    {{ $orderBy = "asc" }}
+{{ end }}
 <div class="markdown">
     <h2>{{ $statusScrtch }}</h2>
-    <ul id="list-items"> 
-    {{ range sort .Site.Data.animes.animes "rank" "desc" }}
+    <ul id="list-items">
+    {{ range sort .Site.Data.animes.animes $filterBy $orderBy }}
         {{ if eq .status $statusScrtch }}
-        <li class="li-anime" title="{{ .title }}">
-            <h4 class="anime-title">{{ .title }}</h4>
+        <li class="li-anime">
+            <h4 class="anime-title" title="{{ .title }}">{{ .title }}</h4>
             <img class="anime-img" src="{{ .image | absURL }}" />
+            {{ if ne .status "Plan to Watch"}}
             <div title="Rank: {{.rank}}/10">
                 {{ if eq .rank 0 }}
                 <img class="anime-rank" src="/images/animes/empty-heart.png" />
@@ -77,6 +84,7 @@
                 {{ end }}
             </div>
             {{ if .nextEp }}<p class="anime-next-ep">Next episode: {{ .nextEp }}</p>{{ end }}
+            {{ end }}
         </li>
         {{ end }}
     {{ end }}

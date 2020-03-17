@@ -4,8 +4,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <!-- Site Title, Description, Author, and Favicon -->
 {{ with .Title | default .Site.Title }}
-  <title>{{ . }}</title>
-  <meta property="og:title" content="{{ . }}" />
+  <title>{{ . }} | charly3pins</title>
+  <meta property="og:title" content="{{ . }} - charly3pins" />
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ . | truncate 70 }}" />
 {{ end }}
   <link rel="stylesheet" href="{{ "css/main.css" | absURL }}" />

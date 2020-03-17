@@ -1,3 +1,3 @@
 +++
-title = "Animes"
+title = "My Anime List"
 +++

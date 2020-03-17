@@ -94,12 +94,22 @@ img{
     flex-direction:column;
     justify-content:center;
     align-items:flex-start;
-    margin:0 auto;
+    /* margin:0 auto; */
     width:75%;
     max-width:60em;
-    padding:2%
+    padding-top:2%
 }
-@media all and (max-width:868px){
+@media (min-width: 1200px){
+    .container {
+        width: 1160px;
+    }
+}
+@media (min-width: 400px){
+    .container {
+        margin:0 auto;
+    }
+}
+/* @media all and (max-width:868px){
     .container{
         width:100%;
         padding:2%
@@ -109,7 +119,7 @@ img{
     .container{
         max-width:48em
     }
-}
+} */
 .header{
     background:#333;
     position:-webkit-sticky;
@@ -450,7 +460,7 @@ img{
 .li-anime {
     float:left;
     padding:0px 10px !important;
-    width:25%;
+    width:16.6666666667%;
 }
 @media all and (max-width:868px){
     .li-anime{
@@ -466,13 +476,15 @@ img{
 }
 .anime-img {
     height:275px;
+    margin-bottom:10px !important;
+    margin:0 !important;
 }
 .anime-rank {
     float:left;
     width:25px;
 }
 .anime-next-ep {
-    float:left;
+    clear:left;
     font-size:15px;
     font-weight:bold;
 }
@@ -692,9 +704,9 @@ img{
     cursor:pointer
 }
 #menu{
-    padding:calc(60px/2);
+    /* padding:calc(60px/2); */
     width:calc(100% - (2%) * 2);
-    margin:0 auto;
+    /* margin:0 auto; */
     font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace
 }
 @media all and (max-width:868px){
