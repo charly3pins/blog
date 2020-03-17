@@ -94,12 +94,22 @@ img{
     flex-direction:column;
     justify-content:center;
     align-items:flex-start;
-    margin:0 auto;
-    width:60%;
-    max-width:42em;
-    padding:2%
+    /* margin:0 auto; */
+    width:75%;
+    max-width:60em;
+    padding-top:2%
 }
-@media all and (max-width:868px){
+@media (min-width: 1200px){
+    .container {
+        width: 1160px;
+    }
+}
+@media (min-width: 400px){
+    .container {
+        margin:0 auto;
+    }
+}
+/* @media all and (max-width:868px){
     .container{
         width:100%;
         padding:2%
@@ -109,7 +119,7 @@ img{
     .container{
         max-width:48em
     }
-}
+} */
 .header{
     background:#333;
     position:-webkit-sticky;
@@ -409,24 +419,26 @@ img{
     flex-direction:column;
     text-align:center
 }
-#list-items,#shields{
-    margin-left:0!important
+#list-items{
+    margin-left:0!important;
+    float:left;
+    width:100%;
 }
-#list-items li,#shields li{
+#list-items li{
     margin:0 0 3em;
     padding-left:0;
     list-style:none;
     font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace
 }
 @media all and (max-width:868px){
-    #list-items li,#shields li{
+    #list-items li{
         margin:0 0 2em
     }
 }
-#list-items li p,#shields li p{
+#list-items li p{
     font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol
 }
-#list-items li a,#shields li a{
+#list-items li a{
     font-size:1.4em;
     letter-spacing:-.8px;
     line-height:1.1;
@@ -444,6 +456,37 @@ img{
     border-bottom:0 solid var(--light-grey);
     border-radius:4px;
     text-shadow:0 -1px 0 var(--white),0 -2px 0 var(--light-grey),2px 2px 1px var(--light-grey),4px 4px 1px var(--light-grey)!important
+}
+.li-anime {
+    float:left;
+    padding:0px 10px !important;
+    width:16.6666666667%;
+}
+@media all and (max-width:868px){
+    .li-anime{
+        width:100%;
+    }
+}
+.anime-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.anime-img {
+    height:275px;
+    margin-bottom:10px !important;
+    margin:0 !important;
+}
+.anime-rank {
+    float:left;
+    width:25px;
+}
+.anime-next-ep {
+    clear:left;
+    font-size:15px;
+    font-weight:bold;
 }
 .metadata{
     font-size:.9em
@@ -661,9 +704,9 @@ img{
     cursor:pointer
 }
 #menu{
-    padding:calc(60px/2);
+    /* padding:calc(60px/2); */
     width:calc(100% - (2%) * 2);
-    margin:0 auto;
+    /* margin:0 auto; */
     font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace
 }
 @media all and (max-width:868px){
@@ -812,7 +855,7 @@ img{
     margin:2em 0
 }
 .page-separator hr{
-    width:200px
+    width:300px
 }
 .back-link{
     font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;

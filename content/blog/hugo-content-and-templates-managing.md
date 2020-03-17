@@ -2,7 +2,7 @@
 title = "Hugo's content and templates managing"
 date = "2020-03-08"
 author = "charly3pins"
-description = "How organize your content and create your templates to get maximum value from Hugo"
+description = "How to organize your content and create your templates to get maximum value from Hugo."
 
 tags = ["hugo", "cms"]
 
