@@ -138,7 +138,7 @@ image = "/images/animes/one-punch-man.jpg"
 
 [[animes]]
 title = "Sword Art Online"
-rank = 0
+rank = 8
 status = "Currently Watching"
 image = "/images/animes/sword-art-online.jpg"
 nextEp = 20
