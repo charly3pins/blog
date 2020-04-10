@@ -141,7 +141,7 @@ title = "Sword Art Online"
 rank = 0
 status = "Currently Watching"
 image = "/images/animes/sword-art-online.jpg"
-nextEp = 6
+nextEp = 20
 
 [[animes]]
 title = "Demon Slayer: Kimetsu no Yaiba"
@@ -250,3 +250,9 @@ title = "Blade of the Immortal"
 rank = 0
 status = "Plan to Watch"
 image = "/images/animes/blade-of-the-immortal.jpg"
+
+[[animes]]
+title = "ERASED"
+rank = 8
+status = "Completed"
+image = "/images/animes/erased.jpg"
