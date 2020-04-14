@@ -63,7 +63,7 @@ status = "Completed"
 image = "/images/animes/soul-eater.jpg"
 
 [[animes]]
-title = "Trigun"
+title = "Trigun" 
 rank = 9
 status = "Completed"
 image = "/images/animes/trigun.jpg"
@@ -101,14 +101,14 @@ title = "Castlevania"
 rank = 7
 status = "Currently Watching"
 image = "/images/animes/castlevania.jpg"
-nextEp = 15
+nextEp = 16
 
 [[animes]]
 title = "Haikyu!!"
 rank = 7
 status = "Currently Watching"
 image = "/images/animes/haikyu.jpg"
-nextEp = 25
+nextEp = 26
 
 [[animes]]
 title = "Death Note"
@@ -141,7 +141,7 @@ title = "Sword Art Online"
 rank = 8
 status = "Currently Watching"
 image = "/images/animes/sword-art-online.jpg"
-nextEp = 20
+nextEp = 26
 
 [[animes]]
 title = "Demon Slayer: Kimetsu no Yaiba"
