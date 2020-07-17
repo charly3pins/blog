@@ -15,14 +15,13 @@ title = "My Hero Academia"
 rank = 10
 status = "Currently Watching"
 image = "/images/animes/my-hero-academia.jpg"
-nextEp = 79
 
 [[animes]]
 title = "One Piece"
 rank = 10
 status = "Currently Watching"
 image = "/images/animes/one-piece.jpg"
-nextEp = 910
+nextEp = 933
 
 [[animes]]
 title = "Neon Genesis Evangelion"
@@ -256,3 +255,10 @@ title = "ERASED"
 rank = 8
 status = "Completed"
 image = "/images/animes/erased.jpg"
+
+[[animes]]
+title = "Psycho-Pass"
+rank = 8
+status = "Currently Watching"
+image = "/images/animes/psycho-pass.jpg"
+nextEp = 23
