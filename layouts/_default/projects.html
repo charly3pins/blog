@@ -13,36 +13,29 @@
 						<span class="menu-item"><a href="/">🏠 home</a></span>
 						<span class="menu-item"><a href="/blog/">📰 blog</a></span>
 						<span class="menu-item"><a href="/about/">👨🏻‍💻 about</a></span>
-						<span class="menu-item"><a href="/projects/">🛠️ projects</a></span>
+						<span class="menu-item"><span href="/projects/">🛠️ projects</span></span>
 					</div>
 				</div>
 				<div id="menu">
 					<span class="menu-item"><a href="/">🏠 home</a></span>
 					<span class="menu-item"><a href="/blog/">📰 blog</a></span>
 					<span class="menu-item"><a href="/about/">👨🏻‍💻 about</a></span>
-					<span class="menu-item"><a href="/projects/">🛠️ projects</a></span>
+					<span class="menu-item"><span href="/projects/">🛠️ projects</span></span>
 				</div>
 			</div>
 
 			<div class="container">
-				<h1>Filtering posts by tag:{{ .Title | safeHTML }}</h1>
-				
-				<article>
-					<div class="markdown">
-						<p>Posts with tags including: 
-							<a class="tag" href="/tags/{{ .Title | safeHTML }}/">{{ .Title | safeHTML }}</a>
-						</p>
-					</div>
-				</article>
+				<h1>{{ .Title }}</h1>
 
 				<div class="page-separator"><hr></div>
 
-				{{ partial "post_list.html" . }}
-				
+				<div class="markdown">
+					{{ .Content | safeHTML }}
+				</div>
+			
 			</div>
-			
-			{{ partial "footer.html" . }}
-			
+
+			<div class="container">&nbsp;</div>
 		</section>
 	</body>
 </html>

@@ -1,3 +1,0 @@
-+++
-title = "My Anime List"
-+++

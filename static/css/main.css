@@ -359,6 +359,7 @@ img{
     display:flex;
     margin:0 1em 0 0;
     justify-content:center;
+    align-items: center;
 }
 @media screen and (max-width:868px){
     #avatar-box{
@@ -367,7 +368,7 @@ img{
     }
 }
 #avatar{
-    border-radius:50%;
+    border-radius:10%;
     width:180px;
     box-shadow:6px 4px 0 #2d2d2d
 }
@@ -885,4 +886,29 @@ img{
     100%{
         transform:rotate(-360deg)
     }
+}
+#shields {
+    margin-top: 0!important;
+    margin-left: 0!important;
+}
+#shields li {
+    display: inline-block;
+    padding: 0 .5em 0 0;
+    margin: 0!important;
+    list-style: none;
+    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+}
+#shields li a {
+    display: inline-block;
+    border-bottom: none;
+    text-shadow: none!important;
+    height: 1em;
+    line-height: 0;
+    font-weight: 600;
+    font-size: 1.4em;
+    color: #e1e1e1;
+    letter-spacing: -.8px;
+}
+#shields li a img {
+    margin: 0!important;
 }
