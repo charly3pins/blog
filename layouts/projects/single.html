@@ -44,29 +44,6 @@
 				
 				<div class="page-separator"><hr></div>
 
-				<div class="related">
-					{{ $related := .Site.RegularPages.Related . | first 3 }}
-					{{ with $related }}
-					<div class="markdown highlight"><pre class="chroma">See also the related articles</pre></div>
-					<ul id="list-items">
-						{{ range . }}
-						<li>
-							<a class="li-link" href="{{ .Permalink }}">{{ .Title }}</a>
-							<p class="li-brief">{{ .Description }}</p>
-							<p class="metadata">
-								{{ with .Params.tags }}
-									{{ range . }}
-										<a class="li-tag" href="{{ "tags/" | absURL }}{{ . | urlize }}/">{{ . }}</a>
-									{{ end }}
-								{{ end }}
-								{{ .ReadingTime }} min read | Posted on {{ .Date.Format "2006-01-02" }}
-							</p>
-						</li>
-						{{ end }}
-					</ul>
-					{{ end }}
-				</div>
-
 			</div>
 			
 			{{ partial "footer.html" . }}
