@@ -458,37 +458,6 @@ img{
     border-radius:4px;
     text-shadow:0 -1px 0 var(--white),0 -2px 0 var(--light-grey),2px 2px 1px var(--light-grey),4px 4px 1px var(--light-grey)!important
 }
-.li-anime {
-    float:left;
-    padding:0px 10px !important;
-    width:16.6666666667%;
-}
-@media all and (max-width:868px){
-    .li-anime{
-        width:100%;
-    }
-}
-.anime-title {
-    font-size: 20px;
-    margin-bottom: 10px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-.anime-img {
-    height:275px;
-    margin-bottom:10px !important;
-    margin:0 !important;
-}
-.anime-rank {
-    float:left;
-    width:25px;
-}
-.anime-next-ep {
-    clear:left;
-    font-size:15px;
-    font-weight:bold;
-}
 .metadata{
     font-size:.9em
 }
@@ -576,10 +545,10 @@ img{
     background:#92dbc6
 }
 [href$='/tags/ci/']{
-    background:#c3c3c3
+    background:#c0aeae
 }
 [href$='/tags/ci/']:hover{
-    background:#c3c3c3
+    background:#c0aeae
 }
 [href$='/tags/cms/']{
     background:#afd8f7
@@ -605,11 +574,29 @@ img{
 [href$='/tags/github/']:hover{
     background:#ebdccb
 }
+[href$='/tags/terminal/']{
+    background:#35d64b
+}
+[href$='/tags/terminal/']:hover{
+    background:#35d64b
+}
 [href$='/tags/go/']{
     background:#7fd5ea
 }
 [href$='/tags/go/']:hover{
     background:#7fd5ea
+}
+[href$='/tags/flutter/']{
+    background:#039be5
+}
+[href$='/tags/flutter/']:hover{
+    background:#039be5
+}
+[href$='/tags/python/']{
+    background:#4b8bbe
+}
+[href$='/tags/python/']:hover{
+    background:#4b8bbe
 }
 [href$='/tags/javascript/']{
     background:rgba(232,15,137,.4)
@@ -617,16 +604,16 @@ img{
 [href$='/tags/javascript/']:hover{
     background:rgba(232,15,137,.4)
 }
-[href$='/tags/tool/']{
+[href$='/tags/jquery/']{
     background:#e5c9f2
 }
-[href$='/tags/tool/']:hover{
+[href$='/tags/jquery/']:hover{
     background:#e5c9f2
 }
-[href$='/tags/linux/']{
+[href$='/tags/html/']{
     background:rgba(255,108,14,.6)
 }
-[href$='/tags/linux/']:hover{
+[href$='/tags/html/']:hover{
     background:rgba(255,108,14,.6)
 }
 [href$='/tags/open-source/']{
@@ -641,16 +628,16 @@ img{
 [href$='/tags/git/']:hover{
     background:rgba(255,211,67,.8)
 }
-[href$='/tags/terminal/']{
+[href$='/tags/php/']{
     background:#bfdda6
 }
-[href$='/tags/terminal/']:hover{
+[href$='/tags/php/']:hover{
     background:#bfdda6
 }
-[href$='/tags/websites/']{
+[href$='/tags/css/']{
     background:#c6dbff
 }
-[href$='/tags/websites/']:hover{
+[href$='/tags/css/']:hover{
     background:#c6dbff
 }
 .cloud{

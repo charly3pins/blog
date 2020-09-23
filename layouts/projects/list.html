@@ -25,17 +25,16 @@
 			</div>
 
 			<div class="container">
-				<h1>{{ .Title }}</h1>
+				<h1>{{ .Title }}</h1> 
 
 				<div class="page-separator"><hr></div>
 
-				<div class="markdown">
-					{{ .Content | safeHTML }}
-				</div>
-			
-			</div>
+				{{ partial "projects_list.html" . }}
 
-			<div class="container">&nbsp;</div>
+			</div>
+			
+			{{ partial "footer.html" . }}
+			
 		</section>
 	</body>
 </html>
