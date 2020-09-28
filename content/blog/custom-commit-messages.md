@@ -6,7 +6,7 @@ description = "Generate custom commit messages for your repo and standarize your
 
 tags = ["terminal", "git"]
 
-image = "/images/hugo-content-templates-managing/hugo-logo-wide.svg"
+image = "/images/git-commit.png"
 +++
 
 I've been using the [CMF](https://github.com/walmartdigital/commit-message-formatter) tool for the last one year I think and and its simplicity is its potential. Basically it is a terminal tool developd in Go by [Walmart Digital](https://github.com/walmartdigital) that helps you to standarize the commits log of your projects.
