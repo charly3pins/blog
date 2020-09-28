@@ -4,6 +4,7 @@ date = "2020-09-28"
 author = "charly3pins"
 description = "Series of posts related with Git commands in a friendly way to understand."
 
+section = "blog"
 tags = ["git"]
 
 image = "/images/git-logo-orange.svg"

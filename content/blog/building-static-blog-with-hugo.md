@@ -4,6 +4,7 @@ date = "2018-09-22"
 author = "charly3pins"
 description = "Quick steps to create your own static blog with Hugo and install a theme from the catalogue. After that, push your site to GitHub and deploy it with GitHub Pages."
 
+section = "blog"
 tags = ["hugo", "cms", "github"]
 
 image = "/images/build-hugo-static-blog/old-school-developer-bg.jpg"

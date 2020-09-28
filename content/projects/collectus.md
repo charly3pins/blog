@@ -1,7 +1,7 @@
 +++
 title = "Collectus"
 description = "As my Final Year Project for Computer Science Engineering I builded a flexible database for collectibles and any other objects or data that any user wants to have ordered and classified in a simple and effective way."
-
+section = "projects"
 weight = "1"
 
 #tags = ["php", "javascript"]

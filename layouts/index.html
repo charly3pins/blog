@@ -40,7 +40,7 @@
 				<div class="markdown">
 					<ul id="list-items">
 						<li></li>
-						{{range first 10 (where .Paginator.Pages ".Dir" "blog/")}}
+						{{range first 5 (where .Paginator.Pages "Section" "blog")}}
 							<li>
 								<a class="li-link" href="{{ .Permalink }}">
 									{{ .Title }}

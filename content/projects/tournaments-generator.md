@@ -2,6 +2,7 @@
 title = "Tournaments generator (POC)"
 description = "Proof of concept building an application for managing FIFA 20 tournaments between different people using Flutter for building a mobile app and Go for building an API acting as a server. Also used Python to build simple scrapers."
 
+section = "projects"
 weight = "2"
 
 #tags = ["go", "flutter", "python"]

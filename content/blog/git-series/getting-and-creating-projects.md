@@ -4,6 +4,7 @@ date = "2020-09-28"
 author = "charly3pins"
 description = "Initial commands to get and create projects."
 
+section = "blog"
 tags = ["git", "terminal"]
 
 image = "/images/git-tutorial.jpg"
