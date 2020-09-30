@@ -1,8 +1,8 @@
 +++
-title = "Git commands"
+title = "Mastering Git commands"
 date = "2020-09-28"
 author = "charly3pins"
-description = "Series of posts related with Git commands in a friendly way to understand."
+description = "Index of a series of posts published with the intention to explain in a friendly way the most used Git commands."
 
 section = "blog"
 tags = ["git"]
