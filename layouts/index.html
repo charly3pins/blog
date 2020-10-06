@@ -27,13 +27,13 @@
 			<div class="container">
 				<div class="row index-content">
 					<div id="avatar-box">
-						<img id="avatar" src="/images/me.jpeg" alt="site author photo">
+						<img id="avatar" src="{{ .Site.Params.avatar }}" alt="site author photo">
 					</div>
 					<div class="markdown index-content blurb">
 						<h2 id="" class="anchor-link">
 							<a href="/about"><strong>Welcome! I’m Charly3Pins</strong></a>
 						</h2>
-						<p>I’m a Software Engineer 👨🏻‍💻 Gamer 🎮 and Dog Walker 🐕; also, I wrote these articles.</p>
+						<p>I’m a {{ .Site.Params.description }}; also, I wrote these articles.</p>
 					</div>
 				</div>
 				
@@ -58,7 +58,7 @@
 											<a class="li-tag" href="{{ "tags/" | absURL }}{{ . | urlize }}/">{{ . }}</a>
 										{{ end }}
 									{{ end }}
-									{{ .ReadingTime }} min read | Posted on {{ .Date.Format "2006-01-02" }}
+									{{ .ReadingTime }} min read | Posted on {{ .Date.Format "02/01/2006" }}
 								</p>
 							</li>
 						{{ end }}

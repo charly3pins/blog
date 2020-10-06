@@ -5,7 +5,7 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="referrer" content="no-referrer">
-  <meta name="description" content="Charly3Pins a Software Engineer 👨🏻‍💻 Gamer 🎮 and Dog Walker 🐕">
+  <meta name="description" content="Charly3Pins a {{ .Site.Params.description }}">
 {{ with .Title | default .Site.Title }}
   <title>{{ . }} | Charly3Pins</title>
 {{ end }}
@@ -24,7 +24,9 @@
 {{ with .Description | default .Content }}
   <meta name="twitter:description" content="{{ . }}">
 {{ end }}
-  <meta name="twitter:image" content="{{ .Params.image | absURL }}">
+{{ with  or (.Params.image) (.Site.Params.avatar) | absURL }}
+  <meta name="twitter:image" content="{{ . }}">
+{{ end }}
 
   <link rel="stylesheet" href="{{ "css/main.css" | absURL }}" />
 </head>
