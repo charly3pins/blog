@@ -7,7 +7,7 @@ description = "Generate easily your presentations with present, the tool powered
 section = "blog"
 tags = ["go"]
 
-image = "/images/gophers-working.jpg"
+image = "/images/level-up-your-presentations-with-go/GOPHER_MIC_DROP_WITH_BACKGROUND.png"
 +++
 
 If you're a technical person and you don't like to battle with presentation softwares but you want/need to create one, congratulations! you are in the right place. I know that as software engineers we want to be coding or reading or watching things related with software, architecture or devops but not with presentations. Sometimes we are demanded to present something to other team members, to the product owners or even scarier, to the management team!
@@ -58,13 +58,13 @@ I'm a slide
 ```
 
 So if you run again the `present` command inside your folder and go to the browser again you should be able to see the screen below:
-![initial slide](/images/go-present/initial-slide.jpeg)
+![initial slide](/images/level-up-your-presentations-with-go/initial-slide.jpeg)
 
 Click on the `initial.slide` link and admire your presentation!
-![initial presentation](/images/go-present/initial-presentation.jpeg)
+![initial presentation](/images/level-up-your-presentations-with-go/initial-presentation.jpeg)
 
 As you can see, the first line is the title, the second the date and then it's followed by the author. On the second slide, actually the first one, it appears the title of the slide and the text of that one. The last one displays a gratitude title and your name and contact (email, twitter, etc.) you added in the slide. See it below:
-![end presentation](/images/go-present/end-presentation.jpeg)
+![end presentation](/images/level-up-your-presentations-with-go/end-presentation.jpeg)
 
 # Legacy Present Syntax
 
@@ -80,7 +80,7 @@ _multiple_italic_text_
 ```
 
 And the result:
-![text formatting](/images/go-present/text-formatting.jpeg)
+![text formatting](/images/level-up-your-presentations-with-go/text-formatting.jpeg)
 
 Also you can add a list:
 ```text
@@ -90,7 +90,7 @@ Grocery list for the gopher:
 - garbage collector
 - Rust
 ```
-![text formatting list](/images/go-present/text-formatting-list.jpeg)
+![text formatting list](/images/level-up-your-presentations-with-go/text-formatting-list.jpeg)
 
 Or different level of subsections like that:
 ```
@@ -104,9 +104,9 @@ Another Gopher is diving more into the sub-subsection!
 ```
 
 And you will see the slide like that craziness:
-![text formatting subsections](/images/go-present/text-formatting-subsections.jpeg)
+![text formatting subsections](/images/level-up-your-presentations-with-go/text-formatting-subsections.jpeg)
 
-![gophers](/images/go-present/gophers.gif)
+![gophers](/images/level-up-your-presentations-with-go/gophers.gif)
 
 # Command Invocations
 
@@ -119,7 +119,7 @@ The `.image` command injects a picture in your slide. It accepts 1 or 3 argument
 .image /images/gopher.jpeg _ 300
 ```
 
-![images](/images/go-present/images.jpeg)
+![images](/images/level-up-your-presentations-with-go/images.jpeg)
 
 Like the pictures, you can do the same with a video using the `.video` command. It accepts 2 or 4 arguments (name, file content-type, height, width). Name and file content-type are mandatories, other two must be present or substituted with and `_`.
 ```text
@@ -139,7 +139,7 @@ If you need to insert a link in your presentation you can use the `.link` comman
 .link https://charly3pins.dev
 ```
 
-![links](/images/go-present/links.jpeg)
+![links](/images/level-up-your-presentations-with-go/links.jpeg)
 
 
 ## code
@@ -162,7 +162,7 @@ We need to specify as:
 ```
 
 And it will show like that:
-![code](/images/go-present/code.jpeg)
+![code](/images/level-up-your-presentations-with-go/code.jpeg)
 
 But what happens if you want to highlight some part of the code? Don't worry, present has that "present" and you can add those "optional addresses" we commented below for that. So, modify the code like that to highlight the `Printf` call:
 ```go
@@ -180,7 +180,7 @@ And use the same command in your slide:
 ```
 
 To see the code highlighted:
-![code-hl](/images/go-present/code-hl.jpeg)
+![code-hl](/images/level-up-your-presentations-with-go/code-hl.jpeg)
 
 One step further! If you wanna show only a part of your code, for example hide the package and the imports of your file, you can also add the following snippets:
 ```go
@@ -200,10 +200,10 @@ Again use the same command but adding the following snippet:
 ```
 
 And see the code partially displayed:
-![code-hl-partial](/images/go-present/code-hl-partial.jpeg)
+![code-hl-partial](/images/level-up-your-presentations-with-go/code-hl-partial.jpeg)
 
 That command is superpowerful in order to help you present some code and highlight or hide some parts. But the show must go on, and the best part is the next one. The command `.play` is like the `code` one but it puts a button on the dispalyed source and you can run your program from the browser! Is it magic or not?
-![magic](/images/go-present/magic.gif)
+![magic](/images/level-up-your-presentations-with-go/magic.gif)
 
 So let's use the same source-code that we are using and just add the new command to the slides like this:
 ```text
@@ -211,10 +211,10 @@ So let's use the same source-code that we are using and just add the new command
 ```
 
 It will appear like the `code` one but if you notice on the right bottom corner, it appears a small `Run` button.
-![code-play](/images/go-present/code-play.jpeg)
+![code-play](/images/level-up-your-presentations-with-go/code-play.jpeg)
 
 Running the code will display a small black window on the screen displaying the output of the code:
-![code-played](/images/go-present/code-played.jpeg)
+![code-played](/images/level-up-your-presentations-with-go/code-played.jpeg)
 
 # Presenter Notes
 
@@ -232,7 +232,7 @@ They eat basically plants.
 
 : typically gnaws the roots of a plant just beneath the soil, so the damage isn’t seen
 ```
-![present-notes](/images/go-present/present-notes.jpeg)
+![present-notes](/images/level-up-your-presentations-with-go/present-notes.jpeg)
 
 
 As you can see the notes aren't present there, so WHY? Because you need to run the presentation in a "presenter" like that.
@@ -247,7 +247,7 @@ And it should display a message similar to:
 ```
 
 So if you refresh your browser with the presentation and press `N` you will see a popup displaying the notes of each slide on the bottom. like that:
-![present-notes-popup](/images/go-present/present-notes-popup.jpeg)
+![present-notes-popup](/images/level-up-your-presentations-with-go/present-notes-popup.jpeg)
 
 # Conclusion
 
