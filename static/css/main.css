@@ -849,7 +849,7 @@ img{
     font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
     font-size:.9em
 }
-.centered,#images{
+.centered,#cover-image{
     width:100%;
     display:flex;
     justify-content:center;

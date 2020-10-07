@@ -11,3 +11,6 @@ title = "charly3pins.dev"
 	since = 2018
 	avatar = "/images/me.jpeg"
 	description = "Software Engineer 👨🏻‍💻 Gamer 🎮 and Dog Walker 🐕"
+	
+	# list of sections skipped by RSS
+	nofeedSections = ["projects"]
