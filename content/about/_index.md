@@ -1,5 +1,7 @@
 +++
 title = "About Charly3Pins"
+
+image = "/images/embalse-de-cavallers.jpeg"
 +++
 
 My name is Carles 🙋🏻‍♂️, but I always used Charly3Pins as my username; if you wanna know why, you can ask me 😜

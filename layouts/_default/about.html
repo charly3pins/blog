@@ -29,6 +29,10 @@
 
 				<div class="page-separator"><hr></div>
 
+				<div id="cover-image">
+					<img src="{{ .Params.image | absURL }}" alt="cover image">
+				</div>
+				
 				<div class="markdown">
 					{{ .Content | safeHTML }}
 					
