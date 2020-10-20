@@ -25,16 +25,8 @@
 			</div>
 
 			<div class="container">
-				<h1>Filtering posts by tag:{{ .Title | safeHTML }}</h1>
+				<h1>Filter posts by tag: <a class="tag" href="/tags/{{ .Title | safeHTML }}/">{{ .Title | safeHTML }}</a></h1>
 				
-				<article>
-					<div class="markdown">
-						<p>Posts with tags including: 
-							<a class="tag" href="/tags/{{ .Title | safeHTML }}/">{{ .Title | safeHTML }}</a>
-						</p>
-					</div>
-				</article>
-
 				<div class="page-separator"><hr></div>
 
 				{{ partial "posts_list.html" . }}
