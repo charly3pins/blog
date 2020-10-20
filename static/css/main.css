@@ -538,12 +538,6 @@ img{
 [href$='/tags/aws/']:hover{
     background:#ffcaa3
 }
-[href$='/tags/code-review/']{
-    background:#92dbc6
-}
-[href$='/tags/code-review/']:hover{
-    background:#92dbc6
-}
 [href$='/tags/ci/']{
     background:#c0aeae
 }
@@ -604,16 +598,10 @@ img{
 [href$='/tags/javascript/']:hover{
     background:rgba(232,15,137,.4)
 }
-[href$='/tags/jquery/']{
-    background:#e5c9f2
-}
-[href$='/tags/jquery/']:hover{
-    background:#e5c9f2
-}
-[href$='/tags/html/']{
+[href$='/tags/versioning/']{
     background:rgba(255,108,14,.6)
 }
-[href$='/tags/html/']:hover{
+[href$='/tags/versioning/']:hover{
     background:rgba(255,108,14,.6)
 }
 [href$='/tags/open-source/']{
@@ -628,16 +616,16 @@ img{
 [href$='/tags/git/']:hover{
     background:rgba(255,211,67,.8)
 }
-[href$='/tags/php/']{
+[href$='/tags/api/']{
     background:#bfdda6
 }
-[href$='/tags/php/']:hover{
+[href$='/tags/api/']:hover{
     background:#bfdda6
 }
-[href$='/tags/css/']{
+[href$='/tags/life/']{
     background:#c6dbff
 }
-[href$='/tags/css/']:hover{
+[href$='/tags/life/']:hover{
     background:#c6dbff
 }
 .cloud{
