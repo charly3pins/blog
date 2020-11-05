@@ -15,17 +15,17 @@ If you're a technical person and you don't like to battle with presentation soft
 For that reason I want to introduce you to the Go package [present](https://godoc.org/golang.org/x/tools/present). It's used to create slides in Golang hosted on talks.golang.org or on your private one. I've used it several times, especially when I want to share something to my colleagues on the team (some code of course), because I don't want to waste time with softwares. I just create the project for the slides, add my slides in markdown, add the images needed and just present them to them. Let's see in detail how it works!
 
 Assuming you have [Go installed](https://golang.org/doc/install) and correctly configured, all you need to install is the package with the following command:
-```terminal
+```vim
 go get -u golang.org/x/tools/present
 ```
 
 Test if it works typing:
-```terminal
+```vim
 present
 ```
 
 And it should display a message similar to:
-```terminal
+```vim
 2020/10/04 23:23:54 Open your web browser and visit http://127.0.0.1:3999
 ```
 
@@ -34,18 +34,18 @@ So you can visit the link, and see the local server ready to host your presentat
 # Format
 
 Create a directory for your slides:
-```terminal
+```vim
 mkdir go-present-example
 cd go-present-example/
 ```
 
 Create your first slide:
-```terminal
+```vim
 vim initial.slide
 ```
 
 And add the following:
-```terminal
+```
 Learning Go present
 6 October 2020
 
@@ -236,12 +236,12 @@ They eat basically plants.
 
 
 As you can see the notes aren't present there, so WHY? Because you need to run the presentation in a "presenter" like that.
-```terminal
+```vim
 present -notes
 ```
 
 And it should display a message similar to:
-```terminal
+```vim
 2020/10/04 23:23:54 Open your web browser and visit http://127.0.0.1:3999
 2020/10/04 Notes are enabled, press 'N' from the browser to display them.
 ```

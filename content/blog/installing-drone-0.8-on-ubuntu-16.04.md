@@ -23,13 +23,17 @@ At this point is when I discovered [Drone](https://drone.io/). Jenkins is really
 ## Drone
 
 First of all you need to pull the drone image.
-```
+```vim
 docker pull drone/drone:0.8
 ```
 
 Then create the docker-compose for run it:
+```vim
+sudo nano /etc/drone/docker-compose.yml
 ```
-$ sudo nano /etc/drone/docker-compose.yml
+
+And copy the following:
+```
 version: '2'
 
 services:
@@ -58,10 +62,11 @@ services:
 <small>In my case I've used these ports because I have other things in my Nginx, but you can choose your own ones. I've also stored the server and agent `env` vars in a specific files.</small>
 
 Now it's time to create those files. First we create the server one:
-```
+```vim
 sudo nano /etc/drone/server.env
 ```
-server.env
+
+And copy the following:
 ```
 # Service settings 
 DRONE_SECRET=secret_generated_on_command_line
@@ -80,25 +85,27 @@ DRONE_GITHUB_SECRET=Client_Secret_from_GitHub
 For the GitHub clientID and clientSecret, you must register Drone in your GitHub account to obtain them. Follow [these instructions](https://developer.github.com/apps/building-oauth-apps/creating-an-oauth-app/).
 
 And now the agent one:
-```
+```vim
 sudo nano /etc/drone/agent.env
 ```
-agent.env
+
+And copy the following:
 ```
 DRONE_SECRET=secret_generated_on_command_line
 DRONE_SERVER=drone-server:9000
 ```
 
 To generate the `DRONE_SECRET` you can ype the following command 
-```
+```vim
 LC_ALL=C </dev/urandom tr -dc A-Za-z0-9 | head -c 65 && echo
 ```
 
 Once our Drone is installed and configured, we need to create a systemd unit file to manage the service.
-```
+```vim
 sudo nano /etc/systemd/system/drone.service
 ```
-drone.service
+
+And copy the following:
 ```
 [Unit]
 Description=Drone server
@@ -116,11 +123,12 @@ WantedBy=multi-user.target
 ## Configure Nginx
 
 And finally we need to configure our Nginx to proxy requests to our Drone server. First of all find the enabled server blocks with the following command:
-```
+```vim
 grep -R server_name /etc/nginx/sites-enabled
 ```
+
 You'll see something like this:
-```
+```vim
 Output
 /etc/nginx/sites-enabled/default:   server_name yourDroneURL.com;
 /etc/nginx/sites-enabled/default:   return 301 https://$server_name$request_uri;
@@ -129,11 +137,11 @@ Output
 ```
 
 After knowing the block that is handling our server, we can edit it typping:
-```
+```vim
 sudo nano /etc/nginx/sites-enabled/default 
 ```
 And adding this text before the `server {` block:
-```
+```vim
 upstream drone {upstream drone {
          server 127.0.0.1:8000;server 127.0.0.1:8000;
  }}
@@ -145,7 +153,7 @@ upstream drone {upstream drone {
 ```
 
 Next, find the server block with the listen 443 directive inside. Replace the contents of the location block with the following:
-```
+```vim
 server {
     listen 443 ssl;
     location / {
@@ -166,48 +174,49 @@ server {
 ```
 
 Now it's time to test if our Nginx it's working or not:
-```
+```vim
 sudo nginx -t
 ```
+
 You should see:
-```
+```vim
 Output
 nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
 nginx: configuration file /etc/nginx/nginx.conf test is successful
 ```
 
 You just need to restart the server and will proxy the requests:
-```
+```vim
 sudo systemctl restart nginx
 ```
 
 Finally, you need to start the Drone server:
-```
+```vim
 sudo systemctl start drone
 ```
 
 To check the status of the container you can use the following command:
-```
+```vim
 sudo systemctl status drone
 ```
 
 You can check the Nginx logs:
-```
+```vim
 sudo less /var/log/nginx/error.log
 ```
 
 And also you can chcek the Drone logs:
-```
+```vim
 sudo journalctl -u drone
 ```
 
 If all it's okay, its time to enable Drone:
-```
+```vim
 sudo systemctl enable drone
 ```
 
 If you want to switch off Drone you can type the following commands:
-```
+```vim
 cd /etc/drone
 sudo /usr/local/bin/docker-compose down
 ```

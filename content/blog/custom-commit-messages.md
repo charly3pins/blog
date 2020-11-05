@@ -15,16 +15,16 @@ I've been using the [CMF](https://github.com/walmartdigital/commit-message-forma
 I've been using for the last year and a half approximatley and all I can say its very useful. We agreed with the team the configuration we want to use and defined a set of changes that applies in our case. Also we choose the [Jira flow](https://github.com/walmartdigital/commit-message-formatter#jira-flow) and we changed the values for the `change` adding an emojis to make the commits a bit more funny to check them in the log.
 
 You can install it via npm:
-```terminal
+```vim
 npm install -g go-cmf
 ``` 
 or from Go:
-```terminal
+```vim
 go install github.com/walmartdigital/commit-message-formatter
 ```
 
 After that, open a terminal and navigate to the root of the project you want to use it. Then type:
-```terminal
+```vim
 cmf init 
 ```
 
