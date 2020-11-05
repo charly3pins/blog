@@ -527,10 +527,10 @@ img{
     background:#f3dcf7
 }
 [href$='/tags/devops/']{
-    background:#c6d861
+    background:#d625b9
 }
 [href$='/tags/devops/']:hover{
-    background:#c6d861
+    background:#d625b9
 }
 [href$='/tags/aws/']{
     background:#ffcaa3
@@ -557,10 +557,10 @@ img{
     background:#ffccf5
 }
 [href$='/tags/drone/']{
-    background:#e55050
+    background:#dfd6d6
 }
 [href$='/tags/drone/']:hover{
-    background:#e55050
+    background:#dfd6d6
 }
 [href$='/tags/github/']{
     background:#ebdccb
@@ -627,6 +627,18 @@ img{
 }
 [href$='/tags/life/']:hover{
     background:#c6dbff
+}
+[href$='/tags/linux/']{
+    background:#dd4814
+}
+[href$='/tags/linux/']:hover{
+    background:#dd4814
+}
+[href$='/tags/raspberry-pi/']{
+    background:#c51a4a
+}
+[href$='/tags/raspberry-pi/']:hover{
+    background:#c51a4a
 }
 .cloud{
     height:auto;
