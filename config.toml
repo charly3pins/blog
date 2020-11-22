@@ -1,6 +1,7 @@
 baseURL = "https://charly3pins.dev/"
 languageCode = "en-us"
 title = "charly3pins.dev"
+googleAnalytics = "UA-126216319-1"
 
 [author]
 	name = "Charly3Pins"
