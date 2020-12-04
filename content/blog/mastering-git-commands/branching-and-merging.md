@@ -2,17 +2,16 @@
 draft = true
 
 title = "Branching and Merging"
-date = "2020-10-07"
+date = "2020-12-04"
 author = "charly3pins"
-description = "Initial commands to get and create projects."
+description = "Mastering Git commands: Initial commands to branch and merge projects."
 
 section = "blog"
 tags = ["git", "terminal"]
 
 image = "/images/git-tutorial.jpg"
 +++
-
-This article is part of the series Mastering Git commands.<LINK HERE>
+<!-- This article is part of the series Mastering Git commands.<LINK HERE> -->
 
 In my [last post](/link-here) we checked the commands for managing the snapshots in Git. We saw how we can add files, commit the changes adding a message, check the status of the files in our project and how to undo changes using the reset. In this post we will cover the most important commands in Git and where all the powerful are condensed. Let’s get dirty with the branching and merging things.
 
