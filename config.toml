@@ -11,7 +11,7 @@ googleAnalytics = "UA-126216319-1"
 	## Site creation time
 	since = 2018
 	avatar = "/images/me.jpeg"
-	description = "Software Engineer 👨🏻‍💻 Gamer 🎮 and Dog Walker 🐕"
+	description = "Software Engineer 👨🏻‍💻 gamer 🎮 and dog walker 🐕"
 	
 	# list of sections skipped by RSS
 	nofeedSections = ["projects"]
