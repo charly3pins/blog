@@ -1,4 +1,6 @@
 +++
+draft = true
+
 title = "Mastering Git commands"
 date = "2020-09-28"
 author = "charly3pins"
