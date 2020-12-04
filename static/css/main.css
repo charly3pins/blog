@@ -672,13 +672,27 @@ img{
     justify-content:space-between;
     align-items:center
 }
-.pagination .page-item{
+.pagination > .page-item{
     margin:0 .5em;
     list-style-type:none;
     text-align:center
 }
-.pagination .page-link{
-    background:0 0
+.pagination > .disabled > .page-link{
+    border-bottom:none !important;
+    color:var(--light-grey) !important;
+}
+.pagination > .active > .page-link:hover, 
+.pagination > .disabled > .page-link:hover{
+    text-shadow:none !important;
+}
+.pagination > .active{
+    padding:5px;
+    background:#35d64b;
+    border-radius: 4px;
+}
+.pagination > .active > .page-link {
+    color: #000 !important;
+    border-bottom:none !important;
 }
 .dropdown{
     padding:1rem 0;
