@@ -4,36 +4,15 @@
 	{{ partial "head.html" . }}
 
 	<body>
-		<section id="main">
+		<div id="main">
 
-			<div class="header">
-				<div class="toggle"><input type="checkbox">
-					<span class="bar"></span><span class="bar"></span><span class="bar"></span>
-					<div id="mobile-menu">
-						<span class="menu-item"><a href="/">🏠 home</a></span>
-						<span class="menu-item"><a href="/blog/">📰 blog</a></span>
-						<span class="menu-item"><a href="/about/">👨🏻‍💻 about</a></span>
-						<span class="menu-item"><a href="/projects/">🛠️ projects</a></span>
-					</div>
-				</div>
-				<div id="menu">
-					<span class="menu-item"><a href="/">🏠 home</a></span>
-					<span class="menu-item"><a href="/blog/">📰 blog</a></span>
-					<span class="menu-item"><a href="/about/">👨🏻‍💻 about</a></span>
-					<span class="menu-item"><a href="/projects/">🛠️ projects</a></span>
-				</div>
-			</div>
+			{{ partial "navbar" . }}
 
 			<div class="container">
 				<div class="markdown">
 					<h1>{{ .Title }}</h1>
-					<p class="metadata">
-						{{ with .Params.tags }}
-							{{ range . }}
-								<a class="li-tag" href="{{ "tags/" | absURL }}{{ . | urlize }}/">{{ . }}</a>
-							{{ end }}
-						{{ end }}
-					</p>
+					
+					{{ partial "metadata.html" . }}
 				</div>
 
 				<div class="page-separator"><hr></div>
@@ -48,7 +27,7 @@
 			
 			{{ partial "footer.html" . }}
 			
-		</section>
+		</div>
 	</body>
 </html>
 

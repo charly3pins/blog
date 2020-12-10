@@ -5,7 +5,7 @@ author = "charly3pins"
 description = "Simple post explaining how to install Drone on Ubuntu 16.04 server."
 
 section = "blog"
-tags = ["drone", "CI", "devops"]
+tags = ["drone", "ci", "devops"]
 
 image = "/images/droneio-0.8.png"
 +++

@@ -12,7 +12,46 @@ disqusShortname = "charly3pins"
 	## Site creation time
 	since = 2018
 	avatar = "/images/me.jpeg"
-	description = "Software Engineer 👨🏻‍💻 gamer 🎮 and dog walker 🐕"
-	
+	indexDescription = "I’m a Software Engineer 👨🏻‍💻 gamer 🎮 and dog walker 🐕; also, I wrote these articles."
+	metaDescription = "Software Engineer 👨🏻‍💻 gamer 🎮 and dog walker 🐕"
+	welcome = "Welcome! I’m Charly3Pins"
+
 	# list of sections skipped by RSS
 	nofeedSections = ["projects"]
+
+[menu]
+
+	[[menu.main]]
+		name = "~"
+		url = "/"
+		weight = -150
+
+	[[menu.main]]
+		name = "BLOG"
+		url = "/blog/"
+		weight = -140
+	
+	[[menu.main]]
+		name = "PROJECTS"
+		url = "/projects/"
+		weight = -130
+
+	[[menu.main]]
+		name = "BOOKS"
+		url = "/books/"
+		weight = -120
+	
+	[[menu.main]]
+		name = "NOTES"
+		url = "/notes/"
+		weight = -120
+
+	[[menu.main]]
+		name = "$USER"
+		url = "/about/"
+		weight = -110
+
+	[[menu.main]]
+		name = "RSS"
+		url = "/index.xml"
+		weight = -100

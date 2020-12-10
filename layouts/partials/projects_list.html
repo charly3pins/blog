@@ -4,13 +4,8 @@
         <li>
             <a class="li-link" href="{{ .Permalink }}">{{ .Title }}</a>
             <p class="li-brief">{{ .Description }}</p>
-            <p class="metadata">
-                {{ with .Params.tags }}
-                    {{ range . }}
-                        <a class="li-tag" href="{{ "tags/" | absURL }}{{ . | urlize }}/">{{ . }}</a>
-                    {{ end }}
-                {{ end }}
-            </p>
+            
+            {{ partial "metadata.html" . }}
         </li>
         {{ end }}
     </ul>

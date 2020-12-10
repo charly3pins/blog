@@ -1,10 +1,10 @@
 +++
-title = "About Charly3Pins"
+title = "> echo $USER"
 
 image = "/images/embalse-de-cavallers.jpeg"
 +++
 
-My name is Carles 🙋🏻‍♂️, but I always used Charly3Pins as my username; if you wanna know why, you can ask me 😜
+Hello! 🙋🏻‍♂️ I'm Charly3Pins 
 
 I'm a software engineer 👨🏻‍💻 hungry for challenges and willing to learn new things every day 🙇🏻‍♂️
 
