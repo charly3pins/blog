@@ -4,5 +4,5 @@
             <a class="button tag" href="{{ "tags/" | absURL }}{{ . | urlize }}/"><span class="tag-prefix">#</span>{{ . }}</a>
         {{ end }}
     {{ end }}
-    · {{ .Date.Format "02/01/2006" }} · {{ .ReadingTime }} min read ·
+    {{ if ne .Params.Section "/code" }}· {{ .Date.Format "02/01/2006" }} · {{ .ReadingTime }} min read ·{{end}}
 </p>

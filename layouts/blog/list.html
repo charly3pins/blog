@@ -9,7 +9,7 @@
 			{{ partial "navbar" . }}
 
 			<div class="container">
-				<h1>{{ .Title }} <span class="cursor"></span></h1>
+				<h1 class="h1-section">{{ .Title }} <span class="cursor"></span></h1>
 
 				<div class="markdown">
 					<p>
@@ -19,7 +19,7 @@
 					</p>
 				</div>
 				
-				<div class="page-separator"><hr></div>
+				<div class="page-separator centered"><hr></div>
 
 				{{ partial "posts_list.html" . }}
 

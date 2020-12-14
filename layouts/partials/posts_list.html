@@ -1,9 +1,9 @@
 <div class="markdown">
     <ul id="list-items">
-        {{ range $index, $element := $.Paginator.Pages }}
+        {{ range .Paginator.Pages }}
         <li>
             <a class="li-link" href="{{ .Permalink }}">{{ .Title }}</a>
-            <p class="li-brief">{{ .Description }}</p>
+            <p>{{ .Description }}</p>
             
             {{ partial "metadata.html" . }}
         </li>

@@ -9,22 +9,12 @@
 			{{ partial "navbar" . }}
 			
 			<div class="container">
-				<h1>{{ .Title }} <span class="cursor"></span></h1>
+				<h1 class="h1-section">{{ .Title }} <span class="cursor"></span></h1>
 
 				<img src="{{ .Params.image | absURL }}" alt="cover image">
 				
 				<div class="markdown">
 					{{ .Content | safeHTML }}
-					
-					<p>🕵️ Find me in:</p>
-					<ul id="shields">
-						<li>
-							<a href="https://github.com/charly3pins" alt="Follow on GitHub"><img alt="Follow on GitHub" src="https://img.shields.io/github/followers/charly3pins?label=%40charly3pins&amp;style=social"></a>
-						</li>
-						<li>
-							<a href="https://twitter.com/charly3pins" alt="Follow on Twitter"><img alt="Follow on Twitter" src="https://img.shields.io/twitter/follow/charly3pins?label=%40charly3pins&amp;style=social"></a>
-						</li>
-					</ul>
 				</div>
 			</div>
 

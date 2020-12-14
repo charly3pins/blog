@@ -12,8 +12,8 @@ disqusShortname = "charly3pins"
 	## Site creation time
 	since = 2018
 	avatar = "/images/me.jpeg"
-	indexDescription = "I’m a Software Engineer 👨🏻‍💻 gamer 🎮 and dog walker 🐕; also, I wrote these articles."
-	metaDescription = "Software Engineer 👨🏻‍💻 gamer 🎮 and dog walker 🐕"
+	indexDescription = "I am a Software Engineer, gamer and dog walker; also, I wrote these articles!"
+	metaDescription = "Software Engineer, gamer and dog walker"
 	welcome = "Welcome! I’m Charly3Pins"
 
 	# list of sections skipped by RSS
@@ -27,22 +27,17 @@ disqusShortname = "charly3pins"
 		weight = -150
 
 	[[menu.main]]
-		name = "BLOG"
+		name = "/blog"
 		url = "/blog/"
 		weight = -140
 	
 	[[menu.main]]
-		name = "PROJECTS"
-		url = "/projects/"
+		name = "/code"
+		url = "/code/"
 		weight = -130
 
 	[[menu.main]]
-		name = "BOOKS"
-		url = "/books/"
-		weight = -120
-	
-	[[menu.main]]
-		name = "NOTES"
+		name = "/notes"
 		url = "/notes/"
 		weight = -120
 
@@ -50,8 +45,3 @@ disqusShortname = "charly3pins"
 		name = "$USER"
 		url = "/about/"
 		weight = -110
-
-	[[menu.main]]
-		name = "RSS"
-		url = "/index.xml"
-		weight = -100

@@ -1,5 +1,5 @@
 +++
-title = "> echo $USER"
+title = "echo $USER"
 
 image = "/images/embalse-de-cavallers.jpeg"
 +++

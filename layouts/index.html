@@ -19,11 +19,15 @@
 					</h1>
 					<p>{{ .Site.Params.indexDescription }}</p>
 				</div>
+			</div>
+			<div class="page-separator centered"><hr></div>	
+			
+			<div class="container">
 				
 				<div class="markdown">
 					<ul id="list-items">
 						<li></li>
-						{{range first 5 (where .Paginator.Pages "Section" "blog")}}
+						{{range first 3 (where .Paginator.Pages "Section" "blog")}}
 							<li>
 								<a class="li-link" href="{{ .Permalink }}">{{ .Title }}</a>
 								<p>{{ .Description }}</p>
@@ -34,8 +38,10 @@
 					</ul>
 				</div>
 
-				<div class="centered"><a href="/blog" class="button" id="blog-cta">and more...</a></div>
+				<div class="centered"><a href="/blog" class="button" id="blog-cta">Read more</a></div>
 			</div>
+
+			<div class="page-separator centered"><hr></div>	
 			
 			{{ partial "footer.html" . }}
 			

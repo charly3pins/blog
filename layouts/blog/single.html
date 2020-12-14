@@ -9,9 +9,9 @@
 			{{ partial "navbar" . }}
 
 			<div class="container">
-				<!-- <div id="cover-image">
+				<div id="cover-image">
 					<img src="{{ .Params.image | absURL }}" alt="cover image">
-				</div> -->
+				</div>
 				
 				<div class="markdown">
 					<h1>{{ .Title }}</h1>
@@ -20,17 +20,16 @@
 					{{ partial "metadata.html" . }}
 				</div>
 
-				<div class="page-separator"><hr></div>
-
 				<div class="markdown">
 					<p>{{ .Content | safeHTML }}</p>
 				</div>
 				
-				<div class="page-separator"><hr></div>
-
+				
 				<div class="related">
 					{{ $related := .Site.RegularPages.Related . | first 3 }}
 					{{ with $related }}
+					<div class="page-separator"><hr></div>
+					
 					<ul id="list-items">
 						{{ range . }}
 						<li>
@@ -47,6 +46,8 @@
 				{{ template "_internal/disqus.html" . }}
 
 			</div>
+
+			<div class="page-separator centered"><hr></div>
 			
 			{{ partial "footer.html" . }}
 			
