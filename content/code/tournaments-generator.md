@@ -1,11 +1,13 @@
 +++
-title = "Tournaments generator (POC)"
+title = "Tournaments generator"
+date = "2020-05-01"
+author = "charly3pins"
 description = "Proof of concept building an application for managing FIFA 20 tournaments between different people using Flutter for building a mobile app and Go for building an API acting as a server. Also used Python to build simple scrapers."
 
-section = "projects"
+section = "/code"
 weight = "2"
 
-#tags = ["go", "flutter", "python"]
+tags = ["go", "flutter", "python"]
 +++
 
 ## WHY
@@ -26,7 +28,7 @@ I've chosen [Go](https://golang.org/) as the programming language for the API an
 
 With all the initial data ready, I've started to design the rest of the Database and the possible endpoints need it for manage all that information. I've chosen [mux](https://github.com/gorilla/mux) for the HTTP for it's simplicity but powerful in comparison with the standard lib one (just only for the parameter parsing it's worth it...). As I wanted to explore more the mobile app side than the server side, I just organized the code using the [Layered Architecture](https://www.oreilly.com/library/view/software-architecture-patterns/9781491971437/ch01.html) grouping the items by function and used [GORM](https://gorm.io/index.html) as the ORM for simplify the query and the mappings between the database and my models.
 
-![api structure](/images/projects/tournaments-generator/api-structure.jpeg)
+![api structure](/images/code/tournaments-generator/api-structure.jpeg)
 
 Inside the `cmd` folder I've created different commands:
 - migration: manages the migrations in the database
@@ -37,7 +39,7 @@ Inside the `pkg` folder it's easy to identify what the folders are doing by it's
 
 For the mobile app, I started putting all files inside a `components` folder but when it started growing it was a complete kaos to manage. After adding more complexity to the app I end up finding a clean way to organize the code, dividing it into two separate folders; one for the core and another one for the ui. Then inside of each one I also categorized the different type of components depending on their responsibilities and at the end the code (at least for me that I'm not a Flutter expert) ended up looking super clean and (without no doubt) more maintainable. Below the folder organization in a general view:
 
-![app structure](/images/projects/tournaments-generator/app-structure.jpeg)
+![app structure](/images/code/tournaments-generator/app-structure.jpeg)
 
 At the beginning when I started coding and watching the results all was super fancy and I thought it was easier than expected. Connecting the app with the API was just a matter of knowing how to use the `http` library and the `get` or `post` methods was connected with no problems.
 
@@ -62,38 +64,38 @@ The real pain just started there! It took me some days to really understand how 
 The project is not finished but for now is On Hold with the following functionalities:
 
 Initially the user can switch between the signup/login views.
-![signup](/images/projects/tournaments-generator/signup.png)
-![login](/images/projects/tournaments-generator/login.png)
+![signup](/images/code/tournaments-generator/signup.png)
+![login](/images/code/tournaments-generator/login.png)
 
 Once the user is inside the application it has different tabs where the next `Matches` he has to play, the `Tournaments` that he is playing and the `Groups` where he is present and the members inside. On the top it has a navbar with a profile picture, a bell icon for the notifications, a lens icon for search other members and adding as his friends and the logout button to disconnect.
-![home](/images/projects/tournaments-generator/home.png)
+![home](/images/code/tournaments-generator/home.png)
 
 If he clicks on the profile picture it goes directly to the user's profile where it displays the friends and where he can edit his personal information (name, username, profile picture):
-![profile](/images/projects/tournaments-generator/profile.png)
+![profile](/images/code/tournaments-generator/profile.png)
 
 Pressing the lens icon, changes the view to the super searcher functionality which allows the user to find other people already in the platform, add them as his friends and then create groups, generate tournaments and play matches together. The searcher is a "like" search, so if any of the letters it introduces appears in some username, then it's displayed there.
-![searcher](/images/projects/tournaments-generator/searcher.png)
+![searcher](/images/code/tournaments-generator/searcher.png)
 
 After that, if the user enters one profile that is not a friend, it will appear the button to add it and if it's clicked, it will hide that button and display the information that there is already a request sent, waiting for the other user to answer it.
-![add friend](/images/projects/tournaments-generator/add-friend.png)
-![add friend requested](/images/projects/tournaments-generator/add-friend-requested.png)
+![add friend](/images/code/tournaments-generator/add-friend.png)
+![add friend requested](/images/code/tournaments-generator/add-friend-requested.png)
 
 Acting as the other user, when logging in, the bell icon will display a new notification. Going inside appears as a friend notification and it can be answered from the list directly or going inside the "requester" profile and accepting/declining there. If the friend request is accepted, it will appear as a new friend in the user's profile.
-![friend request notification](/images/projects/tournaments-generator/friend-request-notification.png)
-![friend request notification answer](/images/projects/tournaments-generator/friend-request-notification-answer.png)
-![profile multi friends](/images/projects/tournaments-generator/profile-multifriends.png)
+![friend request notification](/images/code/tournaments-generator/friend-request-notification.png)
+![friend request notification answer](/images/code/tournaments-generator/friend-request-notification-answer.png)
+![profile multi friends](/images/code/tournaments-generator/profile-multifriends.png)
 
 After a user has some friends, is the moment when he can create a group. For that the application has the third tab called `Groups` and a (+) button.
-![new group](/images/projects/tournaments-generator/new-group.png)
+![new group](/images/code/tournaments-generator/new-group.png)
 
 Inside the groups generator it will display the list of the friends on the top. As they are selected, they are placed in the list below, where they can be removed if desired; when all friends are selected it's time to move to the next screen using the (-->) button.
-![new group selected](/images/projects/tournaments-generator/new-group-selected.png)
+![new group selected](/images/code/tournaments-generator/new-group-selected.png)
 
 The next step is to put a good name for that group and then press the tick one to create the group.
-![new group name](/images/projects/tournaments-generator/new-group-name.png)
+![new group name](/images/code/tournaments-generator/new-group-name.png)
 
 When the user is returned to the home view it appears the new group created and the members of it in the list.
-![new group created](/images/projects/tournaments-generator/new-group-created.png)
+![new group created](/images/code/tournaments-generator/new-group-created.png)
 
 From here what is missing is to create the `Tournaments` selecting the group and the members of that group that want to play, the number of teams for each member, the teams, the rounds, the type of tournament, etc. and then generate the calendar. Display the calendar in the `Matches` tab and inside each match allow the users to add the results. Also provide a classification and the statistics for each match and a grouped one for each fixture and a generic one.
 
