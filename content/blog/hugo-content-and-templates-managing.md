@@ -4,7 +4,7 @@ date = "2020-03-08"
 author = "charly3pins"
 description = "How to organize your content and create your templates to get maximum value from Hugo."
 
-section = "blog"
+section = "/blog"
 tags = ["hugo", "cms"]
 
 image = "/images/hugo-content-templates-managing/hugo-logo-wide.svg"

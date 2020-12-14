@@ -4,7 +4,7 @@ date = "2020-10-06"
 author = "charly3pins"
 description = "Generate easily your presentations with present, the tool powered by Go that generates and renders your slides."
 
-section = "blog"
+section = "/blog"
 tags = ["go", "life"]
 
 image = "/images/level-up-your-presentations-with-go/GOPHER_MIC_DROP_WITH_BACKGROUND.png"

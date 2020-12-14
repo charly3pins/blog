@@ -6,7 +6,7 @@ date = "2020-10-08"
 author = "charly3pins"
 description = "flexget."
 
-section = "blog"
+section = "/blog"
 tags = ["raspberry-pi", "linux", "life"]
 
 image = "/images/raspberry-media-player/cover.png"
