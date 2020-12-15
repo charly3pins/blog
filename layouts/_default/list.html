@@ -11,7 +11,7 @@
 			<div class="container">
 				<h1 class="h1-section">SELECT * FROM posts WHERE tag ='<a class="button tag" href="/tags/{{ .Title | safeHTML }}/"><span class="tag-prefix">#</span>{{ .Title | safeHTML }}</a>';</h1>
 				
-				<div class="page-separator"><hr></div>
+				<div class="page-separator centered"><hr></div>
 
 				{{ partial "posts_list.html" . }}
 				

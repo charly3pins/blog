@@ -7,7 +7,7 @@ description = "How to organize your content and create your templates to get max
 section = "/blog"
 tags = ["hugo", "cms"]
 
-image = "/images/hugo-content-templates-managing/hugo-logo-wide.svg"
+image = "/images/gohugoio-card.png"
 +++
 
 After long time without writing... I'm back!
