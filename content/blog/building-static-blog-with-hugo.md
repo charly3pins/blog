@@ -4,10 +4,10 @@ date = "2018-09-22"
 author = "charly3pins"
 description = "Quick steps to create your own static blog with Hugo and install a theme from the catalogue. After that, push your site to GitHub and deploy it with GitHub Pages."
 
-section = "blog"
+section = "/blog"
 tags = ["hugo", "cms", "github"]
 
-image = "/images/build-hugo-static-blog/old-school-developer-bg.jpg"
+image = "/images/gohugoio-card.png"
 +++
 If you want to create a fast static website I recommend you [Hugo](https://gohugo.io/). It's written in Go and it's really use to configure and adapt to your needs. In addition, you can choose through different [themes](https://themes.gohugo.io/) created by the team and others by the community or even create your own one.
 

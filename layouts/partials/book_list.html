@@ -1,0 +1,44 @@
+<h2>Books</h2>
+<p>Reading</p>
+<ul> 
+{{ range .Site.Data.books }}
+    {{ if eq .status "READING"}}
+    <li>
+        <a href="{{.link}}">{{ .title }}</a>
+    </li>
+    {{end}}
+{{ end }}
+</ul>
+
+<p>Readed</p>
+<ul> 
+{{ range .Site.Data.books }}
+    {{ if eq .status "READED"}}
+    <li>
+        <a href="{{.link}}">{{ .title }}</a>
+    </li>
+    {{end}}
+{{ end }}
+</ul>
+
+<p>Queued</p>
+<ul> 
+{{ range .Site.Data.books }}
+    {{ if eq .status "QUEUED"}}
+    <li>
+        <a href="{{.link}}">{{ .title }}</a>
+    </li>
+    {{end}}
+{{ end }}
+</ul>
+
+<p>Future</p>
+<ul> 
+{{ range .Site.Data.books }}
+    {{ if eq .status "FUTURE"}}
+    <li>
+        <a href="{{.link}}">{{ .title }}</a>
+    </li>
+    {{end}}
+{{ end }}
+</ul>

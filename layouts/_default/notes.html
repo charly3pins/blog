@@ -7,21 +7,21 @@
 		<div id="main">
 
 			{{ partial "navbar" . }}
-
+			
 			<div class="container">
 				<h1 class="h1-section">{{ .Title }} <span class="cursor"></span></h1>
 
-				<div class="markdown">
-					<p>
-						{{ range .Site.Taxonomies.tags }}
-							<a class="button tag" href="{{ .Page.Permalink }}"><span class="tag-prefix">#</span>{{ .Page.Title }} <span class="tag-count">({{ .Count }})</span></a>
-						{{ end }}
-					</p>
-				</div>
-				
 				<div class="page-separator centered"><hr></div>
+				
+				<div id="list-notes" class="markdown">
+					{{ partial "book_list.html" . }}
+					
+					<div class="container"></div>
+					
+					{{ partial "podcast_list.html" . }}
+				</div>
 
-				{{ partial "posts_list.html" . }}
+				<div class="page-separator centered"><hr></div>
 
 			</div>
 			

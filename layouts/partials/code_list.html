@@ -1,9 +1,9 @@
 <div class="markdown">
     <ul id="list-items">
-        {{ range .Paginator.Pages }}
+        {{ range $index, $element := $.Paginator.Pages }}
         <li>
             <a class="li-link" href="{{ .Permalink }}">{{ .Title }}</a>
-            <p>{{ .Description }}</p>
+            <p class="li-brief">{{ .Description }}</p>
             
             {{ partial "metadata.html" . }}
         </li>
@@ -11,6 +11,7 @@
     </ul>
 </div>
 
-{{ template "_internal/pagination.html" . }}
-
 <div class="page-separator centered"><hr></div>
+
+
+{{ template "_internal/pagination.html" . }}

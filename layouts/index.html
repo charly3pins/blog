@@ -4,75 +4,48 @@
 	{{ partial "head.html" . }}
 
 	<body>
-		<section id="main">
+		<div id="main">
 
-			<div class="header">
-				<div class="toggle"><input type="checkbox">
-					<span class="bar"></span><span class="bar"></span><span class="bar"></span>
-					<div id="mobile-menu">
-						<span class="menu-item"><span href="/">🏠 home</span></span>
-						<span class="menu-item"><a href="/blog/">📰 blog</a></span>
-						<span class="menu-item"><a href="/about/">👨🏻‍💻 about</a></span>
-						<span class="menu-item"><a href="/projects/">🛠️ projects</a></span>
-						<span class="menu-item"><a id="rss" href="/index.xml" rel="alternate" type="application/rss+xml">📡 RSS</a></span>
-					</div>
-				</div>
-				<div id="menu">
-					<span class="menu-item"><span href="/">🏠 home</span></span>
-					<span class="menu-item"><a href="/blog/">📰 blog</a></span>
-					<span class="menu-item"><a href="/about/">👨🏻‍💻 about</a></span>
-					<span class="menu-item"><a href="/projects/">🛠️ projects</a></span>
-					<span class="menu-item"><a id="rss" href="/index.xml" rel="alternate" type="application/rss+xml">📡 RSS</a></span>
-				</div>
-			</div>
+			{{ partial "navbar" . }}
 
 			<div class="container">
-				<div class="row index-content">
+				
+				<div class="index-content">
 					<div id="avatar-box">
 						<img id="avatar" src="{{ .Site.Params.avatar }}" alt="site author photo">
 					</div>
-					<div class="markdown index-content blurb">
-						<h2 id="" class="anchor-link">
-							<a href="/about"><strong>Welcome! I’m Charly3Pins</strong></a>
-						</h2>
-						<p>I’m a {{ .Site.Params.description }}; also, I wrote these articles.</p>
-					</div>
+					<h1>
+						<strong class="welcome">{{ .Site.Params.welcome }}</strong>
+					</h1>
+					<p>{{ .Site.Params.indexDescription }}</p>
 				</div>
+			</div>
+			<div class="page-separator centered"><hr></div>	
+			
+			<div class="container">
 				
 				<div class="markdown">
 					<ul id="list-items">
 						<li></li>
-						{{range first 5 (where .Paginator.Pages "Section" "blog")}}
+						{{range first 3 (where .Paginator.Pages "Section" "blog")}}
 							<li>
-								<a class="li-link" href="{{ .Permalink }}">
-									{{ .Title }}
-									
-									{{with .Params.subtitle }}
-										{{ . }}
-									{{ end }} 
-								</a>
-								<p class="li-brief">    
-									{{ .Description }}
-								</p>
-								<p class="metadata">
-									{{ with .Params.tags }}
-										{{ range . }}
-											<a class="li-tag" href="{{ "tags/" | absURL }}{{ . | urlize }}/">{{ . }}</a>
-										{{ end }}
-									{{ end }}
-									{{ .ReadingTime }} min read | Posted on {{ .Date.Format "02/01/2006" }}
-								</p>
+								<a class="li-link" href="{{ .Permalink }}">{{ .Title }}</a>
+								<p>{{ .Description }}</p>
+								
+								{{ partial "metadata.html" . }}
 							</li>
 						{{ end }}
 					</ul>
 				</div>
 
-				<div class="centered blog-cta-box"><a href="/blog" class="blog-cta">and more...</a></div>
+				<div class="centered"><a href="/blog" class="button" id="blog-cta">Read more</a></div>
 			</div>
+
+			<div class="page-separator centered"><hr></div>	
 			
 			{{ partial "footer.html" . }}
 			
-		</section>
+		</div>
 	</body>
 </html>
 

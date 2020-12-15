@@ -4,7 +4,7 @@ date = "2020-11-05"
 author = "charly3pins"
 description = "Build your own media player using a BitTorrent client (Transmission), a PVR for Usenet and BitTorrent users (Sonarr), an API Support for your the torrent trackers (Jackett), a manager of subtitles in Sonarr & Radarr (Bazarr) and a client–server media player (Plex)."
 
-section = "blog"
+section = "/blog"
 tags = ["raspberry-pi", "linux", "life"]
 
 image = "/images/raspberry-media-player/cover.png"

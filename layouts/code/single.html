@@ -9,18 +9,22 @@
 			{{ partial "navbar" . }}
 
 			<div class="container">
-				<h1>{{ .Title }}</h1>
+				<div class="markdown">
+					<h1>{{ .Title }}</h1>
+					
+					{{ partial "metadata.html" . }}
+				</div>
 
 				<div class="page-separator"><hr></div>
 
 				<div class="markdown">
-					{{ .Content | safeHTML }}
+					<p>{{ .Content | safeHTML }}</p>
 				</div>
-			
+				
+				<div class="page-separator"><hr></div>
+
 			</div>
-
-			<div class="container">&nbsp;</div>
-
+			
 			{{ partial "footer.html" . }}
 			
 		</div>

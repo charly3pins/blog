@@ -4,10 +4,10 @@ date = "2018-09-24"
 author = "charly3pins"
 description = "Code review of my first exercise in the Gophercises page. It's focused in the CSV and time packages in addition to an introduction for the goroutines and channels."
 
-section = "blog"
+section = "/blog"
 tags = ["go"]
 
-image = "/images/puzzle.jpg"
+image = "/images/go-learn.png"
 +++
 This is the first of a several articles I'm planning to write commenting the different exercises that I'm doing in [Gophercises](https://gophercises.com/) page.
 
