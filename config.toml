@@ -12,6 +12,7 @@ disqusShortname = "charly3pins"
 	## Site creation time
 	since = 2018
 	avatar = "/images/me.jpeg"
+	errorPage = "/images/gopher-this-is-fine.jpg"
 	indexDescription = "I am a Software Engineer, gamer and dog walker; also, I wrote these articles!"
 	metaDescription = "Software Engineer, gamer and dog walker"
 	welcome = "Welcome! I’m Charly3Pins"
