@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="{{ .Lang }}">
+	
+	{{ partial "head.html" . }}
+
+	<body>
+		<div id="main">
+
+			{{ partial "navbar" . }}
+			
+			<div class="container">
+				<h1 class="h1-section">{{ .Title }} <span class="cursor"></span></h1>
+
+				<div class="page-separator centered"><hr></div>
+				
+				<div id="list-notes" class="markdown">
+					{{ partial "book_list.html" . }}
+					
+					<div class="container"></div>
+					
+					{{ partial "podcast_list.html" . }}
+				</div>
+
+				<div class="page-separator centered"><hr></div>
+
+			</div>
+			
+			{{ partial "footer.html" . }}
+			
+		</div>
+	</body>
+</html>
+
