@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="{{ .Lang }}">
+	
+	{{ partial "head.html" . }}
+
+	<body>
+		<div id="main">
+
+			{{ partial "navbar" . }}
+
+			<div class="container">
+                <h1 class="h1-section">ERROR 404: Page not found</h1>
+                
+				<div class="markdown">
+                    <img id="404" src="{{ .Site.Params.errorPage }}" alt="site 404 image">
+                    <p id="caption"><a href="https://github.com/ashleymcnamara/gophers/blob/master/This_is_Fine_Gopher.png">Gopher</a> done by Ashley McNamara</p>
+				</div>
+
+			</div>
+
+			<div class="page-separator centered"><hr></div>	
+			
+			{{ partial "footer.html" . }}
+			
+		</div>
+	</body>
+</html>
+
