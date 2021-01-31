@@ -14,4 +14,6 @@ Currently I'm working in Go 🐿️ as the main language, but not scared to lear
 
 In my free time I like to do some sports like running 🏃🏻, gym workouts 🏋🏻‍♂️ or playing football ⚽; somedays I also play videogames 🎮
 
+I like to read books 📚, technical or non, especially mangas 🇯🇵 and watch anime series or films 👹
+
 Also I love walking with my dogs 🐕 and going to the mountain to disconnect from the city always I can 🌄
