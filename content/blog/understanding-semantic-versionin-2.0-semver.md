@@ -47,11 +47,10 @@ When you want to use the SemVer you can specify an exact version or not. For tha
 - If you want to have the current version or updated ones but with backward-compatibilities you can use the `^` like: ^X.Y.Z (where X is fixed);
 - If you want to have the current version or updated ones only with bug fixes with minor-level changes you can use the `~` like: ~X.Y.Z (where X and Y are fixed);
 
-So after reading this article as a developer using another's library you can know what type of changes they did when presenting to you the new version following the rules described above:¡. As a practical example let's see 3 package upgrades:
+So after reading this article as a developer using another's library you can know what type of changes they did when presenting to you the new version following the rules described above:
 - New version 0.2.3 → The changes might be just bug fixes;
 - New version 0.5.0 → Some functionalities added but backwards-compatible with the API;
 - New version 5.0.0 → There might be a problem because it introduced breaking changes with the API;
-
 
 As a conclusion the benefit of using SemVer against not:
 - Clearer compatibility/dependencies;
