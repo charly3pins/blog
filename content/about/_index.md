@@ -1,5 +1,6 @@
 +++
 title = "echo $USER"
+slug = "About me"
 
 image = "/images/embalse-de-cavallers.jpeg"
 +++
