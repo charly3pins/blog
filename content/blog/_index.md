@@ -1,4 +1,4 @@
 +++
 title = "cd ~/blog"
-description = "Blog by Charl3Pins a Software Engineer 👨🏻‍💻 Gamer 🎮 and Dog Walker 🐕"
+description = "Blog by Charly3Pins, a Software Engineer, Japan lover, video gamer and dog walker"
 +++
