@@ -399,7 +399,7 @@ python3 -m pip install -r requirements.txt
 ```
 ℹ️ NOTE: Don't worry about `lxml` not being installed at this step, you have installed the module through apt-get anyway.
 
-Change the ownership to `pi`` user:
+Change the ownership to `pi` user:
 ```vim
 sudo chown -R pi:pi /opt/bazarr
 ```
@@ -463,7 +463,7 @@ The web interface is already available at the address http://192.168.1.131:6767 
 
 [Plex](https://www.plex.tv/) brings together all the media that matters to you. Your personal collection will look beautiful alongside stellar streaming content. Enjoy Live TV & DVR, a growing catalog of great web shows, news, and podcasts. It's finally possible to enjoy all the media you love in a single app, on any device, no matter where you are.
 
-First of all we need to add a new repository and it's key. This will add to the Raspberr's OS the repositories where we need to download the installation and the future updates. It's like a list of links where the system reads automatically the programs it needs for the installation and the updates.
+First of all we need to add a new repository and it's key. This will add to the Raspberry's OS the repositories where we need to download the installation and the future updates. It's like a list of links where the system reads automatically the programs it needs for the installation and the updates.
 ```vim
 echo deb https://downloads.plex.tv/repo/deb public main | sudo tee /etc/apt/sources.list.d/plexmediaserver.list
 ```
