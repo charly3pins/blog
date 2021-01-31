@@ -1,8 +1,8 @@
 +++
-title = "Custom commit messages"
+title = "Git custom commit messages"
 date = "2020-03-10"
 author = "charly3pins"
-description = "Generate custom commit messages for your repo and standarize your commits log."
+description = "Generate custom commit messages for your repo and standardize your commits log."
 
 section = "/blog"
 tags = ["terminal", "git"]
@@ -31,7 +31,6 @@ cmf init
 You will need to select one of the flows and it will create a `.cmf.yaml` file with the template of the selected one. You can edit that file in the way you want. The unique condition is that any variable you wanna use have to be defined using `{{}}`. Example: `{{CHANGE}}` it will prompt you asking the CHANGE you did and displaying the options you defined in the template.
 
 Here is the `.cmf.yaml` file that I'm using on this site:
-
 ```
 PROMPT:
     - KEY: "CHANGE"
