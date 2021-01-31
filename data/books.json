@@ -1,17 +1,17 @@
 [
 	{
 		"title": "The Go Programming Language",
-		"status": "READED",
+		"status": "READ",
 		"link": "https://www.pearson.com/us/higher-education/program/Donovan-Go-Programming-Language-The/PGM234922.html"
 	},
 	{
 		"title": "Go in Action",
-		"status": "READED",
+		"status": "READ",
 		"link": "https://www.manning.com/books/go-in-action"
 	},
 	{
 		"title": "Domain-Driven Design Distilled",
-		"status": "READED",
+		"status": "READ",
 		"link": "https://www.pearson.com/uk/educators/higher-education-educators/program/Vernon-Domain-Driven-Design-Distilled/PGM1091799.html"
 	},
 	{
@@ -36,12 +36,12 @@
 	},
 	{
 		"title": "Patterns of Enterprise Application Architecture",
-		"status": "FUTURE",
+		"status": "FUTURES",
 		"link": "https://martinfowler.com/books/eaa.html"
 	},
 	{
 		"title": "Building Microservices: Designing Fine-Grained Systems",
-		"status": "FUTURE",
+		"status": "FUTURES",
 		"link": "https://www.oreilly.com/library/view/building-microservices/9781491950340/"
 	}
 ]
