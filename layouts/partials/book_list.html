@@ -1,5 +1,7 @@
-<h2>Books</h2>
-<p>Reading</p>
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
+<h2>{{ $data.titles.books }}</h2>
+<p>{{ $data.titles.reading }}</p>
 <ul> 
 {{ range .Site.Data.books }}
     {{ if eq .status "READING"}}
@@ -10,10 +12,10 @@
 {{ end }}
 </ul>
 
-<p>Readed</p>
+<p>{{ $data.titles.read }}</p>
 <ul> 
 {{ range .Site.Data.books }}
-    {{ if eq .status "READED"}}
+    {{ if eq .status "READ"}}
     <li>
         <a href="{{.link}}">{{ .title }}</a>
     </li>
@@ -21,7 +23,7 @@
 {{ end }}
 </ul>
 
-<p>Queued</p>
+<p>{{ $data.titles.queued }}</p>
 <ul> 
 {{ range .Site.Data.books }}
     {{ if eq .status "QUEUED"}}
@@ -32,10 +34,10 @@
 {{ end }}
 </ul>
 
-<p>Future</p>
+<p>{{ $data.titles.futures }}</p>
 <ul> 
 {{ range .Site.Data.books }}
-    {{ if eq .status "FUTURE"}}
+    {{ if eq .status "FUTURES"}}
     <li>
         <a href="{{.link}}">{{ .title }}</a>
     </li>
