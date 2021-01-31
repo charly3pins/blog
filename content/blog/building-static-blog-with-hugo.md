@@ -13,7 +13,7 @@ If you want to create a fast static website I recommend you [Hugo](https://gohug
 
 Here I'll explain in some steps how to create one blog with Hugo and how to be hosted & deployed in GitHub and GitHub Pages. If you need more detail visit the official [Hugo docs](https://gohugo.io/documentation/).
 
-# Init
+## Start
 First of all you need to install Hugo, in my case using [Homebrew](https://brew.sh/):
 ```vim
 brew install hugo
@@ -24,7 +24,7 @@ Check the version installed:
 hugo version
 ```
 
-# Create site
+## Create site
 Once you have Hugo installed, you're able to create your website using the command:
 ```vim
 hugo new site your-blog-name
@@ -41,7 +41,7 @@ After that, you'll see a new folder called `your-blog-name` and if you look insi
 * Themes is where the themes you install are stored.
 * config.toml stores the main configuration for your site.
 
-# Install theme
+## Install theme
 If you want to use a theme already created you can do it in two ways. To check the existing themes visit the official [Hugo themes](https://github.com/panr/hugo-theme-hello-friend) website where you can see a demo of each one.
 
 First of all you need to init a git repo inside your project:
@@ -60,7 +60,7 @@ If you don't want to make any changes, it's better to include the theme as a git
 git submodule add https://github.com/panr/hugo-theme-hello-friend.git themes/hello-friend
 ```
 
-# Create content
+## Create content
 For generate your first blog post you can use the command `hugo new` and set the path you want, in my case `posts`:
 ```vim
 hugo new posts/my-first-post.md
@@ -70,7 +70,7 @@ You will obtain the following file:
 
 The first section is for parameters and the second one is for the content in this case in markdown. Check this [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) a quick reference and showcase.
 
-# Run your site
+## Run your site
 Once you have created the post you can build your site using the `hugo server` command. The flag `-D` is for render drafts:
 ```vim
 hugo server -D
@@ -81,7 +81,7 @@ Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
 ```
 Copy the URL to your browser and you will see your site up and running!
 
-# Host on GitHub
+## Host on GitHub
 We'll use the User/Organization Pages `https://<USERNAME|ORGANIZATION>.github.io/`.
 
 Create a `<YOUR-PROJECT>` repository on GitHub. This repository will contain Hugo’s content and other source files.
