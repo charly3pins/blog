@@ -2,7 +2,7 @@
 title = "Com afegir Google Analytics al vostre lloc amb Hugo"
 date = "2020-11-23"
 author = "charly3pins"
-description = "Quick tutorial how to integrate Google Analytics in a Hugo website."
+description = "Tutorial ràpid sobre com integrar Google Analytics en un lloc web Hugo."
 
 slug = "Com afegir Google Analytics al vostre lloc amb Hugo"
 section = "/blog"
