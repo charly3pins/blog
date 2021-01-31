@@ -11,15 +11,11 @@ disqusShortname = "charly3pins"
 	since = 2018
 	avatar = "/images/me.jpeg"
 	errorPage = "/images/gopher-this-is-fine.jpg"
-	indexDescription = "I am a Software Engineer, Japan lover, gamer and dog walker; also, I wrote these articles!"
-	metaDescription = "Software Engineer, Japan lover, gamer and dog walker"
-	welcome = "Welcome! I’m Charly3Pins"
 
 	# list of sections skipped by RSS
 	nofeedSections = ["projects"]
 
 [menu]
-
 	[[menu.main]]
 		name = "~"
 		url = "/"
@@ -44,3 +40,25 @@ disqusShortname = "charly3pins"
 		name = "$USER"
 		url = "/about/"
 		weight = -110
+
+[languages]
+	[languages.en]
+		languageName = "English"
+		weight = 1
+		indexDescription = "I am a Software Engineer, Japan lover, video gamer and dog walker; also, I wrote these articles!"
+		metaDescription = "Software Engineer, Japan lover, video gamer and dog walker"
+		welcome = "Welcome! I’m Charly3Pins"
+
+	[languages.es]
+		languageName = "Spanish"
+		weight = 2
+		indexDescription = "Soy Ingeniero de Software, amante de Japón, jugador de videojuegos y paseador de perros; además, ¡he escrito estos artículos!"
+		metaDescription = "Ingeniero de Software, amante de Japón, jugador de videojuegos y paseador de perros"
+		welcome = "¡Bienvenid@! Soy Charly3Pins"
+		
+	[languages.ca]
+		languageName = "Catalan"
+		weight = 3
+		indexDescription = "Sóc Enginyer de Software, amant de Japó, jugador de videojocs i passejador de gossos; a més, he escrit aquests articles!"
+		metaDescription = "Enginyer de Software, amant de Japó, jugador de videojocs i passejador de gossos"
+		welcome = "Benvingut/da! Sóc Charly3Pins"
