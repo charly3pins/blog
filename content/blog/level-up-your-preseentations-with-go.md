@@ -2,7 +2,7 @@
 title = "Level up your presentations with Go"
 date = "2020-10-06"
 author = "charly3pins"
-description = "Generate easily your presentations with present, the tool powered by Go that generates and renders your slides."
+description = "Generate easily your presentations with \"present\", the tool powered by Go that generates and renders your slides."
 
 section = "/blog"
 tags = ["go", "life"]
@@ -31,7 +31,7 @@ And it should display a message similar to:
 
 So you can visit the link, and see the local server ready to host your presentations. Awesome or not? Okay, I know you want to display something other than an empty directory, so let's create an example presentation for that.
 
-# Format
+## Format
 
 Create a directory for your slides:
 ```vim
@@ -66,7 +66,7 @@ Click on the `initial.slide` link and admire your presentation!
 As you can see, the first line is the title, the second the date and then it's followed by the author. On the second slide, actually the first one, it appears the title of the slide and the text of that one. The last one displays a gratitude title and your name and contact (email, twitter, etc.) you added in the slide. See it below:
 ![end presentation](/images/level-up-your-presentations-with-go/end-presentation.jpeg)
 
-# Legacy Present Syntax
+## Legacy Present Syntax
 
 It supports Markdown but here we will explore the [Legacy Present Syntax](https://godoc.org/golang.org/x/tools/present#hdr-Legacy_Present_Syntax), as the Markdown has a lot of resources where you can check. So let's explore a bit the features that `present` offers for formatting and displaying text in our slides.
 
@@ -103,16 +103,16 @@ Gopher is diving the subsection.
 Another Gopher is diving more into the sub-subsection!
 ```
 
-And you will see the slide like that craziness:
+And you will see the slide like this craziness:
 ![text formatting subsections](/images/level-up-your-presentations-with-go/text-formatting-subsections.jpeg)
 
 ![gophers](/images/level-up-your-presentations-with-go/gophers.gif)
 
-# Command Invocations
+## Command Invocations
 
 Apart from text formatting there are a special [command invocations](https://godoc.org/golang.org/x/tools/present#hdr-Command_Invocations) that you can invoke to take your presentation to another level.
 
-## images & videos
+### images & videos
 The `.image` command injects a picture in your slide. It accepts 1 or 3 arguments (name, height, width). Name is mandatory, other two must be present or substituted with an `_`.
 ```text
 .image /images/gopher.jpeg 200 200
@@ -132,7 +132,7 @@ Similar to the images, it also has the `.background` command to set the backgrou
 .background images/susan.jpg
 ```
 
-## links
+### links
 If you need to insert a link in your presentation you can use the `.link` command. It accepts 1 or 2 arguments (HTTP url, text label). HTTP url is mandatory, the second one is optional.
 ```text
 .link https://charly3pins.dev charly3pins website
@@ -142,7 +142,7 @@ If you need to insert a link in your presentation you can use the `.link` comman
 ![links](/images/level-up-your-presentations-with-go/links.jpeg)
 
 
-## code
+### code
 The best command imo is the `.code` one. It allows you to put code extracting them from the source files and injecting them as HTML-escaped <pre> blocks. It accepts one argument as the file name followed by an optional address that specifies what section of the file to display.
 
 For example taking the Hello world in Go as a source code:
@@ -202,6 +202,8 @@ Again use the same command but adding the following snippet:
 And see the code partially displayed:
 ![code-hl-partial](/images/level-up-your-presentations-with-go/code-hl-partial.jpeg)
 
+#### play
+
 That command is superpowerful in order to help you present some code and highlight or hide some parts. But the show must go on, and the best part is the next one. The command `.play` is like the `code` one but it puts a button on the dispalyed source and you can run your program from the browser! Is it magic or not?
 ![magic](/images/level-up-your-presentations-with-go/magic.gif)
 
@@ -216,7 +218,7 @@ It will appear like the `code` one but if you notice on the right bottom corner,
 Running the code will display a small black window on the screen displaying the output of the code:
 ![code-played](/images/level-up-your-presentations-with-go/code-played.jpeg)
 
-# Presenter Notes
+## Presenter Notes
 
 Last but not least is an interesting thing that they provide also. It's well known that in PowerPoint or similar programs you can add your notes only visible for you when presenting the presentation and they are very useful sometimes. So `present` has that in consideration as well and you can add your presentation notes just adding a `:` on the beginning of the sentence and that text will be treated as a presenter note.
 
@@ -246,9 +248,9 @@ And it should display a message similar to:
 2020/10/04 Notes are enabled, press 'N' from the browser to display them.
 ```
 
-So if you refresh your browser with the presentation and press `N` you will see a popup displaying the notes of each slide on the bottom. like that:
+So if you refresh your browser with the presentation and press `N` you will see a popup displaying the notes of each slide on the bottom like that:
 ![present-notes-popup](/images/level-up-your-presentations-with-go/present-notes-popup.jpeg)
 
-# Conclusion
+## Conclusion
 
 The `present` tool is super useful for technical presentations, especially in Go. It has its limitations like the format of the slides and the image positioning sometimes tricky, but in general is a great package and for me is the standard for all my presentations. If you wanna dick more in detail about that package check the [official documentation](https://godoc.org/golang.org/x/tools/present) and also I would recommend the [presentation](https://talks.golang.org/2012/insidepresent.slide#1): `Inside the "present" tool` by Andrew Gerrand. Also I've uploaded the source code for this tutorial on [GitHub](https://github.com/charly3pins/go-present-example).
