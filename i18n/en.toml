@@ -1,0 +1,41 @@
+[en]
+other = "English"
+
+[spanish]
+other = "Spanish"
+
+[catalan]
+other = "Catalan"
+
+[welcome] 
+other = "Welcome! I’m Charly3Pins"
+
+[indexDescription]
+other = "I am a Software Engineer, Japan lover, video gamer and dog walker; also, I wrote these articles!"
+
+[metaDescription]
+other = "Software Engineer, Japan lover, video gamer and dog walker"
+
+[readMore]
+other = "Read more"
+
+[readingTime]
+one = "One minute to read"
+other = "{{.Count}} minutes to read"
+
+[lastPost]
+other = "Last post published on"
+
+[error404]
+other = "ERROR 404: Page not found"
+
+[books]
+other = "Books"
+[reading]
+other = "Reading"
+[read]
+other = "Read"
+[queued]
+other = "Queued"
+[futures]
+other = "Futures"

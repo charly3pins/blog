@@ -1,5 +1,5 @@
 +++
-title = "echo $USER"
+title = "echo $USUARI"
 slug = "Sobre mí"
 
 image = "/images/embalse-de-cavallers.jpeg"

@@ -18,6 +18,6 @@
 			</li>
 	</ul>
 	</section>
-	<p>Last change {{ .Site.LastChange.Format "02/01/2006" }}</p>
+	<p>{{ T "lastPost" }} {{ .Site.LastChange.Format "02/01/2006" }}</p>
 	<p>© {{ .Site.Params.since }} - {{ now.Year }} {{ .Site.Author.name }}</p>
 </footer>

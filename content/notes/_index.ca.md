@@ -1,4 +1,4 @@
 +++
-title = "cd ~/notes"
+title = "cd ~/apunts"
 +++
 

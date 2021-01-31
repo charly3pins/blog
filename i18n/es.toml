@@ -1,0 +1,41 @@
+[english]
+other = "Inglés"
+
+[es]
+other = "Castellano"
+
+[catalan]
+other = "Catalán"
+
+[welcome] 
+other = "¡Bienvenid@! Soy Charly3Pins"
+
+[indexDescription]
+other = "Soy Ingeniero de Software, amante de Japón, jugador de videojuegos y paseador de perros; además, ¡he escrito estos artículos!"
+
+[metaDescription]
+other = "Ingeniero de Software, amante de Japón, jugador de videojuegos y paseador de perros"
+
+[readMore]
+other = "Leer más"
+
+[readingTime]
+one = "Un minuto para leer"
+other = "{{.Count}} minutos para leer"
+
+[lastPost]
+other = "Último post publicado el"
+
+[error404]
+other = "ERROR 404: Página no encontrada"
+
+[books]
+other = "Libros"
+[reading]
+other = "Leyendo"
+[read]
+other = "Leídos"
+[queued]
+other = "En cola"
+[futures]
+other = "Futuros"

@@ -3,6 +3,7 @@ languageCode = "en-us"
 title = "charly3pins.dev"
 googleAnalytics = "UA-126216319-1"
 disqusShortname = "charly3pins"
+defaultContentLanguage = "en"
 
 [author]
 	name = "Charly3Pins"
@@ -15,50 +16,91 @@ disqusShortname = "charly3pins"
 	# list of sections skipped by RSS
 	nofeedSections = ["projects"]
 
-[menu]
-	[[menu.main]]
-		name = "~"
-		url = "/"
-		weight = -150
-
-	[[menu.main]]
-		name = "/blog"
-		url = "/blog/"
-		weight = -140
-	
-	[[menu.main]]
-		name = "/code"
-		url = "/code/"
-		weight = -130
-
-	[[menu.main]]
-		name = "/notes"
-		url = "/notes/"
-		weight = -120
-
-	[[menu.main]]
-		name = "$USER"
-		url = "/about/"
-		weight = -110
-
 [languages]
 	[languages.en]
 		languageName = "English"
 		weight = 1
-		indexDescription = "I am a Software Engineer, Japan lover, video gamer and dog walker; also, I wrote these articles!"
-		metaDescription = "Software Engineer, Japan lover, video gamer and dog walker"
-		welcome = "Welcome! I’m Charly3Pins"
 
 	[languages.es]
 		languageName = "Spanish"
-		weight = 2
-		indexDescription = "Soy Ingeniero de Software, amante de Japón, jugador de videojuegos y paseador de perros; además, ¡he escrito estos artículos!"
-		metaDescription = "Ingeniero de Software, amante de Japón, jugador de videojuegos y paseador de perros"
-		welcome = "¡Bienvenid@! Soy Charly3Pins"
-		
+		weight = 2	
+
 	[languages.ca]
 		languageName = "Catalan"
 		weight = 3
-		indexDescription = "Sóc Enginyer de Software, amant de Japó, jugador de videojocs i passejador de gossos; a més, he escrit aquests articles!"
-		metaDescription = "Enginyer de Software, amant de Japó, jugador de videojocs i passejador de gossos"
-		welcome = "Benvingut/da! Sóc Charly3Pins"
+
+[[languages.en.menu.main]]
+	name = "~"
+	url = "/"
+	weight = -150
+
+[[languages.en.menu.main]]
+	name = "/blog"
+	url = "/blog/"
+	weight = -140
+
+[[languages.en.menu.main]]
+	name = "/code"
+	url = "/code/"
+	weight = -130
+
+[[languages.en.menu.main]]
+	name = "/notes"
+	url = "/notes/"
+	weight = -120
+
+[[languages.en.menu.main]]
+	name = "$USER"
+	url = "/about/"
+	weight = -110
+
+[[languages.es.menu.main]]
+	name = "~"
+	url = "/"
+	weight = -150
+
+[[languages.es.menu.main]]
+	name = "/blog"
+	url = "/blog/"
+	weight = -140
+
+[[languages.es.menu.main]]
+	name = "/código"
+	url = "/code/"
+	weight = -130
+
+[[languages.es.menu.main]]
+	name = "/apuntes"
+	url = "/notes/"
+	weight = -120
+
+[[languages.es.menu.main]]
+	name = "$USUARIO"
+	url = "/about/"
+	weight = -110
+
+[[languages.ca.menu.main]]
+	name = "~"
+	url = "/"
+	weight = -150
+
+[[languages.ca.menu.main]]
+	name = "/bloc"
+	url = "/blog/"
+	weight = -140
+
+[[languages.ca.menu.main]]
+	name = "/codi"
+	url = "/code/"
+	weight = -130
+
+[[languages.ca.menu.main]]
+	name = "/apunts"
+	url = "/notes/"
+	weight = -120
+
+[[languages.ca.menu.main]]
+	name = "$USUARI"
+	url = "/about/"
+	weight = -110
+		

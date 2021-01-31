@@ -15,9 +15,9 @@
 						<img id="avatar" src="{{ .Site.Params.avatar }}" alt="site author photo">
 					</div>
 					<h1>
-						<strong class="welcome">{{ .Site.Params.welcome }}</strong>
+						<strong class="welcome">{{ T "welcome" }}</strong>
 					</h1>
-					<p>{{ .Site.Params.indexDescription }}</p>
+					<p>{{ T "indexDescription" }}</p>
 				</div>
 			</div>
 			<div class="page-separator centered"><hr></div>	
@@ -38,7 +38,7 @@
 					</ul>
 				</div>
 
-				<div class="centered"><a href="/blog" class="button" id="blog-cta">Read more</a></div>
+				<div class="centered"><a href="/blog" class="button" id="blog-cta">{{ T "readMore" }}</a></div>
 			</div>
 
 			<div class="page-separator centered"><hr></div>	

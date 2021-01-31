@@ -1,0 +1,41 @@
+[english]
+other = "Anglès"
+
+[spanish]
+other = "Castellà"
+
+[ca]
+other = "Català"
+
+[welcome] 
+other = "Benvingut/da! Sóc Charly3Pins"
+
+[indexDescription]
+other = "Sóc Enginyer de Software, amant de Japó, jugador de videojocs i passejador de gossos; a més, he escrit aquests articles!"
+
+[metaDescription]
+other = "Enginyer de Software, amant de Japó, jugador de videojocs i passejador de gossos"
+
+[readMore]
+other = "Llegir més"
+
+[readingTime]
+one = "Un minut per llegir"
+other = "{{.Count}} minuts per llegir"
+
+[lastPost]
+other = "Últim post publicat el"
+
+[error404]
+other = "ERROR 404: Pàgina no trobada"
+
+[books]
+other = "Llibres"
+[reading]
+other = "Llegint"
+[read]
+other = "LLegits"
+[queued]
+other = "A la cua"
+[futures]
+other = "Futurs"
