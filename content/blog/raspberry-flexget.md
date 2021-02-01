@@ -2,7 +2,7 @@
 draft = true
 
 title = "flexget"
-date = "2020-10-08"
+date = "2022-10-08"
 author = "charly3pins"
 description = "flexget."
 
