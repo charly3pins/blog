@@ -18,9 +18,7 @@ At this point is when I discovered [Drone](https://drone.io/). Jenkins is really
 > <b>IMPORTANT</b>: You need to have SSL certificate in your server because Drone runs under https. Read [this article](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-16-04) to see how to add SSL in a Nginx with Let's Encrypt.
 
 
-# Installation
-
-## Drone
+## Installation
 
 First of all you need to pull the drone image.
 ```vim
@@ -84,7 +82,7 @@ DRONE_GITHUB_SECRET=Client_Secret_from_GitHub
 
 For the GitHub clientID and clientSecret, you must register Drone in your GitHub account to obtain them. Follow [these instructions](https://developer.github.com/apps/building-oauth-apps/creating-an-oauth-app/).
 
-And now the agent one:
+And now the agent:
 ```vim
 sudo nano /etc/drone/agent.env
 ```
@@ -136,7 +134,7 @@ Output
 /etc/nginx/sites-enabled/default:#  server_name yourDroneURL.com;
 ```
 
-After knowing the block that is handling our server, we can edit it typping:
+After knowing the block that is handling our server, we can edit it typing:
 ```vim
 sudo nano /etc/nginx/sites-enabled/default 
 ```
@@ -205,7 +203,7 @@ You can check the Nginx logs:
 sudo less /var/log/nginx/error.log
 ```
 
-And also you can chcek the Drone logs:
+And also you can check the Drone logs:
 ```vim
 sudo journalctl -u drone
 ```
@@ -221,10 +219,8 @@ cd /etc/drone
 sudo /usr/local/bin/docker-compose down
 ```
 
-# Enjoy
-
 Visit your Drone server at your `https://yourDroneURL.com` and log in with the GitHub account you used for obtain the clientID and client secret.
 
-# References
+## References
 * Drone official [documentation](http://docs.drone.io/installation/)
-* Digital Ocean [article](https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-drone-on-ubuntu-16-04)
+* Digital Ocean's [article](https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-drone-on-ubuntu-16-04)
