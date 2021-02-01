@@ -2,7 +2,7 @@ baseURL = "https://charly3pins.dev/"
 languageCode = "en-us"
 title = "charly3pins.dev"
 googleAnalytics = "UA-126216319-1"
-disqusShortname = "charly3pins"
+disqusShortname = "charly3pins-github-io-1"
 defaultContentLanguage = "en"
 
 [author]
