@@ -1,10 +1,10 @@
 +++
-title = "Com tenir un lloc multiidioma a Hugo"
+title = "Com tenir un lloc multilingüe a Hugo"
 date = "2021-02-05"
 author = "charly3pins"
-description = "Conegueu les configuracions i els trucs per convertir el vostre lloc d'un sol idioma en Hugo a un lloc multiidioma en només uns quants passos."
+description = "Conegueu les configuracions i els trucs per convertir el vostre lloc d'un sol idioma en Hugo a un lloc multilingüe en només uns quants passos."
 
-slug = "Com tenir un lloc multiidioma a Hugo"
+slug = "Com tenir un lloc multilingüe a Hugo"
 section = "/blog"
 tags = ["hugo", "cms"]
 
@@ -19,7 +19,7 @@ Després d'aquesta "xapa", veurem com es podeu tenir els vostres llocs en Hugo e
 
 ## Configura Idiomes
 
-El primer que cal fer per tenir un lloc multiidioma, és definir en el `config.toml` els idiomes que es volen oferir. En el meu cas he decidit anglès, castellà i català de la manera següent:
+El primer que cal fer per tenir un lloc multilingüe, és definir en el `config.toml` els idiomes que es volen oferir. En el meu cas he decidit anglès, castellà i català de la manera següent:
 ```vim
 [Languages]
 [Languages.en]

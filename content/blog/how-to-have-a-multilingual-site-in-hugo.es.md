@@ -1,17 +1,17 @@
 +++
-title = "Cómo tener un sitio multiidioma en Hugo"
+title = "Cómo tener un sitio multilingüe en Hugo"
 date = "2021-02-05"
 author = "charly3pins"
-description = "Conozca las configuraciones y los trucos para convertir su sitio en un solo idioma en Hugo en un sitio multiidioma en solo unos pocos pasos."
+description = "Conozca las configuraciones y los trucos para convertir su sitio en un solo idioma en Hugo en un sitio multilingüe en solo unos pocos pasos."
 
-slug = "Cómo tener un sitio multiidioma en Hugo"
+slug = "Cómo tener un sitio multilingüe en Hugo"
 section = "/blog"
 tags = ["hugo", "cms"]
 
 image = "/images/gohugoio-card.png"
 +++
 
-Como se puede apreciar desde esta semana esta humilde página web se ha remodelado un poco tanto visualmente como internamente, y es que no solo hay nuevos colores, imágenes y secciones, sino que también ¡ofrece todo su contenido en 2 nuevos idiomas! Me he decidido en hacer este paso porqué primero de todo quería probar como funcionaba el tema de los multiidiomas en Hugo y también para intentar hacer más cómoda la lectura de los artículos a la gente que la visita, sin que el idioma fuera un obstáculo y ofreciendo el mayor confort y placer a los lectores.
+Como se puede apreciar desde esta semana esta humilde página web se ha remodelado un poco tanto visualmente como internamente, y es que no solo hay nuevos colores, imágenes y secciones, sino que también ¡ofrece todo su contenido en 2 nuevos idiomas! Me he decidido en hacer este paso porqué primero de todo quería probar como funcionaba el tema de los multilingües en Hugo y también para intentar hacer más cómoda la lectura de los artículos a la gente que la visita, sin que el idioma fuera un obstáculo y ofreciendo el mayor confort y placer a los lectores.
 
 Los idiomas como podéis ver en la barra superior son el Castellano y el Catalán. Así que para cambiar el idioma en el que estáis viendo la página, es tan sencillo como escoger en el selector qué idioma prefieres y automáticamente se traducirá todo. Si encontráis alguna errata en la traducción o alguna parte que no está traducida por favor ponedme un comentario en el post en cuestión o comentalo por mis redes sociales (links en la parte baja de la web).
 
@@ -19,7 +19,7 @@ Tras esta "chapa", vamos a ver como se podéis tener vuestros sitios en Hugo en 
 
 ## Configurar Idiomas
 
-Lo primero que hay que hacer para tener un sitio multiidioma, es definir en el `config.toml` los idiomas que se quieren ofrecer. En mi caso he decidido inglés, castellano y catalán de la siguiente forma:
+Lo primero que hay que hacer para tener un sitio multilingüe, es definir en el `config.toml` los idiomas que se quieren ofrecer. En mi caso he decidido inglés, castellano y catalán de la siguiente forma:
 ```vim
 [languages]
 [languages.en]
