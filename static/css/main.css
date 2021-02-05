@@ -96,7 +96,7 @@ h1, h2, h3{
 /*
             C   O   N   T   A   I   N   E   R
 */
-.container{
+.container, #disqus_thread{
     background:0 0;
     display:flex;
     flex-direction:column;
@@ -110,12 +110,12 @@ h1, h2, h3{
     padding:0px!important;
 }
 @media (min-width: 1200px){
-    .container {
+    .container, #disqus_thread {
         width: 1160px;
     }
 }
 @media (min-width: 400px){
-    .container {
+    .container, #disqus_thread {
         margin:0 auto;
     }
 }

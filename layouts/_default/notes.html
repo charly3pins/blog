@@ -10,9 +10,7 @@
 			
 			<div class="container">
 				<h1 class="h1-section">{{ .Title }} <span class="cursor"></span></h1>
-
-				<div class="page-separator centered"><hr></div>
-				
+			
 				<div id="list-notes" class="markdown">
 					{{ partial "book_list.html" . }}
 					
@@ -20,6 +18,10 @@
 					
 					{{ partial "podcast_list.html" . }}
 				</div>
+
+				<div class="page-separator centered"><hr></div>
+				
+				{{ template "_internal/disqus.html" . }}
 
 				<div class="page-separator centered"><hr></div>
 

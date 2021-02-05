@@ -13,15 +13,19 @@
 					<h1>{{ .Title }}</h1>
 					
 					{{ partial "metadata.html" . }}
-				</div>
 
-				<div class="page-separator"><hr></div>
+					{{ partial "social_share.html" . }}
+				</div>
 
 				<div class="markdown">
 					<p>{{ .Content | safeHTML }}</p>
 				</div>
+
+				<div class="page-separator centered"><hr></div>
+
+				{{ template "_internal/disqus.html" . }}
 				
-				<div class="page-separator"><hr></div>
+				<div class="page-separator centered"><hr></div>
 
 			</div>
 			
