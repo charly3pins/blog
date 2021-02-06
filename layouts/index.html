@@ -20,25 +20,36 @@
 					<p>{{ T "indexDescription" }}</p>
 				</div>
 			</div>
+
 			<div class="page-separator centered"><hr></div>	
-			
-			<div class="container">
+
+			<div class="container grid">
+				{{range first 6 (where .Paginator.Pages "Section" "blog")}}
+				<div class="card">
+					<a href="{{ .Permalink }}">
+						<div class="card-banner">
+							<p class="category-tag technology">technology</p>
+							<img class="banner-img" src="{{ .Params.image | absURL }}" alt="cover image">
+						</div>
+						<div class="card-body">
+							<h2 class="blog-title">{{ .Title }}</h2>
+							<p class="blog-hashtag">{{ partial "metadata.html" . }}</p>
+							<p class="blog-description">{{ .Description }}</p>
+						</div>
+					</a>
+				</div>
+				{{ end }}
+
 				
-				<div class="markdown">
-					<ul id="list-items">
-						<li></li>
-						{{range first 3 (where .Paginator.Pages "Section" "blog")}}
-							<li>
-								<a class="li-link" href="{{ .Permalink }}">{{ .Title }}</a>
-								<p>{{ .Description }}</p>
-								
-								{{ partial "metadata.html" . }}
-							</li>
-						{{ end }}
-					</ul>
+				<div class="centered"><a href="{{ "blog/" | absLangURL }}" class="button" id="blog-cta">{{ T "readMore" }}</a></div>
+				
+				<div class="page-separator centered"><hr></div>	
+
+				<div class="twitter">
+					<a class="twitter-timeline" data-height="600" href="https://twitter.com/charly3pins">Tweets by charly3pins</a>
+					<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 				</div>
 
-				<div class="centered"><a href="{{ "blog/" | absLangURL }}" class="button" id="blog-cta">{{ T "readMore" }}</a></div>
 			</div>
 
 			<div class="page-separator centered"><hr></div>	

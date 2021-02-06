@@ -89,7 +89,6 @@ h1, h2, h3{
     justify-content:flex-start;
     align-items:flex-start;
     margin:0% auto;
-    /* width:100%; */
     padding:2%;
     min-height:100vh;
 }
@@ -103,7 +102,6 @@ h1, h2, h3{
     justify-content:center;
     align-items:flex-start;
     width:75%;
-    max-width:60em;
     padding-top:2%;
 }
 .no-padd{
@@ -111,7 +109,7 @@ h1, h2, h3{
 }
 @media (min-width: 1200px){
     .container, #disqus_thread {
-        width: 1160px;
+        width: 1250px;
     }
 }
 @media (min-width: 400px){
@@ -444,7 +442,8 @@ a.sociali {
     margin:4px 3px 0 0;
     font-size:1.4em;
     color:var(--pink);
-    border-bottom: 3px solid var(--green) !important;
+    text-decoration: underline;
+    text-decoration-color: var(--green);
     padding-bottom: 5px;
     line-height:2 !important;
 }
@@ -712,7 +711,8 @@ a.sociali {
     margin:4px 3px 0 0;
     font-size:1.4em;
     color:var(--pink);
-    border-bottom: 3px solid var(--green) !important;
+    text-decoration: underline;
+    text-decoration-color: var(--green);
     line-height:1 !important;
     text-shadow:none!important;
     width:fit-content;
