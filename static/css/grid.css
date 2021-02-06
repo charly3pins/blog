@@ -2,7 +2,6 @@
   --clr-gray-light: #d7dfe2;
   --clr-gray-med: #616b74;
   --clr-gray-dark: #414b56;
-  --clr-link: #4d97b2;
   --clr-popular: #ef257a;
   --clr-technology: #651fff;
   --clr-psychology: #e85808;
@@ -23,7 +22,6 @@
   width: 328px;
   margin: 1rem;
   transition: 250ms all ease-in-out;
-  cursor: pointer;
 }
 
 .card:hover {
@@ -69,12 +67,6 @@
 
 .card-body {
   margin: 15rem 1rem 1rem 1rem;
-}
-
-.blog-hashtag {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--clr-link);
 }
 
 .blog-title {
