@@ -5,8 +5,8 @@ author = "charly3pins"
 description = "Cómo organizar su contenido y crear sus plantillas para obtener el máximo valor de Hugo."
 
 slug = "Gestión de contenidos y plantillas de Hugo"
-section = "/blog"
 tags = ["hugo", "cms"]
+category = "technology"
 
 image = "/images/gohugoio-card.png"
 +++

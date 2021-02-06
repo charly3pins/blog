@@ -4,8 +4,8 @@ date = "2018-10-10"
 author = "charly3pins"
 description = "Simple post explaining how to install Drone on Ubuntu 16.04 server."
 
-section = "/blog"
 tags = ["drone", "ci", "devops"]
+category = "technology"
 
 image = "/images/droneio-0.8.png"
 +++

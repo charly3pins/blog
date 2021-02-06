@@ -24,11 +24,11 @@
 			<div class="page-separator centered"><hr></div>	
 
 			<div class="container grid">
-				{{range first 6 (where .Paginator.Pages "Section" "blog")}}
+				{{range first 6 (where .Paginator.Pages ".Params.category" "technology")}}
 				<div class="card">
 					<a href="{{ .Permalink }}">
 						<div class="card-banner">
-							<p class="category-tag technology">technology</p>
+							<p class="category-tag technology">{{ T .Params.category }}</p>
 							<img class="banner-img" src="{{ .Params.image | absURL }}" alt="cover image">
 						</div>
 						<div class="card-body">
@@ -41,6 +41,7 @@
 				</div>
 				{{ end }}
 
+				<div class="page-separator centered"><hr></div>	
 				
 				<div class="centered"><a href="{{ "blog/" | absLangURL }}" class="button" id="blog-cta">{{ T "readMore" }}</a></div>
 				

@@ -5,8 +5,8 @@ author = "charly3pins"
 description = "Tutorial ràpid sobre com integrar Google Analytics en un lloc web Hugo."
 
 slug = "Com afegir Google Analytics al vostre lloc amb Hugo"
-section = "/blog"
 tags = ["hugo", "cms"]
+category = "technology"
 
 image = "/images/google-analytics-hugo.png"
 +++

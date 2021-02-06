@@ -5,8 +5,8 @@ author = "charly3pins"
 description = "Passos ràpids per crear el vostre propi bloc estàtic amb Hugo i instal·lar un tema del catàleg. Després, empenyeu el vostre lloc a GitHub i implementeu-lo amb GitHub Pages."
 
 slug = "Construint un bloc estàtic amb Hugo"
-section = "/blog"
 tags = ["hugo", "cms", "github"]
+category = "technology"
 
 image = "/images/gohugoio-card.png"
 +++

@@ -5,8 +5,8 @@ author = "charly3pins"
 description = "Pasos rápidos para crear su propio blog estático con Hugo e instalar un tema del catálogo. Después de eso, envíe su sitio a GitHub e impleméntelo con las páginas de GitHub."
 
 slug = "Construyendo un blog estático con Hugo"
-section = "/blog"
 tags = ["hugo", "cms", "github"]
+category = "technology"
 
 image = "/images/gohugoio-card.png"
 +++

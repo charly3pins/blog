@@ -4,8 +4,8 @@ date = "2020-03-08"
 author = "charly3pins"
 description = "How to organize your content and create your templates to get maximum value from Hugo."
 
-section = "/blog"
 tags = ["hugo", "cms"]
+category = "technology"
 
 image = "/images/gohugoio-card.png"
 +++

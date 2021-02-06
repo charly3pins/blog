@@ -29,6 +29,15 @@ other = "Últim post publicat el"
 [error404]
 other = "ERROR 404: Pàgina no trobada"
 
+# CATEGORIES
+[technology] 
+other = "tecnologia"
+[anime] 
+other = "anime"
+[manga] 
+other = "manga"
+
+# NOTES
 [books]
 other = "Llibres"
 [reading]

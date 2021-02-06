@@ -4,8 +4,8 @@ date = "2020-11-23"
 author = "charly3pins"
 description = "Quick tutorial how to integrate Google Analytics in a Hugo website."
 
-section = "/blog"
 tags = ["hugo", "cms"]
+category = "technology"
 
 image = "/images/google-analytics-hugo.png"
 +++

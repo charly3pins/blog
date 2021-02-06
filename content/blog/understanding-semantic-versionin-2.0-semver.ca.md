@@ -5,8 +5,8 @@ author = "charly3pins"
 description = "Què és la versió semàntica? Per què és important utilitzar-lo en els vostres projectes com a desenvolupador? Què significa per a un usuari que utilitza la vostra biblioteca?"
 
 slug = "Comprensió de la Versió Semàntica 2.0 (SemVer)"
-section = "/blog"
 tags = ["semver", "api"]
+category = "technology"
 
 image = "/images/semver.png"
 +++

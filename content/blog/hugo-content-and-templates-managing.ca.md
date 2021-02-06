@@ -5,8 +5,8 @@ author = "charly3pins"
 description = "Com organitzar el vostre contingut i crear les vostres plantilles per obtenir el màxim valor d’Hugo."
 
 slug = "Gestió de plantilles i contingut d'Hugo"
-section = "/blog"
 tags = ["hugo", "cms"]
+category = "technology"
 
 image = "/images/gohugoio-card.png"
 +++

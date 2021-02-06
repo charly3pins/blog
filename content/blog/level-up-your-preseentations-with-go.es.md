@@ -5,8 +5,8 @@ author = "charly3pins"
 description = "Genera fácilmente tus presentaciones con \"present\", la herramienta impulsada por Go que genera y renderiza tus diapositivas."
 
 slug = "Suba de nivel sus presentaciones con Go"
-section = "/blog"
 tags = ["go", "life"]
+category = "technology"
 
 image = "/images/level-up-your-presentations-with-go/GOPHER_MIC_DROP_WITH_BACKGROUND.png"
 +++

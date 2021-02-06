@@ -5,8 +5,8 @@ author = "charly3pins"
 description = "Genera fàcilment les teves presentacions amb \"present\", l'eina impulsada per Go que genera i renderitza les teves diapositives."
 
 slug = "Pujeu de nivell les vostres presentacions amb Go"
-section = "/blog"
 tags = ["go", "life"]
+category = "technology"
 
 image = "/images/level-up-your-presentations-with-go/GOPHER_MIC_DROP_WITH_BACKGROUND.png"
 +++

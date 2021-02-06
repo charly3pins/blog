@@ -2,9 +2,9 @@
   --clr-gray-light: #d7dfe2;
   --clr-gray-med: #616b74;
   --clr-gray-dark: #414b56;
-  --clr-popular: #ef257a;
+  --clr-manga: #ef257a;
   --clr-technology: #651fff;
-  --clr-psychology: #e85808;
+  --clr-anime: #e85808;
 }
 
 .grid {
@@ -53,16 +53,17 @@
   border-radius: 0 2rem 2rem 0;
 }
 
-.popular {
-  background: var(--clr-popular);
-}
 
 .technology {
   background: var(--clr-technology);
 }
 
-.psychology {
-  background: var(--clr-psychology);
+.anime {
+  background: var(--clr-anime);
+}
+
+.manga {
+  background: var(--clr-manga);
 }
 
 .card-body {

@@ -29,6 +29,15 @@ other = "Last post published on"
 [error404]
 other = "ERROR 404: Page not found"
 
+# CATEGORIES
+[technology] 
+other = "Technology"
+[anime] 
+other = "anime"
+[manga] 
+other = "manga"
+
+# NOTES
 [books]
 other = "Books"
 [reading]

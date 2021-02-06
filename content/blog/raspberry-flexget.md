@@ -6,8 +6,8 @@ date = "2022-10-08"
 author = "charly3pins"
 description = "flexget."
 
-section = "/blog"
 tags = ["raspberry-pi", "linux", "life"]
+category = "technology"
 
 image = "/images/raspberry-media-player/cover.png"
 +++

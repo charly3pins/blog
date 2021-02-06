@@ -7,8 +7,8 @@ author = "charly3pins"
 description = "Conozca las principales plantillas internas que Hugo le proporciona como plantillas estándar que cubren los casos de uso más comunes para sitios web estáticos."
 
 slug = "Plantillas internas en Hugo"
-section = "/blog"
 tags = ["hugo", "cms"]
+category = "technology"
 
 image = "/images/gohugoio-card.png"
 +++

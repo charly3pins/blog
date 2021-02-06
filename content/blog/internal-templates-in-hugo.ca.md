@@ -7,8 +7,8 @@ author = "charly3pins"
 description = "Conegui les principals plantilles internes que Hugo li proporciona com a plantilles estàndard que cobreixen els casos d'ús més comuns per a llocs web estàtics."
 
 slug = "Plantilles internes a Hugo"
-section = "/blog"
 tags = ["hugo", "cms"]
+category = "technology"
 
 image = "/images/gohugoio-card.png"
 +++

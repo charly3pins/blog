@@ -4,8 +4,8 @@ date = "2020-03-10"
 author = "charly3pins"
 description = "Generate custom commit messages for your repo and standardize your commits log."
 
-section = "/blog"
 tags = ["terminal", "git"]
+category = "technology"
 
 image = "/images/git-commit.png"
 +++
