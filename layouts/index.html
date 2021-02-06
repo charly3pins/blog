@@ -33,8 +33,9 @@
 						</div>
 						<div class="card-body">
 							<h2 class="blog-title">{{ .Title }}</h2>
-							{{ partial "metadata.html" . }}
+							{{ partial "metadata_index.html" . }}
 							<p class="blog-description">{{ .Description }}</p>
+							<a class="blog-description" href="{{ .Permalink }}">{{ T "readMore" }}...</a>
 						</div>
 					</a>
 				</div>
