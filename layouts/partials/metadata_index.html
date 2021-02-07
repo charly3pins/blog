@@ -6,5 +6,5 @@
     {{ end }}
 </p>
 <p class="metadata">
-    {{ if ne .Params.Section "/code" }}· {{ .Date.Format "02/01/2006" }} · {{ T "readingTime" .ReadingTime }} ·{{end}}
+    {{ if ne .Params.Section "/code" }}{{ .Date.Format "02/01/2006" }} · {{ T "readingTime" .ReadingTime }}{{end}}
 </p>

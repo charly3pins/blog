@@ -20,8 +20,8 @@ other = "Enginyer de Software, amant de Japó, jugador de videojocs i passejador
 other = "Llegir més"
 
 [readingTime]
-one = "Un minut per llegir"
-other = "{{.Count}} minuts per llegir"
+one = "Un minut de lectura"
+other = "{{.Count}} min. de lectura"
 
 [lastPost]
 other = "Últim post publicat el"
