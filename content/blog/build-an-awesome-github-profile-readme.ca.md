@@ -1,6 +1,4 @@
 +++
-draft = true
-
 title = "Crei un README increïble pel su perfil de GitHub"
 date = "2021-02-12"
 author = "charly3pins"
