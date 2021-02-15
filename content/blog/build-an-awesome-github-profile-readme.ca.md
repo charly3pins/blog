@@ -17,9 +17,9 @@ GitHub va llançar una [nova funcionalitat](https://docs.github.com/en/github/se
 Com he comentat abans, el README del perfil es crea quan l'usuari crea un nou repositori amb el mateix nom que el seu nom d'usuari. Per exemple, el meu nom d'usuari de GitHub és charly3pins, així que he creat un nou repositori anomenat `charly3pins`. Els passos són els següents:
 
 1. Crear un nou repositori amb el mateix nom que el nom d'usuari de GitHub anant [aquí](https://github.com/new). Marcar  l'opció `Afegir un arxiu README`.
-![crear repositori](/images/github-readme/new-repo.png)
+![crear repositori](/images/github-profile-readme/new-repo.png)
 2. Obriu el fitxer README.md generat i veurà la següent plantilla:
-![plantilla de repositori](/images/github-readme/template.png)
+![plantilla de repositori](/images/github-profile-readme/repo-template.png)
 3. Descomentar els comentaris i afegir contingut com a text, GIF, imatges, emojis, etc. El que es vulgui mentre sigui acceptat per Markdown... No hi ha límit! 🚀  Consultar [aquest](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf) Full de referència de Markdown si es necessita repassar la sintaxi de Markdown.
 4. Comittejar el nou arxiu README. Recordar que els canvis han d'estar en la branca `master` o` main`; en cas contrari, no seran visibles en el perfil fins que mergee els canvis en una d'aquestes dues branques.
 5. Pusheejar els canvis a GitHub (si s'han realitzat localment).
