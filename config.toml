@@ -45,11 +45,6 @@ defaultContentLanguage = "en"
 	weight = -130
 
 [[languages.en.menu.main]]
-	name = "/notes"
-	url = "/notes/"
-	weight = -120
-
-[[languages.en.menu.main]]
 	name = "$USER"
 	url = "/about/"
 	weight = -110
@@ -70,11 +65,6 @@ defaultContentLanguage = "en"
 	weight = -130
 
 [[languages.es.menu.main]]
-	name = "/apuntes"
-	url = "/notes/"
-	weight = -120
-
-[[languages.es.menu.main]]
 	name = "$USUARIO"
 	url = "/about/"
 	weight = -110
@@ -93,11 +83,6 @@ defaultContentLanguage = "en"
 	name = "/codi"
 	url = "/code/"
 	weight = -130
-
-[[languages.ca.menu.main]]
-	name = "/apunts"
-	url = "/notes/"
-	weight = -120
 
 [[languages.ca.menu.main]]
 	name = "$USUARI"
