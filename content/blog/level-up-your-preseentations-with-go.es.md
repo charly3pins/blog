@@ -9,6 +9,8 @@ tags = ["go", "life"]
 category = "technology"
 
 image = "/images/level-up-your-presentations-with-go/GOPHER_MIC_DROP_WITH_BACKGROUND.png"
+banner = "/images/level-up-your-presentations-with-go/GOPHER_MIC_DROP_WITH_BACKGROUND-banner.png"
+thumb = "/images/level-up-your-presentations-with-go/GOPHER_MIC_DROP_WITH_BACKGROUND-thumb.png"
 +++
 
 Si es una persona técnica y no te gusta luchar con los programas de presentación pero quiere / necesita crear uno, enhorabuena! estás en el lugar correcto. Sé que, como ingenieros de software, queremos codificar, leer o mirar cosas relacionadas con software, arquitectura o devops, pero no con presentaciones. A veces, se nos exige que presentamos algo a otros miembros del equipo, a los propietarios de productos o incluso más aterradores, al equipo directivo.

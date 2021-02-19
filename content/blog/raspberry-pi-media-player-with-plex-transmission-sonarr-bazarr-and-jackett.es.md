@@ -9,6 +9,8 @@ tags = ["raspberry-pi", "linux", "life"]
 category = "technology"
 
 image = "/images/raspberry-media-player/cover.png"
+banner = "/images/raspberry-media-player/banner.png"
+thumb = "/images/raspberry-media-player/thumb.png"
 +++
 
 Así que tienes una Raspberry Pi abandonada y siempre quisiste usarla para algo útil. También te gusta ver series pero hay demasiados proveedores y no sabes cuál se suscribe. No se preocupe con este tutorial, tendrá ambos problemas resueltos a la vez; ¡Usarás la Raspberry Pi para ver tu serie favorita sin límites!

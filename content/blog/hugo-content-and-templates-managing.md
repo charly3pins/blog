@@ -8,6 +8,8 @@ tags = ["hugo", "cms"]
 category = "technology"
 
 image = "/images/gohugoio-card.png"
+banner = "/images/gohugoio-card-banner.png"
+thumb = "/images/gohugoio-card-thumb.png"
 +++
 
 After long time without writing... I'm back!

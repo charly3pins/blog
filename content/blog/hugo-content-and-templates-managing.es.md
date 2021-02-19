@@ -9,6 +9,8 @@ tags = ["hugo", "cms"]
 category = "technology"
 
 image = "/images/gohugoio-card.png"
+banner = "/images/gohugoio-card-banner.png"
+thumb = "/images/gohugoio-card-thumb.png"
 +++
 
 Después de mucho tiempo sin escribir... ¡estoy de vuelta!

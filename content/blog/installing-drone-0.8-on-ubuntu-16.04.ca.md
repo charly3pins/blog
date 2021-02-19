@@ -9,6 +9,8 @@ tags = ["drone", "ci", "devops"]
 category = "technology"
 
 image = "/images/droneio-0.8.png"
+banner = "/images/droneio-0.8-banner.png"
+thumb = "/images/droneio-0.8-thumb.png"
 +++
 He de reconèixer que mai no m’han agradat la part dels sistemes del procés de desenvolupament. Sempre, però, que era una feina en un lloc fosc i esgarrifós, ple de monstres que feien coses rares. Aquesta visió va canviar completament quan vaig començar a utilitzar [Docker](https://www.docker.com/). En aquest punt em vaig adonar que tota la màgia feta a la part de sysadmin era millor que jo i, aleshores, vaig començar a interessar-me més per aquest costat.
 

@@ -9,6 +9,8 @@ tags = ["github"]
 category = "technology"
 
 image = "/images/github-profile-readme/octocat-profile.png"
+banner = "/images/github-profile-readme/octocat-profile-banner.png"
+thumb = "/images/github-profile-readme/octocat-profile-thumb.png"
 +++
 
 GitHub lanzó una [nueva funcionalidad](https://docs.github.com/en/github/setting-up-and-managing-your-github-profile/managing-your-profile-readme) que permite a los usuarios crear un portfolio usando un `README` en un repositorio especial con el mismo nombre que el nombre de usuario y mostrarlo en el perfil del usuario como la imagen de portada de esta publicación. Este artículo explica cómo crear ese repositorio paso a paso y agrega algunos consejos y trucos que puede usar para modificar el suyo.

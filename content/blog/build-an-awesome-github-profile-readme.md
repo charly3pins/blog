@@ -8,6 +8,8 @@ tags = ["github"]
 category = "technology"
 
 image = "/images/github-profile-readme/octocat-profile.png"
+banner = "/images/github-profile-readme/octocat-profile-banner.png"
+thumb = "/images/github-profile-readme/octocat-profile-thumb.png"
 +++
 
 GitHub released a [new feature](https://docs.github.com/en/github/setting-up-and-managing-your-github-profile/managing-your-profile-readme) that allows users to create a portfolio using a `README` in a special repository with same name as the username and display it in the user's profile like the cover picture of this post. This article explains how to create that repo step by step and add some tips and tricks that you can use to tweak your own.

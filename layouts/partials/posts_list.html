@@ -1,14 +1,24 @@
 <div class="markdown">
-    <ul id="list-items">
-        {{ range .Paginator.Pages }}
-        <li>
-            <a class="li-link" href="{{ .Permalink }}">{{ .Title }}</a>
-            <p>{{ .Description }}</p>
-            
-            {{ partial "metadata.html" . }}
-        </li>
-        {{ end }}
-    </ul>
+    <section class="gallery">
+        <div class="container">
+            <ul class="image-list">
+                {{ range .Paginator.Pages }}
+                <li>
+                    <figure>
+                        <a href="{{ .Permalink }}"><img src="{{ .Params.thumb | absURL }}" alt="thumb image"></a>
+                        <figcaption>
+                            <a class="li-head li-link" href="{{ .Permalink }}">{{ .Title }}</a>
+                            <div class="li-sub">
+                                {{ .Description }} <a class="tag"href="{{ .Permalink }}">{{ T "readMore" }}...</a>
+                                {{ partial "metadata.html" . }}
+                            </div>
+                        </figcaption>
+                    </figure>
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+    </section>
 </div>
 
 {{ template "_internal/pagination.html" . }}

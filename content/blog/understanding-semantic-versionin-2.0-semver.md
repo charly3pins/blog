@@ -8,6 +8,8 @@ tags = ["semver", "api"]
 category = "technology"
 
 image = "/images/semver.png"
+banner = "/images/semver-banner.png"
+thumb = "/images/semver-thumb.png"
 +++
 When you want to use a library in your project you probably noticed that you need to specify a version. Most of the time those versions are formatted like 3 numbers separated with dots between them. That format is indicative that the library is using the [Semantic Versioning](https://semver.org) aka SemVer. That document specifies the format and the way of labeling your projects during all the life-cycle of it. It is just a convention so you can define the version number the way you want it to be, but the truth is that other developers across all industries agreed on using it and it became a standard for versioning.
 

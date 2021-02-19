@@ -8,6 +8,8 @@ tags = ["hugo", "cms"]
 category = "technology"
 
 image = "/images/gohugoio-card.png"
+banner = "/images/gohugoio-card-banner.png"
+thumb = "/images/gohugoio-card-thumb.png"
 +++
 
 As you can see since this week this humble website has been remodeled a bit both visually and internally, and it is that not only there are new colors, images and sections, but it also offers all its content in 2 new languages! I have decided to do this step because first of all I wanted to test how the multilingual thing worked in Hugo and also to try to make reading the articles more comfortable for people who visit it, without the language being an obstacle and offering the greatest comfort and pleasure to readers.

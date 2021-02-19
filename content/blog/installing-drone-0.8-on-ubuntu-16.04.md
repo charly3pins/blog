@@ -8,6 +8,8 @@ tags = ["drone", "ci", "devops"]
 category = "technology"
 
 image = "/images/droneio-0.8.png"
+banner = "/images/droneio-0.8-banner.png"
+thumb = "/images/droneio-0.8-thumb.png"
 +++
 I have to admit that I never liked the systems part of the development process. I always though that it was a job in a dark and creppy place, full of freaks doing a rare things. This vision completely changed when I started using [Docker](https://www.docker.com/). On this point I realized that all the magic done in the sysadmin part was better than I though and then, I started intereseting more an more on this side. 
 

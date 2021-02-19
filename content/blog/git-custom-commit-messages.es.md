@@ -9,6 +9,8 @@ tags = ["terminal", "git"]
 category = "technology"
 
 image = "/images/git-commit.png"
+banner = "/images/git-commit-banner.png"
+thumb = "/images/git-commit-thumb.png"
 +++
 
 He estado usando la herramienta [CMF](https://github.com/walmartdigital/commit-message-formatter) durante el último año y creo que su simplicidad es su potencial. Básicamente es una herramienta de terminal desarrollada en Go por [Walmart Digital](https://github.com/walmartdigital) que te ayuda a estandarizar el log de commits de tus proyectos.

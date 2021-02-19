@@ -9,6 +9,8 @@ tags = ["hugo", "cms"]
 category = "technology"
 
 image = "/images/gohugoio-card.png"
+banner = "/images/gohugoio-card-banner.png"
+thumb = "/images/gohugoio-card-thumb.png"
 +++
 
 Com es pot apreciar des d'aquesta setmana aquesta humil pàgina web s'ha remodelat una mica tant visualment com internament, i és que no només hi ha nous colors, imatges i seccions, sinó que també ofereix tot el seu contingut en 2 nous idiomes! M'he decidit a fer aquest pas perquè primer de tot volia provar com funcionava el tema dels multiidiomes en Hugo i també per intentar fer més còmoda la lectura dels articles a la gent que la visita, sense que l'idioma fos un obstacle i oferint el major confort i plaer als lectors.

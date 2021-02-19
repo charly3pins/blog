@@ -24,18 +24,19 @@
 			<div class="page-separator centered"><hr></div>	
 
 			<div class="container grid">
-				{{range first 6 (where .Paginator.Pages ".Params.category" "technology")}}
+				{{range first 6 (where .Paginator.Pages ".Section" "blog")}}
 				<div class="card">
 					<a href="{{ .Permalink }}">
 						<div class="card-banner">
-							<p class="category-tag technology">{{ T .Params.category }}</p>
-							<img class="banner-img" src="{{ .Params.image | absURL }}" alt="cover image">
+							{{ $tags := delimit .Params.tags ", " }}
+							<p class="tags">{{ $tags }}</p>
+							<img class="banner-img" src="{{ .Params.banner | absURL }}" alt="banner image">
 						</div>
 						<div class="card-body">
 							<h2 class="blog-title">{{ .Title }}</h2>
 							{{ partial "metadata_index.html" . }}
 							<p class="blog-description">{{ .Description }}</p>
-							<a class="blog-description" href="{{ .Permalink }}">{{ T "readMore" }}...</a>
+							<a class="blog-readmore" href="{{ .Permalink }}">{{ T "readMore" }}...</a>
 						</div>
 					</a>
 				</div>

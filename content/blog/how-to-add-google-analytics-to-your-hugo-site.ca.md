@@ -9,6 +9,8 @@ tags = ["hugo", "cms"]
 category = "technology"
 
 image = "/images/google-analytics-hugo.png"
+banner = "/images/google-analytics-hugo-banner.png"
+thumb = "/images/google-analytics-hugo-thumb.png"
 +++
 ## Google Analytics
 

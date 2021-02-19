@@ -9,6 +9,8 @@ tags = ["terminal", "git"]
 category = "technology"
 
 image = "/images/git-commit.png"
+banner = "/images/git-commit-banner.png"
+thumb = "/images/git-commit-thumb.png"
 +++
 
 He estat utilitzant l'eina [CMF](https://github.com/walmartdigital/commit-message-formatter) durant l'últim any i crec que la seva simplicitat és el seu potencial. Bàsicament és una eina terminal desenvolupada a Go by [Walmart Digital](https://github.com/walmartdigital) que us ajuda a normalitzar el registre de compromisos dels vostres projectes.
