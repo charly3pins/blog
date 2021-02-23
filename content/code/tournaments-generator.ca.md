@@ -103,3 +103,6 @@ A partir d’aquí el que falta és crear els `Torneigs` seleccionant el grup i 
 Amb aquesta prova de concepte, vaig tenir l'oportunitat de treballar en una aplicació complexa en termes de disseny de components reutilitzables en una aplicació mòbil, trucar a una API externa per gestionar la informació que es mostra a l'aplicació i aprendre a utilitzar el paquet de proveïdor per moure informació. entre vistes múltiples i controlar l’estat de l’aplicació d’una manera més senzilla i eficaç.
 
 Hi ha molt més a aprendre sobre el desenvolupament de mòbils, però considero aquest projecte com un pas inicial per començar. Algun dia faré les vistes que falten per tal de poder utilitzar-les al món real, però espero que no sigui perquè tenim una altra pandèmia 😏
+
+- Codi font de l'API en Go: https://github.com/charly3pins/fifa-gen-api
+- Codi font de l'app en Flutter: https://github.com/charly3pins/fifa_gen
