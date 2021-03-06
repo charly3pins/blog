@@ -6,7 +6,6 @@ description = "Com organitzar el vostre contingut i crear les vostres plantilles
 
 slug = "Gestió de plantilles i contingut d'Hugo"
 tags = ["hugo", "cms"]
-category = "technology"
 
 image = "/images/gohugoio-card.png"
 banner = "/images/gohugoio-card-banner.png"

@@ -6,7 +6,6 @@ description = "Genera missatges de commit personalitzats per al vostre repositor
 
 slug = "Missatges de commit personalitzats de Git"
 tags = ["terminal", "git"]
-category = "technology"
 
 image = "/images/git-commit.png"
 banner = "/images/git-commit-banner.png"

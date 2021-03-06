@@ -6,7 +6,6 @@ description = "Publicació senzilla que explica com instal·lar Drone al servido
 
 slug = "Instal·lació de Drone 0.8 a Ubuntu 16.04"
 tags = ["drone", "ci", "devops"]
-category = "technology"
 
 image = "/images/droneio-0.8.png"
 banner = "/images/droneio-0.8-banner.png"

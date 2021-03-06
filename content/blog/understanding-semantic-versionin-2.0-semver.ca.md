@@ -6,7 +6,6 @@ description = "Què és la versió semàntica? Per què és important utilitzar-
 
 slug = "Comprensió de la Versió Semàntica 2.0 (SemVer)"
 tags = ["semver", "api"]
-category = "technology"
 
 image = "/images/semver.png"
 banner = "/images/semver-banner.png"

@@ -6,7 +6,6 @@ description = "Conozca las configuraciones y los trucos para convertir su sitio 
 
 slug = "Cómo tener un sitio multilingüe en Hugo"
 tags = ["hugo", "cms"]
-category = "technology"
 
 image = "/images/gohugoio-card.png"
 banner = "/images/gohugoio-card-banner.png"

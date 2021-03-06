@@ -5,7 +5,6 @@ author = "charly3pins"
 description = "Generate easily your presentations with \"present\", the tool powered by Go that generates and renders your slides."
 
 tags = ["go", "life"]
-category = "technology"
 
 image = "/images/level-up-your-presentations-with-go/GOPHER_MIC_DROP_WITH_BACKGROUND.png"
 banner = "/images/level-up-your-presentations-with-go/GOPHER_MIC_DROP_WITH_BACKGROUND-banner.png"

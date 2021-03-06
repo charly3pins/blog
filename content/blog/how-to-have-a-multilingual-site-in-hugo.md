@@ -5,7 +5,6 @@ author = "charly3pins"
 description = "Know the configurations and the tricks to convert your single language site in Hugo to a multilingual site in just a few steps."
 
 tags = ["hugo", "cms"]
-category = "technology"
 
 image = "/images/gohugoio-card.png"
 banner = "/images/gohugoio-card-banner.png"

@@ -6,7 +6,6 @@ description = "¿Qué es el control de versiones semántico? ¿Por qué es impor
 
 slug = "Comprensión del Control de Versiones Semántico 2.0 (SemVer)"
 tags = ["semver", "api"]
-category = "technology"
 
 image = "/images/semver.png"
 banner = "/images/semver-banner.png"

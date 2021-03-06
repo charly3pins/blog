@@ -7,7 +7,6 @@ author = "charly3pins"
 description = "Know the principle internal templates that Hugo provides you as a boilerplate templates that cover the most common use cases for static websites."
 
 tags = ["hugo", "cms"]
-category = "technology"
 
 image = "/images/gohugoio-card.png"
 banner = "/images/gohugoio-card-banner.png"

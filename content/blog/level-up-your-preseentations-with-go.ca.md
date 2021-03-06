@@ -6,7 +6,6 @@ description = "Genera fàcilment les teves presentacions amb \"present\", l'eina
 
 slug = "Pujeu de nivell les vostres presentacions amb Go"
 tags = ["go", "life"]
-category = "technology"
 
 image = "/images/level-up-your-presentations-with-go/GOPHER_MIC_DROP_WITH_BACKGROUND.png"
 banner = "/images/level-up-your-presentations-with-go/GOPHER_MIC_DROP_WITH_BACKGROUND-banner.png"

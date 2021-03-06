@@ -5,7 +5,6 @@ author = "charly3pins"
 description = "Quick steps to create your own static blog with Hugo and install a theme from the catalogue. After that, push your site to GitHub and deploy it with GitHub Pages."
 
 tags = ["hugo", "cms", "github"]
-category = "technology"
 
 image = "/images/gohugoio-card.png"
 banner = "/images/gohugoio-card-banner.png"

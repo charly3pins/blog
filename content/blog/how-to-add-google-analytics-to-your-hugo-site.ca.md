@@ -6,7 +6,6 @@ description = "Tutorial ràpid sobre com integrar Google Analytics en un lloc we
 
 slug = "Com afegir Google Analytics al vostre lloc amb Hugo"
 tags = ["hugo", "cms"]
-category = "technology"
 
 image = "/images/google-analytics-hugo.png"
 banner = "/images/google-analytics-hugo-banner.png"

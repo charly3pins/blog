@@ -6,7 +6,6 @@ description = "Pasos rápidos para crear su propio blog estático con Hugo e ins
 
 slug = "Construyendo un blog estático con Hugo"
 tags = ["hugo", "cms", "github"]
-category = "technology"
 
 image = "/images/gohugoio-card.png"
 banner = "/images/gohugoio-card-banner.png"

@@ -6,7 +6,6 @@ description = "Passos ràpids i senzills per crear un portfoli a la seva pàgina
 
 slug = "Crei un README increïble pel su perfil de GitHub"
 tags = ["github"]
-category = "technology"
 
 image = "/images/github-profile-readme/octocat-profile.png"
 banner = "/images/github-profile-readme/octocat-profile-banner.png"

@@ -8,7 +8,6 @@ description = "Conegui les principals plantilles internes que Hugo li proporcion
 
 slug = "Plantilles internes a Hugo"
 tags = ["hugo", "cms"]
-category = "technology"
 
 image = "/images/gohugoio-card.png"
 banner = "/images/gohugoio-card-banner.png"

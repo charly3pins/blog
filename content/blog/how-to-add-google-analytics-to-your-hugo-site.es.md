@@ -6,7 +6,6 @@ description = "Tutorial rápido sobre cómo integrar Google Analytics en un siti
 
 slug = "Cómo añadir Google Analytics a su sitio Hugo"
 tags = ["hugo", "cms"]
-category = "technology"
 
 image = "/images/google-analytics-hugo.png"
 banner = "/images/google-analytics-hugo-banner.png"

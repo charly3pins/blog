@@ -6,7 +6,6 @@ description = "Passos ràpids per crear el vostre propi bloc estàtic amb Hugo i
 
 slug = "Construint un bloc estàtic amb Hugo"
 tags = ["hugo", "cms", "github"]
-category = "technology"
 
 image = "/images/gohugoio-card.png"
 banner = "/images/gohugoio-card-banner.png"

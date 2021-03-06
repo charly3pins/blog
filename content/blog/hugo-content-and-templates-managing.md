@@ -5,7 +5,6 @@ author = "charly3pins"
 description = "How to organize your content and create your templates to get maximum value from Hugo."
 
 tags = ["hugo", "cms"]
-category = "technology"
 
 image = "/images/gohugoio-card.png"
 banner = "/images/gohugoio-card-banner.png"

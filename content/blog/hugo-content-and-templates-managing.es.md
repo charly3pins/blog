@@ -6,7 +6,6 @@ description = "Cómo organizar su contenido y crear sus plantillas para obtener 
 
 slug = "Gestión de contenidos y plantillas de Hugo"
 tags = ["hugo", "cms"]
-category = "technology"
 
 image = "/images/gohugoio-card.png"
 banner = "/images/gohugoio-card-banner.png"

@@ -5,7 +5,6 @@ author = "charly3pins"
 description = "What semantic versioning is? Why is it important to use it in your projects as a developer? What does it mean for a user that uses your library?"
 
 tags = ["semver", "api"]
-category = "technology"
 
 image = "/images/semver.png"
 banner = "/images/semver-banner.png"

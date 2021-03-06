@@ -5,7 +5,6 @@ author = "charly3pins"
 description = "Quick and simple steps to create a portfolio in your GitHub profile page with a special repository and with dynamic GitHub stats."
 
 tags = ["github"]
-category = "technology"
 
 image = "/images/github-profile-readme/octocat-profile.png"
 banner = "/images/github-profile-readme/octocat-profile-banner.png"

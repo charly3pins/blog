@@ -5,7 +5,6 @@ author = "charly3pins"
 description = "Quick tutorial how to integrate Google Analytics in a Hugo website."
 
 tags = ["hugo", "cms"]
-category = "technology"
 
 image = "/images/google-analytics-hugo.png"
 banner = "/images/google-analytics-hugo-banner.png"

@@ -6,7 +6,6 @@ description = "Conegueu les configuracions i els trucs per convertir el vostre l
 
 slug = "Com tenir un lloc multilingüe a Hugo"
 tags = ["hugo", "cms"]
-category = "technology"
 
 image = "/images/gohugoio-card.png"
 banner = "/images/gohugoio-card-banner.png"
