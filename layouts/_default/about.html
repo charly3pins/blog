@@ -1,28 +1,31 @@
 <!DOCTYPE html>
-<html lang="{{ .Lang }}">
+<html lang="{{ .Lang }}" data-theme="light">
 	
 	{{ partial "head.html" . }}
 
 	<body>
-		<div id="main">
-
-			{{ partial "navbar" . }}
+		{{ partial "navbar" . }}
+		
+		<div class="layout-container">
 			
-			<div class="container">
-				<h1 class="h1-section">{{ .Title }} <span class="cursor"></span></h1>
+			<div class="tags-container"></div>
 
-				<img src="{{ .Params.image | absURL }}" alt="cover image">
-				
-				<div class="markdown">
-					{{ .Content | safeHTML }}
-				</div>
-			</div>
+			<header class="heading-container">
+				<h4 class="heading-container-title">{{ .Title }}</h4>
+				<em class="heading-container-subtitle">{{ .Description }}</em>
+			</header>
 
-			<div class="page-separator centered"><hr></div>
+			<img src="{{ .Params.image | absURL }}" alt="cover image">
 
-			{{ partial "footer.html" . }}
 
+			{{ .Content | safeHTML }}
+		
 		</div>
+
+		<div class="page-separator centered"><hr></div>
+		
+		{{ partial "footer.html" . }}
+
 	</body>
 </html>
 

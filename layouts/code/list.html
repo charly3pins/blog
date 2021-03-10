@@ -1,23 +1,28 @@
 <!DOCTYPE html>
-<html lang="{{ .Lang }}">
+<html lang="{{ .Lang }}" data-theme="light">
 	
 	{{ partial "head.html" . }}
 
 	<body>
-		<div id="main">
+		{{ partial "navbar" . }}
+		
+		<div class="layout-container">
 
-			{{ partial "navbar" . }}
+			<div class="tags-container"></div>
 
-			<div class="container">
-				<h1 class="h1-section">{{ .Title }} <span class="cursor"></span></h1>
+			<header class="heading-container">
+				<h4 class="heading-container-title">{{ .Title }}</h4>
+				<em class="heading-container-subtitle">{{ .Description }}</em>
+			</header>
 
-				{{ partial "code_list.html" . }}
-
-			</div>
-			
-			{{ partial "footer.html" . }}
-			
+			{{ partial "posts_list.html" . }}
+		
 		</div>
+
+		<div class="page-separator centered"><hr></div>
+		
+		{{ partial "footer.html" . }}
+
 	</body>
 </html>
 

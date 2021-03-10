@@ -1,75 +1,22 @@
-{{ $current := . }}
-<div class="container">
-    <div class="toggle">
-        <input type="checkbox">
-        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-        <div id="mobile-menu">
-            {{ range .Site.Menus.main }}
-                {{ $active := or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) }}
-                {{ $active = or $active (eq .Name $current.Title) }}
-                {{ $active = or $active (eq .Name (lower $current.Params.Section)) }}
-                {{ $active = or $active (eq (lower .URL) (lower $current.Title)) }}
-                {{ $active = or $active (eq (lower .URL) (lower $current.Type)) }}
-                <span class="menu-item">
-                    <a href="{{ .URL | relLangURL }}" class="{{ if $active }}active{{ end }}">{{ safeHTML .Name }}</a>
-                </span>
-            {{ end }}
-            {{ if .Site.IsMultiLingual }}
-            <span class="menu-item">
-                <div class="sl-nav">
-                    <ul>
-                        <li>
-                            <b>{{ T (lower .Lang) . }}</b> <i class="fa fa-angle-down" aria-hidden="true"></i>
-                            <div class="triangle"></div>
-                            <ul>
-                            {{ range .Translations }}
-                                <a href="{{ .Permalink }}">{{ T (lower (default .Lang .Site.Language.LanguageName)) . }}</a>
-                            {{ end}}
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </span>
-            {{ end }}
-        </div>
-    </div>
-    <div id="menu">
+<div class="navbar-container">
+    <nav class="navbar-navigation">
         {{ range .Site.Menus.main }}
-            {{ $active := or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) }}
-            {{ $active = or $active (eq .Name $current.Title) }}
-            {{ $active = or $active (eq .Name (lower $current.Params.Section)) }}
-            {{ $active = or $active (eq (lower .URL) (lower $current.Title)) }}
-            {{ $active = or $active (eq (lower .URL) (lower $current.Type)) }}
-            
-            <!-- $current {{$current}}<br>
-            ($current.IsMenuCurrent "main" .) {{ ($current.IsMenuCurrent "main" .) }}<br>
-            ($current.HasMenuCurrent "main" .) {{ ($current.HasMenuCurrent "main" .) }}<br>
-            .Name  {{ .Name }} eq $current.Title  {{ $current.Title }}<br>
-            .Name  {{ .Name }} eq lower $current.Params.Section  {{ lower $current.Params.Section }}<br>
-            lower .URL  {{ (lower .URL) }} eq lower $current.Title  {{ lower $current.Title }}<br>
-            lower .URL  {{ (lower .URL) }} eq lower $current.Type  {{ lower $current.Type }}<br> -->
-            <span class="menu-item">
-                <a href="{{ .URL | relLangURL }}" class="{{ if $active }}active{{ end }}">{{ safeHTML .Name }}</a>
-            </span>
-            <!-- <br>
-            <br> -->
+        <a href="{{ .URL | relLangURL }}">{{ safeHTML .Name }}</a>
         {{ end }}
         {{ if .Site.IsMultiLingual }}
-        <span class="menu-item">
-            <div class="sl-nav">
+        <ul class="lang-selector">
+            <li>
+                <a>{{ T (lower .Lang) . }}</a> <i class="fa fa-angle-down" aria-hidden="true"></i>
                 <ul>
-                    <li>
-                        <b style="color:var(--pink);">{{ T (lower .Lang) . }}</b> <i style="color:var(--pink);" class="fa fa-angle-down" aria-hidden="true"></i>
-                        <div class="triangle"></div>
-                        <ul>
-                        {{ range .Translations }}
-                            <a href="{{ .Permalink }}">{{ T (lower (default .Lang .Site.Language.LanguageName)) . }}</a>
-                        {{ end}}
-                        </ul>
-                    </li>
+                {{ range .Translations }}
+                    <a href="{{ .Permalink }}">{{ T (lower (default .Lang .Site.Language.LanguageName)) . }}</a>
+                {{ end}}
                 </ul>
-            </div>
-        </span>
+            </li>
+        </ul>
         {{ end }}
-    </div>
+        <button class="theme-switch-wrapper">
+            <img class="dark-mode-switch" src="https://sunilsandhu.com/assets/icons/sun-moon.png" alt="toggle dark mode">
+        </button>
+    </nav>
 </div>

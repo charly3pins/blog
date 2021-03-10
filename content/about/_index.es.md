@@ -1,6 +1,7 @@
 +++
-title = "echo $USUARIO"
-slug = "Acerca de"
+title = "Quién"
+slug = "Quién"
+description = "Un poco sobre mí"
 
 image = "/images/embalse-de-cavallers.jpeg"
 +++

@@ -7,14 +7,13 @@ other = "Castellano"
 [catalan]
 other = "Catalán"
 
-[welcome] 
-other = "¡Bienvenid@! Soy Charly3Pins"
+[description]
+other = "Ingeniero de Software"
 
-[indexDescription]
-other = "Soy Ingeniero de Software, amante de Japón, jugador de videojuegos y paseador de perros; además, ¡he escrito estos artículos!"
-
-[metaDescription]
-other = "Ingeniero de Software, amante de Japón, jugador de videojuegos y paseador de perros"
+[indexHeading]
+other = "Lo último del blog"
+[indexSubheading]
+other = "Tutoriales, consejos y opiniones"
 
 [readMore]
 other = "Leer más"

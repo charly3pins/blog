@@ -1,31 +1,34 @@
 <!DOCTYPE html>
-<html lang="{{ .Lang }}">
+<html lang="{{ .Lang }}" data-theme="light">
 	
 	{{ partial "head.html" . }}
 
 	<body>
-		<div id="main">
+		{{ partial "navbar" . }}
+		
+		<div class="layout-container">
 
-			{{ partial "navbar" . }}
-
-			<div class="container">
-				<h1 class="h1-section">{{ .Title }} <span class="cursor"></span></h1>
-
-				<div class="markdown">
-					<p>
-						{{ range .Site.Taxonomies.tags }}
-							<a class="button tag" href="{{ .Page.Permalink }}"><span class="tag-prefix">#</span>{{ .Page.Title }} <span class="tag-count">({{ .Count }})</span></a>
-						{{ end }}
-					</p>
-				</div>
-				
-				{{ partial "posts_list.html" . }}
-
+			<div class="tags-container">
+				{{ range .Site.Taxonomies.tags }}
+					<a class="tag" href="{{ .Page.Permalink }}">
+						#{{ .Page.Title }}({{.Count}})
+					</a>
+				{{ end }}
 			</div>
-			
-			{{ partial "footer.html" . }}
-			
+
+			<header class="heading-container">
+				<h4 class="heading-container-title">{{ .Title }}</h4>
+				<em class="heading-container-subtitle">{{ .Description }}</em>
+			</header>
+
+			{{ partial "posts_list.html" . }}
+		
 		</div>
+
+		<div class="page-separator centered"><hr></div>
+		
+		{{ partial "footer.html" . }}
+
 	</body>
 </html>
 

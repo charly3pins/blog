@@ -1,7 +1,7 @@
 <p class="metadata">
     {{ with .Params.tags }}
         {{ range . }}
-            <a class="button tag" href="{{ "tags/" | absLangURL }}{{ . | urlize }}/"><span class="tag-prefix">#</span>{{ . }}</a>
+            <a class="tag" href="{{ "tags/" | absLangURL }}{{ . | urlize }}/"><span class="tag-prefix">#</span>{{ . }}</a>
         {{ end }}
     {{ end }}
     {{ if ne .Params.Section "/code" }}{{ .Date.Format "02/01/2006" }} · {{ T "readingTime" .ReadingTime }}{{end}}

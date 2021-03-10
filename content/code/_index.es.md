@@ -1,4 +1,4 @@
 +++
-title = "cd ~/código"
-description = "Algunas de mis pruebas de concepto o proyectos paralelos"
+title = "Código"
+description = "Pruebas de concepto y proyectos paralelos"
 +++
