@@ -4,7 +4,7 @@ date = "2018-10-10"
 author = "charly3pins"
 description = "Simple post explaining how to install Drone on Ubuntu 16.04 server."
 
-tags = ["drone", "ci", "devops"]
+tags = ["drone", "ci/cd", "devops"]
 
 image = "/images/droneio-0.8.png"
 banner = "/images/droneio-0.8-banner.png"

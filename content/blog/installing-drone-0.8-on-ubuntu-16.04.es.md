@@ -5,7 +5,7 @@ author = "charly3pins"
 description = "Publicación simple que explica cómo instalar Drone en el servidor Ubuntu 16.04."
 
 slug = "Instalación de Drone 0.8 en Ubuntu 16.04" 
-tags = ["drone", "ci", "devops"]
+tags = ["drone", "ci7cd", "devops"]
 
 image = "/images/droneio-0.8.png"
 banner = "/images/droneio-0.8-banner.png"
