@@ -4,7 +4,6 @@ date = "2018-09-22"
 author = "charly3pins"
 description = "As my Final Year Project for Computer Science Engineering I builded a flexible database for collectibles and any other objects or data that any user wants to have ordered and classified in a simple and effective way."
 
-section = "/code"
 weight = "1"
 
 tags = ["php", "javascript"]

@@ -4,12 +4,10 @@ date = "2020-05-01"
 author = "charly3pins"
 description = "Proof of concept building an application for managing FIFA 20 tournaments between different people using Flutter for building a mobile app and Go for building an API acting as a server. Also used Python to build simple scrapers."
 
-section = "/code"
 weight = "2"
 
 tags = ["go", "flutter", "python"]
 +++
-
 ## WHY
 
 The motivation for starting this project is not another one than my curiosity about the mobile applications. It is obvious that the way of consuming technology has changed over the last few years and it is increasingly being done through a mobile device. For that reason I wanted to explore how the mobile apps work and how I can build one from scratch. 
