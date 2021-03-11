@@ -1,4 +1,4 @@
 +++
 title = "Code"
-description = "Proofs of concepts and side projects"
+description = "PoC, Open Source and side projects"
 +++

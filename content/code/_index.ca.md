@@ -1,4 +1,4 @@
 +++
 title = "Codi"
-description = "Proves de concepte i projectes paral·lels"
+description = "PoC, Open Source i projectes varis"
 +++
