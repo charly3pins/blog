@@ -132,7 +132,7 @@ And the result will be the text defined in the `.toml` according to the language
 ## Singular and/or plural translation
 
 Singular or plural translations can be defined depending on a "counter", as the `i18n` function offers this possibility. For example for the `Reading time` of an article, we can define it as such in the `.toml`:
-toml
+```toml
 [readingTime]
 one = "One minute to read"
 other = "{{.Count}} minutes to read"
@@ -142,6 +142,7 @@ We see that we pass the `.Count` to the translation so we will have to invoke it
 ```go
 {{i18n "readingTime" .ReadingTime}}
 ```
+
 > Note: the `.ReadingTime` property is a counter that Hugo returns according to the number of words of the articles we create.
 
 ## References
