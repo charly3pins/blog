@@ -10,10 +10,14 @@ other = "Catalán"
 [description]
 other = "Ingeniero de Software"
 
-[indexHeading]
+[indexHeadingBlog]
 other = "Lo último del blog"
-[indexSubheading]
+[indexSubheadingBlog]
 other = "Tutoriales, consejos y opiniones"
+[indexHeadingCode]
+other = "Lo último de código"
+[indexSubheadingCode]
+other = "Pruebas de concepto y proyectos paralelos"
 
 [readMore]
 other = "Leer más"
