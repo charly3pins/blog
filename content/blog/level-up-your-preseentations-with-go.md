@@ -7,10 +7,7 @@ description = "Generate easily your presentations with \"present\", the tool pow
 tags = ["go", "life"]
 
 image = "/images/level-up-your-presentations-with-go/GOPHER_MIC_DROP_WITH_BACKGROUND.png"
-banner = "/images/level-up-your-presentations-with-go/GOPHER_MIC_DROP_WITH_BACKGROUND-banner.png"
-thumb = "/images/level-up-your-presentations-with-go/GOPHER_MIC_DROP_WITH_BACKGROUND-thumb.png"
 +++
-
 If you're a technical person and you don't like to battle with presentation softwares but you want/need to create one, congratulations! you are in the right place. I know that as software engineers we want to be coding or reading or watching things related with software, architecture or devops but not with presentations. Sometimes we are demanded to present something to other team members, to the product owners or even scarier, to the management team!
 
 For that reason I want to introduce you to the Go package [present](https://godoc.org/golang.org/x/tools/present). It's used to create slides in Golang hosted on talks.golang.org or on your private one. I've used it several times, especially when I want to share something to my colleagues on the team (some code of course), because I don't want to waste time with softwares. I just create the project for the slides, add my slides in markdown, add the images needed and just present them to them. Let's see in detail how it works!

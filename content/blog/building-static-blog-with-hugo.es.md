@@ -8,8 +8,6 @@ slug = "Construyendo un blog estático con Hugo"
 tags = ["hugo", "cms", "github"]
 
 image = "/images/gohugoio-card.png"
-banner = "/images/gohugoio-card-banner.png"
-thumb = "/images/gohugoio-card-thumb.png"
 +++
 Si quieres crear un sitio web estático rápido te recomiendo [Hugo](https://gohugo.io/). Está escrito en Go y es muy útil para configurar y adaptarse a sus necesidades. Además, puedes elegir entre diferentes [temas](https://themes.gohugo.io/) creados por el equipo y otros por la comunidad o incluso crear uno propio.
 

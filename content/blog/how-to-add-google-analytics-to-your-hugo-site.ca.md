@@ -8,8 +8,6 @@ slug = "Com afegir Google Analytics al vostre lloc amb Hugo"
 tags = ["hugo", "cms"]
 
 image = "/images/google-analytics-hugo.png"
-banner = "/images/google-analytics-hugo-banner.png"
-thumb = "/images/google-analytics-hugo-thumb.png"
 +++
 ## Google Analytics
 

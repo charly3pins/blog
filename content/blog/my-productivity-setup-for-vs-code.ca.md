@@ -8,12 +8,10 @@ slug = "La meva configuració per a una alta productivitat per al VS Code"
 tags = ["productivity", "vscode"]
 
 image = "https://miro.medium.com/max/6000/0*8KANi15q2thT-dYt"
-banner = "https://miro.medium.com/max/6000/0*8KANi15q2thT-dYt"
-thumb = "https://miro.medium.com/max/6000/0*8KANi15q2thT-dYt"
 +++
 Passo moltes hores durant el dia programant per a l'empresa en la qual treballo i durant les nits o els caps de setmana per a mi, així que vull estar còmode amb les eines que utilitzo constantment. Una d'elles és el meu editor de codi, específicament [VS Code] (https://code.visualstudio.com/). Vaig començar amb Java i la més estesa per a ell és l'Eclipse amb totes les seves variants. Després em vaig canviar a Go i vaig ser un usuari de Sublime a tope durant varis anys fins que li vaig donar una oportunitat a VS Code. Oh sí! Des que ho vaig provar, mai vaig voler tornar enrere. Super ràpid, súper configurable, moltes extensions i MOLTS TEMES.
 
-Llavors, després d'una llarga recerca investigant i ajustant (una història que mai acaba diria jo), vaig trobar una configuració que em fa sentir còmode, feliç i més productiu. Per això vull compartir amb vostè encantador lector, el meu tema, la meva font, els meus icones i les extensions que tinc per inspirar-lo a trobar la seva pròpia configuració ideal, a l'igual que jo ho vaig aconseguir.
+Llavors, després d'una llarga recerca investigant i ajustant (una història que mai acaba diria jo), vaig trobar una configuració que em fa sentir còmode, feliç i més productiu. Per això vull compartir amb vostè estimat lector, el meu tema, la meva font, els meus icones i les extensions que tinc per inspirar-lo a trobar la seva pròpia configuració ideal, a l'igual que jo ho vaig aconseguir.
 
 El tema predeterminat que proporciona VS Code no és dolent en absolut, però li mostraré com passar d'això
 ![vscode default](/images/productivity-setup-vscode/vscode-default.jpeg)

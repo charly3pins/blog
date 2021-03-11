@@ -8,10 +8,7 @@ slug = "Gestió de plantilles i contingut d'Hugo"
 tags = ["hugo", "cms"]
 
 image = "/images/gohugoio-card.png"
-banner = "/images/gohugoio-card-banner.png"
-thumb = "/images/gohugoio-card-thumb.png"
 +++
-
 Després de molt de temps sense escriure... he tornat!
 
 ![I'm back](/images/hugo-content-templates-managing/im-back-terminator.jpg)

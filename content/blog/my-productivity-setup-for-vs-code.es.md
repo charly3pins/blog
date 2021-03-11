@@ -8,12 +8,10 @@ slug = "Mi configuración para una alta productividad para VS Code"
 tags = ["productivity", "vscode"]
 
 image = "https://miro.medium.com/max/6000/0*8KANi15q2thT-dYt"
-banner = "https://miro.medium.com/max/6000/0*8KANi15q2thT-dYt"
-thumb = "https://miro.medium.com/max/6000/0*8KANi15q2thT-dYt"
 +++
 Paso muchas horas durante el día programando para la empresa en la que trabajo y durante las noches o los fines de semana para mí, así que quiero estar cómodo con las herramientas que uso constantemente. Uno de ellos es mi editor de código, específicamente [VS Code](https://code.visualstudio.com/). Comencé con Java y la más extendida por ello es Eclipse con todas sus variantes. Luego me cambié a Go y fui usuario de Sublime durante varios años, hasta que decidí probar VS Code. ¡Oh sí! Desde que lo probé, nunca quise volver atrás. Super rápido, súper configurable, muchas extensiones y MUCHOS TEMAS.
 
-Entonces, después de una larga búsqueda investigando y ajustando (una historia que nunca acaba diría yo), encontré una configuración que me hace sentir cómodo, feliz y más productivo. Por eso quiero compartir con usted encantador lector, mi tema, mi fuente, mis iconos y las extensiones que tengo para inspirarlo a alcanzar su propia configuración ideal, al igual que yo lo logré.
+Entonces, después de una larga búsqueda investigando y ajustando (una historia que nunca acaba diría yo), encontré una configuración que me hace sentir cómodo, feliz y más productivo. Por eso quiero compartir con usted querido lector, mi tema, mi fuente, mis iconos y las extensiones que tengo para inspirarlo a alcanzar su propia configuración ideal, al igual que yo lo logré.
 
 El tema predeterminado que proporciona VS Code no es malo en absoluto, pero le mostraré cómo pasar de esto
 ![vscode default](/images/productivity-setup-vscode/vscode-default.jpeg)

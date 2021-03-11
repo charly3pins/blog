@@ -5,11 +5,9 @@ author = "charly3pins"
 description = "Publicación simple que explica cómo instalar Drone en el servidor Ubuntu 16.04."
 
 slug = "Instalación de Drone 0.8 en Ubuntu 16.04" 
-tags = ["drone", "ci7cd", "devops"]
+tags = ["drone", "ci/cd", "devops"]
 
 image = "/images/droneio-0.8.png"
-banner = "/images/droneio-0.8-banner.png"
-thumb = "/images/droneio-0.8-thumb.png"
 +++
 Debo admitir que nunca me gustó la parte de sistemas del proceso de desarrollo. Siempre pensé que era un trabajo en un lugar oscuro y sucio, lleno de monstruos haciendo cosas raras. Esta visión cambió por completo cuando comencé a usar [Docker](https://www.docker.com/). En este punto me di cuenta de que toda la magia hecha en la parte del administrador de sistemas era mejor de lo que pensaba y luego, comencé a interesarme más y más de este lado.
 

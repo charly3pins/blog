@@ -8,8 +8,6 @@ slug = "Construint un bloc estàtic amb Hugo"
 tags = ["hugo", "cms", "github"]
 
 image = "/images/gohugoio-card.png"
-banner = "/images/gohugoio-card-banner.png"
-thumb = "/images/gohugoio-card-thumb.png"
 +++
 Si voleu crear un lloc web estàtic ràpid us recomano [Hugo](https://gohugo.io/). Està escrit a Go i és realment útil per configurar i adaptar-se a les vostres necessitats. A més, podeu triar a través de diferents [temes](https://themes.gohugo.io/) creats per l’equip i altres per la comunitat o fins i tot crear el vostre propi.
 

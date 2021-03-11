@@ -9,6 +9,4 @@ description = "Improve management of time spent on an activity with this techniq
 tags = ["life"]
 
 image = "/images/gohugoio-card.png"
-banner = "/images/gohugoio-card-banner.png"
-thumb = "/images/gohugoio-card-thumb.png"
 +++

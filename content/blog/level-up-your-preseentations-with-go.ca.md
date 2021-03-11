@@ -8,10 +8,7 @@ slug = "Pujeu de nivell les vostres presentacions amb Go"
 tags = ["go", "life"]
 
 image = "/images/level-up-your-presentations-with-go/GOPHER_MIC_DROP_WITH_BACKGROUND.png"
-banner = "/images/level-up-your-presentations-with-go/GOPHER_MIC_DROP_WITH_BACKGROUND-banner.png"
-thumb = "/images/level-up-your-presentations-with-go/GOPHER_MIC_DROP_WITH_BACKGROUND-thumb.png"
 +++
-
 Si sou una persona tècnica i no us agrada lluitar amb els programes de presentació però voleu / necessiteu crear-ne un, enhorabona! estàs al lloc correcte. Sé que, com a enginyers de programari, volem codificar, llegir o mirar coses relacionades amb programari, arquitectura o devops, però no amb presentacions. De vegades, se’ns exigeix ​​que presentem alguna cosa a altres membres de l’equip, als propietaris de productes o fins i tot més aterridors, a l’equip directiu.
 
 Per aquest motiu, vull presentar-vos el paquet Go [present](https://godoc.org/golang.org/x/tools/present). S'utilitza per crear diapositives a Golang allotjades a discussions.golang.org o a la vostra privada. L’he utilitzat diverses vegades, sobretot quan vull compartir alguna cosa amb els meus companys de l’equip (algun codi, és clar), perquè no vull perdre el temps amb els programes. Acabo de crear el projecte per a les diapositives, afegeixo les meves diapositives a la marca, afegeixo les imatges necessàries i les presento. Vegem detalladament com funciona!

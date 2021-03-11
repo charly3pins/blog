@@ -8,10 +8,7 @@ slug = "Missatges de commit personalitzats de Git"
 tags = ["terminal", "git"]
 
 image = "/images/git-commit.png"
-banner = "/images/git-commit-banner.png"
-thumb = "/images/git-commit-thumb.png"
 +++
-
 He estat utilitzant l'eina [CMF](https://github.com/walmartdigital/commit-message-formatter) durant l'últim any i crec que la seva simplicitat és el seu potencial. Bàsicament és una eina terminal desenvolupada a Go by [Walmart Digital](https://github.com/walmartdigital) que us ajuda a normalitzar el registre de compromisos dels vostres projectes.
 
 He estat utilitzant durant l'últim any i mig aproximadament i tot el que puc dir és molt útil. Vam acordar amb l'equip la configuració que volem utilitzar i vam definir un conjunt de canvis que s'apliquen en el nostre cas. També escollim el [Jira flow](https://github.com/walmartdigital/commit-message-formatter#jira-flow) i varem canviar els valors del "canvi" afegint un emojis per fer que els compromisos siguin una mica més divertits per comprovar-los al registre.
