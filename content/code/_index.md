@@ -1,4 +1,4 @@
 +++
-title = "cd ~/code"
-description = "Some of my proofs of concepts or side projects"
+title = "Code"
+description = "PoC, Open Source and side projects"
 +++

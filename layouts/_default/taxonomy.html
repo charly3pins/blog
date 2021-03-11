@@ -13,10 +13,9 @@
 				<a class="tag" href="{{ .Page.Permalink }}">#{{ .Page.Title }}({{.Count}})</a>
 				{{ end }}
 			</div>
-
+			
 			<header class="heading-container">
-				<h4 class="heading-container-title">{{ .Title }}</h4>
-				<em class="heading-container-subtitle">{{ .Description }}</em>
+				<h4 class="heading-container-title">#{{ .Title }}</h4>
 			</header>
 
 			{{ range $i, $p := .Paginator.Pages }}
@@ -24,7 +23,6 @@
 				<a href="{{ .Permalink }}">
 					<div class="post-preview-title-container">
 						<h3 class="post-preview-title">{{ .Title }}</h3>
-						{{if lt $i 3}}<div class="post-preview-tag-new">New</div>{{end}}
 					</div>
 					<div class="post-preview-subtext">{{ .Description }}</div>
 					<div>

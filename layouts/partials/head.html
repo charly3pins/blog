@@ -5,7 +5,7 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="referrer" content="no-referrer">
-  <meta name="description" content="{{ T "metaDescription" }}">
+  <meta name="description" content="{{ T "description" }}">
 {{ with .Title | default .Site.Title }}
   <title>{{ . }} | Charly3Pins</title>
 {{ end }}
@@ -37,8 +37,7 @@
   {{ template "_internal/google_analytics.html" . }}
 
   <link rel="stylesheet" href="{{ "css/main.css" | absURL }}" />
+  <link rel="stylesheet" href="{{ "css/syntax.css" | absURL }}" />
   <link rel="stylesheet" href="{{ "css/social_share.css" | absURL }}" />
-  <link rel="stylesheet" href="{{ "css/grid.css" | absURL }}" />
-  <link rel="stylesheet" href="{{ "css/thumbnail_list.css" | absURL }}" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>

@@ -7,10 +7,7 @@ description = "Know the configurations and the tricks to convert your single lan
 tags = ["hugo", "cms"]
 
 image = "/images/gohugoio-card.png"
-banner = "/images/gohugoio-card-banner.png"
-thumb = "/images/gohugoio-card-thumb.png"
 +++
-
 As you can see since this week this humble website has been remodeled a bit both visually and internally, and it is that not only there are new colors, images and sections, but it also offers all its content in 2 new languages! I have decided to do this step because first of all I wanted to test how the multilingual thing worked in Hugo and also to try to make reading the articles more comfortable for people who visit it, without the language being an obstacle and offering the greatest comfort and pleasure to readers.
 
 The languages ​​as you can see in the navbar are Spanish and Catalan. So to change the language in which you are viewing the page, it is as simple as choosing in the dropdown selector which language you prefer and everything will automatically be translated. If you find any misprints in the translation or any part that is not translated, please put a comment on the post in question or comment on my social networks (links at the bottom of the web).
@@ -135,7 +132,7 @@ And the result will be the text defined in the `.toml` according to the language
 ## Singular and/or plural translation
 
 Singular or plural translations can be defined depending on a "counter", as the `i18n` function offers this possibility. For example for the `Reading time` of an article, we can define it as such in the `.toml`:
-toml
+```toml
 [readingTime]
 one = "One minute to read"
 other = "{{.Count}} minutes to read"
@@ -145,6 +142,7 @@ We see that we pass the `.Count` to the translation so we will have to invoke it
 ```go
 {{i18n "readingTime" .ReadingTime}}
 ```
+
 > Note: the `.ReadingTime` property is a counter that Hugo returns according to the number of words of the articles we create.
 
 ## References

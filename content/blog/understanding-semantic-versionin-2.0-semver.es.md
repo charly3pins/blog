@@ -8,8 +8,6 @@ slug = "Comprensión del Control de Versiones Semántico 2.0 (SemVer)"
 tags = ["semver", "api"]
 
 image = "/images/semver.png"
-banner = "/images/semver-banner.png"
-thumb = "/images/semver-thumb.png"
 +++
 Cuando desee usar una biblioteca en su proyecto, probablemente notó que necesita especificar una versión. La mayoría de las veces, esas versiones tienen el formato de 3 números separados por puntos entre ellos. Ese formato es indicativo de que la biblioteca está utilizando el [Control de versiones semántico](https://semver.org) también conocido como SemVer. Ese documento especifica el formato y la forma de etiquetar sus proyectos durante todo el ciclo de vida del mismo. Es solo una convención para que pueda definir el número de versión de la manera que desee, pero la verdad es que otros desarrolladores de todas las industrias acordaron usarlo y se convirtió en un estándar para el control de versiones.
 

@@ -1,28 +1,36 @@
 <!DOCTYPE html>
-<html lang="{{ .Lang }}">
+<html lang="{{ .Lang }}" data-theme="light">
 	
 	{{ partial "head.html" . }}
 
 	<body>
-		<div id="main">
-
-			{{ partial "navbar" . }}
+		{{ partial "navbar" . }}
+		
+		<div class="layout-container">
 			
-			<div class="container">
-				<h1 class="h1-section">{{ .Title }} <span class="cursor"></span></h1>
-
-				<img src="{{ .Params.image | absURL }}" alt="cover image">
-				
-				<div class="markdown">
-					{{ .Content | safeHTML }}
+			<div class="banner-container">
+				<img class="banner-image" src="{{ .Site.Params.avatar }}" alt="Picture of charly3pins">
+				<div class="banner-text">
+					<h1 class="banner-title">{{ .Site.Author.name }}</h1>
+					<div class="banner-description">{{ T "description" }}</div>
 				</div>
 			</div>
 
-			<div class="page-separator centered"><hr></div>
+			<header class="heading-container">
+				<h4 class="heading-container-title">{{ .Title }}</h4>
+				<em class="heading-container-subtitle">{{ .Description }}</em>
+			</header>
 
-			{{ partial "footer.html" . }}
-
+			<article>
+				{{ .Content | safeHTML }}
+			</article>
+		
 		</div>
+
+		<div class="page-separator centered"><hr></div>
+		
+		{{ partial "footer.html" . }}
+
 	</body>
 </html>
 

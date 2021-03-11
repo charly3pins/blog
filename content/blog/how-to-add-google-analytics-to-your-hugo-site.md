@@ -7,8 +7,6 @@ description = "Quick tutorial how to integrate Google Analytics in a Hugo websit
 tags = ["hugo", "cms"]
 
 image = "/images/google-analytics-hugo.png"
-banner = "/images/google-analytics-hugo-banner.png"
-thumb = "/images/google-analytics-hugo-thumb.png"
 +++
 ## Google Analytics
 

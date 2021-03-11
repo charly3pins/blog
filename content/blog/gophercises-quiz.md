@@ -7,8 +7,6 @@ description = "Code review of my first exercise in the Gophercises page. It's fo
 tags = ["go"]
 
 image = "/images/go-learn.png"
-banner = "/images/go-learn-banner.png"
-thumb = "/images/go-learn-thumb.png"
 +++
 This is the first of a several articles I'm planning to write commenting the different exercises that I'm doing in [Gophercises](https://gophercises.com/) page.
 

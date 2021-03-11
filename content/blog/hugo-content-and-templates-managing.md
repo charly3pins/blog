@@ -7,10 +7,7 @@ description = "How to organize your content and create your templates to get max
 tags = ["hugo", "cms"]
 
 image = "/images/gohugoio-card.png"
-banner = "/images/gohugoio-card-banner.png"
-thumb = "/images/gohugoio-card-thumb.png"
 +++
-
 After long time without writing... I'm back!
 
 ![I'm back](/images/hugo-content-templates-managing/im-back-terminator.jpg)

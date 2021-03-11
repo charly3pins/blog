@@ -1,20 +1,9 @@
 +++
-title = "echo $USUARI"
-slug = "Sobre mí"
-
-image = "/images/embalse-de-cavallers.jpeg"
+title = "Qui"
+description = "Una mica sobre mi"
 +++
+De dia sóc Enginyer de Software a [AREX](https://arex.io/). A la nit treballo en projectes open source, aprenc, llegeixo, escolto i escric blocs. Pots trobar-me com [@charly3pins](https://twitter.com/charly3pins) a Twitter.
 
-Hola! 🙋🏻‍♂️ Sóc Charly3Pins 
+M'agrada aprendre coses noves gairebé cada dia, així que sempre llegeixo llibres, escolto podcasts o veig vídeos sobre tecnologia. A més, vull posar en pràctica tots aquests aprenentatges, de manera que sòl crear PoC o projectes paral·lels per provar aquestes coses noves o investigar sobre temes que m'interessen. Pots consultar els meus projectes d'OSS en el meu [Github](https://github.com/charly3pins).
 
-Sóc enginyer de software 👨🏻‍💻 m'encanten els desafiaments i estic disposat a aprendre coses noves cada dia 🙇🏻‍♂️
-
-M'agrada la cultura devops i sempre estic investigant diferents temes i programant coses, però sempre enfocat en les millors pràctiques 📜
-
-Actualment estic treballant en Go 🐿️ com a llenguatge principal, però no tinc por d'aprendre o fer-ne servir d'altres 🎉
-
-En el meu temps lliure m'agrada fer esports com córrer 🏃🏻, fer exercici al gimnàs 🏋🏻♂️ o jugar a futbol ⚽; alguns dies també jugo a videojocs 🎮
-
-M'agrada llegir llibres 📚, tècnics o no, especialment mangas 🇯🇵 i veure sèries o pel·lícules d'anime 👹
-
-També m'encanta passejar amb els meus gossos 🐕 i anar a la muntanya a desconnectar de la ciutat sempre que puc 🌄
+Com ferm defensor del [principi KISS](https://ca.wikipedia.org/wiki/Principi_KISS), quan fa alguns anys vaig trobar [Go](https://golang.org/) ... va ser amor a primera vista! Tota aquesta senzillesa que sempre he estat defensant, es va fer realitat en un llenguatge de programació. Des de llavors va començar un llarg viatge que encara no ha acabat. Segueixo aprenent amb les noves versions i eines que apareixen gairebé cada dia. Té algunes limitacions ja que és un llenguatge de programació "nou", però és molt emocionant per a mi viure aquest creixement i tenir la sort de participar activament, i no només com un espectador al què li interessa aquesta tecnologia.

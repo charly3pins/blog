@@ -1,4 +1,4 @@
 +++
-title = "cd ~/codi"
-description = "Algunes de les meves proves de concepte o projectes paral·lels"
+title = "Codi"
+description = "PoC, Open Source i projectes varis"
 +++

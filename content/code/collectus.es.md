@@ -4,7 +4,6 @@ date = "2018-09-22"
 author = "charly3pins"
 description = "Como proyecto de fin de carrera de Ingeniería Informática, construí una base de datos flexible para coleccionables y cualquier otro objeto o dato que cualquier usuario quiera ordenar y clasificar de una manera simple y efectiva."
 
-section = "/code"
 weight = "1"
 
 tags = ["php", "javascript"]

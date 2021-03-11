@@ -8,8 +8,6 @@ slug = "Comprensió de la Versió Semàntica 2.0 (SemVer)"
 tags = ["semver", "api"]
 
 image = "/images/semver.png"
-banner = "/images/semver-banner.png"
-thumb = "/images/semver-thumb.png"
 +++
 Quan vulgueu utilitzar una biblioteca al vostre projecte, probablement haureu notat que cal especificar una versió. La majoria de les vegades, aquestes versions tenen el format de 3 nombres separats amb punts entre ells. Aquest format és indicatiu que la biblioteca utilitza el [Versió semàntica](https://semver.org) també conegut com SemVer. Aquest document especifica el format i la forma d’etiquetar els vostres projectes durant tot el cicle de vida dels mateixos. És només una convenció perquè pugueu definir el número de versió tal com vulgueu, però el cert és que altres desenvolupadors de totes les indústries van acordar utilitzar-lo i es va convertir en un estàndard per a la versió.
 

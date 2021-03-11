@@ -7,14 +7,17 @@ other = "Castellà"
 [ca]
 other = "Català"
 
-[welcome] 
-other = "Benvingut/da! Sóc Charly3Pins"
+[description]
+other = "Enginyer de Software"
 
-[indexDescription]
-other = "Sóc Enginyer de Software, amant de Japó, jugador de videojocs i passejador de gossos; a més, he escrit aquests articles!"
-
-[metaDescription]
-other = "Enginyer de Software, amant de Japó, jugador de videojocs i passejador de gossos"
+[indexHeadingBlog]
+other = "Últim del bloc"
+[indexSubheadingBlog]
+other = "Tutorials, consells i opinions"
+[indexHeadingCode]
+other = "Últim de codi"
+[indexSubheadingCode]
+other = "PoC, Open Source i projectes varis"
 
 [readMore]
 other = "Llegir més"

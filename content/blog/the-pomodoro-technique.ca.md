@@ -9,6 +9,4 @@ description = "Millora l'administració de el temps dedicat a una activitat amb 
 tags = ["life"]
 
 image = "/images/gohugoio-card.png"
-banner = "/images/gohugoio-card-banner.png"
-thumb = "/images/gohugoio-card-thumb.png"
 +++

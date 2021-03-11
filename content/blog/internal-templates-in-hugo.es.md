@@ -10,6 +10,4 @@ slug = "Plantillas internas en Hugo"
 tags = ["hugo", "cms"]
 
 image = "/images/gohugoio-card.png"
-banner = "/images/gohugoio-card-banner.png"
-thumb = "/images/gohugoio-card-thumb.png"
 +++

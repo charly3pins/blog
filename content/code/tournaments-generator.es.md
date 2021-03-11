@@ -4,7 +4,6 @@ date = "2020-05-01"
 author = "charly3pins"
 description = "Prueba de concepto de la construcción de una aplicación para administrar torneos FIFA 20 entre diferentes personas usando Flutter para construir una aplicación móvil y Go para construir una API que actúa como servidor. También usé Python para construir raspadores simples."
 
-section = "/code"
 weight = "2"
 
 tags = ["go", "flutter", "python"]

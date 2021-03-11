@@ -7,10 +7,7 @@ description = "Build your own media player using a BitTorrent client (Transmissi
 tags = ["raspberrypi", "linux", "life"]
 
 image = "/images/raspberry-media-player/cover.png"
-banner = "/images/raspberry-media-player/banner.png"
-thumb = "/images/raspberry-media-player/thumb.png"
 +++
-
 So you have a Raspberry Pi abandoned and always wanted to use it for something useful. Also you like to see series but there are too many providers and you don't know which one subscribes to it. Don't worry with this tutorial you will have both problems solved at once; You will use the Raspberry Pi for watching your favourite series with no limits!
 
 ## Install Raspberry OS

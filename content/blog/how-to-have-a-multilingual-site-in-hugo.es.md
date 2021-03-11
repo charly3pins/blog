@@ -8,8 +8,6 @@ slug = "Cómo tener un sitio multilingüe en Hugo"
 tags = ["hugo", "cms"]
 
 image = "/images/gohugoio-card.png"
-banner = "/images/gohugoio-card-banner.png"
-thumb = "/images/gohugoio-card-thumb.png"
 +++
 
 Como se puede apreciar desde esta semana esta humilde página web se ha remodelado un poco tanto visualmente como internamente, y es que no solo hay nuevos colores, imágenes y secciones, sino que también ¡ofrece todo su contenido en 2 nuevos idiomas! Me he decidido en hacer este paso porqué primero de todo quería probar como funcionaba el tema de los multilingües en Hugo y también para intentar hacer más cómoda la lectura de los artículos a la gente que la visita, sin que el idioma fuera un obstáculo y ofreciendo el mayor confort y placer a los lectores.

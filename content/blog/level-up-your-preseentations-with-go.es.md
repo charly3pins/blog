@@ -8,10 +8,7 @@ slug = "Suba de nivel sus presentaciones con Go"
 tags = ["go", "life"]
 
 image = "/images/level-up-your-presentations-with-go/GOPHER_MIC_DROP_WITH_BACKGROUND.png"
-banner = "/images/level-up-your-presentations-with-go/GOPHER_MIC_DROP_WITH_BACKGROUND-banner.png"
-thumb = "/images/level-up-your-presentations-with-go/GOPHER_MIC_DROP_WITH_BACKGROUND-thumb.png"
 +++
-
 Si es una persona técnica y no te gusta luchar con los programas de presentación pero quiere / necesita crear uno, enhorabuena! estás en el lugar correcto. Sé que, como ingenieros de software, queremos codificar, leer o mirar cosas relacionadas con software, arquitectura o devops, pero no con presentaciones. A veces, se nos exige que presentamos algo a otros miembros del equipo, a los propietarios de productos o incluso más aterradores, al equipo directivo.
 
 Por este motivo, quiero presentaros el paquete [present](https://godoc.org/golang.org/x/tools/present) de Go. Se utiliza para crear diapositivas a Golang alojadas en discussions.golang.org o tu privada. La he utilizado varias veces, sobre todo cuando quiero compartir algo con mis compañeros del equipo (algún código, claro), porque no quiero perder el tiempo con los programas. Acabo de crear el proyecto para las diapositivas, añado mis diapositivas a la marca, añado las imágenes necesarias y las presento. Veamos detalladamente cómo funciona!

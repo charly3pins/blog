@@ -8,10 +8,7 @@ slug = "Gestión de contenidos y plantillas de Hugo"
 tags = ["hugo", "cms"]
 
 image = "/images/gohugoio-card.png"
-banner = "/images/gohugoio-card-banner.png"
-thumb = "/images/gohugoio-card-thumb.png"
 +++
-
 Después de mucho tiempo sin escribir... ¡estoy de vuelta!
 
 ![I'm back](/images/hugo-content-templates-managing/im-back-terminator.jpg)

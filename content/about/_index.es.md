@@ -1,20 +1,9 @@
 +++
-title = "echo $USUARIO"
-slug = "Acerca de"
-
-image = "/images/embalse-de-cavallers.jpeg"
+title = "Quién"
+description = "Un poco sobre mí"
 +++
+De día soy Ingeniero de Software en [AREX](https://arex.io/). Por la noche trabajo en proyectos open source, aprendo, leo, escucho y escribo blogs. Puedes encontrarme como [@charly3pins](https://twitter.com/charly3pins) en Twitter.
 
-¡Hola! 🙋🏻‍♂️ Soy Charly3Pins 
+Me gusta aprender cosas nuevas casi todos los días, así que siempre leo libros, escucho podcasts o veo videos sobre tecnología. Además, quiero poner en práctica todos esos aprendizajes, por lo que suelo crear PoC o proyectos paralelos para probar esas cosas nuevas o investigar sobre temas que me interesan. Puedes consultar mis proyectos de OSS en mi [Github](https://github.com/charly3pins).
 
-Soy ingeniero de software 👨🏻‍💻 hambriento de desafíos y dispuesto a aprender cosas nuevas todos los días 🙇🏻‍♂️
-
-Me gusta la cultura devops y siempre estoy investigando diferentes temas y programando cosas, pero siempre enfocado en las mejores prácticas 📜
-
-Actualmente estoy trabajando en Go 🐿️ como lenguaje principal, pero no tengo miedo de aprender o usar otros 🎉
-
-En mi tiempo libre me gusta hacer deportes como correr 🏃🏻, hacer ejercicio en el gimnasio 🏋🏻‍♂️ o jugar al fútbol ⚽; algunos días también juego a videojuegos 🎮
-
-Me gusta leer libros 📚, técnicos o no, especialmente mangas 🇯🇵 y ver series o películas de anime 👹
-
-También me encanta pasear con mis perros 🐕 e ir a la montaña a desconectar de la ciudad siempre que puedo 🌄
+Como firme defensor del [principio KISS](https://es.wikipedia.org/wiki/Principio_KISS), cuando hace algunos años encontré [Go](https://golang.org/)... fue ¡amor a primera vista! Toda esa sencillez que siempre he estado defendiendo, se hizo realidad en un lenguaje de programación. Desde entonces comenzó un largo viaje que aún no ha terminado. Sigo aprendiendo con las nuevas versiones y herramientas que aparecen casi todos los días. Tiene algunas limitaciones ya que es un lenguaje de programación "nuevo", pero es muy emocionante para mí vivir este crecimiento y tener la suerte de participar activamente, no siendo solo un espectador al que le interesa esta tecnología.
