@@ -14,9 +14,6 @@ pygmentsUseClasses=true
 	avatar = "/images/me.jpeg"
 	errorPage = "/images/gopher-this-is-fine.jpg"
 
-	# list of sections skipped by RSS
-	nofeedSections = ["code"]
-
 [languages]
 	[languages.en]
 		languageName = "English"
