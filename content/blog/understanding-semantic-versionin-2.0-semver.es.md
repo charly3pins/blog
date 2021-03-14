@@ -5,7 +5,7 @@ author = "charly3pins"
 description = "¿Qué es el control de versiones semántico? ¿Por qué es importante utilizarlo en tus proyectos como desarrollador? ¿Qué significa para un usuario que usa su biblioteca?"
 
 slug = "Comprensión del Control de Versiones Semántico 2.0 (SemVer)"
-tags = ["semver", "api"]
+tags = ["api"]
 
 image = "/images/semver.png"
 +++

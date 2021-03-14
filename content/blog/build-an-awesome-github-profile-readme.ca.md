@@ -1,10 +1,10 @@
 +++
-title = "Crei un README increïble pel su perfil de GitHub"
+title = "Crei un README increïble pel seu perfil de GitHub"
 date = "2021-02-12"
 author = "charly3pins"
 description = "Passos ràpids i senzills per crear un portfoli a la seva pàgina de perfil de GitHub amb un repositori especial i amb estadístiques dinàmiques de GitHub."
 
-slug = "Crei un README increïble pel su perfil de GitHub"
+slug = "Crei un README increïble pel seu perfil de GitHub"
 tags = ["github"]
 
 image = "/images/github-profile-readme/octocat-profile.png"

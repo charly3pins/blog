@@ -5,7 +5,7 @@ author = "charly3pins"
 description = "Construïu el vostre propi reproductor multimèdia mitjançant un client BitTorrent (transmissió), un PVR per a usuaris d’Usenet i BitTorrent (Sonarr), un suport d’API per als vostres seguidors de torrents (Jackett), un gestor de subtítols a Sonarr & Radarr (Bazarr) i un client–servudir reproductor multimèdia (Plex)."
 
 slug = "Reproductor multimèdia a un Raspberry Pi amb Plex, Transmission, Sonarr, Bazarr i Jackett"
-tags = ["raspberrypi", "linux", "life"]
+tags = ["raspberrypi", "life"]
 
 image = "/images/raspberry-media-player/cover.png"
 +++
