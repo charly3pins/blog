@@ -27,7 +27,7 @@
 						{{if lt $i 3}}<div class="post-preview-tag-new">New</div>{{end}}
 					</div>
 					<div class="post-preview-subtext">{{ .Description }}</div>
-					<div>
+					<div class="post-preview-metadata-container">
 						<span class="post-preview-metadata">
 							{{ .Date.Format "02/01/2006" }} · {{ T "readingTime" .ReadingTime }}
 						</span>
