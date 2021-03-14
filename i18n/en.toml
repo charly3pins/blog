@@ -24,22 +24,12 @@ other = "Read more"
 
 [readingTime]
 one = "One minute read"
-other = "{{.Count}} min. read"
+other = "{{.Count}} min read"
 
 [lastPost]
 other = "Last post published on"
 
 [error404]
-other = "ERROR 404: Page not found"
-
-# NOTES
-[books]
-other = "Books"
-[reading]
-other = "Reading"
-[read]
-other = "Read"
-[queued]
-other = "Queued"
-[futures]
-other = "Futures"
+other = "¯\\_ (ツ)_/¯: Page not found"
+[error404Desc]
+other = "Congratulations! You've reached the secret page 404. Once you've finished admiring **Gopher This Is Fine** you can continue browsing."

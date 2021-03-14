@@ -24,22 +24,12 @@ other = "Llegir més"
 
 [readingTime]
 one = "Un minut de lectura"
-other = "{{.Count}} min. de lectura"
+other = "{{.Count}} min lectura"
 
 [lastPost]
 other = "Últim post publicat el"
 
 [error404]
-other = "ERROR 404: Pàgina no trobada"
-
-# NOTES
-[books]
-other = "Llibres"
-[reading]
-other = "Llegint"
-[read]
-other = "LLegits"
-[queued]
-other = "A la cua"
-[futures]
-other = "Futurs"
+other = "¯\\_ (ツ)_/¯: Pàgina no trobada"
+[error404Desc]
+other = "Enhorabona! Has arribat a la pàgina secreta 404. Quan hagis acabat d'admirar al **Gopher This Is Fine** pots seguir navegant."
