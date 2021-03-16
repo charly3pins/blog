@@ -1,6 +1,6 @@
 +++
 title = "Automatice el README para su perfil de GitHub con Go y GitHub Actions"
-date = "2021-03-14"
+date = "2021-03-16"
 author = "charly3pins"
 description = "Crear con la ayuda de Go un fichero Markdown dinámico por README y desplegarlo en GitHub de su perfil con la ayuda de GitHub Actions."
 
