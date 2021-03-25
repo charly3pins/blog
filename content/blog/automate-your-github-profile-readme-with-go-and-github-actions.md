@@ -77,7 +77,7 @@ data := fmt.Sprintf("%s\n\n%s\n\n%s\n\n%s\n", hi, blog)
 
 The important part is the `blog` where you can clearly see how I read the feed information.
 
-You can see the complete code in [my repositori](https://github.com/charly3pins/charly3pins/blob/main/update/main.go).
+You can see the complete code in [my repository](https://github.com/charly3pins/charly3pins/blob/main/update/main.go).
 
 ## Running the process automatically
 
