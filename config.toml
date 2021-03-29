@@ -5,6 +5,7 @@ googleAnalytics = "UA-126216319-1"
 disqusShortname = "https-charly3pins-dev"
 defaultContentLanguage = "en"
 pygmentsUseClasses=true
+enableRobotsTXT = true
 
 [author]
 	name = "Charly3Pins"
