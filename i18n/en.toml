@@ -29,6 +29,9 @@ other = "{{.Count}} min read"
 [lastPost]
 other = "Last post published on"
 
+[imageBy]
+other = "Image by"
+
 [error404]
 other = "¯\\_ (ツ)_/¯: Page not found"
 [error404Desc]

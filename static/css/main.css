@@ -623,12 +623,16 @@ blockquote p:last-child{
     align-items:center;
 }
 
-/* CAPTION for 404 PAGE */
-#caption {
+/* CAPTION */
+.caption {
     width:100%;
     display:flex;
     justify-content:center;
     align-items:center;
     font-size:small;
     margin:0px !important;
+}
+
+.caption a {
+    margin-left:5px;
 }

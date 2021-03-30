@@ -8,6 +8,8 @@ slug = "La Técnica Pomodoro"
 tags = ["life", "productivity"]
 
 image = "https://foto.wuestenigel.com/wp-content/uploads/api/the-pomodoro-technique-effective-time-management-method.jpeg"
+caption = "https://foto.wuestenigel.com/the-pomodoro-technique-effective-time-management-method/"
+captionAuthor = "Marcho Verch"
 +++
 Después de casi un año teletrabajando en casa, debido a las circunstancias que todos conocemos, los cambios que hemos tenido que realizar para adaptarnos a este nuevo entorno han sido considerables y en algunos casos costosos de asumir. Uno de ellos ha sido el concentrarse trabajando en casa, especialmente las personas que no lo hacían anteriormente. Al no ir a la oficina donde nuestra mente desconecta de nuestra rutina diaria y se focaliza (unos más que otros) en trabajar, hacer ese "click" a veces es costoso y hay que esforzarse para conseguirlo. 
 

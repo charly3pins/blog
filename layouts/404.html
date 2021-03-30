@@ -12,12 +12,14 @@
 
 				<h4 class="post-title">{{ T "error404" }}</h4>
 				
-				<div class="centered">
-					<img src="{{ .Site.Params.errorPage }}" alt="site 404 image">
-				</div>
-				<p id="caption">Gopher by <a href="https://github.com/ashleymcnamara/gophers/blob/master/This_is_Fine_Gopher.png"> Ashley McNamara</a></p>
-
 				<article>
+					<div class="centered">
+						<img src="{{ .Site.Params.errorPage }}" alt="site 404 image">
+					</div>
+					<div>
+						<p class="caption">Gopher by<a href="https://github.com/ashleymcnamara/gophers/blob/master/This_is_Fine_Gopher.png">Ashley McNamara</a></p>
+					</div>
+					<div class="page-separator"></div>
 					<p>{{ T "error404Desc" }}</p>
 				</article>
 

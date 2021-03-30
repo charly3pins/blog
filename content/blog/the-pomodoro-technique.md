@@ -7,6 +7,8 @@ description = "Improve the time management on an activity with this technique ba
 tags = ["life", "productivity"]
 
 image = "https://foto.wuestenigel.com/wp-content/uploads/api/the-pomodoro-technique-effective-time-management-method.jpeg"
+caption = "https://foto.wuestenigel.com/the-pomodoro-technique-effective-time-management-method/"
+captionAuthor = "Marcho Verch"
 +++
 After almost a year teleworking at home, due to the circumstances that we all know, the changes we have had to make to adapt to this new environment have been considerable and in some cases difficult to assume. One of them has been concentrating on working at home, especially for people who didn't do it before. Not going to the office where our mind disconnects from our daily routine and focuses (some more than others) on working, making that "click" is sometimes expensive and we have to make an effort to achieve it.
 

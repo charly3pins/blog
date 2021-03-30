@@ -32,6 +32,12 @@
 						<img src="{{ . | absURL }}" alt="cover image">
 					</div>
 					{{ end }}
+					{{ if .Params.caption }}
+					<div>
+						<p class="caption">{{ T "imageBy" }}<a href="{{.Params.caption}}">{{.Params.captionAuthor}}</a></p>
+					</div>
+					{{ end }}
+					<div class="page-separator"></div>
 					{{ .Content | safeHTML }}
 				</article>
 
