@@ -6,7 +6,7 @@ description = "I am gonna show you my setup for VS Code editor which makes me mo
 
 tags = ["productivity", "vscode"]
 
-image = "https://miro.medium.com/max/6000/0*8KANi15q2thT-dYt"
+image = "/images/vscode.jpeg"
 +++
 I spend a lot of hours during the day coding for the company I work for and during nights or weekends for myself, so I want to be comfortable with the tools I use constantly. One of them is my editor of code, specifically [VS Code](https://code.visualstudio.com/). I started with Java and the most extended for it is Eclipse with all its variants. Then I moved to Go and I was a Sublime user for years until I gave a try to VS Code. Oh boy! Since I tried, I never wanted to switch back. Super fast, super configurable, a lot of extensions and A LOT OF THEMES.
 
