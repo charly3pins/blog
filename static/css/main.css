@@ -451,7 +451,10 @@ blockquote p:last-child{
     background:#f0db4f
 }
 [href$='/tags/life/']{
-    background:#ef7f39
+    background:#f00dca
+}
+[href$='/tags/linux/']{
+    background:#ff8303
 }
 [href$='/tags/php/']{
     background:#787cb5

@@ -5,7 +5,7 @@ author = "charly3pins"
 description = "Genere mensajes de commit personalizados para su repositorio y estandarice su registro de commits."
 
 slug = "Mensajes de commit personalizados de Git"
-tags = ["terminal", "git"]
+tags = ["git", "terminal"]
 
 image = "/images/git-commit.png"
 +++
