@@ -27,7 +27,7 @@ one = "Un minut de lectura"
 other = "{{.Count}} min lectura"
 
 [lastPost]
-other = "Últim post publicat el"
+other = "Darrer post el"
 
 [imageBy]
 other = "Imatge de"
