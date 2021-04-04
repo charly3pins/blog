@@ -426,11 +426,8 @@ blockquote p:last-child{
 [href$='/tags/ci/cd/']{
     background:#b4d6db
 }
-[href$='/tags/cms/']{
+[href$='/tags/dotfiles/']{
     background:#a997ae
-}
-[href$='/tags/raspberrypi/']{
-    background:#bc1142
 }
 [href$='/tags/flutter/']{
     background:#54c0f4
@@ -464,6 +461,12 @@ blockquote p:last-child{
 }
 [href$='/tags/python/']{
     background:#ffd43b
+}
+[href$='/tags/raspberrypi/']{
+    background:#bc1142
+}
+[href$='/tags/shell/']{
+    background:#0f0
 }
 [href$='/tags/terminal/']{
     background:#55ff55

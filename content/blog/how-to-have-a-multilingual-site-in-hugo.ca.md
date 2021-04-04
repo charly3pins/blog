@@ -5,7 +5,7 @@ author = "charly3pins"
 description = "Conegueu les configuracions i els trucs per convertir el vostre lloc d'un sol idioma en Hugo a un lloc multilingüe en només uns quants passos."
 
 slug = "Com tenir un lloc multilingüe a Hugo"
-tags = ["hugo", "cms"]
+tags = ["hugo"]
 
 image = "/images/gohugoio-card.png"
 +++

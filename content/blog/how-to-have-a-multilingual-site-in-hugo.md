@@ -4,7 +4,7 @@ date = "2021-02-05"
 author = "charly3pins"
 description = "Know the configurations and the tricks to convert your single language site in Hugo to a multilingual site in just a few steps."
 
-tags = ["hugo", "cms"]
+tags = ["hugo"]
 
 image = "/images/gohugoio-card.png"
 +++

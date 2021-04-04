@@ -5,7 +5,7 @@ author = "charly3pins"
 description = "Conozca las configuraciones y los trucos para convertir su sitio en un solo idioma en Hugo en un sitio multilingüe en solo unos pocos pasos."
 
 slug = "Cómo tener un sitio multilingüe en Hugo"
-tags = ["hugo", "cms"]
+tags = ["hugo"]
 
 image = "/images/gohugoio-card.png"
 +++

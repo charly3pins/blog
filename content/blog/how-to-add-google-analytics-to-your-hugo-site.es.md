@@ -5,7 +5,7 @@ author = "charly3pins"
 description = "Tutorial rápido sobre cómo integrar Google Analytics en un sitio web de Hugo."
 
 slug = "Cómo añadir Google Analytics a su sitio Hugo"
-tags = ["hugo", "cms"]
+tags = ["hugo"]
 
 image = "/images/google-analytics-hugo.png"
 +++
