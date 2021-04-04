@@ -31,8 +31,3 @@ other = "Última publicación en"
 
 [imageBy]
 other = "Imagen de"
-
-[error404]
-other = "¯\\_ (ツ)_/¯: Página no encontrada"
-[error404Desc]
-other = "¡Enhorabuena! Has llegado a la página secreta 404. Cuando hayas terminado de admirar al **Gopher This Is Fine** puedes seguir navegando."

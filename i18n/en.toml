@@ -32,7 +32,3 @@ other = "Last post on"
 [imageBy]
 other = "Image by"
 
-[error404]
-other = "¯\\_ (ツ)_/¯: Page not found"
-[error404Desc]
-other = "Congratulations! You've reached the secret page 404. Once you've finished admiring **Gopher This Is Fine** you can continue browsing."

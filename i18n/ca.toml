@@ -31,8 +31,3 @@ other = "Darrer post el"
 
 [imageBy]
 other = "Imatge de"
-
-[error404]
-other = "¯\\_ (ツ)_/¯: Pàgina no trobada"
-[error404Desc]
-other = "Enhorabona! Has arribat a la pàgina secreta 404. Quan hagis acabat d'admirar al **Gopher This Is Fine** pots seguir navegant."
