@@ -1,6 +1,6 @@
 +++
 title = "Augmenti la seva productivitat amb Notion"
-date = "2021-04-07"
+date = "2021-04-08"
 author = "charly3pins"
 description = "Organitzi les seves idees, gestioni els seus projectes i faci un seguiment de la seva vida amb l’aplicació Notion i augmenti la seva productivitat personal al següent nivell."
 

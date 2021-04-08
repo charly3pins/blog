@@ -1,6 +1,6 @@
 +++
 title = "Increase your productivity with Notion"
-date = "2021-04-07"
+date = "2021-04-08"
 author = "charly3pins"
 description = "Organize your ideas, manage your projects and track your life with the Notion app and boost your personal productivity to the next level."
 
