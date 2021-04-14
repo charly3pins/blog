@@ -31,7 +31,7 @@ Luego anote el valor de esa propiedad y haga clic en `crear` _su_propiedad_ a co
 Si desea agregar la propiedad `Última hora de edición`, puede crear una nueva con el nombre que desee, pero la de tiempo debe ser esa:
 ![tarea agregar la última propiedad editada](/images/increase-productivity-notion/05-task-add-last-edited-property.png)
 
-Para modificar la apariencia del tablero agregando las propiedades que ha creado en los pasos anteriores, puede modificar las opciones de visualización siguiendo lo siguiente. Primero vsus a las propiedades del tablero:
+Para modificar la apariencia del tablero agregando las propiedades que ha creado en los pasos anteriores, puede modificar las opciones de visualización siguiendo lo siguiente. Primero vaya a las propiedades del tablero:
 ![propiedades del tablero](/images/increase-productivity-notion/06-board-properties.png)
 
 Posteriormente seleccione las propiedades que desea mostrar para las tarjetas y cambie la vista previa y el tamaño:
