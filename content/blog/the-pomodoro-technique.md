@@ -35,4 +35,4 @@ One thing that is important, as you may have assumed, in these types of techniqu
 
 As you can see, it is a very simple technique to understand and apply and the results obtained are surprising. Sometimes your mind is not clear enough or you are not in the mood for using it, so if it is your case, it is better to abandon it and apply it another time (whether it is your first time or not). I don't apply it every day because many days I'm just not in the mood, but the days that I really need to focus on my tasks, it is very helpful. In addition, there are countless applications for the computer or for the phone that help to time the pomodoros, show alerts and some even turn off the screen so that you cannot continue working, so research the best for your needs.
 
-I hope it helps you and feel free to comment here or contact me on my social media for any comments, questions or suggestions..
+I hope it helps you and feel free to comment here or contact me on my social media for any comments, questions or suggestions.
