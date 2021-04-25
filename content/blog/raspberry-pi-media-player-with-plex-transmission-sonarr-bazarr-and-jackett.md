@@ -194,7 +194,7 @@ New we need to stop the demon to apply changes to the configuration that will al
 ```vim
 sudo service transmission-daemon stop
 sudo vi /etc/transmission-daemon/settings.json
-``
+```
 
 Look for rpc-whitelist and rpc-whitelist-enabled and make sure they look like this:
 ```vim

@@ -143,7 +143,7 @@ Si va a insertar un enlace a la presentación, puede utilizar la orden `.link`. 
 
 
 ### código
-La mejor pedido en mi opinión es la de `.code`. Le permite poner código extraído de los archivos fuente y inyectarles como bloques <pre> escapados por HTML. Acepta un argumento como nombre de archivo seguido de una dirección opcional que especifica qué sección del archivo se mostrará.
+El mejor comando en mi opinión es `.code`. Le permite poner código extraído de los archivos fuente y inyectarles como bloques <pre> escapados por HTML. Acepta un argumento como nombre de archivo seguido de una dirección opcional que especifica qué sección del archivo se mostrará.
 
 Por ejemplo, tomando Hello world a Go como código fuente:
 ```go
@@ -156,7 +156,8 @@ func main() {
 }
 ```
 
-Debemos especificar como:```text
+Debemos especificar como:
+```text
 .code hello.go
 ```
 

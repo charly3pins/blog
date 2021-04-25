@@ -4,6 +4,7 @@ date = "2021-04-08"
 author = "charly3pins"
 description = "Organitzi les seves idees, gestioni els seus projectes i faci un seguiment de la seva vida amb l’aplicació Notion i augmenti la seva productivitat personal al següent nivell."
 
+slug = "Augmenti la seva productivitat amb Notion"
 tags = ["life", "productivity"]
 
 image = "/images/increase-productivity-notion/notion.png"
