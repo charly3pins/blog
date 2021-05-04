@@ -468,6 +468,9 @@ blockquote p:last-child{
 [href$='/tags/shell/']{
     background:#0f0
 }
+[href$='/tags/startup/']{
+    background:#49beb7
+}
 [href$='/tags/terminal/']{
     background:#55ff55
 }
