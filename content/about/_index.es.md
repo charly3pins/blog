@@ -2,7 +2,7 @@
 title = "Quién"
 description = "Un poco sobre mí"
 +++
-De día soy Ingeniero de Software en [AREX](https://arex.io/). Por la noche trabajo en proyectos open source, aprendo, leo, escucho y escribo blogs. Puedes encontrarme como [@charly3pins](https://twitter.com/charly3pins) en Twitter.
+De día soy Ingeniero de Software. Por la noche trabajo en proyectos open source, aprendo, leo, escucho y escribo blogs. Puedes encontrarme como [@charly3pins](https://twitter.com/charly3pins) en Twitter.
 
 Me gusta aprender cosas nuevas casi todos los días, así que siempre leo libros, escucho podcasts o veo videos sobre tecnología. Además, quiero poner en práctica todos esos aprendizajes, por lo que suelo crear PoC o proyectos paralelos para probar esas cosas nuevas o investigar sobre temas que me interesan. Puedes consultar mis proyectos de OSS en mi [Github](https://github.com/charly3pins).
 

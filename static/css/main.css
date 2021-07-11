@@ -285,10 +285,10 @@ blockquote p:last-child{
 .banner-image{
     width:100px;
     margin:0 20px 0 0;
-    transition:transform .5s cubic-bezier(.68,-.55,.27,1.55),filter .5s cubic-bezier(.68,-.55,.27,1.55);
+    /* transition:transform .5s cubic-bezier(.68,-.55,.27,1.55),filter .5s cubic-bezier(.68,-.55,.27,1.55); */
     border-radius:50%;
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(75%);
+    /* -webkit-filter: grayscale(100%); */
+    /* filter: grayscale(75%); */
     cursor:pointer;
 }
 .banner-image:hover{

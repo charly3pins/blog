@@ -12,7 +12,7 @@ enableRobotsTXT = true
 
 [params]
 	since = 2018
-	avatar = "/images/me.jpeg"
+	avatar = "/images/law-mustache.gif"
 	errorPage = "/images/gopher-this-is-fine.jpg"
 
 [languages]

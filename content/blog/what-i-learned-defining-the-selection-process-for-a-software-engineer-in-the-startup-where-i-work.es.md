@@ -10,6 +10,7 @@ tags = ["life", "startup"]
 image = "/images/software_engineer_word_cloud.jpg"
 +++
 ## Introducción 
+
 Trabajo en [AREX Markets](https://arex.io) desde Noviembre 2018 y desde entonces, la empresa ha cambiado mucho. Cuando entré eramos un equipo que no llegaba  a 10 personas (~5 técnicas) y ahora somos cerca de las 50. El ambiente de las startup siempre me ha gustado más que el de una gran compañía por todos los retos que eso conlleva. Tienes que hacer muchas cosas y estar involucrado en muchos temas, ya sean de tu puesto de trabajo u otros no relacionados, y eso me gusta mucho. Durante las últimas semanas, o mejor dicho meses, hemos estado entrevistando a mucha gente ya que estamos creciendo en términos de negocio y necesitamos necesitamos escalar el equipo técnico, así que comenzamos con la contratación de más ingenier@s de software.
 
 El primer paso fue definir qué tipo de **Proceso de selección** queríamos seguir. Lo hicimos todo el equipo juntos y eso fue lo primero de valor que pudimos extraer. Si pretendes definir un proceso de selección en tu empresa sin el aporte del equipo que participará en él, eso es malo. Todos deben dar su opinión y participar en esa parte, ya que más adelante serán parte de ella y, si todo sale bien, el nuevo miembro se unirá al equipo, por lo que deben sentirse cómodos con la decisión.
