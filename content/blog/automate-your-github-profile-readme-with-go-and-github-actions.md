@@ -6,7 +6,7 @@ description = "Create a dynamic Markdown file for your README with the help of G
 
 tags = ["go", "github", "ci/cd"]
 
-image = "/images/github-profile-readme/octocat-profile.png"
+image = "/images/github-profile-readme/charly3pins-profile.png"
 +++
 After the post where I explained [how to create a README for the GitHub profile]({{<relref path="/blog/build-an-awesome-github-profile-readme.md" lang="en">}}), I missed including in the section of the `Blog` a link to the last post published. I mainly didn’t because I didn’t want to have to manually update the README every time with the last post and its link. To solve this I was thinking how I could automate this update. While doing my daily reading of the RSS feeds I follow with the Feedly app, I stumbled upon that I also had RSS feeds. So I could read my blog feed myself and get the latest post from there easily.
 

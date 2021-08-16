@@ -7,7 +7,7 @@ description = "Crear con la ayuda de Go un fichero Markdown dinámico por README
 slug = "Automatice el README para su perfil de GitHub con Go y GitHub Actions"
 tags = [ "go", "github", "ci/cd"]
 
-image = "/images/github-profile-readme/octocat-profile.png"
+image = "/images/github-profile-readme/charly3pins-profile.png"
 +++
 Tras el post donde expliqué [cómo crear un README para el perfil de GitHub]({{<relref path="/blog/build-an-awesome-github-profile-readme.md" lang="es">}}), me faltó incluir en la sección del `Blog` un link al último post publicado. Principalmente no lo hice porque no quería tener que actualizar a mano cada vez el README con el último post y su link. Para resolver esto estuve pensando cómo podía automatizar esta actualización. Mientras hacía mi lectura diaria de RSS que sigo con la aplicación Feedly, caí en que yo también tenía feed RSS. Por lo tanto, podía leer yo mismo el feed de mi blog y obtener el último post de allí de forma sencilla.
 
