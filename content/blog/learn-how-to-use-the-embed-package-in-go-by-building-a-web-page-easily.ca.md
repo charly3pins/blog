@@ -1,5 +1,4 @@
 +++
-draft = true
 title = "Aprèn a fer servir el paquet embed a Go construint una pàgina web fàcilment"
 date = "2021-08-16"
 Autor = "charly3pins"
@@ -154,8 +153,8 @@ func UserProfile(w http.ResponseWriter, r *http.Request) {
 	}
 
 	data := make(map[string]interface{})		
-	data["Name"] = "Jhon Doe"
-	data["Email"] = "jhondoe@email.com"
+	data["Name"] = "John Doe"
+	data["Email"] = "johndoe@email.com"
 	data["Address"] = "Fake Street, 123"
 	data["PhoneNumber"] = "654123987"
 

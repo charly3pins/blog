@@ -1,6 +1,5 @@
 +++
-draft = true
-title = "Learn to use the embed package in Go by building a web page easily"
+title = "Learn how to use the embed package in Go by building a web page easily"
 date = "2021-08-16"
 author = "charly3pins"
 description = "What is the new embed package added in Go 1.16 for and how can we use it to our advantage?"
@@ -24,7 +23,7 @@ If we wanted to do the same but with more than one value (more than one `string`
 
 The third type of data for me is the most interesting to comment on and that is why I write this post. If you have ever set up a web page, you will know that it consists of several files... aha! static. For this, in Go we have the `html/template` package which needs to load the templates of the pages that we want to mount in memory.
 
-At this point you might ask yourself, why is it tedious to work with statics? or also when is all this useful? Well right now I'm going to explain. Imagine that our program needs to read a file, in the previous example the html template. This template will have a location, a directory in which it is stored. This location will be valid as long as our code compiles into the current directory. The moment we do a `go build` and move the binary to another destination, that reading will fail us because it will not find the specified path. To solve this problem there is the `embed` package.
+At this point you might ask yourself, why is it tedious to work with static files? or also when is all this useful? Well right now I'm going to explain. Imagine that our program needs to read a file, in the previous example the html template. This template will have a location, a directory in which it is stored. This location will be valid as long as our code compiles into the current directory. The moment we do a `go build` and move the binary to another destination, that reading will fail us because it will not find the specified path. To solve this problem there is the `embed` package.
 
 Let's see a bit of code for this case. First of all we look at the [documentation](https://pkg.go.dev/embed#FS) and see what fields the type that interests us `embed.FS` has and what methods it offers us. We see that there are no fields but there are three methods to open a file, read a file and read a directory and that these return an `fs.File`, a `[]byte` and a `[]fs.DirEntry` respectively in addition to the classic mistake each.
 
@@ -140,7 +139,7 @@ The interesting thing here is to see how we define the part of the variables:
 //go:embed templates/* templates/layouts/*
 files     embed.FS
 ```
-With this we tell the compiler to look inside templates and templates / layouts for the files and load them into the `files` variable. Then in our function to load templates we simply initialize a map where we save the name of the template and its value. As I mentioned before, we use the `fs` package to read the files loaded with the` embed` package and then we can execute them with the function we saw from `ParseFS`.
+With this we tell the compiler to look inside templates and templates / layouts for the files and load them into the `files` variable. Then in our function to load templates we simply initialize a map where we save the name of the template and its value. As I mentioned before, we use the `fs` package to read the files loaded with the `embed` package and then we can execute them with the function we saw from `ParseFS`.
 
 Now that we have our templates loaded it is time to expose them. For this we will build a simple HTTP server so that it can be seen how to access our templates. First of all we create our handler. The next block can be in the same `main.go` or in a different file. Depending on the case, the calls to the function to render the templates and to some variables must be modified.
 ```go
@@ -153,8 +152,8 @@ func UserProfile(w http.ResponseWriter, r *http.Request) {
 	}
 
 	data := make(map[string]interface{})		
-	data["Name"] = "Jhon Doe"
-	data["Email"] = "jhondoe@email.com"
+	data["Name"] = "John Doe"
+	data["Email"] = "johndoe@email.com"
 	data["Address"] = "Fake Street, 123"
 	data["PhoneNumber"] = "654123987"
 
@@ -176,6 +175,6 @@ func main() {
 }
 ```
 
-## Conclution
+## Conclusion
 
 With all this, I hope that working with static files will be much easier and more practical than before. If there is any part that has not been completely clear or there are parts that I have not covered that you would like me to do, leave me a comment right here or through my social networks that you have on my profile and I will be happy to respond.
