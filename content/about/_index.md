@@ -2,7 +2,7 @@
 title = "About"
 description = "A little bit about me"
 +++
-By day I'm a Software Engineering. By night I'm open sourcing, learning, reading, listening and blogging. You can find me as [@charly3pins](https://twitter.com/charly3pins) on Twitter.
+By day I'm a Tech Lead. By night I'm open sourcing, learning, reading, listening and blogging. You can find me as [@charly3pins](https://twitter.com/charly3pins) on Twitter.
 
 I really like to learn new things almost everyday so I'm always reading books, listening podcasts or watching videos about tech. Also I want to put in practice all those learnings so I like creating PoC or side projects to try new things or investigate topics that I'm interested in. You can check my OSS projects in my [Github](https://github.com/charly3pins).
 
