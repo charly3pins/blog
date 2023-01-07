@@ -42,7 +42,7 @@ Per fer aquest exemple crearem la següent estructuri de carpetes i fitxers:
 |- main.go
 ```
 
-La nostra main layout podria ser una cosa semblant a el següent bloc com `layout.tmpl`:
+La nostra main layout podria ser una cosa semblant a el següent bloc com `layout.html`:
 ```go
 {{define "main"}}
 <html lang="en">
@@ -61,7 +61,7 @@ La nostra main layout podria ser una cosa semblant a el següent bloc com `layou
 ```
 Òbviament això es pot complicar tant com vulguis i necessitis. Per l'exemple que vull mostrar no cal complicar-ho més.
 
-La template podria ser la següent com `user_profile.tmpl`:
+La template podria ser la següent com `userProfile.html`:
 ```go
 {{template "main" .}}
 {{define "content"}}
@@ -144,22 +144,22 @@ Amb això li indiquem a el compilador que busqui dins de templates i de template
 
 Ara que ja tenim les nostres plantilles carregades és hora d'exposar-les. Per a això aixecarem 1 server HTTP senzillet perquè es vegi com accedir a les nostres plantilles. Primer de tot vam crear el nostre handler. El següent bloc pot estar en el mateix `main.go` o en un fitxer diferent. Depenent de el cas les crides a la funció per a renderitzar les templates i a algunes variables hauran de modificar.
 ```go
-const userProfile = "userProfile.tmpl"
+const userProfile = "userProfile.html"
 func UserProfile(w http.ResponseWriter, r *http.Request) {
 	t, ok := templates[userProfile]
 	if !ok {
-		// TODO handle error
+		log.Printf("template %s not found", userProfile)
 		return
 	}
 
-	data := make(map[string]interface{})		
+	data := make(map[string]interface{})
 	data["Name"] = "John Doe"
 	data["Email"] = "johndoe@email.com"
 	data["Address"] = "Fake Street, 123"
 	data["PhoneNumber"] = "654123987"
 
 	if err := t.Execute(w, data); err != nil {
-		// TODO handle error
+		log.Println(err)
 	}
 }
 ```
@@ -167,15 +167,20 @@ func UserProfile(w http.ResponseWriter, r *http.Request) {
 Finalment afegim la nostra funció `main()` en el fitxer `main.go`:
 ```go
 func main() {
+	err := LoadTemplates()
+	if err != nil {
+		log.Fatal(err)
+	}
 	r := http.NewServeMux()
 	r.HandleFunc("/user-profile", UserProfile)
 
 	if err := http.ListenAndServe(":8080", r); err != nil {
-		// TODO handle error
+		log.Println(err)
 	}
 }
 ```
 
 ## Conclusió
 
-Amb tot això espero que treballar amb els fitxers estàtics et resulti molt més senzill i pràctic que abans. Si hi ha alguna part que no ha quedat de el tot clara o hi ha parts que no he cobert que t'agradaria que ho fes, deixa un comentari aquí mateix o pels meus xarxes socials que tens al meu perfil i estaré encantat de respondre.
+Amb tot això espero que treballar amb els fitxers estàtics et resulti molt més senzill i pràctic que abans. Pot veure el codi complert al [meu repositori](https://github.com/charly3pins/go-embed-example).
+Si hi ha alguna part que no ha quedat de el tot clara o hi ha parts que no he cobert que t'agradaria que ho fes, deixa un comentari aquí mateix o pels meus xarxes socials que tens al meu perfil i estaré encantat de respondre.

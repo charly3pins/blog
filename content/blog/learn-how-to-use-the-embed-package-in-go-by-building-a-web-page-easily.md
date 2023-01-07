@@ -41,7 +41,7 @@ To do this example we will create the following folder and file structure:
 |- main.go
 ```
 
-Our main layout could be something like the following block like `layout.tmpl`:
+Our main layout could be something like the following block like `layout.html`:
 ```go
 {{define "main"}}
 <html lang="en">
@@ -60,7 +60,7 @@ Our main layout could be something like the following block like `layout.tmpl`:
 ```
 Obviously this can be as complicated as you want and need. For the example I want to show, it is not necessary to complicate it further.
 
-The template could be the following as `user_profile.tmpl`:
+The template could be the following as `userProfile.html`:
 ```go
 {{template "main" .}}
 {{define "content"}}
@@ -143,22 +143,22 @@ With this we tell the compiler to look inside templates and templates / layouts 
 
 Now that we have our templates loaded it is time to expose them. For this we will build a simple HTTP server so that it can be seen how to access our templates. First of all we create our handler. The next block can be in the same `main.go` or in a different file. Depending on the case, the calls to the function to render the templates and to some variables must be modified.
 ```go
-const userProfile = "userProfile.tmpl"
+const userProfile = "userProfile.html"
 func UserProfile(w http.ResponseWriter, r *http.Request) {
 	t, ok := templates[userProfile]
 	if !ok {
-		// TODO handle error
+		log.Printf("template %s not found", userProfile)
 		return
 	}
 
-	data := make(map[string]interface{})		
+	data := make(map[string]interface{})
 	data["Name"] = "John Doe"
 	data["Email"] = "johndoe@email.com"
 	data["Address"] = "Fake Street, 123"
 	data["PhoneNumber"] = "654123987"
 
 	if err := t.Execute(w, data); err != nil {
-		// TODO handle error
+		log.Println(err)
 	}
 }
 ```
@@ -166,15 +166,21 @@ func UserProfile(w http.ResponseWriter, r *http.Request) {
 Finally we add our `main()` function in the `main.go` file:
 ```go
 func main() {
+	err := LoadTemplates()
+	if err != nil {
+		log.Fatal(err)
+	}
 	r := http.NewServeMux()
 	r.HandleFunc("/user-profile", UserProfile)
 
 	if err := http.ListenAndServe(":8080", r); err != nil {
-		// TODO handle error
+		log.Println(err)
 	}
 }
 ```
 
+
 ## Conclusion
 
-With all this, I hope that working with static files will be much easier and more practical than before. If there is any part that has not been completely clear or there are parts that I have not covered that you would like me to do, leave me a comment right here or through my social networks that you have on my profile and I will be happy to respond.
+With all this, I hope that working with static files will be much easier and more practical than before. You can see the full code in [my repository](https://github.com/charly3pins/go-embed-example).
+If there is any part that has not been completely clear or there are parts that I have not covered that you would like me to do, leave me a comment right here or through my social networks that you have on my profile and I will be happy to respond.
