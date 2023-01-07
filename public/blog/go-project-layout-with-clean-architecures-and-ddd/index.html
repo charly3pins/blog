@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+	
+	<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="Engineering Director">
+
+  <title>Go project layout with Clean architectures and DDD | Charly3Pins</title>
+
+
+  <meta property="og:title" content="Go project layout with Clean architectures and DDD - charly3pins" />
+
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="How I apply Clean architectures and DDD when I create a  project in Go.">
+  <meta property="og:url" content="https://charly3pins.dev/blog/go-project-layout-with-clean-architecures-and-ddd/">
+  <meta property="og:site_name" content="charly3pins.dev">
+  
+  <meta property="og:image" content="https://charly3pins.dev/images/CleanArchitecture.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta name="twitter:title" content="Go project layout with Clean architectures and DDD" />
+
+
+  <meta name="twitter:description" content="How I apply Clean architectures and DDD when I create a  project in Go.">
+
+
+  <meta name="twitter:image" content="https://charly3pins.dev/images/CleanArchitecture.jpg">
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-126216319-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  <link rel="stylesheet" href="https://charly3pins.dev/css/main.css" />
+  <link rel="stylesheet" href="https://charly3pins.dev/css/syntax.css" />
+  <link rel="stylesheet" href="https://charly3pins.dev/css/social_share.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+	<body>
+		<div class="navbar-container">
+    <nav class="navbar-navigation">
+        
+        <a href="/">Home</a>
+        
+        <a href="/blog/">Blog</a>
+        
+        <a href="/code/">Code</a>
+        
+        <a href="/about/">About</a>
+        
+        
+        <ul class="lang-selector">
+            <li>
+                <a>English</a> <i class="fa fa-angle-down" aria-hidden="true"></i>
+                <ul>
+                
+                    <a href="https://charly3pins.dev/es/blog/go-project-layout-with-clean-architecures-and-ddd/">Spanish</a>
+                
+                </ul>
+            </li>
+        </ul>
+        
+        <button class="theme-switch-wrapper">
+            <img id="theme-switcher" class="theme-switcher" src="https://sunilsandhu.com/assets/icons/sun-moon.png" alt="toggle dark mode">
+        </button>
+    </nav>
+</div>
+		
+		<div class="layout-container">
+
+			<section class="blog-container">
+				
+				<h4 class="post-title">Go project layout with Clean architectures and DDD</h4>
+				<h2 class="post-description">How I apply Clean architectures and DDD when I create a  project in Go.</h2>
+
+				<div class="post-metadata">
+					<div class="post-tags">
+						
+						<a class="tag" href="https://charly3pins.dev/tags/go/">#go</a>
+						
+					</div>
+					<span class="post-date">
+						09/12/2021 · 8 min read
+					</span>
+				</div>
+
+				<ul class="icons">
+    
+    <li>
+        
+        <a href="//twitter.com/share?url=https%3a%2f%2fcharly3pins.dev%2fblog%2fgo-project-layout-with-clean-architecures-and-ddd%2f&amp;text=Go%20project%20layout%20with%20Clean%20architectures%20and%20DDD&amp;via=charly3pins&amp;hashtags=go" target="_blank" class="share-btn twitter">
+            <i class="fa fa-twitter"></i>
+        </a>
+    </li>
+
+    
+    <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcharly3pins.dev%2fblog%2fgo-project-layout-with-clean-architecures-and-ddd%2f" target="_blank" class="share-btn facebook">
+            <i class="fa fa-facebook"></i>
+        </a>
+    </li>
+
+    
+    <li>
+        <a href="//reddit.com/submit?url=https%3a%2f%2fcharly3pins.dev%2fblog%2fgo-project-layout-with-clean-architecures-and-ddd%2f&amp;title=Go%20project%20layout%20with%20Clean%20architectures%20and%20DDD" target="_blank" class="share-btn reddit">
+            <i class="fa fa-reddit-alien"></i>
+        </a>
+    </li>
+
+    
+    <li>
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fcharly3pins.dev%2fblog%2fgo-project-layout-with-clean-architecures-and-ddd%2f&amp;title=Go%20project%20layout%20with%20Clean%20architectures%20and%20DDD" target="_blank" class="share-btn linkedin">
+            <i class="fa fa-linkedin"></i>
+        </a>
+    </li>
+
+    
+    <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fcharly3pins.dev%2fblog%2fgo-project-layout-with-clean-architecures-and-ddd%2f&amp;description=Go%20project%20layout%20with%20Clean%20architectures%20and%20DDD" target="_blank" class="share-btn pinterest">
+            <i class="fa fa-pinterest-p"></i>
+        </a>
+    </li>
+
+    
+    <li>
+        <a href="mailto:?subject=Check out this post by charly3pins&amp;body=https%3a%2f%2fcharly3pins.dev%2fblog%2fgo-project-layout-with-clean-architecures-and-ddd%2f" target="_blank" class="share-btn email">
+            <i class="fa fa-envelope"></i>
+        </a>
+    </li>
+</ul>
+
+
+				<article>
+					
+					<div class="centered">
+						<img src="https://charly3pins.dev/images/CleanArchitecture.jpg" alt="cover image">
+					</div>
+					
+					
+					<div>
+						<p class="caption">Image by<a href="https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html">Robert C. Martin</a></p>
+					</div>
+					
+					<div class="page-separator"></div>
+					<h2 id="introduction">Introduction</h2>
+<p>During the last 5 years I have been working full time with Go. Some of you may already know that I&rsquo;m in love with this language because of the simplicity it has but with a lot of potential to build anything. The main question I have faced since the beginning is <code>Which layout should I use for my project?</code> I would say still today I don&rsquo;t know and as always in our industry&hellip; <code>it depends</code>. It depends on if you are building a library, it depends on if you are building a monolithic application (like MVC), it depends on if you are building a small service (aka microservice), etc. There is nothing written of and we don&rsquo;t have a lot (luckily) frameworks that force you to do things in the framework&rsquo;s way (note aside that&rsquo;s one of my favorite parts especially coming from Java where Spring seems to be the standard way of doing projects in Java). For the beginners sometimes that is difficult because you don&rsquo;t know how to start and need to do research and read/watch some tutorials and try to mimic those layouts without knowing if you&rsquo;re doing the correct things. The good point on that is as there is no standard, &ldquo;all&rdquo; you do will be okay (however it&rsquo;s dangerous sometimes).</p>
+<h2 id="first-approach">First approach</h2>
+<p>When I started I tried to check a lot of repos on GitHub using the tag #Go and see how people are organizing their projects. Checking smaller ones or checking the big players in the industry like Docker, Kubernetes, AWS, &hellip; My first approach was to use the still popular double folder:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="o">/</span><span class="nx">cmd</span>
+</span></span><span class="line"><span class="cl"><span class="o">/</span><span class="nx">pkg</span>
+</span></span><span class="line"><span class="cl"><span class="nx">config</span> <span class="nf">files</span> <span class="p">(</span><span class="nx">Makefile</span><span class="p">,</span> <span class="nx">docker</span><span class="p">,</span> <span class="nx">etc</span><span class="p">.)</span>
+</span></span></code></pre></div><p>This was the initial approach that some Go projects were adopting where inside the <code>pkg</code> you define all your code and in the <code>cmd</code> you simply create your <code>main.go</code> which bootstraps your application from the <code>pkg</code> one. This started to be so popular because some Go examples from the Go Team were used. Some months/years later some people started to question if the <code>pkg</code> folder was simply that, a folder, and it was not contributing anything to the project so it should be removed. For that time I was a clear defender of the <code>cmd, pkg</code> layout because it was a &ldquo;standard&rdquo; for the industry and for me it was clear where to look at the code (pkg) and where to look at the initialization of the application  (cmd). This is still true, but advocating the simplicity of Go we tend to remove the packages that are just folders and give them also a meaningful name as they are part of our code (importing them and using in types, functions, etc.).</p>
+<h2 id="ahá-moment">Ahá moment</h2>
+<p>Some years ago I started reading about DDD due to the popularity it has acquired in the last years and I wanted to know what that about. I don&rsquo;t want to be extenze on this post about that topic (if you would like that I write one specific for it please ping me here or through my social networks and I will be happy to do it) but basically what it aims for is to put your focus when designing in the domain instead of in the code. It helps you to better understand the problem by giving you a toolkit to work with the domain experts in your company in order to design the best possible solution for the problem you wanna solve. There are two main groups, the strategic patterns and the tactical patterns. Both are important but here as I want to talk about the project layout I will talk only about the tactical ones. When I read those I started to internalise that all the domain design that I was doing with the strategical patterns, all the questions that I was asking to the domain experts, the ubiquitous language we were defining and all the event storming sessions we were doing, all of that should be reflected in my code. How can I do that? There are a lot of possibilities but one possibility is using Clean Architectures.
+At that moment it was when I read Robert C. Martin&rsquo;s book <code>Clean Architecture: A Craftsman's Guide to Software Structure and Design: A Craftsman's Guide to Software Structure and Design</code>. Understanding what DDD aims for and the ideas conveyed in the book and after some refinement with my team colleagues we ended up creating a project layout in which we tried to gather all those concepts and the most important which we are comfortable working with. This is not to follow a trend or an imposition from any framework, so if we are not happy with it, we iterate it again and we tweak the parts we consider in order to facilitate our lives and specially our future selves when we need to do some fixes or add new features.</p>
+<h2 id="the-layout">The layout</h2>
+<p>Taking in consideration all I mentioned before, let me present to you the project layout. As an example I will use an application that has outgoing and incoming payments. Both with their own aggregates and business rules that need to satisfy and expose endpoints via grpc in this case.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="o">/</span><span class="nx">payments</span><span class="o">-</span><span class="nx">svc</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span><span class="o">-</span> <span class="nx">app</span><span class="o">/</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span><span class="o">-</span> <span class="nx">cmd</span><span class="o">/</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span><span class="o">-</span> <span class="nx">docs</span><span class="o">/</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span><span class="o">-</span> <span class="nx">grpc</span><span class="o">/</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span><span class="o">-</span> <span class="nx">incoming</span><span class="o">/</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span><span class="o">-</span> <span class="nx">internal</span><span class="o">/</span>
+</span></span><span class="line"><span class="cl">	<span class="p">|</span><span class="o">-</span> <span class="nx">logger</span><span class="o">/</span>
+</span></span><span class="line"><span class="cl">	<span class="p">|</span><span class="o">-</span> <span class="nx">postgres</span><span class="o">/</span>
+</span></span><span class="line"><span class="cl">	<span class="p">|</span><span class="o">-</span> <span class="nx">slack</span><span class="o">/</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span><span class="o">-</span> <span class="nx">k8s</span><span class="o">/</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span><span class="o">-</span> <span class="nx">outgoing</span><span class="o">/</span>
+</span></span><span class="line"><span class="cl"><span class="nx">docker</span><span class="o">-</span><span class="nx">compose</span><span class="p">.</span><span class="nx">test</span><span class="p">.</span><span class="nx">yml</span>
+</span></span><span class="line"><span class="cl"><span class="k">go</span><span class="p">.</span><span class="nx">mod</span>
+</span></span><span class="line"><span class="cl"><span class="k">go</span><span class="p">.</span><span class="nx">sum</span>
+</span></span><span class="line"><span class="cl"><span class="nx">Makefile</span>
+</span></span><span class="line"><span class="cl"><span class="nx">README</span><span class="p">.</span><span class="nx">md</span>
+</span></span></code></pre></div><p>I will try to be brief and explain a bit what parts each folder contains and why we adopted that layout.</p>
+<p>As I said this service is responsible for payments so we want to have the domain first exposed so we display <code>incoming</code> and <code>outgoing</code> as the main parts of the application. I will go back after a few lines, don&rsquo;t worry.</p>
+<p>The <code>app</code> is where we have the <code>main.go</code> to bootstrap all the applications (basically where we import the incoming and outgoing packages and some from the internal if needed).</p>
+<p>The <code>cmd</code> is where we define the command line tools we need for the service. In this case we have a cli that interacts with our service.</p>
+<p>The <code>docs</code> is where we put the relevant documentation for this project.</p>
+<p>As I mentioned before the endpoints are exposed via <code>grpc</code> so that folder is responsible for implementing the interfaces provided by the <a href="https://developers.google.com/protocol-buffers">protobuffer</a> compilation.</p>
+<p>The <code>internal</code> is where we have the implementation of the interfaces we use in the project but are not part of the domain; basically the infrastructure things like the database, queues, external services (Slack), the logger&hellip;</p>
+<p>The <code>k8s</code> one is referred to the Kubernetes config files for the deployment.</p>
+<p>As mentioned before the <code>incoming</code> and <code>outgoing</code> are our domain packages so that is where all the magic happens. I will describe a bit of one of them because the other is similar but with the particularities of that domain.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="o">/</span><span class="nx">outgoing</span>
+</span></span><span class="line"><span class="cl"><span class="nx">app_service</span><span class="p">.</span><span class="k">go</span>
+</span></span><span class="line"><span class="cl"><span class="nx">app_service_test</span><span class="p">.</span><span class="k">go</span>
+</span></span><span class="line"><span class="cl"><span class="nx">display_payments</span><span class="p">.</span><span class="k">go</span>
+</span></span><span class="line"><span class="cl"><span class="nx">display_payments_test</span><span class="p">.</span><span class="k">go</span>
+</span></span><span class="line"><span class="cl"><span class="nx">execute_payments</span><span class="p">.</span><span class="k">go</span>
+</span></span><span class="line"><span class="cl"><span class="nx">execute_payments_test</span><span class="p">.</span><span class="k">go</span>
+</span></span><span class="line"><span class="cl"><span class="nx">flow_service</span><span class="p">.</span><span class="k">go</span>
+</span></span><span class="line"><span class="cl"><span class="nx">flow_service_test</span><span class="p">.</span><span class="k">go</span>
+</span></span><span class="line"><span class="cl"><span class="nx">instruction_repository</span><span class="p">.</span><span class="k">go</span>
+</span></span><span class="line"><span class="cl"><span class="nx">instruction_repository_test</span><span class="p">.</span><span class="k">go</span>
+</span></span><span class="line"><span class="cl"><span class="nx">instruction</span><span class="p">.</span><span class="k">go</span>
+</span></span><span class="line"><span class="cl"><span class="nx">instruction_test</span><span class="p">.</span><span class="k">go</span>
+</span></span></code></pre></div><p>I&rsquo;ve picked up the <code>outgoing</code> for the explanation. First of all we have the <code>app_service</code>. This is where we define the type Application Service of our package so what it means is that it will have all the dependencies for the package and one method for each Use Case. Note: the dependencies are interfaces. The <code>app_service_test</code> is basically where we mock all the interfaces required for the app_service so we can reuse them in all the<code> *_test.go</code> files.</p>
+<p>The <code>display_payments</code> and <code>execute_payments</code> are use cases for this domain. The tests are simply testing the different scenarios for each use case.</p>
+<p>The <code>flow_service</code> is a domain service that helps us to execute the payments depending on the flow defined for each payment type. The test is basically testing the domain service.</p>
+<p>The <code>instruction_repository</code> is where we define all the methods against our repository, in this case our database in PostgreSQL. The test is checking against a testing database if all the queries are okay.</p>
+<p>Last but not least, actually the most important is the aggregate <code>instruction</code>. Inside that file is where we put everything important for this package. The aggregate is in charge of enforcing the business rules so that all the validations, checks, calculations, conversions, etc. needs to be here. (It&rsquo;s true that depending on the conversion or manipulation of the data or complex operations, it&rsquo;s better to have factories or other helpers, but I don&rsquo;t want to overcomplicate this example).</p>
+<h2 id="application-flow">Application flow</h2>
+<p>To finalize this long post let me describe how the flow of our app works:</p>
+<ul>
+<li><code>app</code> is the responsible of starting up the service</li>
+<li><code>grpc</code> will be the one receiving the request and answers the results</li>
+<li>once the request is mapped into our internal types by <code>grpc</code> it will call the <code>app_service</code></li>
+<li>inside the <code>app_service</code> the corresponding <code>use case</code> will be called</li>
+<li>depending on the <code>use case</code> some <code>domain service</code> should be called, some <code>repository</code> will be called, or both, or more than 2&hellip; It depends!</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>I hope everything that I have tried to explain in this post has been clear, which was a lot, and please if there is any part that has not been completely clear or there are parts that I have not covered that you would like me to do, leave me a comment right here or through my social networks that you have on my profile and I will be happy to respond.</p>
+
+				</article>
+
+				
+				
+				<div class="page-separator"><hr></div>
+				
+				<section class="post-preview-container">
+					<a href="https://charly3pins.dev/blog/learn-how-to-use-the-embed-package-in-go-by-building-a-web-page-easily/">
+						<div class="post-preview-title-container">
+							<h3 class="post-preview-title">Learn how to use the embed package in Go by building a web page easily</h3>
+						</div>
+						<div class="post-preview-subtext">What is the new embed package added in Go 1.16 for and how can we use it to our advantage?</div>
+						<div>
+							<span class="post-preview-metadata">
+								16/08/2021 · 6 min read
+							</span>
+							
+							<a class="tag" href="https://charly3pins.dev/tags/go/">#go</a>
+							
+						</div>
+					</a>
+				</section>					
+				
+				<section class="post-preview-container">
+					<a href="https://charly3pins.dev/blog/automate-your-github-profile-readme-with-go-and-github-actions/">
+						<div class="post-preview-title-container">
+							<h3 class="post-preview-title">Automate Your GitHub Profile README with Go and GitHub Actions</h3>
+						</div>
+						<div class="post-preview-subtext">Create a dynamic Markdown file for your README with the help of Go and deploy it to your profile&#39;s GitHub using GitHub Actions.</div>
+						<div>
+							<span class="post-preview-metadata">
+								16/03/2021 · 5 min read
+							</span>
+							
+							<a class="tag" href="https://charly3pins.dev/tags/go/">#go</a>
+							
+							<a class="tag" href="https://charly3pins.dev/tags/github/">#github</a>
+							
+							<a class="tag" href="https://charly3pins.dev/tags/ci/cd/">#ci/cd</a>
+							
+						</div>
+					</a>
+				</section>					
+				
+				<section class="post-preview-container">
+					<a href="https://charly3pins.dev/blog/level-up-your-preseentations-with-go/">
+						<div class="post-preview-title-container">
+							<h3 class="post-preview-title">Level up your presentations with Go</h3>
+						</div>
+						<div class="post-preview-subtext">Generate easily your presentations with &#34;present&#34;, the tool powered by Go that generates and renders your slides.</div>
+						<div>
+							<span class="post-preview-metadata">
+								06/10/2020 · 7 min read
+							</span>
+							
+							<a class="tag" href="https://charly3pins.dev/tags/go/">#go</a>
+							
+							<a class="tag" href="https://charly3pins.dev/tags/life/">#life</a>
+							
+						</div>
+					</a>
+				</section>					
+				
+				
+				
+				<div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "https-charly3pins-dev" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+			
+			</section>
+			
+			<div class="page-separator centered"><hr></div>
+			
+			<footer class="footer-container">
+	<ul class="footer-social-icons-container">
+		<li><a class="footer-social-icon" href="https://twitter.com/charly3pins" target="_blank" aria-label="Twitter">
+			<i class="fa fa-twitter fa-fw" title="Twitter"></i></a>
+		</li>
+		<li><a class="footer-social-icon" href="https://github.com/charly3pins" target="_blank" aria-label="GitHub">
+			<i class="fa fa-github-alt fa-fw" title="GitHub"></i></a>
+		</li>
+		<li><a class="footer-social-icon" href="https://stackoverflow.com/users/4948631/charly3pins" target="_blank" aria-label="Stack Overflow">
+			<i class="fa fa-stack-overflow fa-fw" title="Stack Overflow"></i></a>
+		</li>
+		<li><a class="footer-social-icon" href="https://charly3pins.dev/index.xml" target="_blank" aria-label="RSS">
+			<i class="fa fa-rss fa-fw" title="RSS"></i></a>
+		</li>
+		<li><a class="footer-social-icon" href="https://dev.to/charly3pins" target="_blank" aria-label="Dev.to">
+			<i class="fa fa-dev-to" title="Dev.to"></i>DEV</a>
+		</li> 
+		<li><a class="footer-social-icon" href="mailto:hello@charly3pins.dev" target="_blank" aria-label="Email">
+			<i class="fa fa-envelope fa-fw" title="email"></i></a>
+		</li>
+	</ul>
+	<div class="footer-text">Last post on 09/12/2021</div>
+	<div class="footer-text">© 2018 - 2023 Charly3Pins</div>
+</footer>
+<script type="text/javascript" src="https://charly3pins.dev/js/theme-switcher.js"></script>
+
+		
+		</div>
+
+	</body>
+</html>

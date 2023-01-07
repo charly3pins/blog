@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="ca" data-theme="light">
+	
+	<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="Director d&#39;Enginyeria">
+
+  <title>Aprèn a fer servir el paquet embed a Go construint una pàgina web fàcilment | Charly3Pins</title>
+
+
+  <meta property="og:title" content="Aprèn a fer servir el paquet embed a Go construint una pàgina web fàcilment - charly3pins" />
+
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="Per a què serveix el nou paquet embed afegit a Go 1.16 i com fer-lo servir per al nostre benefici?">
+  <meta property="og:url" content="https://charly3pins.dev/ca/blog/apr%C3%A8n-a-fer-servir-el-paquet-embed-a-go-construint-una-p%C3%A0gina-web-f%C3%A0cilment/">
+  <meta property="og:site_name" content="charly3pins.dev">
+  
+  <meta property="og:image" content="https://charly3pins.dev/images/gopher-hiking.svg">
+
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta name="twitter:title" content="Aprèn a fer servir el paquet embed a Go construint una pàgina web …" />
+
+
+  <meta name="twitter:description" content="Per a què serveix el nou paquet embed afegit a Go 1.16 i com fer-lo servir per al nostre benefici?">
+
+
+  <meta name="twitter:image" content="https://charly3pins.dev/images/gopher-hiking.svg">
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-126216319-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  <link rel="stylesheet" href="https://charly3pins.dev/css/main.css" />
+  <link rel="stylesheet" href="https://charly3pins.dev/css/syntax.css" />
+  <link rel="stylesheet" href="https://charly3pins.dev/css/social_share.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+	<body>
+		<div class="navbar-container">
+    <nav class="navbar-navigation">
+        
+        <a href="/ca/">Inici</a>
+        
+        <a href="/ca/blog/">Bloc</a>
+        
+        <a href="/ca/code/">Codi</a>
+        
+        <a href="/ca/about/">Qui</a>
+        
+        
+        <ul class="lang-selector">
+            <li>
+                <a>Català</a> <i class="fa fa-angle-down" aria-hidden="true"></i>
+                <ul>
+                
+                    <a href="https://charly3pins.dev/blog/learn-how-to-use-the-embed-package-in-go-by-building-a-web-page-easily/">Anglès</a>
+                
+                    <a href="https://charly3pins.dev/es/blog/aprende-a-utilizar-el-paquete-embed-a-go-construyendo-una-p%C3%A1gina-web-f%C3%A1cilmente/">Castellà</a>
+                
+                </ul>
+            </li>
+        </ul>
+        
+        <button class="theme-switch-wrapper">
+            <img id="theme-switcher" class="theme-switcher" src="https://sunilsandhu.com/assets/icons/sun-moon.png" alt="toggle dark mode">
+        </button>
+    </nav>
+</div>
+		
+		<div class="layout-container">
+
+			<section class="blog-container">
+				
+				<h4 class="post-title">Aprèn a fer servir el paquet embed a Go construint una pàgina web fàcilment</h4>
+				<h2 class="post-description">Per a què serveix el nou paquet embed afegit a Go 1.16 i com fer-lo servir per al nostre benefici?</h2>
+
+				<div class="post-metadata">
+					<div class="post-tags">
+						
+						<a class="tag" href="https://charly3pins.dev/tags/go/">#go</a>
+						
+					</div>
+					<span class="post-date">
+						16/08/2021 · 6 min lectura
+					</span>
+				</div>
+
+				<ul class="icons">
+    
+    <li>
+        
+        <a href="//twitter.com/share?url=https%3a%2f%2fcharly3pins.dev%2fca%2fblog%2fapr%25C3%25A8n-a-fer-servir-el-paquet-embed-a-go-construint-una-p%25C3%25A0gina-web-f%25C3%25A0cilment%2f&amp;text=Apr%c3%a8n%20a%20fer%20servir%20el%20paquet%20embed%20a%20Go%20construint%20una%20p%c3%a0gina%20web%20f%c3%a0cilment&amp;via=charly3pins&amp;hashtags=go" target="_blank" class="share-btn twitter">
+            <i class="fa fa-twitter"></i>
+        </a>
+    </li>
+
+    
+    <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcharly3pins.dev%2fca%2fblog%2fapr%25C3%25A8n-a-fer-servir-el-paquet-embed-a-go-construint-una-p%25C3%25A0gina-web-f%25C3%25A0cilment%2f" target="_blank" class="share-btn facebook">
+            <i class="fa fa-facebook"></i>
+        </a>
+    </li>
+
+    
+    <li>
+        <a href="//reddit.com/submit?url=https%3a%2f%2fcharly3pins.dev%2fca%2fblog%2fapr%25C3%25A8n-a-fer-servir-el-paquet-embed-a-go-construint-una-p%25C3%25A0gina-web-f%25C3%25A0cilment%2f&amp;title=Apr%c3%a8n%20a%20fer%20servir%20el%20paquet%20embed%20a%20Go%20construint%20una%20p%c3%a0gina%20web%20f%c3%a0cilment" target="_blank" class="share-btn reddit">
+            <i class="fa fa-reddit-alien"></i>
+        </a>
+    </li>
+
+    
+    <li>
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fcharly3pins.dev%2fca%2fblog%2fapr%25C3%25A8n-a-fer-servir-el-paquet-embed-a-go-construint-una-p%25C3%25A0gina-web-f%25C3%25A0cilment%2f&amp;title=Apr%c3%a8n%20a%20fer%20servir%20el%20paquet%20embed%20a%20Go%20construint%20una%20p%c3%a0gina%20web%20f%c3%a0cilment" target="_blank" class="share-btn linkedin">
+            <i class="fa fa-linkedin"></i>
+        </a>
+    </li>
+
+    
+    <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fcharly3pins.dev%2fca%2fblog%2fapr%25C3%25A8n-a-fer-servir-el-paquet-embed-a-go-construint-una-p%25C3%25A0gina-web-f%25C3%25A0cilment%2f&amp;description=Apr%c3%a8n%20a%20fer%20servir%20el%20paquet%20embed%20a%20Go%20construint%20una%20p%c3%a0gina%20web%20f%c3%a0cilment" target="_blank" class="share-btn pinterest">
+            <i class="fa fa-pinterest-p"></i>
+        </a>
+    </li>
+
+    
+    <li>
+        <a href="mailto:?subject=Check out this post by &amp;body=https%3a%2f%2fcharly3pins.dev%2fca%2fblog%2fapr%25C3%25A8n-a-fer-servir-el-paquet-embed-a-go-construint-una-p%25C3%25A0gina-web-f%25C3%25A0cilment%2f" target="_blank" class="share-btn email">
+            <i class="fa fa-envelope"></i>
+        </a>
+    </li>
+</ul>
+
+
+				<article>
+					
+					<div class="centered">
+						<img src="https://charly3pins.dev/images/gopher-hiking.svg" alt="cover image">
+					</div>
+					
+					
+					<div>
+						<p class="caption">Imatge de<a href="https://github.com/egonelbre/gophers/blob/master/vector/adventure/hiking.svg">Egon Elbre</a></p>
+					</div>
+					
+					<div class="page-separator"></div>
+					<p>Treballar amb fitxers estàtics mai és una tasca senzilla i menys en Go ja que no teníem suport natiu per a ells i havíem de tirar de llibreries de tercers. Amb la release de <a href="https://blog.golang.org/go1.16">Go 1.16</a> això va canviar. I va canviar per a bé, ja que inclou un nou paquet anomenat <a href="https://pkg.go.dev/embed">embed</a> que de forma nativa ens ajuda a treballar amb els fitxers estàtics.</p>
+<p>En la documentació oficial del paquet (link anterior) apareixen diversos exemples d&rsquo;ús d&rsquo;aquesta llibreria:</p>
+<ul>
+<li>incrustant un fitxer com <code>string</code></li>
+<li>incrustant un fitxer com <code>[]byte</code></li>
+<li>incrustant un fitxer com el tipus propi de la llibreria <code>embed.FS</code></li>
+</ul>
+<p>Els dos primers casos són molt simples i amb els exemples d&rsquo;aquest article s&rsquo;entenen perfectament. Per donar una mica més d&rsquo;exemples (sense codi) us puc dir que el cas de <code>string</code> podria ser vàlid quan volem carregar algun valor de configuració &ldquo;simple&rdquo; a partir d&rsquo;un fitxer extern. En comptes de tirar d&rsquo;una variable d&rsquo;entorn, podríem tenir un fitxer de config amb aquest valor (no sensibles és clar) i carregar aquest fitxer amb la llibreria per a incrustar aquest valor.</p>
+<p>Si volguéssim fer el mateix però amb més d&rsquo;un valor (més d&rsquo;un <code>string</code>) hauríem de fer servir l&rsquo;altre tipus, <code>[]byte</code>. D&rsquo;aquesta manera podríem tenir per exemple un <code>.yaml</code> (adorem YAML no?) Amb la nostra configuració per a l&rsquo;aplicació i incrustar-lo en la nostra aplicació com array de bytes i carregar tots els valors de cop. Després amb fer un custom type (1 struct mateix) i fer-li unmarshall del  <code>[]byte</code> al nostre type ens serviria sense problemes.</p>
+<p>El tercer tipus de dada per a mi és el més interessant de comentar i per això escric aquest post. Si alguna vegada has muntat una pàgina web, sabràs que es compon de diversos fitxers&hellip; això mateix! estàtics. Per això en Go tenim el paquet <code>html/template</code> el qual necessita carregar en memòria les plantilles de les pàgines que volem muntar.</p>
+<p>Arribats a aquest punt et podries preguntar, per què és tediós treballar amb estàtics? o també en quin moment és tot això útil? Doncs ara mateix ho vaig a explicar. Imagina que el nostre programa necessita llegir un fitxer, en l&rsquo;exemple anterior la plantilla html. Aquesta plantilla tindrà una ubicació, un directori en el qual està emmagatzemada. Aquesta ubicació serà vàlida mentre el nostre codi es compili en el directori actual. En el moment que fem un <code>go build</code> i el binari ho moguem a un altre destí, aquesta lectura ens fallarà perquè no va a trobar la ruta especificada. Per resoldre aquest problema existeix el paquet <code>embed</code>.</p>
+<p>Anem a veure una mica de codi per a aquest cas. Primer de tot mirem la <a href="https://pkg.go.dev/embed#FS">documentació</a> i veiem quins camps té el tipus que ens interessa <code>embed.FS</code> i quins mètodes ens ofereix. Veiem que no hi ha camps però sí tres mètodes per obrir un fitxer, llegir un fitxer i llegir un directori i que aquests tornen un <code>fs.File</code>, un <code>[]byte</code> i un <code>[]fs.DirEntry</code> respectivament a més del clàssic error cada un.</p>
+<p>Ja que volem muntar una web, anem a veure el paquet anteriorment comentat quins mètodes ens ofereix que estiguin relacionats amb els tres tipus que podem obtenir del paquet <code>embed.FS</code>. Veiem que hi ha un mètode <a href="https://pkg.go.dev/html/template#ParseFS">ParseFS()</a> que sembla l&rsquo;adequat ja que rep un <code>fs.FS</code> i un <code>string...</code> amb els directoris d&rsquo;on anem a carregar aquest fitxer.</p>
+<p>Tenint en compte que les plantilles les podem tenir simples o tirant de layouts, veurem el cas més complet que és quan fem servir un layout per definir la pantalla que volem pintar i executar dit layout a les nostres plantilles.</p>
+<h2 id="exemple-construint-una-pàgina-web">Exemple construint una pàgina web</h2>
+<p>Per fer aquest exemple crearem la següent estructuri de carpetes i fitxers:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="p">|-</span> <span class="nx">templates</span>/<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="p">|-</span> <span class="nx">templates</span>/<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>	<span class="p">|-</span> <span class="nx">layouts</span>/<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="p">|-</span> <span class="nx">main</span>.<span class="nx">go</span><span class="err">
+</span></span></span></code></pre></div><p>La nostra main layout podria ser una cosa semblant a el següent bloc com <code>layout.html</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="p">{{</span><span class="nx">define</span> <span class="s">&#34;main&#34;</span><span class="p">}}</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nx">html</span> <span class="nx">lang</span><span class="p">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;</span><span class="nx">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">&lt;</span><span class="nx">title</span><span class="p">&gt;</span><span class="nx">Testing</span> <span class="nx">embed</span><span class="p">&lt;</span><span class="o">/</span><span class="nx">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nx">link</span> <span class="nx">href</span><span class="p">=</span><span class="s">&#34;//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css&#34;</span> <span class="nx">rel</span><span class="p">=</span><span class="s">&#34;stylesheet&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;</span><span class="o">/</span><span class="nx">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;</span><span class="nx">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">&lt;</span><span class="nx">div</span> <span class="nx">class</span><span class="p">=</span><span class="s">&#34;container-fluid&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">			<span class="p">{{</span><span class="nx">template</span> <span class="s">&#34;content&#34;</span> <span class="p">.}}</span>
+</span></span><span class="line"><span class="cl">		<span class="p">&lt;</span><span class="o">/</span><span class="nx">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;</span><span class="o">/</span><span class="nx">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="o">/</span><span class="nx">html</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">{{</span><span class="nx">end</span><span class="p">}}</span>
+</span></span></code></pre></div><p>Òbviament això es pot complicar tant com vulguis i necessitis. Per l&rsquo;exemple que vull mostrar no cal complicar-ho més.</p>
+<p>La template podria ser la següent com <code>userProfile.html</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="p">{{</span><span class="nx">template</span> <span class="s">&#34;main&#34;</span> <span class="p">.}}</span>
+</span></span><span class="line"><span class="cl"><span class="p">{{</span><span class="nx">define</span> <span class="s">&#34;content&#34;</span><span class="p">}}</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nx">div</span> <span class="nx">class</span><span class="p">=</span><span class="s">&#34;container&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nx">div</span> <span class="nx">class</span><span class="p">=</span><span class="s">&#34;dashboard jumbotron-fluid&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nx">h1</span><span class="p">&gt;</span><span class="nx">User</span><span class="p">&lt;</span><span class="o">/</span><span class="nx">h1</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nx">div</span> <span class="nx">class</span><span class="p">=</span><span class="s">&#34;row&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nx">div</span> <span class="nx">class</span><span class="p">=</span><span class="s">&#34;col-sm-12&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nx">div</span> <span class="nx">class</span><span class="p">=</span><span class="s">&#34;card&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;</span><span class="nx">div</span> <span class="nx">class</span><span class="p">=</span><span class="s">&#34;card-body&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nx">h5</span> <span class="nx">class</span><span class="p">=</span><span class="s">&#34;card-title&#34;</span><span class="p">&gt;{{.</span><span class="nx">Name</span> <span class="p">}}&lt;</span><span class="o">/</span><span class="nx">h5</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nx">p</span> <span class="nx">class</span><span class="p">=</span><span class="s">&#34;card-text&#34;</span><span class="p">&gt;</span><span class="nx">Email</span><span class="p">:</span> <span class="p">{{.</span><span class="nx">Email</span> <span class="p">}}&lt;</span><span class="o">/</span><span class="nx">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nx">p</span> <span class="nx">class</span><span class="p">=</span><span class="s">&#34;card-text&#34;</span><span class="p">&gt;</span><span class="nx">Address</span><span class="p">:</span> <span class="p">{{.</span><span class="nx">Address</span> <span class="p">}}&lt;</span><span class="o">/</span><span class="nx">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nx">p</span> <span class="nx">class</span><span class="p">=</span><span class="s">&#34;card-text&#34;</span><span class="p">&gt;</span><span class="nx">Phone</span> <span class="nx">number</span><span class="p">:</span> <span class="p">{{.</span><span class="nx">PhoneNumber</span> <span class="p">}}&lt;</span><span class="o">/</span><span class="nx">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;</span><span class="o">/</span><span class="nx">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">/</span><span class="nx">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="o">/</span><span class="nx">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="o">/</span><span class="nx">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="o">/</span><span class="nx">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="o">/</span><span class="nx">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">{{</span><span class="nx">end</span><span class="p">}}</span>
+</span></span></code></pre></div><p>Com veieu és una cosa molt simple també per a informació d un usuari molt bàsic. Podria ser la pàgina del perfil d&rsquo;una persona.</p>
+<p>Un cop tenim tant el layout com la template, hem de picar el nostre codi a Go per carregar aquestes informació. Per a això vam crear la funció a continuació en el nostre <code>main.go</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;embed&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;fmt&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;html/template&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;io&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;io/fs&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">const</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">layoutsDir</span>   <span class="p">=</span> <span class="s">&#34;templates/layouts&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">templatesDir</span> <span class="p">=</span> <span class="s">&#34;templates&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">extension</span>    <span class="p">=</span> <span class="s">&#34;/*.html&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">//go:embed templates/* templates/layouts/*
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">files</span>     <span class="nx">embed</span><span class="p">.</span><span class="nx">FS</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">templates</span> <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="o">*</span><span class="nx">template</span><span class="p">.</span><span class="nx">Template</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">LoadTemplates</span><span class="p">()</span> <span class="kt">error</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">templates</span> <span class="o">==</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">templates</span> <span class="p">=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="o">*</span><span class="nx">template</span><span class="p">.</span><span class="nx">Template</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">tmplFiles</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">fs</span><span class="p">.</span><span class="nf">ReadDir</span><span class="p">(</span><span class="nx">files</span><span class="p">,</span> <span class="nx">templatesDir</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nx">err</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">tmpl</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">tmplFiles</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="nx">tmpl</span><span class="p">.</span><span class="nf">IsDir</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="k">continue</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="nx">pt</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">template</span><span class="p">.</span><span class="nf">ParseFS</span><span class="p">(</span><span class="nx">files</span><span class="p">,</span> <span class="nx">templatesDir</span><span class="o">+</span><span class="s">&#34;/&#34;</span><span class="o">+</span><span class="nx">tmpl</span><span class="p">.</span><span class="nf">Name</span><span class="p">(),</span> <span class="nx">layoutsDir</span><span class="o">+</span><span class="nx">extension</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="k">return</span> <span class="nx">err</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="nx">templates</span><span class="p">[</span><span class="nx">tmpl</span><span class="p">.</span><span class="nf">Name</span><span class="p">()]</span> <span class="p">=</span> <span class="nx">pt</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="kc">nil</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>L&rsquo;interessant aquí és veure com definim la part de les variables:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="c1">//go:embed templates/* templates/layouts/*
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">files</span>     <span class="nx">embed</span><span class="p">.</span><span class="nx">FS</span>
+</span></span></code></pre></div><p>Amb això li indiquem a el compilador que busqui dins de templates i de templates / layouts els arxius i els carregui en la variable <code>files</code>. Després en la nostra funció de carregar plantilles simplement inicialitzem un mapa on guardem el nom de la plantilla i el valor d&rsquo;aquesta. Tal com vaig comentar abans, fem servir el paquet <code>fs</code> per llegir els fitxers carregats amb el paquet <code>embed</code> i després ja els podem executar amb la funció que vam veure de <code>ParseFS</code>.</p>
+<p>Ara que ja tenim les nostres plantilles carregades és hora d&rsquo;exposar-les. Per a això aixecarem 1 server HTTP senzillet perquè es vegi com accedir a les nostres plantilles. Primer de tot vam crear el nostre handler. El següent bloc pot estar en el mateix <code>main.go</code> o en un fitxer diferent. Depenent de el cas les crides a la funció per a renderitzar les templates i a algunes variables hauran de modificar.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">const</span> <span class="nx">userProfile</span> <span class="p">=</span> <span class="s">&#34;userProfile.html&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">UserProfile</span><span class="p">(</span><span class="nx">w</span> <span class="nx">http</span><span class="p">.</span><span class="nx">ResponseWriter</span><span class="p">,</span> <span class="nx">r</span> <span class="o">*</span><span class="nx">http</span><span class="p">.</span><span class="nx">Request</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">t</span><span class="p">,</span> <span class="nx">ok</span> <span class="o">:=</span> <span class="nx">templates</span><span class="p">[</span><span class="nx">userProfile</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">!</span><span class="nx">ok</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">log</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;template %s not found&#34;</span><span class="p">,</span> <span class="nx">userProfile</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="nx">data</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">interface</span><span class="p">{})</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">data</span><span class="p">[</span><span class="s">&#34;Name&#34;</span><span class="p">]</span> <span class="p">=</span> <span class="s">&#34;John Doe&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">data</span><span class="p">[</span><span class="s">&#34;Email&#34;</span><span class="p">]</span> <span class="p">=</span> <span class="s">&#34;johndoe@email.com&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">data</span><span class="p">[</span><span class="s">&#34;Address&#34;</span><span class="p">]</span> <span class="p">=</span> <span class="s">&#34;Fake Street, 123&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">data</span><span class="p">[</span><span class="s">&#34;PhoneNumber&#34;</span><span class="p">]</span> <span class="p">=</span> <span class="s">&#34;654123987&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">t</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="nx">w</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">log</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Finalment afegim la nostra funció <code>main()</code> en el fitxer <code>main.go</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">err</span> <span class="o">:=</span> <span class="nf">LoadTemplates</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">r</span> <span class="o">:=</span> <span class="nx">http</span><span class="p">.</span><span class="nf">NewServeMux</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">r</span><span class="p">.</span><span class="nf">HandleFunc</span><span class="p">(</span><span class="s">&#34;/user-profile&#34;</span><span class="p">,</span> <span class="nx">UserProfile</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">http</span><span class="p">.</span><span class="nf">ListenAndServe</span><span class="p">(</span><span class="s">&#34;:8080&#34;</span><span class="p">,</span> <span class="nx">r</span><span class="p">);</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">log</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="conclusió">Conclusió</h2>
+<p>Amb tot això espero que treballar amb els fitxers estàtics et resulti molt més senzill i pràctic que abans. Pot veure el codi complert al <a href="https://github.com/charly3pins/go-embed-example">meu repositori</a>.
+Si hi ha alguna part que no ha quedat de el tot clara o hi ha parts que no he cobert que t&rsquo;agradaria que ho fes, deixa un comentari aquí mateix o pels meus xarxes socials que tens al meu perfil i estaré encantat de respondre.</p>
+
+				</article>
+
+				
+				
+				<div class="page-separator"><hr></div>
+				
+				<section class="post-preview-container">
+					<a href="https://charly3pins.dev/ca/blog/automatitzi-el-readme-pel-seu-perfil-de-github-amb-go-i-github-actions/">
+						<div class="post-preview-title-container">
+							<h3 class="post-preview-title">Automatitzi el README pel seu perfil de GitHub amb Go i GitHub Actions</h3>
+						</div>
+						<div class="post-preview-subtext">Crear amb l&#39;ajuda de Go un fitxer Markdown dinàmic pel README i desplegar-lo al GitHub del seu perfil fent servir GitHub Actions.</div>
+						<div>
+							<span class="post-preview-metadata">
+								16/03/2021 · 5 min lectura
+							</span>
+							
+							<a class="tag" href="https://charly3pins.dev/tags/go/">#go</a>
+							
+							<a class="tag" href="https://charly3pins.dev/tags/github/">#github</a>
+							
+							<a class="tag" href="https://charly3pins.dev/tags/ci/cd/">#ci/cd</a>
+							
+						</div>
+					</a>
+				</section>					
+				
+				<section class="post-preview-container">
+					<a href="https://charly3pins.dev/ca/blog/pujeu-de-nivell-les-vostres-presentacions-amb-go/">
+						<div class="post-preview-title-container">
+							<h3 class="post-preview-title">Pujeu de nivell les vostres presentacions amb Go</h3>
+						</div>
+						<div class="post-preview-subtext">Genera fàcilment les teves presentacions amb &#34;present&#34;, l&#39;eina impulsada per Go que genera i renderitza les teves diapositives.</div>
+						<div>
+							<span class="post-preview-metadata">
+								06/10/2020 · 7 min lectura
+							</span>
+							
+							<a class="tag" href="https://charly3pins.dev/tags/go/">#go</a>
+							
+							<a class="tag" href="https://charly3pins.dev/tags/life/">#life</a>
+							
+						</div>
+					</a>
+				</section>					
+				
+				<section class="post-preview-container">
+					<a href="https://charly3pins.dev/ca/code/tournaments-generator/">
+						<div class="post-preview-title-container">
+							<h3 class="post-preview-title">Tournaments generator</h3>
+						</div>
+						<div class="post-preview-subtext">Prova del concepte de creació d&#39;una aplicació per gestionar tornejos FIFA 20 entre diferents persones que utilitzen Flutter per crear una aplicació mòbil i Go per crear una API que actua com a servidor. També es va utilitzar Python per construir rascadors senzills.</div>
+						<div>
+							<span class="post-preview-metadata">
+								01/05/2020 · 8 min lectura
+							</span>
+							
+							<a class="tag" href="https://charly3pins.dev/tags/go/">#go</a>
+							
+							<a class="tag" href="https://charly3pins.dev/tags/flutter/">#flutter</a>
+							
+							<a class="tag" href="https://charly3pins.dev/tags/python/">#python</a>
+							
+						</div>
+					</a>
+				</section>					
+				
+				
+				
+				<div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "https-charly3pins-dev" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+			
+			</section>
+			
+			<div class="page-separator centered"><hr></div>
+			
+			<footer class="footer-container">
+	<ul class="footer-social-icons-container">
+		<li><a class="footer-social-icon" href="https://twitter.com/charly3pins" target="_blank" aria-label="Twitter">
+			<i class="fa fa-twitter fa-fw" title="Twitter"></i></a>
+		</li>
+		<li><a class="footer-social-icon" href="https://github.com/charly3pins" target="_blank" aria-label="GitHub">
+			<i class="fa fa-github-alt fa-fw" title="GitHub"></i></a>
+		</li>
+		<li><a class="footer-social-icon" href="https://stackoverflow.com/users/4948631/charly3pins" target="_blank" aria-label="Stack Overflow">
+			<i class="fa fa-stack-overflow fa-fw" title="Stack Overflow"></i></a>
+		</li>
+		<li><a class="footer-social-icon" href="https://charly3pins.dev/index.xml" target="_blank" aria-label="RSS">
+			<i class="fa fa-rss fa-fw" title="RSS"></i></a>
+		</li>
+		<li><a class="footer-social-icon" href="https://dev.to/charly3pins" target="_blank" aria-label="Dev.to">
+			<i class="fa fa-dev-to" title="Dev.to"></i>DEV</a>
+		</li> 
+		<li><a class="footer-social-icon" href="mailto:hello@charly3pins.dev" target="_blank" aria-label="Email">
+			<i class="fa fa-envelope fa-fw" title="email"></i></a>
+		</li>
+	</ul>
+	<div class="footer-text">Darrer post el 16/08/2021</div>
+	<div class="footer-text">© 2018 - 2023 Charly3Pins</div>
+</footer>
+<script type="text/javascript" src="https://charly3pins.dev/js/theme-switcher.js"></script>
+
+		
+		</div>
+
+	</body>
+</html>

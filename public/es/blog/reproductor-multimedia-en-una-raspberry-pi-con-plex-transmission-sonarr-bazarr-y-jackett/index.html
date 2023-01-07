@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+	
+	<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="Director de Ingenieria">
+
+  <title>Reproductor multimedia en una Raspberry Pi con Plex, Transmission, Sonarr, Bazarr y Jackett | Charly3Pins</title>
+
+
+  <meta property="og:title" content="Reproductor multimedia en una Raspberry Pi con Plex, Transmission, Sonarr, Bazarr y Jackett - charly3pins" />
+
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="Construya su propio reproductor multimedia usando un cliente BitTorrent (Transmisión), un PVR para usuarios de Usenet y BitTorrent (Sonarr), un Soporte API para sus rastreadores de torrents (Jackett), un administrador de subtítulos en Sonarr &amp; Radarr (Bazarr) y un reproductor multimedia cliente-servidor (Plex).">
+  <meta property="og:url" content="https://charly3pins.dev/es/blog/reproductor-multimedia-en-una-raspberry-pi-con-plex-transmission-sonarr-bazarr-y-jackett/">
+  <meta property="og:site_name" content="charly3pins.dev">
+  
+  <meta property="og:image" content="https://charly3pins.dev/images/raspberry-media-player/cover.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta name="twitter:title" content="Reproductor multimedia en una Raspberry Pi con Plex, Transmission, …" />
+
+
+  <meta name="twitter:description" content="Construya su propio reproductor multimedia usando un cliente BitTorrent (Transmisión), un PVR para usuarios de Usenet y BitTorrent (Sonarr), un Soporte API para sus rastreadores de torrents (Jackett), un administrador de subtítulos en Sonarr &amp; Radarr (Bazarr) y un reproductor multimedia cliente-servidor (Plex).">
+
+
+  <meta name="twitter:image" content="https://charly3pins.dev/images/raspberry-media-player/cover.png">
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-126216319-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  <link rel="stylesheet" href="https://charly3pins.dev/css/main.css" />
+  <link rel="stylesheet" href="https://charly3pins.dev/css/syntax.css" />
+  <link rel="stylesheet" href="https://charly3pins.dev/css/social_share.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+	<body>
+		<div class="navbar-container">
+    <nav class="navbar-navigation">
+        
+        <a href="/es/">Inicio</a>
+        
+        <a href="/es/blog/">Blog</a>
+        
+        <a href="/es/code/">Código</a>
+        
+        <a href="/es/about/">Quién</a>
+        
+        
+        <ul class="lang-selector">
+            <li>
+                <a>Castellano</a> <i class="fa fa-angle-down" aria-hidden="true"></i>
+                <ul>
+                
+                    <a href="https://charly3pins.dev/blog/raspberry-pi-media-player-with-plex-transmission-sonarr-bazarr-and-jackett/">Inglés</a>
+                
+                    <a href="https://charly3pins.dev/ca/blog/reproductor-multim%C3%A8dia-a-un-raspberry-pi-amb-plex-transmission-sonarr-bazarr-i-jackett/">Catalán</a>
+                
+                </ul>
+            </li>
+        </ul>
+        
+        <button class="theme-switch-wrapper">
+            <img id="theme-switcher" class="theme-switcher" src="https://sunilsandhu.com/assets/icons/sun-moon.png" alt="toggle dark mode">
+        </button>
+    </nav>
+</div>
+		
+		<div class="layout-container">
+
+			<section class="blog-container">
+				
+				<h4 class="post-title">Reproductor multimedia en una Raspberry Pi con Plex, Transmission, Sonarr, Bazarr y Jackett</h4>
+				<h2 class="post-description">Construya su propio reproductor multimedia usando un cliente BitTorrent (Transmisión), un PVR para usuarios de Usenet y BitTorrent (Sonarr), un Soporte API para sus rastreadores de torrents (Jackett), un administrador de subtítulos en Sonarr &amp; Radarr (Bazarr) y un reproductor multimedia cliente-servidor (Plex).</h2>
+
+				<div class="post-metadata">
+					<div class="post-tags">
+						
+						<a class="tag" href="https://charly3pins.dev/tags/raspberrypi/">#raspberrypi</a>
+						
+						<a class="tag" href="https://charly3pins.dev/tags/linux/">#linux</a>
+						
+						<a class="tag" href="https://charly3pins.dev/tags/life/">#life</a>
+						
+					</div>
+					<span class="post-date">
+						05/11/2020 · 11 min lectura
+					</span>
+				</div>
+
+				<ul class="icons">
+    
+    <li>
+        
+        <a href="//twitter.com/share?url=https%3a%2f%2fcharly3pins.dev%2fes%2fblog%2freproductor-multimedia-en-una-raspberry-pi-con-plex-transmission-sonarr-bazarr-y-jackett%2f&amp;text=Reproductor%20multimedia%20en%20una%20Raspberry%20Pi%20con%20Plex%2c%20Transmission%2c%20Sonarr%2c%20Bazarr%20y%20Jackett&amp;via=charly3pins&amp;hashtags=raspberrypi%2clinux%2clife" target="_blank" class="share-btn twitter">
+            <i class="fa fa-twitter"></i>
+        </a>
+    </li>
+
+    
+    <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcharly3pins.dev%2fes%2fblog%2freproductor-multimedia-en-una-raspberry-pi-con-plex-transmission-sonarr-bazarr-y-jackett%2f" target="_blank" class="share-btn facebook">
+            <i class="fa fa-facebook"></i>
+        </a>
+    </li>
+
+    
+    <li>
+        <a href="//reddit.com/submit?url=https%3a%2f%2fcharly3pins.dev%2fes%2fblog%2freproductor-multimedia-en-una-raspberry-pi-con-plex-transmission-sonarr-bazarr-y-jackett%2f&amp;title=Reproductor%20multimedia%20en%20una%20Raspberry%20Pi%20con%20Plex%2c%20Transmission%2c%20Sonarr%2c%20Bazarr%20y%20Jackett" target="_blank" class="share-btn reddit">
+            <i class="fa fa-reddit-alien"></i>
+        </a>
+    </li>
+
+    
+    <li>
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fcharly3pins.dev%2fes%2fblog%2freproductor-multimedia-en-una-raspberry-pi-con-plex-transmission-sonarr-bazarr-y-jackett%2f&amp;title=Reproductor%20multimedia%20en%20una%20Raspberry%20Pi%20con%20Plex%2c%20Transmission%2c%20Sonarr%2c%20Bazarr%20y%20Jackett" target="_blank" class="share-btn linkedin">
+            <i class="fa fa-linkedin"></i>
+        </a>
+    </li>
+
+    
+    <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fcharly3pins.dev%2fes%2fblog%2freproductor-multimedia-en-una-raspberry-pi-con-plex-transmission-sonarr-bazarr-y-jackett%2f&amp;description=Reproductor%20multimedia%20en%20una%20Raspberry%20Pi%20con%20Plex%2c%20Transmission%2c%20Sonarr%2c%20Bazarr%20y%20Jackett" target="_blank" class="share-btn pinterest">
+            <i class="fa fa-pinterest-p"></i>
+        </a>
+    </li>
+
+    
+    <li>
+        <a href="mailto:?subject=Check out this post by charly3pins&amp;body=https%3a%2f%2fcharly3pins.dev%2fes%2fblog%2freproductor-multimedia-en-una-raspberry-pi-con-plex-transmission-sonarr-bazarr-y-jackett%2f" target="_blank" class="share-btn email">
+            <i class="fa fa-envelope"></i>
+        </a>
+    </li>
+</ul>
+
+
+				<article>
+					
+					<div class="centered">
+						<img src="https://charly3pins.dev/images/raspberry-media-player/cover.png" alt="cover image">
+					</div>
+					
+					
+					<div class="page-separator"></div>
+					<p>Así que tienes una Raspberry Pi abandonada y siempre quisiste usarla para algo útil. También te gusta ver series pero hay demasiados proveedores y no sabes cuál se suscribe. No se preocupe con este tutorial, tendrá ambos problemas resueltos a la vez; ¡Usarás la Raspberry Pi para ver tu serie favorita sin límites!</p>
+<h2 id="instalar-el-sistema-operativo-raspberry">Instalar el sistema operativo Raspberry</h2>
+<p>Primero que nada necesitamos instalar un Sistema Operativo en nuestra Raspberry. Entonces para eso tenemos diferentes opciones explicadas en la <a href="https://www.raspberrypi.org/downloads/raspberry-pi-os/">documentación oficial</a>. Personalmente me decidí por el <code>Raspberry Pi OS (32-bit) Lite</code> ya que no quiero ningún escritorio ni ningún software recomendado, así que cuanto más ligero, mejor.</p>
+<p>Desde la <a href="https://www.raspberrypi.org/documentation/installation/installing-images/">fuente</a> seguimos las instrucciones para la imagen de Linux.</p>
+<p>Como saben, necesitamos una microSD para ejecutar el sistema operativo en una Raspberry Pi, por lo que tenemos que conectarnos a nuestra computadora portátil y saber el nombre. Para eso podemos abrir una terminal y escribir:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="nx">lsblk</span> <span class="p">-</span><span class="nx">p</span><span class="err">
+</span></span></span></code></pre></div><p>En mi caso es <code>/dev/sda</code>.</p>
+<p>Una vez que sepamos el nombre de la SD, necesitamos escribir la imagen en la tarjeta con el siguiente comando asegurándonos de reemplazar el archivo de entrada <code>if=</code> argumento con la ruta a su archivo .img, y el <code>/dev/sda</code>en el archivo de salida <code>of=</code> argumento con el nombre correcto del dispositivo.</p>
+<p>⚠️ Esto es muy importante, ya que perderá todos los datos del disco duro si proporciona el nombre de dispositivo incorrecto. Asegúrese de que el nombre del dispositivo sea el nombre de toda la tarjeta SD como se describe anteriormente, no solo una partición. Por ejemplo: sdd, no sdds1 o sddp1; mmcblk0, no mmcblk0p1.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="nx">sudo</span> <span class="nx">dd</span> <span class="nx">bs</span><span class="p">=</span><span class="m">4</span>M <span class="k">if</span><span class="p">=</span><span class="m">2020-08-20</span><span class="p">-</span><span class="nx">raspios</span><span class="p">-</span><span class="nx">buster</span><span class="p">-</span><span class="nx">armhf</span><span class="p">-</span><span class="nx">lite</span>.<span class="nx">img</span> <span class="nx">of</span><span class="p">=</span><span class="sr">/dev/</span><span class="nx">sda</span> <span class="nx">conv</span><span class="p">=</span><span class="nx">fsyn</span><span class="err">
+</span></span></span></code></pre></div><p>Podemos agregar las banderas <code>status=progress conv=fsync</code> para ver el progreso:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="nx">dd</span> <span class="nx">bs</span><span class="p">=</span><span class="m">4</span>M <span class="k">if</span><span class="p">=</span><span class="m">2020-08-20</span><span class="p">-</span><span class="nx">raspios</span><span class="p">-</span><span class="nx">buster</span><span class="p">-</span><span class="nx">armhf</span>.<span class="nx">img</span> <span class="nx">of</span><span class="p">=</span><span class="sr">/dev/</span><span class="nx">sda</span> <span class="nx">status</span><span class="p">=</span><span class="nx">progress</span> <span class="nx">conv</span><span class="p">=</span><span class="nx">fsync</span><span class="err">
+</span></span></span></code></pre></div><p>Si está comprimido, podemos combinar los comandos descomprimir y dd con:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="nx">sudo</span> <span class="nx">unzip</span> <span class="p">-</span><span class="nx">p</span> <span class="m">2020-08-20</span><span class="p">-</span><span class="nx">raspios</span><span class="p">-</span><span class="nx">buster</span><span class="p">-</span><span class="nx">armhf</span>.<span class="nx">zip</span> <span class="p">|</span> <span class="nx">sudo</span> <span class="nx">dd</span> <span class="nx">of</span><span class="p">=</span><span class="sr">/dev/</span><span class="nx">sda</span> <span class="nx">bs</span><span class="p">=</span><span class="m">4</span>M <span class="nx">conv</span><span class="p">=</span><span class="nx">fsync</span><span class="err">
+</span></span></span></code></pre></div><p>Después de eso, tenemos nuestro sistema operativo instalado en la microSD, ¡así que tenemos nuestra Raspberry Pi lista! 🙌</p>
+<h3 id="iniciar-sesión">Iniciar sesión</h3>
+<p>Ahora es el momento de volver a insertar la microSD en la Raspberry, conectarla a la pantalla y enchufarla.</p>
+<p>En nuestra televisión aparece algo así:</p>
+<p><img src="/images/raspberry-media-player/installation.jpg" alt="installation"></p>
+<p>Como puede observar en la parte inferior, ya inicié sesión. El usuario es <code>pi</code> y la contraseña predeterminada es <code>raspberry</code>. Es muy recomendable cambiar la contraseña la primera vez que inicie sesión.</p>
+<h2 id="habilitar-ssh">Habilitar ssh</h2>
+<p>El siguiente paso es habilitar la conexión ssh ya que queremos administrar la Raspberry desde nuestra computadora portátil, no desde la TV, así que primero es leer la <a href="https://www.raspberrypi.org/documentation/remote-access/ssh/">documentación</a>.</p>
+<p>En segundo lugar, use el <code>systemctl</code> para iniciar y habilitar el servicio:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="nx">sudo</span> <span class="nx">systemctl</span> <span class="nx">start</span> <span class="nx">ssh</span><span class="err">
+</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="nx">sudo</span> <span class="nx">systemctl</span> <span class="nx">enable</span> <span class="nx">ssh</span><span class="err">
+</span></span></span></code></pre></div><p>Podemos comprobar si funciona con:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="nx">sudo</span> <span class="nx">systemctl</span> <span class="nx">status</span> <span class="nx">ssh</span><span class="err">
+</span></span></span></code></pre></div><p>Y aparecerá algo como:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl">● <span class="nx">ssh</span>.<span class="nx">service</span> <span class="p">-</span> <span class="nx">OpenBSD</span> <span class="nx">Secure</span> <span class="nx">Shell</span> <span class="nx">server</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>   <span class="nx">Loaded</span>: <span class="nx">loaded</span> <span class="p">(</span><span class="sr">/lib/</span><span class="nx">systemd</span><span class="sr">/system/</span><span class="nx">ssh</span>.<span class="nx">service</span>; <span class="nx">enabled</span>; <span class="nx">vendor</span> <span class="nx">preset</span>: <span class="nx">enabled</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>   <span class="nx">Active</span>: <span class="nx">active</span> <span class="p">(</span><span class="nx">running</span><span class="p">)</span> <span class="nx">since</span> <span class="nx">XXX</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>     <span class="nx">Docs</span>: <span class="nx">man</span>:<span class="nx">sshd</span><span class="p">(</span><span class="m">8</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>           <span class="nx">man</span>:<span class="nx">sshd_config</span><span class="p">(</span><span class="m">5</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span> <span class="nx">Main</span> <span class="nx">PID</span>: <span class="m">440</span> <span class="p">(</span><span class="nx">sshd</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    <span class="nx">Tasks</span>: <span class="m">1</span> <span class="p">(</span><span class="nx">limit</span>: <span class="m">2063</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>   <span class="nx">CGroup</span>: <span class="sr">/system.slice/</span><span class="nx">ssh</span>.<span class="nx">service</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>           └─<span class="m">440</span> <span class="sr">/usr/</span><span class="nx">sbin</span>/<span class="nx">sshd</span> <span class="p">-</span><span class="nx">D</span><span class="err">
+</span></span></span></code></pre></div><p>Después de eso, necesitamos descubrir la <code>IP</code> de nuestra Raspberry. Para eso podemos usar:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="nx">ifconfig</span><span class="err">
+</span></span></span></code></pre></div><p>Y aparecerá algo así:
+<img src="/images/raspberry-media-player/ifconfig.jpg" alt="ifconfig"></p>
+<p>En mi caso, puede ver que es <code>192.168.1.131</code>, así que lo usaré como referencia; el tuyo probablemente será diferente porque depende de tu red.</p>
+<p>Ahora podemos ir a nuestra computadora portátil y conectarnos a través de ssh:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="nx">ssh</span> <span class="nx">pi</span>@<span class="m">192</span>.<span class="m">168</span>.<span class="m">1</span>.<span class="m">131</span><span class="err">
+</span></span></span></code></pre></div><p>Nos pedirá la contraseña pero ya sabemos cuál es porque iniciamos sesión en la Raspberry directamente (recuerda que la cambiaste 😜).</p>
+<h2 id="configura-una-unidad-usb-como-almacenamiento-multimedia">Configura una unidad USB como almacenamiento multimedia</h2>
+<p>Primero queremos actualizar y tener las últimas dependencias, así que escriba:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="nx">sudo</span> <span class="nx">apt</span><span class="p">-</span><span class="nx">get</span> <span class="nx">update</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">sudo</span> <span class="nx">apt</span><span class="p">-</span><span class="nx">get</span> <span class="nx">upgrade</span><span class="err">
+</span></span></span></code></pre></div><p>Decidí usar una unidad USB formateada como ExFAT ya que solo trabajo con Linux. Conecte la unidad USB a la Raspberry Pi y reiníciela.</p>
+<p>Desde la terminal ejecute:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="nx">sudo</span> <span class="nx">fdisk</span> <span class="p">-</span><span class="nx">l</span><span class="err">
+</span></span></span></code></pre></div><p>El cual enumerará todas las particiones reconocidas por el sistema. Identifique el asociado con la unidad externa. En mi caso fue:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="nx">Disk</span> <span class="sr">/dev/</span><span class="nx">sda</span>: <span class="m">1</span>.<span class="m">8</span> <span class="nx">TiB</span><span class="p">,</span> <span class="m">2000398934016</span> <span class="nx">bytes</span><span class="p">,</span> <span class="m">3907029168</span> <span class="nx">sectors</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">Disk</span> <span class="nx">model</span>: <span class="nx">External</span> <span class="nx">USB</span> <span class="m">3</span>.<span class="m">0</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">Units</span>: <span class="nx">sectors</span> <span class="nx">of</span> <span class="m">1</span> * <span class="m">512</span> <span class="p">=</span> <span class="m">512</span> <span class="nx">bytes</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">Sector</span> <span class="nx">size</span> <span class="p">(</span><span class="nx">logical</span><span class="sr">/physical): 512 bytes /</span> <span class="m">512</span> <span class="nx">bytes</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">I</span><span class="sr">/O size (minimum/</span><span class="nx">optimal</span><span class="p">)</span>: <span class="m">512</span> <span class="nx">bytes</span> / <span class="m">512</span> <span class="nx">bytes</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">Disklabel</span> <span class="nx">type</span>: <span class="nx">dos</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">Disk</span> <span class="nx">identifier</span>: <span class="m">0</span>x<span class="m">0072438</span>b<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">Device</span>     <span class="nx">Boot</span> <span class="nx">Start</span>        <span class="nx">End</span>    <span class="nx">Sectors</span>  <span class="nx">Size</span> <span class="nx">Id</span> <span class="nx">Type</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="sr">/dev/</span><span class="nx">sda1</span>        <span class="m">2048</span> <span class="m">3907028991</span> <span class="m">3907026944</span>  <span class="m">1</span>.<span class="m">8</span>T  <span class="m">7</span> <span class="nx">HPFS</span><span class="sr">/NTFS/</span><span class="nx">exFAT</span><span class="err">
+</span></span></span></code></pre></div><p>Ahora instale los controladores exFAT; de lo contrario, no se reconocerá el sistema de archivos:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="nx">sudo</span> <span class="nx">apt</span><span class="p">-</span><span class="nx">get</span> <span class="nx">install</span> <span class="nx">exfat</span><span class="p">-</span><span class="nx">fuse</span><span class="err">
+</span></span></span></code></pre></div><p>Y crea el directorio donde se montará el disco:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="nx">sudo</span> <span class="nx">mkdir</span> <span class="sr">/media/</span><span class="nx">storage</span><span class="err">
+</span></span></span></code></pre></div><p>Ahora podemos montar el disco con:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="nx">sudo</span> <span class="nx">mount</span> <span class="sr">/dev/</span><span class="nx">sda1</span> <span class="sr">/media/</span><span class="nx">storage</span><span class="err">
+</span></span></span></code></pre></div><p>⚠️ Recuerde reemplazar <code>sda1</code> con el nombre real del dispositivo que encontró con sudo fdisk -l.</p>
+<p>Para desmontarlo podemos utilizar:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="nx">sudo</span> <span class="nx">umount</span> <span class="sr">/media/</span><span class="nx">storage</span><span class="err">
+</span></span></span></code></pre></div><p>Idealmente, queremos que la unidad esté siempre conectada, por lo que configuramos el montaje en el arranque y guardamos para escribir esos comandos cada vez que reiniciamos la Raspberry.</p>
+<p>Primero encontramos el identificador:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="nx">sudo</span> <span class="nx">blkid</span><span class="err">
+</span></span></span></code></pre></div><p>En mi caso el resultado fue:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="sr">/dev/</span><span class="nx">mmcblk0p1</span>: <span class="nx">LABEL_FATBOOT</span><span class="p">=</span><span class="s2">&#34;boot&#34;</span> <span class="nx">LABEL</span><span class="p">=</span><span class="s2">&#34;boot&#34;</span> <span class="nx">UUID</span><span class="p">=</span><span class="s2">&#34;4AD7-B4D5&#34;</span> <span class="nx">TYPE</span><span class="p">=</span><span class="s2">&#34;vfat&#34;</span> <span class="nx">PARTUUID</span><span class="p">=</span><span class="s2">&#34;d5603eaf-01&#34;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="sr">/dev/</span><span class="nx">mmcblk0p2</span>: <span class="nx">LABEL</span><span class="p">=</span><span class="s2">&#34;rootfs&#34;</span> <span class="nx">UUID</span><span class="p">=</span><span class="s2">&#34;2887d26c-6ae7-449d-9701-c5a4018755b0&#34;</span> <span class="nx">TYPE</span><span class="p">=</span><span class="s2">&#34;ext4&#34;</span> <span class="nx">PARTUUID</span><span class="p">=</span><span class="s2">&#34;d5603eaf-02&#34;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="sr">/dev/</span><span class="nx">mmcblk0</span>: <span class="nx">PTUUID</span><span class="p">=</span><span class="s2">&#34;d5603eaf&#34;</span> <span class="nx">PTTYPE</span><span class="p">=</span><span class="s2">&#34;dos&#34;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="sr">/dev/</span><span class="nx">sda1</span>: <span class="nx">UUID</span><span class="p">=</span><span class="s2">&#34;1200CB0C6CE045EE&#34;</span> <span class="nx">TYPE</span><span class="p">=</span><span class="s2">&#34;ntfs&#34;</span> <span class="nx">PTTYPE</span><span class="p">=</span><span class="s2">&#34;atari&#34;</span> <span class="nx">PARTUUID</span><span class="p">=</span><span class="s2">&#34;0072438b-01&#34;</span><span class="err">
+</span></span></span></code></pre></div><p>Lo que nos interesa es el UUID de nuestro disco externo. En mi caso, eso es <code>1200CB0C6CE045EE</code>.</p>
+<p>Ahora podemos editar el archivo:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="nx">sudo</span> <span class="nx">nano</span> <span class="sr">/etc/</span><span class="nx">fstab</span><span class="err">
+</span></span></span></code></pre></div><p>Y agregue esta línea en la parte inferior:</p>
+<pre tabindex="0"><code>UUID=1200CB0C6CE045EE /media/storage exfat defaults,auto,umask=000,users,rw 0 0
+</code></pre><p>⚠️ No olvide reemplazar el UUID por el suyo.</p>
+<h2 id="transmisión-bittorrent">Transmisión BitTorrent</h2>
+<p>El siguiente paso es tener un cliente BitTorrent para descargar los torrents (solo los legales por supuesto) y para eso necesitaríamos instalar <code>Transmission</code>.</p>
+<p>Ejecute el siguiente comando:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="nx">sudo</span> <span class="nx">apt</span><span class="p">-</span><span class="nx">get</span> <span class="nx">install</span> <span class="p">-</span><span class="nx">y</span> <span class="nx">transmission</span><span class="p">-</span><span class="nx">daemon</span> <span class="nx">transmission</span><span class="p">-</span><span class="nx">cli</span> <span class="nx">transmission</span><span class="p">-</span><span class="nx">common</span><span class="err">
+</span></span></span></code></pre></div><p>Nuevo necesitamos detener al demonio para aplicar cambios a la configuración que nos permitirán administrarlo de forma remota:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="nx">sudo</span> <span class="nx">service</span> <span class="nx">transmission</span><span class="p">-</span><span class="nx">daemon</span> <span class="nx">stop</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">sudo</span> <span class="nx">vi</span> <span class="sr">/etc/</span><span class="nx">transmission</span><span class="p">-</span><span class="nx">daemon</span>/<span class="nx">settings</span>.<span class="nx">json</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>``<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">Busque</span> <span class="nx">rpc</span><span class="p">-</span><span class="nx">whitelist</span> <span class="nx">y</span> <span class="nx">rpc</span><span class="p">-</span><span class="nx">whitelist</span><span class="p">-</span><span class="nx">enabled</span> <span class="nx">y</span> asegúrese <span class="nx">de</span> <span class="nx">que</span> <span class="nx">tengan</span> <span class="nx">este</span> <span class="nx">aspecto</span>:<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>```<span class="nx">vim</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c">&#34;rpc-whitelist&#34;: &#34;127.0.0.1,192.168.*.*&#34;,</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c">&#34;rpc-whitelist-enable&#34;: &#34;true&#34;,</span><span class="err">
+</span></span></span></code></pre></div><p>Tenga en cuenta que esto supone que su red interna funciona en <code>192.168.0.1/24</code>. De lo contrario, cambie el valor en consecuencia.</p>
+<p>Además, podemos modificar download-dir e incomplete-dir para que apunten a la unidad USB externa, por ejemplo:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="c">&#34;download-dir&#34;: &#34;/media/storage/downloads&#34;,</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c">&#34;incomplete-dir&#34;: &#34;/media/storage/.tmp&#34;,</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c">&#34;incomplete-dir-enabled&#34;: true,</span><span class="err">
+</span></span></span></code></pre></div><p>Asegúrese de que los directorios existan en su unidad USB externa (los hemos creado en la sección anterior).</p>
+<p>Configure el usuario y la contraseña:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="c">&#34;rpc-password&#34;: &#34;superSecret&#34;,</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c">&#34;rpc-port&#34;: 9091,</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c">&#34;rpc-url&#34;: &#34;/transmission/&#34;,</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c">&#34;rpc-username&#34;: &#34;gopher&#34;,</span><span class="err">
+</span></span></span></code></pre></div><p>El siguiente paso es cambiar el puerto de pares porque a veces su proveedor bloqueará el predeterminado. Puede seleccionar el que desee entre el rango 49152-65535. En mi caso, decidí usar el 51228. Así que busca la siguiente línea:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="c">&#34;peer-port&#34;: 51413,</span><span class="err">
+</span></span></span></code></pre></div><p>Y cámbielo por el puerto decidido:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="c">&#34;peer-port&#34;: 51228,</span><span class="err">
+</span></span></span></code></pre></div><p>También puedes gestionar la velocidad de descarga/subida desde la configuración editando las siguientes líneas:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="c">&#34;speed-limit-down&#34;: 3000,</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c">&#34;speed-limit-down-enabled&#34;: true,</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c">&#34;speed-limit-up&#34;: 900,</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c">&#34;speed-limit-up-enabled&#34;: true,</span><span class="err">
+</span></span></span></code></pre></div><p>Ahora podemos volver a iniciar el servicio:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="nx">sudo</span> <span class="nx">service</span> <span class="nx">transmission</span><span class="p">-</span><span class="nx">daemon</span> <span class="nx">start</span><span class="err">
+</span></span></span></code></pre></div><p>La interfaz web ya está disponible en la dirección http://192.168.1.131:9091 (reemplace la dirección IP con la utilizada por la Raspberry Pi en su red).</p>
+<p>Puede iniciar sesión con el nombre de usuario y la contraseña como &ldquo;transmisión&rdquo;.</p>
+<h2 id="instalar-sonarr">Instalar Sonarr</h2>
+<p><a href="https://github.com/Sonarr/Sonarr">Sonarr</a> es un PVR para usuarios de Usenet y BitTorrent. Puede monitorear múltiples fuentes RSS para nuevos episodios de sus programas favoritos y los tomará, clasificará y les cambiará el nombre. También se puede configurar para actualizar automáticamente la calidad de los archivos ya descargados cuando esté disponible un formato de mejor calidad.</p>
+<p>Necesitamos instalar dependencias como <code>libmono-cil-dev</code> y <code>mono 3.10</code>. Utilicé este <a href="https://www.htpcguides.com/install-sonarr-raspberry-pi-mono-310/">enlace</a> como referencia. Para eso necesitamos escribir:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="nx">sudo</span> <span class="nx">apt</span><span class="p">-</span><span class="nx">get</span> <span class="nx">install</span> <span class="nx">libmono</span><span class="p">-</span><span class="nx">cil</span><span class="p">-</span><span class="nx">dev</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">wget</span> <span class="nx">http</span>:<span class="sr">//</span><span class="nx">sourceforge</span>.<span class="nx">net</span><span class="sr">/projects/</span><span class="nx">bananapi</span><span class="sr">/files/</span><span class="nx">mono_3</span>.<span class="m">10</span><span class="p">-</span><span class="nx">armhf</span>.<span class="nx">deb</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">sudo</span> <span class="nx">dpkg</span> <span class="p">-</span><span class="nx">i</span> <span class="nx">mono_3</span>.<span class="m">10</span><span class="p">-</span><span class="nx">armhf</span>.<span class="nx">deb</span><span class="err">
+</span></span></span></code></pre></div><p>Después de eso, podemos instalar Sonarr:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="nx">sudo</span> <span class="nx">apt</span><span class="p">-</span><span class="nx">key</span> <span class="nx">adv</span> <span class="p">--</span><span class="nx">keyserver</span> <span class="nx">keyserver</span>.<span class="nx">ubuntu</span>.<span class="nx">com</span> <span class="p">--</span><span class="nx">recv</span><span class="p">-</span><span class="nx">keys</span> <span class="m">0</span>xA<span class="m">236</span>C<span class="m">58</span>F<span class="m">409091</span>A<span class="m">18</span>ACA<span class="m">53</span>CBEBFF<span class="m">6</span>B<span class="m">99</span>D<span class="m">9</span>B<span class="m">78493</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">echo</span> <span class="s2">&#34;deb http://apt.sonarr.tv/ master main&#34;</span> <span class="p">|</span> <span class="nx">sudo</span> <span class="nx">tee</span> <span class="sr">/etc/</span><span class="nx">apt</span><span class="sr">/sources.list.d/</span><span class="nx">sonarr</span>.<span class="nx">list</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">sudo</span> <span class="nx">apt</span><span class="p">-</span><span class="nx">get</span> <span class="nx">update</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">sudo</span> <span class="nx">apt</span><span class="p">-</span><span class="nx">get</span> <span class="nx">install</span> <span class="nx">nzbdrone</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">sudo</span> <span class="nx">chown</span> <span class="p">-</span><span class="nx">R</span> <span class="nx">pi</span>:<span class="nx">pi</span> <span class="sr">/opt/</span><span class="nx">NzbDrone</span><span class="err">
+</span></span></span></code></pre></div><h3 id="script-de-inicio-automático">Script de inicio automático</h3>
+<p>Necesitamos crear el archivo <code>/etc/systemd/system/nzbdrone.service</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="nx">sudo</span> <span class="nx">nano</span> <span class="sr">/etc/</span><span class="nx">systemd</span><span class="sr">/system/</span><span class="nx">nzbdrone</span>.<span class="nx">service</span><span class="err">
+</span></span></span></code></pre></div><p>Y poner dentro:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl">[<span class="nx">Unit</span>]<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">Description</span><span class="p">=</span><span class="nx">Sonarr</span> <span class="nx">Daemon</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">After</span><span class="p">=</span><span class="nx">network</span>.<span class="nx">target</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>[<span class="nx">Service</span>]<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">User</span><span class="p">=</span><span class="nx">pi</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">Group</span><span class="p">=</span><span class="nx">pi</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">Type</span><span class="p">=</span><span class="nx">simple</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">ExecStart</span><span class="p">=</span><span class="sr">/usr/</span><span class="nx">bin</span><span class="sr">/mono /</span><span class="nx">opt</span><span class="sr">/NzbDrone/</span><span class="nx">NzbDrone</span>.<span class="nx">exe</span> <span class="p">-</span><span class="nx">nobrowser</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">TimeoutStopSec</span><span class="p">=</span><span class="m">20</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">KillMode</span><span class="p">=</span><span class="nx">process</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">Restart</span><span class="p">=</span><span class="nx">on</span><span class="p">-</span><span class="nx">failure</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>[<span class="nx">Install</span>]<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">WantedBy</span><span class="p">=</span><span class="nx">multi</span><span class="p">-</span><span class="nx">user</span>.<span class="nx">target</span><span class="err">
+</span></span></span></code></pre></div><p>Podemos iniciar, verificar el estado y habilitar si el servicio está funcionando con los siguientes comandos respectivamente:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="nx">sudo</span> <span class="nx">systemctl</span> <span class="nx">start</span> <span class="nx">nzbdrone</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">sudo</span> <span class="nx">systemctl</span> <span class="nx">status</span> <span class="nx">nzbdrone</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">sudo</span> <span class="nx">systemctl</span> <span class="nx">enable</span> <span class="nx">nzbdrone</span><span class="err">
+</span></span></span></code></pre></div><p>La interfaz web ya está disponible en la dirección http://192.168.1.131:8989 (reemplace la dirección IP con la utilizada por la Raspberry Pi en su red).</p>
+<h2 id="instalar-jackett">Instalar Jackett</h2>
+<p><a href="https://github.com/Jackett/Jackett">Jackett</a> funciona como un servidor proxy: traduce las consultas de las aplicaciones (Sonarr, Radarr, SickRage, CouchPotato, Mylar, Lidarr, DuckieTV, qBittorrent, Nefarious, etc.) en un rastreador -consultas http específicas del sitio, analiza la respuesta html y luego envía los resultados al software solicitante. Esto permite obtener cargas recientes (como RSS) y realizar búsquedas. Jackett es un repositorio único de lógica de traducción y extracción de indexadores mantenida, lo que elimina la carga de otras aplicaciones.</p>
+<p>Comenzamos a descargar la última versión de Jackett:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="nx">wget</span> <span class="p">-</span><span class="nx">q</span> <span class="nx">https</span>:<span class="sr">//</span><span class="nx">github</span>.<span class="nx">com</span><span class="sr">/Jackett/</span><span class="nx">Jackett</span><span class="sr">/releases/</span><span class="nx">latest</span> <span class="p">-</span><span class="nx">O</span> <span class="p">-</span> <span class="p">|</span> <span class="nx">grep</span> <span class="p">-</span><span class="nx">E</span> \<span class="sr">/tag\/</span> <span class="p">|</span> <span class="nx">awk</span> <span class="p">-</span><span class="nx">F</span> <span class="s2">&#34;[&gt;&lt;]&#34;</span> <span class="s1">&#39;{print $3}&#39;</span><span class="err">
+</span></span></span></code></pre></div><p>O si ya conoces la versión:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="nx">wget</span> <span class="p">-</span><span class="nx">q</span> <span class="nx">https</span>:<span class="sr">//</span><span class="nx">github</span>.<span class="nx">com</span><span class="sr">/Jackett/</span><span class="nx">Jackett</span><span class="sr">/releases/</span><span class="nx">download</span><span class="sr">/v0.16.1937/</span><span class="nx">Jackett</span>.<span class="nx">Binaries</span>.<span class="nx">LinuxARM32</span>.<span class="nx">tar</span>.<span class="nx">gz</span><span class="err">
+</span></span></span></code></pre></div><p>Luego necesitamos descomprimir el archivo y moverlo a la ruta correcta:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="nx">tar</span> <span class="nx">zxvf</span> <span class="nx">Jackett</span>.<span class="nx">Binaries</span>.<span class="nx">LinuxARM32</span>.<span class="nx">tar</span>.<span class="nx">gz</span> <span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">sudo</span> <span class="nx">mv</span> <span class="nx">Jackett</span> <span class="sr">/opt/</span><span class="err">
+</span></span></span></code></pre></div><p>Cambie la propiedad de Jackett al usuario principal de la Raspberry Pi que en nuestro caso es <code>pi</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="nx">sudo</span> <span class="nx">chown</span> <span class="p">-</span><span class="nx">R</span> <span class="nx">pi</span>:<span class="nx">pi</span> <span class="sr">/opt/</span><span class="nx">Jackett</span><span class="err">
+</span></span></span></code></pre></div><h3 id="script-de-inicio-automático-1">Script de inicio automático</h3>
+<p>Necesitamos crear el archivo <code>/etc/systemd/system/jackett.service</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="nx">sudo</span> <span class="nx">nano</span> <span class="sr">/etc/</span><span class="nx">systemd</span><span class="sr">/system/</span><span class="nx">jackett</span>.<span class="nx">service</span><span class="err">
+</span></span></span></code></pre></div><p>Y poner dentro:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl">[<span class="nx">Unit</span>]<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">Description</span><span class="p">=</span><span class="nx">Jackett</span> <span class="nx">Daemon</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">After</span><span class="p">=</span><span class="nx">network</span>.<span class="nx">target</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>[<span class="nx">Service</span>]<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">SyslogIdentifier</span><span class="p">=</span><span class="nx">jackett</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">Restart</span><span class="p">=</span><span class="nx">always</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">RestartSec</span><span class="p">=</span><span class="m">5</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">Type</span><span class="p">=</span><span class="nx">simple</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">User</span><span class="p">=</span><span class="nx">pi</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">Group</span><span class="p">=</span><span class="nx">pi</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">WorkingDirectory</span><span class="p">=</span><span class="sr">/opt/</span><span class="nx">Jackett</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">ExecStart</span><span class="p">=</span><span class="sr">/opt/</span><span class="nx">Jackett</span>/<span class="nx">jackett</span> <span class="p">--</span><span class="nx">NoRestart</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">TimeoutStopSec</span><span class="p">=</span><span class="m">20</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>[<span class="nx">Install</span>]<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">WantedBy</span><span class="p">=</span><span class="nx">multi</span><span class="p">-</span><span class="nx">user</span>.<span class="nx">target</span><span class="err">
+</span></span></span></code></pre></div><p>Podemos iniciar, verificar el estado y habilitar si el servicio está funcionando con los siguientes comandos respectivamente:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="nx">sudo</span> <span class="nx">systemctl</span> <span class="nx">start</span> <span class="nx">jackett</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">sudo</span> <span class="nx">systemctl</span> <span class="nx">status</span> <span class="nx">jackett</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">sudo</span> <span class="nx">systemctl</span> <span class="nx">enable</span> <span class="nx">jackett</span><span class="err">
+</span></span></span></code></pre></div><p>La interfaz web ya está disponible en la dirección http://192.168.1.131:9117 (reemplace la dirección IP con la utilizada por la Raspberry Pi en su red).</p>
+<h2 id="instalar-bazarr">Instalar Bazarr</h2>
+<p><a href="https://github.com/morpheus65535/bazarr">Bazarr</a> es una aplicación que acompaña a Sonarr y Radarr. Administra y descarga subtítulos según sus requisitos. Tú defines tus preferencias por programas de televisión o películas y Bazarr se encarga de todo por ti.</p>
+<p>Como dependencia para ello, necesitaríamos instalar <code>python3</code>. Primero que nada, hagamos eso:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="nx">sudo</span> <span class="nx">apt</span><span class="p">-</span><span class="nx">get</span> <span class="nx">install</span> <span class="nx">python3</span> <span class="nx">idle3</span><span class="err">
+</span></span></span></code></pre></div><p>A continuación, necesitamos tener git para descargar el repositorio y pip para administrar la instalación del paquete:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="nx">sudo</span> <span class="nx">apt</span><span class="p">-</span><span class="nx">get</span> <span class="nx">install</span> <span class="nx">git</span> <span class="nx">python3</span><span class="p">-</span><span class="nx">pip</span> <span class="nx">python3</span><span class="p">-</span><span class="nx">distutils</span><span class="err">
+</span></span></span></code></pre></div><p>Ahora es el momento de instalar las dependencias para Bazaar:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="nx">sudo</span> <span class="nx">apt</span><span class="p">-</span><span class="nx">get</span> <span class="nx">install</span> <span class="nx">libxml2</span><span class="p">-</span><span class="nx">dev</span> <span class="nx">libxslt1</span><span class="p">-</span><span class="nx">dev</span> <span class="nx">python3</span><span class="p">-</span><span class="nx">libxml2</span> <span class="nx">python3</span><span class="p">-</span><span class="nx">lxml</span> <span class="nx">unrar</span><span class="p">-</span><span class="nx">free</span> <span class="nx">ffmpeg</span> <span class="nx">libatlas</span><span class="p">-</span><span class="nx">base</span><span class="p">-</span><span class="nx">dev</span><span class="err">
+</span></span></span></code></pre></div><p>Con eso ya estamos listos para instalar Bazarr en nuestra Raspberry. Necesitamos clonar el repositorio directamente desde GitHub usando git y lo hacemos directamente a la carpeta de destino <code>opt/bazarr</code> escribiendo el siguiente comando:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="nx">sudo</span> <span class="nx">git</span> <span class="nx">clone</span> <span class="nx">https</span>:<span class="sr">//</span><span class="nx">github</span>.<span class="nx">com</span><span class="sr">/morpheus65535/</span><span class="nx">bazarr</span>.<span class="nx">git</span> <span class="sr">/opt/</span><span class="nx">bazarr</span><span class="err">
+</span></span></span></code></pre></div><p>Luego debemos ir a esa carpeta e instalar los requisitos definidos dentro de ella con:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="nx">cd</span> <span class="sr">/opt/</span><span class="nx">bazarr</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">python3</span> <span class="p">-</span><span class="nx">m</span> <span class="nx">pip</span> <span class="nx">install</span> <span class="p">-</span><span class="nx">r</span> <span class="nx">requirements</span>.<span class="nx">txt</span><span class="err">
+</span></span></span></code></pre></div><p>ℹ️ NOTA: No se preocupe de que <code>lxml</code> no se instale en este paso, de todos modos ha instalado el módulo a través de apt-get.</p>
+<p>Cambie la propiedad al usuario <code>pi</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="nx">sudo</span> <span class="nx">chown</span> <span class="p">-</span><span class="nx">R</span> <span class="nx">pi</span>:<span class="nx">pi</span> <span class="sr">/opt/</span><span class="nx">bazarr</span><span class="err">
+</span></span></span></code></pre></div><p>Y podemos iniciar y probar Bazaar:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="nx">python3</span> <span class="nx">bazarr</span>.<span class="nx">py</span> <span class="err">
+</span></span></span></code></pre></div><p>Después de los mensajes de iniciar Bazarr y configurarlo, verifique si funciona en http://192.168.1.131:6767/.</p>
+<h3 id="conecta-con-sonarr">Conecta con Sonarr</h3>
+<p>El siguiente paso es conectarlo con Sonarr. La <a href="https://github.com/morpheus65535/bazarr/wiki/Setup-Guide">documentación oficial</a> es muy sencilla y fácil de seguir, así que no la pondré aquí. Solo una cosa que no está lo suficientemente clara al menos para mí y se trata de la clave API de Sonarr y su ubicación, así que como consejo pondré aquí que:</p>
+<ul>
+<li>La clave API de Sonarr se encuentra en <code>Settings/General/Security</code></li>
+</ul>
+<h3 id="script-de-inicio-automático-2">Script de inicio automático</h3>
+<p>Necesitamos crear el archivo <code>/etc/systemd/system/bazarr.service</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="nx">sudo</span> <span class="nx">nano</span> <span class="sr">/etc/</span><span class="nx">systemd</span><span class="sr">/system/</span><span class="nx">bazarr</span>.<span class="nx">service</span><span class="err">
+</span></span></span></code></pre></div><p>Y poner dentro:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl">[<span class="nx">Unit</span>]<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">Description</span><span class="p">=</span><span class="nx">Bazarr</span> <span class="nx">Daemon</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">After</span><span class="p">=</span><span class="nx">syslog</span>.<span class="nx">target</span> <span class="nx">network</span>.<span class="nx">target</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span># <span class="nx">After</span><span class="p">=</span><span class="nx">syslog</span>.<span class="nx">target</span> <span class="nx">network</span>.<span class="nx">target</span> <span class="nx">sonarr</span>.<span class="nx">service</span> <span class="nx">radarr</span>.<span class="nx">service</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>[<span class="nx">Service</span>]<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">WorkingDirectory</span><span class="p">=</span><span class="sr">/opt/</span><span class="nx">bazarr</span>/<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">User</span><span class="p">=</span><span class="nx">pi</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">Group</span><span class="p">=</span><span class="nx">pi</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">UMask</span><span class="p">=</span><span class="m">0002</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">Restart</span><span class="p">=</span><span class="nx">on</span><span class="p">-</span><span class="nx">failure</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">RestartSec</span><span class="p">=</span><span class="m">5</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">Type</span><span class="p">=</span><span class="nx">simple</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">ExecStart</span><span class="p">=</span><span class="sr">/usr/</span><span class="nx">bin</span><span class="sr">/python3 /</span><span class="nx">opt</span><span class="sr">/bazarr/</span><span class="nx">bazarr</span>.<span class="nx">py</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">KillSignal</span><span class="p">=</span><span class="nx">SIGINT</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">TimeoutStopSec</span><span class="p">=</span><span class="m">20</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">SyslogIdentifier</span><span class="p">=</span><span class="nx">bazarr</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">ExecStartPre</span><span class="p">=</span><span class="sr">/bin/</span><span class="nx">sleep</span> <span class="m">30</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>[<span class="nx">Install</span>]<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">WantedBy</span><span class="p">=</span><span class="nx">multi</span><span class="p">-</span><span class="nx">user</span>.<span class="nx">target</span><span class="err">
+</span></span></span></code></pre></div><p>Podemos iniciar, verificar el estado y habilitar si el servicio está funcionando con los siguientes comandos respectivamente:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="nx">sudo</span> <span class="nx">systemctl</span> <span class="nx">start</span> <span class="nx">bazarr</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">sudo</span> <span class="nx">systemctl</span> <span class="nx">status</span> <span class="nx">bazarr</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">sudo</span> <span class="nx">systemctl</span> <span class="nx">enable</span> <span class="nx">bazarr</span><span class="err">
+</span></span></span></code></pre></div><p>La interfaz web ya está disponible en la dirección http://192.168.1.131:6767 (reemplace la dirección IP con la utilizada por la Raspberry Pi en su red).</p>
+<h2 id="instalar-plex">Instalar Plex</h2>
+<p><a href="https://www.plex.tv/">Plex</a> reúne todos los medios que le interesan. Su colección personal se verá hermosa junto con contenido de transmisión estelar. Disfrute de TV y DVR en vivo, un catálogo cada vez mayor de excelentes programas web, noticias y podcasts. Finalmente, es posible disfrutar de todos los medios que ama en una sola aplicación, en cualquier dispositivo, sin importar dónde se encuentre.</p>
+<p>Primero que nada, necesitamos agregar un nuevo repositorio y su clave. Esto agregará al SO de Raspberry los repositorios donde necesitamos descargar la instalación y las futuras actualizaciones. Es como una lista de enlaces donde el sistema lee automáticamente los programas que necesita para la instalación y las actualizaciones.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="nx">echo</span> <span class="nx">deb</span> <span class="nx">https</span>:<span class="sr">//</span><span class="nx">downloads</span>.<span class="nx">plex</span>.<span class="nx">tv</span><span class="sr">/repo/</span><span class="nx">deb</span> <span class="nx">public</span> <span class="nx">main</span> <span class="p">|</span> <span class="nx">sudo</span> <span class="nx">tee</span> <span class="sr">/etc/</span><span class="nx">apt</span><span class="sr">/sources.list.d/</span><span class="nx">plexmediaserver</span>.<span class="nx">list</span><span class="err">
+</span></span></span></code></pre></div><p>El siguiente paso es agregar las firmas de los repositorios. El sistema debe asegurarse de que los repositorios que agregamos manualmente sean correctos y no tengan malware. Para eso necesitamos agregar la clave y ayuda al sistema a verificar esos repositorios.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="nx">curl</span> <span class="nx">https</span>:<span class="sr">//</span><span class="nx">downloads</span>.<span class="nx">plex</span>.<span class="nx">tv</span><span class="sr">/plex-keys/</span><span class="nx">PlexSign</span>.<span class="nx">key</span> <span class="p">|</span> <span class="nx">sudo</span> <span class="nx">apt</span><span class="p">-</span><span class="nx">key</span> <span class="nx">add</span><span class="err">
+</span></span></span></code></pre></div><p>Ahora podemos actualizar nuestra lista de paquetes e instalar Plex Media Server:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="nx">sudo</span> <span class="nx">apt</span><span class="p">-</span><span class="nx">get</span> <span class="nx">update</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">sudo</span> <span class="nx">apt</span><span class="p">-</span><span class="nx">get</span> <span class="nx">install</span> <span class="nx">plexmediaserver</span><span class="err">
+</span></span></span></code></pre></div><p>Puede completar la configuración abriendo el siguiente enlace con su navegador:</p>
+<p>La interfaz web ya está disponible en la dirección http://192.168.0.10:32400/web (reemplace la dirección IP por la utilizada por la Raspberry Pi en su red).</p>
+<p>Cuando se le solicite que agregue bibliotecas, debe agregar la carpeta de descarga de Transmission, en nuestro ejemplo <code>/media/storage/ downloads</code>.</p>
+<p>Y simplemente disfruta de tu reproductor multimedia con tu serie favorita 📺.</p>
+<p>Si también está interesado en películas, puede instalar <a href="https://github.com/Radarr/Radarr">Radarr</a>, que es una bifurcación independiente de Sonarr reelaborada para descargar películas automáticamente a través de Usenet y BitTorrent. El proyecto se inspiró en otros descargadores de películas de Usenet / BitTorrent como CouchPotato.</p>
+<p>En una publicación futura probablemente intente Dockerize toda esa configuración e incluiré Radarr, o no&hellip; ya veremos 🧑‍🚀</p>
+<p>Espero que lo hayas disfrutado y si tienes alguna duda ¡comunícate conmigo en cualquier red social!</p>
+
+				</article>
+
+				
+				
+				<div class="page-separator"><hr></div>
+				
+				<section class="post-preview-container">
+					<a href="https://charly3pins.dev/es/blog/suba-de-nivel-sus-presentaciones-con-go/">
+						<div class="post-preview-title-container">
+							<h3 class="post-preview-title">Suba de nivel sus presentaciones con Go</h3>
+						</div>
+						<div class="post-preview-subtext">Genera fácilmente tus presentaciones con &#34;present&#34;, la herramienta impulsada por Go que genera y renderiza tus diapositivas.</div>
+						<div>
+							<span class="post-preview-metadata">
+								06/10/2020 · 7 min lectura
+							</span>
+							
+							<a class="tag" href="https://charly3pins.dev/tags/go/">#go</a>
+							
+							<a class="tag" href="https://charly3pins.dev/tags/life/">#life</a>
+							
+						</div>
+					</a>
+				</section>					
+				
+				
+				
+				<div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "https-charly3pins-dev" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+			
+			</section>
+			
+			<div class="page-separator centered"><hr></div>
+			
+			<footer class="footer-container">
+	<ul class="footer-social-icons-container">
+		<li><a class="footer-social-icon" href="https://twitter.com/charly3pins" target="_blank" aria-label="Twitter">
+			<i class="fa fa-twitter fa-fw" title="Twitter"></i></a>
+		</li>
+		<li><a class="footer-social-icon" href="https://github.com/charly3pins" target="_blank" aria-label="GitHub">
+			<i class="fa fa-github-alt fa-fw" title="GitHub"></i></a>
+		</li>
+		<li><a class="footer-social-icon" href="https://stackoverflow.com/users/4948631/charly3pins" target="_blank" aria-label="Stack Overflow">
+			<i class="fa fa-stack-overflow fa-fw" title="Stack Overflow"></i></a>
+		</li>
+		<li><a class="footer-social-icon" href="https://charly3pins.dev/index.xml" target="_blank" aria-label="RSS">
+			<i class="fa fa-rss fa-fw" title="RSS"></i></a>
+		</li>
+		<li><a class="footer-social-icon" href="https://dev.to/charly3pins" target="_blank" aria-label="Dev.to">
+			<i class="fa fa-dev-to" title="Dev.to"></i>DEV</a>
+		</li> 
+		<li><a class="footer-social-icon" href="mailto:hello@charly3pins.dev" target="_blank" aria-label="Email">
+			<i class="fa fa-envelope fa-fw" title="email"></i></a>
+		</li>
+	</ul>
+	<div class="footer-text">Última publicación en 16/08/2021</div>
+	<div class="footer-text">© 2018 - 2023 Charly3Pins</div>
+</footer>
+<script type="text/javascript" src="https://charly3pins.dev/js/theme-switcher.js"></script>
+
+		
+		</div>
+
+	</body>
+</html>

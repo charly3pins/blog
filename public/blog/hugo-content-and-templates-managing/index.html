@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+	
+	<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="Engineering Director">
+
+  <title>Hugo&#39;s content and templates managing | Charly3Pins</title>
+
+
+  <meta property="og:title" content="Hugo&#39;s content and templates managing - charly3pins" />
+
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="How to organize your content and create your templates to get maximum value from Hugo.">
+  <meta property="og:url" content="https://charly3pins.dev/blog/hugo-content-and-templates-managing/">
+  <meta property="og:site_name" content="charly3pins.dev">
+  
+  <meta property="og:image" content="https://charly3pins.dev/images/gohugoio-card.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta name="twitter:title" content="Hugo&#39;s content and templates managing" />
+
+
+  <meta name="twitter:description" content="How to organize your content and create your templates to get maximum value from Hugo.">
+
+
+  <meta name="twitter:image" content="https://charly3pins.dev/images/gohugoio-card.png">
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-126216319-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  <link rel="stylesheet" href="https://charly3pins.dev/css/main.css" />
+  <link rel="stylesheet" href="https://charly3pins.dev/css/syntax.css" />
+  <link rel="stylesheet" href="https://charly3pins.dev/css/social_share.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+	<body>
+		<div class="navbar-container">
+    <nav class="navbar-navigation">
+        
+        <a href="/">Home</a>
+        
+        <a href="/blog/">Blog</a>
+        
+        <a href="/code/">Code</a>
+        
+        <a href="/about/">About</a>
+        
+        
+        <ul class="lang-selector">
+            <li>
+                <a>English</a> <i class="fa fa-angle-down" aria-hidden="true"></i>
+                <ul>
+                
+                    <a href="https://charly3pins.dev/es/blog/gesti%C3%B3n-de-contenidos-y-plantillas-de-hugo/">Spanish</a>
+                
+                    <a href="https://charly3pins.dev/ca/blog/gesti%C3%B3-de-plantilles-i-contingut-dhugo/">Catalan</a>
+                
+                </ul>
+            </li>
+        </ul>
+        
+        <button class="theme-switch-wrapper">
+            <img id="theme-switcher" class="theme-switcher" src="https://sunilsandhu.com/assets/icons/sun-moon.png" alt="toggle dark mode">
+        </button>
+    </nav>
+</div>
+		
+		<div class="layout-container">
+
+			<section class="blog-container">
+				
+				<h4 class="post-title">Hugo&#39;s content and templates managing</h4>
+				<h2 class="post-description">How to organize your content and create your templates to get maximum value from Hugo.</h2>
+
+				<div class="post-metadata">
+					<div class="post-tags">
+						
+						<a class="tag" href="https://charly3pins.dev/tags/hugo/">#hugo</a>
+						
+					</div>
+					<span class="post-date">
+						08/03/2020 · 5 min read
+					</span>
+				</div>
+
+				<ul class="icons">
+    
+    <li>
+        
+        <a href="//twitter.com/share?url=https%3a%2f%2fcharly3pins.dev%2fblog%2fhugo-content-and-templates-managing%2f&amp;text=Hugo%27s%20content%20and%20templates%20managing&amp;via=charly3pins&amp;hashtags=hugo" target="_blank" class="share-btn twitter">
+            <i class="fa fa-twitter"></i>
+        </a>
+    </li>
+
+    
+    <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcharly3pins.dev%2fblog%2fhugo-content-and-templates-managing%2f" target="_blank" class="share-btn facebook">
+            <i class="fa fa-facebook"></i>
+        </a>
+    </li>
+
+    
+    <li>
+        <a href="//reddit.com/submit?url=https%3a%2f%2fcharly3pins.dev%2fblog%2fhugo-content-and-templates-managing%2f&amp;title=Hugo%27s%20content%20and%20templates%20managing" target="_blank" class="share-btn reddit">
+            <i class="fa fa-reddit-alien"></i>
+        </a>
+    </li>
+
+    
+    <li>
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fcharly3pins.dev%2fblog%2fhugo-content-and-templates-managing%2f&amp;title=Hugo%27s%20content%20and%20templates%20managing" target="_blank" class="share-btn linkedin">
+            <i class="fa fa-linkedin"></i>
+        </a>
+    </li>
+
+    
+    <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fcharly3pins.dev%2fblog%2fhugo-content-and-templates-managing%2f&amp;description=Hugo%27s%20content%20and%20templates%20managing" target="_blank" class="share-btn pinterest">
+            <i class="fa fa-pinterest-p"></i>
+        </a>
+    </li>
+
+    
+    <li>
+        <a href="mailto:?subject=Check out this post by charly3pins&amp;body=https%3a%2f%2fcharly3pins.dev%2fblog%2fhugo-content-and-templates-managing%2f" target="_blank" class="share-btn email">
+            <i class="fa fa-envelope"></i>
+        </a>
+    </li>
+</ul>
+
+
+				<article>
+					
+					<div class="centered">
+						<img src="https://charly3pins.dev/images/gohugoio-card.png" alt="cover image">
+					</div>
+					
+					
+					<div class="page-separator"></div>
+					<p>After long time without writing&hellip; I&rsquo;m back!</p>
+<p><img src="/images/hugo-content-templates-managing/im-back-terminator.jpg" alt="I&amp;rsquo;m back"></p>
+<p>I was planning to rebuild my site and start creating content again but never found the time until now.</p>
+<p>I wanted to do my theme from scratch instead of using a predefined <a href="https://themes.gohugo.io/">theme</a>, so I had to learn how the templating and the content managing is done in Hugo.</p>
+<p>Once I did that process, I want to sum up the most important things that I consider you have to know if you wanna do your own theme like I did (this site is the prove of that!).</p>
+<h2 id="content-management">Content management</h2>
+<p>First of all let&rsquo;s talk about the <a href="https://gohugo.io/content-management/organization/">content organization</a> in Hugo.</p>
+<p>All the content you wanna have in your site have to be inside the <code>content/</code> directory. You simply put your posts inside <code>content/posts</code> and your description in <code>content/about</code> and Hugo will do the magic for you. Sounds easy right? Continue then.</p>
+<p>Hugo has mainly two types of pages, the &ldquo;unique&rdquo; and the &ldquo;multi&rdquo; ones. The first ones are used for example for an <code>about</code> or for a <code>faq</code> or a <code>contribute</code> or a <code>landing</code>&hellip; The second ones are used when you want to group under a same category different content. For example your different publications for your <code>posts</code> or a catalogue for your <code>products</code>. Being said that, there is another difference that you have to know when you create your different pages.</p>
+<p>The unique ones have to be named like <code>index.md</code>, the list ones don&rsquo;t. This at the end indicates to Hugo how to manage the content inside the directories and how to generate the URLs to access them. The following schema demonstrates how that works:</p>
+<pre tabindex="0"><code>└── content
+    └── about
+    |   └── index.md        (https://mysite.com/about)
+    ├── posts
+    |   ├── first-post.md   (https://mysite.com/posts/first-post)
+    |   └── second-post.md  (https://mysite.com/posts/second-post)
+    |   └── trips
+    |       └── pandora.md  (https://mysite.com/posts/trips/pandora)
+    └── faq
+        └── index.md        (https://mysite.com/faq)
+</code></pre><p>Also there is a possibility to specify the URL using the property <code>slug</code> like slug=&ldquo;my-custom-url&rdquo;.</p>
+<h2 id="templates-management">Templates management</h2>
+<p>Now you know how to organize your content, it&rsquo;s time to talk about the <a href="https://gohugo.io/templates/">templates</a>. They are the HTML code that generates the pages of your site. There are a few tricks and tips that I want to share with you like I did with the content on the previous section.</p>
+<p>The different templates have to be placed inside the <code>layouts/</code> directory. On the root must be the main template called <code>index.html</code> used to render the homepage. Same way as the content, the templates can be organized in folders if you want to display in different ways the content depending on the route. Like the content, the templates can be organized between unique and multi. Taking the content organization described before, considering that you want to specify different templates for each content folder, one of the possible template organization can be:</p>
+<pre tabindex="0"><code>└── layouts
+    └── _default_
+    |   ├── list.html
+    |   └── single.html
+    └── posts
+        ├── list.html
+        └── single.html
+        └── trips
+            ├── list.html
+            └── single.html
+</code></pre><p>Analyzing in detail, you can see a similar tree like the content but with a particularity that no <code>about</code> and no <code>faq</code> folders but it appeared a <code>_default</code> one. This special folder is used by Hugo to render the pages that doesn&rsquo;t have their own template. On that case the about and the faq, both unique types, will be rendered using the <code>layouts/_default/single.html</code> template. If the <code>trips</code> directory didn&rsquo;t exist, the templates used will be the <code>_default</code> ones.</p>
+<p>At this point you know about content organization and template managing, but you are thinking:</p>
+<blockquote>
+<p>How Hugo know when I want to use a single or a list page?</p>
+</blockquote>
+<p>The answer is depending on the URL and the content there. Using again the example above for the content organization, if you notice the <code>about</code> contains a <code>index.md</code> so that indicates Hugo is a &ldquo;unique&rdquo; page. As we didn&rsquo;t defined any particular template for that, the one that will be used is the generic <code>_default/single.thml</code>.</p>
+<p>On the other hand, inside the <code>posts</code> there are three posts but no <code>index.md</code> one, so that indicates Hugo that it&rsquo;s a &ldquo;multi&rdquo; page, so you will use both templates, the <code>list.html</code> one like an &ldquo;index&rdquo; of your posts, and the <code>single.html</code> for each post. To render the <code>list.html</code> one you have to go to the URL of the directory (<a href="https://mysite.com/posts/)">https://mysite.com/posts/)</a>. For the posts (<a href="https://mysite.com/posts/first-post">https://mysite.com/posts/first-post</a>) and (<a href="https://mysite.com/posts/second-post">https://mysite.com/posts/second-post</a>) the template used will be <code>single.html</code>.</p>
+<h3 id="page-variables">Page variables</h3>
+<p>The Pages have a set of useful variables that are good to know:</p>
+<ul>
+<li>Title: the title of the post</li>
+<li>Description: a short/long description of the post</li>
+<li>Content: the body of the post</li>
+<li>ReadingTime: the mins that Hugo autocalculates will take to read the post</li>
+</ul>
+<p>For accessing to the custom parameters that you can create on each post you should access them by name inside the <code>Params</code> object (Params.yourParam).</p>
+<p>You can display a related posts reading the results of the <code>.Site.RegularPages.Related</code>.</p>
+<p>See the full list on the <a href="https://gohugo.io/variables/page/">documentation</a> page.</p>
+<p>The <code>list.html</code> template is used to display a short description of the posts like a book index with the links to the actual post. For doing that, you have to access to the <code>$.Paginator.Pages</code> variable and loop over the results. The variables are the same described above with a one more <code>Permalink</code>, the one you need to use for access the post (and call the <code>single.html</code> template) for that content.</p>
+<p>Also there are the <code>PrevInSection</code> and <code>NextInSection</code> variables for paginate the results.</p>
+<h3 id="partial-templates">Partial templates</h3>
+<p>The last tip I want to explain you is that you don&rsquo;t need to repeat all time all the parts of the templates, you can extract the common part in a template and then reuse it anywhere you want. These are the <a href="https://gohugo.io/templates/partials/">partial templates</a>. Its particularity is you need to place that part inside a <code>partials/</code> directory and call it like <code>{{ partial &quot;name.html&quot; . }}</code>. They are useful for the <code>header</code>, <code>footer</code>, <code>navbar</code> and other generic parts as well as for a list template that you wanna reuse for your posts and for your trips for example.</p>
+
+				</article>
+
+				
+				
+				<div class="page-separator"><hr></div>
+				
+				<section class="post-preview-container">
+					<a href="https://charly3pins.dev/blog/building-static-blog-with-hugo/">
+						<div class="post-preview-title-container">
+							<h3 class="post-preview-title">Building static blog with Hugo</h3>
+						</div>
+						<div class="post-preview-subtext">Quick steps to create your own static blog with Hugo and install a theme from the catalogue. After that, push your site to GitHub and deploy it with GitHub Pages.</div>
+						<div>
+							<span class="post-preview-metadata">
+								22/09/2018 · 4 min read
+							</span>
+							
+							<a class="tag" href="https://charly3pins.dev/tags/hugo/">#hugo</a>
+							
+							<a class="tag" href="https://charly3pins.dev/tags/github/">#github</a>
+							
+						</div>
+					</a>
+				</section>					
+				
+				
+				
+				<div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "https-charly3pins-dev" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+			
+			</section>
+			
+			<div class="page-separator centered"><hr></div>
+			
+			<footer class="footer-container">
+	<ul class="footer-social-icons-container">
+		<li><a class="footer-social-icon" href="https://twitter.com/charly3pins" target="_blank" aria-label="Twitter">
+			<i class="fa fa-twitter fa-fw" title="Twitter"></i></a>
+		</li>
+		<li><a class="footer-social-icon" href="https://github.com/charly3pins" target="_blank" aria-label="GitHub">
+			<i class="fa fa-github-alt fa-fw" title="GitHub"></i></a>
+		</li>
+		<li><a class="footer-social-icon" href="https://stackoverflow.com/users/4948631/charly3pins" target="_blank" aria-label="Stack Overflow">
+			<i class="fa fa-stack-overflow fa-fw" title="Stack Overflow"></i></a>
+		</li>
+		<li><a class="footer-social-icon" href="https://charly3pins.dev/index.xml" target="_blank" aria-label="RSS">
+			<i class="fa fa-rss fa-fw" title="RSS"></i></a>
+		</li>
+		<li><a class="footer-social-icon" href="https://dev.to/charly3pins" target="_blank" aria-label="Dev.to">
+			<i class="fa fa-dev-to" title="Dev.to"></i>DEV</a>
+		</li> 
+		<li><a class="footer-social-icon" href="mailto:hello@charly3pins.dev" target="_blank" aria-label="Email">
+			<i class="fa fa-envelope fa-fw" title="email"></i></a>
+		</li>
+	</ul>
+	<div class="footer-text">Last post on 09/12/2021</div>
+	<div class="footer-text">© 2018 - 2023 Charly3Pins</div>
+</footer>
+<script type="text/javascript" src="https://charly3pins.dev/js/theme-switcher.js"></script>
+
+		
+		</div>
+
+	</body>
+</html>

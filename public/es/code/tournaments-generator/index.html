@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+	
+	<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="Director de Ingenieria">
+
+  <title>Tournaments generator | Charly3Pins</title>
+
+
+  <meta property="og:title" content="Tournaments generator - charly3pins" />
+
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="Prueba de concepto de la construcción de una aplicación para administrar torneos FIFA 20 entre diferentes personas usando Flutter para construir una aplicación móvil y Go para construir una API que actúa como servidor. También usé Python para construir raspadores simples.">
+  <meta property="og:url" content="https://charly3pins.dev/es/code/tournaments-generator/">
+  <meta property="og:site_name" content="charly3pins.dev">
+  
+  <meta property="og:image" content="https://charly3pins.dev/images/law-mustache.gif">
+
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta name="twitter:title" content="Tournaments generator" />
+
+
+  <meta name="twitter:description" content="Prueba de concepto de la construcción de una aplicación para administrar torneos FIFA 20 entre diferentes personas usando Flutter para construir una aplicación móvil y Go para construir una API que actúa como servidor. También usé Python para construir raspadores simples.">
+
+
+  <meta name="twitter:image" content="https://charly3pins.dev/images/law-mustache.gif">
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-126216319-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  <link rel="stylesheet" href="https://charly3pins.dev/css/main.css" />
+  <link rel="stylesheet" href="https://charly3pins.dev/css/syntax.css" />
+  <link rel="stylesheet" href="https://charly3pins.dev/css/social_share.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+	<body>
+		<div class="navbar-container">
+    <nav class="navbar-navigation">
+        
+        <a href="/es/">Inicio</a>
+        
+        <a href="/es/blog/">Blog</a>
+        
+        <a href="/es/code/">Código</a>
+        
+        <a href="/es/about/">Quién</a>
+        
+        
+        <ul class="lang-selector">
+            <li>
+                <a>Castellano</a> <i class="fa fa-angle-down" aria-hidden="true"></i>
+                <ul>
+                
+                    <a href="https://charly3pins.dev/code/tournaments-generator/">Inglés</a>
+                
+                    <a href="https://charly3pins.dev/ca/code/tournaments-generator/">Catalán</a>
+                
+                </ul>
+            </li>
+        </ul>
+        
+        <button class="theme-switch-wrapper">
+            <img id="theme-switcher" class="theme-switcher" src="https://sunilsandhu.com/assets/icons/sun-moon.png" alt="toggle dark mode">
+        </button>
+    </nav>
+</div>
+		
+		<div class="layout-container">
+
+			<section class="blog-container">
+				
+				<h4 class="post-title">Tournaments generator</h4>
+				<h2 class="post-description">Prueba de concepto de la construcción de una aplicación para administrar torneos FIFA 20 entre diferentes personas usando Flutter para construir una aplicación móvil y Go para construir una API que actúa como servidor. También usé Python para construir raspadores simples.</h2>
+
+				<div class="post-metadata">
+					<div class="post-tags">
+						
+						<a class="tag" href="https://charly3pins.dev/tags/go/">#go</a>
+						
+						<a class="tag" href="https://charly3pins.dev/tags/flutter/">#flutter</a>
+						
+						<a class="tag" href="https://charly3pins.dev/tags/python/">#python</a>
+						
+					</div>
+					<span class="post-date">
+						01/05/2020 · 9 min lectura
+					</span>
+				</div>
+
+				<ul class="icons">
+    
+    <li>
+        
+        <a href="//twitter.com/share?url=https%3a%2f%2fcharly3pins.dev%2fes%2fcode%2ftournaments-generator%2f&amp;text=Tournaments%20generator&amp;via=charly3pins&amp;hashtags=go%2cflutter%2cpython" target="_blank" class="share-btn twitter">
+            <i class="fa fa-twitter"></i>
+        </a>
+    </li>
+
+    
+    <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcharly3pins.dev%2fes%2fcode%2ftournaments-generator%2f" target="_blank" class="share-btn facebook">
+            <i class="fa fa-facebook"></i>
+        </a>
+    </li>
+
+    
+    <li>
+        <a href="//reddit.com/submit?url=https%3a%2f%2fcharly3pins.dev%2fes%2fcode%2ftournaments-generator%2f&amp;title=Tournaments%20generator" target="_blank" class="share-btn reddit">
+            <i class="fa fa-reddit-alien"></i>
+        </a>
+    </li>
+
+    
+    <li>
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fcharly3pins.dev%2fes%2fcode%2ftournaments-generator%2f&amp;title=Tournaments%20generator" target="_blank" class="share-btn linkedin">
+            <i class="fa fa-linkedin"></i>
+        </a>
+    </li>
+
+    
+    <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fcharly3pins.dev%2fes%2fcode%2ftournaments-generator%2f&amp;description=Tournaments%20generator" target="_blank" class="share-btn pinterest">
+            <i class="fa fa-pinterest-p"></i>
+        </a>
+    </li>
+
+    
+    <li>
+        <a href="mailto:?subject=Check out this post by charly3pins&amp;body=https%3a%2f%2fcharly3pins.dev%2fes%2fcode%2ftournaments-generator%2f" target="_blank" class="share-btn email">
+            <i class="fa fa-envelope"></i>
+        </a>
+    </li>
+</ul>
+
+
+				<article>
+					
+					
+					<div class="page-separator"></div>
+					<h2 id="por-qué">POR QUÉ</h2>
+<p>La motivación para iniciar este proyecto no es otra que mi curiosidad por las aplicaciones móviles. Es obvio que la forma de consumir tecnología ha cambiado en los últimos años y cada vez se hace más a través de un dispositivo móvil. Por esa razón, quería explorar cómo funcionan las aplicaciones móviles y cómo puedo crear una desde cero.
+Hice algunos tutoriales de Android, pero como están cambiando muchas cosas al lanzar nuevas versiones y mi idea era crear algo genérico para todos los dispositivos, decidí intentarlo con <a href="https://flutter.dev/">Flutter</a>.</p>
+<p>Estaba entre <a href="https://reactnative.dev/">React Native</a> o Flutter, pero después de leer algunos pros y contras, decidí aliarme con Flutter. Comencé a leer su <a href="https://flutter.dev/docs">documentación</a> y era muy similar a Android (están usando Dart en la parte inferior) y comencé a recordar mis viejos tiempos en los tutoriales de Android y me gusta, así que Yo continué. Después de unos días leyendo solo documentación técnica, continué con la aplicación &ldquo;hello world&rdquo; <a href="https://flutter.dev/docs/get-started/codelab">tutorial</a> que proporcionan en el sitio web. Y finalmente, estaba listo para comenzar mi propio proyecto.</p>
+<p>Para cuando comenzó la pandemia mundial, mis amigos y yo comenzamos una liga FIFA 20 en PS4 para distraernos por las tardes / noches. Inicialmente solo se trataba de jugar y nada más, pero luego comenzamos a tener un panel de Power BI para estadísticas, un canal de YouTube para compartir los juegos en vivo y luego almacenarlos allí y un Twitter para tuitear las actualizaciones de la clasificación cada semana. La primera liga se creó de forma manual y un poco dolorosa y súper estática, así que decidí usar ese tema para crear una aplicación que nos ayude a administrar la segunda liga creando la liga, administrando nuestros equipos y partidos allí, notificando los resultados. y mostrando estadísticas más detalladas en su interior.</p>
+<h2 id="qué">QUÉ</h2>
+<p>En primer lugar, quería poner toda la información real de FIFA 20 dentro del sitio web relacionada con ligas, equipos y jugadores. Para eso encontré algunos sitios web que tienen esa información abierta y gratuita, pero no tienen una API para consumirla. La idea de copiar manualmente era muy tentadora, pero preferí escribir un rastreador simple en <a href="https://www.python.org/">Python</a> usando la biblioteca <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/#css-selectors">BeautifulSoup</a> con los css-selectors que proporciona. Haciendo algunos ajustes aquí y allá, al final terminé teniendo 3 archivos json, uno para cada tema que quería inicialmente, ¡así que todo perfecto!</p>
+<p>Luego, para poder introducir toda esa información en la base de datos, la idea fue crear una herramienta de línea de comandos que lea esos archivos y genere las correspondientes declaraciones SQL y luego genere los archivos de migración correspondientes.
+Elegí <a href="https://golang.org/">Go</a> como lenguaje de programación para la API y creé un <code>cmd</code> que me permite hacer la idea deseada. La base de datos sería <a href="https://www.postgresql.org/">PostgreSQL</a> por lo que las &ldquo;inserciones&rdquo; tienen que estar de acuerdo con su sintaxis.</p>
+<p>Con todos los datos iniciales listos, comencé a diseñar el resto de la base de datos y los posibles puntos finales lo necesitan para administrar toda esa información. Elegí <a href="https://github.com/gorilla/mux">mux</a> para HTTP por su simplicidad pero potente en comparación con la lib estándar (solo para el análisis de parámetros vale la pena &hellip;). Como quería explorar más el lado de la aplicación móvil que el lado del servidor, simplemente organicé el código usando la [Arquitectura de capas](<a href="https://www.oreilly.com/library/view/software-architecture-patterns/9781491971437/ch01">https://www.oreilly.com/library/view/software-architecture-patterns/9781491971437/ch01</a> .html) agrupando los elementos por función y usé <a href="https://gorm.io/index.html">GORM</a> como el ORM para simplificar la consulta y las asignaciones entre la base de datos y mis modelos.</p>
+<p><img src="/images/code/tournaments-generator/api-structure.jpeg" alt="api structure"></p>
+<p>Dentro de la carpeta <code>cmd</code> he creado diferentes comandos:</p>
+<ul>
+<li>migración: gestiona las migraciones en la base de datos</li>
+<li>analizador: traduce el json del rastreador en sentencias sql</li>
+<li>servidor: ejecuta el servidor</li>
+</ul>
+<p>Dentro de la carpeta <code>pkg</code> es fácil identificar qué están haciendo las carpetas por su propio nombre.</p>
+<p>Para la aplicación móvil, comencé a poner todos los archivos dentro de una carpeta de <code>componentes</code>, pero cuando comenzó a crecer, fue una tarea difícil de administrar. Después de agregar más complejidad a la aplicación, termino encontrando una forma limpia de organizar el código, dividiéndolo en dos carpetas separadas; uno para el núcleo y otro para la interfaz de usuario. Luego dentro de cada uno también categoricé los diferentes tipos de componentes en función de sus responsabilidades y al final el código (al menos para mí que no soy un experto en Flutter) terminó luciendo súper limpio y (sin duda) más mantenible . Debajo de la organización de carpetas en una vista general:</p>
+<p><img src="/images/code/tournaments-generator/app-structure.jpeg" alt="app structure"></p>
+<p>Al principio, cuando comencé a codificar y ver los resultados, todo fue súper elegante y pensé que era más fácil de lo esperado. Conectar la aplicación con la API fue solo una cuestión de saber cómo usar la biblioteca <code>http</code> y los métodos<code> get</code> o <code>post</code> se conectaron sin problemas.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl">    <span class="kd">var</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">http</span><span class="p">.</span><span class="n">Client</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">String</span> <span class="n">jsonBody</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="n">user</span><span class="p">.</span><span class="n">toJson</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="n">response</span> <span class="o">=</span> <span class="kd">await</span> <span class="n">client</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&#34;</span><span class="si">$</span><span class="n">_baseUrl</span><span class="s2">/token&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nl">headers:</span> <span class="p">{</span><span class="s2">&#34;Content-Type&#34;</span><span class="o">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">},</span> <span class="nl">body:</span> <span class="n">jsonBody</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">statusCode</span> <span class="o">==</span> <span class="m">200</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="n">User</span><span class="p">.</span><span class="n">fromJson</span><span class="p">(</span><span class="n">json</span><span class="p">.</span><span class="n">decode</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">body</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span></code></pre></div><p>El único problema al que me he enfrentado allí es que estaba ejecutando las aplicaciones desde el emulador de Android; eso significa que se estaba ejecutando en una máquina virtual, por lo que la IP no era mi local y no puede acceder al <code>localhost</code>. Después de un poco de investigación, encontré el correcto y todo funcionó correctamente.</p>
+<p>Los problemas comenzaron cuando quería pasar información entre componentes y actualizar la vista en función de esa información, o mejor aún, no actualizar si nada cambia cuando entro de nuevo en una vista (por ejemplo, al pasar de una lista a una vista de detalle, y volviendo de nuevo a la lista). Después de un día leyendo en foros sobre el mismo problema al que me estaba enfrentando, encontré el paquete [Proveedor] (<a href="https://pub.dev/packages/provider">https://pub.dev/packages/provider</a>) y todo parecía fácil y el santo grial para todo, pero no lo era.</p>
+<p>¡El verdadero dolor acaba de comenzar allí! Me tomó algunos días entender realmente cómo funciona. El proveedor inicial es fácil de entender y lo usa y funciona, pero luego desea cambiar solo una pequeña parte de la vista, o desea reconstruir la totalidad, o desea modificar algunos valores en una vista A y luego vaya a la vista B y vea los cambios allí, y todos esos ejemplos está codificado de manera completamente diferente y primero debe saber que hay una forma para cada caso de hacer las cosas y segundo, debe saber cómo hacerlo. Al final utilicé Provider, ProxyProvider, StreamProvider y ChangeNotifierProvider.</p>
+<p>El proyecto no está terminado pero por ahora está En Espera con las siguientes funcionalidades:</p>
+<p>Inicialmente, el usuario puede cambiar entre las vistas de registro / inicio de sesión.
+<img src="/images/code/tournaments-generator/signup.png" alt="signup">
+<img src="/images/code/tournaments-generator/login.png" alt="login"></p>
+<p>Una vez que el usuario está dentro de la aplicación esta tiene diferentes pestañas donde los próximos <code>Partidos</code> tiene que jugar, los<code> Torneos</code> que está jugando y los <code>Grupos</code> donde está presente y los miembros dentro. En la parte superior tiene una barra de navegación con una foto de perfil, un ícono de campana para las notificaciones, un ícono de lente para buscar a otros miembros y agregar como sus amigos y el botón de cierre de sesión para desconectarse.
+<img src="/images/code/tournaments-generator/home.png" alt="home"></p>
+<p>Si hace clic en la foto de perfil va directamente al perfil del usuario donde muestra los amigos y donde puede editar su información personal (nombre, nombre de usuario, foto de perfil):
+<img src="/images/code/tournaments-generator/profile.png" alt="profile"></p>
+<p>Al presionar el ícono de la lente, cambia la vista a la funcionalidad de súper buscador que permite al usuario encontrar a otras personas que ya están en la plataforma, agregarlas como sus amigos y luego crear grupos, generar torneos y jugar partidos juntos. El buscador es una búsqueda de &ldquo;me gusta&rdquo;, por lo que si alguna de las letras que introduce aparece en algún nombre de usuario, entonces se muestra allí.
+<img src="/images/code/tournaments-generator/searcher.png" alt="searcher"></p>
+<p>Luego de eso, si el usuario ingresa a un perfil que no es amigo, aparecerá el botón para agregarlo y si se hace clic, ocultará ese botón y mostrará la información de que ya hay una solicitud enviada, esperando al otro usuario. para contestarlo.
+<img src="/images/code/tournaments-generator/add-friend.png" alt="add friend">
+<img src="/images/code/tournaments-generator/add-friend-requested.png" alt="add friend requested"></p>
+<p>Actuando como el otro usuario, al iniciar sesión, el icono de campana mostrará una nueva notificación. Entrar aparece como una notificación de amigo y se puede responder directamente desde la lista o entrar en el perfil de &ldquo;solicitante&rdquo; y aceptar / rechazar allí. Si se acepta la solicitud de amistad, aparecerá como un nuevo amigo en el perfil del usuario.
+<img src="/images/code/tournaments-generator/friend-request-notification.png" alt="friend request notification">
+<img src="/images/code/tournaments-generator/friend-request-notification-answer.png" alt="friend request notification answer">
+<img src="/images/code/tournaments-generator/profile-multifriends.png" alt="profile multi friends"></p>
+<p>Después de que un usuario tiene algunos amigos, es el momento en que puede crear un grupo. Para eso la aplicación tiene la tercera pestaña llamada <code>Grupos</code> y un botón (+).
+<img src="/images/code/tournaments-generator/new-group.png" alt="new group"></p>
+<p>Dentro del generador de grupos, mostrará la lista de amigos en la parte superior. A medida que se seleccionan, se colocan en la lista siguiente, donde se pueden eliminar si se desea; cuando se seleccionan todos los amigos, es hora de pasar a la siguiente pantalla con el botón (&ndash;&gt;).
+<img src="/images/code/tournaments-generator/new-group-selected.png" alt="new group selected"></p>
+<p>El siguiente paso es poner un buen nombre para ese grupo y luego presionar la casilla uno para crear el grupo.
+<img src="/images/code/tournaments-generator/new-group-name.png" alt="new group name"></p>
+<p>Cuando el usuario regresa a la vista de inicio, aparece el nuevo grupo creado y sus miembros en la lista.
+<img src="/images/code/tournaments-generator/new-group-created.png" alt="new group created"></p>
+<p>A partir de aquí lo que falta es crear los <code>Torneos</code> seleccionando el grupo y los miembros de ese grupo que quieren jugar, el número de equipos para cada integrante, los equipos, las rondas, el tipo de torneo, etc. y luego generar el calendario. Muestre el calendario en la pestaña <code>Partidos</code> y dentro de cada partida permita a los usuarios agregar los resultados. También proporcione una clasificación y las estadísticas de cada partido y una agrupada para cada encuentro y una genérica.</p>
+<h2 id="pensamientos-finales">PENSAMIENTOS FINALES</h2>
+<p>Con esta prueba de concepto tuve la oportunidad de trabajar en una aplicación compleja en términos de diseño de componentes reutilizables en una aplicación móvil, llamar a una API externa para administrar la información que se muestra en la aplicación y aprender a usar el paquete Provider para mover información. entre múltiples vistas y controlar el estado de la aplicación de una forma más sencilla y eficaz.</p>
+<p>Hay mucho más que aprender con respecto al desarrollo móvil, pero considero este proyecto como un paso inicial para empezar. Algún día haré las vistas que faltan para que podamos usarlas en el mundo real, pero espero que no sea porque tengamos otra pandemia 😏</p>
+<ul>
+<li>Código fuente de la API en Go: <a href="https://github.com/charly3pins/fifa-gen-api">https://github.com/charly3pins/fifa-gen-api</a></li>
+<li>Código fuente de la app en Flutter: <a href="https://github.com/charly3pins/fifa_gen">https://github.com/charly3pins/fifa_gen</a></li>
+</ul>
+
+				</article>
+
+				
+				
+				<div class="page-separator"><hr></div>
+				
+				<section class="post-preview-container">
+					<a href="https://charly3pins.dev/es/blog/go-project-layout-with-clean-architecures-and-ddd/">
+						<div class="post-preview-title-container">
+							<h3 class="post-preview-title">Estructura de proyecto para Go con Arquitecturas Limpias y DDD</h3>
+						</div>
+						<div class="post-preview-subtext">Cómo aplico Arquitecturas Limpias y DDD cuando creo un proyecto en Go.</div>
+						<div>
+							<span class="post-preview-metadata">
+								01/01/0001 · 8 min lectura
+							</span>
+							
+							<a class="tag" href="https://charly3pins.dev/tags/go/">#go</a>
+							
+						</div>
+					</a>
+				</section>					
+				
+				
+				
+				<div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "https-charly3pins-dev" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+			
+			</section>
+			
+			<div class="page-separator centered"><hr></div>
+			
+			<footer class="footer-container">
+	<ul class="footer-social-icons-container">
+		<li><a class="footer-social-icon" href="https://twitter.com/charly3pins" target="_blank" aria-label="Twitter">
+			<i class="fa fa-twitter fa-fw" title="Twitter"></i></a>
+		</li>
+		<li><a class="footer-social-icon" href="https://github.com/charly3pins" target="_blank" aria-label="GitHub">
+			<i class="fa fa-github-alt fa-fw" title="GitHub"></i></a>
+		</li>
+		<li><a class="footer-social-icon" href="https://stackoverflow.com/users/4948631/charly3pins" target="_blank" aria-label="Stack Overflow">
+			<i class="fa fa-stack-overflow fa-fw" title="Stack Overflow"></i></a>
+		</li>
+		<li><a class="footer-social-icon" href="https://charly3pins.dev/index.xml" target="_blank" aria-label="RSS">
+			<i class="fa fa-rss fa-fw" title="RSS"></i></a>
+		</li>
+		<li><a class="footer-social-icon" href="https://dev.to/charly3pins" target="_blank" aria-label="Dev.to">
+			<i class="fa fa-dev-to" title="Dev.to"></i>DEV</a>
+		</li> 
+		<li><a class="footer-social-icon" href="mailto:hello@charly3pins.dev" target="_blank" aria-label="Email">
+			<i class="fa fa-envelope fa-fw" title="email"></i></a>
+		</li>
+	</ul>
+	<div class="footer-text">Última publicación en 16/08/2021</div>
+	<div class="footer-text">© 2018 - 2023 Charly3Pins</div>
+</footer>
+<script type="text/javascript" src="https://charly3pins.dev/js/theme-switcher.js"></script>
+
+		
+		</div>
+
+	</body>
+</html>

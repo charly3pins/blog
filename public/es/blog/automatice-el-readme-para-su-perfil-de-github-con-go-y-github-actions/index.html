@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+	
+	<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="Director de Ingenieria">
+
+  <title>Automatice el README para su perfil de GitHub con Go y GitHub Actions | Charly3Pins</title>
+
+
+  <meta property="og:title" content="Automatice el README para su perfil de GitHub con Go y GitHub Actions - charly3pins" />
+
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="Crear con la ayuda de Go un fichero Markdown dinámico por README y desplegarlo en GitHub de su perfil con la ayuda de GitHub Actions.">
+  <meta property="og:url" content="https://charly3pins.dev/es/blog/automatice-el-readme-para-su-perfil-de-github-con-go-y-github-actions/">
+  <meta property="og:site_name" content="charly3pins.dev">
+  
+  <meta property="og:image" content="https://charly3pins.dev/images/github-profile-readme/charly3pins-profile.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta name="twitter:title" content="Automatice el README para su perfil de GitHub con Go y GitHub Actions" />
+
+
+  <meta name="twitter:description" content="Crear con la ayuda de Go un fichero Markdown dinámico por README y desplegarlo en GitHub de su perfil con la ayuda de GitHub Actions.">
+
+
+  <meta name="twitter:image" content="https://charly3pins.dev/images/github-profile-readme/charly3pins-profile.png">
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-126216319-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  <link rel="stylesheet" href="https://charly3pins.dev/css/main.css" />
+  <link rel="stylesheet" href="https://charly3pins.dev/css/syntax.css" />
+  <link rel="stylesheet" href="https://charly3pins.dev/css/social_share.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+	<body>
+		<div class="navbar-container">
+    <nav class="navbar-navigation">
+        
+        <a href="/es/">Inicio</a>
+        
+        <a href="/es/blog/">Blog</a>
+        
+        <a href="/es/code/">Código</a>
+        
+        <a href="/es/about/">Quién</a>
+        
+        
+        <ul class="lang-selector">
+            <li>
+                <a>Castellano</a> <i class="fa fa-angle-down" aria-hidden="true"></i>
+                <ul>
+                
+                    <a href="https://charly3pins.dev/blog/automate-your-github-profile-readme-with-go-and-github-actions/">Inglés</a>
+                
+                    <a href="https://charly3pins.dev/ca/blog/automatitzi-el-readme-pel-seu-perfil-de-github-amb-go-i-github-actions/">Catalán</a>
+                
+                </ul>
+            </li>
+        </ul>
+        
+        <button class="theme-switch-wrapper">
+            <img id="theme-switcher" class="theme-switcher" src="https://sunilsandhu.com/assets/icons/sun-moon.png" alt="toggle dark mode">
+        </button>
+    </nav>
+</div>
+		
+		<div class="layout-container">
+
+			<section class="blog-container">
+				
+				<h4 class="post-title">Automatice el README para su perfil de GitHub con Go y GitHub Actions</h4>
+				<h2 class="post-description">Crear con la ayuda de Go un fichero Markdown dinámico por README y desplegarlo en GitHub de su perfil con la ayuda de GitHub Actions.</h2>
+
+				<div class="post-metadata">
+					<div class="post-tags">
+						
+						<a class="tag" href="https://charly3pins.dev/tags/go/">#go</a>
+						
+						<a class="tag" href="https://charly3pins.dev/tags/github/">#github</a>
+						
+						<a class="tag" href="https://charly3pins.dev/tags/ci/cd/">#ci/cd</a>
+						
+					</div>
+					<span class="post-date">
+						16/03/2021 · 5 min lectura
+					</span>
+				</div>
+
+				<ul class="icons">
+    
+    <li>
+        
+        <a href="//twitter.com/share?url=https%3a%2f%2fcharly3pins.dev%2fes%2fblog%2fautomatice-el-readme-para-su-perfil-de-github-con-go-y-github-actions%2f&amp;text=Automatice%20el%20README%20para%20su%20perfil%20de%20GitHub%20con%20Go%20y%20GitHub%20Actions&amp;via=charly3pins&amp;hashtags=go%2cgithub%2cci%2fcd" target="_blank" class="share-btn twitter">
+            <i class="fa fa-twitter"></i>
+        </a>
+    </li>
+
+    
+    <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcharly3pins.dev%2fes%2fblog%2fautomatice-el-readme-para-su-perfil-de-github-con-go-y-github-actions%2f" target="_blank" class="share-btn facebook">
+            <i class="fa fa-facebook"></i>
+        </a>
+    </li>
+
+    
+    <li>
+        <a href="//reddit.com/submit?url=https%3a%2f%2fcharly3pins.dev%2fes%2fblog%2fautomatice-el-readme-para-su-perfil-de-github-con-go-y-github-actions%2f&amp;title=Automatice%20el%20README%20para%20su%20perfil%20de%20GitHub%20con%20Go%20y%20GitHub%20Actions" target="_blank" class="share-btn reddit">
+            <i class="fa fa-reddit-alien"></i>
+        </a>
+    </li>
+
+    
+    <li>
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fcharly3pins.dev%2fes%2fblog%2fautomatice-el-readme-para-su-perfil-de-github-con-go-y-github-actions%2f&amp;title=Automatice%20el%20README%20para%20su%20perfil%20de%20GitHub%20con%20Go%20y%20GitHub%20Actions" target="_blank" class="share-btn linkedin">
+            <i class="fa fa-linkedin"></i>
+        </a>
+    </li>
+
+    
+    <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fcharly3pins.dev%2fes%2fblog%2fautomatice-el-readme-para-su-perfil-de-github-con-go-y-github-actions%2f&amp;description=Automatice%20el%20README%20para%20su%20perfil%20de%20GitHub%20con%20Go%20y%20GitHub%20Actions" target="_blank" class="share-btn pinterest">
+            <i class="fa fa-pinterest-p"></i>
+        </a>
+    </li>
+
+    
+    <li>
+        <a href="mailto:?subject=Check out this post by charly3pins&amp;body=https%3a%2f%2fcharly3pins.dev%2fes%2fblog%2fautomatice-el-readme-para-su-perfil-de-github-con-go-y-github-actions%2f" target="_blank" class="share-btn email">
+            <i class="fa fa-envelope"></i>
+        </a>
+    </li>
+</ul>
+
+
+				<article>
+					
+					<div class="centered">
+						<img src="https://charly3pins.dev/images/github-profile-readme/charly3pins-profile.png" alt="cover image">
+					</div>
+					
+					
+					<div class="page-separator"></div>
+					<p>Tras el post donde expliqué <a href="/es/blog/cree-un-readme-incre%C3%ADble-para-su-perfil-de-github/">cómo crear un README para el perfil de GitHub</a>, me faltó incluir en la sección del <code>Blog</code> un link al último post publicado. Principalmente no lo hice porque no quería tener que actualizar a mano cada vez el README con el último post y su link. Para resolver esto estuve pensando cómo podía automatizar esta actualización. Mientras hacía mi lectura diaria de RSS que sigo con la aplicación Feedly, caí en que yo también tenía feed RSS. Por lo tanto, podía leer yo mismo el feed de mi blog y obtener el último post de allí de forma sencilla.</p>
+<p>Una vez cubierta la parte de cómo obtener el último post publicado me faltaba la parte de cómo actualizar el README y es donde probé por primera vez (ya hacía tiempo que tenía ganas) las <a href="https://github.com/features/actions">GitHub Actions</a>. Hace un tiempo que GitHub sacó al mercado estas acciones que básicamente sirven para crear workflows automáticos para <a href="https://es.wikipedia.org/wiki/CI/CD">CI/CD</a>.</p>
+<p>Con las dos partes del problema cubiertas, sólo me faltaba una pequeña cosa&hellip; ¡hacerlo! Así que explicaré en detalle como hice ambas cosas para que lo pueda utilizar en su proyecto si le interesa.</p>
+<h2 id="obtener-el-último-post-con-go">Obtener el último post con Go</h2>
+<p>Necesitaba escanear el feed del blog y lo quería hacer en Go, por tanto, lo primero que hice fue buscar si ya había alguna librería que me facilitara esta tarea para no reinventar la rueda y encontré la <a href="https://github.com/mmcdole/gofeed">github.com/mmcdole/gofeed</a>. Tenía un montón de funcionalidades pero yo con el uso básico descrito en su README tenía suficiente.</p>
+<p>Con el siguiente trozo de código, creo un nuevo parser, escaneo la dirección de mi feed y los elementos resultantes, me quedo con el primero, ya que es el último post publicado.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">p</span> <span class="o">:=</span> <span class="nx">gofeed</span><span class="p">.</span><span class="nf">NewParser</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nx">feed</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">p</span><span class="p">.</span><span class="nf">ParseURL</span><span class="p">(</span><span class="s">&#34;https://charly3pins.dev/index.xml&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">log</span><span class="p">.</span><span class="nf">Fatalf</span><span class="p">(</span><span class="s">&#34;error getting feed: %v&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nx">newestItem</span> <span class="o">:=</span> <span class="nx">feed</span><span class="p">.</span><span class="nx">Items</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span></span></code></pre></div><p>Con esto ya tengo el item con toda la información. Su aspecto es similar a:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;item&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;title&gt;</span>My productivity setup for VS Code<span class="nt">&lt;/title&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;link&gt;</span>http://charly3pins.dev/blog/my-productivity-setup-for-vs-code/<span class="nt">&lt;/link&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;pubDate&gt;</span>Tue, 09 Mar 2021<span class="nt">&lt;/pubDate&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;guid&gt;</span>http://charly3pins.dev/blog/my-productivity-setup-for-vs-code/<span class="nt">&lt;/guid&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;description&gt;</span>I am gonna show you my setup for VS Code editor which makes me more productive and I feel more comfortable with the tool that I spend most of my time during the day.<span class="nt">&lt;/description&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;content&gt;&lt;p&gt;</span>I spend a lot of hours during the day coding for the company I work for and during nights or weekends for myself, so I want to be comfortable with the tools I use constantly. One of them is my editor of code, specifically <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&#34;https://code.visualstudio.com/&#34;</span><span class="nt">&gt;</span>VS Code<span class="nt">&lt;/a&gt;</span>.....<span class="nt">&lt;/content&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/item&gt;</span>
+</span></span></code></pre></div><p>Lo que me interesa para mostrar al README es sólo el <code>title</code> y el <code>link</code>.</p>
+<h2 id="leer-y-escribir-el-readme">Leer y escribir el README</h2>
+<p>Una vez tenía la información necesaria ahora tocaba leer el fichero <code>README.md</code> del <a href="https://github.com/charly3pins/charly3pins">repositorio</a>, escribir los cambios y guardarlo de nuevo.</p>
+<p>Para ello podía leer el archivo usando la librería standard <code>ioutil.ReadFile()</code>, pero en este caso como no quiero reaprovechar nada del archivo, puedo llamar directamente al <code>os.Create()</code> para crear un nuevo archivo y así sobrescribir el README.md que ya tenía en el directorio.</p>
+<p>Además, como que quiero poner la información del feed junto con la parte estática de texto que ya tenía, lo que haré es crear varias cadenas de texto con las diferentes secciones que quiero poner en el perfil y luego juntarlas todas con un <code>fmt.Sprintf() </code>.</p>
+<p>El código que hace todo esto es el siguiente:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">file</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">os</span><span class="p">.</span><span class="nf">Create</span><span class="p">(</span><span class="nx">filename</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">log</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;error creating file&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">defer</span> <span class="nx">file</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">_</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">io</span><span class="p">.</span><span class="nf">WriteString</span><span class="p">(</span><span class="nx">file</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">log</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;error writing content to file&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nx">file</span><span class="p">.</span><span class="nf">Sync</span><span class="p">()</span>
+</span></span></code></pre></div><p>Lo que falta por ver aquí es el valor de <code>filename</code> y el de <code>data</code>. El primero es fácil, simplemente la ruta para llegar al README. En mi caso como tengo el proyecto en un subdirectorio de mi repositorio tengo que usar <code>filename = ../README.md</code>. En la otra variable, lo que hay es el siguiente:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">hi</span> <span class="o">:=</span> <span class="s">&#34;# Hey there!&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">blog</span> <span class="o">:=</span> <span class="s">&#34;## Blog\n\nMy latest blog post is: **[&#34;</span> <span class="o">+</span> <span class="nx">newestItem</span><span class="p">.</span><span class="nx">Title</span> <span class="o">+</span> <span class="s">&#34;](&#34;</span> <span class="o">+</span> <span class="nx">newestItem</span><span class="p">.</span><span class="nx">Link</span> <span class="o">+</span> <span class="s">&#34;)**.&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">data</span> <span class="o">:=</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Sprintf</span><span class="p">(</span><span class="s">&#34;%s\n\n%s\n\n%s\n\n%s\n&#34;</span><span class="p">,</span> <span class="nx">hi</span><span class="p">,</span> <span class="nx">blog</span><span class="p">)</span>
+</span></span></code></pre></div><p>La parte importante es la de <code>blog</code> donde se ve claramente como leo la información del feed.</p>
+<p>Puede ver el código completo en <a href="https://github.com/charly3pins/charly3pins/blob/main/update/main.go">mi recompositorio</a>.</p>
+<h2 id="ejecutando-automáticamente-el-proceso">Ejecutando automáticamente el proceso</h2>
+<p>Una vez ya tenemos el código que nos genera el README automático y de forma dinámica según el último post, lo que queda por hacer es que se ejecute de forma periódica y no nos tengamos que preocupar de nada. Para hacerlo usaré un <a href="https://docs.github.com/en/actions/reference/events-that-trigger-workflows">trigger</a> de GitHub Actions para que cada vez que haga un push a la rama <code>master</code> ejecute el proceso y también que se ejecute de forma planificada cada domingo a las 12am.</p>
+<p>Primero de todo necesito la carpeta <code>.github/worfklows</code> y dentro creo el archivo<code> update.yaml</code> con el contenido siguiente:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="nx">on</span>:<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  <span class="nx">push</span>:<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    <span class="nx">branches</span>:<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>      <span class="p">-</span> <span class="nx">master</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  <span class="nx">schedule</span>:<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    <span class="p">-</span> <span class="nx">cron</span>: <span class="s1">&#39;0 0 * * 0&#39;</span><span class="err">
+</span></span></span></code></pre></div><p>Cuando ya está el trigger listo, lo que se tienen que definir son los <a href="https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobs">jobs</a>. Se pueden definir tantos como se quieran, en mi caso con 3 sencillos tengo suficiente. El primero hará un <code>checkout</code> del proyecto, el segundo <code>generarà</code> el README y el tercero <code>desplegarà</code> los cambios. Para hacer el último paso tendremos que usar los mecanismos de <a href="https://docs.github.com/en/actions/reference/authentication-in-a-workflow">autenticación</a> que proporciona GitHub Actions. El código resultantes es:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="nx">jobs</span>:<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  <span class="nx">build</span><span class="p">-</span><span class="nx">and</span><span class="p">-</span><span class="nx">deploy</span>:<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    <span class="nx">runs</span><span class="p">-</span><span class="nx">on</span>: <span class="nx">ubuntu</span><span class="p">-</span><span class="nx">latest</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    <span class="nx">steps</span>:<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>      <span class="p">-</span> <span class="nx">name</span>: <span class="nx">checkout</span> <span class="nx">repo</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>        <span class="nx">uses</span>: <span class="nx">actions</span>/<span class="nx">checkout</span>@<span class="nx">master</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>        <span class="nx">with</span>:<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>          <span class="nx">fetch</span><span class="p">-</span><span class="nx">depth</span>: <span class="m">1</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>      <span class="p">-</span> <span class="nx">name</span>: <span class="nx">generate</span> <span class="nx">README</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>        <span class="nx">run</span>: <span class="p">|</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>          <span class="nx">cd</span> ${<span class="nx">GITHUB_WORKSPACE</span>}<span class="sr">/update/</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>          <span class="nx">go</span> <span class="nx">run</span> <span class="nx">main</span>.<span class="nx">go</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>      <span class="p">-</span> <span class="nx">name</span>: <span class="nx">deploy</span> <span class="nx">changes</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>        <span class="nx">run</span>: <span class="p">|</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>          <span class="nx">git</span> <span class="nx">config</span> <span class="nx">user</span>.<span class="nx">name</span> <span class="s2">&#34;${GITHUB_ACTOR}&#34;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>          <span class="nx">git</span> <span class="nx">config</span> <span class="nx">user</span>.<span class="nx">email</span> <span class="s2">&#34;${GITHUB_ACTOR}@users.noreply.github.com&#34;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>          <span class="nx">git</span> <span class="nx">add</span> .<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>          <span class="nx">git</span> <span class="nx">commit</span> <span class="p">-</span><span class="nx">am</span> <span class="s2">&#34;:rocket:: updated content&#34;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>          <span class="nx">git</span> <span class="nx">push</span> <span class="p">--</span><span class="nx">all</span> <span class="p">-</span><span class="nx">f</span> <span class="nx">https</span>:<span class="sr">//</span>${{ <span class="nx">secrets</span>.<span class="nx">GITHUB_TOKEN</span> }}@<span class="nx">github</span>.<span class="nx">com</span>/${<span class="nx">GITHUB_REPOSITORY</span>}.<span class="nx">git</span><span class="err">
+</span></span></span></code></pre></div><p>Puede ver el código completo en <a href="https://github.com/charly3pins/charly3pins/blob/main/.github/workflows/update.yaml">mi repositorio</a>.</p>
+<p>No dude en comentar aquí o contactarme en mis redes sociales para cualquier comentario, pregunta o sugerencia.</p>
+
+				</article>
+
+				
+				
+				<div class="page-separator"><hr></div>
+				
+				<section class="post-preview-container">
+					<a href="https://charly3pins.dev/es/blog/cree-un-readme-incre%C3%ADble-para-su-perfil-de-github/">
+						<div class="post-preview-title-container">
+							<h3 class="post-preview-title">Cree un README  increíble para su perfil de GitHub</h3>
+						</div>
+						<div class="post-preview-subtext">Pasos rápidos y sencillos para crear un portfolio en su página de perfil de GitHub con un repositorio especial y con estadísticas dinámicas de GitHub.</div>
+						<div>
+							<span class="post-preview-metadata">
+								12/02/2021 · 2 min lectura
+							</span>
+							
+							<a class="tag" href="https://charly3pins.dev/tags/github/">#github</a>
+							
+						</div>
+					</a>
+				</section>					
+				
+				<section class="post-preview-container">
+					<a href="https://charly3pins.dev/es/blog/suba-de-nivel-sus-presentaciones-con-go/">
+						<div class="post-preview-title-container">
+							<h3 class="post-preview-title">Suba de nivel sus presentaciones con Go</h3>
+						</div>
+						<div class="post-preview-subtext">Genera fácilmente tus presentaciones con &#34;present&#34;, la herramienta impulsada por Go que genera y renderiza tus diapositivas.</div>
+						<div>
+							<span class="post-preview-metadata">
+								06/10/2020 · 7 min lectura
+							</span>
+							
+							<a class="tag" href="https://charly3pins.dev/tags/go/">#go</a>
+							
+							<a class="tag" href="https://charly3pins.dev/tags/life/">#life</a>
+							
+						</div>
+					</a>
+				</section>					
+				
+				<section class="post-preview-container">
+					<a href="https://charly3pins.dev/es/code/tournaments-generator/">
+						<div class="post-preview-title-container">
+							<h3 class="post-preview-title">Tournaments generator</h3>
+						</div>
+						<div class="post-preview-subtext">Prueba de concepto de la construcción de una aplicación para administrar torneos FIFA 20 entre diferentes personas usando Flutter para construir una aplicación móvil y Go para construir una API que actúa como servidor. También usé Python para construir raspadores simples.</div>
+						<div>
+							<span class="post-preview-metadata">
+								01/05/2020 · 9 min lectura
+							</span>
+							
+							<a class="tag" href="https://charly3pins.dev/tags/go/">#go</a>
+							
+							<a class="tag" href="https://charly3pins.dev/tags/flutter/">#flutter</a>
+							
+							<a class="tag" href="https://charly3pins.dev/tags/python/">#python</a>
+							
+						</div>
+					</a>
+				</section>					
+				
+				
+				
+				<div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "https-charly3pins-dev" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+			
+			</section>
+			
+			<div class="page-separator centered"><hr></div>
+			
+			<footer class="footer-container">
+	<ul class="footer-social-icons-container">
+		<li><a class="footer-social-icon" href="https://twitter.com/charly3pins" target="_blank" aria-label="Twitter">
+			<i class="fa fa-twitter fa-fw" title="Twitter"></i></a>
+		</li>
+		<li><a class="footer-social-icon" href="https://github.com/charly3pins" target="_blank" aria-label="GitHub">
+			<i class="fa fa-github-alt fa-fw" title="GitHub"></i></a>
+		</li>
+		<li><a class="footer-social-icon" href="https://stackoverflow.com/users/4948631/charly3pins" target="_blank" aria-label="Stack Overflow">
+			<i class="fa fa-stack-overflow fa-fw" title="Stack Overflow"></i></a>
+		</li>
+		<li><a class="footer-social-icon" href="https://charly3pins.dev/index.xml" target="_blank" aria-label="RSS">
+			<i class="fa fa-rss fa-fw" title="RSS"></i></a>
+		</li>
+		<li><a class="footer-social-icon" href="https://dev.to/charly3pins" target="_blank" aria-label="Dev.to">
+			<i class="fa fa-dev-to" title="Dev.to"></i>DEV</a>
+		</li> 
+		<li><a class="footer-social-icon" href="mailto:hello@charly3pins.dev" target="_blank" aria-label="Email">
+			<i class="fa fa-envelope fa-fw" title="email"></i></a>
+		</li>
+	</ul>
+	<div class="footer-text">Última publicación en 16/08/2021</div>
+	<div class="footer-text">© 2018 - 2023 Charly3Pins</div>
+</footer>
+<script type="text/javascript" src="https://charly3pins.dev/js/theme-switcher.js"></script>
+
+		
+		</div>
+
+	</body>
+</html>

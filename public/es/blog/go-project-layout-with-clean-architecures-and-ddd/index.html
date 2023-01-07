@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+	
+	<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="Director de Ingenieria">
+
+  <title>Estructura de proyecto para Go con Arquitecturas Limpias y DDD | Charly3Pins</title>
+
+
+  <meta property="og:title" content="Estructura de proyecto para Go con Arquitecturas Limpias y DDD - charly3pins" />
+
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="Cómo aplico Arquitecturas Limpias y DDD cuando creo un proyecto en Go.">
+  <meta property="og:url" content="https://charly3pins.dev/es/blog/go-project-layout-with-clean-architecures-and-ddd/">
+  <meta property="og:site_name" content="charly3pins.dev">
+  
+  <meta property="og:image" content="https://charly3pins.dev/images/CleanArchitecture.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta name="twitter:title" content="Estructura de proyecto para Go con Arquitecturas Limpias y DDD" />
+
+
+  <meta name="twitter:description" content="Cómo aplico Arquitecturas Limpias y DDD cuando creo un proyecto en Go.">
+
+
+  <meta name="twitter:image" content="https://charly3pins.dev/images/CleanArchitecture.jpg">
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-126216319-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  <link rel="stylesheet" href="https://charly3pins.dev/css/main.css" />
+  <link rel="stylesheet" href="https://charly3pins.dev/css/syntax.css" />
+  <link rel="stylesheet" href="https://charly3pins.dev/css/social_share.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+	<body>
+		<div class="navbar-container">
+    <nav class="navbar-navigation">
+        
+        <a href="/es/">Inicio</a>
+        
+        <a href="/es/blog/">Blog</a>
+        
+        <a href="/es/code/">Código</a>
+        
+        <a href="/es/about/">Quién</a>
+        
+        
+        <ul class="lang-selector">
+            <li>
+                <a>Castellano</a> <i class="fa fa-angle-down" aria-hidden="true"></i>
+                <ul>
+                
+                    <a href="https://charly3pins.dev/blog/go-project-layout-with-clean-architecures-and-ddd/">Inglés</a>
+                
+                </ul>
+            </li>
+        </ul>
+        
+        <button class="theme-switch-wrapper">
+            <img id="theme-switcher" class="theme-switcher" src="https://sunilsandhu.com/assets/icons/sun-moon.png" alt="toggle dark mode">
+        </button>
+    </nav>
+</div>
+		
+		<div class="layout-container">
+
+			<section class="blog-container">
+				
+				<h4 class="post-title">Estructura de proyecto para Go con Arquitecturas Limpias y DDD</h4>
+				<h2 class="post-description">Cómo aplico Arquitecturas Limpias y DDD cuando creo un proyecto en Go.</h2>
+
+				<div class="post-metadata">
+					<div class="post-tags">
+						
+						<a class="tag" href="https://charly3pins.dev/tags/go/">#go</a>
+						
+					</div>
+					<span class="post-date">
+						01/01/0001 · 8 min lectura
+					</span>
+				</div>
+
+				<ul class="icons">
+    
+    <li>
+        
+        <a href="//twitter.com/share?url=https%3a%2f%2fcharly3pins.dev%2fes%2fblog%2fgo-project-layout-with-clean-architecures-and-ddd%2f&amp;text=Estructura%20de%20proyecto%20para%20Go%20con%20Arquitecturas%20Limpias%20y%20DDD&amp;via=charly3pins&amp;hashtags=go" target="_blank" class="share-btn twitter">
+            <i class="fa fa-twitter"></i>
+        </a>
+    </li>
+
+    
+    <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcharly3pins.dev%2fes%2fblog%2fgo-project-layout-with-clean-architecures-and-ddd%2f" target="_blank" class="share-btn facebook">
+            <i class="fa fa-facebook"></i>
+        </a>
+    </li>
+
+    
+    <li>
+        <a href="//reddit.com/submit?url=https%3a%2f%2fcharly3pins.dev%2fes%2fblog%2fgo-project-layout-with-clean-architecures-and-ddd%2f&amp;title=Estructura%20de%20proyecto%20para%20Go%20con%20Arquitecturas%20Limpias%20y%20DDD" target="_blank" class="share-btn reddit">
+            <i class="fa fa-reddit-alien"></i>
+        </a>
+    </li>
+
+    
+    <li>
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fcharly3pins.dev%2fes%2fblog%2fgo-project-layout-with-clean-architecures-and-ddd%2f&amp;title=Estructura%20de%20proyecto%20para%20Go%20con%20Arquitecturas%20Limpias%20y%20DDD" target="_blank" class="share-btn linkedin">
+            <i class="fa fa-linkedin"></i>
+        </a>
+    </li>
+
+    
+    <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fcharly3pins.dev%2fes%2fblog%2fgo-project-layout-with-clean-architecures-and-ddd%2f&amp;description=Estructura%20de%20proyecto%20para%20Go%20con%20Arquitecturas%20Limpias%20y%20DDD" target="_blank" class="share-btn pinterest">
+            <i class="fa fa-pinterest-p"></i>
+        </a>
+    </li>
+
+    
+    <li>
+        <a href="mailto:?subject=Check out this post by &amp;body=https%3a%2f%2fcharly3pins.dev%2fes%2fblog%2fgo-project-layout-with-clean-architecures-and-ddd%2f" target="_blank" class="share-btn email">
+            <i class="fa fa-envelope"></i>
+        </a>
+    </li>
+</ul>
+
+
+				<article>
+					
+					<div class="centered">
+						<img src="https://charly3pins.dev/images/CleanArchitecture.jpg" alt="cover image">
+					</div>
+					
+					
+					<div>
+						<p class="caption">Imagen de<a href="https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html">Robert C. Martin</a></p>
+					</div>
+					
+					<div class="page-separator"></div>
+					<h2 id="introducción">Introducción</h2>
+<p>Durante los últimos 5 años he trabajado a tiempo completo con Go. Algunos de ustedes ya sabrán que estoy enamorado de este lenguaje por la simplicidad que tiene pero con mucho potencial para construir cualquier cosa. La principal pregunta a la que me he enfrentado desde el principio es <code>¿Qué estructura debo usar para mi proyecto?</code> Yo diría que todavía hoy no lo sé y como siempre en nuestra industria&hellip; <code>depende</code>. Depende de si está creando una libreria, depende de si está creando una aplicación monolítica (como MVC), depende de si está creando un pequeño servicio (también conocido como microservicio), etc. No hay nada escrito y no hay muchos frameworks (afortunadamente) que te obligan a hacer las cosas a la manera del mismo (tenga en cuenta que esa es una de mis partes favoritas, especialmente viniendo de Java, donde Spring parece ser la forma estándar de hacer proyectos en Java). Para los principiantes, a veces eso es lo difícil porque no sabes cómo empezar y necesitas investigar y leer/ver algunos tutoriales y tratar de imitar esos diseños sin saber si estás haciendo las cosas correctamente. Lo bueno de esto es que, como no existe un estándar, &ldquo;todo&rdquo; lo que hagas estará bien (aunque a veces es peligroso).</p>
+<h2 id="primer-enfoque">Primer enfoque</h2>
+<p>Cuando comencé, busqué muchos repositorios en GitHub usando la etiqueta #Go y ver cómo las personas estaban organizando sus proyectos. Comprobando desde los más pequeños hasta los más grandes de la industria como Docker, Kubernetes, AWS, &hellip; Mi primer enfoque fue usar la todavía popular doble carpeta:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="o">/</span><span class="nx">cmd</span>
+</span></span><span class="line"><span class="cl"><span class="o">/</span><span class="nx">pkg</span>
+</span></span><span class="line"><span class="cl"><span class="nx">archivos</span> <span class="nx">de</span> <span class="nx">configuraci</span><span class="err">ó</span><span class="nf">n</span> <span class="p">(</span><span class="nx">Makefile</span><span class="p">,</span> <span class="nx">docker</span><span class="p">,</span> <span class="nx">etc</span><span class="p">.)</span>
+</span></span></code></pre></div><p>Este fue el enfoque inicial que estaban adoptando algunos proyectos de Go, donde dentro del <code>pkg</code> usted define todo su código y en el <code>cmd</code> simplemente crea su <code>main.go</code> el cuál arranca su aplicación desde el <code>pkg</code>. Esto comenzó a ser tan popular porque se utilizaron algunos ejemplos de Go del equipo de Go. Algunos meses / años después, algunas personas comenzaron a preguntarse si la carpeta <code>pkg</code> era simplemente eso, una carpeta, y no contribuía en nada al proyecto, por lo que debería eliminarse. En ese momento yo era un claro defensor del diseño <code>cmd, pkg</code> porque era un &ldquo;estándar&rdquo; para la industria y para mí estaba claro dónde mirar el código (pkg) y dónde mirar la inicialización de la aplicación (cmd). Esto sigue siendo cierto, pero defendiendo la simplicidad de Go, tendemos a eliminar los paquetes que son solo carpetas y darles también un nombre significativo, ya que son parte de nuestro código (importándolos y usándolos en tipos, funciones, etc.).</p>
+<h2 id="momento-ahá">Momento Ahá</h2>
+<p>Hace unos años comencé a leer sobre DDD debido a la popularidad que ha adquirido en los últimos años y quería saber de qué se trata. No quiero extenderme en este post sobre ese tema (si desea que escriba uno específico para él, envíeme un mensaje aquí o a través de mis redes sociales y estaré feliz de hacerlo) pero básicamente a lo que apunta es a concentrarse al diseñar en el dominio en lugar de en el código. Le ayuda a comprender mejor el problema al brindarle un conjunto de herramientas para trabajar con los expertos en el dominio de su empresa a fin de diseñar la mejor solución posible para el problema que desea resolver. Hay dos grupos principales, los patrones estratégicos y los patrones tácticos. Ambos son importantes, pero aquí, como quiero hablar sobre el diseño del proyecto, solo hablaré de los tácticos. Cuando leí esos, comencé a internalizar que todo el diseño de dominio que estaba haciendo con los patrones estratégicos, todas las preguntas que le hacía a los expertos en el dominio, el lenguaje ubicuo que estábamos definiendo y todas las sesiones de tormenta de eventos que estábamos haciendo, todo eso debería reflejarse en mi código. ¿Cómo puedo hacer eso? Hay muchas posibilidades, pero una posibilidad es usar Clean Architectures.
+En ese momento fue cuando leí el libro de Robert C. Martin &lsquo;Arquitectura limpia: Una guía del artesano para la estructura y el diseño del software: Una guía del artesano para la estructura y el diseño del software&rsquo;. Entendiendo los objetivos de DDD y las ideas transmitidas en el libro y después de un refinamiento con los compañeros de mi equipo, terminamos creando un diseño de proyecto en el que intentamos reunir todos esos conceptos y los más importantes con los que nos sentimos cómodos trabajando. Esto no es para seguir una tendencia o una imposición de ningún marco, por lo que si no estamos contentos con él, lo repetimos nuevamente y retocamos las partes que consideramos para facilitar nuestra vida y especialmente nuestro yo futuro cuando lo necesitemos. algunas correcciones o agregar nuevas funciones.</p>
+<h2 id="el-diseño">El diseño</h2>
+<p>Teniendo en cuenta todo lo que mencioné antes, permítanme presentarles el diseño del proyecto. Como ejemplo, usaré una aplicación que tiene salientes y pagos recibidos. Ambos con sus propios agregados y reglas comerciales que deben satisfacer y exponer los endpoints a través de grpc en este caso.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="o">/</span><span class="nx">payments</span><span class="o">-</span><span class="nx">svc</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span> <span class="o">-</span> <span class="nx">app</span> <span class="o">/</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span> <span class="o">-</span> <span class="nx">cmd</span> <span class="o">/</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span> <span class="o">-</span> <span class="nx">docs</span> <span class="o">/</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span> <span class="o">-</span> <span class="nx">grpc</span> <span class="o">/</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span> <span class="o">-</span> <span class="nx">incoming</span> <span class="o">/</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span> <span class="o">-</span> <span class="nx">internal</span> <span class="o">/</span>
+</span></span><span class="line"><span class="cl">	<span class="p">|</span><span class="o">-</span> <span class="nx">logger</span><span class="o">/</span>
+</span></span><span class="line"><span class="cl">	<span class="p">|</span><span class="o">-</span> <span class="nx">postgres</span><span class="o">/</span>
+</span></span><span class="line"><span class="cl">	<span class="p">|</span><span class="o">-</span> <span class="nx">slack</span><span class="o">/</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span> <span class="o">-</span> <span class="nx">k8s</span> <span class="o">/</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span> <span class="o">-</span> <span class="nx">outgoing</span> <span class="o">/</span>
+</span></span><span class="line"><span class="cl"><span class="nx">docker</span><span class="o">-</span><span class="nx">compose</span><span class="p">.</span><span class="nx">test</span><span class="p">.</span><span class="nx">yml</span>
+</span></span><span class="line"><span class="cl"><span class="k">go</span><span class="p">.</span><span class="nx">mod</span>
+</span></span><span class="line"><span class="cl"><span class="k">go</span><span class="p">.</span><span class="nx">sum</span>
+</span></span><span class="line"><span class="cl"><span class="nx">Makefile</span>
+</span></span><span class="line"><span class="cl"><span class="nx">README</span><span class="p">.</span><span class="nx">md</span>
+</span></span></code></pre></div><p>Intentaré ser breve y explicar un poco qué partes contiene cada carpeta y por qué adoptamos ese diseño.</p>
+<p>Como dije, este servicio es responsable de los pagos, por lo que queremos que el dominio se exponga primero, por lo que mostramos <code>incoming</code> y <code>outgoing</code> como las partes principales de la aplicación. Entraré en detalle unas líneas después, no se preocupe.</p>
+<p>En <code>app</code> es donde tenemos el <code>main.go</code> para arrancar todas las aplicaciones (básicamente donde importamos los paquetes incoming y outgoing y algunos internal si es necesario).</p>
+<p>En <code>cmd</code> es donde definimos las herramientas de línea de comando que necesitamos para el servicio. En este caso tenemos un cli que interactúa con nuestro servicio.</p>
+<p>En <code>docs</code> es donde colocamos la documentación relevante para este proyecto.</p>
+<p>Como mencioné antes, los endpoints se exponen a través de <code>grpc</code>, por lo que la carpeta es responsable de implementar las interfaces proporcionadas por la compilación de nuestro <a href="https://developers.google.com/protocol-buffers">protobuffer</a>.</p>
+<p>En <code>internal</code> es donde tenemos la implementación de las interfaces que usamos en el proyecto pero que no son parte del dominio; básicamente las cosas de la infraestructura como la base de datos, las colas, los servicios externos (Slack), el logger&hellip;</p>
+<p>En <code>k8s</code> se refiere a los archivos de configuración de Kubernetes para la implementación.</p>
+<p>Como se mencionó antes, <code>incoming</code> y <code>outgoing</code> son nuestros paquetes de dominio, así que ahí es donde ocurre toda la magia. Describiré un poco uno de ellos porque el otro es similar pero con las particularidades de su dominio.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="o">/</span><span class="nx">outgoing</span>
+</span></span><span class="line"><span class="cl"><span class="nx">app_service</span><span class="p">.</span><span class="k">go</span>
+</span></span><span class="line"><span class="cl"><span class="nx">app_service_test</span><span class="p">.</span><span class="k">go</span>
+</span></span><span class="line"><span class="cl"><span class="nx">display_payments</span><span class="p">.</span><span class="k">go</span>
+</span></span><span class="line"><span class="cl"><span class="nx">display_payments_test</span><span class="p">.</span><span class="k">go</span>
+</span></span><span class="line"><span class="cl"><span class="nx">execute_payments</span><span class="p">.</span><span class="k">go</span>
+</span></span><span class="line"><span class="cl"><span class="nx">execute_payments_test</span><span class="p">.</span><span class="k">go</span>
+</span></span><span class="line"><span class="cl"><span class="nx">flow_service</span><span class="p">.</span><span class="k">go</span>
+</span></span><span class="line"><span class="cl"><span class="nx">flow_service_test</span><span class="p">.</span><span class="k">go</span>
+</span></span><span class="line"><span class="cl"><span class="nx">instruction_repository</span><span class="p">.</span><span class="k">go</span>
+</span></span><span class="line"><span class="cl"><span class="nx">instruction_repository_test</span><span class="p">.</span><span class="k">go</span>
+</span></span><span class="line"><span class="cl"><span class="nx">instruction</span><span class="p">.</span><span class="k">go</span>
+</span></span><span class="line"><span class="cl"><span class="nx">instruction_test</span><span class="p">.</span><span class="k">go</span>
+</span></span></code></pre></div><p>Recogí el &ldquo;saliente&rdquo; para la explicación. En primer lugar tenemos el <code>app_service</code>. Aquí es donde definimos el tipo Application Service de nuestro paquete, entonces lo que significa es que tendrá todas las dependencias para el paquete y un método para cada Caso de Uso. Nota: las dependencias son interfaces. El <code>app_service_test</code> es básicamente donde mockeamos todas las interfaces necesarias para el app_service para poder reutilizarlas en todos los archivos <code>*_test.go</code>.</p>
+<p>Los ficheros <code>display_payments</code> y <code>execute_payments</code> son casos de uso para este dominio. Las test simplemente prueban los diferentes escenarios para cada caso de uso.</p>
+<p>El <code>flow_service</code> es un servicio de dominio que nos ayuda a ejecutar los pagos en función del flujo definido para cada tipo de pago. Básicamente, el test consiste en probar el servicio de dominio.</p>
+<p>El <code>instruction_repository</code> es donde definimos todos los métodos contra nuestro repositorio, en este caso nuestra base de datos en PostgreSQL. En el test se compara con una base de datos de prueba si todas las consultas están bien.</p>
+<p>Por último, pero no menos importante, en realidad lo más importante el agregado <code>instruction</code>. Dentro de ese archivo es donde ponemos todo lo importante para este paquete. El agregado está a cargo de hacer cumplir las reglas de negocio por lo que todas las validaciones, verificaciones, cálculos, conversiones, etc. deben estar aquí. (Es cierto que dependiendo de la conversión o manipulaciones de datos o otras operaciones más complejas, es mejor tener factorías u otros helpers, pero no quiero complicar demasiado este ejemplo).</p>
+<h2 id="flujo-de-la-aplicación">Flujo de la aplicación</h2>
+<p>Para finalizar este largo post, permítanme describir cómo funciona el flujo de nuestra aplicación:</p>
+<ul>
+<li><code>app</code> es la responsable de poner en marcha el servicio</li>
+<li><code>grpc</code> será el que reciba la solicitud y responda los resultados</li>
+<li>una vez que <code>grpc</code> asigna la solicitud a nuestros tipos internos, llamará a <code>app_service</code></li>
+<li>dentro de <code>app_service</code> se llamará al <code>caso de uso</code> correspondiente</li>
+<li>dependiendo del <code>caso de uso</code> se debe llamar algún <code>servicio de dominio</code>, se llamará algún <code>repositorio</code>, o ambos, o más de 2 &hellip; ¡Depende!</li>
+</ul>
+<h2 id="conclusión">Conclusión</h2>
+<p>Espero que todo lo que he intentado explicar en este post haya sido claro, que fue mucho, y por favor si hay alguna parte que no ha sido del todo clara o hay partes que no he cubierto que te gustaría que hiciera, déjame un comentario aquí mismo oa través de mis redes sociales que tienes en mi perfil y estaré encantado de responderte.</p>
+
+				</article>
+
+				
+				
+				<div class="page-separator"><hr></div>
+				
+				<section class="post-preview-container">
+					<a href="https://charly3pins.dev/es/blog/aprende-a-utilizar-el-paquete-embed-a-go-construyendo-una-p%C3%A1gina-web-f%C3%A1cilmente/">
+						<div class="post-preview-title-container">
+							<h3 class="post-preview-title">Aprende a utilizar el paquete embed a Go construyendo una página web fácilmente</h3>
+						</div>
+						<div class="post-preview-subtext">¿Para qué sirve el nuevo paquete embed añadido en Go 1.16 y cómo usarlo para nuestro beneficio?</div>
+						<div>
+							<span class="post-preview-metadata">
+								16/08/2021 · 6 min lectura
+							</span>
+							
+							<a class="tag" href="https://charly3pins.dev/tags/go/">#go</a>
+							
+						</div>
+					</a>
+				</section>					
+				
+				<section class="post-preview-container">
+					<a href="https://charly3pins.dev/es/blog/automatice-el-readme-para-su-perfil-de-github-con-go-y-github-actions/">
+						<div class="post-preview-title-container">
+							<h3 class="post-preview-title">Automatice el README para su perfil de GitHub con Go y GitHub Actions</h3>
+						</div>
+						<div class="post-preview-subtext">Crear con la ayuda de Go un fichero Markdown dinámico por README y desplegarlo en GitHub de su perfil con la ayuda de GitHub Actions.</div>
+						<div>
+							<span class="post-preview-metadata">
+								16/03/2021 · 5 min lectura
+							</span>
+							
+							<a class="tag" href="https://charly3pins.dev/tags/go/">#go</a>
+							
+							<a class="tag" href="https://charly3pins.dev/tags/github/">#github</a>
+							
+							<a class="tag" href="https://charly3pins.dev/tags/ci/cd/">#ci/cd</a>
+							
+						</div>
+					</a>
+				</section>					
+				
+				<section class="post-preview-container">
+					<a href="https://charly3pins.dev/es/blog/suba-de-nivel-sus-presentaciones-con-go/">
+						<div class="post-preview-title-container">
+							<h3 class="post-preview-title">Suba de nivel sus presentaciones con Go</h3>
+						</div>
+						<div class="post-preview-subtext">Genera fácilmente tus presentaciones con &#34;present&#34;, la herramienta impulsada por Go que genera y renderiza tus diapositivas.</div>
+						<div>
+							<span class="post-preview-metadata">
+								06/10/2020 · 7 min lectura
+							</span>
+							
+							<a class="tag" href="https://charly3pins.dev/tags/go/">#go</a>
+							
+							<a class="tag" href="https://charly3pins.dev/tags/life/">#life</a>
+							
+						</div>
+					</a>
+				</section>					
+				
+				
+				
+				<div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "https-charly3pins-dev" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+			
+			</section>
+			
+			<div class="page-separator centered"><hr></div>
+			
+			<footer class="footer-container">
+	<ul class="footer-social-icons-container">
+		<li><a class="footer-social-icon" href="https://twitter.com/charly3pins" target="_blank" aria-label="Twitter">
+			<i class="fa fa-twitter fa-fw" title="Twitter"></i></a>
+		</li>
+		<li><a class="footer-social-icon" href="https://github.com/charly3pins" target="_blank" aria-label="GitHub">
+			<i class="fa fa-github-alt fa-fw" title="GitHub"></i></a>
+		</li>
+		<li><a class="footer-social-icon" href="https://stackoverflow.com/users/4948631/charly3pins" target="_blank" aria-label="Stack Overflow">
+			<i class="fa fa-stack-overflow fa-fw" title="Stack Overflow"></i></a>
+		</li>
+		<li><a class="footer-social-icon" href="https://charly3pins.dev/index.xml" target="_blank" aria-label="RSS">
+			<i class="fa fa-rss fa-fw" title="RSS"></i></a>
+		</li>
+		<li><a class="footer-social-icon" href="https://dev.to/charly3pins" target="_blank" aria-label="Dev.to">
+			<i class="fa fa-dev-to" title="Dev.to"></i>DEV</a>
+		</li> 
+		<li><a class="footer-social-icon" href="mailto:hello@charly3pins.dev" target="_blank" aria-label="Email">
+			<i class="fa fa-envelope fa-fw" title="email"></i></a>
+		</li>
+	</ul>
+	<div class="footer-text">Última publicación en 16/08/2021</div>
+	<div class="footer-text">© 2018 - 2023 Charly3Pins</div>
+</footer>
+<script type="text/javascript" src="https://charly3pins.dev/js/theme-switcher.js"></script>
+
+		
+		</div>
+
+	</body>
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+	
+	<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="Engineering Director">
+
+  <title>How to have a multilingual site in Hugo | Charly3Pins</title>
+
+
+  <meta property="og:title" content="How to have a multilingual site in Hugo - charly3pins" />
+
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="Know the configurations and the tricks to convert your single language site in Hugo to a multilingual site in just a few steps.">
+  <meta property="og:url" content="https://charly3pins.dev/blog/how-to-have-a-multilingual-site-in-hugo/">
+  <meta property="og:site_name" content="charly3pins.dev">
+  
+  <meta property="og:image" content="https://charly3pins.dev/images/gohugoio-card.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta name="twitter:title" content="How to have a multilingual site in Hugo" />
+
+
+  <meta name="twitter:description" content="Know the configurations and the tricks to convert your single language site in Hugo to a multilingual site in just a few steps.">
+
+
+  <meta name="twitter:image" content="https://charly3pins.dev/images/gohugoio-card.png">
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-126216319-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  <link rel="stylesheet" href="https://charly3pins.dev/css/main.css" />
+  <link rel="stylesheet" href="https://charly3pins.dev/css/syntax.css" />
+  <link rel="stylesheet" href="https://charly3pins.dev/css/social_share.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+	<body>
+		<div class="navbar-container">
+    <nav class="navbar-navigation">
+        
+        <a href="/">Home</a>
+        
+        <a href="/blog/">Blog</a>
+        
+        <a href="/code/">Code</a>
+        
+        <a href="/about/">About</a>
+        
+        
+        <ul class="lang-selector">
+            <li>
+                <a>English</a> <i class="fa fa-angle-down" aria-hidden="true"></i>
+                <ul>
+                
+                    <a href="https://charly3pins.dev/es/blog/c%C3%B3mo-tener-un-sitio-multiling%C3%BCe-en-hugo/">Spanish</a>
+                
+                    <a href="https://charly3pins.dev/ca/blog/com-tenir-un-lloc-multiling%C3%BCe-a-hugo/">Catalan</a>
+                
+                </ul>
+            </li>
+        </ul>
+        
+        <button class="theme-switch-wrapper">
+            <img id="theme-switcher" class="theme-switcher" src="https://sunilsandhu.com/assets/icons/sun-moon.png" alt="toggle dark mode">
+        </button>
+    </nav>
+</div>
+		
+		<div class="layout-container">
+
+			<section class="blog-container">
+				
+				<h4 class="post-title">How to have a multilingual site in Hugo</h4>
+				<h2 class="post-description">Know the configurations and the tricks to convert your single language site in Hugo to a multilingual site in just a few steps.</h2>
+
+				<div class="post-metadata">
+					<div class="post-tags">
+						
+						<a class="tag" href="https://charly3pins.dev/tags/hugo/">#hugo</a>
+						
+					</div>
+					<span class="post-date">
+						05/02/2021 · 4 min read
+					</span>
+				</div>
+
+				<ul class="icons">
+    
+    <li>
+        
+        <a href="//twitter.com/share?url=https%3a%2f%2fcharly3pins.dev%2fblog%2fhow-to-have-a-multilingual-site-in-hugo%2f&amp;text=How%20to%20have%20a%20multilingual%20site%20in%20Hugo&amp;via=charly3pins&amp;hashtags=hugo" target="_blank" class="share-btn twitter">
+            <i class="fa fa-twitter"></i>
+        </a>
+    </li>
+
+    
+    <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcharly3pins.dev%2fblog%2fhow-to-have-a-multilingual-site-in-hugo%2f" target="_blank" class="share-btn facebook">
+            <i class="fa fa-facebook"></i>
+        </a>
+    </li>
+
+    
+    <li>
+        <a href="//reddit.com/submit?url=https%3a%2f%2fcharly3pins.dev%2fblog%2fhow-to-have-a-multilingual-site-in-hugo%2f&amp;title=How%20to%20have%20a%20multilingual%20site%20in%20Hugo" target="_blank" class="share-btn reddit">
+            <i class="fa fa-reddit-alien"></i>
+        </a>
+    </li>
+
+    
+    <li>
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fcharly3pins.dev%2fblog%2fhow-to-have-a-multilingual-site-in-hugo%2f&amp;title=How%20to%20have%20a%20multilingual%20site%20in%20Hugo" target="_blank" class="share-btn linkedin">
+            <i class="fa fa-linkedin"></i>
+        </a>
+    </li>
+
+    
+    <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fcharly3pins.dev%2fblog%2fhow-to-have-a-multilingual-site-in-hugo%2f&amp;description=How%20to%20have%20a%20multilingual%20site%20in%20Hugo" target="_blank" class="share-btn pinterest">
+            <i class="fa fa-pinterest-p"></i>
+        </a>
+    </li>
+
+    
+    <li>
+        <a href="mailto:?subject=Check out this post by charly3pins&amp;body=https%3a%2f%2fcharly3pins.dev%2fblog%2fhow-to-have-a-multilingual-site-in-hugo%2f" target="_blank" class="share-btn email">
+            <i class="fa fa-envelope"></i>
+        </a>
+    </li>
+</ul>
+
+
+				<article>
+					
+					<div class="centered">
+						<img src="https://charly3pins.dev/images/gohugoio-card.png" alt="cover image">
+					</div>
+					
+					
+					<div class="page-separator"></div>
+					<p>As you can see since this week this humble website has been remodeled a bit both visually and internally, and it is that not only there are new colors, images and sections, but it also offers all its content in 2 new languages! I have decided to do this step because first of all I wanted to test how the multilingual thing worked in Hugo and also to try to make reading the articles more comfortable for people who visit it, without the language being an obstacle and offering the greatest comfort and pleasure to readers.</p>
+<p>The languages ​​as you can see in the navbar are Spanish and Catalan. So to change the language in which you are viewing the page, it is as simple as choosing in the dropdown selector which language you prefer and everything will automatically be translated. If you find any misprints in the translation or any part that is not translated, please put a comment on the post in question or comment on my social networks (links at the bottom of the web).</p>
+<p>After this long text, we are going to see how you can have your sites in Hugo in several languages ​​easily, simply and for the whole family. Let&rsquo;s go there!</p>
+<h2 id="set-languages">Set Languages</h2>
+<p>The first thing to do to have a multi-language site is to define in the <code>config.toml</code> the languages ​​that you want to offer. In my case I have decided English, Spanish and Catalan in the following way:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl">[<span class="nx">languages</span>]<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>[<span class="nx">languages</span>.<span class="nx">en</span>]<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">languageName</span> <span class="p">=</span> <span class="s2">&#34;English&#34;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">weight</span> <span class="p">=</span> <span class="m">1</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>[<span class="nx">languages</span>.<span class="nx">es</span>]<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">languageName</span> <span class="p">=</span> <span class="s2">&#34;Spanish&#34;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">weight</span> <span class="p">=</span> <span class="m">2</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>[<span class="nx">languages</span>.<span class="nx">ca</span>]<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">languageName</span> <span class="p">=</span> <span class="s2">&#34;Catalan&#34;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">weight</span> <span class="p">=</span> <span class="m">3</span><span class="err">
+</span></span></span></code></pre></div><p>The <code>languageName</code> it is used to define the text that will be seen on the web when checking which languages ​​are available. Spoiler alert! Later we will see how to translate these texts as well.</p>
+<h2 id="menus">Menus</h2>
+<p>To translate the menus in the different languages, they must be declared as follows:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl">[[<span class="nx">languages</span>.<span class="nx">en</span>.<span class="nx">menu</span>.<span class="nx">main</span>]]<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;home&#34;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;/&#34;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>[[<span class="nx">languages</span>.<span class="nx">en</span>.<span class="nx">menu</span>.<span class="nx">main</span>]]<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;about me&#34;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;/about&#34;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>[[<span class="nx">languages</span>.<span class="nx">es</span>.<span class="nx">menu</span>.<span class="nx">main</span>]]<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;inicio&#34;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;/&#34;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>[[<span class="nx">languages</span>.<span class="nx">es</span>.<span class="nx">menu</span>.<span class="nx">main</span>]]<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;sobre mí&#34;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;/about&#34;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>[[<span class="nx">languages</span>.<span class="nx">ca</span>.<span class="nx">menu</span>.<span class="nx">main</span>]]<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;inici&#34;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;/&#34;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>[[<span class="nx">languages</span>.<span class="nx">ca</span>.<span class="nx">menu</span>.<span class="nx">main</span>]]<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;sobre mi&#34;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;/about&#34;</span><span class="err">
+</span></span></span></code></pre></div><h2 id="content">Content</h2>
+<p>If for example we want to translate the page of <code>About me</code>, we can do it simply by replicating that file as many times as we have languages, in this case 3, adding the ISO of the language in the filename as follows:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="sr">/content/</span><span class="nx">about</span>.<span class="nx">en</span>.<span class="nx">md</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="sr">/content/</span><span class="nx">about</span>.<span class="nx">es</span>.<span class="nx">md</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="sr">/content/</span><span class="nx">about</span>.<span class="nx">ca</span>.<span class="nx">md</span><span class="err">
+</span></span></span></code></pre></div><p>In our case, the English language is the default, so we could even do it like this:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="sr">/content/</span><span class="nx">about</span>.<span class="nx">md</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="sr">/content/</span><span class="nx">about</span>.<span class="nx">es</span>.<span class="nx">md</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="sr">/content/</span><span class="nx">about</span>.<span class="nx">ca</span>.<span class="nx">md</span><span class="err">
+</span></span></span></code></pre></div><h2 id="translated-content">Translated content</h2>
+<p>To find the translations for the specific page you can use the code snippet provided in the official documentation:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="p">{{</span><span class="k">if</span> <span class="p">.</span><span class="nx">IsTranslated</span><span class="p">}}</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nx">h4</span><span class="p">&gt;</span> <span class="p">{{</span><span class="nx">i18n</span> <span class="s">&#34;translations&#34;</span><span class="p">}}</span> <span class="p">&lt;</span><span class="o">/</span><span class="nx">h4</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nx">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{{</span><span class="k">range</span> <span class="p">.</span><span class="nx">Translations</span><span class="p">}}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nx">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="p">=</span><span class="s">&#34;[{ .Permalink }-lex.europa.eu&#34;</span><span class="p">&gt;</span> <span class="p">{{.</span><span class="nx">Lang</span><span class="p">}}:</span> <span class="p">{{.</span><span class="nx">Title</span><span class="p">}}</span> <span class="p">{{</span><span class="k">if</span> <span class="p">.</span><span class="nx">IsPage</span><span class="p">}}</span> <span class="p">({{</span><span class="nx">i18n</span> <span class="s">&#34;wordCount&#34;</span><span class="p">.}})</span> <span class="p">{{</span><span class="nx">end</span><span class="p">}}</span> <span class="p">&lt;</span> <span class="o">/</span> <span class="nx">a</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="o">/</span><span class="nx">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{{</span><span class="nx">end</span><span class="p">}}</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="o">/</span><span class="nx">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">{{</span><span class="nx">end</span><span class="p">}}</span>
+</span></span></code></pre></div><p>In the template where we insert this code, once the content for it is rendered, it will appear if there is a translation or not of that content.</p>
+<h2 id="translation-of-texts">Translation of texts</h2>
+<p>In the previous code we can already see that the <code>i18n</code> function appears that Hugo uses to translate the texts defined in the language files within the root directory as <code>/i18n</code>. The format of the files inside must be for example:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="nx">i18n</span>/<span class="nx">en</span>.<span class="nx">toml</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">i18n</span>/<span class="nx">es</span>.<span class="nx">toml</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nx">i18n</span>/<span class="nx">ca</span>.<span class="nx">toml</span><span class="err">
+</span></span></span></code></pre></div><p>For each language described above respectively.</p>
+<p>The file content will be similar to:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="p">[</span><span class="nx">readMore</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">other</span> <span class="p">=</span> <span class="s2">&#34;Llegir més&#34;</span>
+</span></span></code></pre></div><p>For the English file.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="p">[</span><span class="nx">readMore</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">other</span> <span class="p">=</span> <span class="s2">&#34;Llegir més&#34;</span>
+</span></span></code></pre></div><p>For the Spanish file.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="p">[</span><span class="nx">readMore</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">other</span> <span class="p">=</span> <span class="s2">&#34;Llegir més&#34;</span>
+</span></span></code></pre></div><p>For the Catalan file.</p>
+<p>Once the translation for <code>Read more</code> is defined, it is used in our Hugo template as:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="p">{{</span><span class="nx">i18n</span> <span class="s">&#34;readMore&#34;</span><span class="p">}}</span>
+</span></span></code></pre></div><p>And the result will be the text defined in the <code>.toml</code> according to the language chosen by the user to view the web page.</p>
+<h2 id="singular-andor-plural-translation">Singular and/or plural translation</h2>
+<p>Singular or plural translations can be defined depending on a &ldquo;counter&rdquo;, as the <code>i18n</code> function offers this possibility. For example for the <code>Reading time</code> of an article, we can define it as such in the <code>.toml</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="p">[</span><span class="nx">readingTime</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">one</span> <span class="p">=</span> <span class="s2">&#34;One minute to read&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">other</span> <span class="p">=</span> <span class="s2">&#34;{{.Count}} minutes to read&#34;</span>
+</span></span></code></pre></div><p>We see that we pass the <code>.Count</code> to the translation so we will have to invoke it in the following way:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="p">{{</span><span class="nx">i18n</span> <span class="s">&#34;readingTime&#34;</span> <span class="p">.</span><span class="nx">ReadingTime</span><span class="p">}}</span>
+</span></span></code></pre></div><blockquote>
+<p>Note: the <code>.ReadingTime</code> property is a counter that Hugo returns according to the number of words of the articles we create.</p>
+</blockquote>
+<h2 id="references">References</h2>
+<p>For more details, consult the official page of <a href="https://gohugo.io/content-management/multilingual/">Hugo&rsquo;s documentation</a>.</p>
+
+				</article>
+
+				
+				
+				<div class="page-separator"><hr></div>
+				
+				<section class="post-preview-container">
+					<a href="https://charly3pins.dev/blog/how-to-add-google-analytics-to-your-hugo-site/">
+						<div class="post-preview-title-container">
+							<h3 class="post-preview-title">How to add Google Analytics to your Hugo site</h3>
+						</div>
+						<div class="post-preview-subtext">Quick tutorial how to integrate Google Analytics in a Hugo website.</div>
+						<div>
+							<span class="post-preview-metadata">
+								23/11/2020 · 2 min read
+							</span>
+							
+							<a class="tag" href="https://charly3pins.dev/tags/hugo/">#hugo</a>
+							
+						</div>
+					</a>
+				</section>					
+				
+				<section class="post-preview-container">
+					<a href="https://charly3pins.dev/blog/hugo-content-and-templates-managing/">
+						<div class="post-preview-title-container">
+							<h3 class="post-preview-title">Hugo&#39;s content and templates managing</h3>
+						</div>
+						<div class="post-preview-subtext">How to organize your content and create your templates to get maximum value from Hugo.</div>
+						<div>
+							<span class="post-preview-metadata">
+								08/03/2020 · 5 min read
+							</span>
+							
+							<a class="tag" href="https://charly3pins.dev/tags/hugo/">#hugo</a>
+							
+						</div>
+					</a>
+				</section>					
+				
+				<section class="post-preview-container">
+					<a href="https://charly3pins.dev/blog/building-static-blog-with-hugo/">
+						<div class="post-preview-title-container">
+							<h3 class="post-preview-title">Building static blog with Hugo</h3>
+						</div>
+						<div class="post-preview-subtext">Quick steps to create your own static blog with Hugo and install a theme from the catalogue. After that, push your site to GitHub and deploy it with GitHub Pages.</div>
+						<div>
+							<span class="post-preview-metadata">
+								22/09/2018 · 4 min read
+							</span>
+							
+							<a class="tag" href="https://charly3pins.dev/tags/hugo/">#hugo</a>
+							
+							<a class="tag" href="https://charly3pins.dev/tags/github/">#github</a>
+							
+						</div>
+					</a>
+				</section>					
+				
+				
+				
+				<div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "https-charly3pins-dev" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+			
+			</section>
+			
+			<div class="page-separator centered"><hr></div>
+			
+			<footer class="footer-container">
+	<ul class="footer-social-icons-container">
+		<li><a class="footer-social-icon" href="https://twitter.com/charly3pins" target="_blank" aria-label="Twitter">
+			<i class="fa fa-twitter fa-fw" title="Twitter"></i></a>
+		</li>
+		<li><a class="footer-social-icon" href="https://github.com/charly3pins" target="_blank" aria-label="GitHub">
+			<i class="fa fa-github-alt fa-fw" title="GitHub"></i></a>
+		</li>
+		<li><a class="footer-social-icon" href="https://stackoverflow.com/users/4948631/charly3pins" target="_blank" aria-label="Stack Overflow">
+			<i class="fa fa-stack-overflow fa-fw" title="Stack Overflow"></i></a>
+		</li>
+		<li><a class="footer-social-icon" href="https://charly3pins.dev/index.xml" target="_blank" aria-label="RSS">
+			<i class="fa fa-rss fa-fw" title="RSS"></i></a>
+		</li>
+		<li><a class="footer-social-icon" href="https://dev.to/charly3pins" target="_blank" aria-label="Dev.to">
+			<i class="fa fa-dev-to" title="Dev.to"></i>DEV</a>
+		</li> 
+		<li><a class="footer-social-icon" href="mailto:hello@charly3pins.dev" target="_blank" aria-label="Email">
+			<i class="fa fa-envelope fa-fw" title="email"></i></a>
+		</li>
+	</ul>
+	<div class="footer-text">Last post on 09/12/2021</div>
+	<div class="footer-text">© 2018 - 2023 Charly3Pins</div>
+</footer>
+<script type="text/javascript" src="https://charly3pins.dev/js/theme-switcher.js"></script>
+
+		
+		</div>
+
+	</body>
+</html>

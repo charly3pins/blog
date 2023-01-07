@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ca" data-theme="light">
+	
+	<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="Director d&#39;Enginyeria">
+
+  <title>Comprensió de la Versió Semàntica 2.0 (SemVer) | Charly3Pins</title>
+
+
+  <meta property="og:title" content="Comprensió de la Versió Semàntica 2.0 (SemVer) - charly3pins" />
+
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="Què és la versió semàntica? Per què és important utilitzar-lo en els vostres projectes com a desenvolupador? Què significa per a un usuari que utilitza la vostra biblioteca?">
+  <meta property="og:url" content="https://charly3pins.dev/ca/blog/comprensi%C3%B3-de-la-versi%C3%B3-sem%C3%A0ntica-2.0-semver/">
+  <meta property="og:site_name" content="charly3pins.dev">
+  
+  <meta property="og:image" content="https://charly3pins.dev/images/semver.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta name="twitter:title" content="Comprensió de la Versió Semàntica 2.0 (SemVer)" />
+
+
+  <meta name="twitter:description" content="Què és la versió semàntica? Per què és important utilitzar-lo en els vostres projectes com a desenvolupador? Què significa per a un usuari que utilitza la vostra biblioteca?">
+
+
+  <meta name="twitter:image" content="https://charly3pins.dev/images/semver.png">
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-126216319-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  <link rel="stylesheet" href="https://charly3pins.dev/css/main.css" />
+  <link rel="stylesheet" href="https://charly3pins.dev/css/syntax.css" />
+  <link rel="stylesheet" href="https://charly3pins.dev/css/social_share.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+	<body>
+		<div class="navbar-container">
+    <nav class="navbar-navigation">
+        
+        <a href="/ca/">Inici</a>
+        
+        <a href="/ca/blog/">Bloc</a>
+        
+        <a href="/ca/code/">Codi</a>
+        
+        <a href="/ca/about/">Qui</a>
+        
+        
+        <ul class="lang-selector">
+            <li>
+                <a>Català</a> <i class="fa fa-angle-down" aria-hidden="true"></i>
+                <ul>
+                
+                    <a href="https://charly3pins.dev/blog/understanding-semantic-versionin-2.0-semver/">Anglès</a>
+                
+                    <a href="https://charly3pins.dev/es/blog/comprensi%C3%B3n-del-control-de-versiones-sem%C3%A1ntico-2.0-semver/">Castellà</a>
+                
+                </ul>
+            </li>
+        </ul>
+        
+        <button class="theme-switch-wrapper">
+            <img id="theme-switcher" class="theme-switcher" src="https://sunilsandhu.com/assets/icons/sun-moon.png" alt="toggle dark mode">
+        </button>
+    </nav>
+</div>
+		
+		<div class="layout-container">
+
+			<section class="blog-container">
+				
+				<h4 class="post-title">Comprensió de la Versió Semàntica 2.0 (SemVer)</h4>
+				<h2 class="post-description">Què és la versió semàntica? Per què és important utilitzar-lo en els vostres projectes com a desenvolupador? Què significa per a un usuari que utilitza la vostra biblioteca?</h2>
+
+				<div class="post-metadata">
+					<div class="post-tags">
+						
+						<a class="tag" href="https://charly3pins.dev/tags/api/">#api</a>
+						
+					</div>
+					<span class="post-date">
+						20/10/2020 · 3 min lectura
+					</span>
+				</div>
+
+				<ul class="icons">
+    
+    <li>
+        
+        <a href="//twitter.com/share?url=https%3a%2f%2fcharly3pins.dev%2fca%2fblog%2fcomprensi%25C3%25B3-de-la-versi%25C3%25B3-sem%25C3%25A0ntica-2.0-semver%2f&amp;text=Comprensi%c3%b3%20de%20la%20Versi%c3%b3%20Sem%c3%a0ntica%202.0%20%28SemVer%29&amp;via=charly3pins&amp;hashtags=api" target="_blank" class="share-btn twitter">
+            <i class="fa fa-twitter"></i>
+        </a>
+    </li>
+
+    
+    <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcharly3pins.dev%2fca%2fblog%2fcomprensi%25C3%25B3-de-la-versi%25C3%25B3-sem%25C3%25A0ntica-2.0-semver%2f" target="_blank" class="share-btn facebook">
+            <i class="fa fa-facebook"></i>
+        </a>
+    </li>
+
+    
+    <li>
+        <a href="//reddit.com/submit?url=https%3a%2f%2fcharly3pins.dev%2fca%2fblog%2fcomprensi%25C3%25B3-de-la-versi%25C3%25B3-sem%25C3%25A0ntica-2.0-semver%2f&amp;title=Comprensi%c3%b3%20de%20la%20Versi%c3%b3%20Sem%c3%a0ntica%202.0%20%28SemVer%29" target="_blank" class="share-btn reddit">
+            <i class="fa fa-reddit-alien"></i>
+        </a>
+    </li>
+
+    
+    <li>
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fcharly3pins.dev%2fca%2fblog%2fcomprensi%25C3%25B3-de-la-versi%25C3%25B3-sem%25C3%25A0ntica-2.0-semver%2f&amp;title=Comprensi%c3%b3%20de%20la%20Versi%c3%b3%20Sem%c3%a0ntica%202.0%20%28SemVer%29" target="_blank" class="share-btn linkedin">
+            <i class="fa fa-linkedin"></i>
+        </a>
+    </li>
+
+    
+    <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fcharly3pins.dev%2fca%2fblog%2fcomprensi%25C3%25B3-de-la-versi%25C3%25B3-sem%25C3%25A0ntica-2.0-semver%2f&amp;description=Comprensi%c3%b3%20de%20la%20Versi%c3%b3%20Sem%c3%a0ntica%202.0%20%28SemVer%29" target="_blank" class="share-btn pinterest">
+            <i class="fa fa-pinterest-p"></i>
+        </a>
+    </li>
+
+    
+    <li>
+        <a href="mailto:?subject=Check out this post by charly3pins&amp;body=https%3a%2f%2fcharly3pins.dev%2fca%2fblog%2fcomprensi%25C3%25B3-de-la-versi%25C3%25B3-sem%25C3%25A0ntica-2.0-semver%2f" target="_blank" class="share-btn email">
+            <i class="fa fa-envelope"></i>
+        </a>
+    </li>
+</ul>
+
+
+				<article>
+					
+					<div class="centered">
+						<img src="https://charly3pins.dev/images/semver.png" alt="cover image">
+					</div>
+					
+					
+					<div class="page-separator"></div>
+					<p>Quan vulgueu utilitzar una biblioteca al vostre projecte, probablement haureu notat que cal especificar una versió. La majoria de les vegades, aquestes versions tenen el format de 3 nombres separats amb punts entre ells. Aquest format és indicatiu que la biblioteca utilitza el <a href="https://semver.org">Versió semàntica</a> també conegut com SemVer. Aquest document especifica el format i la forma d’etiquetar els vostres projectes durant tot el cicle de vida dels mateixos. És només una convenció perquè pugueu definir el número de versió tal com vulgueu, però el cert és que altres desenvolupadors de totes les indústries van acordar utilitzar-lo i es va convertir en un estàndard per a la versió.</p>
+<p>L’objectiu és tenir diferents versions del paquet seguint la regla que cada vegada que actualitzeu el paquet, actualitzeu la versió. Amb això, el que s&rsquo;aconsegueix és tenir un nom i una versió únics per a cada paquet públic. Per utilitzar SemVer, heu de declarar una API pública. Això es deu al fet que la versió de versions proposada es basa en els canvis respecte a la versió anterior de l&rsquo;API, de manera que si no n&rsquo;especifiqueu cap (fins i tot codificada o només documentada) no és possible aplicar aquestes regles.</p>
+<p>El format del SemVer és l’esmentat abans de 3 números separats amb un punt entre ells:
+<code>MAJOR.MINOR.PATCH</code></p>
+<p>La forma d’incrementar cada número es descriu al document. Com a resum:</p>
+<ul>
+<li>Les noves funcions amb versions de comportament incompatibles (trenca l&rsquo;API) augmenten la MAJOR;</li>
+<li>Les noves funcions compatibles amb la versió anterior (no trenca l&rsquo;API) augmenten el MINOR;</li>
+<li>Les correccions d&rsquo;errors augmenten el PATCH;</li>
+</ul>
+<p>NOTA: El desenvolupament inicial utilitza una versió principal 0.
+NOTA2: Quan s&rsquo;incrementa el MENOR, el PATCH es restableix a 0; Quan s&rsquo;incrementa el valor MAJOR, el MENOR i el PATCH es restableixen a 0.</p>
+<p>Com a cas especial, podeu utilitzar les versions prèvies a la versió. Es denoten afegint un guionet i les següents cadenes acceptades a nivell mundial:</p>
+<ul>
+<li>alpha;</li>
+<li>beta;</li>
+<li>rc (release candidates);</li>
+</ul>
+<p>Seguit del número de versió necessari. Per tant, les versions anteriors al llançament haurien de seguir un ordre similar com:</p>
+<ul>
+<li>1.0.0-alpha</li>
+<li>1.0.0-alpha-1</li>
+<li>1.0.0-beta</li>
+<li>1.0.0-beta.2</li>
+<li>1.0.0-beta.10</li>
+<li>1.0.0-rc.1</li>
+<li>1.0.0-rc.40</li>
+<li>1.0.0</li>
+</ul>
+<p>NOTA: Una API es considera publicada a partir del 1.0.0.</p>
+<p>Quan vulgueu utilitzar el SemVer, podeu especificar una versió exacta o no. Per a això, podeu utilitzar les eines següents:</p>
+<ul>
+<li>Si voleu una versió exacta, indiqueu la dependència amb: X.Y.Z;</li>
+<li>Si voleu utilitzar la versió actual o versions superiors, fins i tot amb canvis de ruptura a l&rsquo;API, podeu utilitzar el tipus <code>&gt;</code> com:&gt; X.Y.Z;</li>
+<li>Si voleu tenir la versió actual o actualitzada, però amb compatibilitats anteriors, podeu utilitzar el format <code>^</code> com: ^ X.Y.Z (on es fixa X);</li>
+<li>Si voleu tenir la versió actual o actualitzada només amb correccions d&rsquo;errors amb canvis de nivell menor, podeu utilitzar el tipus <code>~</code> com: ~ X.Y.Z (on es fixen X i Y);</li>
+</ul>
+<p>Per tant, després de llegir aquest article com a desenvolupador que utilitza la biblioteca d&rsquo;un altre, podeu saber quin tipus de canvis van fer quan us van presentar la nova versió seguint les regles descrites anteriorment:</p>
+<ul>
+<li>Nova versió 0.2.3 → Els canvis poden ser només correccions d&rsquo;errors;</li>
+<li>Nova versió 0.5.0 → S&rsquo;han afegit algunes funcionalitats, però compatibles amb l&rsquo;API;</li>
+<li>Nova versió 5.0.0 → Pot ser que hi hagi un problema perquè va introduir canvis trencats amb l&rsquo;API;</li>
+</ul>
+<p>Com a conclusió, l’avantatge d’utilitzar SemVer contra no:</p>
+<ul>
+<li>Compatibilitat / dependències més clares;</li>
+<li>Fomenta les API ben definides;</li>
+<li>Aclareix les decisions d’actualització;</li>
+</ul>
+
+				</article>
+
+				
+				
+				
+				<div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "https-charly3pins-dev" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+			
+			</section>
+			
+			<div class="page-separator centered"><hr></div>
+			
+			<footer class="footer-container">
+	<ul class="footer-social-icons-container">
+		<li><a class="footer-social-icon" href="https://twitter.com/charly3pins" target="_blank" aria-label="Twitter">
+			<i class="fa fa-twitter fa-fw" title="Twitter"></i></a>
+		</li>
+		<li><a class="footer-social-icon" href="https://github.com/charly3pins" target="_blank" aria-label="GitHub">
+			<i class="fa fa-github-alt fa-fw" title="GitHub"></i></a>
+		</li>
+		<li><a class="footer-social-icon" href="https://stackoverflow.com/users/4948631/charly3pins" target="_blank" aria-label="Stack Overflow">
+			<i class="fa fa-stack-overflow fa-fw" title="Stack Overflow"></i></a>
+		</li>
+		<li><a class="footer-social-icon" href="https://charly3pins.dev/index.xml" target="_blank" aria-label="RSS">
+			<i class="fa fa-rss fa-fw" title="RSS"></i></a>
+		</li>
+		<li><a class="footer-social-icon" href="https://dev.to/charly3pins" target="_blank" aria-label="Dev.to">
+			<i class="fa fa-dev-to" title="Dev.to"></i>DEV</a>
+		</li> 
+		<li><a class="footer-social-icon" href="mailto:hello@charly3pins.dev" target="_blank" aria-label="Email">
+			<i class="fa fa-envelope fa-fw" title="email"></i></a>
+		</li>
+	</ul>
+	<div class="footer-text">Darrer post el 16/08/2021</div>
+	<div class="footer-text">© 2018 - 2023 Charly3Pins</div>
+</footer>
+<script type="text/javascript" src="https://charly3pins.dev/js/theme-switcher.js"></script>
+
+		
+		</div>
+
+	</body>
+</html>
