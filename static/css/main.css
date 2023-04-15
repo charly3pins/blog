@@ -423,11 +423,17 @@ blockquote p:last-child{
 [href$='/tags/api/']{
     background:#c0e4c5
 }
+[href$='/tags/book-club/']{
+    background:#b3bbb3
+}
 [href$='/tags/ci/cd/']{
     background:#b4d6db
 }
 [href$='/tags/dotfiles/']{
     background:#a997ae
+}
+[href$='/tags/engineering/']{
+    background:#188e18
 }
 [href$='/tags/flutter/']{
     background:#54c0f4
