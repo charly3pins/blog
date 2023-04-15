@@ -1,7 +1,7 @@
 +++
 title = "Estructura de proyecto para Go con Arquitecturas Limpias y DDD"
-fecha = "2021-12-09"
-autor = "charly3pins"
+date = "2021-12-09"
+author = "charly3pins"
 description = "Cómo aplico Arquitecturas Limpias y DDD cuando creo un proyecto en Go."
 
 tags = ["go"]
