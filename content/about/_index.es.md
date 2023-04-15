@@ -2,7 +2,9 @@
 title = "Quién"
 description = "Un poco sobre mí"
 +++
-De día soy Director de Ingenieria. Por la noche trabajo en proyectos open source, aprendo, leo, escucho y escribo blogs. Puedes encontrarme como [@charly3pins](https://twitter.com/charly3pins) en Twitter.
+Actualmente en el mundo del desarrollo ágil de productos en Fintech. Experiencia en Liderazgo Tecnológico, Desarrollo de Software, Gestión de Proyectos, Planificación Estratégica y Coaching TI en diferentes industrias: Transporte/Logística/Almacenamiento, Finanzas/Banca/Fintech y Educación.
+
+Me considero un líder tecnológico experimentado e ingeniero de software hambriento de desafíos y dispuesto a aprender cosas nuevas todos los días. Soy un entusiasta de las mejores prácticas como forma de éxito. Puedes encontrarme como [@charly3pins](https://twitter.com/charly3pins) en Twitter.
 
 Me gusta aprender cosas nuevas casi todos los días, así que siempre leo libros, escucho podcasts o veo videos sobre tecnología. Además, quiero poner en práctica todos esos aprendizajes, por lo que suelo crear PoC o proyectos paralelos para probar esas cosas nuevas o investigar sobre temas que me interesan. Puedes consultar mis proyectos de OSS en mi [Github](https://github.com/charly3pins).
 
