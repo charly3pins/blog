@@ -1,35 +1,12 @@
-<!DOCTYPE html>
-<html lang="{{ .Lang }}">
-	
-	{{ partial "head.html" . }}
+{{ define "title"}}
+    404 |  NOT FOUND
+{{ end }}
 
-	<body>
-		{{ partial "navbar" . }}
-		
-		<div class="layout-container">
-
-			<section class="blog-container">
-
-				<h4 class="post-title">¯\_ (ツ)_/¯ Page not found ¯\_ (ツ)_/¯</h4>
-				
-				<article>
-					<div class="centered">
-						<img src="{{ .Site.Params.errorPage }}" alt="site 404 image">
-					</div>
-					<div>
-						<p class="caption">Gopher by<a href="https://github.com/ashleymcnamara/gophers/blob/master/This_is_Fine_Gopher.png">Ashley McNamara</a></p>
-					</div>
-					<div class="page-separator"></div>
-					<p>Congratulations! You've reached the secret page 404. Once you've finished admiring <b>Gopher This Is Fine</b> you can continue browsing.</p>
-				</article>
-
-			</section>
-				
-			<div class="page-separator centered"><hr></div>
-			
-			{{ partial "footer.html" . }}
-			
-		</div>
-	</body>
-</html>
-
+{{ define "main"}}
+<div class="wrapper">
+    <main class="main-404" aria-label="Content">
+        <h1>404 NOT FOUND</h1>
+        <p>You just hit a route that doesn't exist.</p>
+    </main>
+</div>
+{{ end }}

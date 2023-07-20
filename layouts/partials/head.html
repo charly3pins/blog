@@ -1,43 +1,42 @@
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="chrome=1">
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="referrer" content="no-referrer">
-  <meta name="description" content="{{ T "description" }}">
-{{ with .Title | default .Site.Title }}
-  <title>{{ . }} | Charly3Pins</title>
-{{ end }}
-{{ with .Title | default .Site.Title }}
-  <meta property="og:title" content="{{ . }} - charly3pins" />
-{{ end }}
-  <meta property="og:type" content="website">
-  <meta property="og:description" content="{{ .Description }}">
-  <meta property="og:url" content="{{ .Permalink }}">
-  <meta property="og:site_name" content="charly3pins.dev">
-{{ with  or (.Params.image) (.Site.Params.avatar) | absURL }}  
-  <meta property="og:image" content="{{ . }}">
-{{ end }}
-  <meta name="twitter:card" content="summary_large_image">
-{{ with .Title | default .Site.Title }}
-  <meta name="twitter:title" content="{{ . | truncate 70 }}" />
-{{ end }}
-{{ with .Description | default .Content }}
-  <meta name="twitter:description" content="{{ . }}">
-{{ end }}
-{{ with  or (.Params.image) (.Site.Params.avatar) | absURL }}
-  <meta name="twitter:image" content="{{ . }}">
-{{ end }}
+    {{- partial "meta/main.html" . }}
+    {{- hugo.Generator }}
 
-{{ with .OutputFormats.Get "rss" -}}
-  {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
-{{ end -}}
+    {{/* Canonical link, RSS */}}
 
-  {{ template "_internal/google_analytics.html" . }}
+    <link rel="canonical" href="{{ .Permalink }}">
+    {{- with .OutputFormats.Get "RSS" }}
+    <link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}">
+    <link href="{{ .RelPermalink }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}">
+    {{- end }}
 
-  <link rel="stylesheet" href="{{ "css/main.css" | absURL }}" />
-  <link rel="stylesheet" href="{{ "css/syntax.css" | absURL }}" />
-  <link rel="stylesheet" href="{{ "css/social_share.css" | absURL }}" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    {{- /* Styles */ -}}
+
+    {{- $style := resources.Get "sass/main.scss" | resources.ExecuteAsTemplate "style.scss" . | toCSS (dict "targetPath" "style.css") | minify | fingerprint }}
+    <link href="{{ $style.RelPermalink }}" rel="stylesheet">
+    {{- $code_syntax_highlight_css := resources.Get "code-highlight.css" | minify | fingerprint }}
+    <link href="{{ $code_syntax_highlight_css.RelPermalink }}" rel="stylesheet">
+
+    {{/* Favicons */}}
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ (resources.Get "icons/apple-touch-icon.png").RelPermalink }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ (resources.Get "icons/favicon-32x32.png").RelPermalink }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ (resources.Get "icons/favicon-16x16.png").RelPermalink }}">
+    <link rel="mask-icon" href="{{ (resources.Get "icons/safari-pinned-tab.svg").RelPermalink }}">
+    <link rel="shortcut icon" href="{{ (resources.Get "icons/favicon.ico" | resources.Copy "favicon.ico").RelPermalink }}">
+
+    {{- partial "webmanifest.html" . -}}
+    {{- partial "browserconfig.html" . -}}
+
+    {{/* SVG favicon for the modern web */}}
+    <link rel="icon" type="image/svg+xml" href="{{ (resources.Get "icons/favicon.svg").RelPermalink }}">
+
+    {{/* Katex support (enabled on specific pages). See 'helpers/katex.html' for more info. */}}
+
+    {{- if or .Params.math .Site.Params.math }}{{ partial "helpers/katex.html" . -}}{{- end -}}
+
+    {{/* Google analytics script. See config.toml to enable/disable this. */}}
+    {{- if hugo.IsProduction | or (eq site.Params.env "production") }}
+    {{ template "_internal/google_analytics.html" . }}
+    {{- end -}}
+
 </head>

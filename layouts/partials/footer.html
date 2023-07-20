@@ -1,25 +1,18 @@
-<footer class="footer-container">
-	<ul class="footer-social-icons-container">
-		<li><a class="footer-social-icon" href="https://twitter.com/charly3pins" target="_blank" aria-label="Twitter">
-			<i class="fa fa-twitter fa-fw" title="Twitter"></i></a>
-		</li>
-		<li><a class="footer-social-icon" href="https://github.com/charly3pins" target="_blank" aria-label="GitHub">
-			<i class="fa fa-github-alt fa-fw" title="GitHub"></i></a>
-		</li>
-		<li><a class="footer-social-icon" href="https://stackoverflow.com/users/4948631/charly3pins" target="_blank" aria-label="Stack Overflow">
-			<i class="fa fa-stack-overflow fa-fw" title="Stack Overflow"></i></a>
-		</li>
-		<li><a class="footer-social-icon" href="{{ .Site.BaseURL }}index.xml" target="_blank" aria-label="RSS">
-			<i class="fa fa-rss fa-fw" title="RSS"></i></a>
-		</li>
-		<li><a class="footer-social-icon" href="https://dev.to/charly3pins" target="_blank" aria-label="Dev.to">
-			<i class="fa fa-dev-to" title="Dev.to"></i>DEV</a>
-		</li> 
-		<li><a class="footer-social-icon" href="mailto:hello@charly3pins.dev" target="_blank" aria-label="Email">
-			<i class="fa fa-envelope fa-fw" title="email"></i></a>
-		</li>
-	</ul>
-	<div class="footer-text">{{ T "lastPost" }} {{ .Site.LastChange.Format "02/01/2006" }}</div>
-	<div class="footer-text">© {{ .Site.Params.since }} - {{ now.Year }} {{ .Site.Author.name }}</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+        {{- partial "socialIcons.html" site.Params.socialIcons -}}
+    </div>
+    <small class="footer_copyright">
+        <div class="footer-text">{{ T "lastPost" }} {{ .Site.LastChange.Format "02/01/2006" }}</div>
+	    <div class="footer-text">© {{ .Site.Params.since }} - {{ now.Year }} {{ .Site.Params.author.name }}</div>
+    </small>
 </footer>
-<script type="text/javascript" src="{{ "js/theme-switcher.js" | absURL }}"></script>
+
+{{- if .Site.Params.goToTop -}}
+<a href="#" title="Go to top" id="totop">
+    {{ partial "svgs/arrowUp.svg" (dict "height" 48 "width" 48) . }}
+</a>
+{{- end -}}

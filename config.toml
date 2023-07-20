@@ -2,19 +2,45 @@ baseURL = "https://charly3pins.dev/"
 languageCode = "en-us"
 title = "charly3pins.dev"
 googleAnalytics = "UA-126216319-1"
-disqusShortname = "https-charly3pins-dev"
 defaultContentLanguage = "en"
-pygmentsUseClasses=true
 enableRobotsTXT = true
 
-[author]
-	name = "Charly3Pins"
+enableEmoji = true
+ignoreErrors = ["additional-script-loading-error"] # ignore error of loading additional scripts.
 
-[params]
-	since = 2018
-	# avatar = "/images/law-mustache.gif"
-	avatar = "/images/cyberpunk-ai.png"
-	errorPage = "/images/gopher-this-is-fine.jpg"
+# To enable Disqus comments, provide Disqus Shortname below.
+# To disable Disqus comments, simply leave the field empty or remove the next line
+disqusShortname = ''
+
+# set markup.highlight.noClasses=false to enable code highlight
+[markup]
+  [markup.highlight]
+    noClasses = false
+  [markup.goldmark.renderer]
+    unsafe = true
+	[markup.tableOfContents]
+		startLevel = 2 # ToC starts from H2
+		endLevel = 4 # ToC ends at H4
+		ordered = false # generates <ul> instead of <ol>
+
+[menu]
+  [[menu.main]]
+    # The page reference (pageRef) is useful for menu highlighting
+    # When pageRef is set, setting `url` is optional; it will be used as a fallback if the page is not found.
+    pageRef="/"
+    name = 'Home'
+    url = '/'
+    weight = 10
+  [[menu.main]]
+    pageRef="posts"
+    name = 'Posts'
+    url = '/posts/'
+    weight = 20
+  [[menu.main]]
+    pageRef="about"
+    name = 'About'
+    url = '/about/'
+    weight = 30
 
 [languages]
 	[languages.en]
@@ -29,62 +55,49 @@ enableRobotsTXT = true
 		languageName = "Catalan"
 		weight = 3
 
-[[languages.en.menu.main]]
-	name = "Home"
-	url = "/"
-	weight = -150
 
-[[languages.en.menu.main]]
-	name = "Blog"
-	url = "/blog/"
-	weight = -140
+[params]
+  sitename = "Charly3Pins"
+  since = 2018
+  defaultColor = "light" # set color mode: dark, light, auto
+  # Setting it to 'auto' applies the color scheme based on the visitor's device color preference.If you don't specify anything, ignore this parameter, or leave it blank,
+  # the default value is set to 'auto'.
+  # You can take a look at layouts/index.html for more information.
+  description = "Minimal Hugo blog theme with light and dark mode support"
+  mainSections = ['blog']
+  toc = false
+  goToTop = true # set to false to disable 'go to top' button
+  additionalScripts = ['js/custom.js', 'js/custom-2.js']
 
-[[languages.en.menu.main]]
-	name = "Code"
-	url = "/code/"
-	weight = -130
+[params.author]
+  avatar = "cyberpunk-ai.png" # put the file in assets folder; also ensure that image has same height and width
+  # Note: image is not rendered if the resource(avatar image) is not found. No error is displayed.
+  intro = "Welcome to my blog!"
+  name = "Charly3Pins"
+  description = "Eat; Sleep; Code; Repeat;"
 
-[[languages.en.menu.main]]
-	name = "About"
-	url = "/about/"
-	weight = -110
+# Allow to override webmanifest options
+[params.webmanifest]
+  name = "sitename" # will use "params.sitename" or "title" by default
+  short_name = "sitename" # same as name
+  start_url = "/" # will use homepage url by default
+  theme_color = "#434648" # default is "#434648" (base color of text). Also will override html `<meta name="theme-color" />`
+  background_color = "#fff" # by default depend on "params.defaultColor" for "light" or "auto" will be set to "#fff" for dark will be "#131418" (color of dark mode background)
+  display = "standalone"
 
-[[languages.es.menu.main]]
-	name = "Inicio"
-	url = "/"
-	weight = -150
+# Allow to override `browserconfig.xml` params (configuration for windows embeded browsers)
+[params.browserconfig]
+  TileColor = "#2d89ef" # default windows 10 blue tile color
 
-[[languages.es.menu.main]]
-	name = "Blog"
-	url = "/blog/"
-	weight = -140
+[[params.socialIcons]]
+name = "github"
+url = "https://github.com/hugo-sid"
 
-[[languages.es.menu.main]]
-	name = "Código"
-	url = "/code/"
-	weight = -130
+[[params.socialIcons]]
+name = "twitter"
+url = "https://twitter.com"
 
-[[languages.es.menu.main]]
-	name = "Quién"
-	url = "/about/"
-	weight = -110
+[[params.socialIcons]]
+name = "Rss"
+url = "index.xml"
 
-[[languages.ca.menu.main]]
-	name = "Inici"
-	url = "/"
-	weight = -150
-
-[[languages.ca.menu.main]]
-	name = "Bloc"
-	url = "/blog/"
-	weight = -140
-
-[[languages.ca.menu.main]]
-	name = "Codi"
-	url = "/code/"
-	weight = -130
-
-[[languages.ca.menu.main]]
-	name = "Qui"
-	url = "/about/"
-	weight = -110

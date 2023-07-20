@@ -1,78 +1,27 @@
-<!DOCTYPE html>
-<html lang="{{ .Lang }}" data-theme="light">
-	
-	{{ partial "head.html" . }}
-
-	<body>
-		{{ partial "navbar" . }}
-		
-		<div class="layout-container">
-
-			<section class="blog-container">
-				
-				<h4 class="post-title">{{ .Title }}</h4>
-				<h2 class="post-description">{{ .Description }}</h2>
-
-				<div class="post-metadata">
-					<div class="post-tags">
-						{{range .Params.tags}}
-						<a class="tag" href="{{ "tags/" | absURL }}{{ . | urlize }}/">#{{ . }}</a>
-						{{end}}
-					</div>
-					<span class="post-date">
-						{{ .Date.Format "02/01/2006" }} · {{ T "readingTime" .ReadingTime }}
-					</span>
-				</div>
-
-				{{ partial "social_share.html" . }}
-
-				<article>
-					{{ with .Params.image }}
-					<div class="centered">
-						<img src="{{ . | absURL }}" alt="cover image">
-					</div>
-					{{ end }}
-					{{ if .Params.caption }}
-					<div>
-						<p class="caption">{{ T "imageBy" }}<a href="{{.Params.caption}}">{{.Params.captionAuthor}}</a></p>
-					</div>
-					{{ end }}
-					<div class="page-separator"></div>
-					{{ .Content | safeHTML }}
-				</article>
-
-				{{ $related := .Site.RegularPages.Related . | first 3 }}
-				{{ with $related }}
-				<div class="page-separator"><hr></div>
-				{{ range . }}
-				<section class="post-preview-container">
-					<a href="{{ .Permalink }}">
-						<div class="post-preview-title-container">
-							<h3 class="post-preview-title">{{ .Title }}</h3>
-						</div>
-						<div class="post-preview-subtext">{{ .Description }}</div>
-						<div>
-							<span class="post-preview-metadata">
-								{{ .Date.Format "02/01/2006" }} · {{ T "readingTime" .ReadingTime }}
-							</span>
-							{{range .Params.tags}}
-							<a class="tag" href="{{ "tags/" | absURL }}{{ . | urlize }}/">#{{ . }}</a>
-							{{end}}
-						</div>
-					</a>
-				</section>					
-				{{ end }}
-				{{ end }}
-				
-				{{ template "_internal/disqus.html" . }}
-			
-			</section>
-			
-			<div class="page-separator centered"><hr></div>
-			
-			{{ partial "footer.html" . }}
-		
-		</div>
-
-	</body>
-</html>
+{{ define "main" }}
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">{{ .Title }}</h1>
+                {{ with .Date }}
+                {{ $ISO_time := dateFormat "2006-01-02T15:04:05-07:00" . }}
+                <div class="post-meta">
+                    <time datetime="{{ $ISO_time }}" itemprop="datePublished"> {{ . | time.Format ":date_medium" }} </time>
+                </div>
+                {{ end }}
+            </header>
+            {{- if or .Params.toc .Site.Params.toc }}
+            <details class="toc">
+                <summary><b>Table of Contents</b></summary>
+                {{ .TableOfContents }}
+            </details>
+            {{- end -}}
+            <div class="page-content">
+                {{ .Content }}
+            </div>
+        </article>
+        {{- partial "comments.html" . -}}
+    </main>
+</div>
+{{ end }}
