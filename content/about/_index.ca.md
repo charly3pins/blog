@@ -2,9 +2,13 @@
 title = "Qui"
 description = "Una mica sobre mi"
 +++
-Actualment al món del desenvolupament àgil de productes a Fintech. Experiència en Lideratge Tecnològic, Desenvolupament de Programari, Gestió de Projectes, Planificació Estratègica i Coaching TI a diferents indústries: Transport/Logística/Emmagatzematge, Finances/Banca/Fintech i Educació.
+Crec en el poder d'una comunicació clara i definir expectatives establint una base de confiança i transparència amb el meu equip.
 
-Em considero un líder tecnològic experimentat i enginyer de software amb fam de reptes i disposat a aprendre coses noves cada dia. Sóc un entusiasta de les millors pràctiques com a forma dèxit. Pots trobar-me com [@charly3pins](https://twitter.com/charly3pins) a Twitter.
+Em considero un líder nat que vol brindar orientació, suport i un marc per a la col·laboració, cosa que permet que tots prosperin i aconsegueixin el millor.
+
+Vaig començar el meu viatge com a Enginyer de software i encara gaudeixo de la programació, però vaig evolucionar com a mentor, entrenador i guia per a altres. Com abans, segueixo famolenc de nous desafiaments i disposat a aprendre coses noves cada dia.
+
+Sóc un entusiasta de les bones pràctiques com a forma d'èxit i em pots trobar com a [@charly3pins](https://twitter.com/charly3pins) a Twitter.
 
 M'agrada aprendre coses noves gairebé cada dia, així que sempre llegeixo llibres, escolto podcasts o veig vídeos sobre tecnologia. A més, vull posar en pràctica tots aquests aprenentatges, de manera que sòl crear PoC o projectes paral·lels per provar aquestes coses noves o investigar sobre temes que m'interessen. Pots consultar els meus projectes d'OSS en el meu [Github](https://github.com/charly3pins).
 
