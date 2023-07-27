@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ .Lang }}" data-theme="light">
+<html lang="{{ .Lang }}" data-theme="dark">
 	
 	{{ partial "head.html" . }}
 
@@ -8,6 +8,9 @@
 		
 		<div class="layout-container">
 
+			<div class="banner-container">
+				<img src="{{ .Site.Params.homeBanner }}" alt="cover image">
+			</div>
 			<div class="banner-container">
 				<img class="banner-image" src="{{ .Site.Params.avatar }}" alt="Avatar">
 				<div class="banner-text">
