@@ -1,6 +1,5 @@
 +++
-title = "Quién"
-description = "Un poco sobre mí"
+title = "Acerca de mí 👋"
 +++
 Creo en el poder de una comunicación clara y definir expectativas estableciendo una base de confianza y transparencia con mi equipo.
 

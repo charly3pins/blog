@@ -1,36 +1,24 @@
-<!DOCTYPE html>
-<html lang="{{ .Lang }}" data-theme="light">
-	
-	{{ partial "head.html" . }}
+{{ define "main" }}
+  {{ $lastmodstr := (partial "date.html" (dict "date" .Lastmod "language" $.Page.Language "format" "long")) }}
+  {{ $datestr := (partial "date.html" (dict "date" .Date "language" $.Page.Language "format" "long")) }}
 
-	<body>
-		{{ partial "navbar" . }}
-		
-		<div class="layout-container">
-			
-			<div class="banner-container">
-				<img class="banner-image" src="{{ .Site.Params.avatar }}" alt="Picture of charly3pins">
-				<div class="banner-text">
-					<h1 class="banner-title">{{ .Site.Author.name }}</h1>
-					<div class="banner-description">{{ T "description" }}</div>
-				</div>
-			</div>
+  {{ if (and .Params.image (not (or .Site.Params.hidePageThumbnail .Params.hidePageThumbnail)) ) }}
+  <div class="relative max-w-5xl mx-auto px-4">
+    <img src="{{ .Params.image }}" class="rounded-lg shadow-sm w-full object-contain" />
+    <div class="absolute top-4 right-8 rounded shadow bg-white text-gray-900 dark:bg-gray-900 dark:text-white px-2 py-0.5">
+      {{ $datestr }}
+    </div>
+  </div>
+  {{ end }}
 
-			<header class="heading-container">
-				<h4 class="heading-container-title">{{ .Title }}</h4>
-				<em class="heading-container-subtitle">{{ .Description }}</em>
-			</header>
+  <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
 
-			<article>
-				{{ .Content | safeHTML }}
-			</article>
-		
-		</div>
+    <h1 class="text-2xl font-bold mb-2">{{ .Title }}</h1>
 
-		<div class="page-separator centered"><hr></div>
-		
-		{{ partial "footer.html" . }}
+    {{ .Content }}
+  </article>
 
-	</body>
-</html>
+  {{- partial "comments.html" . -}}
 
+  {{- partial "social.html" . -}}
+{{ end }}

@@ -1,0 +1,90 @@
+baseURL = "https://charly3pins.dev/"
+languageCode = "en-us"
+title = "charly3pins.dev"
+googleAnalytics = "UA-126216319-1"
+disqusShortname = "https-charly3pins-dev"
+defaultContentLanguage = "en"
+pygmentsUseClasses=true
+enableRobotsTXT = true
+
+[author]
+	name = "Charly3Pins"
+
+[params]
+	since = 2018
+	avatar = "/images/cyberpunk-ai.png"
+	homeBanner = "/images/gopher-this-is-fine.jpg"
+	errorPage = "/images/gopher-this-is-fine.jpg"
+
+[languages]
+	[languages.en]
+		languageName = "English"
+		weight = 1
+
+	[languages.es]
+		languageName = "Spanish"
+		weight = 2	
+
+	[languages.ca]
+		languageName = "Catalan"
+		weight = 3
+
+[[languages.en.menu.main]]
+	name = "Home"
+	url = "/"
+	weight = -150
+
+[[languages.en.menu.main]]
+	name = "Blog"
+	url = "/blog/"
+	weight = -140
+
+[[languages.en.menu.main]]
+	name = "Code"
+	url = "/code/"
+	weight = -130
+
+[[languages.en.menu.main]]
+	name = "About"
+	url = "/about/"
+	weight = -110
+
+[[languages.es.menu.main]]
+	name = "Inicio"
+	url = "/"
+	weight = -150
+
+[[languages.es.menu.main]]
+	name = "Blog"
+	url = "/blog/"
+	weight = -140
+
+[[languages.es.menu.main]]
+	name = "Código"
+	url = "/code/"
+	weight = -130
+
+[[languages.es.menu.main]]
+	name = "Quién"
+	url = "/about/"
+	weight = -110
+
+[[languages.ca.menu.main]]
+	name = "Inici"
+	url = "/"
+	weight = -150
+
+[[languages.ca.menu.main]]
+	name = "Bloc"
+	url = "/blog/"
+	weight = -140
+
+[[languages.ca.menu.main]]
+	name = "Codi"
+	url = "/code/"
+	weight = -130
+
+[[languages.ca.menu.main]]
+	name = "Qui"
+	url = "/about/"
+	weight = -110

@@ -1,90 +1,169 @@
 baseURL = "https://charly3pins.dev/"
-languageCode = "en-us"
 title = "charly3pins.dev"
-googleAnalytics = "UA-126216319-1"
-disqusShortname = "https-charly3pins-dev"
+metaDataFormat = "yaml"
+
 defaultContentLanguage = "en"
-pygmentsUseClasses=true
-enableRobotsTXT = true
+
+[params.images]
+    introPhoto = "/cyberpunk-ai-250px.png"
+
+[languages]
+    
+    [languages.en]
+        weight = 1
+        languageName = "English"
+    
+        [languages.en.params]
+            introTitle = "Hey! I'm Charly3Pins"
+            introSubtitle = "Eat; Sleep; Code; Repeat;"
+    
+            [[languages.en.menu.main]]
+                name = "About me 👋"
+                url = "about"
+                weight = 1
+
+            [[languages.en.menu.main]]
+                name = "Blog ✍️"
+                url = "blog"
+                weight = 2
+
+            [[languages.en.menu.main]]
+                name = "Projects 👨‍💻"
+                url = "projects"
+                weight = 3
+
+            [[languages.en.menu.main]]
+                name = "Tags 🔠"
+                url = "tags"
+                weight = 4
+
+
+    [languages.es]
+        weight = 2
+        languageName = "Español"
+        title = "charly3pins.dev"
+    
+        [languages.es.params]
+            introTitle = "¡Hola! Soy Charly3Pins"
+            introSubtitle = "Eat; Sleep; Code; Repeat;"
+    
+            [[languages.es.menu.main]]
+                name = "Acerca de mí 👋"
+                url = "about"
+                weight = 1
+
+            [[languages.es.menu.main]]
+                name = "Blog ✍️"
+                url = "blog"
+                weight = 2
+
+            [[languages.es.menu.main]]
+                name = "Proyectos 👨‍💻"
+                url = "projects"
+                weight = 3
+
+            [[languages.es.menu.main]]
+                name = "Tags 🔠"
+                url = "tags"
+                weight = 4
+
+    [languages.ca]
+        weight = 1
+        languageName = "Català"
+        title = "charly3pins.dev"
+    
+        [languages.ca.params]
+            introTitle = "Hola! Soc Charly3Pins"
+            introSubtitle = "Eat; Sleep; Code; Repeat;"
+    
+            [[languages.ca.menu.main]]
+                name = "Sobre mi 👋"
+                url = "about"
+                weight = 1
+
+            [[languages.ca.menu.main]]
+                name = "Bloc ✍️"
+                url = "blog"
+                weight = 2
+
+            [[languages.ca.menu.main]]
+                name = "Projectes 👨‍💻"
+                url = "projects"
+                weight = 3
+
+            [[languages.ca.menu.main]]
+                name = "Tags 🔠"
+                url = "tags"
+                weight = 4
 
 [author]
 	name = "Charly3Pins"
 
 [params]
 	since = 2018
-	avatar = "/images/cyberpunk-ai.png"
-	homeBanner = "/images/gopher-this-is-fine.jpg"
-	errorPage = "/images/gopher-this-is-fine.jpg"
 
-[languages]
-	[languages.en]
-		languageName = "English"
-		weight = 1
+    # Enable the darkmode toggle in header
+    darkModeToggle = true
 
-	[languages.es]
-		languageName = "Spanish"
-		weight = 2	
+    favicon = "/favicon.ico"
 
-	[languages.ca]
-		languageName = "Catalan"
-		weight = 3
+    # Color for the intro details and social links block, not applicable for dark mode
+    # Supported values: Any color from TailwindCSS default colors
+    # Reference: https://tailwindcss.com/docs/customizing-colors
+    ascentColor = "bg-blue-100"
 
-[[languages.en.menu.main]]
-	name = "Home"
-	url = "/"
-	weight = -150
+    # The page bundle that is shown on the front page
+    frontBundle = "blog"
 
-[[languages.en.menu.main]]
-	name = "Blog"
-	url = "/blog/"
-	weight = -140
+    # Add support for Table of contents
+    # Can be added to a page level also in markdown frontmatter
+    toc = true
 
-[[languages.en.menu.main]]
-	name = "Code"
-	url = "/code/"
-	weight = -130
+    # Hides the thumbnail in post view
+    # Thumbnails in home and blog pages will still be shown
+    # This setting can also be in page's markdown file
+    hidePageThumbnail = false
 
-[[languages.en.menu.main]]
-	name = "About"
-	url = "/about/"
-	weight = -110
+# Comments system
+[params.comments]
+    # Supports disqus, giscus and utterances
+    # Check hugo docs for setting up disqus
+    system = "giscus"
 
-[[languages.es.menu.main]]
-	name = "Inicio"
-	url = "/"
-	weight = -150
+[params.homepage.social]
+    # Global params common for both languages
+    title = "Follow me"
+    description = "I work on everything coding and tweeting developer memes"
 
-[[languages.es.menu.main]]
-	name = "Blog"
-	url = "/blog/"
-	weight = -140
+    [[params.homepage.social.icons]]
+        website = "twitter"
+        url = "https://twitter.com/charly3pins"
+    [[params.homepage.social.icons]]
+        website = "linkedin"
+        url = "https://linkedin.com/in/carlesfuste"
+    [[params.homepage.social.icons]]
+        website = "github"
+        url = "https://github.com/charly3pins"
+    [[params.homepage.social.icons]]
+        website = "stackoverflow"
+        url = "https://stackoverflow.com/users/4948631/charly3pins"
+    [[params.homepage.social.icons]]
+        website = "dev.to"
+        url = "https://dev.to/charly3pins"
+    [[params.homepage.social.icons]]
+        website = "rss"
+        url = "https://charly3pins.dev/index.xml"
 
-[[languages.es.menu.main]]
-	name = "Código"
-	url = "/code/"
-	weight = -130
+[build]
+    writeStats = true
 
-[[languages.es.menu.main]]
-	name = "Quién"
-	url = "/about/"
-	weight = -110
+[outputs]
+    home = ["HTML", "RSS", "JSON"]
 
-[[languages.ca.menu.main]]
-	name = "Inici"
-	url = "/"
-	weight = -150
-
-[[languages.ca.menu.main]]
-	name = "Bloc"
-	url = "/blog/"
-	weight = -140
-
-[[languages.ca.menu.main]]
-	name = "Codi"
-	url = "/code/"
-	weight = -130
-
-[[languages.ca.menu.main]]
-	name = "Qui"
-	url = "/about/"
-	weight = -110
+# syntax highlight settings
+[markup]
+    [markup.highlight]
+        style = "dracula"
+    [markup.goldmark.renderer]
+        # Enable to include inline HTML
+        unsafe = true

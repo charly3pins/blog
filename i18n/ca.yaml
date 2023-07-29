@@ -1,0 +1,95 @@
+# Content
+- id: lastPost
+  translation: "Darrer post el"
+- id: postedOnDate
+  translation: "Publicat el {{ . }}"
+- id: lastModified
+  translation: "(Modificat per últim cop el {{ . }})"
+- id: translationsLabel
+  translation: "Altres idiomes: "
+- id: translationsSeparator
+  translation: ", "
+- id: readMore
+  translation: "Llegir més"
+- id: morePosts
+  translation: "Més publicacions"
+- id: olderPosts
+  translation: "Publicaciones antigues"
+- id: newerPosts
+  translation: "Noves publicacions"
+- id: previousPost
+  translation: "Publicació anterior"
+- id: nextPost
+  translation: "Publicació següent"
+- id: readTime
+  translation: "Minuts"
+- id: words
+  translation: "Paraules"
+
+# Date
+- id: January
+  translation: "Gener"
+- id: February
+  translation: "Febrer"
+- id: March
+  translation: "Març"
+- id: April
+  translation: "Abril"
+- id: May
+  translation: "Maig"
+- id: June
+  translation: "Junny"
+- id: July
+  translation: "Juliol"
+- id: August
+  translation: "Agosto"
+- id: September
+  translation: "Setembre"
+- id: October
+  translation: "Octubre"
+- id: November
+  translation: "Novembre"
+- id: December
+  translation: "Desembre"
+
+# 404 page
+- id: pageNotFound
+  translation: "Pàgina no trobada"
+
+# Navigation
+- id: toggleNavigation
+  translation: "Navegació"
+- id: languageSwitcherLabel
+  translation: "Idioma"
+- id: gcseLabelShort
+  translation: "Buscar"
+- id: gcseLabelLong
+  translation: "Buscar {{ .Site.Title }}"
+- id: gcseClose
+  translation: "Tancar"
+
+# Staticman
+- id: noComment
+  translation: "Sense comentaris"
+- id: oneComment
+  translation: "comentari"
+- id: moreComment
+  translation: "comentaris"
+- id: useMarkdown
+  translation: "Pots fer servir la sintaxi de Markdown"
+- id: yourName
+  translation: "El teu nom"
+- id: yourEmail
+  translation: "El teu email"
+- id: yourWebsite
+  translation: "La teva web"
+
+# Delayed Disqus
+- id: show
+  translation: "Mostrar"
+- id: comments
+  translation: "comentaris" 
+
+# Related posts
+- id: seeAlso
+  translation: "Veure també"

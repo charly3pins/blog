@@ -1,43 +1,40 @@
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="chrome=1">
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="referrer" content="no-referrer">
-  <meta name="description" content="{{ T "description" }}">
-{{ with .Title | default .Site.Title }}
-  <title>{{ . }} | Charly3Pins</title>
-{{ end }}
-{{ with .Title | default .Site.Title }}
-  <meta property="og:title" content="{{ . }} - charly3pins" />
-{{ end }}
-  <meta property="og:type" content="website">
-  <meta property="og:description" content="{{ .Description }}">
-  <meta property="og:url" content="{{ .Permalink }}">
-  <meta property="og:site_name" content="charly3pins.dev">
-{{ with  or (.Params.image) (.Site.Params.avatar) | absURL }}  
-  <meta property="og:image" content="{{ . }}">
-{{ end }}
-  <meta name="twitter:card" content="summary_large_image">
-{{ with .Title | default .Site.Title }}
-  <meta name="twitter:title" content="{{ . | truncate 70 }}" />
-{{ end }}
-{{ with .Description | default .Content }}
-  <meta name="twitter:description" content="{{ . }}">
-{{ end }}
-{{ with  or (.Params.image) (.Site.Params.avatar) | absURL }}
-  <meta name="twitter:image" content="{{ . }}">
-{{ end }}
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-{{ with .OutputFormats.Get "rss" -}}
-  {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
-{{ end -}}
+  <link rel="icon" href="{{ if (isset .Site.Params "favicon") }}{{ .Site.Params.favicon }}{{ else }}/favicon.ico{{ end }}">
 
-  {{ template "_internal/google_analytics.html" . }}
+  <title>
+  {{ if not .IsHome }}{{ .Title }} - {{ end }}{{ site.Title }}
+  </title>
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end -}}" />
+  {{- if .Keywords }}
+  <meta name="keywords" content="{{ delimit .Keywords "," }}" />
+  {{ end -}}
+  {{- if .Params.Author }}
+  <meta name="author" content="{{ .Params.Author}}" />
+  {{ end -}}
+  
+  {{ hugo.Generator }}
 
-  <link rel="stylesheet" href="{{ "css/main.css" | absURL }}" />
-  <link rel="stylesheet" href="{{ "css/syntax.css" | absURL }}" />
-  <link rel="stylesheet" href="{{ "css/social_share.css" | absURL }}" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  {{- $styles := resources.Get "css/styles.css" | postCSS (dict "config" "./assets/css/postcss.config.js") -}}
+  {{- if .Site.IsServer }}
+  <link rel="stylesheet" href="{{ $styles.RelPermalink }}" />
+  {{ else }}
+  {{- $styles := $styles| minify | fingerprint | resources.PostProcess -}}
+  <link
+    rel="stylesheet"
+    href="{{ $styles.Permalink }}"
+    integrity="{{ $styles.Data.Integrity }}"
+  />
+  {{ end -}}
+
+  {{ range .AlternativeOutputFormats -}}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+  {{ end -}}
+
+
+  {{ if gt (len .Site.Languages) 1}}
+  <meta name="lang" content="{{ .Site.Language }}" />
+  {{ end }}
 </head>

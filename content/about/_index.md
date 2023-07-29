@@ -1,6 +1,5 @@
 +++
-title = "About"
-description = "A little bit about me"
+title = "About me 👋"
 +++
 I believe in the power of clear communication and setting expectations establishing a foundation of trust and transparency with my team. 
 

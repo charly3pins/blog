@@ -1,6 +1,5 @@
 +++
-title = "Qui"
-description = "Una mica sobre mi"
+title = "Sobre mi 👋"
 +++
 Crec en el poder d'una comunicació clara i definir expectatives establint una base de confiança i transparència amb el meu equip.
 
