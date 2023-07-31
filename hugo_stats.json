@@ -42,7 +42,6 @@
       "strong",
       "summary",
       "svg",
-      "t",
       "title",
       "ul"
     ],
@@ -126,7 +125,6 @@
       "md:relative",
       "md:w-auto",
       "min-h-screen",
-      "ml-1",
       "mobile-menu",
       "mobile-menu-button",
       "mr-1",
