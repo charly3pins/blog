@@ -1,11 +1,15 @@
 /* FONTS */
 @font-face{
-    font-family:NeutraText-Bold;
-    src:url(/fonts/NeutraText-Bold.otf)
+    font-family: Roboto-Regular;
+    src:URL(/fonts/Roboto-Regular.woff);
 }
 @font-face{
-    font-family:Hermit-Regular;
-    src:url(/fonts/Hermit-Regular.otf)
+    font-family: Roboto-Italic;
+    src:URL(/fonts/Roboto-Italic.woff);
+}
+@font-face{
+    font-family: Roboto-Bold;
+    src:URL(/fonts/Roboto-Bold.woff);
 }
 
 /* ROOT */
@@ -21,10 +25,10 @@
 
     --padding:15px;
     
-    --font-brand-primary:Hermit-Regular;
-    --font-brand-secondary:Hermit-Regular;
-    --font-brand-tertiary:NeutraText-Bold;
-    --font-brand-regular:Hermit-Regular;
+    --font-brand-primary:Roboto-Regular;
+    --font-brand-secondary:Roboto-Italic;
+    --font-brand-tertiary:Roboto-Bold;
+    --font-brand-regular:Roboto-Regular;
 }
 
 /* COLORS */
@@ -39,35 +43,24 @@ html[data-theme="light"]{
     --color-title:#525252;
 }
 
-html[data-theme="dark"]{
-    --color-background:#141322;
-    --color-border:#30317d;
-    --color-text:#b6afa8;
-    --color-heading:#d4d4d4;
-    --color-hover:#252525;
-    --color-link:#00ff00;
-    --color-subheading:#737373;
-    --color-title:#adadad;
-}
-
 /* GENERIC */
 *{
     box-sizing:border-box
 }
 body{
-    font-family:var(--font-brand-regular);
+    font-family:Roboto-Regular;
     color:var(--color-text);
     font-size:16px;
-    background-color:var(--color-background)
+    background-color: #fcfcfc;
 }
 a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,mark,menu,nav,object,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,var,video{
     margin:0;
     padding:0;
     border:0;
-    vertical-align:baseline
+    vertical-align:baseline;
 }
 article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{
-    display:block
+    display:block;
 }
 p{
     margin-bottom:15px;
@@ -77,24 +70,24 @@ p{
 }
 h1,h2,h3,h4,h5,h6{
     font-family:var(--font-brand-tertiary);
-    font-display:swap;
+    font-display: swap;
     color:var(--color-heading);
     line-height:1;
-    margin:20px auto 10px
+    margin:20px auto 10px;
 }
 h1{
     font-size:3rem;
     letter-spacing:-3px;
     margin:60px auto 0;
-    text-align:center
+    text-align: center;
 }
 h2{
     font-size:1.75rem;
-    margin:20px auto 10px
+    margin:20px auto 10px;
 }
 h2,h3{
     letter-spacing:-1.5px;
-    color:var(--color-font-heading)
+    color:var(--color-font-heading);
 }
 h3{
     font-size:2.25rem
@@ -123,7 +116,7 @@ img{
     margin:0 auto
 }
 li::marker{
-    font-style:italic
+    font-style:italic;
 }
 li{
     font-size:1.25rem;
@@ -132,7 +125,7 @@ li{
 a{
     overflow-wrap:break-word;
     color:var(--color-link);
-    text-decoration:none
+    text-decoration:none;
 }
 article img,p img{
     margin:10px auto
@@ -167,43 +160,12 @@ blockquote p:last-child{
     }
 }
 
-/* THEME */
-.theme-switch-wrapper {
-    width: 30px;
-    overflow: hidden;
-    height: 30px;
-    padding: 0;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-}
-
-[data-theme="light"] .theme-switcher {
-    transform: rotate(180deg);
-}
-
-[data-theme="dark"] .theme-switcher {
-    transform: rotate(360deg);
-}
-
-.theme-switcher {
-    transform: rotate(180deg);
-}
-.theme-switch{
-    display:inline-block;
-    position:relative;
-    overflow:hidden
-}
-.theme-switch input{
-    display:none
-}
-
 /* NAVBAR */
 .navbar-container {
     width: 100%;
     margin: 0 auto;
-    border-bottom: 1px solid var(--color-border);
-    background: var(--color-background);
+    background: #232223;
+    padding:10px;
 }
 @media (max-width:369px){
     .navbar-container{
@@ -224,42 +186,46 @@ blockquote p:last-child{
 .navbar-navigation a {
     font-size: 1.25rem;
     letter-spacing: -1px;
-    color:var(--color-heading);
-    font-family:var(--font-brand-tertiary);
+    color: #fcfcfc;
+    font-family:Roboto-Regular;
     padding:5px;
-    text-shadow:0px 0px 5px var(--color-subheading);
 }
 @media (max-width:768px){
     .navbar-navigation a{
         font-size:1rem
     }
 }
-.navbar-navigation a:hover {
-    border-radius:10px;
-    background-color:var(--color-hover);
-    color:var(--color-title);
-}
-/* LANGUAGE SELECTOR */
-.lang-selector {
-	list-style: none;
+
+.navbar-list {
+    list-style: none;
 	position: relative;
 	cursor: pointer;
 	padding: 0;
 }
-.lang-selector li ul {
+
+.navbar-list li {
+    display: inline;
+}
+
+/* LANGUAGE SELECTOR */
+.lang-selector ul {
 	display: none;
 	padding: 0;
 	text-align: center;
 }
-.lang-selector li ul a {
-	color: var(--color-background);
+.lang-selector a {
+    font-size: 1rem;
+    color:#bebdbd;
+}
+.lang-selector ul a {
+    font-size: 1rem;
+    color: #bebdbd;
 	text-align: center;
 }
-.lang-selector li:hover ul {
+.lang-selector:hover ul {
 	position: absolute;
 	display: block;
-	background: var(--color-text);
-	color: var(--color-background);
+	background: #232223;
 	width: 100px;
 	z-index: 2;
 	border-radius: 10px;
@@ -295,7 +261,6 @@ blockquote p:last-child{
     letter-spacing:-1px;
     margin:0;
     color:var(--color-heading);
-    text-shadow:0px 0px 5px var(--yellow);
     font-family:var(--font-brand-primary);
 }
 .banner-description{
@@ -526,7 +491,9 @@ blockquote p:last-child{
 .footer-container {
     width: 100%;
     margin: 40px auto 0;
-    font-family: var(--font-brand-tertiary);
+    font-family: Roboto-Regular;
+    padding:10px;
+    background: #232223;
 }
 .footer-social-icons-container{
     display: flex;
@@ -541,19 +508,16 @@ blockquote p:last-child{
 .footer-social-icon {
     font-size: 1.25em;
     padding: 5px;
-    color: var(--color-title);
+    color:#bebdbd;
     margin-right: 10px;
-    text-shadow:0px 0px 5px var(--color-subheading);
-}
-.footer-social-icon:hover{
-    background-color:var(--color-hover);
-    border-radius:50%;
 }
 .footer-text {
     display: flex;
     flex-direction: row;
     justify-content: center;
     padding: 5px;
+    font-size: 0.9em;
+    color:#bebdbd;
 }
 
 /* BUTTON */

@@ -7,6 +7,9 @@ other = "Spanish"
 [catalan]
 other = "Catalan"
 
+[languageSwitcherLabel]
+other = "Language"
+
 [description]
 other = "Eat; Sleep; Code; Repeat;"
 

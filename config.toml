@@ -20,71 +20,83 @@ enableRobotsTXT = true
 	[languages.en]
 		languageName = "English"
 		weight = 1
+        
+        [languages.en.params]
+            introTitle = "Hey! I'm Charly3Pins"
+            introSubtitle = "Eat; Sleep; Code; Repeat;"
+    
+            [[languages.en.menu.main]]
+                name = "About me 👋"
+                url = "about"
+                weight = 1
+
+            [[languages.en.menu.main]]
+                name = "Blog ✍️"
+                url = "blog"
+                weight = 2
+
+            [[languages.en.menu.main]]
+                name = "Projects 👨‍💻"
+                url = "projects"
+                weight = 3
+
+            [[languages.en.menu.main]]
+                name = "Tags 🔠"
+                url = "tags"
+                weight = 4
 
 	[languages.es]
 		languageName = "Spanish"
 		weight = 2	
 
+        [languages.es.params]
+            introTitle = "¡Hola! Soy Charly3Pins"
+            introSubtitle = "Eat; Sleep; Code; Repeat;"
+    
+            [[languages.es.menu.main]]
+                name = "Acerca de mí 👋"
+                url = "about"
+                weight = 1
+
+            [[languages.es.menu.main]]
+                name = "Blog ✍️"
+                url = "blog"
+                weight = 2
+
+            [[languages.es.menu.main]]
+                name = "Proyectos 👨‍💻"
+                url = "projects"
+                weight = 3
+
+            [[languages.es.menu.main]]
+                name = "Tags 🔠"
+                url = "tags"
+                weight = 4
+
 	[languages.ca]
 		languageName = "Catalan"
 		weight = 3
 
-[[languages.en.menu.main]]
-	name = "Home"
-	url = "/"
-	weight = -150
+        [languages.ca.params]
+            introTitle = "Hola! Soc Charly3Pins"
+            introSubtitle = "Eat; Sleep; Code; Repeat;"
+    
+            [[languages.ca.menu.main]]
+                name = "Sobre mi 👋"
+                url = "about"
+                weight = 1
 
-[[languages.en.menu.main]]
-	name = "Blog"
-	url = "/blog/"
-	weight = -140
+            [[languages.ca.menu.main]]
+                name = "Bloc ✍️"
+                url = "blog"
+                weight = 2
 
-[[languages.en.menu.main]]
-	name = "Code"
-	url = "/code/"
-	weight = -130
+            [[languages.ca.menu.main]]
+                name = "Projectes 👨‍💻"
+                url = "projects"
+                weight = 3
 
-[[languages.en.menu.main]]
-	name = "About"
-	url = "/about/"
-	weight = -110
-
-[[languages.es.menu.main]]
-	name = "Inicio"
-	url = "/"
-	weight = -150
-
-[[languages.es.menu.main]]
-	name = "Blog"
-	url = "/blog/"
-	weight = -140
-
-[[languages.es.menu.main]]
-	name = "Código"
-	url = "/code/"
-	weight = -130
-
-[[languages.es.menu.main]]
-	name = "Quién"
-	url = "/about/"
-	weight = -110
-
-[[languages.ca.menu.main]]
-	name = "Inici"
-	url = "/"
-	weight = -150
-
-[[languages.ca.menu.main]]
-	name = "Bloc"
-	url = "/blog/"
-	weight = -140
-
-[[languages.ca.menu.main]]
-	name = "Codi"
-	url = "/code/"
-	weight = -130
-
-[[languages.ca.menu.main]]
-	name = "Qui"
-	url = "/about/"
-	weight = -110
+            [[languages.ca.menu.main]]
+                name = "Tags 🔠"
+                url = "tags"
+                weight = 4
