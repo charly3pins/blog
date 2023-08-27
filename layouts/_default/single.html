@@ -4,75 +4,65 @@
 	{{ partial "head.html" . }}
 
 	<body>
-		{{ partial "navbar" . }}
+		{{ partial "header" . }}
 		
-		<div class="layout-container">
+		<main class="page-content" aria-label="Content">
+			<div class="wrapper">
+				<article class="post h-entry" itemscope="" itemtype="http://schema.org/BlogPosting">
+					<header class="post-header">
+						<h1 class="post-title" itemprop="name headline">{{ .Title }}</h1>
+						<p class="post-meta">
+							<time class="dt-published" datetime="2023-08-23T00:00:00+00:00" itemprop="datePublished">{{ .Date.Format "02/01/2006" }}</time>
+							<div class="reading-time">
+								<p>
+									{{ T "readingTime" }} {{ T "minutes" .ReadingTime }}
+								</p>
+							</div>
+							<div class="tags-container">
+								<img class="tags-icon" src="/images/tags.png" alt="tags">
+								{{range .Params.tags}}
+								<a class="tag" href="{{ "tags/" | absURL }}{{ . | urlize }}/">{{ . }}</a>
+								{{end}}
+							</div>
+						</p>
+					</header>
+					
+					{{ partial "social_share" . }}
 
-			<section class="blog-container">
-				
-				<h4 class="post-title">{{ .Title }}</h4>
-				<h2 class="post-description">{{ .Description }}</h2>
-
-				<div class="post-metadata">
-					<div class="post-tags">
-						{{range .Params.tags}}
-						<a class="tag" href="{{ "tags/" | absURL }}{{ . | urlize }}/">#{{ . }}</a>
-						{{end}}
+					<div class="post-content e-content" itemprop="articleBody">
+						{{ .Content | safeHTML }}
 					</div>
-					<span class="post-date">
-						{{ .Date.Format "02/01/2006" }} · {{ T "readingTime" .ReadingTime }}
-					</span>
-				</div>
 
-				{{ partial "social_share.html" . }}
+					{{ partial "social_share" . }}
 
-				<article>
-					{{ with .Params.image }}
-					<div class="centered">
-						<img src="{{ . | absURL }}" alt="cover image">
-					</div>
+					{{ $related := .Site.RegularPages.Related . | first 3 }}
+					{{ with $related }}
+					<ul class="post-list">
+						{{ range . }}
+						<li>
+							<h3 class="blog-header">
+								<a class="post-link" href="{{ .Permalink }}">{{ .Title }}</a>
+								<span class="post-meta"><time class="dt-published" datetime="2023-08-23T00:00:00+00:00" itemprop="datePublished">{{ .Date.Format "02/01/2006" }}</time></span>
+								<div class="tags-container">
+									<img class="tags-icon" src="/images/tags.png" alt="tags">
+									{{range .Params.tags}}
+									<a class="tag" href="{{ "tags/" | absURL }}{{ . | urlize }}/">{{ . }}</a>
+									{{end}}
+								</div>
+							</h3>
+							{{ .Description}}
+						</li>					
+						{{ end }}
+					</ul>
 					{{ end }}
-					{{ if .Params.caption }}
-					<div>
-						<p class="caption">{{ T "imageBy" }}<a href="{{.Params.caption}}">{{.Params.captionAuthor}}</a></p>
-					</div>
-					{{ end }}
-					<div class="page-separator"></div>
-					{{ .Content | safeHTML }}
+					
+					{{ partial "comments" . }}
+					
 				</article>
+			</div>
+		</main>
 
-				{{ $related := .Site.RegularPages.Related . | first 3 }}
-				{{ with $related }}
-				<div class="page-separator"><hr></div>
-				{{ range . }}
-				<section class="post-preview-container">
-					<a href="{{ .Permalink }}">
-						<div class="post-preview-title-container">
-							<h3 class="post-preview-title">{{ .Title }}</h3>
-						</div>
-						<div class="post-preview-subtext">{{ .Description }}</div>
-						<div>
-							<span class="post-preview-metadata">
-								{{ .Date.Format "02/01/2006" }} · {{ T "readingTime" .ReadingTime }}
-							</span>
-							{{range .Params.tags}}
-							<a class="tag" href="{{ "tags/" | absURL }}{{ . | urlize }}/">#{{ . }}</a>
-							{{end}}
-						</div>
-					</a>
-				</section>					
-				{{ end }}
-				{{ end }}
-				
-				{{ template "_internal/disqus.html" . }}
-			
-			</section>
-			
-			<div class="page-separator centered"><hr></div>
-			
-			{{ partial "footer.html" . }}
-		
-		</div>
+		{{ partial "footer.html" . }}
 
 	</body>
 </html>

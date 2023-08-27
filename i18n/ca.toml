@@ -17,17 +17,20 @@ other = "Eat; Sleep; Code; Repeat;"
 other = "Últim del bloc"
 [indexSubheadingBlog]
 other = "Tutorials, consells i opinions"
-[indexHeadingCode]
-other = "Últim de codi"
-[indexSubheadingCode]
+[indexHeadingProjects]
+other = "Últim de projectes"
+[indexSubheadingProjects]
 other = "PoC, Open Source i projectes varis"
 
 [readMore]
 other = "Llegir més"
 
 [readingTime]
-one = "Un minut de lectura"
-other = "{{.Count}} min lectura"
+other = "Temps estimat de lectura:"
+
+[minutes]
+one = "Un minut"
+other = "{{.Count}} minuts"
 
 [lastPost]
 other = "Darrer post el"

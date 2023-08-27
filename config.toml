@@ -26,8 +26,8 @@ enableRobotsTXT = true
             introSubtitle = "Eat; Sleep; Code; Repeat;"
     
             [[languages.en.menu.main]]
-                name = "About me 👋"
-                url = "about"
+                name = "Who is 🤷‍♂️"
+                url = "whois"
                 weight = 1
 
             [[languages.en.menu.main]]
@@ -54,8 +54,8 @@ enableRobotsTXT = true
             introSubtitle = "Eat; Sleep; Code; Repeat;"
     
             [[languages.es.menu.main]]
-                name = "Acerca de mí 👋"
-                url = "about"
+                name = "Quién es 🤷‍♂️"
+                url = "whois"
                 weight = 1
 
             [[languages.es.menu.main]]
@@ -82,8 +82,8 @@ enableRobotsTXT = true
             introSubtitle = "Eat; Sleep; Code; Repeat;"
     
             [[languages.ca.menu.main]]
-                name = "Sobre mi 👋"
-                url = "about"
+                name = "Qui és 🤷‍♂️"
+                url = "whois"
                 weight = 1
 
             [[languages.ca.menu.main]]

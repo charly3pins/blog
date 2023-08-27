@@ -1,12 +1,11 @@
 +++
-title = "Qui"
-description = "Una mica sobre mi"
+title = "Qui és 🤷‍♂️"
 +++
-Crec en el poder d'una comunicació clara i definir expectatives establint una base de confiança i transparència amb el meu equip.
+Sóc un enginyer de software apassionat que gaudeix d'estar en el món de la tecnologia en constant evolució, mostrant un entusiasme sense límits per explorar noves innovacions i tendències emergents.
 
-Em considero un líder nat que vol brindar orientació, suport i un marc per a la col·laboració, cosa que permet que tots prosperin i aconsegueixin el millor.
+Amb experiència en diferents sectors i diferents rols, afronto cada repte amb fervor, aprofitant el meu conjunt d'habilitats per crear les millors solucions que superin els límits del que és possible sempre amb les millors pràctiques alhora que confio en alts nivells de seguretat, resiliència i escalabilitat.
 
-Vaig començar el meu viatge com a Enginyer de software i encara gaudeixo de la programació, però vaig evolucionar com a mentor, entrenador i guia per a altres. Com abans, segueixo famolenc de nous desafiaments i disposat a aprendre coses noves cada dia.
+La meva il·lusió prové de l'oportunitat d'aprendre, adaptar-me i crear contínuament, convertint-me en un actiu inestimable en qualsevol equip dedicat a ser pioner en el futur de la tecnologia.
 
 Sóc un entusiasta de les bones pràctiques com a forma d'èxit i em pots trobar com a [@charly3pins](https://twitter.com/charly3pins) a Twitter.
 

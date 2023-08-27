@@ -17,17 +17,20 @@ other = "Eat; Sleep; Code; Repeat;"
 other = "Latest from the blog"
 [indexSubheadingBlog]
 other = "Tutorials, tips & opinions"
-[indexHeadingCode]
-other = "Latest from code"
-[indexSubheadingCode]
+[indexHeadingProjects]
+other = "Latest from projects"
+[indexSubheadingProjects]
 other = "PoC, Open Source & side projects"
 
 [readMore]
 other = "Read more"
 
 [readingTime]
-one = "One minute read"
-other = "{{.Count}} min read"
+other = "Estimated reading time:"
+
+[minutes]
+one = "One minute"
+other = "{{.Count}} mins"
 
 [lastPost]
 other = "Last post on"

@@ -1,12 +1,11 @@
 +++
-title = "Quién"
-description = "Un poco sobre mí"
+title = "Quién es 🤷‍♂️"
 +++
-Creo en el poder de una comunicación clara y definir expectativas estableciendo una base de confianza y transparencia con mi equipo.
+Soy un ingeniero de software apasionado que disfruta estar en el mundo de la tecnología en constante evolución y muestra un entusiasmo ilimitado por explorar nuevas innovaciones y tendencias emergentes.
 
-Me considero un líder nato que quiere brindar orientación, apoyo y un marco para la colaboración, lo que permite que todos prosperen y logren lo mejor.
+Con experiencia en diferentes sectores y diferentes roles, abordo cada desafío con fervor, aprovechando mis habilidades para crear las mejores soluciones que superen los límites de lo posible, siempre con las mejores prácticas y al mismo tiempo contando con altos niveles de seguridad, resiliencia y escalabilidad.
 
-Comencé mi viaje como ingeniero de software y todavía disfruto de la codificación, pero evolucioné como mentor, entrenador y guía para otros. Como antes, sigo hambriento de nuevos desafíos y dispuesto a aprender cosas nuevas todos los días.
+Mi entusiasmo surge de la oportunidad de aprender, adaptarme y crear continuamente, lo que me convierte en un activo invaluable en cualquier equipo dedicado a ser pionero en el futuro de la tecnología.
 
 Soy un entusiasta de las buenas prácticas como forma de éxito y me puedes encontrar como [@charly3pins](https://twitter.com/charly3pins) en Twitter.
 
