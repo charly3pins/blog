@@ -154,9 +154,6 @@ defaultContentLanguage = "en"
         website = "rss"
         url = "https://charly3pins.dev/index.xml"
 
-[build]
-    writeStats = true
-
 [outputs]
     home = ["HTML", "RSS", "JSON"]
 
