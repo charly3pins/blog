@@ -351,7 +351,7 @@ table td {
 }
 
 .index-heading {
-    font-size: 45px;
+    font-size: 40px;
     color: #ffffff;
 }
 
@@ -361,7 +361,8 @@ table td {
 }
 
 .page-heading {
-    font-size: 32px
+    font-size: 32px;
+    text-align:center;
 }
 
 .post-list-heading {
