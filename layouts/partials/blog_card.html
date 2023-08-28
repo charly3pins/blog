@@ -1,0 +1,16 @@
+<h3 class="blog-header">
+	<a class="post-link" href="{{ .Permalink }}">
+		{{ if .Params.image }}
+		<img src="{{ .Params.image }}" alt="{{ .Params.title }}"/>
+		{{ end }}
+		<div>{{ .Params.title }}</div>
+		<span>{{ .Params.description }}</span>
+		<span class="post-meta">{{ .Date.Format "02/01/2006" }}</span>
+	</a>
+	<div class="tags-container">
+		<img class="tags-icon" src="/images/tags.png" alt="tags">
+		{{range .Params.tags}}
+		<a class="tag" href="{{ "tags/" | absURL }}{{ . | urlize }}/">{{ . }}</a>
+		{{end}}
+	</div>
+</h3>

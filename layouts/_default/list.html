@@ -14,7 +14,7 @@
 					</header>
 					<div class="post-content">
 						<div class="blog">
-							<ul class="post-list">
+							<!-- <ul class="post-list">
 								{{ range $i, $p := .Paginator.Pages }}
 								<li>
 									<h3 class="blog-header">
@@ -30,6 +30,12 @@
 									{{ .Description }}
 								</li>
 								{{ end }}
+							</ul> -->
+							{{ $paginator := .Paginate .Pages.ByDate.Reverse 6 }}
+							<ul class="post-list">
+							  {{ range $paginator.Pages }}
+								<li>{{- partial "blog_card.html" . -}}</li>
+							  {{ end }}
 							</ul>
 						</div>
 					</div>
