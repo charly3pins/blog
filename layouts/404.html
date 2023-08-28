@@ -4,28 +4,21 @@
 	{{ partial "head.html" . }}
 
 	<body>
-		{{ partial "navbar" . }}
+		{{ partial "header" . }}
 		
-		<div class="layout-container">
-
-			<section class="blog-container">
-
-				<h4 class="post-title">¯\_ (ツ)_/¯ Page not found ¯\_ (ツ)_/¯</h4>
-				
-				<article>
-					<div class="centered">
+		<main class="page-content" aria-label="Content">
+			<div class="wrapper">
+				<article class="post">
+					<header class="post-header">
+						<h1 class="post-title">¯\_ (ツ)_/¯ Page not found ¯\_ (ツ)_/¯</h1>
+					</header>
+					<div class="post-content">
 						<img src="{{ .Site.Params.errorPage }}" alt="site 404 image">
 					</div>
-					<div>
-						<p class="caption">Gopher by<a href="https://github.com/ashleymcnamara/gophers/blob/master/This_is_Fine_Gopher.png">Ashley McNamara</a></p>
-					</div>
-					<div class="page-separator"></div>
-					<p>Congratulations! You've reached the secret page 404. Once you've finished admiring <b>Gopher This Is Fine</b> you can continue browsing.</p>
 				</article>
-
-			</section>
-				
-		</div>
+				<h2 class="page-heading"><a href="/">Rollback my action →</a></h2>
+			</div>
+		</main>
 		
 		{{ partial "footer.html" . }}
 	</body>
