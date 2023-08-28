@@ -132,6 +132,15 @@ pre>code {
     clear: both
 }
 
+.svg-icon-index {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    fill: #ffffff;
+    padding-right: 15px;
+    vertical-align: text-top;
+}
+
 .svg-icon {
     width: 30px;
     height: 30px;
@@ -179,7 +188,6 @@ table td {
 
 .site-header {
     background-color: #232223;
-    border-bottom: 1px solid #9e9e9e;
     min-height: 55.95px;
     position: relative;
 }
@@ -224,10 +232,10 @@ table td {
         position:absolute;
         top: 9px;
         right: 15px;
-        background-color: #f0e0fa;
+        background-color: #232223;
         border: 1px solid #9e9e9e;
         border-radius: 5px;
-        text-align: right
+        text-align: right;
     }
 
     .site-nav label[for="nav-trigger"] {
@@ -250,7 +258,7 @@ table td {
     }
 
     .site-nav .menu-icon>svg {
-        fill: #000
+        fill: #f8f8f9
     }
 
     .site-nav input ~ .trigger {
@@ -340,6 +348,11 @@ table td {
     cursor: pointer;
     float: right;
     background-color: white;
+}
+
+.index-heading {
+    font-size: 45px;
+    color: #ffffff;
 }
 
 .page-content {
@@ -539,8 +552,9 @@ img.centered {
 }
 
 img.face {
-    display: block;
-    border-radius: 25px
+    border-radius: 50%;
+    width: 180px;
+    height: 180px;
 }
 
 .reading-time {
