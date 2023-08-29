@@ -7,6 +7,9 @@ other = "Castellano"
 [catalan]
 other = "Catalán"
 
+[languageSwitcherLabel]
+other = "Idioma"
+
 [description]
 other = "Eat; Sleep; Code; Repeat;"
 
@@ -14,17 +17,20 @@ other = "Eat; Sleep; Code; Repeat;"
 other = "Lo último del blog"
 [indexSubheadingBlog]
 other = "Tutoriales, consejos y opiniones"
-[indexHeadingCode]
-other = "Lo último de código"
-[indexSubheadingCode]
+[indexHeadingProjects]
+other = "Lo último de proyectos"
+[indexSubheadingProjects]
 other = "PoC, Open Source y proyectos varios"
 
 [readMore]
 other = "Leer más"
 
 [readingTime]
-one = "Un minuto de lectura"
-other = "{{.Count}} min lectura"
+other = "Tiempo estimado de lectura:"
+
+[minutes]
+one = "Un minuto"
+other = "{{.Count}} minutos"
 
 [lastPost]
 other = "Última publicación en"

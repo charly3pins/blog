@@ -1,4 +1,3 @@
 +++
-title = "Bloc"
-description = "Tutorials, consells i opinions"
+title = "Bloc ✍️"
 +++
