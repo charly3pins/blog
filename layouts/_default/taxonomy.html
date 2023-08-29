@@ -8,39 +8,24 @@
 
 		<main class="page-content" aria-label="Content">
 			<div class="wrapper">
-				<article class="post">
-					<header class="post-header">
-						<h1 class="post-title">{{ .Title }}</h1>
-					</header>
-					<div class="taxonomies-tags">
-						{{range .Site.Taxonomies.tags}}
-						<a class="tag" href="{{ .Page.Permalink }}/">{{ .Page.Title }}({{.Count}})</a>
-						{{end}}
-					</div>
-					{{ if (ne .Title "Tags")}}
-					<div class="post-content">
-						<div class="blog">
-							<ul class="post-list">
-								{{ range $i, $p := .Paginator.Pages }}
-								<li>
-									<h3 class="blog-header">
-										<a class="post-link" href="{{ .Permalink }}">{{ .Title }}</a>
-										<span class="post-meta">{{ .Date.Format "02/01/2006" }}</span>
-										<div class="tags-container">
-											<img class="tags-icon" src="/images/tags.png" alt="tags">
-											{{range .Params.tags}}
-											<a class="tag" href="{{ "tags/" | absURL }}{{ . | urlize }}/">{{ . }}</a>
-											{{end}}
-										</div>
-									</h3>
-									{{ .Description }}
-								</li>
-								{{ end }}
-							</ul>
-						</div>
-					</div>
+				<h1 class="post-title">{{ .Title }}</h1>
+				<div class="taxonomies-tags">
+					{{range .Site.Taxonomies.tags}}
+					<a class="tag" href="{{ .Page.Permalink }}/">{{ .Page.Title }}({{.Count}})</a>
+					{{end}}
+				</div>
+				{{ if (ne .Title "Tags")}}
+				<section class="articles">
+					{{ $paginator := .Paginate .Pages.ByDate.Reverse 6 }}
+					{{ range $paginator.Pages }}
+					{{- partial "blog_card.html" . -}}
 					{{ end }}
-				</article>
+			 	</section>
+				 
+				{{ template "_internal/pagination.html" . }}
+
+				{{ end }}
+
 			</div>
 		</main>
 		

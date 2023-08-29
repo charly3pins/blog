@@ -58,50 +58,18 @@
 			</div>
 			<div class="wrapper">
 				<div class="home">
-					<h2 class="page-heading"><a href="/blog">Latest blog posts</a></h2>
-					<div class="post-content">
-						<div class="blog">
-							<ul class="post-list">
-								{{range $i,$el := first 3 (where .Paginator.Pages ".Section" "blog")}}
-								<li>
-									<h3 class="blog-header">
-										<a class="post-link" href="{{ .Permalink }}">{{ .Title }}</a>
-										<span class="post-meta">{{ .Date.Format "02/01/2006" }}</span>
-										<div class="tags-container">
-											<img class="tags-icon" src="/images/tags.png" alt="tags">
-											{{range .Params.tags}}
-											<a class="tag" href="{{ "tags/" | absURL }}{{ . | urlize }}/">{{ . }}</a>
-											{{end}}
-										</div>
-									</h3>
-									{{ .Description }}
-								</li>
-								{{ end }}
-							</ul>
-						</div>
-					</div>
-					<h2 class="page-heading"><a href="/blog">Latest project posts</a></h2>
-					<div class="post-content">
-						<div class="blog">
-							<ul class="post-list">
-								{{range $i,$el := first 3 (where .Paginator.Pages ".Section" "projects")}}
-								<li>
-									<h3 class="blog-header">
-										<a class="post-link" href="{{ .Permalink }}">{{ .Title }}</a>
-										<span class="post-meta">{{ .Date.Format "02/01/2006" }}</span>
-										<div class="tags-container">
-											<img class="tags-icon" src="/images/tags.png" alt="tags">
-											{{range .Params.tags}}
-											<a class="tag" href="{{ "tags/" | absURL }}{{ . | urlize }}/">{{ . }}</a>
-											{{end}}
-										</div>
-									</h3>
-									{{ .Description }}
-								</li>
-								{{ end }}
-							</ul>
-						</div>
-					</div>
+					<h2 style="text-align: center; padding:30px;" class="index-heading"><a href="/blog">Latest blog posts</a></h2>
+					<section class="articles">
+						{{range $i,$el := first 3 (where .Paginator.Pages ".Section" "blog")}}
+						{{- partial "blog_card.html" . -}}
+						{{ end }}
+					</section>
+					<h2 style="text-align: center; padding:30px;" class="index-heading"><a href="/blog">Latest project posts</a></h2>
+					<section class="articles">
+						{{range $i,$el := first 3 (where .Paginator.Pages ".Section" "projects")}}
+						{{- partial "blog_card.html" . -}}
+						{{ end }}
+					</section>
 				</div>
 			</div>
 		</main>

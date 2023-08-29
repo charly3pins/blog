@@ -109,8 +109,7 @@ pre>code {
 }
 
 .wrapper {
-    max-width: -webkit-calc(800px - (30px * 2));
-    max-width: calc(800px - (30px * 2));
+    max-width: calc(1200px - (30px * 2));
     margin-right: auto;
     margin-left: auto;
     padding-right: 30px;
@@ -119,7 +118,6 @@ pre>code {
 
 @media screen and (max-width: 800px) {
     .wrapper {
-        max-width:-webkit-calc(800px - (30px));
         max-width: calc(800px - (30px));
         padding-right: 15px;
         padding-left: 15px
@@ -207,7 +205,8 @@ table td {
 
 .site-nav {
     float: right;
-    line-height: 54px
+    line-height: 54px;
+    z-index: 1000;
 }
 
 .site-nav .nav-trigger {
@@ -347,7 +346,7 @@ table td {
 .scroll-top {
     cursor: pointer;
     float: right;
-    background-color: white;
+    margin-right: 25px;
 }
 
 .index-heading {
@@ -380,7 +379,7 @@ table td {
 
 .post-meta {
     font-size: 14px;
-    color: #383838
+    color: #383838;
 }
 
 .post-link {
@@ -439,9 +438,8 @@ table td {
 }
 
 .tags-container {
-    font-size: 14.4px;
+    font-size: 14px;
     color: #383838;
-    width: 100%
 }
 
 .taxonomies-tags {
@@ -450,7 +448,7 @@ table td {
 }
 
 img.tags-icon {
-    width: 2.5%
+    width: 12px;
 }
 
 @media screen and (max-width: 600px) {
