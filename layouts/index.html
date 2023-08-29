@@ -64,9 +64,9 @@
 						{{- partial "blog_card.html" . -}}
 						{{ end }}
 					</section>
-					<h2 style="text-align: center; padding:30px;" class="index-heading"><a href="/blog">Latest project posts</a></h2>
+					<h2 style="text-align: center; padding:30px;" class="index-heading"><a href="/blog">Latest projects</a></h2>
 					<section class="articles">
-						{{range $i,$el := first 3 (where .Paginator.Pages ".Section" "projects")}}
+						{{range $i,$el := first 3 (where .Paginator.Pages.Reverse ".Section" "projects")}}
 						{{- partial "blog_card.html" . -}}
 						{{ end }}
 					</section>
