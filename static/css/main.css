@@ -342,9 +342,6 @@
     .Footer-listItem {
       flex: initial;
     }
-    .Footer-listItem + .Footer-listItem {
-      border-left: var(--border);
-    }
   }
   .Footer-listItem .svg-icon {
     width: 30px;
