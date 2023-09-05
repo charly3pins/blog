@@ -12,9 +12,12 @@
 				<div id="content">
 					<div id="content">
 						<div class="Article">
+							{{ if .Params.image }}
+							<img src="{{ .Params.image }}" alt="{{ .Params.title }}">
+							{{ end }}
 							<h1>{{ .Title }}</h1>
 							<p class="author">
-								<span datespan="2023-08-23T00:00:00+00:00">{{ .Date.Format "02/01/2006" }}</span>
+								<span>{{ .Date.Format "02/01/2006" }}</span>
 								· 
 								<span>{{ T "readingTime" }} {{ T "minutes" .ReadingTime }}</span>
 								<br>

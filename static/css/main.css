@@ -86,9 +86,6 @@
   :after {
     box-sizing: border-box;
   }
-  .DarkMode-img {
-    display: none;
-  }
   .LightMode-img {
     display: block;
   }
@@ -278,6 +275,7 @@
   .scroll-top {
     float: right;
     margin-right: 1.5rem;
+    cursor: pointer;
   }
   .Footer-links {
     display: flex;
@@ -933,9 +931,6 @@
     }
   }
   .SubHero-gridContainer,
-  .WhoUses-gridContainer,
-  .WhoUsesHero-gridContainer,
-  .WhoUsesCaseStudyList-gridContainer,
   .WhyGo-gridContainer,
   .UseCases-gridContainer {
     display: flex;
@@ -945,22 +940,14 @@
     max-width: 75.75rem;
   }
   .SubHero-gridContainer,
-  .WhoUses-gridContainer,
   .Playground-gridContainer,
-  .WhoUsesHero-gridContainer,
   .WhyGo-gridContainer,
   .UseCases-gridContainer,
   .LearnGo-gridContainer,
   .Security-gridContainer {
     padding: 3rem 1.5rem 1rem;
   }
-  .WhoUsesHero-gridContainer {
-    align-items: center;
-  }
   @media only screen and (min-width: 28rem) {
-    .WhoUses-gridContainer,
-    .WhoUsesHero-gridContainer,
-    .WhoUsesCaseStudyList-gridContainer,
     .WhyGo-gridContainer,
     .UseCases-gridContainer,
     .LearnGo-gridContainer,
@@ -968,19 +955,14 @@
       flex-direction: row;
       justify-content: space-between;
     }
-    .WhoUsesHero-gridContainer {
-      align-items: start;
-    }
   }
-  .WhyGo,
-  .WhoUses {
+  .WhyGo {
     background-color: var(--color-background);
   }
   .LearnGo,
   .UseCases {
     background-color: var(--color-background-accented);
   }
-  .WhoUses-header,
   .WhyGo-header,
   .LearnGo-header {
     flex: 0 0 100%;
@@ -1007,9 +989,7 @@
       margin-bottom: 1.5rem;
     }
   }
-  .WhyGo-subheader,
-  .LearnGo-header h4,
-  .WhoUses-subheader {
+  .LearnGo-header h4 {
     color: var(--color-text);
     font-size: 0.875rem;
     font-style: normal;
@@ -1018,10 +998,7 @@
     margin-top: 0;
   }
   @media only screen and (min-width: 38rem) {
-    .WhoUses-header h4,
-    .WhyGo-subheader,
-    .LearnGo-header h4,
-    .WhoUses-subheader {
+    .LearnGo-header h4 {
       font-size: 1rem;
     }
   }
@@ -1198,161 +1175,7 @@
       font-weight: 300;
     }
   }
-  .WhoUsesHero {
-    background-color: var(--color-background-accented);
-  }
-  .WhoUses-subheader {
-    color: var(--color-text);
-    margin-bottom: 0;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 25rem;
-  }
-  .WhoUsesHero-gridContainer {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-  }
-  .WhoUses-heroImg {
-    max-width: 38.75rem;
-    width: 100%;
-  }
-  .WhoUses-heroInnerLeft {
-    margin-bottom: 2rem;
-    margin-right: 0;
-    max-width: 19.625rem;
-    text-align: center;
-    width: 90%;
-  }
-  @media only screen and (min-width: 57.7rem) {
-    .WhoUses-heroInnerLeft {
-      margin-right: 2rem;
-      text-align: start;
-      width: 19.625rem;
-    }
-    .WhoUses-subheader {
-      max-width: none;
-    }
-  }
-  .WhoUses-heroInnerLeft h3 {
-    font-size: 1.5rem;
-    font-weight: normal;
-    margin: 1.375rem 0;
-  }
-  .WhoUses-heroInnerLeft p {
-    color: var(--color-text-subtle);
-    font-size: 0.875rem;
-    margin-bottom: 1.188rem;
-  }
-  .WhoUsesCaseStudyList {
-    align-content: center;
-    display: flex;
-    flex: 0 0 100%;
-    justify-content: space-evenly;
-    list-style: none;
-  }
-  .WhoUsesCaseStudyList-gridContainer {
-    display: grid;
-    gap: 0.8rem;
-    grid-template-columns: repeat(3, minmax(0, 33.333%));
-    margin: 1.5rem auto 3.75rem;
-    padding: 0;
-    width: 100%;
-  }
-  .WhoUsesCaseStudyList-caseStudy {
-    align-items: center;
-    display: flex;
-    flex: 0 1 50%;
-    height: 3.8512rem;
-    justify-content: center;
-    position: relative;
-  }
-  .WhoUsesCaseStudyList-caseStudy p {
-    display: none;
-  }
-  .WhoUsesCaseStudyList-caseStudyLink:link,
-  .WhoUsesCaseStudyList-caseStudyLink:visited {
-    color: var(--color-text-subtle);
-    flex-direction: column;
-    text-align: center;
-    text-decoration: none;
-    transition: box-shadow 0.2s ease-in-out;
-  }
-  .WhoUsesCaseStudyList-caseStudyLink:link:hover {
-    box-shadow: 0 -0.0625rem 0.3125rem rgba(128, 134, 139, 0.09),
-      0 0.1875rem 0.3125rem rgba(128, 134, 139, 0.06),
-      0 0.0625rem 0.125rem rgba(60, 64, 67, 0.3),
-      0 0.0625rem 0.1875rem rgba(60, 64, 67, 0.15);
-  }
-  .WhoUsesCaseStudyList-caseStudyLink img {
-    height: auto;
-  }
-  @media only screen and (max-width: 38rem) {
-    .WhoUsesCaseStudyList-caseStudyLink img {
-      max-height: 2rem;
-      max-width: 100%;
-    }
-  }
-  .WhoUsesCaseStudyList-logo {
-    margin: auto;
-    max-height: 4rem;
-    max-width: 9.375rem;
-    width: auto;
-  }
-  .WhoUsesCaseStudyList-caseStudyLink:link,
-  .WhoUsesCaseStudyList-caseStudyLink:visited {
-    background-color: var(--color-background-logo);
-    border-radius: 0.25rem;
-    box-shadow: var(--color-border) 0 0.0625rem 0.25rem;
-    display: flex;
-    height: 100%;
-    padding: 0 0.3rem;
-    width: 100%;
-  }
-  .WhoUsesCaseStudyList-seeAll {
-    display: inline-block;
-    margin-left: 1rem;
-  }
-  .WhoUsesCaseStudyList-seeAll:hover {
-    text-decoration: none;
-  }
-  @media only screen and (min-width: 32rem) {
-    .WhoUsesCaseStudyList-gridContainer {
-      gap: 1rem 1.125rem;
-    }
-    .WhoUsesCaseStudyList-caseStudyLink {
-      padding: 0 1.5rem;
-    }
-    .WhoUsesCaseStudyList-caseStudy {
-      height: 5.9375rem;
-    }
-  }
-  @media only screen and (min-width: 57.7rem) {
-    .WhoUsesCaseStudyList-gridContainer {
-      grid-template-columns: repeat(4, minmax(0, 25%));
-    }
-    .WhoUsesCaseStudyList-caseStudyLink:link,
-    .WhoUsesCaseStudyList-caseStudyLink:visited {
-      color: transparent;
-    }
-    .WhoUses-caseStudy a:link:hover,
-    .WhoUses-caseStudy a:visited:hover {
-      box-shadow: 0 0.125rem 0.5rem 0 rgba(0, 0, 0, 0.22);
-    }
-    .WhoUsesCaseStudyList-caseStudyLink:link:hover
-      .WhoUsesCaseStudyList-caseStudyLink:visited:hover {
-      color: var(--color-text-subtle);
-      transition: all 0.2s ease-in-out;
-    }
-  }
-  @media only screen and (min-width: 66.75rem) {
-    .WhoUsesCaseStudyList-gridContainer {
-      grid-template-columns: repeat(6, 1fr);
-    }
-    .WhoUsesCaseStudyList-caseStudy {
-      flex: 0 1 1fr;
-    }
-  }
+  
   .FeaturedUsers {
     margin: 2.375rem auto 3.75rem;
   }
@@ -1453,54 +1276,6 @@
     }
     .FeaturedUsers--hiddenDesktop {
       display: none;
-    }
-  }
-  .WhoUsesCaseStudy-librariesWrapper {
-    margin-bottom: 2.25rem;
-    margin-top: 1.875rem;
-  }
-  a.WhoUsesCaseStudy-librariesViewMoreLink {
-    color: var(--color-text-link);
-    font-size: 0.875rem;
-  }
-  .WhoUsesCaseStudy-libraryTitle {
-    font-weight: normal;
-  }
-  .WhoUsesCaseStudy-librariesList {
-    column-gap: 7.375rem;
-    display: grid;
-    grid-template-columns: 1fr;
-    list-style: none;
-    margin: 1.5rem 0 0;
-    padding: 0;
-  }
-  .WhoUsesCaseStudy-librariesList h3 {
-    font-weight: 500;
-  }
-  .WhoUsesCaseStudy-library {
-    margin: 0 0 1.5rem;
-  }
-  .WhoUsesCaseStudy-library p {
-    color: var(--color-text);
-    font-size: 1rem;
-    line-height: 1.1875rem;
-    margin: 0.5rem 0 0;
-  }
-  .WhoUsesCaseStudy-view-more {
-    margin-bottom: 2.5rem;
-  }
-  .WhoUsesCaseStudy-view-more a {
-    color: var(--color-text);
-    font-size: 0.875rem;
-    font-style: normal;
-    font-weight: 500;
-    margin-bottom: 2.5rem;
-    text-align: center;
-  }
-  @media only screen and (min-width: 38rem) {
-    .WhoUsesCaseStudy-librariesList {
-      column-gap: 4rem;
-      grid-template-columns: 1fr 1fr;
     }
   }
   .UseCases-gridContainer {
@@ -1607,7 +1382,7 @@
     text-align: left;
   }
   .WhyGo-reasonIcon img {
-    height: 2.25rem;
+    height: 13rem;
   }
   .WhyGo-reasonLearnMoreLink {
     margin-top: 1.5rem;
@@ -1633,27 +1408,19 @@
     height: 0.938rem;
     margin-right: 0.376rem;
     padding: 0.063rem 0 0.063rem;
-    vertical-align: bottom;
+    vertical-align: middle;
+    display: inline-flex;
   }
   .WhyGo-reasonPackagesList {
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
     flex-wrap: wrap;
     padding: 0;
   }
   .WhyGo-reasonPackage {
-    background: var(--color-background-accented);
-    border: var(--border-card);
-    border-radius: 0.125rem;
-    box-sizing: border-box;
-    color: var(--color-text-link);
-    font-size: 0.688rem;
+    font-size: 0.8rem;
     line-height: 0.813rem;
     list-style: none;
-    margin: 0.125rem 0.5rem 0.5rem 0;
-    padding: 0.188rem 0.188rem;
-  
-    text-align: center;
   }
   .WhyGo-reasonShowMoreImgWrapper {
     align-items: center;
@@ -2216,124 +1983,10 @@
     top: 0.5rem;
     width: 0.3rem;
   }
-  .WhoUsesSubPage-hero--useCase {
-    margin-top: 2.625rem;
-  }
-  .WhoUsesSubPage-heroInner--caseStudy,
-  .WhoUsesSubPage-heroInner--useCase {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-bottom: 1.5rem;
-    position: relative;
-  }
-  .WhoUsesSubPage-heroInner--useCase {
-    background-color: var(--color-background-accented);
-    padding-bottom: 2.5rem;
-    padding-top: 3.5rem;
-  }
-  .WhoUsesSubPage-heroInner--caseStudy > div {
-    justify-content: center;
-  }
-  .WhoUsesSubPage-heroContent--caseStudy {
-    display: flex;
-    flex-direction: column-reverse;
-    max-width: 75.75rem;
-    position: relative;
-    z-index: 1;
-  }
-  .WhoUsesSubPage-heroContent--useCase {
-    margin: auto;
-    max-width: 75.75rem;
-    width: 100%;
-  }
-  .WhoUsesSubPage-heroText--caseStudy,
-  .WhoUsesSubPage-heroText--useCase {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-  }
-  .WhoUsesSubPage-heroText--caseStudy {
-    padding: 2rem 1.5rem;
-  }
-  .WhoUsesSubPage-heroText--useCase {
-    padding: 0 1.5rem;
-  }
-  .WhoUsesSubPage-heroText--caseStudy h1,
-  .WhoUsesSubPage-heroText--useCase h1 {
-    color: var(--color-text);
-  }
-  .WhoUsesSubPage-heroImg {
-    background: -webkit-linear-gradient(
-      0deg,
-      var(--color-background-accented) 50vw,
-      #bfeaf4 50vw
-    );
-    display: flex;
-    max-width: 75.75rem;
-    padding-left: 1.5rem;
-    position: relative;
-    width: 100%;
-    z-index: 1;
-  }
-  .WhoUsesSubPage-heroImg img {
-    height: auto;
-    max-height: 10.625rem;
-    min-height: 8rem;
-    width: auto;
-  }
   @media only screen and (min-width: 38rem) {
-    .Solutions-title h1,
-    .WhoUsesSubPage-heroInner--caseStudy h1,
-    .WhoUsesSubPage-heroInner--useCase h1 {
+    .Solutions-title h1 {
       font-size: 2.25rem;
       line-height: 3rem;
-    }
-    .WhoUsesSubPage-heroImg {
-      background: -webkit-linear-gradient(
-        0deg,
-        var(--color-background-accented) 40vw,
-        #bfeaf4 40vw
-      );
-    }
-    .WhoUsesSubPage-heroImg img {
-      max-height: 15.625rem;
-      min-height: 10.625rem;
-    }
-  }
-  @media only screen and (min-width: 57.7rem) {
-    .WhoUsesSubPage-hero--useCase {
-      margin-top: 0;
-    }
-    .WhoUsesSubPage-heroInner--caseStudy {
-      background: -webkit-linear-gradient(
-        0deg,
-        var(--color-background-accented) 70vw,
-        #bfeaf4 70vw
-      );
-      flex-direction: row;
-    }
-    .WhoUsesSubPage-heroContent--caseStudy {
-      align-items: center;
-      flex-direction: row;
-    }
-    .WhoUsesSubPage-heroImg {
-      background: transparent;
-      min-width: 37.75rem;
-      padding: 0;
-      width: 55%;
-    }
-    .WhoUsesSubPage-heroText--caseStudy {
-      width: 45%;
-    }
-    .WhoUsesSubPage-heroImg img {
-      max-height: none;
-      min-height: 18.75rem;
-      width: 100%;
-    }
-    .WhoUsesSubPage-heroInner--useCase h1 {
-      margin-top: 3rem;
     }
   }
   .ToolsBlurbs {
@@ -3508,12 +3161,19 @@
     font-size: 14px;
     color: #383838;
 }
-
 .taxonomies-tags {
     font-size: 20px;
     margin-bottom: 30px;
 }
-
 img.tags-icon {
     width: 14px;
+}
+.tag {
+  background: var(--color-background-accented);
+  border: var(--border-card);
+  border-radius: 0.125rem;
+  box-sizing: border-box;
+  margin: 0.125rem 0.5rem 0.5rem 0;
+  padding: 0.188rem 0.188rem;
+  text-align: center;
 }

@@ -3,20 +3,28 @@
 	
 	{{ partial "head.html" . }}
 
-	<body>
+	<body class="Site">
+		
 		{{ partial "header" . }}
 		
-		<main class="page-content" aria-label="Content">
-			<div class="wrapper">
-				<h1 class="page-heading">¯\_ (ツ)_/¯ Page not found ¯\_ (ツ)_/¯</h1>
-				<div style="text-align: center;">
-					<img src="{{ .Site.Params.errorPage }}" alt="site 404 image">
+		<main class="SiteContent SiteContent--default">
+			<div id="blog">
+				<div id="content">
+					<div id="content">
+						<div class="Article">
+							<h1 style="text-align: center;">¯\_ (ツ)_/¯ Page not found ¯\_ (ツ)_/¯</h1>
+							<div style="text-align: center;">
+								<img src="{{ .Site.Params.errorPage }}" alt="site 404 image">
+							</div>
+							<h2 style="text-align: center;"><a href="/">Rollback my action →</a></h2>
+						</div>
+					</div>
 				</div>
-				<h2 class="page-heading"><a href="/">Rollback my action →</a></h2>
 			</div>
 		</main>
 		
 		{{ partial "footer.html" . }}
+		
 	</body>
-</html>
 
+</html>

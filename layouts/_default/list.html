@@ -10,7 +10,7 @@
 						<div class="Article">
 							<h1>{{ .Title }}</h1>
 							<div id="blogindex">
-								{{ $paginator := .Paginate .Pages.ByDate.Reverse 6 }}
+								{{ $paginator := .Paginate .Pages.ByDate.Reverse 9 }}
 								{{ range $paginator.Pages }}
 								<p class="blogtitle">
 									<a href="{{ .Permalink }}">{{ .Params.title }}</a>, <span class="date">{{ .Date.Format "02/01/2006" }}</span><br>
