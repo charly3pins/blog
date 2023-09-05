@@ -1,27 +1,39 @@
 <!DOCTYPE html>
-<html lang="{{ .Lang }}" data-theme="light">
-	
+<html lang="{{ .Lang }}">
 	{{ partial "head.html" . }}
-
-	<body>
+	<body class="Site">
 		{{ partial "header" . }}
-		
-		<main class="page-content" aria-label="Content">
-			<div class="wrapper">
-				<h1 class="post-title">{{ .Title }}</h1>
-				<section class="articles">
-					{{ $paginator := .Paginate .Pages.ByDate.Reverse 6 }}
-					{{ range $paginator.Pages }}
-					{{- partial "blog_card.html" . -}}
-					{{ end }}
-			 	</section>
-
-				{{ template "_internal/pagination.html" . }}
-
+		<main class="SiteContent SiteContent--default" id="main-content">
+			<div id="blog">
+				<div id="content">
+					<div id="content">
+						<div class="Article">
+							<h1>{{ .Title }}</h1>
+							<div id="blogindex">
+								{{ $paginator := .Paginate .Pages.ByDate.Reverse 9 }}
+								{{ range $paginator.Pages }}
+								<p class="blogtitle">
+									<a href="{{ .Permalink }}">{{ .Params.title }}</a>, <span class="date">{{ .Date.Format "02/01/2006" }}</span><br>
+									<span class="author">
+										<span class="tags-container">
+											<img class="tags-icon" src="/images/tags.png" alt="tags">
+											{{range .Params.tags}}
+											<a class="tag" style="font-weight: normal;" href="{{ "tags/" | absURL }}{{ . | urlize }}/">{{ . }}</a>
+											{{end}}
+										</span>
+									</span>
+								</p>
+								<p class="blogsummary">
+									{{ .Params.description }}
+								</p>
+								{{ end }}
+								{{ template "_internal/pagination.html" . }}
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</main>
-		
-		{{ partial "footer.html" . }}
-
+		{{ partial "footer" . }}
 	</body>
 </html>

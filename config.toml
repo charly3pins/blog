@@ -9,6 +9,7 @@ enableRobotsTXT = true
 
 [author]
 	name = "Charly3Pins"
+    email = "hello@charly3pins.dev"
 
 [params]
 	since = 2018
@@ -22,8 +23,12 @@ enableRobotsTXT = true
 		weight = 1
         
         [languages.en.params]
-            introTitle = "Hey! I'm Charly3Pins"
-            introSubtitle = "Eat; Sleep; Code; Repeat;"
+            indexTitle = "Hey! I'm Charly3Pins"
+            indexSubTitle = "This is my blog and I post about:"
+            indexSubTitleGo = "Learnings in Go"
+            indexSubTitleSE = "Experiences working as Software Engineer"
+            indexSubTitleProjects = "Projects I code and much more!"
+            indexSubTitleEmail = "Want to get in touch?"
     
             [[languages.en.menu.main]]
                 name = "Who is 🤷‍♂️"
@@ -36,9 +41,22 @@ enableRobotsTXT = true
                 weight = 2
 
             [[languages.en.menu.main]]
+                identifier = "projects"
                 name = "Projects 👨‍💻"
                 url = "projects"
                 weight = 3
+            
+            [[languages.en.menu.main]]
+                name = "Collectus"
+                url = "projects/collectus"
+                weight = 1
+                parent = "projects"
+
+            [[languages.en.menu.main]]
+                name = "Tournaments Generator"
+                url = "projects/tournaments-generator"
+                weight = 2
+                parent = "projects"
 
             [[languages.en.menu.main]]
                 name = "Tags 🔠"
@@ -50,8 +68,12 @@ enableRobotsTXT = true
 		weight = 2	
 
         [languages.es.params]
-            introTitle = "¡Hola! Soy Charly3Pins"
-            introSubtitle = "Eat; Sleep; Code; Repeat;"
+            indexTitle = "¡Hola! Soy Charly3Pins"
+            indexSubTitle = "Este es mi blog y publicaré sobre:"
+            indexSubTitleGo = "Aprendizajes en Go"
+            indexSubTitleSE = "Experiencias trabajando como Ingeniero de Software"
+            indexSubTitleProjects = "Proyectos que programo y ¡mucho más!"
+            indexSubTitleEmail = "¿Quieres ponerte en contacto?"
     
             [[languages.es.menu.main]]
                 name = "Quién es 🤷‍♂️"
@@ -67,6 +89,18 @@ enableRobotsTXT = true
                 name = "Proyectos 👨‍💻"
                 url = "projects"
                 weight = 3
+            
+            [[languages.es.menu.main]]
+                name = "Collectus"
+                url = "projects/collectus"
+                weight = 1
+                parent = "projects"
+
+            [[languages.es.menu.main]]
+                name = "Generador de Torneos"
+                url = "projects/tournaments-generator"
+                weight = 2
+                parent = "projects"
 
             [[languages.es.menu.main]]
                 name = "Tags 🔠"
@@ -78,8 +112,12 @@ enableRobotsTXT = true
 		weight = 3
 
         [languages.ca.params]
-            introTitle = "Hola! Soc Charly3Pins"
-            introSubtitle = "Eat; Sleep; Code; Repeat;"
+            indexTitle = "Hola! Soc Charly3Pins"
+            indexSubTitle = "Aquest és el meu blog i publico sobre:"
+            indexSubTitleGo = "Aprenentatge amb Go"
+            indexSubTitleSE = "Experiències treballant com a Enginyer de Software"
+            indexSubTitleProjects = "Projectes que programo i molt més!"
+            indexSubTitleEmail = "Vols posar-te en contacte?"
     
             [[languages.ca.menu.main]]
                 name = "Qui és 🤷‍♂️"
@@ -95,6 +133,18 @@ enableRobotsTXT = true
                 name = "Projectes 👨‍💻"
                 url = "projects"
                 weight = 3
+
+            [[languages.ca.menu.main]]
+                name = "Collectus"
+                url = "projects/collectus"
+                weight = 1
+                parent = "projects"
+
+            [[languages.ca.menu.main]]
+                name = "Generador de Tornejos"
+                url = "projects/tournaments-generator"
+                weight = 2
+                parent = "projects"
 
             [[languages.ca.menu.main]]
                 name = "Tags 🔠"

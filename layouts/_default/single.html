@@ -1,66 +1,72 @@
 <!DOCTYPE html>
-<html lang="{{ .Lang }}" data-theme="light">
+<html lang="{{ .Lang }}">
 	
 	{{ partial "head.html" . }}
 
-	<body>
-		{{ partial "header" . }}
+	<body class="Site">
 		
-		<main class="page-content" aria-label="Content">
-			<div class="wrapper">
-				<article class="post h-entry" itemscope="" itemtype="http://schema.org/BlogPosting">
-					<header class="post-header">
-						<h1 class="post-title" itemprop="name headline">{{ .Title }}</h1>
-						<p class="post-meta">
-							<span class="dt-published" datespan="2023-08-23T00:00:00+00:00" itemprop="datePublished">{{ .Date.Format "02/01/2006" }}</span>
-							· 
-							<span class="tags-container">
-								<img class="tags-icon" src="/images/tags.png" alt="tags">
-								{{range .Params.tags}}
-								<a class="tag" href="{{ "tags/" | absURL }}{{ . | urlize }}/">{{ . }}</a>
-								{{end}}
-							</span>
-							· 
-							<span class="reading-time">{{ T "readingTime" }} {{ T "minutes" .ReadingTime }}</span>
-						</p>
-					</header>
-					
-					{{ partial "social_share" . }}
+		{{ partial "header" . }}
 
-					<div class="post-content e-content" itemprop="articleBody">
-						{{ .Content | safeHTML }}
-					</div>
-
-					{{ partial "social_share" . }}
-
-					{{ $related := .Site.RegularPages.Related . | first 3 }}
-					{{ with $related }}
-					<ul class="post-list">
-						{{ range . }}
-						<li>
-							<h3 class="blog-header">
-								<a class="post-link" href="{{ .Permalink }}">{{ .Title }}</a>
-								<span class="post-meta"><time class="dt-published" datetime="2023-08-23T00:00:00+00:00" itemprop="datePublished">{{ .Date.Format "02/01/2006" }}</time></span>
+		<main class="SiteContent SiteContent--default">
+			<div id="blog">
+				<div id="content">
+					<div id="content">
+						<div class="Article">
+							{{ if .Params.image }}
+							<img src="{{ .Params.image }}" alt="{{ .Params.title }}">
+							{{ end }}
+							<h1>{{ .Title }}</h1>
+							<p class="author">
+								<span>{{ .Date.Format "02/01/2006" }}</span>
+								· 
+								<span>{{ T "readingTime" }} {{ T "minutes" .ReadingTime }}</span>
+								<br>
 								<span class="tags-container">
 									<img class="tags-icon" src="/images/tags.png" alt="tags">
 									{{range .Params.tags}}
 									<a class="tag" href="{{ "tags/" | absURL }}{{ . | urlize }}/">{{ . }}</a>
 									{{end}}
 								</span>
-							</h3>
-							{{ .Description}}
-						</li>					
-						{{ end }}
-					</ul>
-					{{ end }}
-					
-					{{ partial "comments" . }}
-					
-				</article>
+							</p>
+							{{ partial "social_share" . }}
+
+							<div class="post-content e-content" itemprop="articleBody">
+								{{ .Content | safeHTML }}
+							</div>
+
+							{{ partial "social_share" . }}
+
+							{{ $related := .Site.RegularPages.Related . | first 3 }}
+							{{ with $related }}
+							<h2>Related articles</h2>
+							<div id="blogindex">
+								{{ range . }}
+								<p class="blogtitle">
+									<a href="{{ .Permalink }}">{{ .Params.title }}</a>, <span class="date">{{ .Date.Format "02/01/2006" }}</span><br>
+									<span class="author">
+										<span class="tags-container">
+											<img class="tags-icon" src="/images/tags.png" alt="tags">
+											{{range .Params.tags}}
+											<a class="tag" style="font-weight: normal;" href="{{ "tags/" | absURL }}{{ . | urlize }}/">{{ . }}</a>
+											{{end}}
+										</span>
+									</span>
+								</p>
+								<p class="blogsummary">
+									{{ .Params.description }}
+								</p>
+								{{ end }}
+							</div>
+							{{ end }}
+						
+							{{ partial "comments" . }}
+						</div>
+					</div>
+				</div>
 			</div>
 		</main>
-
-		{{ partial "footer.html" . }}
-
+		
+		{{ partial "footer" . }}
 	</body>
+
 </html>

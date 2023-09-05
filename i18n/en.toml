@@ -14,13 +14,9 @@ other = "Language"
 other = "Eat; Sleep; Code; Repeat;"
 
 [indexHeadingBlog]
-other = "Latest from the blog"
-[indexSubheadingBlog]
-other = "Tutorials, tips & opinions"
+other = "Latest posts from the blog"
 [indexHeadingProjects]
-other = "Latest from projects"
-[indexSubheadingProjects]
-other = "PoC, Open Source & side projects"
+other = "Latest projects I coded"
 
 [readMore]
 other = "Read more"

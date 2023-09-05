@@ -14,13 +14,9 @@ other = "Idioma"
 other = "Eat; Sleep; Code; Repeat;"
 
 [indexHeadingBlog]
-other = "Últim del bloc"
-[indexSubheadingBlog]
-other = "Tutorials, consells i opinions"
+other = "Últims posts del blog"
 [indexHeadingProjects]
-other = "Últim de projectes"
-[indexSubheadingProjects]
-other = "PoC, Open Source i projectes varis"
+other = "Últims projectes"
 
 [readMore]
 other = "Llegir més"
