@@ -218,6 +218,7 @@
     top: 0;
     width: 100%;
     z-index: 10;
+    padding: 0 1rem;
   }
   .CaseStudy-aboutBlock {
     background-color: var(--color-background-accented);
@@ -335,6 +336,22 @@
   .Footer-listItem a:link,
   .Footer-listItem a:visited {
     color: var(--white);
+  }
+  @media only screen and (max-width: 38rem) {
+    .Footer-bottom {
+        flex-direction: column;
+    }
+    .Footer-gopher {
+      align-self:center;
+    }
+    .Footer-listRow {
+      flex-direction: row;
+      flex-wrap: nowrap;
+
+    }
+    .Footer-copyright {
+      text-align: center;
+    }
   }
   @media only screen and (min-width: 52rem) {
     .Footer-listItem {
@@ -475,14 +492,12 @@
     border-bottom-color: var(--white);
   }
   .Header-navOpen {
-    background: no-repeat center/2rem url('/images/menu-24px.svg');
-    border: none;
+    background: no-repeat center/2rem url('/images/menu-24px-white.svg');
+    border: 1px solid #9e9e9e;
+    border-radius: 5px;
     height: 2.5rem;
     margin: auto 1rem;
     width: 2.5rem;
-  }
-  .Header-navOpen--white {
-    background: no-repeat center/2rem url('/images/menu-24px-white.svg');
   }
   .skip-to-content-link {
     background: var(--color-background);
@@ -509,11 +524,16 @@
     top: 0;
     transform: translateX(100%);
     transition: transform 100ms ease-in-out;
-    width: 85%;
+    width: fit-content;
+    height: fit-content;
+    padding:15px;
+    text-align: right;
     z-index: 20;
+    margin-top:56px;
   }
   .NavigationDrawer-submenuItem {
     width: 100%;
+    margin-top:0px
   }
   
   .NavigationDrawer-submenuItem .NavigationDrawer-header {
@@ -912,24 +932,6 @@
     margin: 0 0.8125rem;
     width: 1rem;
   }
-  [data-theme='dark'] .BreadcrumbNav-li:not(:last-child):after {
-    background: url('/images/icons/arrow-forward-dark.svg') no-repeat;
-    content: ' ';
-    display: block;
-    height: 1rem;
-    margin: 0 0.8125rem;
-    width: 1rem;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme='light']) .BreadcrumbNav-li:not(:last-child):after {
-      background: url('/images/icons/arrow-forward-dark.svg') no-repeat;
-      content: ' ';
-      display: block;
-      height: 1rem;
-      margin: 0 0.8125rem;
-      width: 1rem;
-    }
-  }
   .SubHero-gridContainer,
   .WhyGo-gridContainer,
   .UseCases-gridContainer {
@@ -1026,7 +1028,7 @@
   .Hero-socialMedia {
     display: flex;
     flex: 3 1;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
     grid-column: 1 / 3;
     margin-top: 1rem;
@@ -1052,7 +1054,7 @@
     opacity: 0.5;
   }
   .Hero-pic {
-    align-items: flex-end;
+    align-items: center;
     display: flex;
     grid-column: 2 / 3;
     grid-row: 1 / 2;
@@ -1786,20 +1788,6 @@
   @media only screen and (min-width: 32rem) {
     .Header-rightContent {
       width: 100%;
-    }
-    .SearchForm {
-      background-color: var(--color-background);
-      margin: 0.6rem 1.4rem 0.6rem 0;
-      max-width: none;
-    }
-    .SearchForm-input {
-      opacity: 1;
-      padding: initial;
-      width: 100%;
-    }
-    .SearchForm svg {
-      fill: var(--color-button-text-disabled);
-      margin-right: 0.5rem;
     }
   }
   .Series-list {

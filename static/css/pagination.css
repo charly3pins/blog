@@ -35,3 +35,9 @@
 .pagination > .disabled:hover {
     background-color:transparent;
 }
+@media only screen and (max-width: 38rem) {
+    .pagination {
+        width: 100%;
+        padding: 25px 0px 0px 0px;
+    }
+}

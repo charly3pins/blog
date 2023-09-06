@@ -28,7 +28,7 @@
     <div class="Footer">
         <div class="Container Container--fullBleed">
             <div class="Footer-bottom">
-                <img class="Footer-gopher" src="https://go.dev/images/gophers/pilot-bust.svg" alt="The Go Gopher">
+                <img class="Footer-gopher" src="/images/gopher-gamer.svg">
                 <ul class="Footer-listRow">
                     <li class="Footer-listItem">
                         <a href="https://github.com/charly3pins" target="_blank">
@@ -74,7 +74,7 @@
                         </a>
                     </li>
                 </ul>
-                <span>© {{ .Site.Params.since }} - {{ now.Year }} {{ .Site.Author.name }} | {{ T "lastPost" }} {{ .Site.LastChange.Format "02/01/2006" }}</span>
+                <span class="Footer-copyright">© {{ .Site.Params.since }} - {{ now.Year }} {{ .Site.Author.name }} | {{ T "lastPost" }} {{ .Site.LastChange.Format "02/01/2006" }}</span>
             </div>
         </div>
     </div>
