@@ -2,11 +2,6 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-/**
- * A bit of navigation related code for handling dismissible elements.
- */
-window.initFuncs = [];
-
 (() => {
   'use strict';
 
@@ -220,146 +215,8 @@ window.initFuncs = [];
     handleNavigationDrawerInactive(header);
   }
 
-  /**
-   * Attempts to detect user's operating system and sets the download
-   * links accordingly
-   */
-  async function setDownloadLinks() {
-    const versionElement = document.querySelector('.js-latestGoVersion');
-    if (versionElement) {
-      const anchorTagWindows = document.querySelector('.js-downloadWin');
-      const anchorTagMac = document.querySelector('.js-downloadMac');
-      const anchorTagLinux = document.querySelector('.js-downloadLinux');
-      const version = await getLatestVersion();
-
-      const macDownloadUrl = `/dl/${version}.darwin-amd64.pkg`;
-      const windowsDownloadUrl = `/dl/${version}.windows-amd64.msi`;
-      const linuxDownloadUrl = `/dl/${version}.linux-amd64.tar.gz`;
-
-      anchorTagWindows.href = windowsDownloadUrl;
-      anchorTagMac.href = macDownloadUrl;
-      anchorTagLinux.href = linuxDownloadUrl;
-
-      /*
-       * Note: we do not change .js-downloadBtn anymore
-       * because it is impossible to tell reliably which architecture
-       * the user's browser is running on.
-       */
-    }
-  }
-
-  function registerPortToggles() {
-    for (const el of document.querySelectorAll('.js-togglePorts')) {
-      el.addEventListener('click', () => {
-        el.setAttribute('aria-expanded', el.getAttribute('aria-expanded') === 'true' ? 'false' : 'true')
-      })
-    }
-  }
-
-  /**
-   * Retrieves list of Go versions & returns the latest
-   */
-  async function getLatestVersion() {
-    let version = 'go1.17'; // fallback version if fetch fails
-    try {
-      const versionData = await (await fetch('/dl/?mode=json')).json();
-      if (!versionData.length) {
-        return version;
-      }
-      versionData.sort((v1, v2) => {
-        return v2.version - v1.version;
-      });
-      version = versionData[0].version;
-    } catch (err) {
-      console.error(err);
-    }
-    return version;
-  }
-
-  /**
-   * initialThemeSetup sets data-theme attribute based on preferred color
-   */
-
-  function initialThemeSetup() {
-    const themeCookie = document.cookie.match(
-      /prefers-color-scheme=(light|dark|auto)/
-    );
-    const theme = themeCookie && themeCookie.length > 0 && themeCookie[1];
-    if (theme) {
-      document.querySelector('html').setAttribute('data-theme', theme);
-    }
-  }
-
-  /**
-   * setThemeButtons sets click listeners for toggling theme buttons
-   */
-  function setThemeButtons() {
-    for (const el of document.querySelectorAll('.js-toggleTheme')) {
-      el.addEventListener('click', () => {
-        toggleTheme();
-      });
-    }
-  }
-
-  /**
-   * setVersionSpan sets the latest version in any span that has this selector.
-   */
-  async function setVersionSpans() {
-    const spans = document.querySelectorAll('.GoVersionSpan');
-    if (!spans) return;
-    const version = await getLatestVersion();
-    Array.from(spans).forEach(span => {
-      span.textContent = `Download (${version.replace('go', '')})`
-    });
-  }
-
-  /**
-   * toggleTheme switches the preferred color scheme between auto, light, and dark.
-   */
-  function toggleTheme() {
-    let nextTheme = 'dark';
-    const theme = document.documentElement.getAttribute('data-theme');
-    if (theme === 'dark') {
-      nextTheme = 'light';
-    } else if (theme === 'light') {
-      nextTheme = 'auto';
-    }
-    let domain = '';
-    if (location.hostname === 'go.dev') {
-      // Include subdomains to apply the setting to pkg.go.dev.
-      domain = 'domain=.go.dev;';
-    }
-    document.documentElement.setAttribute('data-theme', nextTheme);
-    document.cookie = `prefers-color-scheme=${nextTheme};${domain}path=/;max-age=31536000;`;
-  }
-
-  function registerCookieNotice() {
-    const themeCookie = document.cookie.match(/cookie-consent=true/);
-    if (!themeCookie) {
-      const notice = document.querySelector('.js-cookieNotice');
-      const button = notice.querySelector('button');
-      notice.classList.add('Cookie-notice--visible');
-      button.addEventListener('click', () => {
-        let domain = '';
-        if (location.hostname === 'go.dev') {
-          // Apply the cookie to *.go.dev.
-          domain = 'domain=.go.dev;';
-        }
-        document.cookie = `cookie-consent=true;${domain}path=/;max-age=31536000`;
-        notice.remove();
-      });
-    }
-  }
-
-  initialThemeSetup();
-
   const onPageLoad = () => {
     registerHeaderListeners();
-    setDownloadLinks();
-    setThemeButtons();
-    setVersionSpans();
-    registerPortToggles();
-    registerCookieNotice();
   };
 
   // DOM might be already loaded when we try to setup the callback, hence the check.

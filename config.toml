@@ -86,6 +86,7 @@ enableRobotsTXT = true
                 weight = 2
 
             [[languages.es.menu.main]]
+                identifier = "projects"
                 name = "Proyectos 👨‍💻"
                 url = "projects"
                 weight = 3
@@ -130,6 +131,7 @@ enableRobotsTXT = true
                 weight = 2
 
             [[languages.ca.menu.main]]
+                identifier = "projects"
                 name = "Projectes 👨‍💻"
                 url = "projects"
                 weight = 3
