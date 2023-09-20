@@ -6,7 +6,7 @@ description = "Como proyecto de fin de carrera de Ingeniería Informática, cons
 
 weight = "1"
 
-tags = ["php", "javascript"]
+tags = ["php", "javascript", "mysql"]
 +++
 ## POR QUÉ
 

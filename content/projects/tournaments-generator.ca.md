@@ -6,7 +6,7 @@ description = "Prova del concepte de creació d'una aplicació per gestionar tor
 
 weight = "2"
 
-tags = ["go", "flutter", "python"]
+tags = ["go", "flutter", "python", "postgresql"]
 +++
 ## PER QUÈ
 

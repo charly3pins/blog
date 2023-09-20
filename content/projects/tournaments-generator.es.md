@@ -6,7 +6,7 @@ description = "Prueba de concepto de la construcción de una aplicación para ad
 
 weight = "2"
 
-tags = ["go", "flutter", "python"]
+tags = ["go", "flutter", "python", "postgresql"]
 +++
 ## POR QUÉ
 

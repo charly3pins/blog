@@ -6,7 +6,7 @@ description = "Proof of concept building an application for managing FIFA 20 tou
 
 weight = "2"
 
-tags = ["go", "flutter", "python"]
+tags = ["go", "flutter", "python", "postgresql"]
 +++
 ## WHY
 

@@ -6,7 +6,7 @@ description = "As my Final Year Project for Computer Science Engineering I build
 
 weight = "1"
 
-tags = ["php", "javascript"]
+tags = ["php", "javascript", "mysql"]
 +++
 ## WHY
 
