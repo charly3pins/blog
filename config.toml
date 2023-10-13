@@ -2,7 +2,6 @@ baseURL = "https://charly3pins.dev/"
 languageCode = "en-us"
 title = "charly3pins.dev"
 googleAnalytics = "364680303"
-disqusShortname = "https-charly3pins-dev"
 defaultContentLanguage = "en"
 pygmentsUseClasses=true
 enableRobotsTXT = true
@@ -13,7 +12,6 @@ enableRobotsTXT = true
 
 [params]
 	since = 2018
-	# avatar = "/images/law-mustache.gif"
 	avatar = "/images/cyberpunk-ai.png"
 	errorPage = "/images/gopher-this-is-fine.jpg"
 
