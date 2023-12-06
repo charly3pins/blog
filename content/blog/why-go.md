@@ -42,3 +42,5 @@ Go provides a `memory safe` allocating dynamic objects and `garbage collecting` 
 Go coding style follows the [line of sight](https://medium.com/@matryer/line-of-sight-in-code-186dd7cdea88): the idea is that down the edge of your function, should be the happy path, so it's in the left edge. Anything else, being an error or an edge case, it's not the happy path, so you should indent it. With that, the code is super readable and easy to follow, and you don't need to use `else` in probably 99% of the cases. When you have in front of you the Go code and you see there is a part of the code indented, you know that's the exit of the function and the happy path it's on the left edge.
 
 Simple, clean, great, GO!
+
+I hope everything that I have tried to explain in this post has been clear, and please if there is any part that has not been completely clear or there are parts that I have not covered that you would like me to do, leave me a comment right here or through my social networks that you have on my profile and I will be happy to respond.
