@@ -1,10 +1,10 @@
 baseURL = "https://charly3pins.dev/"
 languageCode = "en-us"
 title = "charly3pins.dev"
-googleAnalytics = "364680303"
 defaultContentLanguage = "en"
 pygmentsUseClasses=true
 enableRobotsTXT = true
+googleAnalytics = "G-364680303"
 
 [author]
 	name = "Charly3Pins"
