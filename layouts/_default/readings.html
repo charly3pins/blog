@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="{{ .Lang }}">
+	
+	{{ partial "head.html" . }}
+
+	<body class="Site">
+		
+		{{ partial "header" .}}
+		
+		<main class="SiteContent SiteContent--default">
+			<div id="blog">
+				<div id="content">
+					<div class="Article">	
+						<h1>{{ .Title }}</h1>
+						{{ .Content | safeHTML }}
+					</div>
+				</div>
+			</div>
+		</main>
+				
+		{{ partial "footer" .}}
+	
+		</body>
+</html>
