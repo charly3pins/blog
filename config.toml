@@ -37,6 +37,11 @@ googleAnalytics = "G-KX7XNRQ64E"
                 name = "Blog ✍️"
                 url = "blog"
                 weight = 2
+            
+            [[languages.en.menu.main]]
+                name = "Readings 📚"
+                url = "readings"
+                weight = 2
 
             [[languages.en.menu.main]]
                 identifier = "projects"
