@@ -9,7 +9,7 @@ The list of books I am reading, have read or plan to read.
 * [Las 48 leyes del poder](https://amzn.to/3IEvibx) by _Robert Greene, Joost Elffers_
 
 ## Read
-* [The Go Programming Language](https://amzn.to/3Vl1U1E) by _Alan A. A. Donovan, Brian W. Kernighan_
+* [The Go Programming Language](https://amzn.to/3IYfy3r) by _Alan A. A. Donovan, Brian W. Kernighan_
 * [Go in Action](https://amzn.to/3PoQg1U) by _William Kennedy, Brian Ketelsen, Erik St. Martin_
 * [Domain-Driven Design Distilled](https://amzn.to/3v2IaFn) by _Vaughn Vernon_
 * [Implementing Domain-Driven Design](https://amzn.to/3TCVbPm) by _Vaughn Vernon_
