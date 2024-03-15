@@ -35,9 +35,9 @@ Una idea que tenemos para el futuro (porque actualmente no tenemos tiempo) es en
 
 ## Los libros
 El Club de Lectura de Tecnología comenzó en diciembre de 2021 y hemos leído 3 libros completos:
-- Microservices Patterns, de Chris Richardson
-- Rocket Surgery Made Easy: The Do-It-Yourself Guide to Finding and Fixing Usability Problems, de Steve Krug
-- Test Driven Development: By Example, de Kent Beck
+* [Microservices Patterns: With examples in Java](https://amzn.to/3v1gqks) de _Chris Richardson_
+* [Rocket Surgery Made Easy: The Do-It-Yourself Guide to Finding and Fixing Usability Problems](https://amzn.to/3TmhcAq) de _Steve Krug_
+* [Test Driven Development: By Example](https://amzn.to/3PoQo1o) de _Kent Beck_
 
 Actualmente estamos leyendo Software Engineering at Google, de Titus Winters, Tom Manshreck, Hyrum Wright.
  

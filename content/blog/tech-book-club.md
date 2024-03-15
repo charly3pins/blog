@@ -35,9 +35,9 @@ One idea that we have for the future (because currently we don't have time) is t
 
 ## The books
 The Tech Book Club started in December 2021 and we've read completely 3 books:
-- Microservices Patterns, by Chris Richardson
-- Rocket Surgery Made Easy: The Do-It-Yourself Guide to Finding and Fixing Usability Problems, by Steve Krug
-- Test Driven Development: By Example, by Kent Beck
+* [Microservices Patterns: With examples in Java](https://amzn.to/3v1gqks) by _Chris Richardson_
+* [Rocket Surgery Made Easy: The Do-It-Yourself Guide to Finding and Fixing Usability Problems](https://amzn.to/3TmhcAq) by _Steve Krug_
+* [Test Driven Development: By Example](https://amzn.to/3PoQo1o) by _Kent Beck_
 
 Currently we are reading Software Engineering at Google, by Titus Winters, Tom Manshreck, Hyrum Wright.
  
