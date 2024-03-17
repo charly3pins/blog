@@ -5,18 +5,17 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="about-me">
-          <img class="actor mb-3" src="{{ .Site.Params.avatar | absURL}}" alt="image">
-          <h3>Hi I Am {{ .Site.Params.author }}</h3>
+          <!-- <img class="actor mb-3" src="{{ .Site.Params.avatar | absURL}}" alt="image"> -->
+          <h3>{{ .Site.Params.indexTitle }}</h3>
           <div class="col-lg-10 order-1 order-lg-2">
             <article class="single-blog">
-              <a href={{ printf "tags/%s" .Params.tags | absURL }} class="tag">{{ .Params.tags }}</a>
               <div class="single-blog-content">
                 {{ .Content }}
               </div>
             </article>
           </div>
           </p>
-          <h3>I am a social person</h3>
+          <h3>{{ T "followMe" }}</h3>
           <ul class="soicel-icon">
             <li>
               <a href="https://www.github.com/charly3pins">

@@ -18,6 +18,9 @@ other = "Latest posts from the blog"
 [indexHeadingProjects]
 other = "Latest projects I coded"
 
+[trendingPost]
+other = "Trending posts"
+
 [readMore]
 other = "Read more"
 
@@ -34,3 +37,11 @@ other = "Last post on"
 [imageBy]
 other = "Image by"
 
+[followMe]
+other = "Follow me"
+
+[by]
+other = "By"
+
+[share]
+other = "Share"

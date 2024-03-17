@@ -6,7 +6,7 @@ description = "Voy a mostrarles mi configuración para el editor VS Code, que me
 
 slug = "Mi configuración para una alta productividad para VS Code"
 tags = ["productivity", "vscode"]
-
+trending = true
 image = "/images/vscode.jpeg"
 +++
 Paso muchas horas durante el día programando para la empresa en la que trabajo y durante las noches o los fines de semana para mí, así que quiero estar cómodo con las herramientas que uso constantemente. Uno de ellos es mi editor de código, específicamente [VS Code](https://code.visualstudio.com/). Comencé con Java y la más extendida por ello es Eclipse con todas sus variantes. Luego me cambié a Go y fui usuario de Sublime durante varios años, hasta que decidí probar VS Code. ¡Oh sí! Desde que lo probé, nunca quise volver atrás. Super rápido, súper configurable, muchas extensiones y MUCHOS TEMAS.

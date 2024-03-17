@@ -4,6 +4,8 @@ date = "2021-12-09"
 author = "charly3pins"
 description = "Cómo aplico Arquitecturas Limpias y DDD cuando creo un proyecto en Go."
 
+trending = true
+
 tags = ["go"]
 
 image = "/images/CleanArchitecture.jpg"

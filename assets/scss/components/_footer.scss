@@ -79,7 +79,9 @@
     }
   }
   .copy-right {
-    background-color: $black;
+    border-bottom: 8px solid #fddd00;
+    background-color: #007d9c;
+    border-top: 4px solid #f8f8f8;
     padding: 35px 0;
     p {
       text-align: center;

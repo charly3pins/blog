@@ -21,7 +21,7 @@
             <div class="blog-post-meta">
               <ul>
                 <li>
-                  By <a href={{ "whois" | absURL }}>{{ $.Site.Params.author }}</a>
+                  {{ T "by" }} <a href={{ "whois" | relLangURL }}>{{ $.Site.Params.author }}</a>
                 </li>
                 <li>
                   <i class="fa fa-clock-o"></i>
@@ -32,7 +32,7 @@
             <p>
               {{.Summary}}
             </p>
-            <a href="{{ .Permalink }}" class="blog-post-action">read more <i class="fa fa-angle-right"></i></a>
+            <a href="{{ .Permalink }}" class="blog-post-action">{{ T "readMore" }} <i class="fa fa-angle-right"></i></a>
           </div>
         </article>
         {{ end }}

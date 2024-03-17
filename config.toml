@@ -17,8 +17,6 @@ googleAnalytics = "G-KX7XNRQ64E"
 	avatar = "/images/cyberpunk-ai.png"
 	errorPage = "/images/gopher-this-is-fine.jpg"
     trendingBlogIcon = "images/trending.svg"
-    blogTitle = "Articles"
-    blogSubTitle = "View the latest posts"
 
 [languages]
 	[languages.en]
@@ -77,7 +75,7 @@ googleAnalytics = "G-KX7XNRQ64E"
 
         [languages.es.params]
             indexTitle = "¡Hola! Soy Charly3Pins"
-            indexSubTitle = "Este es mi blog y publicaré sobre:"
+            indexSubTitle = "Este es mi blog y publico sobre:"
             indexSubTitleGo = "Aprendizajes en Go"
             indexSubTitleSE = "Experiencias trabajando como Ingeniero de Software"
             indexSubTitleProjects = "Proyectos que programo y ¡mucho más!"
@@ -91,6 +89,11 @@ googleAnalytics = "G-KX7XNRQ64E"
             [[languages.es.menu.main]]
                 name = "Blog ✍️"
                 url = "blog"
+                weight = 2
+            
+            [[languages.es.menu.main]]
+                name = "Lecturas 📚"
+                url = "readings"
                 weight = 2
 
             [[languages.es.menu.main]]
@@ -117,6 +120,7 @@ googleAnalytics = "G-KX7XNRQ64E"
                 weight = 4
 
 	[languages.ca]
+        disabled = true
 		languageName = "Catalan"
 		weight = 3
 

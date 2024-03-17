@@ -189,13 +189,6 @@
             border-radius: 5px;
             overflow: hidden;
           }
-          // img {
-          //   max-width: 100%;
-          //   transition: all 0.3s ease-in-out;
-          //   @include desktop {
-          //     width: 100%;
-          //   }
-          // }
           .icon {
             a {
               position: absolute;
@@ -446,12 +439,11 @@
         }
         img {
           border-radius: 10px;
-          box-shadow: 10px 25px 40px 0px rgba(18, 21, 26, 0.07);
-          max-width: 100%;
+          max-width: 400px;
         }
       }
       img {
-        max-width: 100%;
+        max-width: 400px;
       }
       p {
         font-size: 14px;

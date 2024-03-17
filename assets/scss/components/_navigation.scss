@@ -1,10 +1,9 @@
 .main-nav {
-  padding: 50px 0 20px;
+  // padding: 50px 0 20px;
   transition: all 0.5s ease-in-out;
-  // position: fixed;
-  // z-index: 99;
-  // top: 0;
   width: 100%;
+
+  
 
   @include desktop {
     text-align: center;
@@ -23,7 +22,7 @@
     margin-bottom: 1rem;
     .nav-item {
       .nav-link {
-        color: $text-color-dark;
+        color: white;
         padding: 10px 15px;
         font-weight: 600;
         font-size: 14px;
@@ -42,7 +41,9 @@
   .navbar-brand {
     img {
       width: 115px;
+      border-radius: 50%;
     }
+    color: white;
   }
 
   .navbar-toggler {
@@ -113,10 +114,10 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        border: 1px solid $border-color;
+        border: 1px solid black;
         border-radius: 50px;
         text-decoration: none;
-        color: $text-color;
+        color: black;
         font-size: 16px;
         &:hover {
           background-color: $black;
@@ -145,4 +146,26 @@
 
 .headroom--pinned {
   top: 0;
+}
+
+.nav-top {
+  border-top: 8px solid hsl(52, 100%, 50%);
+  background-color: #007d9c;
+}
+
+.nav-top > .container {
+  justify-content: center;
+}
+
+.nav-bot {
+  background-color: #007d9c;
+  border-bottom: 4px solid #f8f8f8;
+}
+
+.nav-bot > .container {
+  justify-content: center;
+}
+
+.navbar-expand-lg .navbar-collapse {
+  justify-content: center!important;
 }

@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-lg-6 mx-auto text-center">
-        <a class="navbar-brand" href={{ "" | absURL }}>
+        <a class="navbar-brand" href={{ "" | relLangURL }}>
           {{ .Site.Title }}
         </a>
       </div>
@@ -13,7 +13,7 @@
           <ul class="navbar-nav">
             {{ range .Site.Menus.main }}
             <li class="nav-item">
-              <a class="nav-link" href="{{ .URL | absURL }}">{{ .Name }}</a>
+              <a class="nav-link" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
             </li>
             {{ end }}
           </ul>

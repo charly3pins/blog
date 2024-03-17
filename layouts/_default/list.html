@@ -14,13 +14,13 @@
         <article class="blog-post">
           {{ with .Params.image }}
           <div class="blog-post-thumb">
-            <img src="{{ .  | absURL }}" alt="blog-thum" />
+            <img src="{{ .  | relLangURL }}" alt="blog-thum" />
           </div>
           {{ end }}
           <div class="blog-post-content">
             <div class="blog-post-tag">
               {{range .Params.tags}}
-                <a href="{{ "tags/" | absURL }}{{ . | urlize }}/">{{ . }}</a>
+                <a href="{{ "tags/" | relLangURL }}{{ . | urlize }}/">{{ . }}</a>
               {{end}}
             </div>
             <div class="blog-post-title">
@@ -29,7 +29,7 @@
             <div class="blog-post-meta">
               <ul>
                 <li>
-                  By <a href={{ "whois" | absURL }}>{{ $.Site.Params.author }}</a>
+                  {{ T "by" }} <a href={{ "whois" | relLangURL }}>{{ $.Site.Params.author }}</a>
                 </li>
                 <li>
                   <i class="fa fa-clock-o"></i>
@@ -40,7 +40,7 @@
             <p>
               {{ .Summary }}
             </p>
-            <a href="{{ .Permalink }}" class="blog-post-action">read more <i class="fa fa-angle-right"></i></a>
+            <a href="{{ .Permalink }}" class="blog-post-action">{{ T "readMore" }} <i class="fa fa-angle-right"></i></a>
           </div>
         </article>
         {{ end }}

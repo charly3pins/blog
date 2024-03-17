@@ -5,7 +5,7 @@
     <div class="row">
       <div class="col-lg-2 order-2 order-lg-1">
         <div class="share-now">
-          <a href="#" class="scrol">Share</a>
+          <a href="#" class="scrol">{{ T "share" }}</a>
           <div class="sociel-icon">
             {{ $hashtags := delimit .Params.tags "," }}
             <ul>
@@ -47,13 +47,13 @@
         <article class="single-blog">
           <div class="blog-post-tag">
 						{{range .Params.tags}}
-							<a href="{{ "tags/" | absURL }}{{ . | urlize }}/">{{ . }}</a>
+							<a href="{{ "tags/" | relLangURL }}{{ . | urlize }}/">{{ . }}</a>
 						{{end}}
           </div>
           <p class="title">{{ .Title }}</p>
           <ul class="meta">
             <li>
-              By <a href={{ "whois" | absURL }}>{{ $.Site.Params.author }}</a>
+              {{ T "by" }} <a href={{ "whois" | relLangURL }}>{{ $.Site.Params.author }}</a>
             </li>
             <li>
               <i class="fa fa-clock-o"></i>
