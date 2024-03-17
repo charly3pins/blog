@@ -1,6 +1,38 @@
 <head>
   <meta charset="utf-8" />
-  <title>{{ .Title }}</title>
+  <meta http-equiv="x-ua-compatible" content="chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="{{ T "description" }}">
+{{ with .Title | default .Site.Title }}
+  <title>{{ . }} | Charly3Pins</title>
+{{ end }}
+{{ with .Title | default .Site.Title }}
+  <meta property="og:title" content="{{ . }} - charly3pins" />
+{{ end }}
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="{{ .Description }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta property="og:site_name" content="charly3pins.dev">
+{{ with  or (.Params.image) (.Site.Params.avatar) | absURL }}  
+  <meta property="og:image" content="{{ . }}">
+{{ end }}
+  <meta name="twitter:card" content="summary_large_image">
+{{ with .Title | default .Site.Title }}
+  <meta name="twitter:title" content="{{ . | truncate 70 }}" />
+{{ end }}
+{{ with .Description | default .Content }}
+  <meta name="twitter:description" content="{{ . }}">
+{{ end }}
+{{ with  or (.Params.image) (.Site.Params.avatar) | absURL }}
+  <meta name="twitter:image" content="{{ . }}">
+{{ end }}
+
+{{ with .OutputFormats.Get "rss" -}}
+  {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+{{ end -}}
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -16,4 +48,17 @@
 
   <link rel="shortcut icon" href={{ "images/favicon.ico" | absURL }} type="image/x-icon" />
   <link rel="icon" href={{ "images/favicon.ico" | absURL }} type="image/x-icon" />
+
+  {{ with .Site.GoogleAnalytics }}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ . }}');
+  </script>
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+  {{ end }}
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9655018812623545" crossorigin="anonymous"></script>
 </head>
