@@ -147,4 +147,4 @@ We see that we pass the `.Count` to the translation so we will have to invoke it
 
 ## References
  
-For more details, consult the official page of [Hugo's documentation](https://gohugo.io/content-management/multilingual/).
+For more details, see the official page of [Hugo's documentation](https://gohugo.io/content-management/multilingual/).

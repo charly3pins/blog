@@ -1,39 +1,89 @@
-<!DOCTYPE html>
-<html lang="{{ .Lang }}">
-	{{ partial "head.html" . }}
-	<body class="Site">
-		{{ partial "header" . }}
-		<main class="SiteContent SiteContent--default" id="main-content">
-			<div id="blog">
-				<div id="content">
-					<div id="content">
-						<div class="Article">
-							<h1>{{ .Title }}</h1>
-							<div id="blogindex">
-								{{ $paginator := .Paginate .Pages.ByDate.Reverse 9 }}
-								{{ range $paginator.Pages }}
-								<p class="blogtitle">
-									<a href="{{ .Permalink }}">{{ .Params.title }}</a>, <span class="date">{{ .Date.Format "02/01/2006" }}</span><br>
-									<span class="author">
-										<span class="tags-container">
-											<img class="tags-icon" src="/images/tags.png" alt="tags">
-											{{range .Params.tags}}
-											<a class="tag" style="font-weight: normal;" href="{{ "tags/" | absURL }}{{ . | urlize }}/">{{ . }}</a>
-											{{end}}
-										</span>
-									</span>
-								</p>
-								<p class="blogsummary">
-									{{ .Params.description }}
-								</p>
-								{{ end }}
-								{{ template "_internal/pagination.html" . }}
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</main>
-		{{ partial "footer" . }}
-	</body>
-</html>
+{{ define "main" }}
+
+{{ partial "feature.html" . }}
+
+<section class="blog">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="blog-section-title">
+          <h2>{{ $.Site.Params.blogTitle }}</h2>
+          <p>{{ $.Site.Params.blogSubTitle }}</p>
+        </div>
+        {{ range $.Paginator.Pages }}
+        <article class="blog-post">
+          {{ with .Params.image }}
+          <div class="blog-post-thumb">
+            <img src="{{ .  | absURL }}" alt="blog-thum" />
+          </div>
+          {{ end }}
+          <div class="blog-post-content">
+            <div class="blog-post-tag">
+              {{range .Params.tags}}
+                <a href="{{ "tags/" | absURL }}{{ . | urlize }}/">{{ . }}</a>
+              {{end}}
+            </div>
+            <div class="blog-post-title">
+              <a href="{{ .Permalink }}"> {{ .Title }} </a>
+            </div>
+            <div class="blog-post-meta">
+              <ul>
+                <li>
+                  By <a href={{ "whois" | absURL }}>{{ $.Site.Params.author }}</a>
+                </li>
+                <li>
+                  <i class="fa fa-clock-o"></i>
+                  {{ .PublishDate.Format "January 2, 2006" }} - {{ .Params.readTime }} read
+                </li>
+              </ul>
+            </div>
+            <p>
+              {{ .Summary }}
+            </p>
+            <a href="{{ .Permalink }}" class="blog-post-action">read more <i class="fa fa-angle-right"></i></a>
+          </div>
+        </article>
+        {{ end }}
+        {{ partial "pagination" .}}
+      </div>
+
+      <div class="col-lg-4">
+        <div class="blog-post-widget">
+          <div class="latest-widget-title">
+            <h2>Trending post</h2>
+          </div>
+          {{ range $i, $.Site.RegularPages }} {{ if eq .Params.trending true }}
+          <div class="latest-widget">
+            <div class="latest-widget-thum">
+              <a href="{{ .Permalink }}" class="post-thumb"
+                style='background-image: url("{{ .Params.image | absURL }}")'>
+              </a>
+              <div class="icon">
+                <a href="{{ .Permalink }}">
+                  <img src="{{ $.Site.Params.trendingBlogIcon | absURL }}" alt="icon" /></a>
+              </div>
+            </div>
+            <div class="latest-widget-content">
+              <div class="content-title">
+                <a href="{{ .Permalink }}">
+                  {{ .Title }}
+                </a>
+              </div>
+              <div class="content-meta">
+                <ul>
+                  <li>
+                    <i class="fa fa-clock-o"></i>
+                    {{ .PublishDate.Format "January 2, 2006" }} - {{ .Params.readTime }} read
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          {{ end }} {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}

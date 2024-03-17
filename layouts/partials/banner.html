@@ -1,0 +1,75 @@
+<section class="featured">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <article class="featured-post">
+                    <div class="featured-post-content">
+                        <a href="{{ .Permalink }}" class="featured-post-title">
+                            {{ .Site.Params.indexTitle }}
+                        </a>
+                        <p>{{ .Site.Params.indexSubtitle }}</p>
+                        <ul class="featured-post-meta">
+                            <li>
+                                <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg" style="background-color: #007d9c;">
+                                    <path d="M10.8519 0.52594L3.89189 7.10404L1.14811 4.51081L0 5.59592L3.89189 9.27426L12 1.61105L10.8519 0.52594Z" fill="white" fill-opacity="0.87">
+                                    </path>
+                                </svg>
+                                {{ .Site.Params.indexSubTitleGo }}
+                            </li>
+                            <li>
+                                <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg" style="background-color: #007d9c;">
+                                    <path d="M10.8519 0.52594L3.89189 7.10404L1.14811 4.51081L0 5.59592L3.89189 9.27426L12 1.61105L10.8519 0.52594Z" fill="white" fill-opacity="0.87">
+                                    </path>
+                                </svg>
+                                {{ .Site.Params.indexSubTitleSE }}
+                            </li>
+                            <li>
+                                <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg" style="background-color: #007d9c;">
+                                    <path d="M10.8519 0.52594L3.89189 7.10404L1.14811 4.51081L0 5.59592L3.89189 9.27426L12 1.61105L10.8519 0.52594Z" fill="white" fill-opacity="0.87">
+                                    </path>
+                                </svg>
+                                {{ .Site.Params.indexSubTitleProjects }}
+                            </li>
+                        </ul>
+                        <p>{{ .Site.Params.indexSubTitleEmail }} <strong><a href="mailto:{{ .Site.Author.email }}">{{ .Site.Author.email }}</a></strong></p>
+                    </div>
+                    <div>
+                        <img src="{{ .Site.Params.avatar  | absURL }}" alt="author" style="border-radius: 50%; width: 75%;"/>
+                    </div>
+                </article>
+                <ul class="main-nav-social">
+                    <li>
+                      <a href="https://www.github.com/charly3pins">
+                        <i class="fa fa-github"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://twitter.com/charly3pins">
+                        <i class="fa fa-twitter"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="http://www.linkedin.com/in/carlesfuste">
+                        <i class="fa fa-linkedin"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://stackoverflow.com/users/4948631/charly3pins">
+                        <i class="fa fa-stack-overflow"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="{{ .Site.BaseURL }}index.xml">
+                        <i class="fa fa-rss"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="mailto:{{ .Site.Author.email }}">
+                        <i class="fa fa-envelope"></i>
+                      </a>
+                    </li>
+                  </ul>
+            </div>
+        </div>
+    </div>
+</section>

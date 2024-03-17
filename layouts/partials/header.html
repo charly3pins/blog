@@ -1,73 +1,23 @@
-<header class="Site-header js-siteHeader">
-	<div class="Header Header--dark">
-		<nav class="Header-nav">
-			<a class="Header-title" href="{{ .Site.Home.Permalink }}">
-				{{ .Site.Title }}
-			</a>
-			<div class="Header-rightContent">
-				<ul class="Header-menu">
-				{{ range .Site.Menus.main }}
-					<li class="Header-menuItem ">
-						{{ if .HasChildren }}
-						<a href="{{ .URL | relLangURL }}" class="js-desktop-menu-hover" aria-label="{{ .Name }}" aria-describedby="dropdown-description">
-							{{ .Name }} <span>▾</span>
-						</a>							
-						<ul class="Header-submenu js-desktop-submenu-hover" aria-label="submenu">
-							{{ range .Children }}
-							<li class="Header-submenuItem">
-								<div>
-									<a href="{{ .URL | relLangURL }}" aria-label="{{ .Name }}" aria-describedby="dropdown-description">
-										{{ .Name }}
-									</a>
-								</div>
-								<p>{{ .Post }}</p>
-							</li>
-							{{ end }}
-						</ul>
-						{{ else }}
-						<a href="{{ .URL | relLangURL }}" aria-label="{{ .Name }}" aria-describedby="dropdown-description">
-							{{ .Name }} 
-						</a>
-						{{ end }}
-					</li>
-				{{ end }}
-				</ul>
-				<button class="Header-navOpen js-headerMenuButton"></button>
-			</div>
-		</nav>
-	</div>
-</header>
-<aside class="NavigationDrawer js-header">
-	<nav class="NavigationDrawer-nav">
-		<ul class="NavigationDrawer-list">
-		{{ range .Site.Menus.main }}
-		{{ if .HasChildren }}
-			<li class="NavigationDrawer-listItem js-mobile-subnav-trigger  NavigationDrawer-hasSubnav">
-				<a href="#" tabindex="-1"><span>{{ .Name }}</span> →</a>
-				<div class="NavigationDrawer NavigationDrawer-submenuItem">
-					<nav class="NavigationDrawer-nav">
-						<div class="NavigationDrawer-header">
-							<a href="#" tabindex="-1">← {{ .Name }}</a>
-						</div>
-						<ul class="NavigationDrawer-list">
-							{{ range .Children }}
-							<li class="NavigationDrawer-listItem">
-								<a href="{{ .URL | relLangURL }}" tabindex="-1">
-									{{ .Name }}
-								</a>
-							</li>
-							{{ end }}
-						</ul>
-					</nav>
-				</div>
-			</li>
-		{{ else }}
-			<li class="NavigationDrawer-listItem ">
-				<a href="{{ .URL | relLangURL }}" tabindex="-1">{{ .Name }}</a>
-			</li>
-		{{ end }}
-		{{ end }}
-		</ul>
-	</nav>
-</aside>
-<div class="NavigationDrawer-scrim js-scrim" role="presentation"></div>
+<!-- Navbar Start -->
+<nav class="main-nav navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand" href={{ "" | absURL }}>
+      {{ .Site.Title }}
+    </a>
+    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#mainNav">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <div class="collapse navbar-collapse nav-list" id="mainNav">
+      <!-- Navigation Links -->
+      <ul class="navbar-nav ml-auto">
+        {{ range .Site.Menus.main }}
+        <li class="nav-item">
+          <a class="nav-link" href={{ .URL | absURL }}>{{ .Name }}</a>
+        </li>
+        {{ end }}
+      </ul>
+    </div>
+  </div>
+</nav>

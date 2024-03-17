@@ -4,6 +4,8 @@ date = "2021-03-09"
 author = "charly3pins"
 description = "I am gonna show you my setup for VS Code editor which makes me more productive and I feel more comfortable with the tool that I spend most of my time during the day."
 
+trending = true
+
 tags = ["productivity", "vscode"]
 
 image = "/images/vscode.jpeg"

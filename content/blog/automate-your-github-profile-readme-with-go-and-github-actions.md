@@ -4,6 +4,8 @@ date = "2021-03-16"
 author = "charly3pins"
 description = "Create a dynamic Markdown file for your README with the help of Go and deploy it to your profile's GitHub using GitHub Actions."
 
+trending = true
+
 tags = ["go", "github", "ci/cd"]
 
 image = "/images/github-profile-readme/charly3pins-profile.png"

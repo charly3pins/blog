@@ -1,5 +1,7 @@
 +++
 title = "Readings 📚"
+
+image = "/images/library.png"
 +++
 The list of books I am reading, have read or plan to read.
 
