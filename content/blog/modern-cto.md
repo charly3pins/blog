@@ -7,6 +7,8 @@ description = "The key points that I extracted after reading the book."
 tags = ["book", "management"]
 
 image = "/images/modern-cto.jpg"
+
+draft=true
 +++
 [Modern CTO](https://amzn.to/49VN1ag) is a book written by Joel Beasley that delves into the role of the Chief Technology Officer (CTO) in today's digital era.
 

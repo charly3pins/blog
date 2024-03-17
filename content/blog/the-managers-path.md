@@ -7,6 +7,8 @@ description = "The key points that I extracted after reading the book."
 tags = ["book", "management"]
 
 image = "/images/the-managers-path.jpg"
+
+draft=true
 +++
 [The Manager’s Path: A Guide for Tech Leaders Navigating Growth and Change](https://amzn.to/49KbiQF) by Camille Fournier is an indispensable resource for individuals navigating the challenging terrain of tech leadership. Drawing from her extensive experience as a tech executive, Fournier offers a comprehensive roadmap for professionals at every stage of their managerial journey.
 

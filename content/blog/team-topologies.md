@@ -7,6 +7,8 @@ description = "The key points that I extracted after reading the book."
 tags = ["book", "teams"]
 
 image = "/images/team-topologies.jpg"
+
+draft=true
 +++
 [Team Topologies: Organizing Business and Technology Teams for Fast Flow](https://amzn.to/43mRIYu) by Matthew Skelton and Manuel Pais is a groundbreaking book that offers a fresh perspective on how to structure and optimize teams within organizations to achieve faster delivery and innovation. Drawing from their extensive experience in technology and organizational design, Skelton and Pais introduce a novel approach to team organization that focuses on enabling efficient flow of work and collaboration.
 
