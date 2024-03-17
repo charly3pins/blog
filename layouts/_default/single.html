@@ -1,72 +1,101 @@
-<!DOCTYPE html>
-<html lang="{{ .Lang }}">
-	
-	{{ partial "head.html" . }}
+{{ define "main" }}
 
-	<body class="Site">
-		
-		{{ partial "header" . }}
+<section class="blog-single">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-2 order-2 order-lg-1">
+        <div class="share-now">
+          <a href="#" class="scrol">Share</a>
+          <div class="sociel-icon">
+            {{ $hashtags := delimit .Params.tags "," }}
+            <ul>
+              <li>
+                <a href="https://twitter.com/share?url={{ .Permalink }}&amp;text={{ .Title }}&amp;via=charly3pins&amp;hashtags={{$hashtags}}" target="_blank">
+                  <i class="fa fa-twitter"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/sharer.php?u={{ .Permalink }}&amp;t={{ .Title }}" target="_blank">
+                  <i class="fa fa-facebook"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ .Permalink }}&amp;title={{ .Title }}" target="_blank">
+                  <i class="fa fa-linkedin"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/share/url?url={{ .Permalink }}&amp;text={{ .Title }}" target="_blank">
+                  <i class="fa fa-telegram"></i>
+                </a>
+              </li>
+              <li>
+                <a href="whatsapp://send?text={{ .Title }} %0A%0A{{ .Permalink }}" target="_blank">
+                  <i class="fa fa-whatsapp"></i>
+                </a>
+              </li>
+              <li>
+                <a href="mailto:?&amp;body={{ .Permalink }}" target="_blank">
+                  <i class="fa fa-envelope"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-10 order-1 order-lg-2">
+        <article class="single-blog">
+          <div class="blog-post-tag">
+						{{range .Params.tags}}
+							<a href="{{ "tags/" | absURL }}{{ . | urlize }}/">{{ . }}</a>
+						{{end}}
+          </div>
+          <p class="title">{{ .Title }}</p>
+          <ul class="meta">
+            <li>
+              By <a href={{ "whois" | absURL }}>{{ $.Site.Params.author }}</a>
+            </li>
+            <li>
+              <i class="fa fa-clock-o"></i>
+              {{ .PublishDate.Format "January 2, 2006" }} - {{ .Params.readTime }} read
+            </li>
+          </ul>
+          {{ with .Params.image }}
+          <div class="feature-image">
+            <img src="{{ .  | absURL }}" alt="banner">
+          </div>
+          {{ end }}
+          <div class="single-blog-content">
+            {{ .Content }}
+          </div>
 
-		<main class="SiteContent SiteContent--default">
-			<div id="blog">
-				<div id="content">
-					<div id="content">
-						<div class="Article">
-							{{ if .Params.image }}
-							<img src="{{ .Params.image }}" alt="{{ .Params.title }}">
-							{{ end }}
-							<h1>{{ .Title }}</h1>
-							<p class="author">
-								<span>{{ .Date.Format "02/01/2006" }}</span>
-								· 
-								<span>{{ T "readingTime" }} {{ T "minutes" .ReadingTime }}</span>
-								<br>
-								<span class="tags-container">
-									<img class="tags-icon" src="/images/tags.png" alt="tags">
-									{{range .Params.tags}}
-									<a class="tag" href="{{ "tags/" | absURL }}{{ . | urlize }}/">{{ . }}</a>
-									{{end}}
-								</span>
-							</p>
-							{{ partial "social_share" . }}
+        </article>
+        <div class="blog-single-presentation">
+          <ul>
+            {{ with .Site.RegularPages.Prev . }}
+            <li> <a href="{{.RelPermalink}}" class="tag">PREVIOUS</a>
+              <a href="{{.RelPermalink}}" class="title">
+                {{ .Title }}
+              </a>
+              <i class="fa fa-clock-o"></i>
+              {{ .PublishDate.Format "January 2, 2006" }} - {{ .Params.readTime }}
+            </li>
+            {{ end }}
+            {{ with .Site.RegularPages.Next . }}
+            <li> <a href="{{.RelPermalink}}" class="tag">Next</a>
+              <a href="{{.RelPermalink}}" class="title">
+                {{ .Title }}
+              </a>
+              <i class="fa fa-clock-o"></i>
+              {{ .PublishDate.Format "January 2, 2006" }} - {{ .Params.readTime }}
+            </li>
+            {{ end }}
+          </ul>
+        </div>
+        {{ partial "comments" . }}
+      </div>
+    </div>
+  </div>
+</section>
 
-							<div class="post-content e-content" itemprop="articleBody">
-								{{ .Content | safeHTML }}
-							</div>
-
-							{{ partial "social_share" . }}
-
-							{{ $related := .Site.RegularPages.Related . | first 3 }}
-							{{ with $related }}
-							<h2>Related articles</h2>
-							<div id="blogindex">
-								{{ range . }}
-								<p class="blogtitle">
-									<a href="{{ .Permalink }}">{{ .Params.title }}</a>, <span class="date">{{ .Date.Format "02/01/2006" }}</span><br>
-									<span class="author">
-										<span class="tags-container">
-											<img class="tags-icon" src="/images/tags.png" alt="tags">
-											{{range .Params.tags}}
-											<a class="tag" style="font-weight: normal;" href="{{ "tags/" | absURL }}{{ . | urlize }}/">{{ . }}</a>
-											{{end}}
-										</span>
-									</span>
-								</p>
-								<p class="blogsummary">
-									{{ .Params.description }}
-								</p>
-								{{ end }}
-							</div>
-							{{ end }}
-						
-							{{ partial "comments" . }}
-						</div>
-					</div>
-				</div>
-			</div>
-		</main>
-		
-		{{ partial "footer" . }}
-	</body>
-
-</html>
+{{ end }}

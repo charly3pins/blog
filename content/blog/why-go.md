@@ -4,6 +4,8 @@ date = "2023-12-05"
 author = "charly3pins"
 description = "I have been asked many times why I am using Go, what it gives me and what are the reasons why I continue with this programming language. I am going to try to answer this question, in theory, simply, with the main reasons why I continue to be fascinated with it."
 
+trending = true
+
 tags = ["go"]
 
 image = "/images/gopher-nerdy.png"

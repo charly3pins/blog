@@ -4,6 +4,8 @@ date = "2021-02-12"
 author = "charly3pins"
 description = "Quick and simple steps to create a portfolio in your GitHub profile page with a special repository and with dynamic GitHub stats."
 
+trending = true
+
 tags = ["github"]
 
 image = "/images/github-profile-readme/charly3pins-profile.png"

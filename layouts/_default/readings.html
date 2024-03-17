@@ -1,24 +1,61 @@
-<!DOCTYPE html>
-<html lang="{{ .Lang }}">
-	
-	{{ partial "head.html" . }}
+{{ define "main" }}
 
-	<body class="Site">
-		
-		{{ partial "header" .}}
-		
-		<main class="SiteContent SiteContent--default">
-			<div id="blog">
-				<div id="content">
-					<div class="Article">	
-						<h1>{{ .Title }}</h1>
-						{{ .Content | safeHTML }}
-					</div>
-				</div>
+<section class="blog-single">
+	<div class="container">
+	  <div class="row">
+		<div class="col-lg-2 order-2 order-lg-1">
+		  <div class="share-now">
+			<a href="#" class="scrol">Share</a>
+			<div class="sociel-icon">
+				<ul>
+				  <li>
+					<a href="https://twitter.com/share?url={{ .Permalink }}&amp;text={{ .Title }}&amp;via=charly3pins&amp;hashtags=books,readings,library,recommendation" target="_blank">
+					  <i class="fa fa-twitter"></i>
+					</a>
+				  </li>
+				  <li>
+					<a href="https://www.facebook.com/sharer.php?u={{ .Permalink }}&amp;t={{ .Title }}" target="_blank">
+					  <i class="fa fa-facebook"></i>
+					</a>
+				  </li>
+				  <li>
+					<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ .Permalink }}&amp;title={{ .Title }}" target="_blank">
+					  <i class="fa fa-linkedin"></i>
+					</a>
+				  </li>
+				  <li>
+					<a href="https://telegram.me/share/url?url={{ .Permalink }}&amp;text={{ .Title }}" target="_blank">
+					  <i class="fa fa-telegram"></i>
+					</a>
+				  </li>
+				  <li>
+					<a href="whatsapp://send?text={{ .Title }} %0A%0A{{ .Permalink }}" target="_blank">
+					  <i class="fa fa-whatsapp"></i>
+					</a>
+				  </li>
+				  <li>
+					<a href="mailto:?&amp;body={{ .Permalink }}" target="_blank">
+					  <i class="fa fa-envelope"></i>
+					</a>
+				  </li>
+				</ul>
+			  </div>
+		  </div>
+		</div>
+		<div class="col-lg-10 order-1 order-lg-2">
+		  <article class="single-blog">
+			<p class="title">{{ .Title }}</p>
+			<div class="feature-image">
+			  <img src="{{ .Params.image  | absURL }}" alt="banner">
 			</div>
-		</main>
-				
-		{{ partial "footer" .}}
-	
-		</body>
-</html>
+			<div class="single-blog-content">
+			  {{ .Content }}
+			</div>
+  
+		  </article>
+		</div>
+	  </div>
+	</div>
+  </section>
+
+{{ end }}

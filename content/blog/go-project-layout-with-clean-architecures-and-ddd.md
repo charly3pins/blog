@@ -4,6 +4,8 @@ date = "2021-12-09"
 author = "charly3pins"
 description = "How I apply Clean architectures and DDD when I create a  project in Go."
 
+trending = true
+
 tags = ["go"]
 
 image = "/images/CleanArchitecture.jpg"
