@@ -7,8 +7,7 @@
     <div class="row">
       <div class="col-lg-8">
         <div class="blog-section-title">
-          <h2>{{ $.Site.Params.blogTitle }}</h2>
-          <p>{{ $.Site.Params.blogSubTitle }}</p>
+          <h2>{{ .Title }}</h2>
         </div>
         {{ range $.Paginator.Pages }}
         <article class="blog-post">
@@ -33,7 +32,7 @@
                 </li>
                 <li>
                   <i class="fa fa-clock-o"></i>
-                  {{ .PublishDate.Format "January 2, 2006" }}  - {{ T "readingTime" }} {{ T "minutes" .ReadingTime }}
+                  {{ .PublishDate.Format "02/01/2006" }}  - {{ T "readingTime" }} {{ T "minutes" .ReadingTime }}
                 </li>
               </ul>
             </div>
@@ -73,7 +72,7 @@
                 <ul>
                   <li>
                     <i class="fa fa-clock-o"></i>
-                    {{ .PublishDate.Format "January 2, 2006" }}  - {{ T "readingTime" }} {{ T "minutes" .ReadingTime }}
+                    {{ .PublishDate.Format "02/01/2006" }}  - {{ T "readingTime" }} {{ T "minutes" .ReadingTime }}
                   </li>
                 </ul>
               </div>
