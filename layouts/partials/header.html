@@ -1,4 +1,4 @@
-<nav class="main-nav nav-top navbar navbar-expand-lg">
+<!-- <nav class="main-nav nav-top navbar navbar-expand-lg">
 	<div class="container" style="display: flex; flex-direction: row; flex-wrap: wrap; width: 100%;">
 		<div style="display: flex; flex-direction: column;">
 			<a class="navbar-brand" href={{ "" | relLangURL }}>
@@ -13,7 +13,6 @@
 		</div>
 		<div style="display: flex; flex-direction: column; flex-basis: 100%;">
 			<div class="collapse navbar-collapse nav-list" id="mainNav">
-				<!-- Navigation Links -->
 				<ul class="navbar-nav">
 					{{ range .Site.Menus.main }}
 					<li class="nav-item">
@@ -36,4 +35,67 @@
 			</div>
 		</div>
 	</div>
-</nav>
+</nav> -->
+<script>
+	function openMenu() {
+		$("#button-menu-main").toggleClass("is-active");
+		$("#main-navigation").toggleClass("is-main-nav-open");
+	} 
+</script>
+<div class="main-header-wrapper" data-v-d35e2220="" data-v-39b597a5="">
+	<header role="banner" class="main-header is-pinned-visible" data-v-d35e2220="">
+		<div class="container" data-v-d35e2220="">
+			<div class="main-header__logo-wrapper" data-v-d35e2220="">
+				<button id="button-menu-main" onclick="openMenu();" type="button" aria-label="Abrir menú de navegación" aria-controls="main-navigation" aria-expanded="false" class="hamburger hamburger--spring navicon" data-v-25ffa9b5="" data-v-d35e2220=""><span class="hamburger-box" data-v-25ffa9b5=""><span class="hamburger-inner" data-v-25ffa9b5=""></span></span></button> 
+				<a href="{{ "" | relLangURL }}" aria-current="page" aria-label="Inicio" class="nuxt-link-exact-active nuxt-link-active" data-v-d35e2220="">
+					<div class="logo" data-v-d35e2220="">
+						<img src="{{ .Site.Params.avatar}}" alt="Charly3Pins" width="120" class="logo__isologo--claim" data-v-d35e2220="" style="border-radius:50%;"> 
+						<img src="{{ .Site.Params.avatar}}" alt="Charly3Pins" width="80" class="logo__isologo" data-v-d35e2220="" style="border-radius:50%;"> 
+						<img src="{{ .Site.Params.avatar}}" alt="Charly3Pins" width="40" loading="lazy" class="logo__isologo--mini" data-v-d35e2220="" style="border-radius:50%;"> 
+						<img src="{{ .Site.Params.avatar}}" alt="Charly3Pins" width="20" loading="lazy" class="logo__isotype" data-v-d35e2220="" style="border-radius:50%;">
+						<h4 style="font-weight: bold;color: white;">{{ .Site.Title}}</h4>
+					</div>
+				</a>
+			</div>
+			<nav id="main-navigation" role="navigation" class="main-header__nav" data-v-d35e2220="">
+				<ul class="main-nav" data-v-717045ee="" data-v-d35e2220="">
+					{{ $currentPage := . }}
+					{{ range .Site.Menus.main }}
+					{{ $menu_item_url := .URL | relLangURL }}
+					{{ $page_url:= $currentPage.RelPermalink | relLangURL }}
+					<li class="nav-item">
+						<a href={{ .URL | relLangURL }} aria-current="page" data-v-717045ee=""
+						{{ if eq $menu_item_url $page_url }} class="nuxt-link-exact-active nuxt-link-active" {{ end }} >
+							{{ .Name }}
+						</a>
+					</li>
+					{{ end }}
+					{{ range .Site.Languages }}
+					{{ if eq . $.Site.Language }}
+					<li class="nav-item">
+						<a title="{{ .LanguageName }}" data-v-717045ee="">
+							{{ .LanguageName }} <i class="fa fa-angle-down"></i>
+						</a>
+					</span>
+					{{ end }}
+					{{ end }}
+					{{ range $.Translations }}
+					<li class="nav-item">
+						<a title="{{ .Language.LanguageName }}" href="{{ .Permalink }}" data-v-717045ee="">
+							{{ .Language.LanguageName }}
+						</a>
+					</li>
+					{{ end }}
+				</ul>
+			</nav>
+		</div>
+		<!-- <div class="waves" data-v-d35e2220="">
+			<div class="wave" data-v-d35e2220=""></div>
+			<div class="wave-shadow" data-v-d35e2220=""></div>
+		</div>
+		<div class="waves--headroom" data-v-d35e2220="">
+			<div class="wave" data-v-d35e2220=""></div>
+			<div class="wave-shadow" data-v-d35e2220=""></div>
+		</div> -->
+	</header>
+</div>

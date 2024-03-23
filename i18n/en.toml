@@ -45,3 +45,33 @@ other = "By"
 
 [share]
 other = "Share"
+
+[allRights]
+other = "All rights reserved."
+
+[contact]
+other = "Contact"
+
+[termsAndConditions]
+other = "Terms and conditions"
+
+[privacyPolicy]
+other = "Privacy policy"
+
+[cookiesPolicy]
+other = "Cookies policy"
+
+[projectsDone]
+other = "Projects done"
+
+[projectIdea]
+other = "Tell me your idea"
+
+[currentlyReading]
+other = "Currently reading"
+
+[seeAllReadings]
+other = "See all readings"
+
+[seeAllPosts]
+other = "See more blog posts"

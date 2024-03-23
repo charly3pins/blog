@@ -7,6 +7,8 @@ description = "Prueba de concepto de la construcción de una aplicación para ad
 weight = "2"
 
 tags = ["go", "flutter", "python", "postgresql"]
+
+image = "/images/code/tournaments-generator/home.png"
 +++
 ## POR QUÉ
 

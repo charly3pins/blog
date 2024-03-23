@@ -1,14 +1,42 @@
 <!DOCTYPE html>
 <html>
-{{ partial "head.html" . }}
+    {{ partial "head.html" . }}
 
-<body>
-    {{ partial "header.html" . }}
-    <div id="content">
-        {{ block "main" . }}{{ end }}
-    </div>
+    <body>
+        <svg width="0" height="0" viewBox="0 0 1312 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" data-v-7a7a8ea5="" data-v-39b597a5="">
+            <clippath id="header-wave-shadow" data-v-7a7a8ea5="">
+                <path d="M0 0H1312V8C1312 8 1017.33 8 956 8C855.572 8 756.347 32 656 32C557.81 32 460.783 8 362.5 8C301.167 8 0 8 0 8V0Z" fill="black" data-v-7a7a8ea5=""></path>
+            </clippath>
+            <clippath id="header-wave" data-v-7a7a8ea5="">
+                <path d="M0 0H1312C1312 0 1017.33 0 956 0C855.242 0 756.614 32 656 32C555.396 32 456.762 0 356 0C294.667 0 0 0 0 0Z" fill="black" data-v-7a7a8ea5=""></path>
+            </clippath>
+            <clippath id="footer-wave-shadow" data-v-7a7a8ea5="">
+                <path d="M0 32H1312V24C1312 24 1017.33 24 956 24C855.572 24 756.347 0 656 0C557.81 0 460.783 24 362.5 24C301.167 24 0 24 0 24V32Z" fill="black" data-v-7a7a8ea5=""></path>
+            </clippath>
+            <clippath id="footer-wave" data-v-7a7a8ea5="">
+                <path d="M0 32H1312C1312 32 1017.33 32 956 32C855.242 32 756.614 0 656 0C555.396 0 456.762 32 356 32C294.667 32 0 32 0 32Z" fill="black" data-v-7a7a8ea5=""></path>
+            </clippath>
+            <clippath id="legal-wave" data-v-7a7a8ea5="">
+                <path d="M0,0v16h655.8c-110.2,0-219.2-4-328.2-8C218.8,4,109.9,0,0,0z M1312,0v16H656.3c111.5,0,219.8-4,328.1-8 C1092.6,4,1200.7,0,1312,0z" fill="black" data-v-7a7a8ea5=""></path>
+            </clippath>
+            <clippath id="header-wave-shadow--headroom" data-v-7a7a8ea5="">
+                <path d="M0 0H1312V7C1312 7 1017.33 7 956 7C855.572 7 756.347 12 656 12C557.81 12 460.783 7 362.5 7C301.167 7 0 7 0 7V0Z" fill="black" data-v-7a7a8ea5=""></path>
+            </clippath>
+            <clippath id="header-wave--headroom" data-v-7a7a8ea5="">
+                <path d="M0 0H1312C1312 0 1017.33 0 956 0C855.242 0 756.614 12 656 12C555.396 12 456.762 0 356 0C294.667 0 0 0 0 0Z" fill="black" data-v-7a7a8ea5=""></path>
+            </clippath>
+        </svg>
+        <div class="main-layout" data-v-39b597a5="">
+            {{ partial "header.html" . }}
+            
+            <div role="main" class="main-layout__content" data-v-39b597a5>
 
-    {{ partial "footer.html" . }}
-</body>
+                {{ block "main" . }}{{ end }}
+                
+            </div>
+
+            {{ partial "footer.html" . }}
+        </div>
+    </body>
 
 </html>

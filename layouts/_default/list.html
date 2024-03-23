@@ -1,88 +1,67 @@
 {{ define "main" }}
 
-{{ partial "feature.html" . }}
-
-<section class="blog">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8">
-        <div class="blog-section-title">
-          <h2>{{ .Title }}</h2>
-        </div>
+<main data-v-0fd01174="" data-v-39b597a5="" class="main-content archive">
+	<div data-v-0fd01174="" class="container-m">
+		<div data-v-0fd01174="" class="page-header">
+			<h1 data-v-0fd01174="" class="page-title">
+				{{ .Title }}
+			</h1>
+			<p data-v-0fd01174="" class="page-intro">
+				{{ .Description }}
+        <!-- No están todas las que son pero son todas las que están. Esta selección de ediciones pasadas te permitirá <u data-v-0fd01174="">hacerte una idea de lo que puedes esperar si te suscribes</u> o recuperar temas que se trataron antes de que lo hicieras. -->
+			</p>
+		</div>
+	</div>
+	<div data-v-03ba9c8e="" data-v-0fd01174="" class="archive">
+		<div data-v-03ba9c8e="" class="container">
+			<div data-v-03ba9c8e="" class="archive__list">
         {{ range $.Paginator.Pages }}
-        <article class="blog-post">
-          {{ with .Params.image }}
-          <div class="blog-post-thumb">
-            <img src="{{ .  | absURL }}" alt="blog-thum" />
-          </div>
-          {{ end }}
-          <div class="blog-post-content">
-            <div class="blog-post-tag">
-              {{range .Params.tags}}
-                <a href="{{ "tags/" | relLangURL }}{{ . | urlize }}/">{{ . }}</a>
-              {{end}}
-            </div>
-            <div class="blog-post-title">
-              <a href="{{ .Permalink }}"> {{ .Title }} </a>
-            </div>
-            <div class="blog-post-meta">
-              <ul>
-                <li>
-                  {{ T "by" }} <a href={{ "whois" | relLangURL }}>{{ $.Site.Params.author }}</a>
-                </li>
-                <li>
-                  <i class="fa fa-clock-o"></i>
-                  {{ .PublishDate.Format "02/01/2006" }}  - {{ T "readingTime" }} {{ T "minutes" .ReadingTime }}
-                </li>
-              </ul>
-            </div>
-            <p>
-              {{ .Summary }}
-            </p>
-            <a href="{{ .Permalink }}" class="blog-post-action">{{ T "readMore" }} <i class="fa fa-angle-right"></i></a>
-          </div>
-        </article>
+				<a data-v-686bf5b7="" data-v-03ba9c8e="" href="{{ .Permalink }}" rel="noopener" class="archive-item">
+					<div data-v-686bf5b7="" class="archive-item__img"><img data-v-686bf5b7="" src="{{ .Params.image  | absURL }}" alt="{{ .Title }}" width="280" height="280" loading="lazy"></div>
+					<!-- <div data-v-686bf5b7="" class="archive-item__issue">
+						<div data-v-686bf5b7="" class="archive-item__issue-label">
+							— Nº —
+						</div>
+						<div data-v-686bf5b7="" class="archive-item__issue-figure">
+							622
+						</div>
+					</div> -->
+					<div data-v-686bf5b7="" class="archive-item__info">
+						<h3 data-v-686bf5b7="" class="archive-item__title">{{ .Title }}</h3>
+						<!----> 
+						<div data-v-686bf5b7="" class="archive-item__date">
+							<svg data-v-686bf5b7="" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="calendar-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-calendar-alt fa-w-14">
+								<path data-v-686bf5b7="" fill="currentColor" d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z" class=""></path>
+							</svg>
+							{{ .PublishDate.Format "02/01/2006" }}
+						</div>
+					</div>
+				</a>
         {{ end }}
-        {{ partial "pagination" .}}
-      </div>
-
-      <div class="col-lg-4">
-        <div class="blog-post-widget">
-          <div class="latest-widget-title">
-            <h2>Trending post</h2>
-          </div>
-          {{ range $i, $.Site.RegularPages }} {{ if eq .Params.trending true }}
-          <div class="latest-widget">
-            <div class="latest-widget-thum">
-              <a href="{{ .Permalink }}" class="post-thumb"
-                style='background-image: url("{{ .Params.image | absURL }}")'>
-              </a>
-              <div class="icon">
-                <a href="{{ .Permalink }}">
-                  <img src="{{ $.Site.Params.trendingBlogIcon | absURL }}" alt="icon" /></a>
-              </div>
-            </div>
-            <div class="latest-widget-content">
-              <div class="content-title">
-                <a href="{{ .Permalink }}">
-                  {{ .Title }}
-                </a>
-              </div>
-              <div class="content-meta">
-                <ul>
-                  <li>
-                    <i class="fa fa-clock-o"></i>
-                    {{ .PublishDate.Format "02/01/2006" }}  - {{ T "readingTime" }} {{ T "minutes" .ReadingTime }}
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          {{ end }} {{ end }}
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+			</div>
+      {{ partial "pagination" .}}
+		</div>
+	</div>
+	<div data-v-0fd01174="" class="archive__ctas">
+		<div data-v-3ef7e29e="" data-v-0fd01174="" class="subscription">
+			<div data-v-3ef7e29e="" class="subscription__content">
+				<p data-v-3ef7e29e="" class="subscription__title">
+					Suscríbete para recibir una reflexión, historia o experiencia cada
+					domingo…
+				</p>
+				<form data-v-3ef7e29e="" action="" method="post" name="mc-embedded-subscribe-form" target="_blank" novalidate="novalidate" class="validate subscription__form">
+					<div data-v-3ef7e29e="" class="form-group"><label data-v-3ef7e29e="" for="mce-EMAIL">Tu email</label> <input data-v-3ef7e29e="" id="mce-EMAIL" name="EMAIL" value="" type="email" placeholder="Escribe aquí tu email" required="required"></div>
+					<div data-v-3ef7e29e="" aria-hidden="true" style="position: absolute; left: -5000px;"><input data-v-3ef7e29e="" type="text" name="b_374c664073e1a1fa3deca53b4_5fecfdb41f" tabindex="-1" value=""></div>
+					<button data-v-3ef7e29e="" type="submit" class="btn">
+						<svg data-v-3ef7e29e="" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-check fa-w-16">
+							<path data-v-3ef7e29e="" fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" class=""></path>
+						</svg>
+						Enviar
+					</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</main>
 
 {{ end }}

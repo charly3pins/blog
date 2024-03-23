@@ -1,0 +1,19 @@
+{{ define "main" }}
+
+<section class="blog-single">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 order-1 order-lg-2">
+        <article class="single-blog">
+          <h1 class="title">Page not found ¯\_ (ツ)_/¯</h1>
+          <div class="feature-image">
+            <img src="{{ .Site.Params.errorPage }}" alt="site 404 image">
+          </div>
+        </article>
+        <a href="/" class="blog-post-action">← Rollback my action</i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}

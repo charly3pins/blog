@@ -7,6 +7,8 @@ description = "Como proyecto de fin de carrera de Ingeniería Informática, cons
 weight = "1"
 
 tags = ["php", "javascript", "mysql"]
+
+image = "/images/code/collectus/main-app.jpeg"
 +++
 ## POR QUÉ
 
@@ -24,7 +26,6 @@ Al final el proyecto terminó siendo súper exitoso, mi tutor quedó encantado c
 
 Llamé a la aplicación Collectus porque es la palabra latina que significa "reunir, recolectar", por lo que en ese caso encaja perfectamente. Es un sistema de base de datos flexible para coleccionables y cualquier otro objeto o dato que el usuario quiera ordenar y clasificar. Collectus está pensado para coleccionistas, permitiéndoles realizar un seguimiento de cualquier tipo de colección que tengan, utilizando un sistema de base de datos con una estructura abierta adaptable a cada necesidad. También proporciona dos tipos de inicio de sesión para los usuarios, creando uno nuevo para la plataforma o usando su cuenta de Facebook conectándolo con la API de Facebook.
 
-![app](/images/code/collectus/main-app.jpeg)
 ![login](/images/code/collectus/login.jpeg)
 
 Mediante plantillas el usuario puede establecer todo tipo de récords para elementos tan diversos como sellos o placas de cava, carteles o fósiles, muñecos de trapo o billetes de lotería. Una vez definida la plantilla (categoría) para el objeto o tipo de objeto de interés, y el usuario puede ingresar los datos inmediatamente.

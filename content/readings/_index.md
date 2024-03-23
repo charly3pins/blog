@@ -1,9 +1,9 @@
 +++
 title = "Readings 📚"
+description = "The list of books I am reading, have read or plan to read."
 
 image = "/images/library.png"
 +++
-The list of books I am reading, have read or plan to read.
 
 ## Reading
 * [Software Engineering at Google: Lessons Learned from Programming Over Time](https://amzn.to/3TgWORq) by _Titus Winters, Tom Manshreck, Hyrum Wright_

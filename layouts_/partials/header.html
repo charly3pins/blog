@@ -1,0 +1,39 @@
+<nav class="main-nav nav-top navbar navbar-expand-lg">
+	<div class="container" style="display: flex; flex-direction: row; flex-wrap: wrap; width: 100%;">
+		<div style="display: flex; flex-direction: column;">
+			<a class="navbar-brand" href={{ "" | relLangURL }}>
+				<img class="logo-main" src={{ .Site.Params.avatar  | absURL }} alt="logo" />
+				<div>{{ .Site.Title }}</div>
+			</a>
+			<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#mainNav">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+		</div>
+		<div style="display: flex; flex-direction: column; flex-basis: 100%;">
+			<div class="collapse navbar-collapse nav-list" id="mainNav">
+				<!-- Navigation Links -->
+				<ul class="navbar-nav">
+					{{ range .Site.Menus.main }}
+					<li class="nav-item">
+						<a class="nav-link" href={{ .URL | relLangURL }}>{{ .Name }}</a>
+					</li>
+					{{ end }}
+					<li class="nav-item">
+						{{ range .Site.Languages }}
+						{{ if eq . $.Site.Language }}
+						<span class="nav-link">{{ .LanguageName }} <i class="fa fa-angle-down"></i></span>
+						{{ end }}
+						{{ end }}
+						{{ range $.Translations }}
+						<a class="nav-link" title="{{ .Language.LanguageName }}" href="{{ .Permalink }}">
+							| {{ .Language.LanguageName }}
+						</a>
+						{{ end }}
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</nav>

@@ -1,28 +1,96 @@
-{{ $pag := $.Paginator }}
-{{ if gt $pag.TotalPages 1 }}
-<div class="blog-post-pagination">
-  <nav aria-label="Page navigation example" class="nav-bg">
-    <ul class="pagination">
-      {{ range $pag.Pagers }}
-      {{ if eq . $pag }}
-      <li class="page-item">
-        <a class="page-link active" href="{{ .URL }}">{{ .PageNumber }}</a>
-      </li>
-      {{ else }}
-      <li class="page-item">
-        <a class="page-link" href="{{ .URL }}">{{ .PageNumber }}</a>
-      </li>
-      {{ end }}
-      {{ end }}
+{{- $page := . }}
+{{- $format := "default" }}
 
-      {{ if $pag.HasNext }}
-      <li class="page-item">
-        <a class="page-link" href="{{ $pag.Next.URL }}" rel="next">
-          <i class="fa fa-angle-right"></i>
-        </a>
-      </li>
-      {{ end }}
-    </ul>
-  </nav>
-</div>
-{{ end }}
+{{- if gt $page.Paginator.TotalPages 1 }}
+  <div data-v-4174f4be="" data-v-03ba9c8e="" class="pager">
+    <div data-v-4174f4be="" class="pager__buttons">
+      {{- partial (printf "partials/inline/pagination/%s" $format) $page }}
+    </div>
+  </div>
+{{- end }}
+
+{{/* Format: default
+{{/* --------------------------------------------------------------------- */}}
+{{- define "partials/inline/pagination/default" }}
+  {{- with .Paginator }}
+    {{- $currentPageNumber := .PageNumber }}
+
+    {{- with .First }}
+      {{- if ne $currentPageNumber .PageNumber }}
+      <button onclick="location.href='{{ .URL }}'" data-v-4174f4be="" aria-label="Ir a la primera página" class="btn-secondary pager__first">
+        <svg data-v-4174f4be="" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="arrow-to-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-arrow-to-left fa-w-14">
+          <path data-v-4174f4be="" fill="currentColor" d="M216 412.5l-148.5-148c-4.7-4.7-4.7-12.3 0-17L216 99.5c4.7-4.7 12.3-4.7 17 0l7.1 7.1c4.7 4.7 4.7 12.3 0 17L124.1 239H436c6.6 0 12 5.4 12 12v10c0 6.6-5.4 12-12 12H124.1L240 388.4c4.7 4.7 4.7 12.3 0 17l-7.1 7.1c-4.6 4.7-12.2 4.7-16.9 0zM12 448h8c6.6 0 12-5.4 12-12V76c0-6.6-5.4-12-12-12h-8C5.4 64 0 69.4 0 76v360c0 6.6 5.4 12 12 12z" class=""></path>
+        </svg>
+      </button>
+      {{- else }}
+      <button data-v-4174f4be="" disabled="true" aria-label="Ir a la primera página" class="btn-secondary pager__first">
+        <svg data-v-4174f4be="" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="arrow-to-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-arrow-to-left fa-w-14">
+          <path data-v-4174f4be="" fill="currentColor" d="M216 412.5l-148.5-148c-4.7-4.7-4.7-12.3 0-17L216 99.5c4.7-4.7 12.3-4.7 17 0l7.1 7.1c4.7 4.7 4.7 12.3 0 17L124.1 239H436c6.6 0 12 5.4 12 12v10c0 6.6-5.4 12-12 12H124.1L240 388.4c4.7 4.7 4.7 12.3 0 17l-7.1 7.1c-4.6 4.7-12.2 4.7-16.9 0zM12 448h8c6.6 0 12-5.4 12-12V76c0-6.6-5.4-12-12-12h-8C5.4 64 0 69.4 0 76v360c0 6.6 5.4 12 12 12z" class=""></path>
+        </svg>
+      </button>
+      {{- end }}
+    {{- end }}
+
+    {{- with .Prev }}
+    <button onclick="location.href='{{ .URL }}'" data-v-4174f4be="" aria-label="Ir a la página anterior" class="btn-secondary pager__prev">
+      <svg data-v-4174f4be="" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="arrow-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-arrow-left fa-w-14">
+        <path data-v-4174f4be="" fill="currentColor" d="M231.536 475.535l7.071-7.07c4.686-4.686 4.686-12.284 0-16.971L60.113 273H436c6.627 0 12-5.373 12-12v-10c0-6.627-5.373-12-12-12H60.113L238.607 60.506c4.686-4.686 4.686-12.284 0-16.971l-7.071-7.07c-4.686-4.686-12.284-4.686-16.97 0L3.515 247.515c-4.686 4.686-4.686 12.284 0 16.971l211.051 211.05c4.686 4.686 12.284 4.686 16.97-.001z" class=""></path>
+      </svg>
+    </button>
+    {{- else }}
+    <button data-v-4174f4be="" aria-label="Ir a la página anterior" class="btn-secondary pager__prev">
+      <svg data-v-4174f4be="" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="arrow-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-arrow-left fa-w-14">
+        <path data-v-4174f4be="" fill="currentColor" d="M231.536 475.535l7.071-7.07c4.686-4.686 4.686-12.284 0-16.971L60.113 273H436c6.627 0 12-5.373 12-12v-10c0-6.627-5.373-12-12-12H60.113L238.607 60.506c4.686-4.686 4.686-12.284 0-16.971l-7.071-7.07c-4.686-4.686-12.284-4.686-16.97 0L3.515 247.515c-4.686 4.686-4.686 12.284 0 16.971l211.051 211.05c4.686 4.686 12.284 4.686 16.97-.001z" class=""></path>
+      </svg>
+    </button>
+    {{- end }}
+
+    {{- $slots := 5 }}
+    {{- $start := math.Max 1 (sub .PageNumber (math.Floor (div $slots 2))) }}
+    {{- $end := math.Min .TotalPages (sub (add $start $slots) 1) }}
+    {{- if lt (add (sub $end $start) 1) $slots }}
+      {{- $start = math.Max 1 (add (sub $end $slots) 1) }}
+    {{- end }}
+
+    {{- range $k := seq $start $end }}
+      {{- if eq $.Paginator.PageNumber $k }}
+      <button data-v-4174f4be="" aria-label="Página {{ $k }}" class="btn-tertiary is-active">
+        {{ $k }}
+      </button>
+      {{- else }}
+      <button onclick="location.href='{{ (index $.Paginator.Pagers (sub $k 1)).URL }}'" data-v-4174f4be="" aria-label="Ir a la página {{ $k }}" class="btn-tertiary">
+        {{ $k }}
+      </button>
+      {{- end }}
+    {{- end }}
+
+    {{- with .Next }}
+    <button onclick="location.href='{{ .URL }}'" data-v-4174f4be="" aria-label="Ir a la siguiente página" class="btn-secondary pager__next">
+      <svg data-v-4174f4be="" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="arrow-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-arrow-right fa-w-14">
+        <path data-v-4174f4be="" fill="currentColor" d="M216.464 36.465l-7.071 7.07c-4.686 4.686-4.686 12.284 0 16.971L387.887 239H12c-6.627 0-12 5.373-12 12v10c0 6.627 5.373 12 12 12h375.887L209.393 451.494c-4.686 4.686-4.686 12.284 0 16.971l7.071 7.07c4.686 4.686 12.284 4.686 16.97 0l211.051-211.05c4.686-4.686 4.686-12.284 0-16.971L233.434 36.465c-4.686-4.687-12.284-4.687-16.97 0z" class=""></path>
+      </svg>
+    </button>
+    {{- else }}
+    <button data-v-4174f4be="" aria-label="Ir a la siguiente página" class="btn-secondary pager__next">
+      <svg data-v-4174f4be="" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="arrow-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-arrow-right fa-w-14">
+        <path data-v-4174f4be="" fill="currentColor" d="M216.464 36.465l-7.071 7.07c-4.686 4.686-4.686 12.284 0 16.971L387.887 239H12c-6.627 0-12 5.373-12 12v10c0 6.627 5.373 12 12 12h375.887L209.393 451.494c-4.686 4.686-4.686 12.284 0 16.971l7.071 7.07c4.686 4.686 12.284 4.686 16.97 0l211.051-211.05c4.686-4.686 4.686-12.284 0-16.971L233.434 36.465c-4.686-4.687-12.284-4.687-16.97 0z" class=""></path>
+      </svg>
+    {{- end }}
+
+    {{- with .Last }}
+      {{- if ne $currentPageNumber .PageNumber }}
+      <button onclick="location.href='{{ .URL }}'" data-v-4174f4be="" aria-label="Ir a la última página" class="btn-secondary pager__last">
+        <svg data-v-4174f4be="" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="arrow-to-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-arrow-to-right fa-w-14">
+          <path data-v-4174f4be="" fill="currentColor" d="M215 99.5l-7.1 7.1c-4.7 4.7-4.7 12.3 0 17l116 115.4H12c-6.6 0-12 5.4-12 12v10c0 6.6 5.4 12 12 12h311.9L208 388.4c-4.7 4.7-4.7 12.3 0 17l7.1 7.1c4.7 4.7 12.3 4.7 17 0l148.5-148c4.7-4.7 4.7-12.3 0-17L232 99.5c-4.7-4.7-12.3-4.7-17 0zM448 76v360c0 6.6-5.4 12-12 12h-8c-6.6 0-12-5.4-12-12V76c0-6.6 5.4-12 12-12h8c6.6 0 12 5.4 12 12z" class=""></path>
+        </svg>
+      </button>
+      {{- else }}
+      <button data-v-4174f4be="" aria-label="Ir a la última página" class="btn-secondary pager__last">
+        <svg data-v-4174f4be="" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="arrow-to-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-arrow-to-right fa-w-14">
+          <path data-v-4174f4be="" fill="currentColor" d="M215 99.5l-7.1 7.1c-4.7 4.7-4.7 12.3 0 17l116 115.4H12c-6.6 0-12 5.4-12 12v10c0 6.6 5.4 12 12 12h311.9L208 388.4c-4.7 4.7-4.7 12.3 0 17l7.1 7.1c4.7 4.7 12.3 4.7 17 0l148.5-148c4.7-4.7 4.7-12.3 0-17L232 99.5c-4.7-4.7-12.3-4.7-17 0zM448 76v360c0 6.6-5.4 12-12 12h-8c-6.6 0-12-5.4-12-12V76c0-6.6 5.4-12 12-12h8c6.6 0 12 5.4 12 12z" class=""></path>
+        </svg>
+      </button>
+      {{- end }}
+    {{- end }}
+  {{- end }}
+{{- end -}}

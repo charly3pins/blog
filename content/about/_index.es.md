@@ -1,8 +1,7 @@
 +++
-title = "Quién es 🤷‍♂️"
+title = "¿Quién soy? 🤷‍♂️"
+description = "Soy un ingeniero de software apasionado que disfruta estar en el mundo de la tecnología en constante evolución y muestra un entusiasmo ilimitado por explorar nuevas innovaciones y tendencias emergentes."
 +++
-Soy un ingeniero de software apasionado que disfruta estar en el mundo de la tecnología en constante evolución y muestra un entusiasmo ilimitado por explorar nuevas innovaciones y tendencias emergentes.
-
 Con experiencia en diferentes sectores y diferentes roles, abordo cada desafío con fervor, aprovechando mis habilidades para crear las mejores soluciones que superen los límites de lo posible, siempre con las mejores prácticas y al mismo tiempo contando con altos niveles de seguridad, resiliencia y escalabilidad.
 
 Mi entusiasmo surge de la oportunidad de aprender, adaptarme y crear continuamente, lo que me convierte en un activo invaluable en cualquier equipo dedicado a ser pionero en el futuro de la tecnología.

@@ -1,9 +1,9 @@
 +++
 title = "Lecturas 📚"
+description = "La lista de los libros que estoy leyendo, he leido o tengo planeado leer."
 
 image = "/images/library.png"
 +++
-La lista de los libros que estoy leyendo, he leido o tengo planeado leer.
 
 ## Leyendo
 * [Software Engineering at Google: Lessons Learned from Programming Over Time](https://amzn.to/3TgWORq) de _Titus Winters, Tom Manshreck, Hyrum Wright_

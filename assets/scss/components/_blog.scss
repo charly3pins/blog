@@ -74,15 +74,14 @@
     }
     &-tag {
       a {
-        background-color: $black;
-        padding: 4px 20px;
+        border: 1px solid #223134;
+        padding: 1px 10px;
         display: inline-block;
         border-radius: 50px;
         text-decoration: none;
         font-size: 12px;
-        color: $white;
+        color: #223134;
         font-weight: 600;
-        margin-bottom: 20px;
       }
     }
     &-meta {
@@ -264,7 +263,7 @@
 
   // start-blog-details
   &-single {
-    padding: 100px 0 50px;
+    // padding: 100px 0 50px;
     @include desktop {
       padding-top: 50px;
     }

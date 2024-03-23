@@ -1,50 +1,53 @@
 {{ define "main" }}
-<section class="blog">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-8 mx-auto">
-				<div class="blog-section-title">
-					<h2>{{ .Title }}</h2>
-				</div>
-				<div class="blog-post-tag">
-					{{range .Site.Taxonomies.tags}}
-						<a href="{{ .Page.Permalink }}/">{{ .Page.Title }}({{.Count}})</a>
-					{{end}}
-				</div>
-				{{ if (ne .Title "Tags")}}
-				{{ range $.Paginator.Pages }}
-				<article class="blog-post">
-					{{ with .Params.image }}
-					<div class="blog-post-thumb">
-						<img src="{{ .  | absURL }}" alt="blog-thum" />
-					</div>
-					{{ end }}
-					<div class="blog-post-content">
-						<div class="blog-post-title">
-							<a href="{{ .Permalink }}"> {{ .Title }} </a>
-						</div>
-						<div class="blog-post-meta">
-							<ul>
-								<li>
-									{{ T "by" }} <a href={{ "whois" | relLangURL }}>{{ $.Site.Params.author }}</a>
-								</li>
-								<li>
-									<i class="fa fa-clock-o"></i>
-									{{ .PublishDate.Format "02/01/2006" }} - {{ T "readingTime" }} {{ T "minutes" .ReadingTime }}
-								</li>
-							</ul>
-						</div>
-						<p>
-							{{.Summary}}
-						</p>
-						<a href="{{ .Permalink }}" class="blog-post-action">{{ T "readMore" }} <i class="fa fa-angle-right"></i></a>
-					</div>
-				</article>
-				{{ end }}
-				{{ partial "pagination" .}}
-				{{ end }}
+
+<main data-v-0fd01174="" data-v-39b597a5="" class="main-content archive">
+	<div data-v-0fd01174="" class="container-m">
+		<div data-v-0fd01174="" class="page-header">
+			<h1 data-v-0fd01174="" class="page-title">
+				{{ .Title }}
+			</h1>
+			<p data-v-0fd01174="" class="page-intro">
+				{{ .Description }}
+			</p>
+			<div class="blog-post-tag">
+				{{range .Site.Taxonomies.tags}}
+					<a href="{{ .Page.Permalink }}/">{{ .Page.Title }}({{.Count}})</a>
+				{{end}}
 			</div>
+			{{ if (ne .Title "Tags")}}
+			{{ range $.Paginator.Pages }}
+			<article class="blog-post">
+				{{ with .Params.image }}
+				<div class="blog-post-thumb">
+					<img src="{{ .  | absURL }}" alt="blog-thum" />
+				</div>
+				{{ end }}
+				<div class="blog-post-content">
+					<div class="blog-post-title">
+						<a href="{{ .Permalink }}"> {{ .Title }} </a>
+					</div>
+					<div class="blog-post-meta">
+						<ul>
+							<li>
+								{{ T "by" }} <a href={{ "whois" | relLangURL }}>{{ $.Site.Params.author }}</a>
+							</li>
+							<li>
+								<i class="fa fa-clock-o"></i>
+								{{ .PublishDate.Format "02/01/2006" }} - {{ T "readingTime" }} {{ T "minutes" .ReadingTime }}
+							</li>
+						</ul>
+					</div>
+					<p>
+						{{.Summary}}
+					</p>
+					<a href="{{ .Permalink }}" class="blog-post-action">{{ T "readMore" }} <i class="fa fa-angle-right"></i></a>
+				</div>
+			</article>
+			{{ end }}
+			{{ partial "pagination" .}}
+			{{ end }}
 		</div>
 	</div>
-</section>
+</main>
+
 {{ end }}

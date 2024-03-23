@@ -1,0 +1,46 @@
+<div class="home-projects" data-v-ffc74b36="" data-v-80f09ed0="">
+    <div class="container" data-v-ffc74b36="">
+        <div class="home-projects__header" data-v-ffc74b36="">
+            <!-- <img src="{{ .Site.Params.avatar}}" alt="" width="80" height="80" style="border-radius: 50%;" data-v-ffc74b36="">  -->
+            <h2 class="h1" data-v-ffc74b36="">
+                – {{ T "projectsDone" }} –
+            </h2>
+        </div>
+        <div class="home-projects__carousel" data-v-ffc74b36="">
+            <div data-v-3d1a4f76="" data-v-0e30e861="" data-v-ffc74b36="" dir="ltr" class="projects-carousel slick-slider slick-initialized">
+                <div data-v-3d1a4f76="" class="slick-list">
+                    <div data-v-e4caeaf8="" data-v-3d1a4f76="" class="slick-track" style="opacity: 1; transform: translate3d(0px, 0px, 0px);">
+                        {{ range $i, $el := first 4 (where .Paginator.Pages ".Section" "projects") }}
+                        <a href="{{ .Permalink }}" style="color:black;">
+                            <div data-v-e4caeaf8="">
+                                <div data-v-e4caeaf8="">
+                                    <div data-v-0e30e861="" data-v-e4caeaf8="" tabindex="-1" class="projects-carousel__item" style="width: 100%; display: inline-block;">
+                                        <p>{{ .Title }}</p>
+                                        <img data-v-0e30e861="" data-v-e4caeaf8="" src="{{ .Params.image }}" alt="{{ .Title }}">
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        {{ end }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="home-projects__cta" data-v-ffc74b36="">
+            <a href="mailto:{{ .Site.Author.email }}" class="btn-secondary" data-v-ffc74b36="">
+                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-plus-circle fa-w-16" data-v-ffc74b36="">
+                    <path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z" data-v-ffc74b36="" class=""></path>
+                </svg>
+                {{ T "projectIdea" }}
+            </a>
+        </div>
+    </div>
+    <!-- <div class="waves-top" data-v-ffc74b36="">
+        <div class="wave" data-v-ffc74b36=""></div>
+        <div class="wave-shadow" data-v-ffc74b36=""></div>
+    </div>
+    <div class="waves-bottom" data-v-ffc74b36="">
+        <div class="wave" data-v-ffc74b36=""></div>
+        <div class="wave-shadow" data-v-ffc74b36=""></div>
+    </div> -->
+</div>

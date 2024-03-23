@@ -1,11 +1,11 @@
-baseURL = "https://charly3pins.dev/"
+basepageref = "https://charly3pins.dev/"
 languageCode = "en-us"
 title = "charly3pins.dev"
 defaultContentLanguage = "en"
 pygmentsUseClasses=true
 enableRobotsTXT = true
 googleAnalytics = "G-KX7XNRQ64E"
-
+paginate = 12
 
 [author]
 	name = "Charly3Pins"
@@ -30,44 +30,37 @@ googleAnalytics = "G-KX7XNRQ64E"
             indexSubTitleSE = "Experiences working as Software Engineer"
             indexSubTitleProjects = "Projects I code and much more!"
             indexSubTitleEmail = "Want to get in touch?"
-    
+
             [[languages.en.menu.main]]
-                name = "Who is 🤷‍♂️"
-                url = "whois"
+                name = "Home"
+                url = "/"
                 weight = 1
 
             [[languages.en.menu.main]]
-                name = "Blog ✍️"
-                url = "blog"
+                name = "Blog"
+                url = "/blog/"
                 weight = 2
             
             [[languages.en.menu.main]]
-                name = "Readings 📚"
-                url = "readings"
-                weight = 2
+                name = "Readings"
+                url = "/readings/"
+                weight = 3
 
             [[languages.en.menu.main]]
                 identifier = "projects"
-                name = "Projects 👨‍💻"
-                url = "projects"
-                weight = 3
+                name = "Projects"
+                url = "/projects/"
+                weight = 5
             
             [[languages.en.menu.main]]
-                name = "Collectus"
-                url = "projects/collectus"
-                weight = 1
-                parent = "projects"
+                name = "About"
+                url = "/about/"
+                weight = 5
 
             [[languages.en.menu.main]]
-                name = "Tournaments Generator"
-                url = "projects/tournaments-generator"
-                weight = 2
-                parent = "projects"
-
-            [[languages.en.menu.main]]
-                name = "Tags 🔠"
-                url = "tags"
-                weight = 4
+                name = "Tags"
+                url = "/tags/"
+                weight = 6
 
 	[languages.es]
 		languageName = "Spanish"
@@ -80,44 +73,37 @@ googleAnalytics = "G-KX7XNRQ64E"
             indexSubTitleSE = "Experiencias trabajando como Ingeniero de Software"
             indexSubTitleProjects = "Proyectos que programo y ¡mucho más!"
             indexSubTitleEmail = "¿Quieres ponerte en contacto?"
-    
+
             [[languages.es.menu.main]]
-                name = "Quién es 🤷‍♂️"
-                url = "whois"
+                name = "Inicio"
+                url = "/"
                 weight = 1
 
             [[languages.es.menu.main]]
-                name = "Blog ✍️"
-                url = "blog"
+                name = "Blog"
+                url = "/blog/"
                 weight = 2
             
             [[languages.es.menu.main]]
-                name = "Lecturas 📚"
-                url = "readings"
-                weight = 2
+                name = "Lecturas"
+                url = "/readings/"
+                weight = 3
 
             [[languages.es.menu.main]]
                 identifier = "projects"
-                name = "Proyectos 👨‍💻"
-                url = "projects"
-                weight = 3
-            
-            [[languages.es.menu.main]]
-                name = "Collectus"
-                url = "projects/collectus"
-                weight = 1
-                parent = "projects"
-
-            [[languages.es.menu.main]]
-                name = "Generador de Torneos"
-                url = "projects/tournaments-generator"
-                weight = 2
-                parent = "projects"
-
-            [[languages.es.menu.main]]
-                name = "Tags 🔠"
-                url = "tags"
+                name = "Proyectos"
+                url = "/projects/"
                 weight = 4
+
+            [[languages.es.menu.main]]
+                name = "¿Quién soy?"
+                url = "/about/"
+                weight = 5
+
+            [[languages.es.menu.main]]
+                name = "Tags"
+                url = "/tags/"
+                weight = 6
 
 	[languages.ca]
         disabled = true

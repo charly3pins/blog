@@ -7,6 +7,8 @@ description = "As my Final Year Project for Computer Science Engineering I build
 weight = "1"
 
 tags = ["php", "javascript", "mysql"]
+
+image = "/images/code/collectus/main-app.jpeg"
 +++
 ## WHY
 
@@ -24,7 +26,6 @@ At the end the project ended up being super successful, my tutor was delighted w
 
 I named the application Collectus as it's the Latin word meaning "gather, collect" so in that case it fits perfectly. It is a system flexible database for collectibles and any other objects or data the user wants to have ordered and classified. Collectus is thought for collectors, allowing them to keep track of any kind of collection they have, using a system database with an open structure adaptable to every need. It also provides two types of login for the users, creating a new one for the platform or using their Facebook account connecting it with the Facebook API.
 
-![app](/images/code/collectus/main-app.jpeg)
 ![login](/images/code/collectus/login.jpeg)
 
 Using templates the user can set all kinds of records for such diverse items as stamps or placas of cava, posters or fossils, rag dolls or lottery tickets. Once defined the template (category) for the object or type of object of interest, and the user can enter data immediately.

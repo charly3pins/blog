@@ -7,6 +7,8 @@ description = "Proof of concept building an application for managing FIFA 20 tou
 weight = "2"
 
 tags = ["go", "flutter", "python", "postgresql"]
+
+image = "/images/code/tournaments-generator/home.png"
 +++
 ## WHY
 

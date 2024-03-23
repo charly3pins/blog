@@ -1,8 +1,7 @@
 +++
-title = "Who is 🤷‍♂️"
+title = "About me 🤷‍♂️"
+description = "I am a passionate Software Engineer who enjoys being in the ever-evolving world of technology, displaying boundless enthusiasm for exploring new innovations and emerging trends."
 +++
-I am a passionate Software Engineer who enjoys being in the ever-evolving world of technology, displaying boundless enthusiasm for exploring new innovations and emerging trends. 
-
 With experience in different sectors and different roles, I approach each challenge with fervour, leveraging my skillset to craft the best solutions that push the boundaries of what's possible always with the best practices whilst relying on high levels of security, resiliency and scalability. 
 
 My excitement stems from the opportunity to continuously learn, adapt, and create, making myself an invaluable asset in any team dedicated to pioneering the future of technology.

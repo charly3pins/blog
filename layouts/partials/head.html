@@ -46,9 +46,16 @@
   {{ $style := resources.Get "scss/style.scss" | resources.ToCSS | minify}}
   <link href="{{ $style.Permalink }}" rel="stylesheet" />
 
+  <link href={{ "css/syntax.css" | absURL }} rel="stylesheet" />
+  <link href={{ "css/data-tippy-stylesheet.css" | absURL }} rel="stylesheet" />
+  <link href={{ "css/1.css" | absURL }} rel="stylesheet" />
+  <link href={{ "css/2.css" | absURL }} rel="stylesheet" />
+
   <link rel="shortcut icon" href={{ "images/favicon.ico" | absURL }} type="image/x-icon" />
   <link rel="icon" href={{ "images/favicon.ico" | absURL }} type="image/x-icon" />
 
+  <script src={{ "plugins/jQuery/jquery.min.js" | absURL }}></script>
+  
   {{ with .Site.GoogleAnalytics }}
   <script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
   <script>
@@ -59,6 +66,4 @@
   </script>
   <script async src='https://www.google-analytics.com/analytics.js'></script>
   {{ end }}
-
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9655018812623545" crossorigin="anonymous"></script>
 </head>
