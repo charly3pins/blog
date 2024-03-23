@@ -1,101 +1,51 @@
-{{ define "main" }}
+{{define "main"}}
 
-<section class="blog-single">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-2 order-2 order-lg-1">
-        <div class="share-now">
-          <a href="#" class="scrol">{{ T "share" }}</a>
-          <div class="sociel-icon">
-            {{ $hashtags := delimit .Params.tags "," }}
-            <ul>
-              <li>
-                <a href="https://twitter.com/share?url={{ .Permalink }}&amp;text={{ .Title }}&amp;via=charly3pins&amp;hashtags={{$hashtags}}" target="_blank">
-                  <i class="fa fa-twitter"></i>
-                </a>
-              </li>
-              <li>
-                <a href="https://www.facebook.com/sharer.php?u={{ .Permalink }}&amp;t={{ .Title }}" target="_blank">
-                  <i class="fa fa-facebook"></i>
-                </a>
-              </li>
-              <li>
-                <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ .Permalink }}&amp;title={{ .Title }}" target="_blank">
-                  <i class="fa fa-linkedin"></i>
-                </a>
-              </li>
-              <li>
-                <a href="https://telegram.me/share/url?url={{ .Permalink }}&amp;text={{ .Title }}" target="_blank">
-                  <i class="fa fa-telegram"></i>
-                </a>
-              </li>
-              <li>
-                <a href="whatsapp://send?text={{ .Title }} %0A%0A{{ .Permalink }}" target="_blank">
-                  <i class="fa fa-whatsapp"></i>
-                </a>
-              </li>
-              <li>
-                <a href="mailto:?&amp;body={{ .Permalink }}" target="_blank">
-                  <i class="fa fa-envelope"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-10 order-1 order-lg-2">
-        <article class="single-blog">
-          <div class="blog-post-tag">
-						{{range .Params.tags}}
-							<a href="{{ "tags/" | relLangURL }}{{ . | urlize }}/">{{ . }}</a>
-						{{end}}
-          </div>
-          <p class="title">{{ .Title }}</p>
-          <ul class="meta">
-            <li>
-              {{ T "by" }} <a href={{ "whois" | relLangURL }}>{{ $.Site.Params.author }}</a>
-            </li>
-            <li>
-              <i class="fa fa-clock-o"></i>
-              {{ .PublishDate.Format "02/01/2006" }}  - {{ T "readingTime" }} {{ T "minutes" .ReadingTime }}
-            </li>
-          </ul>
-          {{ with .Params.image }}
-          <div class="feature-image">
-            <img src="{{ .  | absURL }}" alt="banner">
-          </div>
-          {{ end }}
-          <div class="single-blog-content">
-            {{ .Content }}
-          </div>
-
-        </article>
-        <div class="blog-single-presentation">
-          <ul>
-            {{ with .Site.RegularPages.Prev . }}
-            <li> <a href="{{.RelPermalink}}" class="tag">PREVIOUS</a>
-              <a href="{{.RelPermalink}}" class="title">
-                {{ .Title }}
-              </a>
-              <i class="fa fa-clock-o"></i>
-              {{ .PublishDate.Format "02/01/2006" }}  - {{ T "readingTime" }} {{ T "minutes" .ReadingTime }}
-            </li>
-            {{ end }}
-            {{ with .Site.RegularPages.Next . }}
-            <li> <a href="{{.RelPermalink}}" class="tag">Next</a>
-              <a href="{{.RelPermalink}}" class="title">
-                {{ .Title }}
-              </a>
-              <i class="fa fa-clock-o"></i>
-              {{ .PublishDate.Format "02/01/2006" }}  - {{ T "readingTime" }} {{ T "minutes" .ReadingTime }}
-            </li>
-            {{ end }}
-          </ul>
-        </div>
-        {{ partial "comments" . }}
-      </div>
-    </div>
-  </div>
+<section class="intro">
+	<div class="post-header">
+		<!-- <a class="go-back" href="{{ .Site.BaseURL }}"><svg aria-hidden="true" focusable="false" data-prefix="far" class="back-icon" data-icon="caret-square-left" height="25px" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M272 157.1v197.8c0 10.7-13 16.1-20.5 8.5l-98.3-98.9c-4.7-4.7-4.7-12.2 0-16.9l98.3-98.9c7.5-7.7 20.5-2.3 20.5 8.4zM448 80v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48zm-48 346V86c0-3.3-2.7-6-6-6H54c-3.3 0-6 2.7-6 6v340c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"></path></svg> </a> -->
+		<h2 class="post-title">{{.Title}}</h2>
+	</div>
+	{{if or (eq .Section "blog") (eq .Section "projects")}}
+	<p class="post-dets">Publicado: {{ .PublishDate.Format "02/01/2006"}}
+		| Tiempo de lectura: {{.ReadingTime}} min | Modificado: {{ .Page.Lastmod.Format "02/01/2006" }}
+		<br>
+	</p>
+	<span class="tags">
+	{{range .Params.Tags }}
+		<h5><a class="tag" href='{{ "tags/" | absURL }}{{.}}'>{{.}}</a></h5>
+	{{end}}
+	</span>
+	{{ if .IsTranslated }}
+	<p>Disponible en: </p>
+	<nav class="LangNav">
+		{{ range .Translations }}
+		<a class="link" href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
+	{{ end}}
+	</nav>
+	{{ end }}
+	{{ with .Params.image }}
+	<div>
+		<img src="{{ .  | absURL }}" alt="post-image" style="max-width: 200px;">
+	</div>
+	{{ end }}
+	<div class="content">
+		{{.Content }}
+	</div>
+	<div id="disqus_thread"></div>
+	<script>
+		(function() {
+		var d = document, s = d.createElement('script');
+		s.src = 'https://https-charly3pins-dev.disqus.com/embed.js';
+		s.setAttribute('data-timestamp', +new Date());
+		(d.head || d.body).appendChild(s);
+		})();
+	</script>
+	<noscript>Por favor active JavaScript para ver los <a href="https://disqus.com/?ref_noscript">comentarios.</a></noscript>
+	{{else}}
+	<div>
+		{{.Content }}
+	</div>
+	{{end}}
 </section>
 
-{{ end }}
+{{end}}

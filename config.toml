@@ -1,123 +1,92 @@
 baseURL = "https://charly3pins.dev/"
-languageCode = "en-us"
-title = "charly3pins.dev"
-defaultContentLanguage = "en"
-pygmentsUseClasses=true
-enableRobotsTXT = true
+title = "Charly3Pins.dev"
+languageCode = "es-es"
+paginate = "10" # Number of posts per page
 googleAnalytics = "G-KX7XNRQ64E"
 
+# Default Post Extension
+defaultExtension= "html"
 
-[author]
-	name = "Charly3Pins"
-    email = "hello@charly3pins.dev"
+# Default metadata format for newly created frontmatter using
+# hugo new command. "toml", "yaml", or "json"
+metaDataFormat= "yaml"
 
-[params]
-	author = "Charly3Pins"
-	since = 2018
-	avatar = "/images/cyberpunk-ai.png"
-	errorPage = "/images/gopher-this-is-fine.jpg"
-    trendingBlogIcon = "images/trending.svg"
+[taxonomies]
+  tag      = "tags"
+  category = "categories"
+  series   = "series"
 
-[languages]
-	[languages.en]
-		languageName = "English"
-		weight = 1
-        
-        [languages.en.params]
-            indexTitle = "Hey! I'm Charly3Pins"
-            indexSubTitle = "This is my blog and I post about:"
-            indexSubTitleGo = "Learnings in Go"
-            indexSubTitleSE = "Experiences working as Software Engineer"
-            indexSubTitleProjects = "Projects I code and much more!"
-            indexSubTitleEmail = "Want to get in touch?"
-    
-            [[languages.en.menu.main]]
-                name = "Who is 🤷‍♂️"
-                url = "whois"
-                weight = 1
+[params.main]
+  enabled = true
+  enableKatex = true
+  metaKeywords = "software engineering, programador, engineering, programar, golang, charly3pins"
+  headerTitle = "Charly3Pins"
+  copyright = "© 2018 - 2024 Charly3Pins. All rights reserved."
+  name = "charly3pins"
+  #img = "images/cyberpunk-ai.png"
+  img = "images/me-retro.jpeg"
+  img_title = ""
+  icon = "images/face.ico"
+  quote = "🌚 <span style=\"font-style:italic;\">Entre el 0 y el 1</span> 🌝"
+  description= """¡Hola y bienvenido a mi espacio digital!
+<br><br>
+Soy Carles, pero se me conoce como Charly3Pins. Durante más de una década, he estado inmerso en el apasionante mundo de la ingeniería de software. Aquí compartiré contigo mis vivencias, reflexiones y conocimientos acumulados a lo largo de este viaje tecnológico.
+<br><br>
+Imagina este lugar como un oasis donde convergen mis experiencias, ideas y pasiones. Desde artículos sobre temas que me cautivan hasta tutoriales que te guiarán en el fascinante arte de la programación. No faltarán proyectos en los que dedico mi tiempo y energía, siempre buscando traspasar los límites de lo posible.
+<br><br>
+Con un bagaje diverso y una curiosidad insaciable, abrazo cada desafío con entusiasmo. Mi misión es crear soluciones que no solo cumplan con los estándares, sino que los superen, manteniendo siempre la seguridad, resiliencia y escalabilidad como pilares fundamentales.
+<br><br>
+Me considero un eterno aprendiz, siempre sediento de conocimiento y ávido de explorar nuevas tecnologías. Desde que descubrí <a href="https://go.dev/">Go</a>, experimenté un flechazo instantáneo. Este lenguaje encarna el <a href="https://en.wikipedia.org/wiki/KISS_principle">principio KISS</a> que tanto valoro, y me emociona formar parte de su crecimiento y evolución.
+<br><br>
+Pero aquí no termina la historia. Además de seguirme en mis redes sociales como <a href="https://twitter.com/charly3pins">@charly3pins</a> y explorar mis proyectos en <a href="https://github.com/charly3pins">GitHub</a>, te invito a sumergirte en este universo tecnológico junto a mí. ¿Estás listo para embarcarte en esta emocionante travesía?
+<br><br>
+¡Únete a mí y descubre el fascinante mundo de la tecnología a través de mis ojos!"""
 
-            [[languages.en.menu.main]]
-                name = "Blog ✍️"
-                url = "blog"
-                weight = 2
-            
-            [[languages.en.menu.main]]
-                name = "Readings 📚"
-                url = "readings"
-                weight = 2
+  licenseUrl = ""
 
-            [[languages.en.menu.main]]
-                identifier = "projects"
-                name = "Projects 👨‍💻"
-                url = "projects"
-                weight = 3
-            
-            [[languages.en.menu.main]]
-                name = "Collectus"
-                url = "projects/collectus"
-                weight = 1
-                parent = "projects"
+ # Social icons
+  [[params.social]]
+    name = "github"
+    url  = "https://github.com/charly3pins"
 
-            [[languages.en.menu.main]]
-                name = "Tournaments Generator"
-                url = "projects/tournaments-generator"
-                weight = 2
-                parent = "projects"
+  [[params.social]]
+    name = "twitter"
+    url  = "https://twitter.com/charly3pins"
 
-            [[languages.en.menu.main]]
-                name = "Tags 🔠"
-                url = "tags"
-                weight = 4
+  [[params.social]]
+    name = "instagram"
+    url  = "https://instagram.com/charly3pins"
 
-	[languages.es]
-		languageName = "Spanish"
-		weight = 2	
+  [[params.social]]
+    name = "linkedin"
+    url  = "https://www.linkedin.com/in/carlesfuste"
 
-        [languages.es.params]
-            indexTitle = "¡Hola! Soy Charly3Pins"
-            indexSubTitle = "Este es mi blog y publico sobre:"
-            indexSubTitleGo = "Aprendizajes en Go"
-            indexSubTitleSE = "Experiencias trabajando como Ingeniero de Software"
-            indexSubTitleProjects = "Proyectos que programo y ¡mucho más!"
-            indexSubTitleEmail = "¿Quieres ponerte en contacto?"
-    
-            [[languages.es.menu.main]]
-                name = "Quién es 🤷‍♂️"
-                url = "whois"
-                weight = 1
+  [[params.social]]
+    name = "youtube"
+    url  = "https://www.youtube.com/charly3pins"
 
-            [[languages.es.menu.main]]
-                name = "Blog ✍️"
-                url = "blog"
-                weight = 2
-            
-            [[languages.es.menu.main]]
-                name = "Lecturas 📚"
-                url = "readings"
-                weight = 2
+  [[params.social]]
+    name = "email"
+    url  = "mailto:hello@charly3pins.dev"
 
-            [[languages.es.menu.main]]
-                identifier = "projects"
-                name = "Proyectos 👨‍💻"
-                url = "projects"
-                weight = 3
-            
-            [[languages.es.menu.main]]
-                name = "Collectus"
-                url = "projects/collectus"
-                weight = 1
-                parent = "projects"
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name       = "Inicio"
+    url        = "/"
+    weight = 1
 
-            [[languages.es.menu.main]]
-                name = "Generador de Torneos"
-                url = "projects/tournaments-generator"
-                weight = 2
-                parent = "projects"
+  [[menu.main]]
+    identifier = "blog"
+    name       = "Blog"
+    url        = "/blog/"
 
-            [[languages.es.menu.main]]
-                name = "Tags 🔠"
-                url = "tags"
-                weight = 4
+  [[menu.main]]
+    identifier = "projects"
+    name       = "Proyectos"
+    url        = "/projects/"
 
-	[languages.ca]
-        disabled = true
+  [[menu.main]]
+    identifier = "biblioteca"
+    name       = "Biblioteca"
+    url        = "/biblioteca/"

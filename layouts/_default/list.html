@@ -1,88 +1,36 @@
-{{ define "main" }}
+{{define "main"}}
 
-{{ partial "feature.html" . }}
-
-<section class="blog">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8">
-        <div class="blog-section-title">
-          <h2>{{ .Title }}</h2>
-        </div>
-        {{ range $.Paginator.Pages }}
-        <article class="blog-post">
-          {{ with .Params.image }}
-          <div class="blog-post-thumb">
-            <img src="{{ .  | absURL }}" alt="blog-thum" />
-          </div>
-          {{ end }}
-          <div class="blog-post-content">
-            <div class="blog-post-tag">
-              {{range .Params.tags}}
-                <a href="{{ "tags/" | relLangURL }}{{ . | urlize }}/">{{ . }}</a>
-              {{end}}
-            </div>
-            <div class="blog-post-title">
-              <a href="{{ .Permalink }}"> {{ .Title }} </a>
-            </div>
-            <div class="blog-post-meta">
-              <ul>
-                <li>
-                  {{ T "by" }} <a href={{ "whois" | relLangURL }}>{{ $.Site.Params.author }}</a>
-                </li>
-                <li>
-                  <i class="fa fa-clock-o"></i>
-                  {{ .PublishDate.Format "02/01/2006" }}  - {{ T "readingTime" }} {{ T "minutes" .ReadingTime }}
-                </li>
-              </ul>
-            </div>
-            <p>
-              {{ .Summary }}
-            </p>
-            <a href="{{ .Permalink }}" class="blog-post-action">{{ T "readMore" }} <i class="fa fa-angle-right"></i></a>
-          </div>
-        </article>
-        {{ end }}
-        {{ partial "pagination" .}}
-      </div>
-
-      <div class="col-lg-4">
-        <div class="blog-post-widget">
-          <div class="latest-widget-title">
-            <h2>Trending post</h2>
-          </div>
-          {{ range $i, $.Site.RegularPages }} {{ if eq .Params.trending true }}
-          <div class="latest-widget">
-            <div class="latest-widget-thum">
-              <a href="{{ .Permalink }}" class="post-thumb"
-                style='background-image: url("{{ .Params.image | absURL }}")'>
-              </a>
-              <div class="icon">
-                <a href="{{ .Permalink }}">
-                  <img src="{{ $.Site.Params.trendingBlogIcon | absURL }}" alt="icon" /></a>
-              </div>
-            </div>
-            <div class="latest-widget-content">
-              <div class="content-title">
-                <a href="{{ .Permalink }}">
-                  {{ .Title }}
-                </a>
-              </div>
-              <div class="content-meta">
-                <ul>
-                  <li>
-                    <i class="fa fa-clock-o"></i>
-                    {{ .PublishDate.Format "02/01/2006" }}  - {{ T "readingTime" }} {{ T "minutes" .ReadingTime }}
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          {{ end }} {{ end }}
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
+<br>
+<div style="display:flex;align-items:center;">
+	<!-- <a class="go-back" href="{{ .Site.BaseURL }}"><svg aria-hidden="true" focusable="false" data-prefix="far" class="back-icon" data-icon="caret-square-left" height="25px" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M272 157.1v197.8c0 10.7-13 16.1-20.5 8.5l-98.3-98.9c-4.7-4.7-4.7-12.2 0-16.9l98.3-98.9c7.5-7.7 20.5-2.3 20.5 8.4zM448 80v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80c0-26.5
+					21.5-48 48-48h352c26.5 0 48 21.5 48 48zm-48 346V86c0-3.3-2.7-6-6-6H54c-3.3 0-6 2.7-6 6v340c0 3.3 2.7 6 6
+					6h340c3.3 0 6-2.7 6-6z"></path></svg> </a> -->
+	<h2 class="post-title">{{.Title}}</h2>
+</div>
+{{ with .Description }}
+<div>{{ . | safeHTML }}</div>
 {{ end }}
+<!-- List all tags -->
+{{if eq .Kind "taxonomyTerm"}}
+	{{range $key, $value := .Data.Terms.Alphabetical}}
+		<span><a style="color: white; text-decoration: none;" href='{{ "tags/" | absURL }}{{ $value.Name | lower }}'>{{ $value.Name }} ({{.Count }})</a></span>
+	{{end}}
+{{else}}
+	{{ range .Pages}}
+		<div class="post-item">
+				<well class="well">
+					<h3><a class="link" href="{{.Permalink}}">{{.Title}}</a>
+						<h4>{{ .PublishDate.Format "02/01/2006" }} | Tiempo de lectura: {{.ReadingTime}} min </h4>
+						<span class="tags">
+								{{range .Params.Tags }}
+								<h5><a class="tag" href='{{ "tags/" | absURL }}{{.}}'>{{.}}</a></h5>
+								{{end}}
+						</span>
+						<p>{{ .Description }}</p>
+				</well>
+
+		</div><br>
+	{{end}}
+{{end}}
+
+{{end}}

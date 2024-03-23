@@ -1,5 +1,0 @@
-User-agent: *
-
-{{ range where (where .Site.Pages ".Section" "code") "Kind" "page" }}
-Disallow: {{.RelPermalink}}
-{{end}}
