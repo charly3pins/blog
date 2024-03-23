@@ -80,6 +80,10 @@ body.dark {
     z-index: 1000;
 }
 
+body.dark .line { 
+    background: greenyellow;
+}
+
 p, li {
     a{
         border-right: 0px;
