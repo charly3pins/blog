@@ -2,44 +2,44 @@
 title = "Tournaments generator"
 date = "2020-05-01"
 author = "charly3pins"
-description = "Proof of concept building an application for managing FIFA 20 tournaments between different people using Flutter for building a mobile app and Go for building an API acting as a server. Also used Python to build simple scrapers."
+description = "Prueba de concepto de la construcción de una aplicación para administrar torneos FIFA 20 entre diferentes personas usando Flutter para construir una aplicación móvil y Go para construir una API que actúa como servidor. También usé Python para construir raspadores simples."
 
 weight = "2"
 
 tags = ["go", "flutter", "python", "postgresql"]
 +++
-## WHY
+## POR QUÉ
 
-The motivation for starting this project is not another one than my curiosity about the mobile applications. It is obvious that the way of consuming technology has changed over the last few years and it is increasingly being done through a mobile device. For that reason I wanted to explore how the mobile apps work and how I can build one from scratch. 
-I did some Android tutorials, but as they are changing a lot of things when releasing new versions and my idea was to build something generic for all devices, I decided to give it a try to [Flutter](https://flutter.dev/).
+La motivación para iniciar este proyecto no es otra que mi curiosidad por las aplicaciones móviles. Es obvio que la forma de consumir tecnología ha cambiado en los últimos años y cada vez se hace más a través de un dispositivo móvil. Por esa razón, quería explorar cómo funcionan las aplicaciones móviles y cómo puedo crear una desde cero.
+Hice algunos tutoriales de Android, pero como están cambiando muchas cosas al lanzar nuevas versiones y mi idea era crear algo genérico para todos los dispositivos, decidí intentarlo con [Flutter](https://flutter.dev/).
 
-I was between [React Native](https://reactnative.dev/) or Flutter, but after reading some pros and cons, I've decided to ally myself with Flutter. I started reading their [documentation](https://flutter.dev/docs) and it was super similar to Android (they are using Dart in the bottom) and I started remembering my old days on the Android tutorials and I like, so I continued. After a few days reading only technical documentation, I continued with the "hello world" app [tutorial](https://flutter.dev/docs/get-started/codelab) they provide in the website. And finally, I was ready to start my own project.
+Estaba entre [React Native](https://reactnative.dev/) o Flutter, pero después de leer algunos pros y contras, decidí aliarme con Flutter. Comencé a leer su [documentación](https://flutter.dev/docs) y era muy similar a Android (están usando Dart en la parte inferior) y comencé a recordar mis viejos tiempos en los tutoriales de Android y me gusta, así que Yo continué. Después de unos días leyendo solo documentación técnica, continué con la aplicación "hello world" [tutorial](https://flutter.dev/docs/get-started/codelab) que proporcionan en el sitio web. Y finalmente, estaba listo para comenzar mi propio proyecto.
 
-For the time the global pandemic started, me and my friends started a FIFA 20 league on PS4 to distract ourselves in the afternoons/nights. Initially it was just playing and nothing else, but then we started having a Power BI dashboard for statistics, a YouTube channel to share the games live and then store them there and a Twitter to tweet the updates in the classification every week. The first league was created manually and a bit of pain and super static, so I've decided to use that topic to create an app that helps us to manage the second league creating the league, managing our teams and matches there, notifying the results and showing more detailed statistics inside.
+Para cuando comenzó la pandemia mundial, mis amigos y yo comenzamos una liga FIFA 20 en PS4 para distraernos por las tardes / noches. Inicialmente solo se trataba de jugar y nada más, pero luego comenzamos a tener un panel de Power BI para estadísticas, un canal de YouTube para compartir los juegos en vivo y luego almacenarlos allí y un Twitter para tuitear las actualizaciones de la clasificación cada semana. La primera liga se creó de forma manual y un poco dolorosa y súper estática, así que decidí usar ese tema para crear una aplicación que nos ayude a administrar la segunda liga creando la liga, administrando nuestros equipos y partidos allí, notificando los resultados. y mostrando estadísticas más detalladas en su interior.
 
-## WHAT
+## QUÉ
 
-First of all I wanted to put all the real FIFA 20 information inside the website related with leagues, teams and players. For that I found a few websites that have that information open and free, but they haven't an API for consuming it. The idea of copying manually was tempting a lot, but I preferred to write a simple crawler in [Python](https://www.python.org/) using the library [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#css-selectors) with the css-selectors it provides. Doing some tweaks here and there, at the end I ended up having 3 json files, one for each topic I wanted initially so all perfect!
+En primer lugar, quería poner toda la información real de FIFA 20 dentro del sitio web relacionada con ligas, equipos y jugadores. Para eso encontré algunos sitios web que tienen esa información abierta y gratuita, pero no tienen una API para consumirla. La idea de copiar manualmente era muy tentadora, pero preferí escribir un rastreador simple en [Python](https://www.python.org/) usando la biblioteca [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#css-selectors) con los css-selectors que proporciona. Haciendo algunos ajustes aquí y allá, al final terminé teniendo 3 archivos json, uno para cada tema que quería inicialmente, ¡así que todo perfecto!
 
-Then in order to introduce all that information in the database the idea was to create a command line tool that reads those files and generates the corresponding SQL statements and then generate the corresponding migration files.
-I've chosen [Go](https://golang.org/) as the programming language for the API and I've created a `cmd` that allows me to do the desired idea. The database would be [PostgreSQL](https://www.postgresql.org/) so the "inserts" have to be according to its syntax.
+Luego, para poder introducir toda esa información en la base de datos, la idea fue crear una herramienta de línea de comandos que lea esos archivos y genere las correspondientes declaraciones SQL y luego genere los archivos de migración correspondientes.
+Elegí [Go](https://golang.org/) como lenguaje de programación para la API y creé un `cmd` que me permite hacer la idea deseada. La base de datos sería [PostgreSQL](https://www.postgresql.org/) por lo que las "inserciones" tienen que estar de acuerdo con su sintaxis.
 
-With all the initial data ready, I've started to design the rest of the Database and the possible endpoints need it for manage all that information. I've chosen [mux](https://github.com/gorilla/mux) for the HTTP for it's simplicity but powerful in comparison with the standard lib one (just only for the parameter parsing it's worth it...). As I wanted to explore more the mobile app side than the server side, I just organized the code using the [Layered Architecture](https://www.oreilly.com/library/view/software-architecture-patterns/9781491971437/ch01.html) grouping the items by function and used [GORM](https://gorm.io/index.html) as the ORM for simplify the query and the mappings between the database and my models.
+Con todos los datos iniciales listos, comencé a diseñar el resto de la base de datos y los posibles puntos finales lo necesitan para administrar toda esa información. Elegí [mux](https://github.com/gorilla/mux) para HTTP por su simplicidad pero potente en comparación con la lib estándar (solo para el análisis de parámetros vale la pena ...). Como quería explorar más el lado de la aplicación móvil que el lado del servidor, simplemente organicé el código usando la [Arquitectura de capas](https://www.oreilly.com/library/view/software-architecture-patterns/9781491971437/ch01 .html) agrupando los elementos por función y usé [GORM](https://gorm.io/index.html) como el ORM para simplificar la consulta y las asignaciones entre la base de datos y mis modelos.
 
 ![api structure](/images/code/tournaments-generator/api-structure.jpeg)
 
-Inside the `cmd` folder I've created different commands:
-- migration: manages the migrations in the database
-- parser: translates the json from the crawler into sql statements
-- server: runs the server
+Dentro de la carpeta `cmd` he creado diferentes comandos:
+- migración: gestiona las migraciones en la base de datos
+- analizador: traduce el json del rastreador en sentencias sql
+- servidor: ejecuta el servidor
 
-Inside the `pkg` folder it's easy to identify what the folders are doing by it's own name.
+Dentro de la carpeta `pkg` es fácil identificar qué están haciendo las carpetas por su propio nombre.
 
-For the mobile app, I started putting all files inside a `components` folder but when it started growing it was a complete kaos to manage. After adding more complexity to the app I end up finding a clean way to organize the code, dividing it into two separate folders; one for the core and another one for the ui. Then inside of each one I also categorized the different type of components depending on their responsibilities and at the end the code (at least for me that I'm not a Flutter expert) ended up looking super clean and (without no doubt) more maintainable. Below the folder organization in a general view:
+Para la aplicación móvil, comencé a poner todos los archivos dentro de una carpeta de `componentes`, pero cuando comenzó a crecer, fue una tarea difícil de administrar. Después de agregar más complejidad a la aplicación, termino encontrando una forma limpia de organizar el código, dividiéndolo en dos carpetas separadas; uno para el núcleo y otro para la interfaz de usuario. Luego dentro de cada uno también categoricé los diferentes tipos de componentes en función de sus responsabilidades y al final el código (al menos para mí que no soy un experto en Flutter) terminó luciendo súper limpio y (sin duda) más mantenible . Debajo de la organización de carpetas en una vista general:
 
 ![app structure](/images/code/tournaments-generator/app-structure.jpeg)
 
-At the beginning when I started coding and watching the results all was super fancy and I thought it was easier than expected. Connecting the app with the API was just a matter of knowing how to use the `http` library and the `get` or `post` methods was connected with no problems.
+Al principio, cuando comencé a codificar y ver los resultados, todo fue súper elegante y pensé que era más fácil de lo esperado. Conectar la aplicación con la API fue solo una cuestión de saber cómo usar la biblioteca `http` y los métodos` get` o `post` se conectaron sin problemas.
 
 ```dart
     var client = new http.Client();
@@ -53,55 +53,55 @@ At the beginning when I started coding and watching the results all was super fa
     }
 ```
 
-The unique problem I've faced there is that I was running the apps from the Android Emulator; that means it was running in a virtual machine so the IP was not my local one and cannot access the `localhost`. After a bit of research I've found the correct one and all worked correctly.
+El único problema al que me he enfrentado allí es que estaba ejecutando las aplicaciones desde el emulador de Android; eso significa que se estaba ejecutando en una máquina virtual, por lo que la IP no era mi local y no puede acceder al `localhost`. Después de un poco de investigación, encontré el correcto y todo funcionó correctamente.
 
-The problems started when I wanted to pass information between components, and refresh the view depending on that information, or even better, not refresh if nothing changed when I enter again into a view (for example going from a list to a detail view, and coming back again to the list). After a day reading in forums about the same problem that I was facing, I've found the package [Provider](https://pub.dev/packages/provider) and all seemed easy and the holy grail for everything, but it wasn't. 
+Los problemas comenzaron cuando quería pasar información entre componentes y actualizar la vista en función de esa información, o mejor aún, no actualizar si nada cambia cuando entro de nuevo en una vista (por ejemplo, al pasar de una lista a una vista de detalle, y volviendo de nuevo a la lista). Después de un día leyendo en foros sobre el mismo problema al que me estaba enfrentando, encontré el paquete [Proveedor] (https://pub.dev/packages/provider) y todo parecía fácil y el santo grial para todo, pero no lo era.
 
-The real pain just started there! It took me some days to really understand how it works. The initial Provider it's easy to understand and you use it and it works, but then you want to change just a small part of the view, or you want to rebuild the entire one, or you want to modify some values in a view A and then go to view B and see the changes there, and all that examples it's coded completely different and you have to know first of all that there are one way for each case of doing things and second you have to know how to do it. At the end I used the Provider, the ProxyProvider, the StreamProvider and the ChangeNotifierProvider.
+¡El verdadero dolor acaba de comenzar allí! Me tomó algunos días entender realmente cómo funciona. El proveedor inicial es fácil de entender y lo usa y funciona, pero luego desea cambiar solo una pequeña parte de la vista, o desea reconstruir la totalidad, o desea modificar algunos valores en una vista A y luego vaya a la vista B y vea los cambios allí, y todos esos ejemplos está codificado de manera completamente diferente y primero debe saber que hay una forma para cada caso de hacer las cosas y segundo, debe saber cómo hacerlo. Al final utilicé Provider, ProxyProvider, StreamProvider y ChangeNotifierProvider.
 
-The project is not finished but for now is On Hold with the following functionalities:
+El proyecto no está terminado pero por ahora está En Espera con las siguientes funcionalidades:
 
-Initially the user can switch between the signup/login views.
+Inicialmente, el usuario puede cambiar entre las vistas de registro / inicio de sesión.
 ![signup](/images/code/tournaments-generator/signup.png)
 ![login](/images/code/tournaments-generator/login.png)
 
-Once the user is inside the application it has different tabs where the next `Matches` he has to play, the `Tournaments` that he is playing and the `Groups` where he is present and the members inside. On the top it has a navbar with a profile picture, a bell icon for the notifications, a lens icon for search other members and adding as his friends and the logout button to disconnect.
+Una vez que el usuario está dentro de la aplicación esta tiene diferentes pestañas donde los próximos `Partidos` tiene que jugar, los` Torneos` que está jugando y los `Grupos` donde está presente y los miembros dentro. En la parte superior tiene una barra de navegación con una foto de perfil, un ícono de campana para las notificaciones, un ícono de lente para buscar a otros miembros y agregar como sus amigos y el botón de cierre de sesión para desconectarse.
 ![home](/images/code/tournaments-generator/home.png)
 
-If he clicks on the profile picture it goes directly to the user's profile where it displays the friends and where he can edit his personal information (name, username, profile picture):
+Si hace clic en la foto de perfil va directamente al perfil del usuario donde muestra los amigos y donde puede editar su información personal (nombre, nombre de usuario, foto de perfil):
 ![profile](/images/code/tournaments-generator/profile.png)
 
-Pressing the lens icon, changes the view to the super searcher functionality which allows the user to find other people already in the platform, add them as his friends and then create groups, generate tournaments and play matches together. The searcher is a "like" search, so if any of the letters it introduces appears in some username, then it's displayed there.
+Al presionar el ícono de la lente, cambia la vista a la funcionalidad de súper buscador que permite al usuario encontrar a otras personas que ya están en la plataforma, agregarlas como sus amigos y luego crear grupos, generar torneos y jugar partidos juntos. El buscador es una búsqueda de "me gusta", por lo que si alguna de las letras que introduce aparece en algún nombre de usuario, entonces se muestra allí.
 ![searcher](/images/code/tournaments-generator/searcher.png)
 
-After that, if the user enters one profile that is not a friend, it will appear the button to add it and if it's clicked, it will hide that button and display the information that there is already a request sent, waiting for the other user to answer it.
+Luego de eso, si el usuario ingresa a un perfil que no es amigo, aparecerá el botón para agregarlo y si se hace clic, ocultará ese botón y mostrará la información de que ya hay una solicitud enviada, esperando al otro usuario. para contestarlo.
 ![add friend](/images/code/tournaments-generator/add-friend.png)
 ![add friend requested](/images/code/tournaments-generator/add-friend-requested.png)
 
-Acting as the other user, when logging in, the bell icon will display a new notification. Going inside appears as a friend notification and it can be answered from the list directly or going inside the "requester" profile and accepting/declining there. If the friend request is accepted, it will appear as a new friend in the user's profile.
+Actuando como el otro usuario, al iniciar sesión, el icono de campana mostrará una nueva notificación. Entrar aparece como una notificación de amigo y se puede responder directamente desde la lista o entrar en el perfil de "solicitante" y aceptar / rechazar allí. Si se acepta la solicitud de amistad, aparecerá como un nuevo amigo en el perfil del usuario.
 ![friend request notification](/images/code/tournaments-generator/friend-request-notification.png)
 ![friend request notification answer](/images/code/tournaments-generator/friend-request-notification-answer.png)
 ![profile multi friends](/images/code/tournaments-generator/profile-multifriends.png)
 
-After a user has some friends, is the moment when he can create a group. For that the application has the third tab called `Groups` and a (+) button.
+Después de que un usuario tiene algunos amigos, es el momento en que puede crear un grupo. Para eso la aplicación tiene la tercera pestaña llamada `Grupos` y un botón (+).
 ![new group](/images/code/tournaments-generator/new-group.png)
 
-Inside the groups generator it will display the list of the friends on the top. As they are selected, they are placed in the list below, where they can be removed if desired; when all friends are selected it's time to move to the next screen using the (-->) button.
+Dentro del generador de grupos, mostrará la lista de amigos en la parte superior. A medida que se seleccionan, se colocan en la lista siguiente, donde se pueden eliminar si se desea; cuando se seleccionan todos los amigos, es hora de pasar a la siguiente pantalla con el botón (-->).
 ![new group selected](/images/code/tournaments-generator/new-group-selected.png)
 
-The next step is to put a good name for that group and then press the tick one to create the group.
+El siguiente paso es poner un buen nombre para ese grupo y luego presionar la casilla uno para crear el grupo.
 ![new group name](/images/code/tournaments-generator/new-group-name.png)
 
-When the user is returned to the home view it appears the new group created and the members of it in the list.
+Cuando el usuario regresa a la vista de inicio, aparece el nuevo grupo creado y sus miembros en la lista.
 ![new group created](/images/code/tournaments-generator/new-group-created.png)
 
-From here what is missing is to create the `Tournaments` selecting the group and the members of that group that want to play, the number of teams for each member, the teams, the rounds, the type of tournament, etc. and then generate the calendar. Display the calendar in the `Matches` tab and inside each match allow the users to add the results. Also provide a classification and the statistics for each match and a grouped one for each fixture and a generic one.
+A partir de aquí lo que falta es crear los `Torneos` seleccionando el grupo y los miembros de ese grupo que quieren jugar, el número de equipos para cada integrante, los equipos, las rondas, el tipo de torneo, etc. y luego generar el calendario. Muestre el calendario en la pestaña `Partidos` y dentro de cada partida permita a los usuarios agregar los resultados. También proporcione una clasificación y las estadísticas de cada partido y una agrupada para cada encuentro y una genérica.
 
-## FINAL THOUGHTS
+## PENSAMIENTOS FINALES
 
-With this proof of concept I had the opportunity to work in a complex application in terms of designing reusable components in a mobile application, calling to an external API to manage the information displayed in the app and learning how to use the Provider package for moving information between multiple views and control the state of the application in a simpler and effective way.
+Con esta prueba de concepto tuve la oportunidad de trabajar en una aplicación compleja en términos de diseño de componentes reutilizables en una aplicación móvil, llamar a una API externa para administrar la información que se muestra en la aplicación y aprender a usar el paquete Provider para mover información. entre múltiples vistas y controlar el estado de la aplicación de una forma más sencilla y eficaz.
 
-There is a lot more to learn regarding mobile development but I consider this project as an initial step to start with. I will do the missing views someday in order we can use it in real world, but I hope it's not because we have another pandemic 😏
+Hay mucho más que aprender con respecto al desarrollo móvil, pero considero este proyecto como un paso inicial para empezar. Algún día haré las vistas que faltan para que podamos usarlas en el mundo real, pero espero que no sea porque tengamos otra pandemia 😏
 
-- Source code of the API in Go: https://github.com/charly3pins/fifa-gen-api
-- Source of of the Flutter app: https://github.com/charly3pins/fifa_gen
+- Código fuente de la API en Go: https://github.com/charly3pins/fifa-gen-api
+- Código fuente de la app en Flutter: https://github.com/charly3pins/fifa_gen

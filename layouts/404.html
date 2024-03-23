@@ -1,19 +1,8 @@
-{{ define "main" }}
-
-<section class="blog-single">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-10 order-1 order-lg-2">
-        <article class="single-blog">
-          <h1 class="title">Page not found ¯\_ (ツ)_/¯</h1>
-          <div class="feature-image">
-            <img src="{{ .Site.Params.errorPage }}" alt="site 404 image">
-          </div>
-        </article>
-        <a href="/" class="blog-post-action">← Rollback my action</i></a>
-      </div>
-    </div>
-  </div>
-</section>
-
+{{define "main"}}
+<div class="intro">
+    <h2 class="post-title">No se encontraron resultados</h2>
+    <img src={{ "images/gopher-this-is-fine.jpg" | absURL }}>
+    <p style="text-align:center">La página solicitada no pudo encontrarse. Trate de perfeccionar su búsqueda o utilice la navegación para localizar la entrada.
+        <br><a class="link" href="{{.Site.BaseURL}}">Sácame de aquí</a></p>
+</div>
 {{ end }}

@@ -1,0 +1,19 @@
+<ul class="menu">
+{{ $currentPage := . }}
+{{ range .Site.Menus.main }}
+{{ $menu_item_url := .URL | relLangURL }}
+{{ $page_url:= $currentPage.RelPermalink | relLangURL }}
+    <li>
+        <a href={{ .URL | relLangURL }} {{ if eq $menu_item_url $page_url }} class="menu-active" {{ end }} >
+            {{ .Name }}
+        </a>
+    </li>
+{{ end }}
+    <li>
+        <div class="color-scheme" style="margin:auto; width: 30%;">
+        <input type="checkbox" class="checkbox" id="chk" />
+        <label class="label" for="chk">🌚 🌝<div class="ball"></div>
+        </label>
+    </div>
+    </li>
+</ul>

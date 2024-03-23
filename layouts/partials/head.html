@@ -1,64 +1,59 @@
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="x-ua-compatible" content="chrome=1">
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="referrer" content="no-referrer">
-  <meta name="description" content="{{ T "description" }}">
-{{ with .Title | default .Site.Title }}
-  <title>{{ . }} | Charly3Pins</title>
-{{ end }}
-{{ with .Title | default .Site.Title }}
-  <meta property="og:title" content="{{ . }} - charly3pins" />
-{{ end }}
-  <meta property="og:type" content="website">
-  <meta property="og:description" content="{{ .Description }}">
-  <meta property="og:url" content="{{ .Permalink }}">
-  <meta property="og:site_name" content="charly3pins.dev">
-{{ with  or (.Params.image) (.Site.Params.avatar) | absURL }}  
-  <meta property="og:image" content="{{ . }}">
-{{ end }}
-  <meta name="twitter:card" content="summary_large_image">
-{{ with .Title | default .Site.Title }}
-  <meta name="twitter:title" content="{{ . | truncate 70 }}" />
-{{ end }}
-{{ with .Description | default .Content }}
-  <meta name="twitter:description" content="{{ . }}">
-{{ end }}
-{{ with  or (.Params.image) (.Site.Params.avatar) | absURL }}
-  <meta name="twitter:image" content="{{ . }}">
-{{ end }}
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    {{ if .IsHome}}
+    <title>{{.Site.Title}}</title>
+    <meta name="description" content="{{ .Site.Params.main.description  }}">
+    <meta property="og:title" content="{{ .Site.Title }}" />
+    <meta property="og:description"
+          content="{{.Site.Params.main.description | plainify }}" />
+    <meta property="og:image" content="{{ .Site.Params.main.img | absURL }}" />
+    <meta name="keywords" content="{{ $.Site.Params.main.Keywords }}" />
+    {{else}}
+    <title>{{.Title}} | {{.Site.Title}}</title>
+    <meta name="description" content="{{.Title}}">
+    <meta property="og:site_name" content="{{ .Title }}" />
+    <meta property="og:title" content="{{ .Site.Title }}" />
+    <meta property="og:description" content="{{ .Summary | plainify}}" />
+    <meta property="og:image" content="{{ .Site.Params.main.img | absURL }}" />
+    <meta name="keywords"
+          content="{{ with .Params.Keywords }}{{ else }}{{ $.Site.Params.Keywords }}{{ end }}" />
+    {{end}}
+    {{ if .Site.Params.main.enableKatex }}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css"
+        integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI"
+          crossorigin="anonymous">
 
-{{ with .OutputFormats.Get "rss" -}}
-  {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
-{{ end -}}
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"
+        integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t"
+        crossorigin="anonymous">
+    </script>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js"
+        integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);">
+    </script>
+    {{end}}
+    <meta name="keywords" content="{{ .Site.Params.main.metaKeywords }}">
+    <link rel="icon" type="image/svg" href='{{ .Site.Params.main.icon | absURL }}' />
+    <meta name="author" content='{{ .Site.Params.main.name }}'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{hugo.Generator}}
+    {{ $style := resources.Get "/sass/main.scss" | toCSS | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}" type="text/css" media="screen">
 
-  {{ with .Site.Params.author }}
-  <meta name="author" content="{{ . }}">
-  {{ end }}
-  {{ hugo.Generator }}
+    <link rel="stylesheet" href={{ "/css/syntax.css" | absURL }}>
 
-  <link rel="stylesheet" href={{ "plugins/font-awesome/css/font-awesome.min.css" | absURL }} />
-  {{ $style := resources.Get "scss/style.scss" | resources.ToCSS | minify}}
-  <link href="{{ $style.Permalink }}" rel="stylesheet" />
+    {{ range .Site.Params.style.custom_scss -}}
+    {{ $scss_file := resources.Get . | toCSS | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $scss_file.Permalink }}">
+    {{- end }}
 
-  <link rel="shortcut icon" href={{ "images/favicon.ico" | absURL }} type="image/x-icon" />
-  <link rel="icon" href={{ "images/favicon.ico" | absURL }} type="image/x-icon" />
-
-  {{ with .Site.GoogleAnalytics }}
-  <script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', '{{ . }}');
-  </script>
-  <script async src='https://www.google-analytics.com/analytics.js'></script>
-  {{ end }}
-
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9655018812623545" crossorigin="anonymous"></script>
+    <!-- RSS -->
+    {{ with .OutputFormats.Get "rss" -}}
+    {{ printf `
+    <link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+    {{ end -}}
 </head>

@@ -1,39 +1,44 @@
-<nav class="main-nav nav-top navbar navbar-expand-lg">
-	<div class="container" style="display: flex; flex-direction: row; flex-wrap: wrap; width: 100%;">
-		<div style="display: flex; flex-direction: column;">
-			<a class="navbar-brand" href={{ "" | relLangURL }}>
-				<img class="logo-main" src={{ .Site.Params.avatar  | absURL }} alt="logo" />
-				<div>{{ .Site.Title }}</div>
-			</a>
-			<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#mainNav">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-		</div>
-		<div style="display: flex; flex-direction: column; flex-basis: 100%;">
-			<div class="collapse navbar-collapse nav-list" id="mainNav">
-				<!-- Navigation Links -->
-				<ul class="navbar-nav">
-					{{ range .Site.Menus.main }}
-					<li class="nav-item">
-						<a class="nav-link" href={{ .URL | relLangURL }}>{{ .Name }}</a>
-					</li>
-					{{ end }}
-					<li class="nav-item">
-						{{ range .Site.Languages }}
-						{{ if eq . $.Site.Language }}
-						<span class="nav-link">{{ .LanguageName }} <i class="fa fa-angle-down"></i></span>
-						{{ end }}
-						{{ end }}
-						{{ range $.Translations }}
-						<a class="nav-link" title="{{ .Language.LanguageName }}" href="{{ .Permalink }}">
-							| {{ .Language.LanguageName }}
-						</a>
-						{{ end }}
-					</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-</nav>
+<div class="title">
+  <div class="name">
+    <h4>
+      <img width="25px" src={{ "images/face.ico" | absURL }}>
+      <a href="{{.Site.BaseURL}}" style="text-decoration: none; color: inherit;">{{ .Site.Params.main.headerTitle }}</a>
+    </h4>
+  </div>
+  {{ partial "menu.html" . }}
+</div>
+<script>
+  const themeSetter = (theme) => {
+      document.body.classList.toggle('dark')
+      localStorage.setItem('theme', theme)
+      blockSwitcher()
+  }
+
+  const blockSwitcher = () => [...document.getElementsByTagName("BLOCKQUOTE")]
+	.forEach(b => b.classList.toggle('dark'))
+
+  const styleSwapper = () => {
+      document.body.classList.add('back-transition')
+      if (localStorage.getItem('theme') === 'dark') themeSetter('light')
+      else if (localStorage.getItem('theme') === 'light') themeSetter('dark')
+  }
+
+  if (localStorage.getItem('theme') === 'dark'){
+      themeSetter('dark')
+      document.addEventListener("DOMContentLoaded", blockSwitcher)
+  }
+ else localStorage.setItem('theme', 'light')
+
+  document.getElementById('chk').addEventListener('change',styleSwapper);
+
+  window.addEventListener("scroll", () => {
+      let height = document.documentElement.scrollHeight
+          - document.documentElement.clientHeight;
+      if(height >= 500){
+	  let winScroll = document.body.scrollTop
+              || document.documentElement.scrollTop;
+	  let scrolled = (winScroll / height) * 100;
+	  document.getElementById("scrollIndicator").style.width = scrolled + "%";
+      }
+  });
+</script>
