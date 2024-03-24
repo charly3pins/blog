@@ -520,6 +520,10 @@ body.dark .menu .menu-active {
     
 }
 
+body.dark .hamb-line {
+    background: white;
+}
+
 .hamb-line::before,
 .hamb-line::after {
     background: black;
@@ -529,6 +533,11 @@ body.dark .menu .menu-active {
     position: absolute;
     transition: all .2s ease-out;
     width: 100%;
+}
+
+body.dark .hamb-line::before,
+body.dark .hamb-line::after {
+    background: white;
 }
 
 .hamb-line::before {
