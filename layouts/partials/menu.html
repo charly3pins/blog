@@ -1,4 +1,4 @@
-<ul class="menu">
+<ul id="menu" class="menu">
 {{ $currentPage := . }}
 {{ range .Site.Menus.main }}
 {{ $menu_item_url := .URL | relLangURL }}
@@ -10,7 +10,7 @@
     </li>
 {{ end }}
     <li>
-        <div class="color-scheme" style="margin:auto; width: 30%;">
+        <div class="color-scheme">
         <input type="checkbox" class="checkbox" id="chk" />
         <label class="label" for="chk">🌚 🌝<div class="ball"></div>
         </label>

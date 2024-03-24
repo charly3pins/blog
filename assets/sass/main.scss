@@ -102,6 +102,8 @@ body.dark a {
 
 .color-scheme {
     font-size: 15px;
+    margin:auto; 
+    width: 30%;
 }
 
 .checkbox {
@@ -163,6 +165,7 @@ body.dark .tag {
     border-radius: 50px;
     cursor: pointer;
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
     padding: 5px;
@@ -410,11 +413,12 @@ ul li p {
 }
 
 .menu {
-	list-style: none;
+    list-style: none;
 	padding: 0;
 	margin: 0;
 	text-align: center;
     flex:2;
+    display: none;
 }
 
 @media (max-width:849px) {
@@ -431,7 +435,7 @@ ul li p {
     }
 }
 
-@media (min-width:850px) {
+@media (min-width: 768px) {
 	.menu {
 		display: flex;
 		justify-content: center;
@@ -462,7 +466,7 @@ ul li p {
 	position: relative;
 }
 
-@media (min-width:850px) {
+@media (min-width: 768px) {
 	.menu a {
 		margin-bottom: 0;
 	}
@@ -474,7 +478,7 @@ ul li p {
     text-underline-offset: 0.4rem;
 }
 
-@media (min-width:850px) {
+@media (min-width: 768px) {
     .menu .menu-active:after {
         bottom: -16px
     }
@@ -494,4 +498,73 @@ body.dark .menu a:hover {
 
 body.dark .menu .menu-active {
 	color: greenyellow;
+}
+
+
+// MENU
+
+.hamb {
+    display: block;
+}
+
+.hamb {
+    cursor: pointer;
+}
+
+.hamb-line {
+    background: black;
+    display: block;
+    height: 2px;
+    position: relative;
+    width: 24px;
+    
+}
+
+.hamb-line::before,
+.hamb-line::after {
+    background: black;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+
+.hamb-line::before {
+    top: 5px;
+}
+.hamb-line::after {
+    top: -5px;
+}
+
+.side-menu {
+    display: none;
+}
+
+.side-menu:checked ~ nav {
+    max-height: 100%;
+}
+
+.side-menu:checked ~ .hamb .hamb-line {
+    background: transparent;
+}
+
+.side-menu:checked ~ .hamb .hamb-line::before {
+    transform: rotate(-45deg);
+    top:0;
+}
+
+.side-menu:checked ~ .hamb .hamb-line::after {
+    transform: rotate(45deg);
+    top:0;
+}
+
+@media (min-width: 768px) {
+	.side-menu {
+        display: none;
+    }
+    .hamb {
+        display: none;
+    }
 }

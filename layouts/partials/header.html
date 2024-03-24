@@ -1,44 +1,54 @@
 <div class="title">
-  <div class="name">
-    <h4>
-      <img width="25px" src={{ "images/face.ico" | absURL }}>
-      <a href="{{.Site.BaseURL}}" style="text-decoration: none; color: inherit;">{{ .Site.Params.main.headerTitle }}</a>
-    </h4>
-  </div>
-  {{ partial "menu.html" . }}
+	<div class="name">
+		<h4>
+			<img width="25px" src={{ "images/face.ico" | absURL }}>
+			<a href="{{.Site.BaseURL}}" style="text-decoration: none; color: inherit;">{{ .Site.Params.main.headerTitle }}</a>
+			<input class="side-menu" type="checkbox" id="side-menu" onclick="swap()"/>
+			<label class="hamb" for="side-menu"><span class="hamb-line"></span></label>	
+		</h4>
+	</div>
+	{{ partial "menu.html" . }}
 </div>
 <script>
-  const themeSetter = (theme) => {
-      document.body.classList.toggle('dark')
-      localStorage.setItem('theme', theme)
-      blockSwitcher()
-  }
+	const themeSetter = (theme) => {
+		document.body.classList.toggle('dark')
+		localStorage.setItem('theme', theme)
+		blockSwitcher()
+	}
 
-  const blockSwitcher = () => [...document.getElementsByTagName("BLOCKQUOTE")]
+	const blockSwitcher = () => [...document.getElementsByTagName("BLOCKQUOTE")]
 	.forEach(b => b.classList.toggle('dark'))
 
-  const styleSwapper = () => {
-      document.body.classList.add('back-transition')
-      if (localStorage.getItem('theme') === 'dark') themeSetter('light')
-      else if (localStorage.getItem('theme') === 'light') themeSetter('dark')
-  }
+	const styleSwapper = () => {
+		document.body.classList.add('back-transition')
+		if (localStorage.getItem('theme') === 'dark') themeSetter('light')
+		else if (localStorage.getItem('theme') === 'light') themeSetter('dark')
+	}
 
-  if (localStorage.getItem('theme') === 'dark'){
-      themeSetter('dark')
-      document.addEventListener("DOMContentLoaded", blockSwitcher)
-  }
- else localStorage.setItem('theme', 'light')
+	if (localStorage.getItem('theme') === 'dark'){
+		themeSetter('dark')
+		document.addEventListener("DOMContentLoaded", blockSwitcher)
+	}
+ 	else localStorage.setItem('theme', 'light')
 
-  document.getElementById('chk').addEventListener('change',styleSwapper);
+	document.getElementById('chk').addEventListener('change',styleSwapper);
 
-  window.addEventListener("scroll", () => {
-      let height = document.documentElement.scrollHeight
-          - document.documentElement.clientHeight;
-      if(height >= 500){
-	  let winScroll = document.body.scrollTop
-              || document.documentElement.scrollTop;
-	  let scrolled = (winScroll / height) * 100;
-	  document.getElementById("scrollIndicator").style.width = scrolled + "%";
-      }
-  });
+	window.addEventListener("scroll", () => {
+		let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+		if(height >= 500){
+			let winScroll = document.body.scrollTop
+						|| document.documentElement.scrollTop;
+			let scrolled = (winScroll / height) * 100;
+			document.getElementById("scrollIndicator").style.width = scrolled + "%";
+		}
+	});
+
+	const swap = () => {
+		if (document.getElementById('side-menu').checked){
+			document.getElementById('menu').style.display = "block";
+		} else {
+			console.log("unchecked");
+            document.getElementById('menu').style.display = "none";
+        }
+	}
 </script>
