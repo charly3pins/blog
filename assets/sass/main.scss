@@ -101,7 +101,7 @@ body.dark a {
 }
 
 .color-scheme {
-    font-size: 15px;
+    font-size: 14px;
     margin:auto; 
     width: 30%;
 }
@@ -170,18 +170,18 @@ body.dark .tag {
     justify-content: space-between;
     padding: 5px;
     height: 10px;
-    width: 34px;
-    transform: scale(1.5);
-    margin-top: 10px;
+    width: 40px;
+    transform: scale(1.2);
+    margin-top: 5px;
     .ball {
         background-color: #fff;
         border-radius: 50%;
         position: absolute;
-        top: 2px;
-        left: 2px;
-        height: 16px;
-        width: 16px;
-        transform: translateX(2px);
+        top: 1px;
+        left: 1px;
+        height: 17px;
+        width: 17px;
+        transform: translateX(4px);
         transition: transform 0.2s linear;
     }
 }
@@ -191,7 +191,7 @@ body.dark .label {
 }
 
 .checkbox:checked + .label .ball {
-    transform: translateX(22px);
+    transform: translateX(26px);
 }
 
 .main {
