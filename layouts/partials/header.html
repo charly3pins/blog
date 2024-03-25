@@ -3,11 +3,16 @@
 		<h4>
 			<img width="25px" src={{ "images/face.ico" | absURL }}>
 			<a href="{{.Site.BaseURL}}" style="text-decoration: none; color: inherit;">{{ .Site.Params.main.headerTitle }}</a>
-			<input class="side-menu" type="checkbox" id="side-menu" onclick="swap()"/>
-			<label class="hamb" for="side-menu"><span class="hamb-line"></span></label>	
+			<!-- <input class="side-menu" type="checkbox" id="side-menu" onclick="swap()"/>
+			<label class="hamb" for="side-menu"><span class="hamb-line"></span></label>	 -->
 		</h4>
 	</div>
-	{{ partial "menu.html" . }}
+	<div class="color-scheme">
+		<input type="checkbox" class="checkbox" id="chk" />
+		<label class="label" for="chk">🌚 🌝<div class="ball"></div>
+		</label>
+	</div>
+	<!-- {{ partial "menu.html" . }} -->
 </div>
 <script>
 	const themeSetter = (theme) => {

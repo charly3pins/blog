@@ -45,7 +45,8 @@ body.dark {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    flex-direction: column;
+    // flex-direction: column;
+    flex-direction: row;
 }
 
 .name {
@@ -170,7 +171,7 @@ body.dark .tag {
     justify-content: space-between;
     padding: 5px;
     height: 10px;
-    width: 40px;
+    width: 32px;
     transform: scale(1.2);
     margin-top: 5px;
     .ball {
@@ -191,7 +192,7 @@ body.dark .label {
 }
 
 .checkbox:checked + .label .ball {
-    transform: translateX(26px);
+    transform: translateX(22px);
 }
 
 .main {

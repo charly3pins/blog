@@ -27,7 +27,7 @@ metaDataFormat= "yaml"
   img = "images/me-retro.jpeg"
   img_title = ""
   icon = "images/face.ico"
-  quote = "🌚 <span style=\"font-style:italic;\">Entre el 0 y el 1</span> 🌝"
+  quote = "<span style=\"font-style:italic;\">Entre 0s y 1s</span>"
   description= """¡Hola y bienvenido a mi espacio digital!
 <br><br>
 Soy Carles, pero se me conoce como Charly3Pins. Durante más de una década, he estado inmerso en el apasionante mundo de la ingeniería de software. Aquí compartiré contigo mis vivencias, reflexiones y conocimientos acumulados a lo largo de este viaje tecnológico.
@@ -69,24 +69,24 @@ Pero aquí no termina la historia. Además de seguirme en mis redes sociales com
     name = "email"
     url  = "mailto:hello@charly3pins.dev"
 
-[menu]
-  [[menu.main]]
-    identifier = "home"
-    name       = "Inicio"
-    url        = "/"
-    weight = 1
+#  [menu]
+#    [[menu.main]]
+#      identifier = "home"
+#      name       = "Inicio"
+#      url        = "/"
+#      weight = 1
 
-  [[menu.main]]
-    identifier = "blog"
-    name       = "Blog"
-    url        = "/blog/"
+#  [[menu.main]]
+#    identifier = "blog"
+#    name       = "Blog"
+#    url        = "/blog/"
 
-  [[menu.main]]
-    identifier = "projects"
-    name       = "Proyectos"
-    url        = "/projects/"
+#  [[menu.main]]
+#    identifier = "projects"
+#    name       = "Proyectos"
+#    url        = "/projects/"
 
-  [[menu.main]]
-    identifier = "biblioteca"
-    name       = "Biblioteca"
-    url        = "/biblioteca/"
+#  [[menu.main]]
+#    identifier = "biblioteca"
+#    name       = "Biblioteca"
+#    url        = "/biblioteca/"
