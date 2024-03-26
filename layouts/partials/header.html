@@ -3,40 +3,40 @@
 		<h4>
 			<img width="25px" src={{ "images/face.ico" | absURL }}>
 			<a href="{{.Site.BaseURL}}" style="text-decoration: none; color: inherit;">{{ .Site.Params.main.headerTitle }}</a>
-			<!-- <input class="side-menu" type="checkbox" id="side-menu" onclick="swap()"/>
-			<label class="hamb" for="side-menu"><span class="hamb-line"></span></label>	 -->
+			<input class="side-menu" type="checkbox" id="side-menu" onclick="swap()"/>
+			<label class="hamb" for="side-menu"><span class="hamb-line"></span></label>	
 		</h4>
 	</div>
-	<div class="color-scheme">
+	<!-- <div class="color-scheme">
 		<input type="checkbox" class="checkbox" id="chk" />
 		<label class="label" for="chk">🌚 🌝<div class="ball"></div>
 		</label>
-	</div>
-	<!-- {{ partial "menu.html" . }} -->
+	</div> -->
+	{{ partial "menu.html" . }}
 </div>
 <script>
-	const themeSetter = (theme) => {
-		document.body.classList.toggle('dark')
-		localStorage.setItem('theme', theme)
-		blockSwitcher()
-	}
+	// const themeSetter = (theme) => {
+	// 	document.body.classList.toggle('dark')
+	// 	localStorage.setItem('theme', theme)
+	// 	blockSwitcher()
+	// }
 
-	const blockSwitcher = () => [...document.getElementsByTagName("BLOCKQUOTE")]
-	.forEach(b => b.classList.toggle('dark'))
+	// const blockSwitcher = () => [...document.getElementsByTagName("BLOCKQUOTE")]
+	// .forEach(b => b.classList.toggle('dark'))
 
-	const styleSwapper = () => {
-		document.body.classList.add('back-transition')
-		if (localStorage.getItem('theme') === 'dark') themeSetter('light')
-		else if (localStorage.getItem('theme') === 'light') themeSetter('dark')
-	}
+	// const styleSwapper = () => {
+	// 	document.body.classList.add('back-transition')
+	// 	if (localStorage.getItem('theme') === 'dark') themeSetter('light')
+	// 	else if (localStorage.getItem('theme') === 'light') themeSetter('dark')
+	// }
 
-	if (localStorage.getItem('theme') === 'dark'){
-		themeSetter('dark')
-		document.addEventListener("DOMContentLoaded", blockSwitcher)
-	}
- 	else localStorage.setItem('theme', 'light')
+	// if (localStorage.getItem('theme') === 'dark'){
+	// 	themeSetter('dark')
+	// 	document.addEventListener("DOMContentLoaded", blockSwitcher)
+	// }
+ 	// else localStorage.setItem('theme', 'light')
 
-	document.getElementById('chk').addEventListener('change',styleSwapper);
+	// document.getElementById('chk').addEventListener('change',styleSwapper);
 
 	window.addEventListener("scroll", () => {
 		let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;

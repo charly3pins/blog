@@ -69,24 +69,24 @@ Pero aquí no termina la historia. Además de seguirme en mis redes sociales com
     name = "email"
     url  = "mailto:hello@charly3pins.dev"
 
-#  [menu]
-#    [[menu.main]]
-#      identifier = "home"
-#      name       = "Inicio"
-#      url        = "/"
-#      weight = 1
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name       = "Inicio"
+    url        = "/"
+    weight = 1
 
-#  [[menu.main]]
-#    identifier = "blog"
-#    name       = "Blog"
-#    url        = "/blog/"
+  [[menu.main]]
+    identifier = "blog"
+    name       = "Blog"
+    url        = "/blog/"
 
-#  [[menu.main]]
-#    identifier = "projects"
-#    name       = "Proyectos"
-#    url        = "/projects/"
+  [[menu.main]]
+    identifier = "projects"
+    name       = "Proyectos"
+    url        = "/projects/"
 
-#  [[menu.main]]
-#    identifier = "biblioteca"
-#    name       = "Biblioteca"
-#    url        = "/biblioteca/"
+  [[menu.main]]
+    identifier = "biblioteca"
+    name       = "Biblioteca"
+    url        = "/biblioteca/"
