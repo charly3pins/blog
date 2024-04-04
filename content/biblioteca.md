@@ -33,7 +33,7 @@ A continuación te dejo las lista de los libros que estoy leyendo, que ya me he 
 * [Ikigai: Los secretos de Japón para una vida larga y joven](https://amzn.to/3VvCXk1) de _Héctor García, Francesc Miralles_
 * [Test Driven Development: By Example](https://amzn.to/3PoQo1o) de _Kent Beck_
 * [Domain-Driven Design with Golang: Use Golang to create simple, maintainable systems to solve complex business problems](https://amzn.to/49TEVyS) de _Matthew Boyle_
-* [Modern CTO](https://www.amazon.es/Modern-CTO-Joel-Beasley/dp/0692076069?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=60HASPG8CWCE&dib=eyJ2IjoiMSJ9.TofkoG0QaV0LM2_CClWb44uZS6euVkiF249kl3I-Mc0P2vkjzrTYMtLjZJu8EQFO0q2O8YEYuRz_PhAlAGUIjcSnxnMyB-J3au24kN-RBnwUFFDnh9o-2PfGctJq8ZCzXWfHJqJLw4cpttg6onraQkwrHyRj6KxxLel_eh2v5HHloSBHudI7Twf1BWB41IntTdUT__ixh4ayxYWvsAIEx--DEzlI4wLDIrgBqjDJJ0k.PIc2OZBNKnd8Ill9_FT9Dr4WB1yVZRTwmIyxicJT5m0&dib_tag=se&keywords=Modern+CTO&qid=1710506683&s=books&sprefix=modern+cto%2Cstripbooks%2C146&sr=1-1&linkCode=sl1&tag=charly3pins-21&linkId=bffb7044507b99918c2089f84ceca5d6&language=es_ES&ref_=as_li_ss_tl) de _Joel Beasley_
+* [Modern CTO](https://amzn.to/4alVDar) by _Joel Beasley_
 * [The Manager's Path: A Guide for Tech Leaders Navigating Growth and Change](https://amzn.to/49KbiQF) de _Camille Fournier_
 * [Team Topologies: Organizing Business and Technology Teams for Fast Flow](https://amzn.to/43mRIYu) de _Matthew Skelton, Manuel Pais_
 * [Bitcoin, Blockchain y Tokenización para inquietos](https://amzn.to/43iwPNS) de _Miguel Caballero_
