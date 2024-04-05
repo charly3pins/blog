@@ -58,10 +58,6 @@ Pero aquí no termina la historia. Además de seguirme en mis redes sociales com
     url  = "https://instagram.com/charly3pins.dev"
 
   [[params.social]]
-    name = "linkedin"
-    url  = "https://www.linkedin.com/in/carlesfuste"
-
-  [[params.social]]
     name = "youtube"
     url  = "https://www.youtube.com/charly3pins"
 
