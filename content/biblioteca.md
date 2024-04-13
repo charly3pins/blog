@@ -18,7 +18,6 @@ A continuación te dejo las lista de los libros que estoy leyendo, que ya me he 
 ## Leyendo
 * [Software Engineering at Google: Lessons Learned from Programming Over Time](https://amzn.to/3TgWORq) de _Titus Winters, Tom Manshreck, Hyrum Wright_
 * [The Phoenix Project: A Novel about IT, DevOps, and Helping Your Business Win](https://amzn.to/3TD3jPG) de _Gene Kim, Kevin Behr, George Spafford_
-* [Las 48 leyes del poder](https://amzn.to/3IEvibx) de _Robert Greene, Joost Elffers_
 * [Un paso por delante de Wall Street: Cómo utilizar lo que ya sabes para ganar dinero en bolsa](https://amzn.to/3VLPIHj) de _Peter Lynch_
 * [Mastering Vim Quickly: From WTF to OMG in no time](https://amzn.to/3Jaiqu0) by _Jovica Ilic_
 
@@ -43,6 +42,7 @@ A continuación te dejo las lista de los libros que estoy leyendo, que ya me he 
 * [Adrenalina: Mis historias jamás contadas](https://amzn.to/3Tb4BQo) de _Zlatan Ibrahimovic_
 * [La filosofía de Bitcoin](https://amzn.to/3wTeKKe) de _Álvaro D. María_
 * [Padre rico, padre pobre](https://amzn.to/43kF7oz) de _Robert T. Kiyosaki_
+* [Las 48 leyes del poder](https://amzn.to/3IEvibx) de _Robert Greene, Joost Elffers_
 
 ## En cola
 * [Design Patterns: Elements of Reusable Object-Oriented Software](https://amzn.to/3Visatg) de _Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides_
