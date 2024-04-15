@@ -20,7 +20,7 @@ A continuación te dejo las lista de los libros que estoy leyendo, que ya me he 
 * [The Phoenix Project: A Novel about IT, DevOps, and Helping Your Business Win](https://amzn.to/3TD3jPG) de _Gene Kim, Kevin Behr, George Spafford_
 * [Un paso por delante de Wall Street: Cómo utilizar lo que ya sabes para ganar dinero en bolsa](https://amzn.to/3VLPIHj) de _Peter Lynch_
 * [Mastering Vim Quickly: From WTF to OMG in no time](https://amzn.to/3Jaiqu0) de _Jovica Ilic_
-* [La semana laboral de 4 horas](https://amzn.to/4aCAU2u) by _Timothy Ferriss_
+* [La semana laboral de 4 horas](https://amzn.to/4aCAU2u) de _Timothy Ferriss_
 
 ## Leídos
 * [The Go Programming Language](https://amzn.to/3IYfy3r) de _Alan A. A. Donovan, Brian W. Kernighan_
