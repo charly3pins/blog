@@ -2,57 +2,58 @@
 title = "Collectus"
 date = "2018-09-22"
 author = "charly3pins"
-description = "Como proyecto de fin de carrera de Ingeniería Informática, construí una base de datos flexible para coleccionables y cualquier otro objeto o dato que cualquier usuario quiera ordenar y clasificar de una manera simple y efectiva."
+description = "As my Final Year Project for Computer Science Engineering I builded a flexible database for collectibles and any other objects or data that any user wants to have ordered and classified in a simple and effective way."
 
 weight = "1"
 
 tags = ["php", "javascript", "mysql"]
+
+image = "/images/code/collectus/main-app.jpeg"
 +++
-## POR QUÉ
+## WHY
 
-La motivación de este proyecto es mitad personal y mitad académica. Dejame explicar. En casa mi padre siempre coleccionaba un montón de cosas, desde los libros más antiguos que puedas imaginar hasta el nuevo Funko POP más reciente, pasando por Swiss Knives o dados entre otros. Tener esa variedad de objetos y muchos de ellos (demasiados para ser honestos) catalogar esa cantidad de artículos siempre había sido un desafío para él.
+The motivation of this project is half personal and half academic. Let me explain. At home my father always collected a lot of things, from the oldest books you can imagine until the most recent new Funko POP, through Swiss Knives or dice among others. Having that variety of objects and a lot of them (too many to be honest) cataloguing that amount of items always had been a challenge for him.
 
-Siempre trató de clasificar de diferentes formas como usando un Excel, aplicaciones gratuitas, aplicaciones de pago, etc. Al final cada vez que sucede algo similar, el hándicap de su "colección de colecciones" (como él lo describe) es demasiado singular, y no cabe en ningún lado. Él es desarrollador y yo estaba en mi último año en la Universidad estudiando Ingeniería en Ciencias de la Computación, así que comenzamos a planear cómo podríamos resolver ese problema haciendo nosotros mismos la aplicación.
+He always tried to classify in different ways such as using an Excel, free applications, paid applications, etc. At the end every time something similar happens, the handicap of his "collection of collections" (as he describes it) is too singular, and it doesn't fit anywhere. He's a developer and I was in my last year at University studying Computer Science Engineering so we started to plan how we could solve that problem by doing ourselves the application.
 
-Después de unos días / semanas me di cuenta de que pronto tendría que elegir un proyecto para presentar como mi Proyecto de Fin de Año, así que decidí darle una oportunidad a esta idea loca y familiar y proponérsela a mi tutor. Estaba emocionada con la idea que teníamos y aceptó feliz.
+After a few days/weeks I realized that soon I would have to choose a project to present as my Final Year Project, so I decided to give it a try this familiar crazy idea and propose it to my tutor. She was excited about the idea we had and she accepted happily.
 
-Una vez que tuve la aprobación de mi tutor, fue una novedad asombrosa porque el proyecto personal que queríamos desarrollar en nuestros tiempos libres, ahora tuve la oportunidad de dedicar todo mi esfuerzo no solo a resolver el problema que teníamos, sino a presentarlo. como proyecto final. Y así empezó todo.
+Once I had the approval of my tutor, it was an amazing new because the personal project we wanted to develop in our free times, now I had the opportunity to dedicate all my effort to not only solve the problem we had, but to present it as a final project. And that's how all started.
 
-Al final el proyecto terminó siendo súper exitoso, mi tutor quedó encantado con el resultado, y al tribunal le gustó mucho, incluso me dijeron que les enviara un correo cuando lo pusiera en producción para que lo usen y cataloguen sus colecciones propias.
+At the end the project ended up being super successful, my tutor was delighted with the result, and the court liked it a lot, they even told me to send them an email when I put it into production so they can use it and catalog their own collections.
 
-## QUÉ
+## WHAT
 
-Llamé a la aplicación Collectus porque es la palabra latina que significa "reunir, recolectar", por lo que en ese caso encaja perfectamente. Es un sistema de base de datos flexible para coleccionables y cualquier otro objeto o dato que el usuario quiera ordenar y clasificar. Collectus está pensado para coleccionistas, permitiéndoles realizar un seguimiento de cualquier tipo de colección que tengan, utilizando un sistema de base de datos con una estructura abierta adaptable a cada necesidad. También proporciona dos tipos de inicio de sesión para los usuarios, creando uno nuevo para la plataforma o usando su cuenta de Facebook conectándolo con la API de Facebook.
+I named the application Collectus as it's the Latin word meaning "gather, collect" so in that case it fits perfectly. It is a system flexible database for collectibles and any other objects or data the user wants to have ordered and classified. Collectus is thought for collectors, allowing them to keep track of any kind of collection they have, using a system database with an open structure adaptable to every need. It also provides two types of login for the users, creating a new one for the platform or using their Facebook account connecting it with the Facebook API.
 
-![app](/images/code/collectus/main-app.jpeg)
 ![login](/images/code/collectus/login.jpeg)
 
-Mediante plantillas el usuario puede establecer todo tipo de récords para elementos tan diversos como sellos o placas de cava, carteles o fósiles, muñecos de trapo o billetes de lotería. Una vez definida la plantilla (categoría) para el objeto o tipo de objeto de interés, y el usuario puede ingresar los datos inmediatamente.
+Using templates the user can set all kinds of records for such diverse items as stamps or placas of cava, posters or fossils, rag dolls or lottery tickets. Once defined the template (category) for the object or type of object of interest, and the user can enter data immediately.
 
 ![item edit](/images/code/collectus/item-edit.jpeg)
 ![amazon mapping](/images/code/collectus/amazon-mapping.jpeg)
 
-Para facilitar toda esta tarea, incorpora herramientas de ayuda al usuario. El más destacado lo proporciona la API de productos de Amazon para leer automáticamente la información de su base de datos en el momento de la entrada de datos.
+To facilitate all this task, it incorporates tools to help the user. The most prominent it is provided by the Amazon Product API to automatically read information from its database at the time of data entry.
 
 ![amazon search](/images/code/collectus/amazon-search.jpeg)
 
-Desde aquí los usuarios podrán leer la información según varios criterios de búsqueda ofrecidos en la aplicación y almacenarlos. También hay una comparación de precios entre las distintas tiendas de Amazon en todos los países para encontrar diferentes precios y ayudar en la compra de artículos a los usuarios.
+From here users will be able to read information according to various search criteria offered in the application and store them. There is also a price comparison between the various Amazon shops in all countries to find different prices and assist in the purchase of items to users. 
 
 ![amazon results](/images/code/collectus/amazon-results.jpeg)
 
-Todo esto ha sido desarrollado bajo una atractiva GUI y la usabilidad como objetivo principal.
+All this has been developed under an attractive GUI and usability as a main goal.
 
-Lenguajes de programación y herramientas utilizadas para este proyecto:
-- PHP 5, JavaScript y jQuery para el backend
-- HTML y CSS para la interfaz
-- AJAX como forma de llamar al lado del servidor
-- API de productos de Amazon para la investigación de productos y la comparación de precios
-- API de Facebook para el inicio de sesión
+Programming languages and tools used for this project:
+- PHP 5, JavaScript and jQuery for the backend
+- HTML and CSS for the frontend
+- AJAX as the way of calling the server side
+- Amazon Product API for the product research and price comparison
+- Facebook API for the login
 
-## PENSAMIENTOS FINALES
+## FINAL THOUGHTS
 
-Fue mi primer gran proyecto como desarrollador de software construyendo una web y aprendí muchas cosas como aprender nuevos lenguajes de programación y la arquitectura de los proyectos; diseñar correctamente las bases de datos; pulir el más mínimo detalle visual; batalla con las API externas que se conectan a ellos; organizarme para entregar pequeñas partes del proyecto paso a paso en lugar de todo el proyecto a la vez; escribir la documentación apropiada sobre la funcionalidad del proyecto y probablemente muchos otros.
+It was my first big project as a software developer building a web and I learned a lot of things like learning new programming languages and architecture of the projects; designing the databases correctly; polish the smallest visual detail; battle with external APIs connecting to them; organize myself in order to deliver small chunks of the project step by step instead of the entire project at once; write appropriate documentation about the functionality of the project and many others probably.
 
-Siempre he querido hacer una segunda versión mejorada del proyecto, ahora con la experiencia que tengo y las habilidades que he ido adquiriendo a lo largo de estos años de trabajo. Empecé varias veces pero nunca terminé...
+I have always wanted to make a second improved version of the project, now with the experience I have and the skills that I have been acquiring throughout these years of work. I've started several times but never finished...
 
-Espero algún día poder lanzar oficialmente la aplicación y contaros aquí. 🚀
+I hope one day to be able to officially launch the application and tell you about it here. 🚀

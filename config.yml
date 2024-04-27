@@ -1,0 +1,156 @@
+baseURL: "https://charly3pins.dev" 
+title: "Charly3Pins.dev" 
+copyright: "© 2018 - 2024 [Charly3Pins](https://github.com/charly3pins. All rights reserved."
+paginate: 5
+theme: [PaperMod]
+
+enableInlineShortcodes: true
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+enableEmoji: true
+pygmentsUseClasses: true
+mainsections: ["posts", "papermod"]
+
+googleAnalytics: "G-KX7XNRQ64E"
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+languages:
+  en:
+    languageName: "English"
+    weight: 1
+    taxonomies:
+      category: categories
+      tag: tags
+      series: series
+    menu:
+      main:
+        - name: Blog 
+          url: blog/ 
+          weight: 5
+        - name: Projects 
+          url: projects/ 
+          weight: 5
+        - name: Tags
+          url: tags/
+          weight: 20
+        - name: Library 
+          url: library/
+        - name: Search
+          url: search/
+          weight: 100
+  es:
+    languageName: ":es:"
+    weight: 1
+    taxonomies:
+      category: categories
+      tag: tags
+      series: series
+    menu:
+      main:
+        - name: Blog 
+          url: blog/ 
+          weight: 5
+        - name: Proyectos 
+          url: projects/ 
+          weight: 5
+        - name: Tags
+          url: tags/
+          weight: 20
+        - name: Biblioteca 
+          url: library/ 
+        - name: Búsqueda 
+          url: search/
+          weight: 100
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+params:
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  description: "Writing about the things I learn in my Software Engineer work: Go, Coding, Engineering, Software Architecture, Productivity"
+  author: "Charly3Pins" 
+  defaultTheme: auto
+  disableThemeToggle: false 
+  ShowShareButtons: true
+  ShowReadingTime: true
+  disableSpecial1stPost: true
+  displayFullLangName: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowRssButtonInSectionTermList: true
+  ShowAllPagesInArchive: true
+  ShowPageNums: true
+  ShowToc: false 
+  comments: false
+  images: ["images/papermod-cover.png"]
+
+  profileMode:
+    enabled: false
+    title: Between 1s and 0s
+    imageUrl: "#"
+    imageTitle: my image
+    # imageWidth: 120
+    # imageHeight: 120
+    buttons:
+      - name: Blog 
+        url: blog 
+      - name: Tags
+        url: tags
+      - name: Library
+        url: library
+
+  homeInfoParams:
+    Title: "Charly3Pins' website"
+    Content: >
+      👋 Welcome to my website. I'm Charly3Pins, a Software Engineer from Spain
+
+      - Here I share thoughts and learnings about technical topics such as Go, Coding, Engineering, Software Architecture, Productivity.
+
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/charly3pins"
+    - name: twitter 
+      url: "https://x.com/charly3pins"
+    - name: youtube
+      url: "https://youtube.com/charly3pins"
+    - name: rss
+      url: "https://charly3pins.dev/index.xml"
+
+  assets:
+    disableHLJS: true
+  #     favicon: "<link / abs url>"
+  #     favicon16x16: "<link / abs url>"
+  #     favicon32x32: "<link / abs url>"
+  #     apple_touch_icon: "<link / abs url>"
+  #     safari_pinned_tab: "<link / abs url>"
+
+  # cover:
+  #     hidden: true # hide everywhere but not in structured data
+  #     hiddenInList: true # hide on list pages and home
+  #     hiddenInSingle: true # hide on single page
+
+  fuseOpts:
+       isCaseSensitive: false
+       shouldSort: true
+       location: 0
+       distance: 1000
+       threshold: 0.4
+       minMatchCharLength: 0
+       keys: ["title", "permalink", "summary", "content"]
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    noClasses: false
