@@ -1,6 +1,6 @@
 baseURL: "https://charly3pins.dev" 
 title: "Charly3Pins.dev" 
-copyright: "© 2018 - 2024 [Charly3Pins](https://github.com/charly3pins. All rights reserved."
+copyright: "© 2018 - 2024 [Charly3Pins](https://charly3pins.dev). All rights reserved."
 paginate: 5
 theme: [PaperMod]
 
@@ -11,7 +11,7 @@ buildFuture: false
 buildExpired: false
 enableEmoji: true
 pygmentsUseClasses: true
-mainsections: ["posts", "papermod"]
+mainsections: ["blog"]
 
 googleAnalytics: "G-KX7XNRQ64E"
 
@@ -29,6 +29,9 @@ languages:
       series: series
     menu:
       main:
+        - name: About
+          url: about/
+          weight: 1
         - name: Blog 
           url: blog/ 
           weight: 5
@@ -40,11 +43,12 @@ languages:
           weight: 20
         - name: Library 
           url: library/
+          weight: 20
         - name: Search
           url: search/
           weight: 100
   es:
-    languageName: ":es:"
+    languageName: "Castellano"
     weight: 1
     taxonomies:
       category: categories
@@ -52,6 +56,9 @@ languages:
       series: series
     menu:
       main:
+        - name: Sobre mí
+          url: about/
+          weight: 1
         - name: Blog 
           url: blog/ 
           weight: 5
@@ -63,7 +70,8 @@ languages:
           weight: 20
         - name: Biblioteca 
           url: library/ 
-        - name: Búsqueda 
+          weight: 20
+        - name: Buscar 
           url: search/
           weight: 100
 
@@ -90,32 +98,18 @@ params:
   ShowAllPagesInArchive: true
   ShowPageNums: true
   ShowToc: false 
-  comments: false
-  images: ["images/papermod-cover.png"]
-
-  profileMode:
-    enabled: false
-    title: Between 1s and 0s
-    imageUrl: "#"
-    imageTitle: my image
-    # imageWidth: 120
-    # imageHeight: 120
-    buttons:
-      - name: Blog 
-        url: blog 
-      - name: Tags
-        url: tags
-      - name: Library
-        url: library
+  comments: true 
+  hidemeta: false
+  hideSummary: false
+  images: ["images/me-retro.jpeg"]
 
   homeInfoParams:
-    Title: "Charly3Pins' website"
-    Content: >
-      👋 Welcome to my website. I'm Charly3Pins, a Software Engineer from Spain
-
-      - Here I share thoughts and learnings about technical topics such as Go, Coding, Engineering, Software Architecture, Productivity.
-
-
+     Title: ""
+     # Content: >
+     #   👋 Welcome to my website. I'm Charly3Pins, a Software Engineer from Spain
+     #
+     #   - Here I share thoughts and learnings about technical topics such as Go, Coding, Engineering, Software Architecture, Productivity.
+     #
   socialIcons:
     - name: github
       url: "https://github.com/charly3pins"
