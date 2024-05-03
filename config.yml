@@ -1,8 +1,8 @@
-baseURL: "https://charly3pins.dev" 
-title: "Charly3Pins.dev" 
+baseURL: "https://charly3pins.dev"
+title: "Charly3Pins.dev"
 copyright: "© 2018 - 2024 [Charly3Pins](https://charly3pins.dev). All rights reserved."
 paginate: 5
-theme: [PaperMod]
+# theme: [PaperMod]
 
 enableInlineShortcodes: true
 enableRobotsTXT: true
@@ -32,16 +32,16 @@ languages:
         - name: About
           url: about/
           weight: 1
-        - name: Blog 
-          url: blog/ 
+        - name: Blog
+          url: blog/
           weight: 5
-        - name: Projects 
-          url: projects/ 
+        - name: Projects
+          url: projects/
           weight: 5
         - name: Tags
           url: tags/
           weight: 20
-        - name: Library 
+        - name: Library
           url: library/
           weight: 20
         - name: Search
@@ -59,19 +59,19 @@ languages:
         - name: Sobre mí
           url: about/
           weight: 1
-        - name: Blog 
-          url: blog/ 
+        - name: Blog
+          url: blog/
           weight: 5
-        - name: Proyectos 
-          url: projects/ 
+        - name: Proyectos
+          url: projects/
           weight: 5
         - name: Tags
           url: tags/
           weight: 20
-        - name: Biblioteca 
-          url: library/ 
+        - name: Biblioteca
+          url: library/
           weight: 20
-        - name: Buscar 
+        - name: Buscar
           url: search/
           weight: 100
 
@@ -84,9 +84,9 @@ outputs:
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   description: "Writing about the things I learn in my Software Engineer work: Go, Coding, Engineering, Software Architecture, Productivity"
-  author: "Charly3Pins" 
+  author: "Charly3Pins"
   defaultTheme: auto
-  disableThemeToggle: false 
+  disableThemeToggle: false
   ShowShareButtons: true
   ShowReadingTime: true
   disableSpecial1stPost: true
@@ -97,23 +97,42 @@ params:
   ShowRssButtonInSectionTermList: true
   ShowAllPagesInArchive: true
   ShowPageNums: true
-  ShowToc: false 
-  comments: true 
+  ShowToc: false
+  comments: true
   hidemeta: false
   hideSummary: false
   images: ["images/me-retro.jpeg"]
 
+  # profile-mode
+  profileMode:
+    enabled: true
+    title: Engineering, Golang and Technology
+    subtitle: "A place to share my knowledge"
+    imageUrl: "images/me-retro.jpeg"
+    imageWidth: 120
+    imageHeight: 120
+    imageTitle: charly3pins avatar
+    buttons:
+      - name: About
+        url: about
+      - name: Blog
+        url: blog
+      - name: Projects
+        url: projects
+      - name: Library
+        url: library
+
   homeInfoParams:
-     Title: ""
-     # Content: >
-     #   👋 Welcome to my website. I'm Charly3Pins, a Software Engineer from Spain
-     #
-     #   - Here I share thoughts and learnings about technical topics such as Go, Coding, Engineering, Software Architecture, Productivity.
-     #
+    Title: ""
+    # Content: >
+    #   👋 Welcome to my website. I'm Charly3Pins, a Software Engineer from Spain
+    #
+    #   - Here I share thoughts and learnings about technical topics such as Go, Coding, Engineering, Software Architecture, Productivity.
+    #
   socialIcons:
     - name: github
       url: "https://github.com/charly3pins"
-    - name: twitter 
+    - name: twitter
       url: "https://x.com/charly3pins"
     - name: youtube
       url: "https://youtube.com/charly3pins"
@@ -134,13 +153,13 @@ params:
   #     hiddenInSingle: true # hide on single page
 
   fuseOpts:
-       isCaseSensitive: false
-       shouldSort: true
-       location: 0
-       distance: 1000
-       threshold: 0.4
-       minMatchCharLength: 0
-       keys: ["title", "permalink", "summary", "content"]
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
 
 markup:
   goldmark:
