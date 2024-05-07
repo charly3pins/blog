@@ -3,6 +3,7 @@ title: "Charly3Pins.dev"
 copyright: "© 2018 - 2024 [Charly3Pins](https://charly3pins.dev). All rights reserved."
 paginate: 5
 # theme: [PaperMod]
+titleCaseStyle: "none"
 
 enableInlineShortcodes: true
 enableRobotsTXT: true
@@ -104,10 +105,10 @@ params:
   images: ["images/me-retro.jpeg"]
 
   # profile-mode
-  profileMode:
+  indexProfile:
     enabled: true
-    title: Engineering, Golang and Technology
-    subtitle: "A place to share my knowledge"
+    # title: Engineering, Golang and Technology
+    # subtitle: "A place to share my knowledge"
     imageUrl: "images/me-retro.jpeg"
     imageWidth: 120
     imageHeight: 120

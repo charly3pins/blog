@@ -1,6 +1,4 @@
-{{- define "main" }} {{- if (and site.Params.profileMode.enabled .IsHome) }} {{-
-partial "index_profile.html" . }} {{- else }} {{/* if not profileMode */}} {{-
-if not .IsHome | and .Title }}
+{{- define "main" }}
 <header class="page-header">
   {{- partial "breadcrumbs.html" . }}
   <h1>
@@ -28,21 +26,16 @@ if not .IsHome | and .Title }}
   <div class="post-description">{{ .Description | markdownify }}</div>
   {{- end }}
 </header>
-{{- end }} {{- if .Content }}
+{{- if .Content }}
 <div class="post-content">
   {{- if not (.Param "disableAnchoredHeadings") }} {{- partial
   "anchored_headings.html" .Content -}} {{- else }}{{ .Content }}{{ end }}
 </div>
-{{- end }} {{- $pages := union .RegularPages .Sections }} {{- if .IsHome }} {{-
-$pages = where site.RegularPages "Type" "in" site.Params.mainSections }} {{-
-$pages = where $pages "Params.hiddenInHomeList" "!=" "true" }} {{- end }} {{-
-$paginator := .Paginate $pages }} {{- if and .IsHome site.Params.homeInfoParams
-(eq $paginator.PageNumber 1) }} {{- partial "home_info.html" . }} {{- end }} {{-
-$term := .Data.Term }} {{- range $index, $page := $paginator.Pages }} {{- $class
-:= "post-entry" }} {{- $user_preferred := or site.Params.disableSpecial1stPost
-site.Params.homeInfoParams }} {{- if (and $.IsHome (eq $paginator.PageNumber 1)
-(eq $index 0) (not $user_preferred)) }} {{- $class = "first-entry" }} {{- else
-if $term }} {{- $class = "post-entry tag-entry" }} {{- end }}
+{{- end }} {{- $pages := union .RegularPages .Sections }} {{- $paginator :=
+.Paginate $pages }} {{- $term := .Data.Term }} {{- range $index, $page :=
+$paginator.Pages }} {{- $class:= "post-entry" }} {{- if (and $.IsHome (eq
+$paginator.PageNumber 1) (eq $index 0)) }} {{- $class = "first-entry" }} {{-
+else if $term }} {{- $class = "post-entry tag-entry" }} {{- end }}
 
 <article class="{{ $class }}">
   {{- $isHidden := (.Param "cover.hiddenInList") | default (.Param
@@ -92,4 +85,4 @@ if $term }} {{- $class = "post-entry tag-entry" }} {{- end }}
     {{- end }}
   </nav>
 </footer>
-{{- end }} {{- end }}{{/* end profileMode */}} {{- end }}{{- /* end main */ -}}
+{{- end }} {{- end -}}
