@@ -6,7 +6,7 @@ description = "Learn how to code effectively by following the best practices of 
 
 tags = ["go"]
 
-image = "/images/gopher-nerdy.png"
+image = "/images/gopher-bulb.png"
 +++
 
 {{< youtube 4wZmL3XpR04 >}}

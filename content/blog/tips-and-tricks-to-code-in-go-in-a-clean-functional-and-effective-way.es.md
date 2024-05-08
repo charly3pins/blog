@@ -6,7 +6,7 @@ description = "Aprende a programar de manera efectiva siguiendo las mejores prá
 
 tags = ["go"]
 
-image = "/images/gopher-nerdy.png"
+image = "/images/gopher-bulb.png"
 +++
 
 {{< youtube 4wZmL3XpR04 >}}
