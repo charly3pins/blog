@@ -8,7 +8,9 @@ tags = ["go"]
 
 image = "/images/gopher-nerdy.png"
 +++
+
 ## Primer contacto
+
 Han pasado aproximadamente 8 años desde que comencé a jugar con Go. En ese momento conocí a un compañero que había dejado mi puesto de trabajo para probar suerte en un nuevo reto en su carrera profesional. Un día hablando con él me dijo que habían decidido usar un lenguaje de programación llamado Go y que estaba encantado con lo fácil que era hacer las cosas que con Java, el lenguaje que estábamos acostumbrados a usar, era tremendamente burdo y en ocasiones complejo. , debido a la cantidad de capas y repeticiones que tienes que agregar. Fue entonces cuando le dije que me mostrara cómo funcionaba y dónde conocí a Go.
 
 Intenté crear alguna API con un servidor HTTP y en cuestión de minutos la tenía funcionando y ejecutando curls sin ningún problema. Ese mismo año, unos meses después, tuve la oportunidad de participar en un proyecto de automatización operativa donde él trabajaba y lo hicimos configurando varias API en Go. Comunicándose entre ellos, también con algunas herramientas de AWS como AWS Lambda codificadas en Go. El proyecto fue un éxito y la empresa más grande decidió comprarlo.
@@ -18,6 +20,7 @@ Después de eso, continué trabajando con Go en mi siguiente (actual) empresa do
 ¿Por qué hemos elegido "Ir"? Permítanme intentar enumerar algunas cosas que nos hicieron elegir Go frente a otros lenguajes de programación.
 
 ## Manifiesto
+
 Vaya, "el código es muy obvio", existe el chiste de que es un código aburrido, y eso es fantástico.
 
 Go es un "lenguaje rápido" realmente. Debido a que Go está compilado, naturalmente superará a los lenguajes interpretados o que tienen tiempos de ejecución virtuales. El tiempo de compilación es extremadamente rápido y el binario resultante es muy pequeño. Eso le permite implementar varias veces al día, por lo que sigue perfectamente la metodología DevOps.
@@ -43,4 +46,4 @@ El estilo de codificación Go sigue la [línea de visión](https://medium.com/@m
 
 Sencillo, limpio, genial, ¡VAMOS!
 
-Espero que haya quedado claro todo lo que he intentado explicar en este post, y por favor si hay alguna parte que no ha quedado del todo clara o hay partes que no he cubierto que te gustaría que hiciera déjame un comentario aquí mismo o a través de mis redes sociales que tienes en mi perfil y estaré encantada de responderte.
+Espero que haya quedado claro todo lo que he intentado explicar en este post, y por favor si hay alguna parte que no ha quedado del todo clara o hay partes que no he cubierto que te gustaría que hiciera déjame un comentario aquí mismo o a través de mis redes sociales que tienes en mi perfil y estaré encantado de responderte.
