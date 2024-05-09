@@ -1,7 +1,6 @@
-# personalblog
+# blog
 
-Personal blog of charly3pins.dev
-
+Personal blog of https://charly3pins.dev
 
 ## Local development
 
@@ -14,3 +13,4 @@ hugo server
 ```vim
 hugo gen chromastyles --style=dracula > syntax.css
 ```
+
