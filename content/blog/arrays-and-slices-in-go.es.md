@@ -37,7 +37,7 @@ Los arrays no son otra cosa más que un tipo de datos para guardar información 
 Los arrays son valores, por lo que si asignamos un array a otro, se copiarán todos los elementos de uno a otro. Lo mismo ocurre en funciones, no recibirá un puntero al array, sino una copia del mismo. El tamaño del array forma parte de su tipo, por lo que [2]int es distinto a [10]int.
 La representacion en memoria de un array se puede ver cómo en la siguiente imagen, donde se almacena en tantas posiciones como el tipo nos indique y en posiciones contiguas para ese tipo.
 
-// TODO insert image excalidraw
+![go-arrays](/images/go-arrays.jpeg)
 
 ### Usar arrays
 
@@ -185,7 +185,7 @@ Los slices pueden definirse como arrays de longitud dinámica. En realidad lo qu
 Lo que ocurre por debajo es que cada vez que definimos un slice, se crea un array por debajo que no vemos, y el slice apunta a él mediante un puntero.
 Por esta razón, el zero value del slice, no será N elementos con zero value, siendo N la longitud, como ocurría con los arrays, sino que será nil, ya que no habrá array por debajo al cual apuntar, por lo que no tendremos puntero inicializado.
 
-// TODO insert excalidraw image
+![go-slices-nil](/images/go-slices-nil.jpeg)
 
 ### Usar slices
 
@@ -204,6 +204,8 @@ func make([]T, len, cap) []T
 ```
 
 T es el tipo de elementos que queremos en el slice, len es la longitud, y cap es la capacidad, que es opcional. Si no se le pasa una capacidad, por defecto se coge como valor el de la longitud.
+
+![go-slices-not-nil](/images/go-slices-not-nil.jpeg)
 
 Otra forma de crear un slice es "cortándolo". Para ello se utiliza un rango medio abierto con dos índices separados por dos puntos.
 En el ejemplo de los animales anterior, si hicieramos `animals[1:3]`, crearía un slice incluyendo los elementos del 1 al 3 de animals, por lo que "horse" no se incluiría en se nuevo slice.

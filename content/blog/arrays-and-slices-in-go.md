@@ -35,7 +35,7 @@ Arrays are nothing more than a type of data to store information of the same typ
 Arrays are values, so if we assign one array to another, all the elements from one to the other will be copied. The same thing happens in functions, you will not receive a pointer to the array, but a copy of it. The size of the array is part of its type, so [2]int is different from [10]int.
 The memory representation of an array can be seen in the following image, where it is stored in as many positions as the type indicates and in adjacent positions for that type.
 
-// TODO insert image excalidraw
+![go-arrays](/images/go-arrays.jpeg)
 
 ### Using arrays
 
@@ -183,7 +183,7 @@ Slices can be defined as arrays of dynamic length. In reality, what happens is t
 What happens below is that every time we define a slice, an array is created below that we do not see, and the slice points to it using a pointer.
 For this reason, the zero value of the slice will not be N elements with zero value, with N being the length, as was the case with arrays, but will be nil, since there will be no array below to point to, so we will not have initialized pointer.
 
-// TODO insert excalidraw image
+![go-slices-nil](/images/go-slices-nil.jpeg)
 
 ### Using slices
 
@@ -202,6 +202,8 @@ func make([]T, len, cap) []T
 ```
 
 T is the type of elements we want in the slice, len is the length, and cap is the capacity, which is optional. If a capacity is not passed, by default the length is taken as the value.
+
+![go-slices-not-nil](/images/go-slices-not-nil.jpeg)
 
 Another way to create a slice is to "cut" it. To do this, an open midrange is used with two indices separated by two points.
 In the animals example above, if we were to do `animals[1:3]`, it would create a slice including elements 1 through 3 of animals, so "horse" would not be included in the new slice.
