@@ -9,6 +9,8 @@ tags = ["go"]
 image = "/images/gopher-nerdy.png"
 +++
 
+{{< youtube _5bhRHYK8eQ >}}
+
 ## Intro
 
 When we want to group a series of elements of the same type we can do it in Go in two ways, using arrays or slices.
