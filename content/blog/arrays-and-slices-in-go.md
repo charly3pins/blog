@@ -39,7 +39,7 @@ The memory representation of an array can be seen in the following image, where 
 
 ![go-arrays](/images/go-arrays.jpeg)
 
-### Using arrays
+### Declaration and initialization of arrays
 
 There are several ways to declare an array, let's see how we can do it.
 
@@ -187,7 +187,7 @@ For this reason, the zero value of the slice will not be N elements with zero va
 
 ![go-slices-nil](/images/go-slices-nil.jpeg)
 
-### Using slices
+### Declaration and initialization of slices
 
 To declare a slice it is done in the same way as we have seen previously with arrays, with the only difference that we do not specify the length.
 

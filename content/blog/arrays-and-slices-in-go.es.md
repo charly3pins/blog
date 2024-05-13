@@ -41,7 +41,7 @@ La representacion en memoria de un array se puede ver cómo en la siguiente imag
 
 ![go-arrays](/images/go-arrays.jpeg)
 
-### Usar arrays
+### Declaración e inicialización de arrays
 
 Para declarar un array hay varias formas, vamos a ver cómo podemos hacerlo.
 
@@ -189,7 +189,7 @@ Por esta razón, el zero value del slice, no será N elementos con zero value, s
 
 ![go-slices-nil](/images/go-slices-nil.jpeg)
 
-### Usar slices
+### Declaración e inicialización de slices
 
 Para declarar un slice se hace de la misma forma que hemos visto anteriormente con los arrays, con la única diferencia de que no especificamos la longitud.
 
