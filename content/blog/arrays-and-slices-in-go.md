@@ -6,7 +6,7 @@ description = "Understand the details of Slices, the most used data type in Go."
 
 tags = ["go"]
 
-image = "/images/gopher-nerdy.png"
+image = "/images/gopher-zorro.svg"
 +++
 
 {{< youtube _5bhRHYK8eQ >}}

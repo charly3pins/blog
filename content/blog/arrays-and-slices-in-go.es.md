@@ -6,7 +6,7 @@ description = "Entiende los detalles de los Slices, el tipo de datos más usado 
 
 tags = ["go"]
 
-image = "/images/gopher-nerdy.png"
+image = "/images/gopher-zorro.svg"
 +++
 
 {{< youtube _5bhRHYK8eQ >}}
