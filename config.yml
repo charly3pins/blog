@@ -109,7 +109,8 @@ params:
     enabled: true
     # title: Engineering, Golang and Technology
     # subtitle: "A place to share my knowledge"
-    imageUrl: "images/me-retro.jpeg"
+    # imageUrl: "images/me-retro.jpeg"
+    imageUrl: "https://pbs.twimg.com/profile_images/1774573748139577345/5q2Y48LM_400x400.jpg"
     imageWidth: 120
     imageHeight: 120
     imageTitle: charly3pins avatar
