@@ -102,9 +102,9 @@ We can declare a multidimensional array to store animals and their sounds in the
 animalSounds := [5][2]string{
 	{"lion", "roar"},
 	{"dog", "barks"},
-    {"cat", "meows"},
+	{"cat", "meows"},
 	{"frog", "croaks"},
-    {"elephant", "trumpets"},
+	{"elephant", "trumpets"},
 }
 ```
 
@@ -265,9 +265,9 @@ Just like with arrays, we can declare multidimensional slices by adding more dim
 animalSounds := [][]string{
 	{"lion", "roar"},
 	{"dog", "barks"},
-    {"cat", "meows"},
+	{"cat", "meows"},
 	{"frog", "croaks"},
-    {"elephant", "trumpets"},
+	{"elephant", "trumpets"},
 }
 ```
 
