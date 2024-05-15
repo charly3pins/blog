@@ -8,8 +8,8 @@ image = "/images/library.png"
 
 - [Software Engineering at Google: Lessons Learned from Programming Over Time](https://amzn.to/3TgWORq) de _Titus Winters, Tom Manshreck, Hyrum Wright_
 - [The Phoenix Project: A Novel about IT, DevOps, and Helping Your Business Win](https://amzn.to/3TD3jPG) de _Gene Kim, Kevin Behr, George Spafford_
-- [Mastering Vim Quickly: From WTF to OMG in no time](https://amzn.to/3Jaiqu0) de _Jovica Ilic_
 - [Design Patterns: Elements of Reusable Object-Oriented Software](https://amzn.to/3Visatg) de _Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides_
+- [El mundo está en venta: La cara oculta del negocio de las materias primas](https://amzn.to/4bDdQk9) de _Javier Blas, Jack Farchy_
 
 ## Leídos
 
@@ -36,6 +36,7 @@ image = "/images/library.png"
 - [Las 48 leyes del poder](https://amzn.to/3IEvibx) de _Robert Greene, Joost Elffers_
 - [Un paso por delante de Wall Street: Cómo utilizar lo que ya sabes para ganar dinero en bolsa](https://amzn.to/3VLPIHj) de _Peter Lynch_
 - [La semana laboral de 4 horas](https://amzn.to/4aCAU2u) de _Timothy Ferriss_
+- [Mastering Vim Quickly: From WTF to OMG in no time](https://amzn.to/3Jaiqu0) de _Jovica Ilic_
 
 ## En cola
 
