@@ -10,6 +10,7 @@ image = "/images/library.png"
 - [The Phoenix Project: A Novel about IT, DevOps, and Helping Your Business Win](https://amzn.to/3TD3jPG) by _Gene Kim, Kevin Behr, George Spafford_
 - [Design Patterns: Elements of Reusable Object-Oriented Software](https://amzn.to/3Visatg) by _Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides_
 - [El mundo está en venta: La cara oculta del negocio de las materias primas](https://amzn.to/4bDdQk9) by _Javier Blas, Jack Farchy_
+- [Cómo dominar el ciclo de las inversiones: e inclinar las probabilidades de ganar a su favor](https://amzn.to/3Xoriof) by _Howard Marks_
 
 ## Read
 
@@ -37,6 +38,7 @@ image = "/images/library.png"
 - [Un paso por delante by Wall Street: Cómo utilizar lo que ya sabes para ganar dinero en bolsa](https://amzn.to/3VLPIHj) by _Peter Lynch_
 - [La semana laboral de 4 horas](https://amzn.to/4aCAU2u) by _Timothy Ferriss_
 - [Mastering Vim Quickly: From WTF to OMG in no time](https://amzn.to/3Jaiqu0) by _Jovica Ilic_
+- [Anything You Want: 40 lessons for a new kind of entrepreneur](https://amzn.to/3yZjW01) by _Derek Sivers_
 
 ## Planned to read
 
