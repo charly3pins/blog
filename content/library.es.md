@@ -39,6 +39,7 @@ image = "/images/library.png"
 - [La semana laboral de 4 horas](https://amzn.to/4aCAU2u) de _Timothy Ferriss_
 - [Mastering Vim Quickly: From WTF to OMG in no time](https://amzn.to/3Jaiqu0) de _Jovica Ilic_
 - [Anything You Want: 40 lessons for a new kind of entrepreneur](https://amzn.to/3yZjW01) de _Derek Sivers_
+- [Hábitos atómicos: Cambios pequeños, resultados extraordinarios](https://amzn.to/3VYZKUb) de _James Clear_
 
 ## En cola
 
