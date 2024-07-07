@@ -11,6 +11,9 @@ image = "/images/library.png"
 - [Design Patterns: Elements of Reusable Object-Oriented Software](https://amzn.to/3Visatg) by _Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides_
 - [El mundo está en venta: La cara oculta del negocio de las materias primas](https://amzn.to/4bDdQk9) by _Javier Blas, Jack Farchy_
 - [Cómo dominar el ciclo de las inversiones: e inclinar las probabilidades de ganar a su favor](https://amzn.to/3Xoriof) by _Howard Marks_
+- [Principios](https://amzn.to/3VO8XOS) by _Ray Dalio_
+- [El pequeño libro de la filosofía estoica](https://amzn.to/45Xe0RB) by _Javier G. Recuenco, Guillermo de Haro_
+- [La rebelión de Atlas](https://amzn.to/4bEC0tX) by _Ayn Rand_
 
 ## Read
 
@@ -40,6 +43,7 @@ image = "/images/library.png"
 - [Mastering Vim Quickly: From WTF to OMG in no time](https://amzn.to/3Jaiqu0) by _Jovica Ilic_
 - [Anything You Want: 40 lessons for a new kind of entrepreneur](https://amzn.to/3yZjW01) by _Derek Sivers_
 - [Hábitos atómicos: Cambios pequeños, resultados extraordinarios](https://amzn.to/3VYZKUb) by _James Clear_
+- [21 Lecciones. Lo Que He Aprendido Al Caer En La Madriguera De Bitcoin](https://amzn.to/3LaZk86) by _Gigi_
 
 ## Planned to read
 
