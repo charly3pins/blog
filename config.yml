@@ -139,7 +139,7 @@ params:
     - name: youtube
       url: "https://youtube.com/charly3pins"
     - name: rss
-      url: "https://charly3pins.dev/index.xml"
+      url: "/index.xml"
 
   assets:
     disableHLJS: true
