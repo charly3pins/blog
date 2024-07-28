@@ -1,8 +1,8 @@
 +++
-title = "My Neovim setup for Mac in 2024"
+title = "Mi configuración de Neovim para Mac para codificar (en Go), escribir y aumentar su productividad en 2024"
 date = "2024-07-26"
 author = "charly3pins"
-description = "Have a complete IDE in your terminal, fully customizable and being a productivity beast with its incredible ecosystem of plugins."
+description = "Ten en tu terminal un IDE completo, totalmente personalizable y sé una máquina de la productividad con su increíble ecosistema de plugins."
 
 tags = ["terminal", "neovim", "vim"]
 
@@ -10,60 +10,60 @@ image = ""
 
 +++
 
-## Introduction
+## Introducción
 
-I'm not going to lie, I tried to jump from my editor to Vim many times since I was using Eclipse, then Sublime and the latest VS Code.
-I have always been fascinated with Vim and its potential. How something so simple can be so powerful? The reality is that I started several times the Vimtutor and I got stuck.
-I tried to edit the text in Vim and I got stuck. I tried to code something and I got stuck. Last year I tried seriously and I spent one or two weeks just using Vim.
-I thought it was the moment, but I failed... again. In Q2 this year I decided to take that seriously. I read a lot of posts, watched a few YouTube videos and I also read
-[Mastering Vim Quickly: From WTF to OMG in no time](https://amzn.to/3Jaiqu0) by _Jovica Ilic_. Now yes! I am using Vim for almost anything. Sometimes I have to admit
-that I'm still using VS Code for tasks that require editing a lot of lines at the same time and I'm still not that good with Vim, but very little.
+No voy a mentir, he intentado saltar de mi editor a Vim muchas veces desde que usaba Eclipse, luego Sublime y el último VS Code.
+Siempre me ha fascinado Vim y su potencial. ¿Cómo algo tan simple puede ser tan poderoso? La realidad es que abrí varias veces Vimtutor y me quedé atascado.
+Intenté editar el texto en Vim y me quedé atascado. Intenté codificar algo y me quedé atascado. El año pasado lo intenté en serio y pasé una o dos semanas solo usando Vim.
+Pensé que era el momento, pero fallé... otra vez. En el segundo trimestre de este año decidí tomarme eso en serio. Leí muchas publicaciones, miré algunos videos de YouTube y también leí
+[Mastering Vim Quickly: From WTF to OMG in no time](https://amzn.to/3Jaiqu0) de _Jovica Ilic_. ¡Ahora sí! Estoy usando Vim para casi todo. A veces tengo que admitir
+que todavía uso VS Code para tareas que requieren editar muchas líneas al mismo tiempo y que todavía no soy tan bueno con Vim, pero muy poco.
 
-So today I'm gonna show you my configuration of Neovim and all the plugins that I use every day while coding mainly.
+Así que hoy les voy a mostrar mi configuración de Neovim y todos los plugins que uso todos los días, principalmente mientras programo.
 
-## Requirements
+## Requisitos
 
-I am using MacOS and I use brew for managing my dependencies, so I assume you will too, if not please install it by going to its [official website](https://brew.sh/) and following the instructions.
+Estoy usando MacOS y uso brew para administrar mis dependencias, así que supongo que tú también lo harás. Si no, instálalo yendo a su [sitio web oficial](https://brew.sh/) y siguiendo las instrucciones.
 
-Is not mandatory but for the ones interested, I am using the [Alacritty terminal](https://github.com/alacritty/alacritty), so if you're interested you can download it using the following command in your terminal:
+No es obligatorio, pero para los interesados, estoy usando la [terminal Alacritty](https://github.com/alacritty/alacritty), así que si estás interesado, puedes descargarlo usando el siguiente comando en tu terminal:
 
 ```sh
 brew install --cask alacritty
 ```
 
-I think I will publish a post in future when I explain all my terminal configurations, but let's go back to our Neovim setup.
+Creo que publicaré una entrada en el futuro en la que explique todas las configuraciones de mi terminal, pero volvamos a nuestra configuración de Neovim.
 
-To install Neovim simply type this into your terminal:
+Para instalar Neovim, simplemente escriba lo siguiente en su terminal:
 
 ```sh
 brew install Neovim
 ```
 
-## File structure
+## Estructura de ficheros
 
-From now on we will see the Neovim config. You can find the full code in my [dotfiles](https://github.com/charly3pins/dotfiles/tree/main/editors/nvim). Feel free to clone the repo and manipulate it as you want.
+A partir de ahora veremos la configuración de Neovim. Puedes encontrar el código completo en mis [dotfiles](https://github.com/charly3pins/dotfiles/tree/main/editors/nvim). Siéntete libre de clonar el repositorio y manipularlo como quieras.
 
-The config will be stored in `~/.config/nvim`. In my case, I have a symlink to my dotfiles repo as you probably noticed if you checked the repo, it's not required.
+La configuración se almacenará en `~/.config/nvim`. En mi caso, tengo un enlace simbólico a mi repositorio de dotfiles, como probablemente hayas notado si revisaste el repositorio, no es necesario.
 
-If you don't have the folder created yet, you can do it running:
+Si aún no tienes la carpeta creada, puedes hacerlo ejecutando:
 
 ```sh
 mkdir -p ~/.config/nvim
 ```
 
-and then go inside that directory:
+y luego entra a ese directorio:
 
 ```sh
 cd ~/.config/nvim
 ```
 
-and create the main file for your config using lua as:
+y crea el archivo principal para tu configuración usando lua como:
 
 ```sh
 touch init.lua
 ```
 
-Apart from the main file, I am going to create two folders, one for the core config and the other for the plugins config; and a lazy.lua file to manage the [lazy.nvim](https://github.com/folke/lazy.nvim) plugin manager config.
+Además del archivo principal, voy a crear dos carpetas, una para la configuración principal y otra para la configuración de los plugins; y un archivo lazy.lua para administrar la configuración del administrador de plugins [lazy.nvim](https://github.com/folke/lazy.nvim).
 
 ```sh
 mkdir -p lua/charly3pins/core
@@ -77,17 +77,17 @@ mkdir -p lua/charly3pins/plugins
 touch lua/charly3pins/lazy.lua
 ```
 
-Replace `charly3pins` with your username.
+Reemplaza `charly3pins` con tu nombre de usuario.
 
-## Core options
+## Opciones básicas
 
-For the core options, I have 3 files with different configs in each and 1 that bundles all 3. First of all, move to the core directory.
+Para las opciones principales, tengo 3 archivos con diferentes configuraciones en cada uno y 1 que agrupa las 3. En primer lugar, muévete al directorio principal.
 
 ```sh
 cd lua/charly3pins/core
 ```
 
-Then create the 4 files as follows:
+Y luego crea los 4 archivos de la siguiente manera:
 
 ```sh
 touch autocommands.lua
@@ -105,7 +105,7 @@ touch keymaps.lua
 touch options.lua
 ```
 
-In the `autocommands` I have the following code:
+En `autocommands` tengo el siguiente código:
 
 ```nvim
 -- Highlight when yanking (copying) text
@@ -120,9 +120,9 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 ```
 
-That is used when yanking text to highlight what I yank.
+Esto se utiliza cuando se extrae texto para resaltar lo que se extrae.
 
-The `keymaps` is where I define all my shortcuts. I use the space as the leader as the trigger and the config of the different plugins:
+Los `keymaps` son donde defino todos mis atajos. Uso el espacio como líder, como disparador y la configuración de los diferentes plugins:
 
 ```nvim
 vim.g.mapleader = " "
@@ -161,7 +161,7 @@ vim.keymap.set("n", "<up>", '<cmd>echo "Use k to move!!"<CR>')
 vim.keymap.set("n", "<down>", '<cmd>echo "Use j to move!!"<CR>')
 ```
 
-In the `options` are the vim options for the basic editor functionalities:
+En `options` están las opciones de vim para las funcionalidades básicas del editor:
 
 ```nvim
 vim.cmd("let g:netrw_liststyle = 3")
@@ -207,7 +207,7 @@ opt.splitright = true -- split vertical window to the right
 opt.splitbelow = true -- split horizontal window to the bottom
 ```
 
-Last the init file is where I bundle all of them as lua will execute the init first for each directory, so the content is simply this:
+Por último, el archivo init es donde los agrupo todos, ya que lua ejecutará el init primero para cada directorio, por lo que el contenido es simplemente este:
 
 ```nvim
 require("charly3pins.core.options")
@@ -217,7 +217,7 @@ require("charly3pins.core.autocommands")
 
 ## Lazy config
 
-As I said, I use lazy.nvim as the plugin manager for Neovim so the next step is to go up one directory and edit our `lazy.lua` file to add the following:
+Como dije, uso lazy.nvim como administrador de plugins para Neovim, por lo que el siguiente paso es subir un directorio y editar nuestro archivo `lazy.lua` para agregar lo siguiente:
 
 ```nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -240,28 +240,28 @@ require("lazy").setup({ { import = "charly3pins.plugins" }, { import = "charly3p
 })
 ```
 
-For more details, you can find the documentation in the [GitHub page](https://github.com/folke/lazy.nvim).
+Para obtener más detalles, puede encontrar la documentación en la [página de GitHub](https://github.com/folke/lazy.nvim).
 
-## Wrap the initial config
+## Envuelva la configuración inicial
 
-Once you have the core configuration files in place and the lazy.nvim config there is one step more you need to do before you can start playing around with the plugins.
+Una vez que tenga los archivos de configuración principales en su lugar y la configuración de lazy.nvim, hay un paso más que debe realizar antes de poder comenzar a experimentar con los plugins.
 
-Go to the root folder:
+Vaya a la carpeta raíz:
 
 ```
 cd ~/.config/nvim
 ```
 
-and edit your `init.lua` file and add the following:
+y edite su archivo `init.lua` y agregue lo siguiente:
 
 ```nvim
 require("charly3pins.core")
 require("charly3pins.lazy")
 ```
 
-Now you just need to restart the terminal, and if you open again your Neovim, you will be able to type `:Lazy` and see the plugin working.
+Ahora solo tienes que reiniciar la terminal y, si abres de nuevo tu Neovim, podrás escribir `:Lazy` y ver el plugin funcionando.
 
-Your folder structure should look like this:
+La estructura de tu carpeta debería verse así:
 
 ```
   lua
@@ -276,15 +276,15 @@ Your folder structure should look like this:
    init.lua
 ```
 
-## My plugins
+## Mis plugins
 
-Here I will share the list of all the plugins that I use and their configuration. For more details please refer to each documentation or ask me a question below.
+Aquí compartiré la lista de todos los plugins que uso y su configuración. Para obtener más detalles, consulte cada documentación o hágame una pregunta a continuación.
 
-Each plugin needs to have a file with its name (the title in each section) .lua, like `alpha.lua`.
+Cada plugin debe tener un archivo con su nombre (el título en cada sección) .lua, como `alpha.lua`.
 
 ### alpha
 
-A lua powered greeter.
+Un saludo con tecnología lua.
 
 ```nvim
 return {
@@ -327,7 +327,7 @@ return {
 
 ### auto-session
 
-A small automated session manager for Neovim.
+Un pequeño administrador de sesiones automatizado para Neovim.
 
 ```nvim
 return {
@@ -350,7 +350,7 @@ return {
 
 ### bufferline
 
-A snazzy bufferline for Neovim.
+Una elegante bufferline.
 
 ```nvim
 return {
@@ -368,8 +368,8 @@ return {
 
 ### colorscheme
 
-Scheme of colors for Neovim.
-I've been using the gruvbox for so long but I discovered a few weeks ago the craftzdog`s one and I am still using it, so I will share these 2 plus the tokyonight built by the one and only folke.
+Esquema de colores para Neovim.
+Llevo mucho tiempo usando la gruvbox pero hace unas semanas descubrí la de craftzdog y todavía la sigo usando, así que compartiré estas dos más la tokyonight construida por el único folke.
 
 ```nvim
 -- return {
@@ -402,7 +402,7 @@ return {
 
 ### comment
 
-Comment plugin for Neovim.
+Plugin de comentarios para Neovim.
 
 ```nvim
 return {
@@ -428,7 +428,7 @@ return {
 
 ### dressing
 
-Neovim plugin to improve the default vim.ui interfaces.
+Plugin de Neovim para mejorar las interfaces predeterminadas de vim.ui.
 
 ```nvim
 return {
@@ -439,9 +439,9 @@ return {
 
 ### formatting
 
-Lightweight yet powerful formatter plugin for Neovim.
+Plugin formateador ligero pero potente para Neovim.
 
-Here I have the configuration for my most used programming languages like go, python and web development. Also for the config files like json and yaml and my writing in markdown.
+Aquí tengo la configuración para mis lenguajes de programación más utilizados, como Go, Python y desarrollo web. También para los archivos de configuración como JSON y YAML y mi escritura en Markdown.
 
 ```nvim
 return {
@@ -481,7 +481,7 @@ return {
 
 ### gitsigns
 
-Git integration for buffers.
+Integración de Git para buffers.
 
 ```nvim
 return {
@@ -535,7 +535,7 @@ return {
 
 ### indent-blankline
 
-Indent guides for Neovim.
+Guías de indentación para Neovim.
 
 ```nvim
 return {
@@ -554,7 +554,7 @@ return {
 
 ### init.lua
 
-As with other directories, this is not a plugin it's just the entry file that lua looks for in each directory.
+Al igual que con otros directorios, este no es un plugin, es solo el archivo de entrada que Lua busca en cada directorio.
 
 ```nvim
 return {
@@ -565,9 +565,9 @@ return {
 
 ### lazygit
 
-Plugin for calling lazygit from within Neovim.
+Plugin para llamar a lazygit desde Neovim.
 
-To make sure this works, install it using brew first:
+Para asegurarse de que esto funcione, instálelo primero usando brew:
 
 ```sh
 brew install jesseduffield/lazygit/lazygit
@@ -597,7 +597,7 @@ return {
 
 ### linting
 
-An asynchronous linter plugin for Neovim complementary to the built-in Language Server Protocol support.
+Un plugin linter asincrónico para Neovim complementario al soporte del Protocolo de servidor de lenguaje incorporado.
 
 ```nvim
 return {
@@ -629,7 +629,7 @@ return {
 
 ### lualine
 
-A blazing fast and easy to configure Neovim statusline plugin written in pure lua.
+Un plugin de línea de estado de Neovim increíblemente rápido y fácil de configurar, escrito en lua puro.
 
 ```nvim
 return {
@@ -694,7 +694,7 @@ return {
 
 ### markdown-preview
 
-Markdown preview plugin for Neovim.
+Plugin de vista previa de Markdown para Neovim.
 
 ```nvim
 return {
@@ -716,7 +716,7 @@ return {
 
 ### mini
 
-Neovim Lua plugin to visualize and operate on indent scope. Part of 'mini.nvim' library.
+Plugin Lua de Neovim para visualizar y operar en el ámbito de sangría. Parte de la biblioteca 'mini.nvim'.
 
 ```nvim
 return {
@@ -730,7 +730,7 @@ return {
 
 ### nvim-cmp
 
-A completion plugin for Neovim coded in Lua.
+Un plugin de completado para Neovim codificado en Lua.
 
 ```nvim
 return {
@@ -800,7 +800,7 @@ return {
 
 ### nvim-tree
 
-A file explorer tree for Neovim written in lua.
+Un árbol explorador de archivos para Neovim escrito en lua.
 
 ```nvim
 return {
@@ -863,7 +863,7 @@ return {
 
 ### surround
 
-Add/change/delete surrounding delimiter pairs with ease.
+Agregue/cambie/elimine pares delimitadores circundantes con facilidad.
 
 ```nvim
 return {
@@ -876,7 +876,7 @@ return {
 
 ### telescope
 
-A fuzzy finder over lists offering the following options: Find, Filter, Preview, Pick.
+Un fuzzy finder de listas que ofrece las siguientes opciones: Buscar, Filtrar, Vista previa, Seleccionar.
 
 ```nvim
 return {
@@ -919,7 +919,7 @@ return {
 
 ### todo-comments
 
-Highlight, list and search todo comments in your projects.
+Resalte, enumere y busque comentarios de "TODOs" en sus proyectos.
 
 ```nvim
 return {
@@ -947,9 +947,9 @@ return {
 
 ### treesitter
 
-Highlighting plugin.
+Plugin de resaltado.
 
-Here are my most used languages as before with an extra config for using with [templ](https://github.com/a-h/templ).
+A continuación, se muestran los idiomas que más utilizo como antes, con una configuración adicional para usar con [templ](https://github.com/a-h/templ).
 
 ```nvim
 return {
@@ -1009,7 +1009,7 @@ return {
 
 ### trouble
 
-A pretty diagnostics, references, telescope results, quickfix and location list to help you solve all the trouble your code is causing.
+Una bonita lista de diagnósticos, referencias, resultados de telescopios, soluciones rápidas y ubicaciones para ayudarlo a resolver todos los problemas que su código está causando.
 
 ```nvim
 return {
@@ -1028,7 +1028,7 @@ return {
 
 ### vim-maximizer
 
-Maximizes and restores the current window in Vim.
+Maximiza y restaura la ventana actual en Vim.
 
 ```nvim
 return {
@@ -1041,7 +1041,7 @@ return {
 
 ### which-key
 
-Helps you remember your Neovim keymaps, by showing available keybindings in a popup as you type.
+Le ayuda a recordar las combinaciones de teclas de Neovim, mostrando las combinaciones de teclas disponibles en una ventana emergente mientras escribe.
 
 ```nvim
 return {
@@ -1055,18 +1055,18 @@ return {
 }
 ```
 
-## Conclusion
+## Conclusión
 
-If you got here, congratulations because the list, as you can see, is quite extensive.
+Si has llegado hasta aquí, enhorabuena porque la lista, como puedes ver, es bastante extensa.
 
-As you probably know, the list of plugins for Neovim is tremendously huge and sometimes it can make us anxious and generate doubts about how we can start and which plugins can help us.
+Como ya sabrás, la lista de plugins para Neovim es tremendamente enorme y a veces nos puede generar ansiedad y dudas sobre cómo podemos empezar y qué plugins nos pueden ayudar.
 
-I hope that with this list of mine and the ready-to-use configuration that I have left you, you can have a starting point and start creating your own editor to your liking little by little until you reach the perfect configuration for you.
+Espero que con esta lista mía y la configuración lista para usar que te he dejado, puedas tener un punto de partida y empezar a crear tu propio editor a tu gusto poco a poco hasta llegar a la configuración perfecta para ti.
 
-If you have plugins that you have not seen on my list that you think are interesting for me to try, please share them with me since I always like to discover and try new things, I would really appreciate it.
+Si tienes plugins que no has visto en mi lista y que crees que son interesantes para que los pruebe, por favor compártelos conmigo ya que siempre me gusta descubrir y probar cosas nuevas, te lo agradecería mucho.
 
-I hope everything that I have tried to explain in this post has been clear, and please if there is any part that has not been completely clear or there are parts that I have not covered that you would like me to do, leave me a comment right here or through my social networks that you have on my profile and I will be happy to respond.
+Espero que todo lo que he intentado explicar en este post haya quedado claro, y por favor si hay alguna parte que no ha quedado del todo clara o hay partes que no he cubierto que te gustaría que hiciera, déjame un comentario aquí mismo o a través de mis redes sociales que tienes en mi perfil y estaré encantada de responderte.
 
-Happy coding!
+Feliz programación!
 
 {C3P}
