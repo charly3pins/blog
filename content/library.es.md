@@ -9,7 +9,6 @@ image = "/images/library.png"
 - [Software Engineering at Google: Lessons Learned from Programming Over Time](https://amzn.to/3TgWORq) de _Titus Winters, Tom Manshreck, Hyrum Wright_
 - [The Phoenix Project: A Novel about IT, DevOps, and Helping Your Business Win](https://amzn.to/3TD3jPG) de _Gene Kim, Kevin Behr, George Spafford_
 - [Design Patterns: Elements of Reusable Object-Oriented Software](https://amzn.to/3Visatg) de _Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides_
-- [El mundo está en venta: La cara oculta del negocio de las materias primas](https://amzn.to/4bDdQk9) de _Javier Blas, Jack Farchy_
 - [Cómo dominar el ciclo de las inversiones: e inclinar las probabilidades de ganar a su favor](https://amzn.to/3Xoriof) de _Howard Marks_
 - [Principios](https://amzn.to/3VO8XOS) de _Ray Dalio_
 - [La rebelión de Atlas](https://amzn.to/4bEC0tX) de _Ayn Rand_
@@ -44,6 +43,7 @@ image = "/images/library.png"
 - [Hábitos atómicos: Cambios pequeños, resultados extraordinarios](https://amzn.to/3VYZKUb) de _James Clear_
 - [21 Lecciones. Lo Que He Aprendido Al Caer En La Madriguera De Bitcoin](https://amzn.to/3LaZk86) de _Gigi_
 - [El pequeño libro de la filosofía estoica](https://amzn.to/45Xe0RB) de _Javier G. Recuenco, Guillermo de Haro_
+- [El mundo está en venta: La cara oculta del negocio de las materias primas](https://amzn.to/4bDdQk9) de _Javier Blas, Jack Farchy_
 
 ## En cola
 
