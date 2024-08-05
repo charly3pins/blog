@@ -33,7 +33,7 @@ image = "/images/library.png"
 - [Finanzas descentralizadas para inquietos](https://amzn.to/3vey7gm) by _Miguel Caballero, Arnau Ramió, Marcos Carrera_
 - [Web3 para inquietos](https://amzn.to/4ceALTX) by _Miguel Caballero_
 - [Adrenalina: Mis historias jamás contadas](https://amzn.to/3Tb4BQo) by _Zlatan Ibrahimovic_
-- [La filosofía by Bitcoin](https://amzn.to/3wTeKKe) by _Álvaro D. María_
+- [La filosofía de Bitcoin](https://amzn.to/3wTeKKe) by _Álvaro D. María_
 - [Padre rico, padre pobre](https://amzn.to/43kF7oz) by _Robert T. Kiyosaki_
 - [Las 48 leyes del poder](https://amzn.to/3IEvibx) by _Robert Greene, Joost Elffers_
 - [Un paso por delante by Wall Street: Cómo utilizar lo que ya sabes para ganar dinero en bolsa](https://amzn.to/3VLPIHj) by _Peter Lynch_
@@ -44,6 +44,7 @@ image = "/images/library.png"
 - [21 Lecciones. Lo Que He Aprendido Al Caer En La Madriguera De Bitcoin](https://amzn.to/3LaZk86) by _Gigi_
 - [El pequeño libro de la filosofía estoica](https://amzn.to/45Xe0RB) by _Javier G. Recuenco, Guillermo de Haro_
 - [El mundo está en venta: La cara oculta del negocio de las materias primas](https://amzn.to/4bDdQk9) by _Javier Blas, Jack Farchy_
+- [The 22 Immutable Laws of Marketing: Violate Them at Your Own Risk!](https://amzn.to/3Syh9C0) by _Al Ries, Jack Trout_
 
 ## Planned to read
 

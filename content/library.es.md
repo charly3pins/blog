@@ -44,6 +44,7 @@ image = "/images/library.png"
 - [21 Lecciones. Lo Que He Aprendido Al Caer En La Madriguera De Bitcoin](https://amzn.to/3LaZk86) de _Gigi_
 - [El pequeño libro de la filosofía estoica](https://amzn.to/45Xe0RB) de _Javier G. Recuenco, Guillermo de Haro_
 - [El mundo está en venta: La cara oculta del negocio de las materias primas](https://amzn.to/4bDdQk9) de _Javier Blas, Jack Farchy_
+- [The 22 Immutable Laws of Marketing: Violate Them at Your Own Risk!](https://amzn.to/3Syh9C0) de _Al Ries, Jack Trout_
 
 ## En cola
 
