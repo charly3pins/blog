@@ -12,6 +12,7 @@ image = "/images/library.png"
 - [Cómo dominar el ciclo de las inversiones: e inclinar las probabilidades de ganar a su favor](https://amzn.to/3Xoriof) de _Howard Marks_
 - [Principios](https://amzn.to/3VO8XOS) de _Ray Dalio_
 - [La rebelión de Atlas](https://amzn.to/4bEC0tX) de _Ayn Rand_
+- [Feel-Good Productivity: How to Do More of What Matters to You](https://amzn.to/4dzalwF) de _Ali Abdaal_
 
 ## Leídos
 
