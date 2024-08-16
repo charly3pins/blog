@@ -12,7 +12,6 @@ image = "/images/library.png"
 - [Cómo dominar el ciclo de las inversiones: e inclinar las probabilidades de ganar a su favor](https://amzn.to/3Xoriof) de _Howard Marks_
 - [Principios](https://amzn.to/3VO8XOS) de _Ray Dalio_
 - [La rebelión de Atlas](https://amzn.to/4bEC0tX) de _Ayn Rand_
-- [Feel-Good Productivity: How to Do More of What Matters to You](https://amzn.to/4dzalwF) de _Ali Abdaal_
 
 ## Leídos
 
@@ -46,6 +45,7 @@ image = "/images/library.png"
 - [El pequeño libro de la filosofía estoica](https://amzn.to/45Xe0RB) de _Javier G. Recuenco, Guillermo de Haro_
 - [El mundo está en venta: La cara oculta del negocio de las materias primas](https://amzn.to/4bDdQk9) de _Javier Blas, Jack Farchy_
 - [The 22 Immutable Laws of Marketing: Violate Them at Your Own Risk!](https://amzn.to/3Syh9C0) de _Al Ries, Jack Trout_
+- [Feel-Good Productivity: How to Do More of What Matters to You](https://amzn.to/4dzalwF) de _Ali Abdaal_
 
 ## En cola
 
