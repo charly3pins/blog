@@ -11,7 +11,6 @@ image = "/images/library.png"
 - [Cómo dominar el ciclo de las inversiones: e inclinar las probabilidades de ganar a su favor](https://amzn.to/3Xoriof) de _Howard Marks_
 - [Principios](https://amzn.to/3VO8XOS) de _Ray Dalio_
 - [La rebelión de Atlas](https://amzn.to/4bEC0tX) de _Ayn Rand_
-- [Hypermedia Systems](https://amzn.to/3Z80Ek2) de _Carson Gross, Adam Stepinski, Deniz Akşimşek_
 
 ## Leídos
 
@@ -47,6 +46,7 @@ image = "/images/library.png"
 - [The 22 Immutable Laws of Marketing: Violate Them at Your Own Risk!](https://amzn.to/3Syh9C0) de _Al Ries, Jack Trout_
 - [Feel-Good Productivity: How to Do More of What Matters to You](https://amzn.to/4dzalwF) de _Ali Abdaal_
 - [Lying](https://amzn.to/3M9i6x2) de _Sam Harris_
+- [Hypermedia Systems](https://amzn.to/3Z80Ek2) de _Carson Gross, Adam Stepinski, Deniz Akşimşek_
 
 ## En cola
 
