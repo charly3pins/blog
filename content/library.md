@@ -11,7 +11,6 @@ image = "/images/library.png"
 - [Cómo dominar el ciclo de las inversiones: e inclinar las probabilidades de ganar a su favor](https://amzn.to/3Xoriof) by _Howard Marks_
 - [Principios](https://amzn.to/3VO8XOS) by _Ray Dalio_
 - [La rebelión de Atlas](https://amzn.to/4bEC0tX) by _Ayn Rand_
-- [Tailwind CSS: Craft beautiful, flexible, and responsive designs](https://amzn.to/4dQjCjV) by _Ivaylo Gerchev_
 
 ## Read
 
@@ -48,6 +47,7 @@ image = "/images/library.png"
 - [Feel-Good Productivity: How to Do More of What Matters to You](https://amzn.to/4dzalwF) by _Ali Abdaal_
 - [Lying](https://amzn.to/3M9i6x2) by _Sam Harris_
 - [Hypermedia Systems](https://amzn.to/3Z80Ek2) by _Carson Gross, Adam Stepinski, Deniz Akşimşek_
+- [Tailwind CSS: Craft beautiful, flexible, and responsive designs](https://amzn.to/4dQjCjV) by _Ivaylo Gerchev_
 
 ## Planned to read
 
