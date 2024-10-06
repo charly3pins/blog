@@ -11,6 +11,7 @@ image = "/images/library.png"
 - [Cómo dominar el ciclo de las inversiones: e inclinar las probabilidades de ganar a su favor](https://amzn.to/3Xoriof) de _Howard Marks_
 - [Principios](https://amzn.to/3VO8XOS) de _Ray Dalio_
 - [La rebelión de Atlas](https://amzn.to/4bEC0tX) de _Ayn Rand_
+- [Steve Jobs]() de _Walter Isaacson_
 
 ## Leídos
 
@@ -48,6 +49,7 @@ image = "/images/library.png"
 - [Lying](https://amzn.to/3M9i6x2) de _Sam Harris_
 - [Hypermedia Systems](https://amzn.to/3Z80Ek2) de _Carson Gross, Adam Stepinski, Deniz Akşimşek_
 - [Tailwind CSS: Craft beautiful, flexible, and responsive designs](https://amzn.to/4dQjCjV) de _Ivaylo Gerchev_
+- [Burn Rate: Launching a Startup and Losing My Mind]() de _Andy Dunn_
 
 ## En cola
 
