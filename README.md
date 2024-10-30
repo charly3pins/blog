@@ -13,4 +13,3 @@ hugo server
 ```vim
 hugo gen chromastyles --style=dracula > syntax.css
 ```
-

@@ -109,7 +109,7 @@ params:
     enabled: true
     # title: Engineering, Golang and Technology
     # subtitle: "A place to share my knowledge"
-    imageUrl: "images/cyberpunk-ai.png"
+    imageUrl: "images/me-avatar.jpeg"
     # imageUrl: "https://pbs.twimg.com/profile_images/1774573748139577345/5q2Y48LM_400x400.jpg"
     imageWidth: 120
     imageHeight: 120

@@ -11,28 +11,28 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="{{ .Permalink }}" />
 {{- else -}}
-<meta name="twitter:card" content="summary"/>
+<meta name="twitter:card" content="summary" />
 {{- end -}}
 {{- end }}
-<meta name="twitter:title" content="{{ .Title }}"/>
-<meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end -}}"/>
-{{- /* Deprecate site.Social.twitter in favor of site.Params.social.twitter */}}
+<meta name="twitter:title" content="{{ .Title }}" />
+<meta name="twitter:description"
+  content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end -}}" />
 {{- $twitterSite := "" }}
 {{- with site.Params.social }}
-  {{- if reflect.IsMap . }}
-    {{- $twitterSite = .twitter }}
-  {{- end }}
+{{- if reflect.IsMap . }}
+{{- $twitterSite = .twitter }}
+{{- end }}
 {{- else }}
-  {{- with site.Social.twitter }}
-    {{- $twitterSite = . }}
-    {{- warnf "The social key in site configuration is deprecated. Use params.social.twitter instead." }}
-  {{- end }}
+{{- with site.Params.social.twitter }}
+{{- $twitterSite = . }}
+{{- warnf "The social key in site configuration is deprecated. Use params.social.twitter instead." }}
+{{- end }}
 {{- end }}
 
 {{- with $twitterSite }}
-  {{- $content := . }}
-  {{- if not (strings.HasPrefix . "@") }}
-    {{- $content = printf "@%v" $twitterSite }}
-  {{- end }}
-<meta name="twitter:site" content="{{ $content }}"/>
+{{- $content := . }}
+{{- if not (strings.HasPrefix . "@") }}
+{{- $content = printf "@%v" $twitterSite }}
+{{- end }}
+<meta name="twitter:site" content="{{ $content }}" />
 {{- end }}

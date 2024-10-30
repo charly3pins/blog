@@ -1,7 +1,6 @@
 ---
 title: "About me"
 ---
-![](/images/me-retro.jpeg)
 
 I'm Carles, but I'm known as Charly3Pins. For more than 10 years, I have been immersed in the exciting world of software engineering. Here I share my experiences, reflections and knowledge accumulated throughout this technological journey.
 

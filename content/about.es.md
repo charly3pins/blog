@@ -1,7 +1,6 @@
 ---
 title: "Sobre mí"
 ---
-![](/images/me-retro.jpeg)
 
 Soy Carles, pero se me conoce como Charly3Pins. Durante más de 10 años, he estado inmerso en el apasionante mundo de la ingeniería de software. Aquí es comparto mis vivencias, reflexiones y conocimientos acumulados a lo largo de este viaje tecnológico.
 
@@ -14,4 +13,3 @@ Me considero un eterno aprendiz, siempre sediento de conocimiento y ávido de ex
 Me encanta mi trabajo y cuando termino mi jornada laboral, hago deporte para desonectar y recargar energías además de estar con mi família, y por la noche suelo continuar estudiando para profundizar en este maravilloso mundo de la tecnología. Siempre hay algo nuevo que aprender. Ya sea leyendo libros, viendo vídeos, haciendo cursos o escribiendo notas. Aparte de eso la mejor forma de aprender es en hacer las cosas, no solo ver como las hacen, por lo que dedico tiempo a crear proyectos o pruebas de concepto de temas que quiero profunidzar y dominar para luego aplicarlos en mi trabajo o futuros proyectos. Puedes ver todos mis experimentos en mi [GitHub](https://github.com/charly3pins).
 
 Si te interesa saber cómo funciona este blog puedes verlo en el repositorio [github.com/charly3pins/blog](https://github.com/charly3pins/blog).
-
