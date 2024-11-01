@@ -12,6 +12,7 @@ image = "/images/library.png"
 - Principios (_Ray Dalio_)
 - La rebelión de Atlas (_Ayn Rand_)
 - Steve Jobs (_Walter Isaacson_)
+- Accelerate: The Science of Lean Software and DevOps: Building and Scaling High Performing Technology Organizations (_Nicole Forsgren PhD, Jez Humble, Gene Kim_)
 
 ## Read
 
@@ -54,7 +55,6 @@ image = "/images/library.png"
 ## Planned to read
 
 - Extreme Programming Explained: Embrace Change, Second Edition (_Kent Beck_)
-- Accelerate: Building and Scaling High-Performing Technology Organizations (_Nicole Forsgren, Jez Humble, Gene Kim_)
 - The Clean Coder: A Code of Conduct for Professional Programmers (_Robert C. Martin_)
 - Building Microservices: Designing Fine-Grained Systems (_Sam Newman_)
 - Concurrency in Go: Tools and Techniques for Developers (_Katherine Cox-Buday_)
