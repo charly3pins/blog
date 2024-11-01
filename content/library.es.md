@@ -7,7 +7,6 @@ image = "/images/library.png"
 ## Leyendo
 
 - Software Engineering at Google: Lessons Learned from Programming Over Time (_Titus Winters, Tom Manshreck, Hyrum Wright_)
-- The Phoenix Project: A Novel about IT, DevOps, and Helping Your Business Win (_Gene Kim, Kevin Behr, George Spafford_)
 - Cómo dominar el ciclo de las inversiones: e inclinar las probabilidades de ganar a su favor (_Howard Marks_)
 - Principios (_Ray Dalio_)
 - La rebelión de Atlas (_Ayn Rand_)
