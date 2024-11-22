@@ -10,7 +10,7 @@ image = "/images/library.png"
 - Cómo dominar el ciclo de las inversiones: e inclinar las probabilidades de ganar a su favor (_Howard Marks_)
 - La rebelión de Atlas (_Ayn Rand_)
 - Steve Jobs (_Walter Isaacson_)
-- Accelerate: The Science of Lean Software and DevOps: Building and Scaling High Performing Technology Organizations (_Nicole Forsgren PhD, Jez Humble, Gene Kim_)
+- Technology Strategy Patterns: Architecture as Strategy (_Eben Hewitt_)
 
 ## Leídos
 
@@ -50,6 +50,7 @@ image = "/images/library.png"
 - Tailwind CSS: Craft beautiful, flexible, and responsive designs (_Ivaylo Gerchev_)
 - Burn Rate: Launching a Startup and Losing My Mind
 - Principios (_Ray Dalio_)
+- Accelerate: The Science of Lean Software and DevOps: Building and Scaling High Performing Technology Organizations (_Nicole Forsgren PhD, Jez Humble, Gene Kim_)
 
 ## En cola
 
