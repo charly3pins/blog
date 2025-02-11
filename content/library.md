@@ -10,7 +10,6 @@ image = "/images/library.png"
 - Cómo dominar el ciclo de las inversiones: e inclinar las probabilidades de ganar a su favor (_Howard Marks_)
 - La rebelión de Atlas (_Ayn Rand_)
 - Steve Jobs (_Walter Isaacson_)
-- Technology Strategy Patterns: Architecture as Strategy (_Eben Hewitt_)
 
 ## Read
 
@@ -51,6 +50,7 @@ image = "/images/library.png"
 - Burn Rate: Launching a Startup and Losing My Mind (_Andy Dunn_)
 - Principios (_Ray Dalio_)
 - Accelerate: The Science of Lean Software and DevOps: Building and Scaling High Performing Technology Organizations (_Nicole Forsgren PhD, Jez Humble, Gene Kim_)
+- Technology Strategy Patterns: Architecture as Strategy (_Eben Hewitt_)
 
 ## Planned to read
 
