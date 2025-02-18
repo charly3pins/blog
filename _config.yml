@@ -1,7 +1,7 @@
 baseURL: "https://charly3pins.dev"
 title: "Charly3Pins.dev"
 copyright: "© 2018 - 2024 [Charly3Pins](https://charly3pins.dev). All rights reserved."
-pagination.pagerSize: 5
+paginate: 5
 # theme: [PaperMod]
 titleCaseStyle: "none"
 
