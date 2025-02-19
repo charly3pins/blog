@@ -1,0 +1,87 @@
+* {
+  --bg1: rgb(32, 31, 38);
+  --bg2: rgb(19, 19, 23);
+  --fg1: rgb(188, 191, 210);
+  --fg2: rgb(134, 140, 171);
+  --text-bold: rgb(173, 181, 219);
+  --text-link: rgb(142, 116, 189);
+  --text-link-hover: rgb(144, 134, 221);
+  font-family:
+    Roboto Mono,
+    monospace;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg1);
+  color: var(--fg1);
+}
+
+a {
+  color: var(--text-link);
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+}
+
+nav {
+  padding-top: 1rem;
+  padding-bottom: 3rem;
+}
+
+nav > ul {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  padding-inline: 1rem;
+}
+
+li {
+  list-style: none;
+}
+
+li:before {
+  content: "> ";
+  color: var(--text-link);
+}
+
+.main {
+  max-width: 40rem;
+  margin-inline: auto;
+  min-height: 80vh;
+}
+
+.main-content {
+  padding-inline: 5rem;
+  max-width: fit-content;
+  margin-inline: auto;
+}
+
+footer {
+  padding-bottom: 1rem;
+  padding-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+footer > p {
+  font-size: 0.75em;
+  font-weight: 300;
+}

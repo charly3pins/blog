@@ -1,7 +1,10 @@
-<footer id="footer">
-    <strong>{{- with .Site.Params.social }}</strong>
-    <div class="social">
-        {{ partial "social.html" . }}
-    </div><strong>{{- end }}</strong>
-    <p>{{ .Site.Params.main.copyright | safeHTML }}</p>
+<footer>
+  {{ with .Site.Params.socialIcons }}
+  <div class="social">{{ partial "social.html" . }}</div>
+  {{ end }}
+  <br />
+  <p>
+    © {{ .Site.Params.since }} - {{ now.Year }} {{ .Site.Params.Author.name }}.
+    All rights reserved.
+  </p>
 </footer>

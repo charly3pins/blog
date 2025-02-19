@@ -1,18 +1,41 @@
 {{define "main"}}
 
-<div class="intro" style="align-items: center">
-  {{if .Site.Params.main.enabled }}
-  <!-- <img class="image" src='{{ .Site.Params.main.img | absURL }}' title="{{	.Site.Params.main.img_title }}" width="200px"/> -->
-  <img
-    src="{{ .Site.Params.main.img | absURL }}"
-    width="250px;"
-    title="{{	.Site.Params.main.img_title }}"
-  />
+<div class="main-content">
+  <div>
+    <img
+      src="{{ .Site.Params.Home.ImageURL | absURL }}"
+      width="250px;"
+      title="{{ .Site.Params.Home.ImageTitle }}"
+    />
+    <h1>{{ .Site.Title }}</h1>
+  </div>
+
+  <code>
+    <span
+      ><span style="color: #b392f0">fmt.Println</span
+      ><span style="color: #e1e4e8">(</span
+      ><span style="color: #9ecbff">"Welcome to my website!"</span
+      ><span style="color: #e1e4e8">);</span></span
+    >
+    <span class="line"></span
+  ></code>
+
+  <h3 id="what-do-i-do">”What do I do?”</h3>
+
   <ul>
-    <li class="intro-quote">{{ .Site.Params.main.quote | safeHTML }}</li>
+    <li>
+      <a href="/blog">Writing articles</a>
+    </li>
+    <li>
+      <a href="https://www.youtube.com/@charly3pins" target="_blank"
+        >Coding Tutorials</a
+      >
+    </li>
+    <li>
+      <a href="https://github.com/charly3pins" target="_blank">And more…</a>
+    </li>
   </ul>
-  {{end}}
-  <p>{{ .Site.Params.main.description | safeHTML }}</p>
 </div>
 
 {{end}}
+
