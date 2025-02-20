@@ -24,7 +24,7 @@
   <br />
   <br />
 
-  <h2>What do I do?</h2>
+  <h3>What do I do?</h3>
 
   <ul>
     <li>
@@ -49,12 +49,11 @@
   <br />
   <br />
 
-  <h2>Latest releases</h2>
+  <h3>Latest releases</h3>
 
   {{range $i,$el := first 3 (where .Paginator.Pages ".Section" "blog")}}
-
   <div class="post-item">
-    <h3><a class="link" href="{{.Permalink}}">{{.Title}}</a></h3>
+    <h4><a class="link" href="{{.Permalink}}">{{.Title}}</a></h4>
     <p>{{ .Description }}</p>
   </div>
 
