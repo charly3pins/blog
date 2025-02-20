@@ -7,20 +7,24 @@
       width="250px;"
       title="{{ .Site.Params.Home.ImageTitle }}"
     />
-    <h1>{{ .Site.Title }}</h1>
   </div>
 
+  <br />
+
   <code>
-    <span
-      ><span style="color: #b392f0">fmt.Println</span
-      ><span style="color: #e1e4e8">(</span
-      ><span style="color: #9ecbff">"Welcome to my website!"</span
-      ><span style="color: #e1e4e8">);</span></span
-    >
+    <span>
+      <span style="color: #b392f0">fmt.Println</span>
+      <span style="color: #e1e4e8">(</span>
+      <span style="color: #9ecbff">"Welcome to <b>{{ .Site.Title }}</b>!"</span>
+      <span style="color: #e1e4e8">);</span>
+    </span>
     <span class="line"></span
   ></code>
 
-  <h3 id="what-do-i-do">”What do I do?”</h3>
+  <br />
+  <br />
+
+  <h2>What do I do?</h2>
 
   <ul>
     <li>
@@ -41,6 +45,24 @@
       <a href="https://github.com/charly3pins" target="_blank">And more…</a>
     </li>
   </ul>
+
+  <br />
+  <br />
+
+  <h2>Latest releases</h2>
+
+  {{range $i,$el := first 3 (where .Paginator.Pages ".Section" "blog")}}
+
+  <div class="post-item">
+    <h3><a class="link" href="{{.Permalink}}">{{.Title}}</a></h3>
+    <p>{{ .Description }}</p>
+  </div>
+
+  <br />
+  {{end}}
+
+  <a href="/blog">> Read all releases</a>
 </div>
 
 {{end}}
+
