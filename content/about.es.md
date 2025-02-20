@@ -1,15 +1,13 @@
 ---
-title: "Sobre mí"
+title: "¡Hola! 👋"
 ---
 
-Soy Carles, pero se me conoce como Charly3Pins. Durante más de 10 años, he estado inmerso en el apasionante mundo de la ingeniería de software. Aquí es comparto mis vivencias, reflexiones y conocimientos acumulados a lo largo de este viaje tecnológico.
+Soy **Carles**, también conocido como **Charly3Pins**. Llevo más de **12 años** sumergido en el fascinante mundo de la **ingeniería de software**, y estoy aquí para compartir mis aventuras, reflexiones y todas las cosas interesantes que voy aprendiendo en el camino.
 
-Desde siempre me ha gustado resolver problemas y crear cosas. Recuerdo de pequeño cómo lo que más me gustaba era que me regalaran Lego para yo ser capaz de montarme mis propios diseños desmontándolos una y otra vez para crear cosas totalmente diferentes. Cuando empecé con los estudios de Ingeniería informática la verdad que no había programado nada antes, pero sí que había trasteado con ordenadores, más para jugar y automatizarme tareas en dichos juegos que otra cosa, pero ya tenía ese sentimiento latente que algún dia iba a aflorar. Durante ese tiempo es donde me di cuenta que realmente quería dedicarme a esto.
+Mi trayectoria me ha llevado desde **ingeniero de software** a **tech lead**, luego a **director de ingeniería**, y ahora a **CTO**. Pero, sin importar el título, siempre me he mantenido **práctico con la tecnología**. Como CTO, combino una **visión estratégica** con un **enfoque práctico de ingeniería** para impulsar cambios impactantes. Me apasiona resolver problemas complejos, alinear la tecnología con los objetivos del negocio y ofrecer resultados medibles. También disfruto construyendo **equipos de alto rendimiento**, mentorizando talento y creando entornos donde la innovación pueda florecer.
 
-Desde que terminé los estudios que he trabajado en distintos sectores como la educación, la logística o la banca. Los últimos años en el sector fintech es donde más he crecido personal y profesionalmente, enfrentandome a retos de todo tipo y conociendo a gente excepcional.
+Soy un **aprendiz eterno**, siempre curioso y emocionado por explorar nuevas tecnologías. Recuerdo hace unos años cuando descubrí [Go](https://go.dev/), fue amor a primera vista. Es simple, elegante y me encaja perfectamente—es como el principio **KISS** ([Keep It Simple, Stupid!](https://es.wikipedia.org/wiki/Principio_KISS)) en forma de código (aunque es cierto que después de los genéricos...).
 
-Me considero un eterno aprendiz, siempre sediento de conocimiento y ávido de explorar nuevas tecnologías. Desde que descubrí [Go](https://go.dev/), experimenté un flechazo instantáneo. Este lenguaje encarna el [Principio KISS](https://en.wikipedia.org/wiki/KISS_principle) que tanto valoro, y me emociona forma parte de su crecimiento y evolución.
+Cuando no estoy trabajando, me encontrarás haciendo ejercicio, pasando tiempo con mi familia o metido en cosas de tecnología. Sí, incluso después del trabajo, suelo seguir aprendiendo—ya sea leyendo libros, viendo vídeos, haciendo cursos o trasteando con nuevos proyectos. Creo que la mejor manera de aprender es _haciendo_, así que siempre estoy experimentando con nuevas ideas y construyendo cosas. Puedes ver todos mis experimentos en mi [GitHub](https://github.com/charly3pins).
 
-Me encanta mi trabajo y cuando termino mi jornada laboral, hago deporte para desonectar y recargar energías además de estar con mi família, y por la noche suelo continuar estudiando para profundizar en este maravilloso mundo de la tecnología. Siempre hay algo nuevo que aprender. Ya sea leyendo libros, viendo vídeos, haciendo cursos o escribiendo notas. Aparte de eso la mejor forma de aprender es en hacer las cosas, no solo ver como las hacen, por lo que dedico tiempo a crear proyectos o pruebas de concepto de temas que quiero profunidzar y dominar para luego aplicarlos en mi trabajo o futuros proyectos. Puedes ver todos mis experimentos en mi [GitHub](https://github.com/charly3pins).
-
-Si te interesa saber cómo funciona este blog puedes verlo en el repositorio [github.com/charly3pins/blog](https://github.com/charly3pins/blog).
+Ah, y si tienes curiosidad por saber cómo funciona este blog, échale un vistazo al repositorio de [GitHub](https://github.com/charly3pins/blog).

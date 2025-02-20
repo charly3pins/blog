@@ -1,15 +1,13 @@
 ---
-title: "About me"
+title: "Hey there! 👋"
 ---
 
-I'm Carles, but I'm known as Charly3Pins. For more than 10 years, I have been immersed in the exciting world of software engineering. Here I share my experiences, reflections and knowledge accumulated throughout this technological journey.
+I’m **Carles**, also known as **Charly3Pins**. For over **12 years**, I’ve been diving headfirst into the amazing world of **software engineering**, and I’m here to share my adventures, thoughts, and all the cool stuff I'm learning along the way.
 
-I have always liked solving problems and creating things. I remember as a child how what I liked most was being given Lego so that I could assemble my own designs, taking them apart again and again to create totally different things. When I started studying Computer Engineering, the truth is that I had not programmed anything before, but I had tinkered with computers, more to play and automate tasks in said games than anything else, but I already had that latent feeling that one day was going to surface. During that time is where I realized that I really wanted to dedicate myself to this.
+My journey has taken me from **software engineer** to **tech lead**, then to **engineering director**, and now to **CTO**. But no matter the title, I’ve always stayed hands-on with technology. As a CTO, I combine a **strategic vision** with a **hands-on engineering mindset** to drive impactful change. I’m passionate about solving complex problems, aligning technology with business goals, and delivering measurable results. I also thrive on building **high-performing teams**, mentoring talent, and creating environments where innovation can flourish.
 
-Since I finished my studies I have worked in different sectors such as education, logistics or banking. The last few years in the fintech sector are where I have grown the most personally and professionally, facing challenges of all kinds and meeting exceptional people.
+I’m a **forever learner**, always curious and excited to explore new tech. I remember few years back when I discovered [Go](https://go.dev/), it was love at first sight. It’s simple, elegant, and just gets me—it’s like the **KISS Principle** ([Keep It Simple, Stupid!](https://en.wikipedia.org/wiki/KISS_principle)) in code form (it's true that after generics...).
 
-I consider myself an eternal learner, always thirsty for knowledge and eager to explore new technologies. Since I discovered [Go](https://go.dev/), I experienced an instant crush. This language embodies the [KISS Principle](https://en.wikipedia.org/wiki/KISS_principle) that I value so much, and I am excited to be part of its growth and evolution.
+When I’m not working, you’ll find me staying active doing exercise, spending time with my family, or diving into tech stuff. Yep, even after work, I’m usually learning—whether it’s through books, videos, courses, or just tinkering with new projects. I believe the best way to learn is by _doing_, so I’m always experimenting with new ideas and building things. You can check out all my experiments on my [GitHub](https://github.com/charly3pins).
 
-I love my job and when I finish my work day, I do sports to disconnect and recharge energy in addition to being with my family, and at night I usually continue studying to delve deeper into this wonderful world of technology. There is always something new to learn. Whether reading books, watching videos, taking courses or writing notes. Apart from that, the best way to learn is by doing things, not just seeing how they are done, so I dedicate time to creating projects or proofs of concept on topics that I want to delve into and master and then apply them in my work or future projects. You can see all my experiments on my [GitHub](https://github.com/charly3pins).
-
-If you are interested in knowing how this blog works, you can see it in the repository [github.com/charly3pins/blog](https://github.com/charly3pins/blog).
+Oh, and if you’re curious about how this blog works, feel free to peek under the hood in the [GitHub repo](https://github.com/charly3pins/blog). Let’s keep exploring this awesome tech world together—there’s always something new to discover! 🚀
