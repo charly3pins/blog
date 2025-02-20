@@ -10,4 +10,4 @@ I’m a **forever learner**, always curious and excited to explore new tech. I r
 
 When I’m not working, you’ll find me staying active doing exercise, spending time with my family, or diving into tech stuff. Yep, even after work, I’m usually learning—whether it’s through books, videos, courses, or just tinkering with new projects. I believe the best way to learn is by _doing_, so I’m always experimenting with new ideas and building things. You can check out all my experiments on my [GitHub](https://github.com/charly3pins).
 
-Oh, and if you’re curious about how this blog works, feel free to peek under the hood in the [GitHub repo](https://github.com/charly3pins/blog). Let’s keep exploring this awesome tech world together—there’s always something new to discover! 🚀
+Oh, and if you’re curious about how this blog works, feel free to peek under the hood in the [GitHub repo](https://github.com/charly3pins/blog).
