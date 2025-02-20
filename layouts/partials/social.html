@@ -1,10 +1,7 @@
 {{ range . -}}
 &nbsp;
 <a href="{{ .url }}" target="_blank" rel="me" title="{{ .name | humanize }}" referrerpolicy="no-referrer">
-    {{ partial "svg.html" . }}
+  {{ partial "svg.html" . }}
 </a>
 &nbsp;
 {{- end -}}
-<a href={{ "/index.xml" | absURL }} target="_blank" rel="me" title="RSS" referrerpolicy="no-referrer">
-    RSS
-</a>

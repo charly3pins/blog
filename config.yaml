@@ -15,10 +15,11 @@ params:
       url: "https://x.com/charly3pins"
     - name: youtube
       url: "https://youtube.com/charly3pins"
+    - name: linkedin
+      url: "https://linkedin.com/in/carlesfuste"
     - name: rss
       url: "/index.xml"
-
-googleAnalytics: "G-KX7XNRQ64E"
+  googleAnalytics: "G-KX7XNRQ64E"
 
 languages:
   en:
@@ -42,12 +43,6 @@ languages:
         - name: Projects
           url: projects/
           weight: 5
-        - name: Tags
-          url: tags/
-          weight: 20
-        - name: Library
-          url: library/
-          weight: 20
   es:
     languageName: "Castellano"
     weight: 1
@@ -69,9 +64,3 @@ languages:
         - name: Proyectos
           url: projects/
           weight: 5
-        - name: Tags
-          url: tags/
-          weight: 20
-        - name: Biblioteca
-          url: library/
-          weight: 20
