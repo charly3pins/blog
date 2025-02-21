@@ -16,7 +16,7 @@
       <span style="color: #b392f0">fmt.Println</span>
       <span style="color: #e1e4e8">(</span>
       <span style="color: #9ecbff">"Welcome to <b>{{ .Site.Title }}</b>!"</span>
-      <span style="color: #e1e4e8">);</span>
+      <span style="color: #e1e4e8">)</span>
     </span>
     <span class="line"></span
   ></code>
@@ -24,7 +24,7 @@
   <br />
   <br />
 
-  <h3>What do I do?</h3>
+  <h2>What do I do?</h2>
 
   <ul>
     <li>
@@ -49,11 +49,17 @@
   <br />
   <br />
 
-  <h3>Latest releases</h3>
+  <h2>Latest releases</h2>
 
   {{range $i,$el := first 3 (where .Paginator.Pages ".Section" "blog")}}
   <div class="post-item">
-    <h4><a class="link" href="{{.Permalink}}">{{.Title}}</a></h4>
+    <h3><a class="link" href="{{.Permalink}}">{{.Title}}</a></h3>
+    <span
+      >{{ .PublishDate.Format "02/01/2006" }} | {{.ReadingTime}}' | {{range
+      .Params.Tags }}
+      <span><a href='{{ "tags/" | absURL }}{{.}}'>{{.}}</a></span>
+      {{end}}
+    </span>
     <p>{{ .Description }}</p>
   </div>
 
@@ -64,4 +70,3 @@
 </div>
 
 {{end}}
-

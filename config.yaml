@@ -1,6 +1,5 @@
 baseURL: "https://charly3pins.dev"
 title: "Charly3Pins.dev"
-pagination.pagerSize: 5
 params:
   since: 2018
   author:
