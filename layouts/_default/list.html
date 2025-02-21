@@ -12,7 +12,8 @@
       >{{ $value.Name }} ({{.Count }})</a
     >
   </span>
-  {{end}} {{else}} {{ range .Pages}}
+  {{end}} {{else}} {{ $paginator := .Paginate .Pages.ByDate.Reverse 5 }} {{
+  range $paginator.Pages }}
   <div>
     <h3><a href="{{.Permalink}}">{{.Title}}</a></h3>
     <span
@@ -24,7 +25,7 @@
     <p>{{ .Description }}</p>
   </div>
   <br />
-  {{end}} {{end}}
+  {{end}} {{ template "_internal/pagination.html" . }} {{end}}
 </div>
 {{end}}
 
