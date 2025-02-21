@@ -1,51 +1,47 @@
 {{define "main"}}
+<div class="main-content">
+  <h2>{{.Title}}</h2>
+  {{if or (eq .Section "blog") (eq .Section "projects")}}
+  <span
+    >{{ .PublishDate.Format "02/01/2006" }} | {{.ReadingTime}}' | {{range
+    .Params.Tags }}
+    <span><a href='{{ "tags/" | absURL }}{{.}}'>{{.}}</a></span>
+    {{end}}
+  </span>
+  {{ if .IsTranslated }}
+  <span>
+    | {{ range .Translations }}
+    <a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
+    {{ end}}
+  </span>
+  {{ end }} {{ with .Params.image }}
+  <div>
+    <img src="{{ .  | absURL }}" alt="post-image" style="max-width: 200px" />
+  </div>
+  {{ end }}
+  <div>{{.Content }}</div>
+  <script
+    src="https://giscus.app/client.js"
+    data-repo="charly3pins/blog"
+    data-repo-id="MDEwOlJlcG9zaXRvcnkxNDg5MjY5MTc="
+    data-category="General"
+    data-category-id="DIC_kwDOCOBxxc4CfWzK"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="1"
+    data-input-position="top"
+    data-theme="dark_dimmed"
+    data-lang="es"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async
+  ></script>
 
-<section class="intro">
-	<div class="post-header">
-		<!-- <a class="go-back" href="{{ .Site.BaseURL }}"><svg aria-hidden="true" focusable="false" data-prefix="far" class="back-icon" data-icon="caret-square-left" height="25px" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M272 157.1v197.8c0 10.7-13 16.1-20.5 8.5l-98.3-98.9c-4.7-4.7-4.7-12.2 0-16.9l98.3-98.9c7.5-7.7 20.5-2.3 20.5 8.4zM448 80v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48zm-48 346V86c0-3.3-2.7-6-6-6H54c-3.3 0-6 2.7-6 6v340c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"></path></svg> </a> -->
-		<h2 class="post-title">{{.Title}}</h2>
-	</div>
-	{{if or (eq .Section "blog") (eq .Section "projects")}}
-	<p class="post-dets">Publicado: {{ .PublishDate.Format "02/01/2006"}}
-		| Tiempo de lectura: {{.ReadingTime}} min | Modificado: {{ .Page.Lastmod.Format "02/01/2006" }}
-		<br>
-	</p>
-	<span class="tags">
-	{{range .Params.Tags }}
-		<h5><a class="tag" href='{{ "tags/" | absURL }}{{.}}'>{{.}}</a></h5>
-	{{end}}
-	</span>
-	{{ if .IsTranslated }}
-	<p>Disponible en: </p>
-	<nav class="LangNav">
-		{{ range .Translations }}
-		<a class="link" href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
-	{{ end}}
-	</nav>
-	{{ end }}
-	{{ with .Params.image }}
-	<div>
-		<img src="{{ .  | absURL }}" alt="post-image" style="max-width: 200px;">
-	</div>
-	{{ end }}
-	<div class="content">
-		{{.Content }}
-	</div>
-	<div id="disqus_thread"></div>
-	<script>
-		(function() {
-		var d = document, s = d.createElement('script');
-		s.src = 'https://https-charly3pins-dev.disqus.com/embed.js';
-		s.setAttribute('data-timestamp', +new Date());
-		(d.head || d.body).appendChild(s);
-		})();
-	</script>
-	<noscript>Por favor active JavaScript para ver los <a href="https://disqus.com/?ref_noscript">comentarios.</a></noscript>
-	{{else}}
-	<div>
-		{{.Content }}
-	</div>
-	{{end}}
-</section>
+  {{else}}
+  <!-- not blog or projects section -->
+  <div>{{.Content }}</div>
+  {{end}}
+</div>
 
 {{end}}
