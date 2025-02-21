@@ -1,33 +1,30 @@
 {{define "main"}}
-
-<br>
-<div style="display:flex;align-items:center;">
-	<h2 class="post-title">{{.Title}}</h2>
+<div class="main-content">
+  <h2>{{.Title}}</h2>
+  {{ with .Description }}
+  <div>{{ . | safeHTML }}</div>
+  {{ end }}
+  <!-- List all tags -->
+  {{if eq .Kind "taxonomyTerm"}} {{range $key, $value :=
+  .Data.Terms.Alphabetical}}
+  <span>
+    <a href='{{ "tags/" | absURL }}{{ $value.Name | lower }}'
+      >{{ $value.Name }} ({{.Count }})</a
+    >
+  </span>
+  {{end}} {{else}} {{ range .Pages}}
+  <div>
+    <h3><a href="{{.Permalink}}">{{.Title}}</a></h3>
+    <span
+      >{{ .PublishDate.Format "02/01/2006" }} | {{.ReadingTime}}' | {{range
+      .Params.Tags }}
+      <span><a href='{{ "tags/" | absURL }}{{.}}'>{{.}}</a></span>
+      {{end}}
+    </span>
+    <p>{{ .Description }}</p>
+  </div>
+  <br />
+  {{end}} {{end}}
 </div>
-{{ with .Description }}
-<div>{{ . | safeHTML }}</div>
-{{ end }}
-<!-- List all tags -->
-{{if eq .Kind "taxonomyTerm"}}
-	{{range $key, $value := .Data.Terms.Alphabetical}}
-		<span><a style="color: white; text-decoration: none;" href='{{ "tags/" | absURL }}{{ $value.Name | lower }}'>{{ $value.Name }} ({{.Count }})</a></span>
-	{{end}}
-{{else}}
-	{{ range .Pages}}
-		<div class="post-item">
-				<well class="well">
-					<h3><a class="link" href="{{.Permalink}}">{{.Title}}</a>
-						<h4>{{ .PublishDate.Format "02/01/2006" }} | Tiempo de lectura: {{.ReadingTime}} min </h4>
-						<span class="tags">
-								{{range .Params.Tags }}
-								<h5><a class="tag" href='{{ "tags/" | absURL }}{{.}}'>{{.}}</a></h5>
-								{{end}}
-						</span>
-						<p>{{ .Description }}</p>
-				</well>
-
-		</div><br>
-	{{end}}
 {{end}}
 
-{{end}}
