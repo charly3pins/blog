@@ -5,11 +5,11 @@ Personal blog of https://charly3pins.dev
 ## Local development
 
 ```vim
-hugo server
+make run
 ```
 
 ## Generate syntax highlighter CSS
 
 ```vim
-hugo gen chromastyles --style=dracula > syntax.css
+hugo gen chromastyles --style=gruvbox > syntax.css
 ```

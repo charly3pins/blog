@@ -1,0 +1,14 @@
+<nav>
+  <ul id="menu" class="menu">
+    {{ $currentPage := . }}
+    {{ range .Site.Menus.main }}
+    {{ $menu_item_url := .URL | relLangURL }}
+    {{ $page_url:= $currentPage.RelPermalink | relLangURL }}
+    <li>
+      <a href={{ .URL | relLangURL }} {{ if eq $menu_item_url $page_url }} class="menu-active" {{ end }}>
+        {{ .Name }}
+      </a>
+    </li>
+    {{ end }}
+  </ul>
+</nav>

@@ -107,7 +107,7 @@ touch options.lua
 
 En `autocommands` tengo el siguiente código:
 
-```nvim
+```vim
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
 --  See `:help vim.highlight.on_yank()`
@@ -124,7 +124,7 @@ Esto se utiliza cuando se extrae texto para resaltar lo que se extrae.
 
 Los `keymaps` son donde defino todos mis atajos. Uso el espacio como líder, como disparador y la configuración de los diferentes plugins:
 
-```nvim
+```vim
 vim.g.mapleader = " "
 
 local keymap = vim.keymap
@@ -163,7 +163,7 @@ vim.keymap.set("n", "<down>", '<cmd>echo "Use j to move!!"<CR>')
 
 En `options` están las opciones de vim para las funcionalidades básicas del editor:
 
-```nvim
+```vim
 vim.cmd("let g:netrw_liststyle = 3")
 
 local opt = vim.opt
@@ -209,7 +209,7 @@ opt.splitbelow = true -- split horizontal window to the bottom
 
 Por último, el archivo init es donde los agrupo todos, ya que lua ejecutará el init primero para cada directorio, por lo que el contenido es simplemente este:
 
-```nvim
+```vim
 require("charly3pins.core.options")
 require("charly3pins.core.keymaps")
 require("charly3pins.core.autocommands")
@@ -219,7 +219,7 @@ require("charly3pins.core.autocommands")
 
 Como dije, uso lazy.nvim como administrador de plugins para Neovim, por lo que el siguiente paso es subir un directorio y editar nuestro archivo `lazy.lua` para agregar lo siguiente:
 
-```nvim
+```vim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -254,7 +254,7 @@ cd ~/.config/nvim
 
 y edite su archivo `init.lua` y agregue lo siguiente:
 
-```nvim
+```vim
 require("charly3pins.core")
 require("charly3pins.lazy")
 ```
@@ -286,7 +286,7 @@ Cada plugin debe tener un archivo con su nombre (el título en cada sección) .l
 
 Un saludo con tecnología lua.
 
-```nvim
+```vim
 return {
   "goolord/alpha-nvim",
   event = "VimEnter",
@@ -329,7 +329,7 @@ return {
 
 Un pequeño administrador de sesiones automatizado para Neovim.
 
-```nvim
+```vim
 return {
   "rmagatti/auto-session",
   config = function()
@@ -352,7 +352,7 @@ return {
 
 Una elegante bufferline.
 
-```nvim
+```vim
 return {
   "akinsho/bufferline.nvim",
   dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -371,7 +371,7 @@ return {
 Esquema de colores para Neovim.
 Llevo mucho tiempo usando la gruvbox pero hace unas semanas descubrí la de craftzdog y todavía la sigo usando, así que compartiré estas dos más la tokyonight construida por el único folke.
 
-```nvim
+```vim
 -- return {
 -- 	"ellisonleao/gruvbox.nvim",
 -- 	priority = 1000, -- make sure to load this before all the other start plugins
@@ -404,7 +404,7 @@ return {
 
 Plugin de comentarios para Neovim.
 
-```nvim
+```vim
 return {
   "numToStr/Comment.nvim",
   event = { "BufReadPre", "BufNewFile" },
@@ -430,7 +430,7 @@ return {
 
 Plugin de Neovim para mejorar las interfaces predeterminadas de vim.ui.
 
-```nvim
+```vim
 return {
   "stevearc/dressing.nvim",
   event = "VeryLazy",
@@ -443,7 +443,7 @@ Plugin formateador ligero pero potente para Neovim.
 
 Aquí tengo la configuración para mis lenguajes de programación más utilizados, como Go, Python y desarrollo web. También para los archivos de configuración como JSON y YAML y mi escritura en Markdown.
 
-```nvim
+```vim
 return {
 	"stevearc/conform.nvim",
 	event = { "BufReadPre", "BufNewFile" },
@@ -483,7 +483,7 @@ return {
 
 Integración de Git para buffers.
 
-```nvim
+```vim
 return {
   "lewis6991/gitsigns.nvim",
   event = { "BufReadPre", "BufNewFile" },
@@ -537,7 +537,7 @@ return {
 
 Guías de indentación para Neovim.
 
-```nvim
+```vim
 return {
   "lukas-reineke/indent-blankline.nvim",
   event = { "BufReadPre", "BufNewFile" },
@@ -556,7 +556,7 @@ return {
 
 Al igual que con otros directorios, este no es un plugin, es solo el archivo de entrada que Lua busca en cada directorio.
 
-```nvim
+```vim
 return {
   "nvim-lua/plenary.nvim", -- lua functions that many plugins use
   "christoomey/vim-tmux-navigator", -- tmux & split window navigation
@@ -573,7 +573,7 @@ Para asegurarse de que esto funcione, instálelo primero usando brew:
 brew install jesseduffield/lazygit/lazygit
 ```
 
-```nvim
+```vim
 return {
   "kdheepak/lazygit.nvim",
   cmd = {
@@ -599,7 +599,7 @@ return {
 
 Un plugin linter asincrónico para Neovim complementario al soporte del Protocolo de servidor de lenguaje incorporado.
 
-```nvim
+```vim
 return {
   "mfussenegger/nvim-lint",
   event = { "BufReadPre", "BufNewFile" },
@@ -631,7 +631,7 @@ return {
 
 Un plugin de línea de estado de Neovim increíblemente rápido y fácil de configurar, escrito en lua puro.
 
-```nvim
+```vim
 return {
   "nvim-lualine/lualine.nvim",
   dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -696,7 +696,7 @@ return {
 
 Plugin de vista previa de Markdown para Neovim.
 
-```nvim
+```vim
 return {
 	"iamcco/markdown-preview.nvim",
 	cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
@@ -718,7 +718,7 @@ return {
 
 Plugin Lua de Neovim para visualizar y operar en el ámbito de sangría. Parte de la biblioteca 'mini.nvim'.
 
-```nvim
+```vim
 return {
 	"echasnovski/mini.indentscope",
 	version = false,
@@ -732,7 +732,7 @@ return {
 
 Un plugin de completado para Neovim codificado en Lua.
 
-```nvim
+```vim
 return {
   "hrsh7th/nvim-cmp",
   event = "InsertEnter",
@@ -802,7 +802,7 @@ return {
 
 Un árbol explorador de archivos para Neovim escrito en lua.
 
-```nvim
+```vim
 return {
   "nvim-tree/nvim-tree.lua",
   dependencies = "nvim-tree/nvim-web-devicons",
@@ -865,7 +865,7 @@ return {
 
 Agregue/cambie/elimine pares delimitadores circundantes con facilidad.
 
-```nvim
+```vim
 return {
   "kylechui/nvim-surround",
   event = { "BufReadPre", "BufNewFile" },
@@ -878,7 +878,7 @@ return {
 
 Un fuzzy finder de listas que ofrece las siguientes opciones: Buscar, Filtrar, Vista previa, Seleccionar.
 
-```nvim
+```vim
 return {
   "nvim-telescope/telescope.nvim",
   branch = "0.1.x",
@@ -921,7 +921,7 @@ return {
 
 Resalte, enumere y busque comentarios de "TODOs" en sus proyectos.
 
-```nvim
+```vim
 return {
   "folke/todo-comments.nvim",
   event = { "BufReadPre", "BufNewFile" },
@@ -951,7 +951,7 @@ Plugin de resaltado.
 
 A continuación, se muestran los idiomas que más utilizo como antes, con una configuración adicional para usar con [templ](https://github.com/a-h/templ).
 
-```nvim
+```vim
 return {
 	"nvim-treesitter/nvim-treesitter",
 	event = { "BufReadPre", "BufNewFile" },
@@ -1011,7 +1011,7 @@ return {
 
 Una bonita lista de diagnósticos, referencias, resultados de telescopios, soluciones rápidas y ubicaciones para ayudarlo a resolver todos los problemas que su código está causando.
 
-```nvim
+```vim
 return {
   "folke/trouble.nvim",
   dependencies = { "nvim-tree/nvim-web-devicons", "folke/todo-comments.nvim" },
@@ -1030,7 +1030,7 @@ return {
 
 Maximiza y restaura la ventana actual en Vim.
 
-```nvim
+```vim
 return {
   "szw/vim-maximizer",
   keys = {
@@ -1043,7 +1043,7 @@ return {
 
 Le ayuda a recordar las combinaciones de teclas de Neovim, mostrando las combinaciones de teclas disponibles en una ventana emergente mientras escribe.
 
-```nvim
+```vim
 return {
   "folke/which-key.nvim",
   event = "VeryLazy",

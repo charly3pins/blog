@@ -1,59 +1,72 @@
-{{- define "main" }}
-{{- partial "index_profile.html" . }}
+{{define "main"}}
 
-{{- if .Content }}
-<div class="post-content">
-  {{- if not (.Param "disableAnchoredHeadings") }}
-  {{- partial "anchored_headings.html" .Content -}}
-  {{- else }}
-  {{ .Content }}
-  {{ end }}
-</div>
-{{- end }}
-{{- $pages := union .RegularPages .Sections }}
-{{- if .IsHome }}
-{{- $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}
-{{- $pages = where $pages "Params.hiddenInHomeList" "!=" "true" }}
-{{- end }}
-{{- $paginator := .Paginate $pages 3 }}
-{{- $term := .Data.Term }}
-{{- range $index, $page := $paginator.Pages }}
-{{- $class:= "post-entry" }}
-{{- $user_preferred := or site.Params.disableSpecial1stPost site.Params.homeInfoParams }}
-{{- if (and $.IsHome (eq $paginator.PageNumber 1) (eq $index 0) (not $user_preferred)) }}
-{{- $class = "first-entry" }}
-{{- else if $term }}
-{{- $class = "post-entry tag-entry" }}
-{{- end }}
+<div class="main-content">
+  <div>
+    <img
+      src="{{ .Site.Params.Home.ImageURL | absURL }}"
+      width="250px;"
+      title="{{ .Site.Params.Home.ImageTitle }}"
+    />
+  </div>
 
-<article class="{{ $class }}">
-  {{- $isHidden := (.Param "cover.hiddenInList") | default (.Param "cover.hidden") | default false }} {{- partial
-  "cover.html" (dict "cxt" . "IsSingle" false "isHidden" $isHidden) }}
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">
-      {{- .Title }}
-      {{- if .Draft }}
-      <span class="entry-hint" title="Draft">
-        <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" fill="currentColor">
-          <path
-            d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5T862.09-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z" />
-        </svg>
-      </span>
-      {{- end }}
-    </h2>
-  </header>
-  <div class="entry-content">
+  <br />
+
+  <code>
+    <span>
+      <span style="color: #b392f0">fmt.Println</span>
+      <span style="color: #e1e4e8">(</span>
+      <span style="color: #9ecbff">"Welcome to <b>{{ .Site.Title }}</b>!"</span>
+      <span style="color: #e1e4e8">)</span>
+    </span>
+    <span class="line"></span
+  ></code>
+
+  <br />
+  <br />
+
+  <h2>What do I do?</h2>
+
+  <ul>
+    <li>
+      <a href="/blog">Writing articles</a>
+    </li>
+    <li>
+      <a href="https://www.youtube.com/@charly3pins" target="_blank"
+        >Coding Tutorials</a
+      >
+    </li>
+    <li>
+      <a href="/projects">Hacking things</a>
+    </li>
+    <li>
+      <a href="/library">Reading books</a>
+    </li>
+    <li>
+      <a href="https://github.com/charly3pins" target="_blank">And more…</a>
+    </li>
+  </ul>
+
+  <br />
+  <br />
+
+  <h2>Latest releases</h2>
+
+  {{range $i,$el := first 3 (where .Paginator.Pages ".Section" "blog")}}
+  <div class="post-item">
+    <h3><a class="link" href="{{.Permalink}}">{{.Title}}</a></h3>
+    <span
+      >{{ .PublishDate.Format "02/01/2006" }} | {{.ReadingTime}}' | {{range
+      .Params.Tags }}
+      <span><a href='{{ "tags/" | absURL }}{{.}}'>{{.}}</a></span>
+      {{end}}
+    </span>
     <p>{{ .Description }}</p>
   </div>
-  <footer class="entry-footer">{{- partial "post_meta.html" . -}}</footer>
-  <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
-</article>
-{{- end }}
-<footer class="page-footer">
-  <nav class="pagination">
-    <a class="next" href="/blog">
-      Go to Blog
-    </a>
-  </nav>
-</footer>
-{{- end }}
+
+  <br />
+  {{end}}
+
+  <a href="/blog">> Read all releases</a>
+</div>
+
+{{end}}

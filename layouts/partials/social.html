@@ -1,0 +1,7 @@
+{{ range . -}}
+&nbsp;
+<a href="{{ .url }}" target="_blank" rel="me" title="{{ .name | humanize }}" referrerpolicy="no-referrer">
+  {{ partial "svg.html" . }}
+</a>
+&nbsp;
+{{- end -}}

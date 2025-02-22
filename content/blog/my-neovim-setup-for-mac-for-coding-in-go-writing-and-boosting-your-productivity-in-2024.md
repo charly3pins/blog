@@ -107,7 +107,7 @@ touch options.lua
 
 In the `autocommands` I have the following code:
 
-```nvim
+```vim
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
 --  See `:help vim.highlight.on_yank()`
@@ -124,7 +124,7 @@ That is used when yanking text to highlight what I yank.
 
 The `keymaps` is where I define all my shortcuts. I use the space as the leader as the trigger and the config of the different plugins:
 
-```nvim
+```vim
 vim.g.mapleader = " "
 
 local keymap = vim.keymap
@@ -163,7 +163,7 @@ vim.keymap.set("n", "<down>", '<cmd>echo "Use j to move!!"<CR>')
 
 In the `options` are the vim options for the basic editor functionalities:
 
-```nvim
+```vim
 vim.cmd("let g:netrw_liststyle = 3")
 
 local opt = vim.opt
@@ -209,7 +209,7 @@ opt.splitbelow = true -- split horizontal window to the bottom
 
 Last the init file is where I bundle all of them as lua will execute the init first for each directory, so the content is simply this:
 
-```nvim
+```vim
 require("charly3pins.core.options")
 require("charly3pins.core.keymaps")
 require("charly3pins.core.autocommands")
@@ -219,7 +219,7 @@ require("charly3pins.core.autocommands")
 
 As I said, I use lazy.nvim as the plugin manager for Neovim so the next step is to go up one directory and edit our `lazy.lua` file to add the following:
 
-```nvim
+```vim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -254,7 +254,7 @@ cd ~/.config/nvim
 
 and edit your `init.lua` file and add the following:
 
-```nvim
+```vim
 require("charly3pins.core")
 require("charly3pins.lazy")
 ```
@@ -286,7 +286,7 @@ Each plugin needs to have a file with its name (the title in each section) .lua,
 
 A lua powered greeter.
 
-```nvim
+```vim
 return {
   "goolord/alpha-nvim",
   event = "VimEnter",
@@ -329,7 +329,7 @@ return {
 
 A small automated session manager for Neovim.
 
-```nvim
+```vim
 return {
   "rmagatti/auto-session",
   config = function()
@@ -352,7 +352,7 @@ return {
 
 A snazzy bufferline for Neovim.
 
-```nvim
+```vim
 return {
   "akinsho/bufferline.nvim",
   dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -371,7 +371,7 @@ return {
 Scheme of colors for Neovim.
 I've been using the gruvbox for so long but I discovered a few weeks ago the craftzdog`s one and I am still using it, so I will share these 2 plus the tokyonight built by the one and only folke.
 
-```nvim
+```vim
 -- return {
 -- 	"ellisonleao/gruvbox.nvim",
 -- 	priority = 1000, -- make sure to load this before all the other start plugins
@@ -404,7 +404,7 @@ return {
 
 Comment plugin for Neovim.
 
-```nvim
+```vim
 return {
   "numToStr/Comment.nvim",
   event = { "BufReadPre", "BufNewFile" },
@@ -430,7 +430,7 @@ return {
 
 Neovim plugin to improve the default vim.ui interfaces.
 
-```nvim
+```vim
 return {
   "stevearc/dressing.nvim",
   event = "VeryLazy",
@@ -443,7 +443,7 @@ Lightweight yet powerful formatter plugin for Neovim.
 
 Here I have the configuration for my most used programming languages like go, python and web development. Also for the config files like json and yaml and my writing in markdown.
 
-```nvim
+```vim
 return {
 	"stevearc/conform.nvim",
 	event = { "BufReadPre", "BufNewFile" },
@@ -483,7 +483,7 @@ return {
 
 Git integration for buffers.
 
-```nvim
+```vim
 return {
   "lewis6991/gitsigns.nvim",
   event = { "BufReadPre", "BufNewFile" },
@@ -537,7 +537,7 @@ return {
 
 Indent guides for Neovim.
 
-```nvim
+```vim
 return {
   "lukas-reineke/indent-blankline.nvim",
   event = { "BufReadPre", "BufNewFile" },
@@ -556,7 +556,7 @@ return {
 
 As with other directories, this is not a plugin it's just the entry file that lua looks for in each directory.
 
-```nvim
+```vim
 return {
   "nvim-lua/plenary.nvim", -- lua functions that many plugins use
   "christoomey/vim-tmux-navigator", -- tmux & split window navigation
@@ -573,7 +573,7 @@ To make sure this works, install it using brew first:
 brew install jesseduffield/lazygit/lazygit
 ```
 
-```nvim
+```vim
 return {
   "kdheepak/lazygit.nvim",
   cmd = {
@@ -599,7 +599,7 @@ return {
 
 An asynchronous linter plugin for Neovim complementary to the built-in Language Server Protocol support.
 
-```nvim
+```vim
 return {
   "mfussenegger/nvim-lint",
   event = { "BufReadPre", "BufNewFile" },
@@ -631,7 +631,7 @@ return {
 
 A blazing fast and easy to configure Neovim statusline plugin written in pure lua.
 
-```nvim
+```vim
 return {
   "nvim-lualine/lualine.nvim",
   dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -696,7 +696,7 @@ return {
 
 Markdown preview plugin for Neovim.
 
-```nvim
+```vim
 return {
 	"iamcco/markdown-preview.nvim",
 	cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
@@ -718,7 +718,7 @@ return {
 
 Neovim Lua plugin to visualize and operate on indent scope. Part of 'mini.nvim' library.
 
-```nvim
+```vim
 return {
 	"echasnovski/mini.indentscope",
 	version = false,
@@ -732,7 +732,7 @@ return {
 
 A completion plugin for Neovim coded in Lua.
 
-```nvim
+```vim
 return {
   "hrsh7th/nvim-cmp",
   event = "InsertEnter",
@@ -802,7 +802,7 @@ return {
 
 A file explorer tree for Neovim written in lua.
 
-```nvim
+```vim
 return {
   "nvim-tree/nvim-tree.lua",
   dependencies = "nvim-tree/nvim-web-devicons",
@@ -865,7 +865,7 @@ return {
 
 Add/change/delete surrounding delimiter pairs with ease.
 
-```nvim
+```vim
 return {
   "kylechui/nvim-surround",
   event = { "BufReadPre", "BufNewFile" },
@@ -878,7 +878,7 @@ return {
 
 A fuzzy finder over lists offering the following options: Find, Filter, Preview, Pick.
 
-```nvim
+```vim
 return {
   "nvim-telescope/telescope.nvim",
   branch = "0.1.x",
@@ -921,7 +921,7 @@ return {
 
 Highlight, list and search todo comments in your projects.
 
-```nvim
+```vim
 return {
   "folke/todo-comments.nvim",
   event = { "BufReadPre", "BufNewFile" },
@@ -951,7 +951,7 @@ Highlighting plugin.
 
 Here are my most used languages as before with an extra config for using with [templ](https://github.com/a-h/templ).
 
-```nvim
+```vim
 return {
 	"nvim-treesitter/nvim-treesitter",
 	event = { "BufReadPre", "BufNewFile" },
@@ -1011,7 +1011,7 @@ return {
 
 A pretty diagnostics, references, telescope results, quickfix and location list to help you solve all the trouble your code is causing.
 
-```nvim
+```vim
 return {
   "folke/trouble.nvim",
   dependencies = { "nvim-tree/nvim-web-devicons", "folke/todo-comments.nvim" },
@@ -1030,7 +1030,7 @@ return {
 
 Maximizes and restores the current window in Vim.
 
-```nvim
+```vim
 return {
   "szw/vim-maximizer",
   keys = {
@@ -1043,7 +1043,7 @@ return {
 
 Helps you remember your Neovim keymaps, by showing available keybindings in a popup as you type.
 
-```nvim
+```vim
 return {
   "folke/which-key.nvim",
   event = "VeryLazy",

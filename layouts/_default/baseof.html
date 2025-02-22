@@ -1,27 +1,12 @@
-{{- if lt hugo.Version "0.112.4" }}
-{{- errorf "=> hugo v0.112.4 or greater is required for hugo-PaperMod to build " }}
-{{- end -}}
+<!doctype html>
+<html lang="{{ .Site.Params.main.lang }}">
+  {{- partial "head.html" . -}}
 
-<!DOCTYPE html>
-<html lang="{{ site.Language }}" dir="{{ .Language.LanguageDirection | default "auto" }}">
-
-<head>
-    {{- partial "head.html" . }}
-</head>
-
-<body class="
-{{- if (or (ne .Kind `page` ) (eq .Layout `archives`) (eq .Layout `search`)) -}}
-{{- print "list" -}}
-{{- end -}}
-{{- if eq site.Params.defaultTheme `dark` -}}
-{{- print " dark" }}
-{{- end -}}
-" id="top">
-    {{- partialCached "header.html" . .Page -}}
-    <main class="main">
-        {{- block "main" . }}{{ end }}
-    </main>
-    {{ partialCached "footer.html" . .Layout .Kind (.Param "hideFooter") (.Param "ShowCodeCopyButtons") -}}
-</body>
-
+  <body>
+    <div class="line" id="scrollIndicator"></div>
+    {{- partial "nav.html" . -}}
+    <div class="main">{{- block "main" . }} {{- end }}</div>
+    {{- partial "footer.html" . -}}
+  </body>
 </html>
+

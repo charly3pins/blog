@@ -1,0 +1,65 @@
+baseURL: "https://charly3pins.dev"
+title: "Charly3Pins.dev"
+params:
+  since: 2018
+  author:
+    name: Charly3Pins
+  home:
+    imageURL: "images/me-avatar.jpeg"
+    imageTitle: charly3pins avatar
+  socialIcons:
+    - name: github
+      url: "https://github.com/charly3pins"
+    - name: x 
+      url: "https://x.com/charly3pins"
+    - name: youtube
+      url: "https://youtube.com/charly3pins"
+    - name: linkedin
+      url: "https://linkedin.com/in/carlesfuste"
+    - name: rss
+      url: "/index.xml"
+  googleAnalytics: "G-KX7XNRQ64E"
+
+languages:
+  en:
+    languageName: "English"
+    weight: 1
+    taxonomies:
+      category: categories
+      tag: tags
+      series: series
+    menu:
+      main:
+        - name: Home
+          url: /
+          weight: 1
+        - name: About
+          url: about/
+          weight: 2
+        - name: Blog
+          url: blog/
+          weight: 5
+        - name: Projects
+          url: projects/
+          weight: 5
+  es:
+    languageName: "Castellano"
+    weight: 1
+    taxonomies:
+      category: categories
+      tag: tags
+      series: series
+    menu:
+      main:
+        - name: Home
+          url: /
+          weight: 1
+        - name: Sobre mí
+          url: about/
+          weight: 2
+        - name: Blog
+          url: blog/
+          weight: 5
+        - name: Proyectos
+          url: projects/
+          weight: 5
