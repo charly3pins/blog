@@ -1,9 +1,8 @@
 <footer>
   {{ with .Site.Params.socialIcons }}
-  <div class="social">{{ partial "social.html" . }}</div>
+  <div>{{ partial "social.html" . }}</div>
   {{ end }}
   <p>
     © {{ .Site.Params.since }} - {{ now.Year }} {{ .Site.Params.Author.name }}.
-    All rights reserved.
   </p>
 </footer>

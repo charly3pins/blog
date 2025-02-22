@@ -1,5 +1,5 @@
 ---
-title: "Hey there! 👋"
+title: "Hey there!"
 ---
 
 I’m **Carles**, also known as **Charly3Pins**. For over **12 years**, I’ve been diving headfirst into the amazing world of **software engineering**, and I’m here to share my adventures, thoughts, and all the cool stuff I'm learning along the way.

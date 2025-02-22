@@ -1,5 +1,5 @@
 ---
-title: "¡Hola! 👋"
+title: "¡Hola!"
 ---
 
 Soy **Carles**, también conocido como **Charly3Pins**. Llevo más de **12 años** sumergido en el fascinante mundo de la **ingeniería de software**, y estoy aquí para compartir mis aventuras, reflexiones y todas las cosas interesantes que voy aprendiendo en el camino.

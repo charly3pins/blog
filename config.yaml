@@ -10,7 +10,7 @@ params:
   socialIcons:
     - name: github
       url: "https://github.com/charly3pins"
-    - name: twitter
+    - name: x 
       url: "https://x.com/charly3pins"
     - name: youtube
       url: "https://youtube.com/charly3pins"
