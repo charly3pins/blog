@@ -10,6 +10,9 @@ image = "/images/library.png"
 - Cómo dominar el ciclo de las inversiones: e inclinar las probabilidades de ganar a su favor (_Howard Marks_)
 - La rebelión de Atlas (_Ayn Rand_)
 - Steve Jobs (_Walter Isaacson_)
+- YATSUHAKA-MURA. El pueblo de las ocho tumbas (_Seishi Yokomizo_)
+- Padre, el último mono (_Berto Romero_)
+- Machine Learning for Hackers (_Drew Conway, John Myles White_)
 
 ## Leídos
 
