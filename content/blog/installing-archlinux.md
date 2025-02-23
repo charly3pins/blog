@@ -150,3 +150,71 @@ for that you need to install it
 ```vim
 sudo pacman -S dmenu
 ```
+
+mod+left mod+right to move between panes
+mod+number it opens up the workspace number
+mod+w tab screen on full screen with each app
+mod+e toggles the orientation between horizontal and vertical of your panes
+mod+a selects the parent, so if you open a new app and then mod+e, it will put that new below the previous 2 in vertical, and the new one horizontal
+shift+mod+space toggles between floating and fullscreen (pane screen) for the app selected
+
+```vim
+sudo pacman -S neovim
+```
+
+tweaking the i3 config
+
+```vim
+neovim ~/.config/i3/config
+```
+
+change font-size to 14
+mod+shift+r to reload the config
+
+every package not present in pacman, is in AUR
+AUR helper -> yay vs paru
+installing yay
+https://github.com/Jguer/yay
+
+```vim
+sudo pacman -S --needed git base-devel
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+```
+
+with yay i can install my browser Brave
+
+```vim
+yay -S brave
+```
+
+installing fonts
+
+```vim
+yay -S ttf-meslo-nerd
+```
+
+once installed update it in the i3 config, in my case
+font-family = MesloLGS Nerd Font Mono
+
+reload the config with mod+shift+r and you will see the new fonts
+
+before continuing manually configuring, i want to use my dotfiles in https://github.com/charly3pins/dotfiles
+for that i am going to use stow, a symlink farm manager https://www.gnu.org/software/stow/manual/stow.html
+
+```vim
+yay -S stow
+```
+
+i also need npm to install some plugins in vim so
+
+```vim
+sudo pacman -S npm
+```
+
+then i clone my dotfiles in the home
+
+```vim
+git clone https://github.com/charly3pins/dotfiles
+```
