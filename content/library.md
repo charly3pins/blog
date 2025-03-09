@@ -10,9 +10,9 @@ image = "/images/library.png"
 - Cómo dominar el ciclo de las inversiones: e inclinar las probabilidades de ganar a su favor (_Howard Marks_)
 - La rebelión de Atlas (_Ayn Rand_)
 - Steve Jobs (_Walter Isaacson_)
-- YATSUHAKA-MURA. El pueblo de las ocho tumbas (_Seishi Yokomizo_)
 - Padre, el último mono (_Berto Romero_)
-- Machine Learning for Hackers (_Drew Conway, John Myles White_)
+- Server-Driven Web Apps with htmx (_R. Mark Volkmann_)
+- Python Machine Learning, Second Edition: Machine Learning and Deep Learning with Python, scikit-learn, and TensorFlow , Second Edition (_Sebastian Raschka, Vahid Mirjalili_)
 
 ## Read
 
@@ -54,6 +54,7 @@ image = "/images/library.png"
 - Principios (_Ray Dalio_)
 - Accelerate: The Science of Lean Software and DevOps: Building and Scaling High Performing Technology Organizations (_Nicole Forsgren PhD, Jez Humble, Gene Kim_)
 - Technology Strategy Patterns: Architecture as Strategy (_Eben Hewitt_)
+- YATSUHAKA-MURA. El pueblo de las ocho tumbas (_Seishi Yokomizo_)
 
 ## Planned to read
 
@@ -62,3 +63,4 @@ image = "/images/library.png"
 - Building Microservices: Designing Fine-Grained Systems (_Sam Newman_)
 - Concurrency in Go: Tools and Techniques for Developers (_Katherine Cox-Buday_)
 - Event-Driven Architecture in Golang: Building complex systems with asynchronicity and eventual consistency (_Michael Stack_)
+- Machine Learning for Hackers (_Drew Conway, John Myles White_)
