@@ -54,6 +54,7 @@ image = "/images/library.png"
 - Accelerate: The Science of Lean Software and DevOps: Building and Scaling High Performing Technology Organizations (_Nicole Forsgren PhD, Jez Humble, Gene Kim_)
 - Technology Strategy Patterns: Architecture as Strategy (_Eben Hewitt_)
 - YATSUHAKA-MURA. El pueblo de las ocho tumbas (_Seishi Yokomizo_)
+- Padre, el último mono (_Berto Romero_)
 
 ## En cola
 
