@@ -5,7 +5,7 @@
   <span
     >{{ .PublishDate.Format "02/01/2006" }} | {{.ReadingTime}}' | {{range
     .Params.Tags }}
-    <span><a href='{{ "tags/" | absURL }}{{.}}'>{{.}}</a></span>
+    <span><a href='{{ "tags/" | absURL }}{{.}}'>#{{.}}</a></span>
     {{end}}
   </span>
   {{ if .IsTranslated }}
