@@ -12,6 +12,7 @@ image = "/images/library.png"
 - Steve Jobs (_Walter Isaacson_)
 - Server-Driven Web Apps with htmx (_R. Mark Volkmann_)
 - Python Machine Learning, Second Edition: Machine Learning and Deep Learning with Python, scikit-learn, and TensorFlow , Second Edition (_Sebastian Raschka, Vahid Mirjalili_)
+- La abolición del hombre (_C.S. Lewis_)
 
 ## Read
 
