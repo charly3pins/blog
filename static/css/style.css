@@ -61,7 +61,7 @@ li:before {
 }
 
 .main {
-  max-width: 40rem;
+  max-width: 60rem;
   margin-inline: auto;
   min-height: 80vh;
 }
