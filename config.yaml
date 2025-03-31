@@ -16,6 +16,8 @@ params:
       url: "https://youtube.com/charly3pins"
     - name: linkedin
       url: "https://linkedin.com/in/carlesfuste"
+    - name: substack
+      url: "https://techtrenches.substack.com"
     - name: rss
       url: "/index.xml"
   googleAnalytics: "G-KX7XNRQ64E"
