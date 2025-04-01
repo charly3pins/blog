@@ -16,6 +16,10 @@ params:
       url: "https://youtube.com/charly3pins"
     - name: linkedin
       url: "https://linkedin.com/in/carlesfuste"
+    - name: dev 
+      url: "https://dev.to/charly3pins"
+    - name: medium
+      url: "https://medium.com/@charly3pins"
     - name: substack
       url: "https://techtrenches.substack.com"
     - name: rss
