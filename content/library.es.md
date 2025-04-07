@@ -12,6 +12,7 @@ image = "/images/library.png"
 - Steve Jobs (_Walter Isaacson_)
 - Python Machine Learning, Second Edition: Machine Learning and Deep Learning with Python, scikit-learn, and TensorFlow , Second Edition (_Sebastian Raschka, Vahid Mirjalili_) Padre, el último mono (_Berto Romero_)
 - La abolición del hombre (_C.S. Lewis_)
+- Writing for Developers: Blogs that Get Read (_Piotr Sarna, Cynthia Dunlop_)
 
 ## Leídos
 
