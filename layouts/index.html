@@ -1,17 +1,14 @@
 {{define "main"}}
 
 <div class="main-content">
-  <div>
-    <img
-      src="{{ .Site.Params.Home.ImageURL | absURL }}"
-      width="250px;"
-      title="{{ .Site.Params.Home.ImageTitle }}"
-    />
-  </div>
+  <div style="justify-self: center;">
+    <div>
+      <img src="{{ .Site.Params.Home.ImageURL | absURL }}" width="250px;" title="{{ .Site.Params.Home.ImageTitle }}" />
+    </div>
 
-  <br />
+    <br />
 
-  <code>
+    <code>
     <span>
       <span style="color: #b392f0">fmt.Println</span>
       <span style="color: #e1e4e8">(</span>
@@ -21,41 +18,39 @@
     <span class="line"></span
   ></code>
 
-  <br />
-  <br />
+    <br />
+    <br />
 
-  <h2>What do I do?</h2>
+    <h2>What do I do?</h2>
 
-  <ul>
-    <li>
-      <a href="/blog">Writing articles</a>
-    </li>
-    <li>
-      <a href="https://www.youtube.com/@charly3pins" target="_blank"
-        >Coding Tutorials</a
-      >
-    </li>
-    <li>
-      <a href="/projects">Hacking things</a>
-    </li>
-    <li>
-      <a href="/library">Reading books</a>
-    </li>
-    <li>
-      <a href="https://github.com/charly3pins" target="_blank">And more…</a>
-    </li>
-  </ul>
+    <ul>
+      <li>
+        <a href="/blog">Writing articles</a>
+      </li>
+      <li>
+        <a href="https://www.youtube.com/@charly3pins" target="_blank">Coding Tutorials</a>
+      </li>
+      <li>
+        <a href="/projects">Hacking things</a>
+      </li>
+      <li>
+        <a href="/library">Reading books</a>
+      </li>
+      <li>
+        <a href="https://github.com/charly3pins" target="_blank">And more…</a>
+      </li>
+    </ul>
 
-  <br />
-  <br />
+    <br />
+    <br />
+  </div>
 
   <h2>Latest posts</h2>
 
-  {{range $i,$el := first 3 (where .Paginator.Pages ".Section" "blog")}}
+  {{range $i,$el := first 9 (where .Paginator.Pages ".Section" "blog")}}
   <div class="post-item">
     <h3><a class="link" href="{{.Permalink}}">{{.Title}}</a></h3>
-    <span
-      >{{ .PublishDate.Format "02/01/2006" }} | {{.ReadingTime}}' | {{range
+    <span>{{ .PublishDate.Format "02/01/2006" }} | {{.ReadingTime}}' | {{range
       .Params.Tags }}
       <span><a href='{{ "tags/" | absURL }}{{.}}'>#{{.}}</a></span>
       {{end}}
@@ -67,16 +62,13 @@
   {{end}}
 
   <a href="/blog">> Read all posts</a>
+
 </div>
 
+
 <div class="main-content">
-  <iframe
-    src="https://techtrenches.substack.com/embed"
-    width="480"
-    height="320"
-    frameborder="0"
-    scrolling="no"
-  ></iframe>
+  <iframe src="https://techtrenches.substack.com/embed" width="480" height="320" frameborder="0"
+    scrolling="no"></iframe>
 </div>
 
 {{end}}

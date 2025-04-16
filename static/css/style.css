@@ -37,7 +37,7 @@ nav {
   padding-bottom: 3rem;
 }
 
-nav > ul {
+nav>ul {
   display: flex;
   gap: 1rem;
   justify-content: center;
@@ -61,7 +61,7 @@ li:before {
 }
 
 .main {
-  max-width: 60rem;
+  max-width: 90rem;
   margin-inline: auto;
   min-height: 80vh;
 }
@@ -81,7 +81,7 @@ footer {
   align-items: center;
 }
 
-footer > p {
+footer>p {
   font-size: 0.75em;
   font-weight: 300;
 }
