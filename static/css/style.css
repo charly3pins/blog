@@ -32,6 +32,17 @@ h6 {
   font-weight: 400;
 }
 
+h2 {
+  text-decoration: underline;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-link);
+}
+
 nav {
   padding-top: 1rem;
   padding-bottom: 3rem;
@@ -87,23 +98,31 @@ footer > p {
 }
 
 .highlight {
-  border: 1px rgb(188, 191, 210) solid;
+  border: 1px var(--fg1) solid;
   background: #232136;
   padding: 0rem 1rem;
 }
 
 :not(pre) > code {
-  background-color: rgb(142, 116, 189);
+  background-color: var(--text-link);
   padding: 0.1rem 0.1rem;
   color: rgb(32, 31, 38);
   font-weight: bold;
 }
 
 .tag-label {
-  background-color: rgb(142, 116, 189);
+  background-color: var(--text-link);
   padding: 0.2rem 0.2rem;
-  color: rgb(32, 31, 38);
+  color: var(--bg1);
   font-weight: bold;
   border-radius: 5px;
-  border: 1px rgb(188, 191, 210) solid;
+  border: 1px var(--fg1) solid;
+}
+
+blockquote {
+  border-left: 10px var(--text-link) solid;
+  margin: 0;
+  padding-left: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
