@@ -1,57 +1,39 @@
 {{define "main"}}
 <div class="main-content">
-  <h2>{{.Title}}</h2>
-  {{if or (eq .Section "blog") (eq .Section "projects")}}
-  <span
-    >{{ .PublishDate.Format "02/01/2006" }} | {{.ReadingTime}}' | {{range
-    .Params.Tags }}
-    <span><a href='{{ "tags/" | absURL }}{{.}}'>#{{.}}</a></span>
-    {{end}}
-  </span>
-  {{ if .IsTranslated }}
-  <span>
-    | {{ range .Translations }}
-    <a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
-    {{ end}}
-  </span>
-  {{ end }} {{ with .Params.image }}
-  <div>
-    <img src="{{ .  | absURL }}" alt="post-image" style="max-width: 200px" />
-  </div>
-  {{ end }}
-  <div>{{.Content }}</div>
-  <script
-    src="https://giscus.app/client.js"
-    data-repo="charly3pins/blog"
-    data-repo-id="MDEwOlJlcG9zaXRvcnkxNDg5MjY5MTc="
-    data-category="General"
-    data-category-id="DIC_kwDOCOBxxc4CfWzK"
-    data-mapping="pathname"
-    data-strict="0"
-    data-reactions-enabled="1"
-    data-emit-metadata="1"
-    data-input-position="top"
-    data-theme="dark_dimmed"
-    data-lang="es"
-    data-loading="lazy"
-    crossorigin="anonymous"
-    async
-  ></script>
+    <h2>{{.Title}}</h2>
+    {{if or (eq .Section "blog") (eq .Section "projects")}}
+    <span>{{ .PublishDate.Format "02/01/2006" }} | {{.ReadingTime}}' | {{range
+        .Params.Tags }}
+        <span><a class="tag-label" href='{{ "tags/" | absURL }}{{.}}'>#{{.}}</a></span>
+        {{end}}
+    </span>
+    {{ if .IsTranslated }}
+    <span>
+        | {{ range .Translations }}
+        <a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
+        {{ end}}
+    </span>
+    {{ end }} {{ with .Params.image }}
+    <div>
+        <img src="{{ .  | absURL }}" alt="post-image" style="max-width: 200px" />
+    </div>
+    {{ end }}
+    <div>{{.Content }}</div>
+    <script src="https://giscus.app/client.js" data-repo="charly3pins/blog"
+        data-repo-id="MDEwOlJlcG9zaXRvcnkxNDg5MjY5MTc=" data-category="General" data-category-id="DIC_kwDOCOBxxc4CfWzK"
+        data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="1"
+        data-input-position="top" data-theme="dark_dimmed" data-lang="es" data-loading="lazy" crossorigin="anonymous"
+        async></script>
 
-  {{else}}
-  <!-- not blog or projects section -->
-  <div>{{.Content }}</div>
-  {{end}}
+    {{else}}
+    <!-- not blog or projects section -->
+    <div>{{.Content }}</div>
+    {{end}}
 </div>
 
 <div class="main-content">
-  <iframe
-    src="https://techtrenches.substack.com/embed"
-    width="480"
-    height="320"
-    frameborder="0"
-    scrolling="no"
-  ></iframe>
+    <iframe src="https://techtrenches.substack.com/embed" width="480" height="320" frameborder="0"
+        scrolling="no"></iframe>
 </div>
 
 {{end}}

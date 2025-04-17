@@ -1,73 +1,72 @@
 {{define "main"}}
 
 <div class="main-content">
-  <div style="justify-self: center;">
-    <div style="text-align: center;">
-      <img src="{{ .Site.Params.Home.ImageURL | absURL }}" width="250px;" title="{{ .Site.Params.Home.ImageTitle }}" />
+    <div style="justify-self: center">
+        <div style="text-align: center">
+            <img src="{{ .Site.Params.Home.ImageURL | absURL }}" width="250px;"
+                title="{{ .Site.Params.Home.ImageTitle }}" />
+        </div>
+        <br />
+
+        <code style="background-color: transparent; font-weight: normal" class="language-go" data-lang="go">
+            <span style="display: flex">
+                <span>
+                    <span style="color: #ea9a97">fmt</span><span style="color: #908caa">.</span><span
+                        style="color: #ea9a97">Println</span><span style="color: #908caa">(</span><span
+                        style="color: #f6c177">"Welcome to Charly3Pins.dev!"</span><span style="color: #908caa">)</span>
+                </span>
+            </span>
+        </code>
+
+        <br />
+        <br />
+
+        <h2 style="text-align: center">What do I do?</h2>
+
+        <ul>
+            <li>
+                <a href="/blog">Writing articles</a>
+            </li>
+            <li>
+                <a href="https://www.youtube.com/@charly3pins" target="_blank">Coding Tutorials</a>
+            </li>
+            <li>
+                <a href="/projects">Hacking things</a>
+            </li>
+            <li>
+                <a href="/library">Reading books</a>
+            </li>
+            <li>
+                <a href="https://github.com/charly3pins" target="_blank">And more…</a>
+            </li>
+        </ul>
+
+        <br />
+        <br />
     </div>
-    <br />
 
-    <code>
-      <span>
-        <span style="color: #b392f0">fmt.Println</span>
-        <span style="color: #e1e4e8">(</span>
-        <span style="color: #9ecbff">"Welcome to <b>{{ .Site.Title }}</b>!"</span>
-        <span style="color: #e1e4e8">)</span>
-      </span>
-      <span class="line"></span>
-    </code>
+    <h2>Latest posts</h2>
 
-    <br />
-    <br />
-
-    <h2 style="text-align: center;">What do I do?</h2>
-
-    <ul>
-      <li>
-        <a href="/blog">Writing articles</a>
-      </li>
-      <li>
-        <a href="https://www.youtube.com/@charly3pins" target="_blank">Coding Tutorials</a>
-      </li>
-      <li>
-        <a href="/projects">Hacking things</a>
-      </li>
-      <li>
-        <a href="/library">Reading books</a>
-      </li>
-      <li>
-        <a href="https://github.com/charly3pins" target="_blank">And more…</a>
-      </li>
-    </ul>
+    {{range $i,$el := first 9 (where .Paginator.Pages ".Section" "blog")}}
+    <div class="post-item">
+        <h3><a class="link" href="{{.Permalink}}">{{.Title}}</a></h3>
+        <span>{{ .PublishDate.Format "02/01/2006" }} | {{.ReadingTime}}' | {{range
+            .Params.Tags }}
+            <span><a class="tag-label" href='{{ "tags/" | absURL }}{{.}}'>#{{.}}</a></span>
+            {{end}}
+        </span>
+        <p>{{ .Description }}</p>
+    </div>
 
     <br />
-    <br />
-  </div>
+    {{end}}
 
-  <h2>Latest posts</h2>
-
-  {{range $i,$el := first 9 (where .Paginator.Pages ".Section" "blog")}}
-  <div class="post-item">
-    <h3><a class="link" href="{{.Permalink}}">{{.Title}}</a></h3>
-    <span>{{ .PublishDate.Format "02/01/2006" }} | {{.ReadingTime}}' | {{range
-      .Params.Tags }}
-      <span><a href='{{ "tags/" | absURL }}{{.}}'>#{{.}}</a></span>
-      {{end}}
-    </span>
-    <p>{{ .Description }}</p>
-  </div>
-
-  <br />
-  {{end}}
-
-  <a href="/blog">> Read all posts</a>
-
+    <a href="/blog">> Read all posts</a>
 </div>
 
-
 <div class="main-content">
-  <iframe src="https://techtrenches.substack.com/embed" width="480" height="320" frameborder="0"
-    scrolling="no"></iframe>
+    <iframe src="https://techtrenches.substack.com/embed" width="480" height="320" frameborder="0"
+        scrolling="no"></iframe>
 </div>
 
 {{end}}

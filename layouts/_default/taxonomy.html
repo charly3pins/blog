@@ -1,25 +1,26 @@
 {{define "main"}}
 <div class="main-content">
-  <h2>{{.Title}}</h2>
-  <span>
-    {{range .Site.Taxonomies.tags}}
-    <a href="{{ .Page.Permalink }}/">{{ .Page.Title }}({{.Count}})</a>
-    {{end}}
-  </span>
-  {{ if (ne .Title "Tags")}} {{ range .Pages }}
+    <h2>{{.Title}}</h2>
+    <div>
+        {{range .Site.Taxonomies.tags}}
+        <span>
+            <a href="{{ .Page.Permalink }}/">{{ .Page.Title }}({{.Count}})</a>
+        </span>
+        {{end}}
+    </div>
+    {{ if (ne .Title "Tags")}} {{ range .Pages }}
 
-  <div>
-    <h3><a href="{{.Permalink}}">{{.Title}}</a></h3>
-    <span
-      >{{ .PublishDate.Format "02/01/2006" }} | {{.ReadingTime}}' | {{range
-      .Params.Tags }}
-      <span><a href='{{ "tags/" | absURL }}{{.}}'>#{{.}}</a></span> {{end}}
-    </span>
-    <p>{{ .Description }}</p>
-  </div>
-  <br />
+    <div>
+        <h3><a href="{{.Permalink}}">{{.Title}}</a></h3>
+        <span>{{ .PublishDate.Format "02/01/2006" }} | {{.ReadingTime}}' | {{range
+            .Params.Tags }}
+            <span><a class="tag-label" href='{{ "tags/" | absURL }}{{.}}'>#{{.}}</a></span>
+            {{end}}
+        </span>
+        <p>{{ .Description }}</p>
+    </div>
+    <br />
 
-  {{end}} {{end}}
+    {{end}} {{end}}
 </div>
 {{ end }}
-

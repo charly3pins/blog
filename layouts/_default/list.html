@@ -1,30 +1,27 @@
 {{define "main"}}
 <div class="main-content">
-  <h2>{{.Title}}</h2>
-  {{ with .Description }}
-  <div>{{ . | safeHTML }}</div>
-  {{ end }}
-  <!-- List all tags -->
-  {{if eq .Kind "taxonomyTerm"}} {{range $key, $value :=
-  .Data.Terms.Alphabetical}}
-  <span>
-    <a href='{{ "tags/" | absURL }}{{ $value.Name | lower }}'
-      >{{ $value.Name }} ({{.Count }})</a
-    >
-  </span>
-  {{end}} {{else}} {{ $paginator := .Paginate .Pages.ByDate.Reverse 5 }} {{
-  range $paginator.Pages }}
-  <div>
-    <h3><a href="{{.Permalink}}">{{.Title}}</a></h3>
-    <span
-      >{{ .PublishDate.Format "02/01/2006" }} | {{.ReadingTime}}' | {{range
-      .Params.Tags }}
-      <span><a href='{{ "tags/" | absURL }}{{.}}'>#{{.}}</a></span>
-      {{end}}
+    <h2>{{.Title}}</h2>
+    {{ with .Description }}
+    <div>{{ . | safeHTML }}</div>
+    {{ end }}
+    <!-- List all tags -->
+    {{if eq .Kind "taxonomyTerm"}} {{range $key, $value :=
+    .Data.Terms.Alphabetical}}
+    <span>
+        <a href='{{ "tags/" | absURL }}{{ $value.Name | lower }}'>{{ $value.Name }} ({{.Count }})</a>
     </span>
-    <p>{{ .Description }}</p>
-  </div>
-  <br />
-  {{end}} {{ template "_internal/pagination.html" . }} {{end}}
+    {{end}} {{else}} {{ $paginator := .Paginate .Pages.ByDate.Reverse 5 }} {{
+    range $paginator.Pages }}
+    <div>
+        <h3><a href="{{.Permalink}}">{{.Title}}</a></h3>
+        <span>{{ .PublishDate.Format "02/01/2006" }} | {{.ReadingTime}}' | {{range
+            .Params.Tags }}
+            <span><a class="tag-label" href='{{ "tags/" | absURL }}{{.}}'>#{{.}}</a></span>
+            {{end}}
+        </span>
+        <p>{{ .Description }}</p>
+    </div>
+    <br />
+    {{end}} {{ template "_internal/pagination.html" . }} {{end}}
 </div>
 {{end}}
