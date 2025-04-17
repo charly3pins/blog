@@ -1,5 +1,9 @@
 baseURL: "https://charly3pins.dev"
 title: "Charly3Pins.dev"
+markup:
+  highlight:
+    style: "rose-pine-moon" # default is monokai
+    noClasses: true # default is true
 params:
   since: 2018
   author:
@@ -10,13 +14,13 @@ params:
   socialIcons:
     - name: github
       url: "https://github.com/charly3pins"
-    - name: x 
+    - name: x
       url: "https://x.com/charly3pins"
     - name: youtube
       url: "https://youtube.com/charly3pins"
     - name: linkedin
       url: "https://linkedin.com/in/carlesfuste"
-    - name: dev 
+    - name: dev
       url: "https://dev.to/charly3pins"
     - name: medium
       url: "https://medium.com/@charly3pins"
