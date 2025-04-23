@@ -1,11 +1,9 @@
 <!doctype html>
-<html lang="{{ .Site.Params.main.lang }}">
+<html lang="en">
 {{- partial "head.html" . -}}
 
 <body>
-    {{- partial "nav.html" . -}}
-    <div class="main">{{- block "main" . }} {{- end }}</div>
-    {{- partial "footer.html" . -}}
+    {{- block "main" . }} {{- end }}
 </body>
 
 </html>

@@ -1,5 +1,6 @@
 ---
 title: "¡Hola!"
+layout: "about"
 ---
 
 Soy Carles, más conocido como Charly3Pins (C3P)—un Ingeniero de Software (ahora CTO) con más de 12 años en el apasionante mundo de la tecnología.

@@ -52,6 +52,9 @@ languages:
         - name: Projects
           url: projects/
           weight: 5
+        - name: Contact
+          url: contact/
+          weight: 6
   es:
     languageName: "Castellano"
     weight: 1
@@ -73,3 +76,6 @@ languages:
         - name: Proyectos
           url: projects/
           weight: 5
+        - name: Contacto
+          url: contact/
+          weight: 6

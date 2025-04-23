@@ -1,12 +1,22 @@
 <nav>
-  <ul id="menu" class="menu">
-    {{ $currentPage := . }} {{ range .Site.Menus.main }} {{ $menu_item_url :=
-    .URL | relLangURL }} {{ $page_url:= $currentPage.RelPermalink | relLangURL}}
-    <li>
-      <a href={{ .URL | relLangURL }} {{ if eq $menu_item_url $page_url }} class="menu-active" {{ end }}>
-        {{ .Name }}
-      </a>
-    </li>
-    {{ end }}
-  </ul>
+    <div>
+        <a href="/" _secondary="">[Home]</a>
+        <div>
+            {{ $current := . }}
+            {{ range .Site.Menus.main}}
+            {{ $menu_item_url := .URL | relLangURL }} {{ $page_url:= $current.RelPermalink | relLangURL}}
+            {{ $active := or ($current.IsMenuCurrent "nav" .) ($current.HasMenuCurrent "nav" .) }}
+            {{ $active = or $active (eq .Name $current.Title) }} {{ $active = or $active (and (eq .Name "Blog") (eq
+            $current.Section
+            "post")) }}
+            {{ $active = or $active (and (eq .Name "Projects") (eq $current.Section "projects")) }}
+            {{ $active = or $active (and (eq .Name "Tags") (eq $current.Section "tags")) }}
+            {{ if and (not (eq .Name "Home")) (not $active) }}
+            <a href={{ .URL | relLangURL }} {{ if eq $menu_item_url $page_url }} class="menu-active" {{ end }}>
+                [{{ .Name }}]
+            </a>
+            {{ end }}
+            {{ end }}
+        </div>
+    </div>
 </nav>

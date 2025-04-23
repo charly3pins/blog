@@ -1,5 +1,6 @@
 ---
 title: "Hey there!"
+layout: "about"
 ---
 
 I’m Carles, aka Charly3Pins (C3P)—a Software Engineer (now CTO) with over 12 years diving into tech’s wild ride.
@@ -17,3 +18,12 @@ You can check out all my experiments on my [GitHub](https://github.com/charly3pi
 Hungry for more? Catch my rawest takes every Friday in my newsletter: [Tech Trenches](https://techtrenches.substack.com).
 
 {C3P}
+
+{{< rawhtml >}}
+
+<div style="text-align:center;">
+    <iframe src="https://techtrenches.substack.com/embed" width="480" height="320" frameborder="0"
+        scrolling="no"></iframe>
+</div>
+
+{{</ rawhtml >}}
