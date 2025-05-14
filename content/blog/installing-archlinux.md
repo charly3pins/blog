@@ -218,3 +218,15 @@ then i clone my dotfiles in the home
 ```vim
 git clone https://github.com/charly3pins/dotfiles
 ```
+
+review network manager
+sudo pacman -S networkmanager
+systemctl enable NetworkManager
+systemctl start NetworkManager
+nmcli device wifi list
+nmlci --ask device wifi connect [B]SSID
+
+and then enter the password
+
+install lazygit
+sudo pacman -S lazygit
