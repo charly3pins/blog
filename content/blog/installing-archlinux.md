@@ -230,3 +230,62 @@ and then enter the password
 
 install lazygit
 sudo pacman -S lazygit
+
+insall spotify
+sudo pacman -S spotify-launcher
+
+installing clipboard provider
+sudo pacman -S xclip
+
+external monitor support
+xrandr command to verify if HDMI, etc are OK
+then installing
+sudo pacman -S autorandr
+deactivate the laptop screen
+xrandr --output eDP-1 --off
+store profile
+autorandr --save docked
+same for the undocked but disabling the HDMI-X that is the external screen
+and store it as profile undocked (only laptop)
+
+Ya deberías tener:
+
+Perfil docked: solo HDMI-1 activo, eDP-1 apagado.
+
+Perfil undocked: solo eDP-1 activo, HDMI-1 apagado.
+
+Con el servicio activo:
+systemctl --user enable autorandr.service
+systemctl --user start autorandr.service
+
+si falla, necesitas crear el systemd file
+
+Crea el archivo de servicio
+mkdir -p ~/.config/systemd/user
+Luego edita el archivo (puedes usar nano, vim, etc.):
+
+nvim ~/.config/systemd/user/autorandr.service
+y añades el siguiente texto:
+
+[Unit]
+Description=Autorandr execution service
+After=graphical.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/autorandr --change
+RemainAfterExit=true
+
+[Install]
+WantedBy=default.target
+
+Recarga los servicios de usuario
+systemctl --user daemon-reexec
+systemctl --user daemon-reload
+
+Activa el servicio
+systemctl --user enable autorandr.service
+systemctl --user start autorandr.service
+
+para cambair entre perfiles
+autorandr --load docked / undocked
