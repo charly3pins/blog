@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto Mono", monospace;
+  font-size: 1em;
+  background-color: #1a1c20;
+  filter: invert(100%);
+}
+@keyframes intro {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+div.main {
+  animation: intro 0.3s both;
+  animation-delay: 0.15s;
+}
+div.help {
+  animation: intro 0.3s both;
+  animation-delay: 0.15s;
+  display: none;
+}
+a:hover {
+  background-color: #1a1c20;
+  color: #fff;
+}
+div.container {
+  max-width: 45em;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+h1,
+h2,
+h3,
+p {
+  font-size: 1em;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.command,
+.argument {
+  font-weight: bold;
+}
+div.container div h1 {
+  font-weight: normal;
+}
+div,
+p.indented {
+  margin-bottom: 1em;
+}
+div.section div {
+  margin-left: 4em;
+}
+p.indented {
+  margin-left: 2em;
+}
+a {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+::-moz-selection {
+  color: #e5e3df;
+  background: #1a1c20;
+}
+::selection {
+  color: #e5e3df;
+  background: #1a1c20;
+}
+header,
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 1px;
+}
+header {
+  margin-bottom: 50px;
+}
+footer {
+  margin-top: 50px;
+}
