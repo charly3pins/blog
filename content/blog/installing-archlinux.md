@@ -219,6 +219,25 @@ then i clone my dotfiles in the home
 git clone https://github.com/charly3pins/dotfiles
 ```
 
+
+in the dotfiles directory i type "stow nvim" for example and automatically it creates the symlinks and all the config needed for nvim. same for other programs
+
+before i stow my .zshrc i need to install few dependencies that i have otherwise it will fail.
+i am using `eza` as a better `ls`
+
+```vim
+yay -S eza
+```
+
+also i am using a smarter cd command for your terminal called `zoxide`
+
+```vim
+yay -S zoxide
+```
+
+with these 2 my zsh is ready to shine so I do it after that, other programs can be done in any order
+
+
 review network manager
 sudo pacman -S networkmanager
 systemctl enable NetworkManager
