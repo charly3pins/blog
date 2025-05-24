@@ -306,5 +306,11 @@ Activa el servicio
 systemctl --user enable autorandr.service
 systemctl --user start autorandr.service
 
-para cambair entre perfiles
+para cambiar entre perfiles
 autorandr --load docked / undocked
+
+instalar spotify terminal
+yay -S spotify-player
+
+instalar qutebrowser
+yay -S qutebrowser
