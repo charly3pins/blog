@@ -219,7 +219,6 @@ then i clone my dotfiles in the home
 git clone https://github.com/charly3pins/dotfiles
 ```
 
-
 in the dotfiles directory i type "stow nvim" for example and automatically it creates the symlinks and all the config needed for nvim. same for other programs
 
 before i stow my .zshrc i need to install few dependencies that i have otherwise it will fail.
@@ -236,7 +235,6 @@ yay -S zoxide
 ```
 
 with these 2 my zsh is ready to shine so I do it after that, other programs can be done in any order
-
 
 review network manager
 sudo pacman -S networkmanager
@@ -314,3 +312,12 @@ yay -S spotify-player
 
 instalar qutebrowser
 yay -S qutebrowser
+
+instalar docker
+sudo pacman -S docker
+sudo pacman -S docker-compose
+sudo systemctl status docker
+sudo systemctl start docker
+
+instalar gimp
+sudo pacman -S gimp
