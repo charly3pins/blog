@@ -321,3 +321,7 @@ sudo systemctl start docker
 
 instalar gimp
 sudo pacman -S gimp
+
+screenshots using Flameshot
+sudo pacman -S flameshot
+flameshot gui
