@@ -325,3 +325,6 @@ sudo pacman -S gimp
 screenshots using Flameshot
 sudo pacman -S flameshot
 flameshot gui
+
+install hugo
+sudo pacman -S hugo
