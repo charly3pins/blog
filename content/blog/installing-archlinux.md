@@ -328,3 +328,6 @@ flameshot gui
 
 install hugo
 sudo pacman -S hugo
+
+install signal
+sudo pacman -S signal-desktop
