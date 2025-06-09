@@ -331,3 +331,6 @@ sudo pacman -S hugo
 
 install signal
 sudo pacman -S signal-desktop
+
+install pip
+sudo pacman -S python-pip
