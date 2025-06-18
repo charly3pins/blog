@@ -334,3 +334,6 @@ sudo pacman -S signal-desktop
 
 install pip
 sudo pacman -S python-pip
+
+install dbeaver
+sudo pacman -S dbeaver
