@@ -337,3 +337,6 @@ sudo pacman -S python-pip
 
 install dbeaver
 sudo pacman -S dbeaver
+
+install ripgrep
+sudo pacman -S ripgrep
