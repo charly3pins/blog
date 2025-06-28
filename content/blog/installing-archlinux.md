@@ -340,3 +340,6 @@ sudo pacman -S dbeaver
 
 install ripgrep
 sudo pacman -S ripgrep
+
+install superfile
+bash -c "$(curl -sLo- https://superfile.netlify.app/install.sh)"
