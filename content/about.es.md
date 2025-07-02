@@ -2,16 +2,19 @@
 title: "¡Hola!"
 ---
 
-Soy Carles, más conocido como Charly3Pins (C3P)—un Ingeniero de Software (ahora CTO) con más de 12 años en el apasionante mundo de la tecnología.
-Crecí jugando a montar y construir cosas con Lego; ahora lo hago con código, resolviendo problemas y conectando sistemas que funcionan.
-He pasado de programar solo en mi habitación a liderar equipos, pero todavía prefiero estar en la terminal en lugar de en una sala de reuniones.
-Me apasiona resolver retos complejos, sincronizar la tecnología con el negocio y formar equipos que triunfan, ¡siempre en las trincheras!
+Soy Carles, también conocido como Charly3Pins (C3P)—un resolvedor de problemas e Ingeniero de Software. Durante más de 12 años, me he sumergido en desafíos técnicos complejos, construyendo sistemas que funcionan y descubriendo por qué fallan cuando no lo hacen.
 
-Este blog es mi laboratorio: pensamientos, experimentos y cosas que he aprendido por el camino, casi siempre con [Go](https://go.dev/).
+Crecí construyendo cosas con Lego; ahora lo hago con código, sistemas distribuidos y equipos.
 
-Cuando no estoy trabajando, me encontrarás haciendo ejercicio, pasando tiempo con mi familia o metido en cosas de tecnología.
-Sí, incluso después del trabajo, suelo seguir aprendiendo—ya sea leyendo libros, viendo vídeos, haciendo cursos o trasteando con nuevos proyectos.
-Creo que la mejor manera de aprender es _haciendo_, así que siempre estoy experimentando con nuevas ideas y construyendo cosas.
+Me encanta resolver problemas que ayudan a la vida de otros; disfruto entendiendo sistemas en cada capa—desde hardware hasta experiencia de usuario;
+
+Soy curioso por naturaleza y ambicioso por elección, siempre buscando nuevos desafíos que me empujen a aprender y crecer.
+Ya sea explorando nuevas tecnologías, optimizando sistemas existentes, o ayudando a otros a subir de nivel sus habilidades, constantemente estoy experimentando y construyendo.
+
+Este blog es mi laboratorio: análisis técnicos profundos, experimentos y lecciones aprendidas a pulso—generalmente involucrando Go, sistemas distribuidos, y la ocasional historia de guerra de debugging.
+
+Cuando no estoy programando, me encontrarás manteniéndome activo, pasando tiempo con mi familia, o haciendo deporte. Probablemente sigo aprendiendo algo relacionado con tecnología también. Libros, cursos, proyectos paralelos—creo que la mejor manera de entender algo es construirlo, romperlo, y construirlo de nuevo.
+
 Puedes ver todos mis experimentos en mi [GitHub](https://github.com/charly3pins).
 
 {C3P}

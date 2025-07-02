@@ -2,16 +2,19 @@
 title: "Hey there!"
 ---
 
-I’m Carles, aka Charly3Pins (C3P)—a Software Engineer (now CTO) with over 12 years diving into tech’s wild ride.
-I grew up playing to build and assemble things with Lego; now I do it with code, solving problems and connecting systems that work.
-I've gone from programming alone in my room to leading teams, but I still prefer being at the terminal rather than in a meeting room.
-I'm passionate about solving complex challenges, making tech work for the business, and building successful teams—always in the trenches!
+I'm Carles, aka Charly3Pins (C3P)—a problem-solver and Software Engineer. For over 12 years, I've been diving deep into technical challenges, building systems that work, and figuring out why they don't when they break.
 
-This blog’s my playground: thoughts, experiments, and stuff I’ve picked up along the way—usually with [Go](https://go.dev/).
+I grew up building things with Lego; now I do it with code, distributed systems, and teams.
 
-When I’m not working, you’ll find me staying active doing exercise, spending time with my family, or diving into tech stuff.
-Yep, even after work, I’m usually learning—whether it’s through books, videos, courses, or just tinkering with new projects.
-I believe the best way to learn is by _doing_, so I’m always experimenting with new ideas and building things.
-You can check out all my experiments on my [GitHub](https://github.com/charly3pins).
+I love solving problems that help others' lives; I enjoy understanding systems at every layer—from hardware to user experience;
+
+I'm curious by nature and ambitious by choice, always seeking new challenges that push me to learn and grow.
+Whether it's exploring new technologies, optimizing existing systems, or helping others level up their skills, I'm constantly experimenting and building.
+
+This blog is my laboratory: technical deep-dives, experiments, and hard-won lessons—usually involving Go, distributed systems, and the occasional debugging war story.
+
+When I'm not coding, you'll find me staying active, spending time with my family, or doing sports. I'm probably still learning something tech-related too. Books, courses, side projects—I believe the best way to understand something is to build it, break it, and build it again.
+
+All my experiments and projects live on [GitHub](https://github.com/charly3pins).
 
 {C3P}
