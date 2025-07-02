@@ -65,7 +65,7 @@ It's a slick gimmick for a quick prototype, but don't be fooled: it's nowhere ne
 
 I've laid out why I think it's overhyped and risky, so if you've got a "vibe coding" win or wipeout, I'd love to hear it.
 
-Drop your thoughts on [LinkedIn](https://www.linkedin.com/in/carlesfuste/) or [Twitter/X](https://x.com/charly3pins) or subscribe to [Tech Trenches](https://techtrenches.substack.com/) for more from the trenches.
+Drop your thoughts on [LinkedIn](https://www.linkedin.com/in/carlesfuste/) or [Twitter/X](https://x.com/charly3pins).
 
 Happy coding!
 

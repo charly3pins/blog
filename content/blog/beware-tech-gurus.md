@@ -65,7 +65,7 @@ If you’re still here, props—you’ve waded through my rant on these fakes.
 Tech’s too messy for their “expert” schtick.
 
 Got your own guru fatigue?
-Drop your thoughts on [LinkedIn](https://www.linkedin.com/in/carlesfuste/) or [Twitter/X](https://x.com/charly3pins), or subscribe to [Tech Trenches](https://techtrenches.substack.com/) for more from the trenches.
+Drop your thoughts on [LinkedIn](https://www.linkedin.com/in/carlesfuste/) or [Twitter/X](https://x.com/charly3pins).
 
 Happy coding!
 

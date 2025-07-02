@@ -14,6 +14,4 @@ Sí, incluso después del trabajo, suelo seguir aprendiendo—ya sea leyendo lib
 Creo que la mejor manera de aprender es _haciendo_, así que siempre estoy experimentando con nuevas ideas y construyendo cosas.
 Puedes ver todos mis experimentos en mi [GitHub](https://github.com/charly3pins).
 
-¿Quieres más? Descubre mis ideas más originales todos los viernes en mi newsletter: [Tech Trenches](https://techtrenches.substack.com).
-
 {C3P}

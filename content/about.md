@@ -14,6 +14,4 @@ Yep, even after work, I’m usually learning—whether it’s through books, vid
 I believe the best way to learn is by _doing_, so I’m always experimenting with new ideas and building things.
 You can check out all my experiments on my [GitHub](https://github.com/charly3pins).
 
-Hungry for more? Catch my rawest takes every Friday in my newsletter: [Tech Trenches](https://techtrenches.substack.com).
-
 {C3P}
