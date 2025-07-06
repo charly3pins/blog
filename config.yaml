@@ -9,8 +9,8 @@ params:
   author:
     name: Charly3Pins
   home:
-    imageURL: "images/me-avatar.jpeg"
-    imageTitle: charly3pins avatar
+    imageURL: "images/gopher-wtf.jpeg"
+    imageTitle: gopher WTF 
   socialIcons:
     - name: github
       url: "https://github.com/charly3pins"
