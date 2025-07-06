@@ -3,6 +3,7 @@ title = "Domina y desmitifica las interfaces en Go"
 date = "2024-04-29"
 author = "charly3pins"
 description = "Descubre cómo aprovechar al máximo las interfaces para crear código flexible y modular."
+draft = true
 
 tags = ["go"]
 
@@ -14,8 +15,6 @@ image = "/images/gopher-nerdy.png"
 ## **POST EN CONSTRUCCIÓN**
 
 ---
-
-{{< youtube LjNv9nzp1dM >}}
 
 ```go
 package main

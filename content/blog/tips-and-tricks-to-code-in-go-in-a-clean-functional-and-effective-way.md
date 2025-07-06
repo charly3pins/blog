@@ -9,8 +9,6 @@ tags = ["go"]
 image = "/images/gopher-bulb.png"
 +++
 
-{{< youtube 4wZmL3XpR04 >}}
-
 ## Variable names
 
 Go manages the visibility with lowercase for `unexported` and uppercase for `exported`. These concepts are valid in the context of a package, so if you declare a variable in a `package X` with the following code:

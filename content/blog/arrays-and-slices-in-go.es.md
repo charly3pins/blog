@@ -9,8 +9,6 @@ tags = ["go"]
 image = "/images/gopher-zorro.svg"
 +++
 
-{{< youtube _5bhRHYK8eQ >}}
-
 ## Intro
 
 Cuando queremos agrupar una serie de elementos del mismo tipo lo podemos hacer en Go de dos formas, usando arrays o slices.

@@ -9,8 +9,6 @@ tags = ["go"]
 image = "/images/gopher-bulb.png"
 +++
 
-{{< youtube 4wZmL3XpR04 >}}
-
 ## Nombres de variables
 
 Go gestiona la visibilidad con minúsculas para "no exportados" y mayúsculas para "exportados". Estos conceptos son válidos en el contexto de un paquete, por lo que si declaras una variable en un `paquete X` con el siguiente código:
