@@ -123,7 +123,7 @@ Git’s 20th birthday isn’t just a milestone—it’s proof that real problems
 Linus Torvalds didn’t set out to change the world; he just wanted a tool that didn’t suck.
 Mission accomplished. If you’re still here, props—check the full Q&A in [YouTube](https://www.youtube.com/watch?v=sCr_gb8rdEI).
 
-Share your Git stories on [LinkedIn](https://www.linkedin.com/in/carlesfuste/) or [Twitter/X](https://x.com/charly3pins), or subscribe to [Tech Trenches](https://techtrenches.substack.com/) for more from the trenches.
+Share your Git stories on [LinkedIn](https://www.linkedin.com/in/carlesfuste/) or [Twitter/X](https://x.com/charly3pins).
 
 Happy coding!  
 {C3P}
