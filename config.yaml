@@ -2,7 +2,7 @@ baseURL: "https://charly3pins.dev"
 title: "Charly3Pins.dev"
 markup:
   highlight:
-    style: "rose-pine-moon" # default is monokai
+    style: "tokyonight-night" # default is monokai
     noClasses: true # default is true
 params:
   since: 2018
@@ -20,12 +20,6 @@ params:
       url: "https://youtube.com/charly3pins"
     - name: linkedin
       url: "https://linkedin.com/in/carlesfuste"
-    - name: dev
-      url: "https://dev.to/charly3pins"
-    - name: medium
-      url: "https://medium.com/@charly3pins"
-    - name: substack
-      url: "https://techtrenches.substack.com"
     - name: rss
       url: "/index.xml"
   googleAnalytics: "G-KX7XNRQ64E"
