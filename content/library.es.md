@@ -10,9 +10,8 @@ image = "/images/library.png"
 - Cómo dominar el ciclo de las inversiones: e inclinar las probabilidades de ganar a su favor (_Howard Marks_)
 - La rebelión de Atlas (_Ayn Rand_)
 - Steve Jobs (_Walter Isaacson_)
-- Python Machine Learning, Second Edition: Machine Learning and Deep Learning with Python, scikit-learn, and TensorFlow , Second Edition (_Sebastian Raschka, Vahid Mirjalili_) Padre, el último mono (_Berto Romero_)
 - La abolición del hombre (_C.S. Lewis_)
-- Writing for Developers: Blogs that Get Read (_Piotr Sarna, Cynthia Dunlop_)
+- AI Engineering: Building Applications with Foundation Models (_Chip Huyen_)
 
 ## Leídos
 
@@ -58,6 +57,7 @@ image = "/images/library.png"
 - Padre, el último mono (_Berto Romero_)
 - Server-Driven Web Apps with htmx (_R. Mark Volkmann_)
 - LangChain for JavaScript developers (_Daniel Nastase_)
+- Writing for Developers: Blogs that Get Read (_Piotr Sarna, Cynthia Dunlop_)
 
 ## En cola
 
@@ -67,3 +67,4 @@ image = "/images/library.png"
 - Concurrency in Go: Tools and Techniques for Developers (_Katherine Cox-Buday_)
 - Event-Driven Architecture in Golang: Building complex systems with asynchronicity and eventual consistency (_Michael Stack_)
 - Machine Learning for Hackers (_Drew Conway, John Myles White_)
+- Python Machine Learning, Second Edition: Machine Learning and Deep Learning with Python, scikit-learn, and TensorFlow , Second Edition (_Sebastian Raschka, Vahid Mirjalili_) Padre, el último mono (_Berto Romero_)
