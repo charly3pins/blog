@@ -10,8 +10,8 @@ image = "/images/library.png"
 - Cómo dominar el ciclo de las inversiones: e inclinar las probabilidades de ganar a su favor (_Howard Marks_)
 - La rebelión de Atlas (_Ayn Rand_)
 - Steve Jobs (_Walter Isaacson_)
-- La abolición del hombre (_C.S. Lewis_)
 - AI Engineering: Building Applications with Foundation Models (_Chip Huyen_)
+- Origen (_Dan Brown_)
 
 ## Read
 
@@ -58,6 +58,7 @@ image = "/images/library.png"
 - Server-Driven Web Apps with htmx (_R. Mark Volkmann_)
 - LangChain for JavaScript developers (_Daniel Nastase_)
 - Writing for Developers: Blogs that Get Read (_Piotr Sarna, Cynthia Dunlop_)
+- La abolición del hombre (_C.S. Lewis_)
 
 ## Planned to read
 
