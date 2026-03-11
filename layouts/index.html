@@ -1,19 +1,14 @@
 {{ define "main" }}
 <div class="profile-card">
-  <img class="profile-avatar" src="/images/face.png" alt="charly3pins" />
+  <img class="profile-avatar" src="/images/gopher-wtf.jpeg" alt="charly3pins" />
   <span class="profile-name">charly3pins</span>
   <p class="profile-bio">Software engineer.</p>
-  <div class="profile-socials">
-    {{- partial "social.html" .Site.Params.socialIcons -}}
-  </div>
 </div>
 
 <div class="link-buttons">
   <a class="link-button" href="{{ "blog/" | relLangURL }}">Blog</a>
   <a class="link-button" href="{{ "projects/" | relLangURL }}">Projects</a>
+  <a class="link-button" href="{{ "library/" | relLangURL }}">Library</a>
   <a class="link-button" href="{{ "about/" | relLangURL }}">About</a>
-  {{ range .Site.Params.socialIcons }}
-  <a class="link-button" href="{{ .url }}" target="_blank" rel="me noopener">{{ .name | humanize }}</a>
-  {{ end }}
 </div>
 {{ end }}

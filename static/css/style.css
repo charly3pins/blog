@@ -144,11 +144,15 @@ footer > p {
 }
 
 footer a {
-  color: var(--fg2);
+  color: var(--accent);
 }
 
 footer a:hover {
   color: var(--accent-hover);
+}
+
+footer a svg {
+  transition: color 0.15s;
 }
 
 /* ── Profile / Homepage ── */
