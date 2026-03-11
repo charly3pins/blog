@@ -37,14 +37,17 @@ languages:
         - name: Home
           url: /
           weight: 1
-        - name: About
-          url: about/
-          weight: 2
         - name: Blog
           url: blog/
-          weight: 5
+          weight: 2
         - name: Projects
           url: projects/
+          weight: 3
+        - name: Library
+          url: library/
+          weight: 4
+        - name: About
+          url: about/
           weight: 5
   es:
     languageName: "Castellano"
@@ -58,12 +61,15 @@ languages:
         - name: Home
           url: /
           weight: 1
-        - name: Sobre mí
-          url: about/
-          weight: 2
         - name: Blog
           url: blog/
-          weight: 5
+          weight: 2
         - name: Proyectos
           url: projects/
+          weight: 3
+        - name: Biblioteca
+          url: library/
+          weight: 4
+        - name: Sobre mí
+          url: about/
           weight: 5
