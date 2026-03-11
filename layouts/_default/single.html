@@ -1,24 +1,21 @@
 {{define "main"}}
 <div class="main-content">
   <h2>{{.Title}}</h2>
-  {{if or (eq .Section "blog") (eq .Section "projects")}}
-  <span
-    >{{ .PublishDate.Format "02/01/2006" }} | {{.ReadingTime}}' | {{range
-    .Params.Tags }}
-    <span
-      ><a class="tag-label" href='{{ "tags/" | absURL }}{{.}}'>#{{.}}</a></span
-    >
-    {{end}}
-  </span>
-  {{ if .IsTranslated }}
-  <span>
+  {{ if or (eq .Section "blog") (eq .Section "projects") }}
+  <div class="post-row-meta">
+    {{ .PublishDate.Format "02/01/2006" }} · {{ .ReadingTime }}'
+    {{ range .Params.Tags }}
+    <a class="tag-label" href='{{ "tags/" | absURL }}{{ . }}'>#{{ . }}</a>
+    {{ end }}
+    {{ if .IsTranslated }}
     | {{ range .Translations }}
     <a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
-    {{ end}}
-  </span>
-  {{ end }} {{ with .Params.image }}
+    {{ end }}
+    {{ end }}
+  </div>
+  {{ with .Params.image }}
   <div>
-    <img src="{{ .  | absURL }}" alt="post-image" style="max-width: 200px" />
+    <img src="{{ . | absURL }}" alt="post-image" class="post-hero-image" />
   </div>
   {{ end }}
   <div>{{.Content }}</div>
