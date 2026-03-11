@@ -1,84 +1,19 @@
-{{define "main"}}
-
-<div class="main-content">
-  <div style="justify-self: center">
-    <div style="text-align: center">
-      <img
-        src="{{ .Site.Params.Home.ImageURL | absURL }}"
-        width="250px;"
-        title="{{ .Site.Params.Home.ImageTitle }}"
-      />
-    </div>
-    <br />
-
-    <code
-      style="background-color: transparent; font-weight: normal"
-      class="language-go"
-      data-lang="go"
-    >
-      <span style="display: flex">
-        <span>
-          <span style="color: #ea9a97">fmt</span
-          ><span style="color: #908caa">.</span
-          ><span style="color: #ea9a97">Println</span
-          ><span style="color: #908caa">(</span
-          ><span style="color: #f6c177">"Welcome to Charly3Pins.dev!"</span
-          ><span style="color: #908caa">)</span>
-        </span>
-      </span>
-    </code>
-
-    <br />
-    <br />
-
-    <h2 style="text-align: center">What do I do?</h2>
-
-    <ul>
-      <li>
-        <a href="/blog">Writing articles</a>
-      </li>
-      <li>
-        <a href="https://www.youtube.com/@charly3pins" target="_blank"
-          >Coding Tutorials</a
-        >
-      </li>
-      <li>
-        <a href="/projects">Hacking things</a>
-      </li>
-      <li>
-        <a href="/library">Reading books</a>
-      </li>
-      <li>
-        <a href="https://github.com/charly3pins" target="_blank">And more…</a>
-      </li>
-    </ul>
-
-    <br />
-    <br />
+{{ define "main" }}
+<div class="profile-card">
+  <img class="profile-avatar" src="/images/face.png" alt="charly3pins" />
+  <span class="profile-name">charly3pins</span>
+  <p class="profile-bio">Software engineer.</p>
+  <div class="profile-socials">
+    {{- partial "social.html" .Site.Params.socialIcons -}}
   </div>
-
-  <h2>Latest posts</h2>
-
-  {{range $i,$el := first 9 (where .Paginator.Pages ".Section" "blog")}}
-  <div class="post-item">
-    <h3><a class="link" href="{{.Permalink}}">{{.Title}}</a></h3>
-    <span
-      >{{ .PublishDate.Format "02/01/2006" }} | {{.ReadingTime}}' | {{range
-      .Params.Tags }}
-      <span
-        ><a class="tag-label" href='{{ "tags/" | absURL }}{{.}}'
-          >#{{.}}</a
-        ></span
-      >
-      {{end}}
-    </span>
-    <p>{{ .Description }}</p>
-  </div>
-
-  <br />
-  {{end}}
-
-  <a href="/blog">> Read all posts</a>
 </div>
 
-{{end}}
+<div class="link-buttons">
+  <a class="link-button" href="{{ "blog/" | relLangURL }}">Blog</a>
+  <a class="link-button" href="{{ "projects/" | relLangURL }}">Projects</a>
+  <a class="link-button" href="{{ "about/" | relLangURL }}">About</a>
+  {{ range .Site.Params.socialIcons }}
+  <a class="link-button" href="{{ .url }}" target="_blank" rel="me noopener">{{ .name | humanize }}</a>
+  {{ end }}
+</div>
+{{ end }}
