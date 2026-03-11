@@ -22,6 +22,8 @@ params:
       url: "https://linkedin.com/in/carlesfuste"
     - name: rss
       url: "/index.xml"
+    - name: instagram
+      url: "https://www.instagram.com/charly3pins.dev"
   googleAnalytics: "G-KX7XNRQ64E"
 
 languages:
