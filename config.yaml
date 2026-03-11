@@ -20,10 +20,10 @@ params:
       url: "https://youtube.com/charly3pins"
     - name: linkedin
       url: "https://linkedin.com/in/carlesfuste"
-    - name: rss
-      url: "/index.xml"
     - name: instagram
       url: "https://www.instagram.com/charly3pins.dev"
+    - name: rss
+      url: "/index.xml"
   googleAnalytics: "G-KX7XNRQ64E"
 
 languages:
