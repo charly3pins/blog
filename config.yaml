@@ -20,6 +20,8 @@ params:
       url: "https://youtube.com/charly3pins"
     - name: linkedin
       url: "https://linkedin.com/in/carlesfuste"
+    - name: instagram
+      url: "https://www.instagram.com/charly3pins.dev"
     - name: rss
       url: "/index.xml"
   googleAnalytics: "G-KX7XNRQ64E"
@@ -37,14 +39,17 @@ languages:
         - name: Home
           url: /
           weight: 1
-        - name: About
-          url: about/
-          weight: 2
         - name: Blog
           url: blog/
-          weight: 5
+          weight: 2
         - name: Projects
           url: projects/
+          weight: 3
+        - name: Library
+          url: library/
+          weight: 4
+        - name: About
+          url: about/
           weight: 5
   es:
     languageName: "Castellano"
@@ -58,12 +63,15 @@ languages:
         - name: Home
           url: /
           weight: 1
-        - name: Sobre mí
-          url: about/
-          weight: 2
         - name: Blog
           url: blog/
-          weight: 5
+          weight: 2
         - name: Proyectos
           url: projects/
+          weight: 3
+        - name: Biblioteca
+          url: library/
+          weight: 4
+        - name: Sobre mí
+          url: about/
           weight: 5

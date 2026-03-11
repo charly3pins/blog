@@ -1,34 +1,33 @@
-{{define "main"}}
+{{ define "main" }}
 <div class="main-content">
-  <h2>{{.Title}}</h2>
+  <h2>{{ .Title }}</h2>
   {{ with .Description }}
   <div>{{ . | safeHTML }}</div>
   {{ end }}
   <!-- List all tags -->
-  {{if eq .Kind "taxonomyTerm"}} {{range $key, $value :=
-  .Data.Terms.Alphabetical}}
+  {{ if eq .Kind "taxonomyTerm" }}
+  {{ range $key, $value := .Data.Terms.Alphabetical }}
   <span>
-    <a href='{{ "tags/" | absURL }}{{ $value.Name | lower }}'
-      >{{ $value.Name }} ({{.Count }})</a
-    >
+    <a href='{{ "tags/" | absURL }}{{ $value.Name | lower }}'>{{ $value.Name }} ({{ .Count }})</a>
   </span>
-  {{end}} {{else}} {{ $paginator := .Paginate .Pages.ByDate.Reverse 5 }} {{
-  range $paginator.Pages }}
-  <div>
-    <h3><a href="{{.Permalink}}">{{.Title}}</a></h3>
-    <span
-      >{{ .PublishDate.Format "02/01/2006" }} | {{.ReadingTime}}' | {{range
-      .Params.Tags }}
-      <span
-        ><a class="tag-label" href='{{ "tags/" | absURL }}{{.}}'
-          >#{{.}}</a
-        ></span
-      >
-      {{end}}
-    </span>
-    <p>{{ .Description }}</p>
+  {{ end }}
+  {{ else }}
+  {{ $paginator := .Paginate .Pages.ByDate.Reverse 5 }}
+  <div class="post-list">
+    {{ range $paginator.Pages }}
+    <div class="post-row">
+      <div class="post-row-meta">
+        {{ .PublishDate.Format "02/01/2006" }} · {{ .ReadingTime }}'
+        {{ range .Params.Tags }}
+        <a class="tag-label" href='{{ "tags/" | absURL }}{{ . }}'>#{{ . }}</a>
+        {{ end }}
+      </div>
+      <a class="post-row-title" href="{{ .Permalink }}">{{ .Title }}</a>
+      {{ with .Description }}<p class="post-row-description">{{ . }}</p>{{ end }}
+    </div>
+    {{ end }}
   </div>
-  <br />
-  {{end}} {{ template "_internal/pagination.html" . }} {{end}}
+  {{ template "_internal/pagination.html" . }}
+  {{ end }}
 </div>
-{{end}}
+{{ end }}
