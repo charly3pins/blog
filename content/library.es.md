@@ -59,6 +59,7 @@ image = "/images/library.png"
 - LangChain for JavaScript developers (_Daniel Nastase_)
 - Writing for Developers: Blogs that Get Read (_Piotr Sarna, Cynthia Dunlop_)
 - La abolición del hombre (_C.S. Lewis_)
+- La psicología del dinero: Cómo piensan los ricos: 18 claves imperecederas sobre riqueza y felicidad (_Morgan Housel_)
 
 ## En cola
 
