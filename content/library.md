@@ -13,7 +13,6 @@ image = "/images/library.png"
 - AI Engineering: Building Applications with Foundation Models (_Chip Huyen_)
 - Origen (_Dan Brown_)
 - Patterns for Building AI Agents (_Sam Bhagwat_)
-- El hombre más rico de Babilonia (_George S. Clason_)
 
 ## Read
 
@@ -63,6 +62,7 @@ image = "/images/library.png"
 - La abolición del hombre (_C.S. Lewis_)
 - La psicología del dinero: Cómo piensan los ricos: 18 claves imperecederas sobre riqueza y felicidad (_Morgan Housel_)
 - Principles of Building AI Agents (_Sam Bhagwat_)
+- El hombre más rico de Babilonia (_George S. Clason_)
 
 ## Planned to read
 
