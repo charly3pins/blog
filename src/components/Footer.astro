@@ -1,0 +1,26 @@
+---
+const SOCIAL = [
+  { label: "GitHub",    href: "https://github.com/charly3pins" },
+  { label: "X",         href: "https://x.com/charly3pins" },
+  { label: "YouTube",   href: "https://youtube.com/charly3pins" },
+  { label: "LinkedIn",  href: "https://linkedin.com/in/carlesfuste" },
+  { label: "Instagram", href: "https://www.instagram.com/charly3pins.dev" },
+];
+
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <span class="label" style="color: var(--dim)">
+    © 2018–{year} charly3pins
+  </span>
+  <ul class="footer-links">
+    {SOCIAL.map(({ label, href }) => (
+      <li>
+        <a href={href} target="_blank" rel="noopener noreferrer">
+          {label}
+        </a>
+      </li>
+    ))}
+  </ul>
+</footer>

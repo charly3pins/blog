@@ -1,0 +1,206 @@
+---
+import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("blog", ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 5);
+
+const projects = await getCollection("projects");
+
+const SOCIAL = [
+  { label: "GitHub",    href: "https://github.com/charly3pins" },
+  { label: "X",         href: "https://x.com/charly3pins" },
+  { label: "YouTube",   href: "https://youtube.com/charly3pins" },
+  { label: "LinkedIn",  href: "https://linkedin.com/in/carlesfuste" },
+  { label: "Instagram", href: "https://www.instagram.com/charly3pins.dev" },
+];
+
+const STACK = ["Go", "Bun", "TypeScript", "Postgres", "Neovim", "Linux", "Hetzner"];
+
+function fmtDate(d: Date) {
+  return d.toISOString().slice(0, 7).replace("-", "–");
+}
+---
+
+<Base>
+  <Nav />
+
+  <!-- ── HERO ── -->
+  <section style="
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 48px;
+    text-align: center;
+  ">
+    <div style="max-width:640px;" class="fade-up">
+      <p style="
+        font-size: clamp(15px, 1.6vw, 18px);
+        font-weight: 300;
+        letter-spacing: 0.01em;
+        line-height: 2;
+        color: var(--fg);
+      ">
+        Software engineer and tech lead.<br />
+        I build systems, write about the craft, and<br />
+        document what I learn along the way.
+      </p>
+
+      <div style="margin-top:48px; display:flex; gap:32px; flex-wrap:wrap; justify-content:center;">
+        {SOCIAL.map(({ label, href }) => (
+          <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            style="font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--dim); transition:color 0.15s;"
+            onmouseenter="this.style.color='var(--fg)'"
+            onmouseleave="this.style.color='var(--dim)'"
+          >{label}</a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BLOG ── -->
+  <section class="section" id="blog">
+    <div class="inner">
+      <div class="section-header">
+        <span class="label">Writing</span>
+        <a href="/blog" class="link-subtle">All posts →</a>
+      </div>
+
+      <!-- Column headers -->
+      <div style="
+        display: grid;
+        grid-template-columns: 56px 1fr 64px;
+        gap: 32px;
+      " class="col-header">
+        <span>Date</span>
+        <span>Title</span>
+        <span style="text-align:right">Topic</span>
+      </div>
+
+      {posts.map((post) => (
+        <a
+          href={`/blog/${post.slug}`}
+          style="
+            display: grid;
+            grid-template-columns: 56px 1fr 64px;
+            gap: 32px;
+            align-items: baseline;
+            padding: 18px 0;
+            border-bottom: 1px solid var(--faint);
+            text-decoration: none;
+            color: inherit;
+            transition: opacity 0.15s;
+          "
+          onmouseenter="this.style.opacity='0.6'"
+          onmouseleave="this.style.opacity='1'"
+        >
+          <span style="font-size:11px; color:var(--dim); letter-spacing:0.06em; font-style:italic;">
+            {fmtDate(post.data.date)}
+          </span>
+          <span style="font-size:14px; font-weight:300; letter-spacing:0.01em;">
+            {post.data.title}
+          </span>
+          <span style="font-size:11px; color:var(--dim); letter-spacing:0.1em; text-transform:uppercase; text-align:right;">
+            {post.data.tags[0] ?? ""}
+          </span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- ── PROJECTS ── -->
+  <section class="section" id="projects">
+    <div class="inner">
+      <div class="section-header">
+        <span class="label">Projects</span>
+        <a href="/projects" class="link-subtle">All projects →</a>
+      </div>
+
+      <div style="
+        display: grid;
+        grid-template-columns: 80px 180px 1fr;
+        gap: 40px;
+      " class="col-header">
+        <span>Year</span>
+        <span>Name</span>
+        <span>Description</span>
+      </div>
+
+      {projects.map((p) => (
+        <div style="
+          display: grid;
+          grid-template-columns: 80px 180px 1fr;
+          gap: 40px;
+          align-items: baseline;
+          padding: 20px 0;
+          border-bottom: 1px solid var(--faint);
+        ">
+          <span style="font-size:11px; color:var(--dim); font-style:italic;">{p.data.year}</span>
+          <span style="font-size:14px; letter-spacing:0.01em;">{p.data.name}</span>
+          <span style="font-size:13px; color:var(--dim); font-weight:300; line-height:1.7;">{p.data.description}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- ── STACK STRIP ── -->
+  <section style="padding: 48px; border-top: 1px solid var(--faint);">
+    <div class="inner" style="display:flex; gap:32px; align-items:center; flex-wrap:wrap; max-width:900px;">
+      <span class="label">Daily stack</span>
+      <div style="width:1px; height:16px; background:var(--faint);"></div>
+      {STACK.map((t) => (
+        <span
+          style="font-size:11px; color:var(--dim); letter-spacing:0.05em; cursor:default; transition:color 0.15s;"
+          onmouseenter="this.style.color='var(--red)'"
+          onmouseleave="this.style.color='var(--dim)'"
+        >{t}</span>
+      ))}
+    </div>
+  </section>
+
+  <!-- ── ABOUT CTA ── -->
+  <section class="section" id="about">
+    <div class="inner" style="
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    ">
+      <div>
+        <span class="label" style="display:block; margin-bottom:40px;">About</span>
+        <div style="font-size:13px; font-weight:300; line-height:2.4; color:var(--dim);">
+          Senior software engineer<br />
+          and tech lead.<br />
+          13+ years building things<br />
+          that work in production.<br /><br />
+          Based in Barcelona.<br />
+          Dad. Homelab tinkerer.<br />
+          Occasional blogger.
+        </div>
+      </div>
+      <div style="padding-top:80px;">
+        <div style="font-size:13px; line-height:2.4; color:var(--dim); font-weight:300;">
+          I write about software architecture,<br />
+          AI systems, engineering leadership,<br />
+          and the tools I use every day.<br /><br />
+          Everything on this site is honest —<br />
+          no fluff, no sponsored content,<br />
+          no personal brand theatre.<br /><br />
+          Just the work.
+        </div>
+        <div style="margin-top:48px;">
+          <a href="/about" class="link-accent">Full bio →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Base>

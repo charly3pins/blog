@@ -1,0 +1,79 @@
+---
+import Base from "../../layouts/Base.astro";
+import Nav from "../../components/Nav.astro";
+import Footer from "../../components/Footer.astro";
+import { getCollection, getEntry } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog", ({ data }) => !data.draft);
+  return posts.map((post) => ({ params: { slug: post.slug } }));
+}
+
+const { slug } = Astro.params;
+const post = await getEntry("blog", slug!);
+
+if (!post) return Astro.redirect("/blog");
+
+const { Content } = await post.render();
+
+function fmtDateLong(d: Date) {
+  return d.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+}
+---
+
+<Base title={post.data.title} description={post.data.description}>
+  <Nav />
+
+  <article style="padding: 160px 48px 120px;">
+    <div style="max-width: 640px; margin: 0 auto;">
+
+      <!-- Tags -->
+      <div style="display:flex; gap:16px; margin-bottom:32px;">
+        {post.data.tags.map((tag) => (
+          <span style="
+            font-size: 11px;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--red);
+          ">{tag}</span>
+        ))}
+      </div>
+
+      <!-- Title -->
+      <h1 style="
+        font-family: var(--font-mono);
+        font-size: clamp(20px, 2.5vw, 30px);
+        font-weight: 400;
+        letter-spacing: 0.01em;
+        line-height: 1.4;
+        color: var(--fg);
+        margin-bottom: 24px;
+      ">{post.data.title}</h1>
+
+      <!-- Date -->
+      <div style="
+        font-size: 11px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--dim);
+        margin-bottom: 80px;
+        padding-bottom: 40px;
+        border-bottom: 1px solid var(--faint);
+      ">
+        {fmtDateLong(post.data.date)}
+      </div>
+
+      <!-- Body -->
+      <div class="prose">
+        <Content />
+      </div>
+
+      <!-- Back -->
+      <div style="margin-top:80px; padding-top:40px; border-top:1px solid var(--faint);">
+        <a href="/blog" class="link-accent">← All posts</a>
+      </div>
+    </div>
+  </article>
+
+  <Footer />
+</Base>

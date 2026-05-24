@@ -4,38 +4,31 @@ Guidance for AI coding agents working in this repository.
 
 ## Project Overview
 
-This is a personal blog built with [Hugo](https://gohugo.io/) (static site
-generator). Content is written in Markdown, layouts are Go HTML templates, and
+This is a personal blog built with [Astro](https://astro.build/) (static site
+generator). Content is written in Markdown, layouts are Astro components, and
 the site is deployed to GitHub Pages via GitHub Actions.
 
 - **Site URL:** https://charly3pins.dev
-- **Hugo version (CI):** 0.115.4 extended
-- **Languages:** English (default) and Spanish (`es`)
+- **Runtime:** Bun
+- **Language:** English only
 
 ---
 
 ## Build & Development Commands
 
-| Command      | Description                                          |
-|--------------|------------------------------------------------------|
-| `make run`   | Start local dev server with drafts (`hugo server -D`) |
-| `hugo`       | Build the site to `./public/`                        |
-| `hugo --gc --minify` | Production build (used by CI)                |
-| `hugo server -D` | Dev server at http://localhost:1313 with drafts  |
+| Command      | Description                         |
+|--------------|-------------------------------------|
+| `make run`   | Start dev server (`bun run dev`)    |
+| `make build` | Production build (`bun run build`)  |
+| `bun run dev`      | Dev server at http://localhost:4321 |
+| `bun run build`    | Build to `./dist/`                  |
+| `bun run preview`  | Preview production build            |
 
-### Generate syntax highlighter CSS
-
-```bash
-hugo gen chromastyles --style=tokyonight-night > static/css/syntax.css
-```
-
-Currently configured style is `tokyonight-night` (set in `config.yaml`).
-
-### There are no automated tests
+### Testing
 
 This is a static content site. "Testing" means:
-1. Run `make run` and verify the site renders correctly in a browser.
-2. Run `hugo` (build only, no `--serve`) and confirm it exits without errors.
+1. Run `bun run dev` and verify the site renders correctly in a browser.
+2. Run `bun run build` and confirm it exits without errors.
 
 ---
 
@@ -43,32 +36,37 @@ This is a static content site. "Testing" means:
 
 ```
 blog/
-├── config.yaml          # Hugo site configuration
-├── Makefile             # Dev convenience targets
-├── content/             # All Markdown content
-│   ├── blog/            # Blog posts (EN + ES translations)
-│   ├── projects/        # Project write-ups
-│   ├── about.md         # About page (EN)
-│   └── about.es.md      # About page (ES)
-├── layouts/             # Hugo Go HTML templates (custom theme)
-│   ├── _default/
-│   │   ├── baseof.html  # Base template wrapping all pages
-│   │   ├── single.html  # Individual post/page template
-│   │   ├── list.html    # Section list + taxonomy template
-│   │   └── taxonomy.html
-│   ├── partials/        # Reusable template fragments
-│   │   ├── head.html
-│   │   ├── nav.html
-│   │   ├── footer.html
-│   │   ├── social.html
-│   │   └── svg.html
-│   ├── shortcodes/
-│   │   └── rawhtml.html # Allows raw HTML inside Markdown
-│   ├── index.html       # Home page template
-│   └── 404.html
-└── static/
-    ├── css/             # style.css, syntax.css, pagination.css
-    └── images/          # All site images
+├── astro.config.mjs      # Astro configuration
+├── package.json          # Dependencies and scripts
+├── tsconfig.json         # TypeScript config
+├── src/
+│   ├── components/       # Reusable Astro/React components
+│   │   ├── Nav.astro
+│   │   ├── Footer.astro
+│   │   └── LibraryTabs.tsx
+│   ├── content/
+│   │   ├── config.ts     # Zod schemas for blog + projects
+│   │   ├── blog/         # Blog posts (EN, YAML frontmatter)
+│   │   └── projects/     # Project write-ups
+│   ├── layouts/
+│   │   └── Base.astro    # HTML shell (head, OG meta, fonts)
+│   ├── pages/
+│   │   ├── index.astro         # Home page
+│   │   ├── about.astro         # About page
+│   │   ├── projects.astro      # Projects listing
+│   │   ├── library.astro       # Library (books/tools)
+│   │   ├── rss.xml.ts          # RSS feed
+│   │   └── blog/
+│   │       ├── index.astro     # All posts listing
+│   │       └── [slug].astro    # Single post template
+│   └── styles/
+│       └── global.css          # All styles (CSS custom properties)
+├── public/
+│   ├── favicon.ico
+│   └── images/           # All site images
+└── .github/
+    └── workflows/
+        └── deploy.yaml   # GitHub Pages deployment
 ```
 
 ---
@@ -77,35 +75,28 @@ blog/
 
 ### Front Matter Format
 
-All content files use **TOML front matter** (delimited by `+++`):
+All content files use **YAML front matter** (delimited by `---`):
 
-```toml
-+++
-title = "Post Title Here"
-date = "2025-04-21"
-author = "charly3pins"
-description = "One-sentence summary used as meta description and on list pages."
-
-tags = ["go", "hugo", "software-engineering"]
-
-image = "/images/my-image.png"
-+++
+```yaml
+---
+title: "Post Title Here"
+date: "2025-04-21"
+description: "One-sentence summary used as meta description and on list pages."
+tags: ["go", "hugo", "software-engineering"]
+draft: false
+---
 ```
 
 - `title`: Title case, human-readable.
 - `date`: ISO 8601 (`YYYY-MM-DD`).
-- `author`: Always `"charly3pins"`.
 - `description`: Required. One concise sentence. Used on listing pages and OG meta.
 - `tags`: Lowercase, hyphen-separated slugs (e.g. `"software-engineering"`, not `"Software Engineering"`).
-- `image`: Absolute path from `static/` root (e.g. `/images/foo.png`). Leave empty string `""` if no image.
-- `weight`: Used in `projects/` to control display order (numeric string, e.g. `"1"`).
+- `draft`: Boolean (defaults to `false`). Draft posts are excluded from production builds.
 
 ### Naming Conventions for Content Files
 
 - Use **kebab-case** slugs that match the post title: `my-post-title.md`
-- Spanish translations append `.es` before `.md`: `my-post-title.es.md`
-- Both language files must share the same base slug.
-- Place blog posts in `content/blog/`, project write-ups in `content/projects/`.
+- Place blog posts in `src/content/blog/`, project write-ups in `src/content/projects/`.
 
 ### Content Writing Style
 
@@ -113,77 +104,45 @@ image = "/images/my-image.png"
 - Use `##` for top-level sections within a post (the page `<h1>` is the title).
 - Use `###` / `####` for subsections.
 - Code blocks must specify a language for syntax highlighting (e.g. ` ```go `).
-- Embed raw HTML via the `rawhtml` shortcode when needed:
-  ```
-  {{< rawhtml >}}
-  <div>...</div>
-  {{</ rawhtml >}}
-  ```
-- Image paths in Markdown: use absolute paths from `static/` (e.g. `![alt](/images/foo.png)`).
-- For centered/sized images, use the `rawhtml` shortcode with inline styles.
+- Image paths in Markdown: use absolute paths from `public/` (e.g. `![alt](/images/foo.png)`).
 
 ---
 
-## Template (Layout) Conventions
+## Template Conventions
 
-### Go HTML Template Style
-
-- Use Hugo's built-in template functions and variables; avoid JavaScript-based templating.
-- Wrap logical blocks with blank lines for readability.
-- Always use `absURL` for asset paths (CSS, images referenced in templates).
-- Use `relLangURL` for internal navigation links to support multilingual routing.
-- Sanitize untrusted HTML with `safeHTML` only where explicitly required.
-
-### Partials
-
-- Extract repeated HTML into `layouts/partials/`.
-- Call partials with `{{- partial "name.html" . -}}` (trim whitespace with `-`).
-- Pass the page context (`.`) unless the partial needs a specific data structure (e.g. `social.html` receives `.Site.Params.socialIcons`).
-
-### Template Variable Naming
-
-- Follow Hugo conventions: `.Title`, `.Content`, `.Params.Tags`, `.Site.Params.*`.
-- Use `$` prefix for variables assigned in range loops (e.g. `$paginator`).
+- Components use Astro's `.astro` format (HTML-first templating with JS expressions).
+- React components (`.tsx`) only when client interactivity is needed. Use `client:load` directive.
+- All pages extend `Base.astro` which provides the HTML shell, meta tags, and OG data.
+- Colors use CSS custom properties defined in `global.css`.
 
 ---
 
 ## CSS Conventions
 
-All styles are in `static/css/style.css`. The design uses CSS custom properties:
+All styles are in `src/styles/global.css`. The design uses CSS custom properties:
 
 ```css
---bg1: rgb(32, 31, 38);   /* primary background */
---bg2: rgb(19, 19, 23);   /* secondary background */
---fg1: rgb(188, 191, 210); /* primary text */
---fg2: rgb(134, 140, 171); /* secondary text */
---text-link: rgb(142, 116, 189);
---text-link-hover: rgb(144, 134, 221);
+--bg: #0c0c0b;         /* primary background */
+--fg: #d4d2cc;         /* primary text */
+--dim: #85827c;        /* secondary text */
+--faint: #383632;      /* borders / faint elements */
+--red: #8b3a2a;        /* accent */
+--green: #4a6b3a;      /* secondary accent */
 ```
 
-- Font family: `Roboto Mono, monospace` — monospace throughout.
-- Use CSS variables for all colors; do not hardcode hex/rgb values.
+- Font family: `DM Mono` + `Noto Serif JP` (for CJK).
 - Dark theme only; no light mode.
-
----
-
-## Hugo Configuration (`config.yaml`)
-
-- Syntax highlight style: `tokyonight-night`, with `noClasses: true` (inline styles, not CSS classes).
-- Multilingual: `en` (weight 1) and `es` (weight 1). Both share the same menu structure.
-- Taxonomies: `categories`, `tags`, `series` — currently `tags` is actively used.
-- Social icons are configured under `params.socialIcons` and rendered via `partials/social.html`.
+- Use CSS variables for all colors; do not hardcode hex/rgb values.
 
 ---
 
 ## CI / Deployment
 
 - **Trigger:** Push to `main` branch.
-- **Workflow:** `.github/workflows/hugo.yaml`
-- **Build command:** `hugo --gc --minify --baseURL "<pages-origin>/"`
+- **Workflow:** `.github/workflows/deploy.yaml`
+- **Build command:** `bun run build`
 - **Deploy target:** GitHub Pages (via `actions/deploy-pages`).
-- **Hugo version in CI:** `0.115.4 extended` (installed as `.deb` from GitHub releases).
-
-If you upgrade the Hugo version, update the `HUGO_VERSION` env var in `.github/workflows/hugo.yaml`.
+- The build output goes to `./dist/`.
 
 ---
 
@@ -199,10 +158,8 @@ Renovate is configured (`.github/renovate.json`) to:
 
 ## Key Rules & Constraints
 
-1. **No build system other than Hugo.** There is no npm, webpack, or other JS toolchain. Do not introduce one without explicit discussion.
-2. **No inline styles in templates** except where unavoidable (e.g. the rawhtml shortcode is for author-controlled content, not template logic).
-3. **Images must be committed to `static/images/`** and referenced with an absolute path.
-4. **Both language files must be kept in sync** when creating or editing a post that has an ES translation. If only one language is written, the ES file can be omitted — but do not delete an existing translation without intent.
-5. **Front matter must use TOML** (`+++` delimiters), not YAML (`---`) or JSON.
-6. **Tags are lowercase hyphen-separated slugs.** Check existing tags in `config.yaml` and existing posts before inventing new ones.
-7. **Do not commit the `public/` directory.** It is the Hugo build output and is managed by CI.
+1. **Runtime is Bun.** Use `bun` for all package management and scripts.
+2. **Images must be committed to `public/images/`** and referenced with an absolute path.
+3. **Front matter must use YAML** (`---` delimiters), not TOML (`+++`) or JSON.
+4. **Tags are lowercase hyphen-separated slugs.** Check existing tags before inventing new ones.
+5. **Do not commit the `dist/` directory.** It is the Astro build output and is managed by CI.

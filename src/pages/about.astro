@@ -1,0 +1,63 @@
+---
+import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Base title="About" description="Senior software engineer and tech lead. 13+ years building things that work in production.">
+  <Nav />
+
+  <section style="padding: 160px 48px 120px;">
+    <div style="max-width:900px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start;">
+
+      <div>
+        <span class="label" style="display:block; margin-bottom:40px;">About</span>
+        <div class="jp" style="font-size:64px; font-weight:200; color:var(--faint); line-height:1; margin-bottom:40px; user-select:none;">人</div>
+        <div style="font-size:13px; font-weight:300; line-height:2.4; color:var(--dim);">
+          Senior software engineer<br />
+          and tech lead.<br />
+          13+ years building things<br />
+          that work in production.<br /><br />
+          Based in Barcelona.<br />
+          Dad. Homelab tinkerer.<br />
+          Occasional blogger.
+        </div>
+      </div>
+
+      <div style="padding-top:80px;">
+        <div style="font-size:13px; line-height:2.4; color:var(--dim); font-weight:300; border-bottom:1px solid var(--faint); padding-bottom:48px; margin-bottom:48px;">
+          I write about software architecture,<br />
+          AI systems, engineering leadership,<br />
+          and the tools I use every day.<br /><br />
+          Everything on this site is honest —<br />
+          no fluff, no sponsored content,<br />
+          no personal brand theatre.<br /><br />
+          Just the work.
+        </div>
+
+        <div style="font-size:13px; line-height:2.4; color:var(--dim); font-weight:300; border-bottom:1px solid var(--faint); padding-bottom:48px; margin-bottom:48px;">
+          <div class="label" style="margin-bottom:20px;">Experience</div>
+          Tech Lead · Senior Software Engineer<br />
+          Go, TypeScript, Bun, Postgres<br />
+          Distributed systems, AI agents, platform engineering
+        </div>
+
+        <div style="font-size:13px; line-height:2.4; color:var(--dim); font-weight:300; border-bottom:1px solid var(--faint); padding-bottom:48px; margin-bottom:48px;">
+          <div class="label" style="margin-bottom:20px;">Elsewhere</div>
+          <a href="https://github.com/charly3pins" target="_blank" rel="noopener noreferrer" class="link-subtle" style="display:block; margin-bottom:8px;">GitHub — charly3pins</a>
+          <a href="https://x.com/charly3pins" target="_blank" rel="noopener noreferrer" class="link-subtle" style="display:block; margin-bottom:8px;">X — @charly3pins</a>
+          <a href="https://youtube.com/charly3pins" target="_blank" rel="noopener noreferrer" class="link-subtle" style="display:block; margin-bottom:8px;">YouTube — charly3pins</a>
+          <a href="https://linkedin.com/in/carlesfuste" target="_blank" rel="noopener noreferrer" class="link-subtle" style="display:block;">LinkedIn — Carles Fusté</a>
+        </div>
+
+        <div style="font-size:11px; color:var(--dim);">
+          <div class="label" style="margin-bottom:16px;">Contact</div>
+          <a href="mailto:hola@charly3pins.dev" class="link-accent">hola@charly3pins.dev →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <Footer />
+</Base>
