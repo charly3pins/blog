@@ -1,0 +1,23 @@
+---
+import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import LibraryTabs from "../components/LibraryTabs.tsx";
+---
+
+<Base title="Library" description="Books I recommend, tools I use daily, and resources I follow.">
+  <Nav />
+
+  <section style="padding: 160px 48px 120px;">
+    <div class="inner">
+      <div class="section-header">
+        <span class="label">What I read, use &amp; follow</span>
+      </div>
+
+      <!-- React island — client:load so tabs work immediately -->
+      <LibraryTabs client:load />
+    </div>
+  </section>
+
+  <Footer />
+</Base>

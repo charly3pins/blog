@@ -1,0 +1,61 @@
+---
+import Base from "../../layouts/Base.astro";
+import Nav from "../../components/Nav.astro";
+import Footer from "../../components/Footer.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("blog", ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+function fmtDate(d: Date) {
+  return d.toISOString().slice(0, 7).replace("-", "–");
+}
+---
+
+<Base title="Blog" description="Writing about AI, software architecture, engineering leadership, and the tools I use every day.">
+  <Nav />
+
+  <section style="padding: 160px 48px 120px;">
+    <div class="inner">
+      <div class="section-header">
+        <span class="label">All writing</span>
+        <span class="label">{posts.length} posts</span>
+      </div>
+
+      <div style="display:grid; grid-template-columns:56px 1fr 64px; gap:32px;" class="col-header">
+        <span>Date</span>
+        <span>Title</span>
+        <span style="text-align:right">Topic</span>
+      </div>
+
+      {posts.map((post) => (
+        <a
+          href={`/blog/${post.slug}`}
+          style="
+            display: grid;
+            grid-template-columns: 56px 1fr 64px;
+            gap: 32px;
+            align-items: baseline;
+            padding: 18px 0;
+            border-bottom: 1px solid var(--faint);
+            text-decoration: none;
+            color: inherit;
+            transition: opacity 0.15s;
+          "
+          onmouseenter="this.style.opacity='0.6'"
+          onmouseleave="this.style.opacity='1'"
+        >
+          <span style="font-size:11px; color:var(--dim); letter-spacing:0.06em; font-style:italic;">
+            {fmtDate(post.data.date)}
+          </span>
+          <span style="font-size:14px; font-weight:300; letter-spacing:0.01em;">{post.data.title}</span>
+          <span style="font-size:11px; color:var(--dim); letter-spacing:0.1em; text-transform:uppercase; text-align:right;">
+            {post.data.tags[0] ?? ""}
+          </span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <Footer />
+</Base>

@@ -1,0 +1,59 @@
+---
+import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import { getCollection } from "astro:content";
+
+const projects = await getCollection("projects");
+---
+
+<Base title="Projects" description="A selection of things I've built.">
+  <Nav />
+
+  <section style="padding: 160px 48px 120px;">
+    <div class="inner">
+      <div class="section-header">
+        <span class="label">Selected work</span>
+        <span class="label">{projects.length} projects</span>
+      </div>
+
+      <div style="display:grid; grid-template-columns:80px 180px 1fr; gap:40px;" class="col-header">
+        <span>Year</span>
+        <span>Name</span>
+        <span>Description</span>
+      </div>
+
+      {projects.map((p) => (
+        <div style="
+          display: grid;
+          grid-template-columns: 80px 180px 1fr;
+          gap: 40px;
+          align-items: baseline;
+          padding: 20px 0;
+          border-bottom: 1px solid var(--faint);
+        ">
+          <span style="font-size:11px; color:var(--dim); font-style:italic;">{p.data.year}</span>
+          <div>
+            {p.data.url ? (
+              <a href={p.data.url} target="_blank" rel="noopener noreferrer"
+                style="font-size:14px; letter-spacing:0.01em; transition:color 0.15s;"
+                onmouseenter="this.style.color='var(--red)'"
+                onmouseleave="this.style.color=''"
+              >{p.data.name}</a>
+            ) : (
+              <span style="font-size:14px; letter-spacing:0.01em;">{p.data.name}</span>
+            )}
+            {p.data.repo && (
+              <a href={p.data.repo} target="_blank" rel="noopener noreferrer"
+                style="display:block; font-size:9px; color:var(--dim); margin-top:4px; letter-spacing:0.08em;"
+              >source →</a>
+            )}
+          </div>
+          <span style="font-size:13px; color:var(--dim); font-weight:300; line-height:1.7;">{p.data.description}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <Footer />
+</Base>

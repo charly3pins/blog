@@ -1,0 +1,27 @@
+---
+const NAV_ITEMS = [
+  { label: "Blog",     href: "/blog" },
+  { label: "Projects", href: "/projects" },
+  { label: "Library",  href: "/library" },
+  { label: "About",    href: "/about" },
+];
+
+const current = Astro.url.pathname;
+---
+
+<nav class="nav">
+  <a href="/" class="nav-wordmark">charly3pins</a>
+  <ul class="nav-links">
+    {NAV_ITEMS.map(({ label, href }) => (
+      <li>
+        <a
+          href={href}
+          class={current.startsWith(href) ? "active" : ""}
+          style={current.startsWith(href) ? "color: var(--fg)" : ""}
+        >
+          {label}
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>
