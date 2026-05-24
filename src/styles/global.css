@@ -23,6 +23,12 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 ::selection { background: color-mix(in srgb, var(--red) 20%, transparent); }
 
 ::-webkit-scrollbar { width: 1px; background: var(--bg); }
@@ -133,6 +139,7 @@ img { display: block; max-width: 100%; }
 
 /* ── Footer ── */
 .footer {
+  margin-top: auto;
   padding: 40px 48px;
   border-top: 1px solid var(--faint);
   display: flex;
